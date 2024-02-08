@@ -59,13 +59,7 @@ export class DndSwimlanesComponentDefinition extends BaseComponentDefinition {
 
   @Default({})
   @Description('Standard nestable implementation.')
-  nestables: NestableDef = {
-    rows: new CardsNestable(),
-  }
-
-  @Default([])
-  @Description('Child IDs for `rows` nestable references.')
-  rows: string[] = []
+  nestables: NestableDef = {}
 
   @Default([])
   @Description('Nested child IDs for rendering.')

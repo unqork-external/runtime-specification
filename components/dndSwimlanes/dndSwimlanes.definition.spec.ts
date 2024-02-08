@@ -7,13 +7,6 @@ describe('DndSwimlanes Contract Tests', function () {
 
     expect(schema.required).toEqual(['key', 'type'])
     expect(schema.properties).toEqual({
-      rows: {
-        description: 'Child IDs for `rows` nestable references.',
-        items: {
-          default: [],
-        },
-        type: 'array',
-      },
       display: {
         $ref: '#/definitions/DndSwimlanesDisplay',
       },

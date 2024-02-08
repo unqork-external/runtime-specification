@@ -25,7 +25,6 @@ export type DndSwimlanesDisplayCard = {
   [key: string]: unknown
 }
 export class DndCardData {
-  id: string | number;
   [key: string]: unknown
 }
 export type DndSwimlanesCardData = Record<DndSwimlaneName, DndCardData[]>
