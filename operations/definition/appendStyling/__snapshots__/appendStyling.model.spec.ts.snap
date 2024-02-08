@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Append Styling To Target Operation Model should match this JSON Schema 1`] = `
+{
+  "properties": {
+    "targetKey": {
+      "description": "Target component(s) that will receive the \`styling\` update. Engine Syntax is supported as a way to access the intended targets.",
+      "examples": [
+        "styled-component",
+        "panel.*",
+      ],
+      "type": "string",
+    },
+    "update": {
+      "description": "An object with the key as the specific target within the component that the update will be sent to, and the value being the CSS properties and/or classnames to be appended to the existing CSS.",
+      "examples": [
+        {
+          "input": [
+            {
+              "backgroundColor": "yellow",
+            },
+            "fun-confetti-input",
+          ],
+        },
+      ],
+      "type": "object",
+    },
+  },
+  "type": "object",
+}
+`;

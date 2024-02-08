@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableRemoveColumn Tests TableRemoveColumn Model 1`] = `
+{
+  "definitions": {
+    "TableRemoveColumnOperationOptions": {
+      "properties": {
+        "keysToRemove": {
+          "description": "The column(s) to be removed from the target table ",
+          "type": "object",
+        },
+        "targetKey": {
+          "description": "A unique string identifier used to specify the particular table or component in the application where the column removal operation is to be executed",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableRemoveColumnOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_REMOVE_COLUMN",
+      "examples": [
+        "TABLE_REMOVE_COLUMN",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

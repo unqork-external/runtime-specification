@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetColumnFiltersVisibility Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "TableSetColumnFiltersVisibilityOperationOptions": {
+      "properties": {
+        "enableColumnFilters": {
+          "type": "object",
+        },
+        "targetKey": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetColumnFiltersVisibilityOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_COLUMN_FILTERS_VISIBILITY",
+      "examples": [
+        "TABLE_SET_COLUMN_FILTERS_VISIBILITY",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

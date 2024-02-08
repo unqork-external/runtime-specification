@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetAllRowsExpanded Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "TableSetAllRowsExpandedOperationOptions": {
+      "properties": {
+        "areRowsExpanded": {
+          "description": "A boolean for setting if rows are expanded",
+          "type": "object",
+        },
+        "persist": {
+          "description": "a boolean for setting if we want all rows to stay expanded/collapsed even after refreshes",
+          "type": "boolean",
+        },
+        "targetKey": {
+          "description": "A key of the table we are targeting for row expansion",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetAllRowsExpandedOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_ALL_ROWS_EXPANDED",
+      "examples": [
+        "TABLE_SET_ALL_ROWS_EXPANDED",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

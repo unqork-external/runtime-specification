@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetRowExpanded Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "TableSetRowExpandedOperationOptions": {
+      "properties": {
+        "isRowExpanded": {
+          "description": "A boolean for setting if the row is expanded",
+          "type": "boolean",
+        },
+        "targetGroupRow": {
+          "description": "The key of the row that we want to expand",
+          "type": "string",
+        },
+        "targetKey": {
+          "description": "A key of the table we are targeting for row expansion",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetRowExpandedOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_ROW_EXPANDED",
+      "examples": [
+        "TABLE_SET_ROW_EXPANDED",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

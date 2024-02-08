@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableRemoveRows Tests TableRemoveRows Model 1`] = `
+{
+  "definitions": {
+    "TableRemoveRowsOperationOptions": {
+      "properties": {
+        "targetIndexes": {
+          "description": "Index for the rows we want to remove",
+          "type": "array",
+        },
+        "targetKey": {
+          "description": "A component key or target syntax for getting a component",
+          "type": "string",
+        },
+        "targetRowKeys": {
+          "description": "Component key, target key for the rows we want to remove",
+          "type": "array",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableRemoveRowsOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_REMOVE_ROWS",
+      "examples": [
+        "TABLE_REMOVE_ROWS",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

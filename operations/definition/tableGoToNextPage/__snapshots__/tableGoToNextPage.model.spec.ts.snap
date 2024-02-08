@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableGoToNextPage Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "TableGoToNextPageOperationOptions": {
+      "properties": {
+        "targetKey": {
+          "description": "The key for the component we want to perform the operation",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableGoToNextPageOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_GO_TO_NEXT_PAGE",
+      "examples": [
+        "TABLE_GO_TO_NEXT_PAGE",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

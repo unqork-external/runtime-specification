@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetActionToolbarVisibility Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "TableSetActionToolbarVisibilityOperationOptions": {
+      "properties": {
+        "enableBottomToolbar": {
+          "type": "object",
+        },
+        "enableTopToolbar": {
+          "type": "object",
+        },
+        "targetKey": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetActionToolbarVisibilityOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_ACTION_TOOLBAR_VISIBILITY",
+      "examples": [
+        "TABLE_SET_ACTION_TOOLBAR_VISIBILITY",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

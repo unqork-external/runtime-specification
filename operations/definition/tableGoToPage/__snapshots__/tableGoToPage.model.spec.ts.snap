@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableGoToPage Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "TableGoToPageOperationOptions": {
+      "properties": {
+        "pageNumber": {
+          "description": "The page number user wants to navigate to",
+          "type": [
+            "number",
+            "string",
+          ],
+        },
+        "targetKey": {
+          "description": "The key for the component we want to set page size",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableGoToPageOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_GO_TO_PAGE",
+      "examples": [
+        "TABLE_GO_TO_PAGE",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

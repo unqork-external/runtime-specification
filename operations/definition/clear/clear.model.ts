@@ -1,0 +1,11 @@
+import { DiscriminatorValue, Required } from '@tsed/schema'
+
+import { ClearOptions } from './clear.options'
+import { OperationTypes } from '../../enums/operation-types.enum'
+import { Operation } from '../../interface/operations.interface'
+
+@DiscriminatorValue(OperationTypes.CLEAR)
+export class ClearOperation extends Operation<OperationTypes.CLEAR> {
+  @Required()
+  public options: ClearOptions = new ClearOptions()
+}

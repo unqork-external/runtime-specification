@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetPageSize Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "TableSetPageSizeOperationOptions": {
+      "properties": {
+        "pageSize": {
+          "description": "Page size",
+          "type": [
+            "number",
+            "string",
+          ],
+        },
+        "targetKey": {
+          "description": "The key for the component we want to set page size",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetPageSizeOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_PAGE_SIZE",
+      "examples": [
+        "TABLE_SET_PAGE_SIZE",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

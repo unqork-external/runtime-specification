@@ -1,0 +1,53 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetColumnFilter Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "ColumnFilter": {
+      "properties": {
+        "id": {
+          "type": "string",
+        },
+        "value": {
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+    "TableSetColumnFilterOperationOptions": {
+      "properties": {
+        "filters": {
+          "items": {
+            "$ref": "#/definitions/ColumnFilter",
+          },
+          "type": "array",
+        },
+        "targetKey": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetColumnFilterOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_COLUMN_FILTER",
+      "examples": [
+        "TABLE_SET_COLUMN_FILTER",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

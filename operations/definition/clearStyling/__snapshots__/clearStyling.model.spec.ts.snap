@@ -1,0 +1,42 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Clear Styling Operation Model should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "ClearStylingOperationOptions": {
+      "properties": {
+        "targetKey": {
+          "description": "Target component(s) that will receive the \`styling\` update. Engine Syntax is supported as a way to access the intended targets.",
+          "examples": [
+            "styled-component",
+            "panel.*",
+          ],
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "description": "This operation will clear any styles added to a component via \`styling\` configuration.",
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ClearStylingOperationOptions",
+    },
+    "type": {
+      "const": "CLEAR_STYLING",
+      "examples": [
+        "CLEAR_STYLING",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

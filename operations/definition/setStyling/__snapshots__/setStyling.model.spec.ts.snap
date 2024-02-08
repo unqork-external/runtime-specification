@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Set Styling Operation Model should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "SetStylingOperationOptions": {
+      "properties": {
+        "targetKey": {
+          "description": "Target component(s) that will receive the \`styling\` update. Engine Syntax is supported as a way to access the intended targets.",
+          "examples": [
+            "styled-component",
+            "panel.*",
+          ],
+          "type": "string",
+        },
+        "update": {
+          "description": "The complete configuration to update the components' \`styling.targets\` property with. This can include CSS classnames and/or CSS objects.",
+          "examples": [
+            {
+              "input": [
+                {
+                  "color": "blue",
+                },
+                "styling-class-99",
+              ],
+              "root": [
+                {
+                  "borderRadius": "5px",
+                },
+                "i-am-root",
+              ],
+            },
+          ],
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "description": "This operation should be used to set an entire styling object on a component. This operation will override any pre-existing styling configuration in the component definition.",
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/SetStylingOperationOptions",
+    },
+    "type": {
+      "const": "SET_STYLING",
+      "examples": [
+        "SET_STYLING",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

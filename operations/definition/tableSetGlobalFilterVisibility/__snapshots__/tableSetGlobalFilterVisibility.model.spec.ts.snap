@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetGlobalFilterVisibility Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "TableSetGlobalFilterVisibilityOperationOptions": {
+      "properties": {
+        "enableGlobalFilter": {
+          "type": "object",
+        },
+        "targetKey": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetGlobalFilterVisibilityOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_GLOBAL_FILTER_VISIBILITY",
+      "examples": [
+        "TABLE_SET_GLOBAL_FILTER_VISIBILITY",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

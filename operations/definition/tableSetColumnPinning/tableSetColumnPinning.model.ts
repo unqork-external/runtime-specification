@@ -1,0 +1,11 @@
+import { DiscriminatorValue, Required } from '@tsed/schema'
+
+import { TableSetColumnPinningOperationOptions } from './tableSetColumnPinning.options'
+import { OperationTypes } from '../../enums/operation-types.enum'
+import { Operation } from '../../interface/operations.interface'
+
+@DiscriminatorValue(OperationTypes.TABLE_SET_COLUMN_PINNING)
+export class TableSetColumnPinningOperation extends Operation<OperationTypes.TABLE_SET_COLUMN_PINNING> {
+  @Required()
+  public options: TableSetColumnPinningOperationOptions = new TableSetColumnPinningOperationOptions()
+}
