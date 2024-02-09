@@ -19,7 +19,7 @@ describe('Icon Contract Tests', function () {
         examples: ['I am the key', 'bestKeyEver'],
       },
       type: {
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
         type: 'string',
         minLength: 1,
         const: 'icon',

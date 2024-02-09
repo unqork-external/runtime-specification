@@ -21,7 +21,7 @@ describe('Navigation Contract Tests', function () {
         type: 'string',
         minLength: 1,
         const: 'navigation',
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
         examples: ['navigation'],
       },
       executable: {

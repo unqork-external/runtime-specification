@@ -30,7 +30,7 @@ describe('LegacyViewWrapperDefinition Testing', () => {
         type: 'string',
         minLength: 1,
         const: 'legacyViewWrapper',
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
         examples: ['legacyViewWrapper'],
       },
       components: {

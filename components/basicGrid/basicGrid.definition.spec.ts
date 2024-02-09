@@ -66,7 +66,7 @@ describe('BasicGrid Contract Tests', function () {
       },
       type: {
         const: 'basicgrid',
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
         examples: ['basicgrid'],
         minLength: 1,
         type: 'string',

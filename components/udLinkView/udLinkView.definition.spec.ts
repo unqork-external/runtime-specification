@@ -21,7 +21,7 @@ describe('UD Link View Contract Tests', function () {
         type: 'string',
         minLength: 1,
         const: 'udLinkView',
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
         examples: ['udLinkView'],
       },
       components: {

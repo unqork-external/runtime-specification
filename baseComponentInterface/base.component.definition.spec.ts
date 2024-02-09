@@ -66,17 +66,15 @@ describe('Vega Base Component Interface Validation', () => {
       key: {
         type: 'string',
         minLength: 1,
-        description: trimAll(`
-          A user-defined key that is unique within a module. 
-          It doesn't have to be unique across different modules. 
-          Objects in the runtime use keys to target other components.
-        `),
+        description:
+          // eslint-disable-next-line max-len
+          "'key' is the user-defined, unique identifier for a component within a module. It doesn't have to be unique across different modules. Objects in the runtime use keys to target other components.",
         examples: ['I am the key', 'bestKeyEver'],
       },
       type: {
         type: 'string',
         minLength: 1,
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
       },
       executable: {
         default: true,

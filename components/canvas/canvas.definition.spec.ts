@@ -90,7 +90,7 @@ describe('Canvas Contract Tests', function () {
       },
       type: {
         const: 'canvas',
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
         examples: ['canvas'],
         minLength: 1,
         type: 'string',

@@ -35,7 +35,7 @@ describe('TestTextField Contract Tests', function () {
       },
       type: {
         const: 'testTextField',
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
         examples: ['testTextField'],
         minLength: 1,
         type: 'string',

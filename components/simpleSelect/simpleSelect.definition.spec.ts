@@ -61,7 +61,7 @@ describe('SimpleSelect Contract Tests', function () {
       },
       type: {
         const: 'simpleSelect',
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
         examples: ['simpleSelect'],
         minLength: 1,
         type: 'string',

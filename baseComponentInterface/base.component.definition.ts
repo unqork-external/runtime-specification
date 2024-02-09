@@ -16,7 +16,7 @@ export class BaseComponentDefinition extends RootObject {
   @Property()
   @Description(
     trimAll(`
-      A user-defined key that is unique within a module.
+      'key' is the user-defined, unique identifier for a component within a module.
       It doesn't have to be unique across different modules.
       Objects in the runtime use keys to target other components.
     `),
@@ -29,7 +29,7 @@ export class BaseComponentDefinition extends RootObject {
    *
    */
   @Required()
-  @Description(`Describes which kind of component the creator intends to build.`)
+  @Description(`Name of the type of component.`)
   @DiscriminatorKey()
   type: string
 

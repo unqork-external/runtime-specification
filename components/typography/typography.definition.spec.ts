@@ -18,7 +18,7 @@ describe('UqTypography Contract Tests', function () {
       type: {
         type: 'string',
         minLength: 1,
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
         const: 'typography',
         examples: ['typography'],
       },

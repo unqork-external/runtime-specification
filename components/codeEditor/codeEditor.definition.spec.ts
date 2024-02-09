@@ -21,7 +21,7 @@ describe('Code Editor Contract Tests', function () {
         type: 'string',
         minLength: 1,
         const: 'codeEditor',
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
         examples: ['codeEditor'],
       },
       executable: {

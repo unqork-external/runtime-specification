@@ -21,7 +21,7 @@ describe('MUI Checkbox Contract Tests', function () {
         type: 'string',
         minLength: 1,
         const: 'muiCheckbox',
-        description: 'Describes which kind of component the creator intends to build.',
+        description: 'Name of the type of component.',
         examples: ['muiCheckbox'],
       },
       executable: {
