@@ -20,6 +20,10 @@ describe('CanvasApplyStructuredDataOperation Model', () => {
               examples: ['root'],
               type: 'string',
             },
+            normalizeChildren: {
+              description: 'Normalizes all childLayouts to a single array under key "children"',
+              type: 'boolean',
+            },
             paths: {
               description: 'Use to get structured data but only with the values from the desired paths per component',
               examples: ['["key"]'],
@@ -29,6 +33,10 @@ describe('CanvasApplyStructuredDataOperation Model', () => {
               description: 'key of the canvas to target',
               minLength: 1,
               type: 'string',
+            },
+            withExcludes: {
+              description: 'Use to get structured data and override default exclude functionality',
+              type: 'boolean',
             },
           },
           required: ['targetKey'],

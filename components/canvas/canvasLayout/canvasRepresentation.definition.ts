@@ -28,4 +28,7 @@ export class CanvasRepresentation {
 
   @Optional()
   childLayouts?: Record<LAYOUT_ID, ChildCanvasLayout>
+
+  @Optional()
+  componentSpecifics?: Record<string, unknown>
 }

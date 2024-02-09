@@ -1,9 +1,12 @@
-import { R1ComponentDefinition } from '../../../../runtime1/component/types'
 import type { CanvasRepresentationControls } from '../canvasLayout/CanvasRepresentationControls.definition'
 
 export type CANVAS_ITEM_ID = string
 
-export type CanvasItemSettings = R1ComponentDefinition & { __canvasItemId: string }
+export type CanvasItemSettings = Record<string, unknown> & {
+  componentId: string
+  key: string
+  type: string
+}
 
 export class CanvasItem {
   representationControls: CanvasRepresentationControls

@@ -12,6 +12,14 @@ export class CanvasApplyStructuredDataOperationOptions {
   layoutId?: string
 
   @Optional()
+  @Description('Use to get structured data and override default exclude functionality')
+  withExcludes?: boolean
+
+  @Optional()
+  @Description('Normalizes all childLayouts to a single array under key "children"')
+  normalizeChildren?: boolean
+
+  @Optional()
   @Description('Use to get structured data but only with the values from the desired paths per component')
   @Example('["key"]')
   paths?: string[]
