@@ -1,8 +1,9 @@
-import { Default, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
+import { Default, Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
 
 import { CANVAS_ITEM_ID, CanvasItem } from './canvasItem/canvasItem.definition'
 import { LAYOUT_ID } from './canvasLayout/canvasChildLayout.definition'
 import { CanvasRepresentation } from './canvasLayout/canvasRepresentation.definition'
+import { CanvasStyling } from './styling/canvas.styling'
 import { BaseComponentDefinition } from '../../baseComponentInterface'
 import { StandardArrayNestable } from '../../nestables'
 
@@ -12,6 +13,13 @@ export type CanvasModes = 'EDIT' | 'PREVIEW' | 'IDE'
 export class CanvasComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'canvas' = 'canvas' as const
+
+  @Property()
+  styling: CanvasStyling
+
+  @Property()
+  @Default(true)
+  useDefaultStyles: boolean
 
   @Required()
   @Default({})

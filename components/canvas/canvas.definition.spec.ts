@@ -33,9 +33,9 @@ describe('Canvas Contract Tests', function () {
         default: false,
         description:
           'Boolean to determine if the canvas is disabled. ' +
-          'This functionality differs from the Runtime concepts of `executable` and `interactive` in the sense that ' +
-          'only some viewActions are disabled. Disabled viewActions include: ' +
-          'paste, delete, deleteAll, edit, and handleDropEvent',
+          'This functionality differs from the Runtime concepts of `executable` and `interactive` ' +
+          'in the sense that only some viewActions are disabled. Disabled viewActions ' +
+          'include: paste, delete, deleteAll, edit, and handleDropEvent',
         type: 'boolean',
       },
       emptyText: {
@@ -50,8 +50,8 @@ describe('Canvas Contract Tests', function () {
         default: true,
         description:
           'Defines whether or not the object will respond to events or fire operations. ' +
-          'When `true`, the object will perform and behave as defined in its spec. ' +
-          'When `false`, the object will no longer be responsive to the system.',
+          'When `true`, the object will perform and behave as defined in its spec. When `false`, ' +
+          'the object will no longer be responsive to the system.',
         type: 'boolean',
       },
       inputs: {
@@ -86,7 +86,7 @@ describe('Canvas Contract Tests', function () {
         type: 'object',
       },
       styling: {
-        $ref: '#/definitions/StylingModel',
+        $ref: '#/definitions/CanvasStyling',
       },
       type: {
         const: 'canvas',
@@ -94,6 +94,10 @@ describe('Canvas Contract Tests', function () {
         examples: ['canvas'],
         minLength: 1,
         type: 'string',
+      },
+      useDefaultStyles: {
+        default: true,
+        type: 'boolean',
       },
       validation: {
         $ref: '#/definitions/Validation',
