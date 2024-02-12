@@ -3,7 +3,6 @@ import { CollectionOf, Default, Description, Enum, Example, Property, Required }
 export enum CheckboxesOptionType {
   VALUE = 'value',
   SELECT_ALL = 'selectAll',
-  OTHER = 'other',
   NONE = 'none',
 }
 
@@ -60,10 +59,6 @@ export class CheckboxesOptions {
   isNoneChecked: boolean = false
 
   @Default(false)
-  @Description('Used in renderer - Is Other checkbox toggled on')
-  isOtherChecked: boolean = false
-
-  @Default(false)
   @Description('Used in renderer - Is Select All checkbox toggled on')
   isSelectAllChecked: boolean = false
 
@@ -78,17 +73,6 @@ export class CheckboxesOptions {
   @Description('Value for none checkbox')
   noneValue: string = 'None'
 
-  @Description('Key used to point to for the other checkbox')
-  otherComponentKey?: string
-
-  @Default('Other')
-  @Description('Label for other checkbox')
-  otherLabel: string = 'Other'
-
-  @Default('other')
-  @Description('Value for other checkbox')
-  otherValue: string = 'other'
-
   @Default('Select All')
   @Description('Label for select all checkbox')
   selectAllLabel: string = 'Select All'
@@ -96,10 +80,6 @@ export class CheckboxesOptions {
   @Default(false)
   @Description('Show none checkbox')
   showNone?: boolean = false
-
-  @Default(false)
-  @Description('Show other checkbox')
-  showOther?: boolean = false
 
   @Default(false)
   @Description('Show select all checkbox')
