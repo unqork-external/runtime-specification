@@ -1,11 +1,15 @@
 import { Default, Required } from '@tsed/schema'
 
+export type highlightType = 'INDICATE' | 'WARN' | 'ERROR'
+
 export class CanvasRepresentationControls {
   @Required()
   @Default(false)
   collapsed: boolean
 
   @Required()
-  @Default(false)
-  highlighted: boolean
+  highlight: {
+    type: highlightType
+    isHighlighted: boolean
+  }
 }

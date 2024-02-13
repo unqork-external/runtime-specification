@@ -12,7 +12,7 @@ export class CanvasItem {
   representationControls: CanvasRepresentationControls
   settings: CanvasItemSettings
   // TBD on below once we have more details on how this works with UD
-  comments: Record<string, any>
+  comments: { count?: number }
   rtc: Record<string, any>
   connections: Record<string, any>
 }

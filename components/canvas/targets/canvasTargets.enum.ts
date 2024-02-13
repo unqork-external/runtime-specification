@@ -3,8 +3,13 @@ export enum CanvasTargetsEnum {
   canvas = 'canvas',
   canvasEmpty = 'canvasEmpty',
   dropzone = 'dropzone',
+  dropzoneWrapper = 'dropzoneWrapper',
+  representationViewWrapper = 'representationViewWrapper',
   dragPreview = 'dragPreview',
   canvasItemHeader = 'canvasItemHeader',
+  canvasItemHeaderWrapper = 'canvasItemHeaderWrapper',
+  representationWrapper = 'representationWrapper',
+  representationButtonsOpenEllipse = 'representationButtonsOpenEllipse',
   canvasButtonsWrapper = 'canvasButtonsWrapper',
   representationButtonsWrapper = 'representationButtonsWrapper',
 }
