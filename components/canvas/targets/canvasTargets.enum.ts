@@ -12,4 +12,6 @@ export enum CanvasTargetsEnum {
   representationButtonsOpenEllipse = 'representationButtonsOpenEllipse',
   canvasButtonsWrapper = 'canvasButtonsWrapper',
   representationButtonsWrapper = 'representationButtonsWrapper',
+  representationInformationWrapper = 'representationInformationWrapper',
+  representationInformationSectionWrapper = 'representationInformationSectionWrapper',
 }

@@ -14,5 +14,5 @@ export class CanvasItem {
   // TBD on below once we have more details on how this works with UD
   comments: { count?: number }
   rtc: Record<string, any>
-  connections: Record<string, any>
+  connections: { inputs: string[]; outputs: string[] }
 }

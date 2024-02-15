@@ -40,4 +40,10 @@ export class CanvasTargets {
 
   @Css()
   [CanvasTargetsEnum.representationButtonsWrapper]: CssClassOrProps
+
+  @Css()
+  [CanvasTargetsEnum.representationInformationWrapper]: CssClassOrProps
+
+  @Css()
+  [CanvasTargetsEnum.representationInformationSectionWrapper]: CssClassOrProps
 }
