@@ -169,4 +169,15 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
 
   @Property()
   globalFilter: string
+
+  @Property()
+  @Description(
+    trimAll(`
+    This only has effect in edit mode. When enabled, 
+    users have the ability to press enter and put the focus 
+    on the cell that is below the current selection. When disabled,
+    it exits the edit mode.
+  `),
+  )
+  navigateDownOnPressEnter: boolean
 }

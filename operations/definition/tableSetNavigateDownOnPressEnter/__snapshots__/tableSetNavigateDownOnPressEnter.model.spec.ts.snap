@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetNavigateDownOnPressEnter Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "TableSetNavigateDownOnPressEnterOperationOptions": {
+      "properties": {
+        "enabled": {
+          "description": "When enabled, pressing Enter on a cell in edit mode will set the focus to the cell immediately below. The new selected cell will also be in edit mode. If there's no cell below the current cell, nothing happens.",
+          "type": "boolean",
+        },
+        "targetKey": {
+          "description": "The key for the table we want to set the navigation option",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetNavigateDownOnPressEnterOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_NAVIGATE_DOWN_ON_PRESS_ENTER",
+      "examples": [
+        "TABLE_SET_NAVIGATE_DOWN_ON_PRESS_ENTER",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;
