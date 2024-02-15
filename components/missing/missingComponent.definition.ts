@@ -1,4 +1,4 @@
-import { DiscriminatorValue, Property, Required } from '@tsed/schema'
+import { Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
 
 import { BaseComponentDefinition } from '../../baseComponentInterface'
 
@@ -7,6 +7,12 @@ export class MissingComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: '__missing__' = '__missing__' as const
 
-  @Property()
+  @Description('Type of the unsupported component')
   previousType: string
+
+  @Description('Label of the unsupported component')
+  previousLabel: string
+
+  @Description('Key of the unsupported component')
+  previousKey: string
 }
