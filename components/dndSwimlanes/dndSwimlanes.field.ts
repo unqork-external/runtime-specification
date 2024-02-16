@@ -42,20 +42,17 @@ export class DndSwimlanesField extends Field {
 
   @Description('The Boolean attribute from the Card data to use for individually disabling Cards in Swimlanes.')
   @Example('disabled', 'isDraggable')
-  @Default('disabled')
-  cardDisabledAttribute: string = 'disabled'
+  cardDisabledAttribute: string
 
   @Description(
     `The 'cardDisabledAttribute' is mapping to 'disabled'
     but if users enter "isMovable" they mean the inverse of "isMovable" === "disabled".`.trim(),
   )
-  @Default(false)
-  cardDisabledAttributeInvert: boolean = false
+  cardDisabledAttributeInvert: boolean
 
   @Description('The attribute from the Card data to use for Card View Type.')
   @Example('status', 'type')
-  @Default('status')
-  cardViewTypeAttribute: string = 'status'
+  cardViewTypeAttribute: string
 
   @Description('The map of Card View Type attributes to JSON arrays of components to build the Card View.')
   @Default({})
