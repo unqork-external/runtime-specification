@@ -75,10 +75,13 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   enableColumnFilters: boolean = true
 
   @Property()
-  enableTopToolbar: boolean = true
+  enableTopToolbar: boolean = false
 
   @Property()
-  enableBottomToolbar: boolean = true
+  enableColumnActions: boolean = false
+
+  @Property()
+  enableBottomToolbar: boolean = false
 
   @Property()
   initialData: object[]
