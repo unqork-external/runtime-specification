@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.EMIT_EVENT)
 export class EmitEventOperation extends Operation<OperationTypes.EMIT_EVENT> {
+  public type = OperationTypes.EMIT_EVENT as const
+
   @Required()
   public options: EmitEventOperationOptions = new EmitEventOperationOptions()
 }

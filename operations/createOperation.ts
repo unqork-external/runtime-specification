@@ -14,21 +14,28 @@ import { OperationTypeMap } from './typemaps/operation.typemap'
  * @param type
  * @param options
  * @param name name of the operation
+ * @param additional
+ * @param spreadOp
+ * @param additionalArgs
  * @returns - The Operation Class type
  */
 export const createOperation = <OpType extends OperationTypes>(
   type: OpType,
-  options: (typeof OperationTypeMap)[OpType]['prototype']['options'],
-  name?: string,
+  options: InstanceType<(typeof OperationTypeMap)[OpType]>['options'],
+  additionalArgs?: AdditionalArgs,
 ): InstanceType<(typeof OperationTypeMap)[OpType]> => {
   const classOpType = OperationTypeMap[type]
   const op = new classOpType()
   return Object.assign(op, {
-    name,
     type,
     options: {
       ...op.options,
       ...options,
     },
+    ...additionalArgs,
   })
+}
+
+interface AdditionalArgs {
+  notifyImmediately: boolean
 }

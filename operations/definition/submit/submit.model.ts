@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.SUBMIT)
 export class SubmitOperation extends Operation<OperationTypes.SUBMIT> {
+  public type = OperationTypes.SUBMIT as const
+
   @Required()
   public options: SubmitOptions = new SubmitOptions()
 }

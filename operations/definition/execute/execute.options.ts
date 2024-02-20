@@ -1,8 +1,6 @@
 import { Default, Description, Example, Optional, Required } from '@tsed/schema'
 
-import { BaseOperationOptions } from '../../interface/operations.interface'
-
-export class ExecuteOptions extends BaseOperationOptions {
+export class ExecuteOptions {
   @Required()
   @Description('key of target')
   @Example('textfield')

@@ -32,10 +32,10 @@ export class RightAdornmentNestable extends Nestable {
 }
 
 export class StandardAdornmentsProperties {
-  @CollectionOf(BaseComponentDefinition)
+  @CollectionOf(() => BaseComponentDefinition)
   left: BaseComponentDefinition[] = []
 
-  @CollectionOf(BaseComponentDefinition)
+  @CollectionOf(() => BaseComponentDefinition)
   right: BaseComponentDefinition[] = []
 }
 

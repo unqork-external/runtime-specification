@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.TABLE_SET_GLOBAL_FILTER_VISIBILITY)
 export class TableSetGlobalFilterVisibilityOperation extends Operation<OperationTypes.TABLE_SET_GLOBAL_FILTER_VISIBILITY> {
+  public type = OperationTypes.TABLE_SET_GLOBAL_FILTER_VISIBILITY as const
+
   @Required()
   public options: TableSetGlobalFilterVisibilityOperationOptions = new TableSetGlobalFilterVisibilityOperationOptions()
 }

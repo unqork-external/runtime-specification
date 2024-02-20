@@ -76,7 +76,6 @@ import { ValidateModuleOperation } from '../definition/validateModule'
 import { WorkflowNavigateOperation } from '../definition/workflowNavigate'
 import { WorkflowSaveAndExitOperation } from '../definition/workflowSaveAndExit'
 import { OperationTypes } from '../enums/operation-types.enum'
-import { Operation } from '../interface/operations.interface'
 
 export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
@@ -155,12 +154,5 @@ export const OperationTypeMap = {
   [OperationTypes.SET_VALIDATION_RULE]: SetValidationRuleOperation,
   [OperationTypes.VALIDATE]: ValidateOperation,
   [OperationTypes.VALIDATE_RULES]: ValidationRuleOperation,
-  PARSE_FORMULA: ParseFormulaOperation,
-  // Unused
-  MODULE_RESET: Operation,
-  // ???
-  MESSAGE: Operation,
-  // Events that have been confused as operations
-  INITIALIZE: Operation,
-  READY: Operation,
+  [OperationTypes.PARSE_FORMULA]: ParseFormulaOperation,
 } as const

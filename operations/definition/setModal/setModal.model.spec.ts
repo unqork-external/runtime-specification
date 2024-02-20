@@ -12,45 +12,7 @@ describe('setModal', () => {
   })
 
   it('should match this JSON Schema', () => {
-    expect(schema).toStrictEqual({
-      definitions: {
-        SetModalOptions: {
-          properties: {
-            modalAction: {
-              description: 'modalAction refers to the event that the modal should execute.',
-              examples: ['MODAL_CLOSE_KEY', 'MODAL_OPEN_KEY'],
-              minLength: 1,
-              type: 'string',
-            },
-            targetEventKey: {
-              type: 'string',
-            },
-            targetKey: {
-              description: 'The key or path to the container we intend to target for an operation',
-              type: 'string',
-            },
-          },
-          required: ['modalAction'],
-          type: 'object',
-        },
-      },
-      properties: {
-        options: {
-          $ref: '#/definitions/SetModalOptions',
-        },
-        type: {
-          const: 'SET_MODAL',
-          examples: ['SET_MODAL'],
-          type: 'string',
-        },
-        name: {
-          description: 'Name of the operation',
-          type: 'string',
-        },
-      },
-      required: ['options'],
-      type: 'object',
-    })
+    expect(schema).toMatchSnapshot()
   })
 
   it('should validate submit operation with all required keys', () => {

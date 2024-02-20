@@ -1,0 +1,107 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Set Property Model should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "PopUpAlertOptions": {
+      "properties": {
+        "allowOutsideClick": {
+          "description": "Toggle the ability to close popup with a click outside of the popup modal",
+          "type": "boolean",
+        },
+        "apiCallErrors": {
+          "description": "Errors we recieve if the api call fails",
+          "type": "object",
+        },
+        "buttonsStyling": {
+          "description": "Apply default styling to buttons. If you want to use your own classes, set this parameter to false",
+          "type": "boolean",
+        },
+        "cancelButtonText": {
+          "default": "Cancel",
+          "description": "Use this to change the text on the "Cancel" button.",
+          "type": "string",
+        },
+        "confirmButtonColor": {
+          "description": "Use this to change the color on the "Confirm" button.",
+          "type": "string",
+        },
+        "confirmButtonText": {
+          "default": "OK",
+          "description": "Use this to change the text on the "Confirm" button.",
+          "type": "string",
+        },
+        "customClass": {
+          "description": "Used to add classes for components inside of the modal.",
+          "type": "object",
+        },
+        "icon": {
+          "description": "An icon for the modal. SweetAlert comes with 5 built-in icons that you can use",
+          "type": "string",
+        },
+        "shouldAutoClose": {
+          "default": false,
+          "description": "Should autoclose the popup without user interaction",
+          "type": "boolean",
+        },
+        "showCancelButton": {
+          "description": "If set to true, a "Cancel" button will be shown, which the user can click on to dismiss the modal.",
+          "type": "boolean",
+        },
+        "showConfirmButton": {
+          "description": "If set to true, a "Confirm" button will be shown, which the user can click on to dismiss the modal.",
+          "type": "boolean",
+        },
+        "text": {
+          "description": "A description for the popup.",
+          "type": "string",
+        },
+        "timer": {
+          "description": "Amount of time before the popup modal automatically closes",
+          "type": "number",
+        },
+        "title": {
+          "description": "The title of the popup, as HTML.",
+          "type": "string",
+        },
+        "validationErrorCount": {
+          "description": "Total errors from our validation system",
+          "type": "number",
+        },
+      },
+      "type": "object",
+    },
+    "SetPopupAlertOptions": {
+      "properties": {
+        "value": {
+          "$ref": "#/definitions/PopUpAlertOptions",
+        },
+      },
+      "required": [
+        "value",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/SetPopupAlertOptions",
+    },
+    "type": {
+      "const": "SET_POPUP_ALERT",
+      "examples": [
+        "SET_POPUP_ALERT",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

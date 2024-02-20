@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.RENDER_MODULE)
 export class RenderModuleOperation extends Operation<OperationTypes.RENDER_MODULE> {
+  public type = OperationTypes.RENDER_MODULE as const
+
   @Required()
   public options: RenderModuleOperationOptions = new RenderModuleOperationOptions()
 }

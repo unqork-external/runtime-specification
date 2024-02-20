@@ -13,6 +13,8 @@ import { Operation } from '../../interface/operations.interface'
   `),
 )
 export class ToggleClassOnTargetOperation extends Operation<OperationTypes.TOGGLE_CLASS_ON_TARGET> {
+  public type = OperationTypes.TOGGLE_CLASS_ON_TARGET as const
+
   @Required()
   public options: ToggleClassOnTargetOperationOptions = new ToggleClassOnTargetOperationOptions()
 }

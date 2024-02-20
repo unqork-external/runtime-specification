@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.TABLE_SET_PAGE_SIZE)
 export class TableSetPageSizeOperation extends Operation<OperationTypes.TABLE_SET_PAGE_SIZE> {
+  public type = OperationTypes.TABLE_SET_PAGE_SIZE as const
+
   @Required()
   public options: TableSetPageSizeOperationOptions = new TableSetPageSizeOperationOptions()
 }

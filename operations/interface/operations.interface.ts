@@ -11,17 +11,10 @@ import { Description, DiscriminatorKey } from '@tsed/schema'
 import { OperationTypes } from '../enums/operation-types.enum'
 
 export class Operation<OpType extends OperationTypes | string = string> {
+  @Description('Name of the operation')
+  name?: string
   @DiscriminatorKey()
   type: OpType
-  options: BaseOperationOptions
-  @Description('Name of the operation')
-  public name?: string
-}
-
-export class BaseOperationOptions {
-  @Description('The key or path to the container we intend to target for an operation')
-  // @deprecated - the Runtime should not care that a string known as "targetKey" may exist
-  targetKey?: string
-  value?: unknown
-  applyImmediately?: boolean
+  options: any
+  notifyImmediately?: boolean
 }

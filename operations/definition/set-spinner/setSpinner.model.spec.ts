@@ -43,10 +43,6 @@ describe('Set Spinner Model', () => {
               description: `'showPageSpinner' uses the R1 Page Spinner animation when enabled.`,
               default: false,
             },
-            targetKey: {
-              description: 'The key or path to the container we intend to target for an operation',
-              type: 'string',
-            },
           },
         },
       },

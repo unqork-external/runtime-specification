@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.TABLE_GO_TO_PAGE)
 export class TableGoToPageOperation extends Operation<OperationTypes.TABLE_GO_TO_PAGE> {
+  public type = OperationTypes.TABLE_GO_TO_PAGE as const
+
   @Required()
   public options: TableGoToPageOperationOptions = new TableGoToPageOperationOptions()
 }

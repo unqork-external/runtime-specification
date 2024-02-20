@@ -12,6 +12,8 @@ import { Operation } from '../../interface/operations.interface'
 `),
 )
 export class AppendStylingOperation extends Operation<OperationTypes.APPEND_STYLING> {
+  public type = OperationTypes.APPEND_STYLING as const
+
   @Required()
   public options: AppendStylingOperationOptions = new AppendStylingOperationOptions()
 }

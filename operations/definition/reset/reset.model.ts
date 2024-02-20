@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.RESET)
 export class ResetOperation extends Operation<OperationTypes.RESET> {
+  public type = OperationTypes.RESET as const
+
   @Required()
   public options: ResetOperationOptions = new ResetOperationOptions()
 }

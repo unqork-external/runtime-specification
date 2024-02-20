@@ -1,7 +1,7 @@
-import { Any, CollectionOf, Description, Example, Property, Required } from '@tsed/schema'
+import { Any, CollectionOf, Description, Example, Required } from '@tsed/schema'
 
 import { trimAll } from '../../../../utilities'
-import { BaseOperationOptions, Operation } from '../../interface/operations.interface'
+import { Operation } from '../../interface/operations.interface'
 
 export class Condition {
   @Required()
@@ -20,11 +20,7 @@ export class Condition {
   resultValue: unknown
 }
 
-export class IfOperationOptions implements BaseOperationOptions {
-  // TODO: remove base op operations in general
-  public targetKey?: string
-  public value?: unknown
-
+export class IfOperationOptions {
   @CollectionOf(Condition)
   @Description(
     trimAll(`

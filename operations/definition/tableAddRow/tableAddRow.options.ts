@@ -1,9 +1,8 @@
 import { Description, Example } from '@tsed/schema'
 
 import { trimAll } from '../../../../utilities'
-import { BaseOperationOptions } from '../../interface'
 
-export class TableAddRowOperationOptions extends BaseOperationOptions {
+export class TableAddRowOperationOptions {
   @Description('The key for the component we want to add a row')
   targetKey: string
 

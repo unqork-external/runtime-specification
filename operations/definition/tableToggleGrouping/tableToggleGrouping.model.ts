@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.TABLE_TOGGLE_GROUPING)
 export class TableToggleGroupingOperation extends Operation<OperationTypes.TABLE_TOGGLE_GROUPING> {
+  public type = OperationTypes.TABLE_TOGGLE_GROUPING as const
+
   @Required()
   public options: TableToggleGroupingOperationOptions = new TableToggleGroupingOperationOptions()
 }

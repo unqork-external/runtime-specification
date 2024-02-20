@@ -24,7 +24,6 @@ import { HTTPMethodType } from './method.type'
 import { PreRequestTransform } from './preRequestTransform'
 import { ServiceType } from './serviceType.type'
 import { trimAll } from '../../../../utilities'
-import { BaseOperationOptions } from '../../interface/operations.interface'
 
 export class ApiCallHeaders {
   @Optional()
@@ -49,7 +48,9 @@ export class ApiCallHeaders {
     },
   },
 })
-export class ApiCallOptions extends BaseOperationOptions {
+export class ApiCallOptions {
+  targetKey?: string
+
   // TODO: Put in HTTP key?
   @Required()
   @Enum(HTTPMethodType)

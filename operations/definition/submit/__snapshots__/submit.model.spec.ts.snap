@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Submit Model should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "SubmitOptions": {
+      "properties": {
+        "targetEntityKey": {
+          "description": "Key of a target entity",
+          "examples": [
+            "submissionData",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetEntityKey",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/SubmitOptions",
+    },
+    "type": {
+      "const": "SUBMIT",
+      "examples": [
+        "SUBMIT",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

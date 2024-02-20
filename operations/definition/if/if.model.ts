@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.IF)
 export class IfOperation extends Operation<OperationTypes.IF> {
+  public type = OperationTypes.IF as const
+
   @Required()
   public options: IfOperationOptions = new IfOperationOptions()
 }

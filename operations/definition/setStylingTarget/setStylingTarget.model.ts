@@ -13,6 +13,8 @@ import { Operation } from '../../interface/operations.interface'
   `),
 )
 export class SetStylingTargetOperation extends Operation<OperationTypes.SET_STYLING_TARGET> {
+  public type = OperationTypes.SET_STYLING_TARGET as const
+
   @Required()
   public options: SetStylingTargetOperationOptions = new SetStylingTargetOperationOptions()
 }

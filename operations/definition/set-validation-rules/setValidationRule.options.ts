@@ -1,9 +1,8 @@
 import { Description, Property, Required } from '@tsed/schema'
 
 import { ValidationRule } from '../../../validations'
-import { BaseOperationOptions } from '../../interface/operations.interface'
 
-export class SetValidationRuleOptions extends BaseOperationOptions {
+export class SetValidationRuleOptions {
   @Required()
   @Description('Key of target to apply set validation rule')
   public declare targetKey: string

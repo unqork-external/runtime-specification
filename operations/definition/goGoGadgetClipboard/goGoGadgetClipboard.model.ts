@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.GO_GO_GADGET_CLIPBOARD)
 export class GoGoGadgetClipboardOperation extends Operation<OperationTypes.GO_GO_GADGET_CLIPBOARD> {
+  public type = OperationTypes.GO_GO_GADGET_CLIPBOARD as const
+
   @Required()
   public options: GoGoGadgetClipboardOperationOptions = new GoGoGadgetClipboardOperationOptions()
 }

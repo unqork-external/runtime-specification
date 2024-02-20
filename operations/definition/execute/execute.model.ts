@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.EXECUTE)
 export class ExecuteOperation extends Operation<OperationTypes.EXECUTE> {
+  public type = OperationTypes.EXECUTE as const
+
   @Required()
   public options: ExecuteOptions = new ExecuteOptions()
 }

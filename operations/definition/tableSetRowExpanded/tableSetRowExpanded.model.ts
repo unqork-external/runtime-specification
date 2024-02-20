@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.TABLE_SET_ROW_EXPANDED)
 export class TableSetRowExpandedOperation extends Operation<OperationTypes.TABLE_SET_ROW_EXPANDED> {
+  public type = OperationTypes.TABLE_SET_ROW_EXPANDED as const
+
   @Required()
   public options: TableSetRowExpandedOperationOptions = new TableSetRowExpandedOperationOptions()
 }

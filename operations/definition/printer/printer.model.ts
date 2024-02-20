@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.PRINTER)
 export class PrinterOperation extends Operation<OperationTypes.PRINTER> {
+  public type = OperationTypes.PRINTER as const
+
   @Required()
   public options: PrinterOperationOptions = new PrinterOperationOptions()
 }

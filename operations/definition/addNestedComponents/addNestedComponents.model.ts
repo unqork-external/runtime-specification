@@ -6,6 +6,7 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.ADD_NESTED_COMPONENTS)
 export class AddNestedComponentsOperation extends Operation<OperationTypes.ADD_NESTED_COMPONENTS> {
+  public type = OperationTypes.ADD_NESTED_COMPONENTS as const
   @Required()
-  public options: AddNestedComponentsOperationOptions = new AddNestedComponentsOperationOptions()
+  public options = new AddNestedComponentsOperationOptions()
 }

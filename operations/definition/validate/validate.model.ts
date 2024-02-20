@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.VALIDATE)
 export class ValidateOperation extends Operation<OperationTypes.VALIDATE> {
+  public type = OperationTypes.VALIDATE as const
+
   @Required()
   public options: ValidateOptions = new ValidateOptions()
 }

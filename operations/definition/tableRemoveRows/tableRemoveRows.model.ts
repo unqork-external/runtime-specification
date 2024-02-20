@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.TABLE_REMOVE_ROWS)
 export class TableRemoveRowsOperation extends Operation<OperationTypes.TABLE_REMOVE_ROWS> {
+  public type = OperationTypes.TABLE_REMOVE_ROWS as const
+
   @Required()
   public options: TableRemoveRowsOperationOptions = new TableRemoveRowsOperationOptions()
 }

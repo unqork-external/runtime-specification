@@ -1,9 +1,8 @@
 import { CollectionOf, Default, Description, Example, Required } from '@tsed/schema'
 
 import { InputRef } from '../../../inputs/inputRef'
-import { BaseOperationOptions } from '../../interface/operations.interface'
 
-export class ParseFormulaOptions extends BaseOperationOptions {
+export class ParseFormulaOptions {
   @Required()
   @Description(
     `The target must to be a the string reference of the input that will receive the result of the formula operation over the array of reference inputs provided`,

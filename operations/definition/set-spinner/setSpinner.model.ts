@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.SET_SPINNER)
 export class SetSpinnerOperation extends Operation<OperationTypes.SET_SPINNER> {
+  public type = OperationTypes.SET_SPINNER as const
+
   @Required()
   public options: SetSpinnerOptions = new SetSpinnerOptions()
 }

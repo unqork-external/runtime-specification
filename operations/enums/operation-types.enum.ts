@@ -132,13 +132,6 @@ export enum OperationTypes {
   SET_VALIDATION_RULE = 'SET_VALIDATION_RULE',
 
   /**
-   * Set a validation error message
-   *
-   * @type {OperationTypes.MESSAGE}
-   */
-  MESSAGE = 'MESSAGE',
-
-  /**
    * The Set Prop operation can be used to set a specific component prop to value
    * This is useful if two Operations are targeting the same property
    * ex. VISIBLE & HIDDEN both update the hidden property

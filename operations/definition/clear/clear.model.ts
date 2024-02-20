@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.CLEAR)
 export class ClearOperation extends Operation<OperationTypes.CLEAR> {
+  public type = OperationTypes.CLEAR as const
+
   @Required()
   public options: ClearOptions = new ClearOptions()
 }

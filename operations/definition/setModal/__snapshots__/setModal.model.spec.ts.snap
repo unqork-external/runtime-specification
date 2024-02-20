@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`setModal should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "SetModalOptions": {
+      "properties": {
+        "modalAction": {
+          "description": "modalAction refers to the event that the modal should execute.",
+          "examples": [
+            "MODAL_CLOSE_KEY",
+            "MODAL_OPEN_KEY",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+        "targetEventKey": {
+          "type": "string",
+        },
+        "targetKey": {
+          "description": "The key or path to the container we intend to target for an operation",
+          "type": "string",
+        },
+      },
+      "required": [
+        "modalAction",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/SetModalOptions",
+    },
+    "type": {
+      "const": "SET_MODAL",
+      "examples": [
+        "SET_MODAL",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

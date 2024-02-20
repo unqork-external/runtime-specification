@@ -12,42 +12,7 @@ describe('Submit Model', () => {
   })
 
   it('should match this JSON Schema', () => {
-    expect(schema).toStrictEqual({
-      type: 'object',
-      properties: {
-        type: {
-          type: 'string',
-          const: 'SUBMIT',
-          examples: ['SUBMIT'],
-        },
-        options: {
-          $ref: '#/definitions/SubmitOptions',
-        },
-        name: {
-          description: 'Name of the operation',
-          type: 'string',
-        },
-      },
-      required: ['options'],
-      definitions: {
-        SubmitOptions: {
-          type: 'object',
-          properties: {
-            targetEntityKey: {
-              type: 'string',
-              examples: ['submissionData'],
-              description: 'Key of a target entity',
-              minLength: 1,
-            },
-            targetKey: {
-              description: 'The key or path to the container we intend to target for an operation',
-              type: 'string',
-            },
-          },
-          required: ['targetEntityKey'],
-        },
-      },
-    })
+    expect(schema).toMatchSnapshot()
   })
 
   it('should validate submit operation with all required keys', () => {

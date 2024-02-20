@@ -6,6 +6,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.TABLE_SET_GLOBAL_FILTER)
 export class TableSetGlobalFilterOperation extends Operation<OperationTypes.TABLE_SET_GLOBAL_FILTER> {
+  public type = OperationTypes.TABLE_SET_GLOBAL_FILTER as const
+
   @Required()
   public options: TableSetGlobalFilterOperationOptions = new TableSetGlobalFilterOperationOptions()
 }

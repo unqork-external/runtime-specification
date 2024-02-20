@@ -1,7 +1,6 @@
 import { Any, Default, Description, Example, Property, Required } from '@tsed/schema'
 
 import { trimAll } from '../../../../utilities'
-import { BaseOperationOptions } from '../../interface'
 
 @Description(
   trimAll(`
@@ -10,7 +9,7 @@ import { BaseOperationOptions } from '../../interface'
   then the Operation will do nothing and exit.
 `),
 )
-export class SetPropertyOptions extends BaseOperationOptions {
+export class SetPropertyOptions {
   @Required()
   @Property(String)
   @Example('firstNameTextField', 'grid.row(0).col(0)')
