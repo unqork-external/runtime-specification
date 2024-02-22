@@ -12,4 +12,8 @@ export class CanvasRepresentationControls {
     type: highlightType
     isHighlighted: boolean
   }
+
+  @Required()
+  @Default('')
+  iconClass?: string
 }
