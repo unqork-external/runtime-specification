@@ -1,5 +1,6 @@
 import { CollectionOf, Default, Description, DiscriminatorValue, Enum, Property, Required } from '@tsed/schema'
 
+import { ColumnState } from './columns/columnState'
 import { ColumnPinningState } from './columns/pinning/columnPinningState'
 import { type ColumnVisibilityState } from './columns/visibility/columnVisibilityState'
 import { ColumnFilter } from './filters/columnFilter'
@@ -41,6 +42,9 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
 
   @Property()
   ignoreValueUpdate: string
+
+  @Property()
+  columnState: ColumnState = new ColumnState()
 
   @Property()
   @Default(TableViewTypeEnum.SPREADSHEET)
