@@ -48,7 +48,7 @@ describe('Operation Model: TableAddRow Tests', () => {
                   3 - if the table has more than 3 elements, it adds a row at the position #3
             `),
               ],
-              type: 'object',
+              type: ['string', 'number'],
             },
             targetKey: {
               description: 'The key for the component we want to add a row',

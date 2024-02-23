@@ -1,4 +1,4 @@
-import { Description, Example } from '@tsed/schema'
+import { Description, Example, Any } from '@tsed/schema'
 
 import { trimAll } from '../../../../utilities'
 
@@ -23,6 +23,7 @@ export class TableAddRowOperationOptions {
       3 - if the table has more than 3 elements, it adds a row at the position #3
     `),
   )
+  @Any('string', 'number')
   targetIndex?: string | number
 
   @Description(

@@ -1,4 +1,4 @@
-import { Description, Default } from '@tsed/schema'
+import { CollectionOf, Description, Default } from '@tsed/schema'
 
 export class RemoveNestedComponentsOperationOptions {
   @Description('Key of the component for which we want to remove the nested component')
@@ -9,6 +9,7 @@ export class RemoveNestedComponentsOperationOptions {
 
   @Default([])
   @Description('Ids of the nestable components to  be removed.')
+  @CollectionOf(String)
   nestablesToRemove?: string[] = []
 
   @Default(false)
