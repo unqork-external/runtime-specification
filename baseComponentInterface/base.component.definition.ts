@@ -1,7 +1,8 @@
-import { Any, CollectionOf, Default, Description, DiscriminatorKey, Example, Property, Required } from '@tsed/schema'
+import { Any, CollectionOf, Default, Description, DiscriminatorKey, Property, Required } from '@tsed/schema'
 
 import { trimAll } from '../../utilities'
-import { ComponentEventHandlers, Watcher } from '../events'
+import { ComponentEventHandlers } from '../events/component.eventHandlers'
+import { Watcher } from '../events/watchers/watcher-types'
 import { InputRef } from '../inputs/inputRef'
 import { RootObject } from '../rootObject'
 import { StylingModel } from '../styling'

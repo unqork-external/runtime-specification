@@ -15,6 +15,8 @@ export class Operation<OpType extends OperationTypes | string = string> {
   name?: string
   @DiscriminatorKey()
   type: OpType
-  options: any
+  options: OperationOptions | any
   notifyImmediately?: boolean
 }
+
+export interface OperationOptions {}

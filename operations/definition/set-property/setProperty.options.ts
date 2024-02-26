@@ -19,7 +19,7 @@ export class SetPropertyOptions {
     Can work on an array of targetKeys as well. 
   `),
   )
-  declare targetKey: string | string[] | any // to not cause type errors which make me change lots of stuff.
+  targetKey: string | string[] | any // to not cause type errors which make me change lots of stuff.
 
   @Required()
   @Example('value', 'validation.latest')
