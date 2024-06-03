@@ -20,6 +20,10 @@ describe('setValidation', () => {
         type: { type: 'string', const: 'SET_VALIDATION_RULE', examples: ['SET_VALIDATION_RULE'] },
         name: { type: 'string', description: 'Name of the operation' },
         options: { $ref: '#/definitions/SetValidationRuleOptions' },
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
       },
       required: ['options'],
       definitions: {

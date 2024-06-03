@@ -1,0 +1,567 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NumberStepper Contract Tests should ensure the contract is clear 1`] = `
+[
+  "key",
+  "type",
+]
+`;
+
+exports[`NumberStepper Contract Tests should ensure the contract is clear 2`] = `
+{
+  "defaultValue": {
+    "description": "The default value for the Number Stepper.",
+    "type": "number",
+  },
+  "display": {
+    "$ref": "#/definitions/Display",
+  },
+  "executable": {
+    "default": true,
+    "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
+    "type": "boolean",
+  },
+  "field": {
+    "$ref": "#/definitions/NumberFieldSettings",
+  },
+  "format": {
+    "$ref": "#/definitions/NumberFormat",
+  },
+  "inputs": {
+    "items": {
+      "$ref": "#/definitions/InputRef",
+    },
+    "type": "array",
+  },
+  "key": {
+    "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
+    "examples": [
+      "I am the key",
+      "bestKeyEver",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "options": {
+    "$ref": "#/definitions/NumberStepperOptions",
+  },
+  "package": {
+    "$ref": "#/definitions/PackageModel",
+  },
+  "signals": {
+    "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
+    "examples": [
+      {
+        "args": {
+          "inputs": {
+            "propertyPath": "value",
+            "required": true,
+            "targetKey": "firstName",
+          },
+        },
+        "id": "firstNameWatcher",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onWatch",
+      },
+      {
+        "id": "textfieldOnBlur",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "textfield received blur event from DOM",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onBlur",
+      },
+      "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+    ],
+    "type": "object",
+  },
+  "styling": {
+    "$ref": "#/definitions/NumberStepperStyling",
+  },
+  "type": {
+    "const": "numberStepper",
+    "description": "Name of the type of component.",
+    "examples": [
+      "numberStepper",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "validation": {
+    "$ref": "#/definitions/Validation",
+  },
+  "value": {
+    "description": "Value of the Number Stepper component. It will be undefined if not set.",
+    "type": "number",
+  },
+}
+`;
+
+exports[`NumberStepper Contract Tests should ensure the contract is clear 3`] = `
+{
+  "Display": {
+    "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Read Only View' corresponds to the component being rendered with an input element or as text.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "Setting it to \`true\` hides the component from the view, while \`false\` shows it. Regardless of this setting, the component is always visible in the Module Editor. A hidden component can still receive information from other components.",
+        "type": "boolean",
+      },
+      "interactive": {
+        "default": true,
+        "description": "When \`false\`, it is not possible to interact with or edit the input field. Its appearance is modified (grayed-out by default) to show its state, the HTML 'disabled' attribute is added to the field, and when hovering over it, the cursor also changes to alert of the disabled status. However, the component can still receive information from other components when it's not interactive.",
+        "type": "boolean",
+      },
+      "readOnlyView": {
+        "default": false,
+        "description": "Defines how the component will be displayed. When \`false\`, the component is displayed as an input field. When \`true\`, the component will not accept any input from the user, and its value will be rendered inline as text and not as an input component. If no value is present, the word 'None' is rendered. If a prefix or suffix is set for the component, they also appear as inline text.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "InputHelperText": {
+    "description": "Details pertaining to the helper text element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the helper text of the component.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed underneath the input field. Unlike tooltips, a helper text stays visible under the input field and displays on a single line.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputLabel": {
+    "description": "Details pertaining to the label element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the label of the component. Note the label will still be displayed on the Module Editor.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed above the input field.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputRef": {
+    "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+    "properties": {
+      "alias": {
+        "type": "string",
+      },
+      "propertyPath": {
+        "type": "string",
+      },
+      "required": {
+        "type": "boolean",
+      },
+      "silent": {
+        "type": "boolean",
+      },
+      "targetKey": {
+        "minLength": 1,
+        "type": "string",
+      },
+      "type": {
+        "type": "string",
+      },
+    },
+    "required": [
+      "targetKey",
+    ],
+    "type": "object",
+  },
+  "Label": {
+    "properties": {
+      "text": {
+        "description": "Text displayed as the label for the field",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "NumberFieldSettings": {
+    "description": "Details to be applied to the input element within a component.",
+    "properties": {
+      "currencyCode": {
+        "default": "USD",
+        "description": "3-Letter ISO 4217 code for describing the currency type associated with the component. It has no effect when formatAsCurrency is \`false\`",
+        "examples": [
+          "USD",
+          "EUR",
+          "TRY",
+        ],
+        "type": "string",
+      },
+      "customClass": {
+        "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
+        "type": "string",
+      },
+      "decimalCharacter": {
+        "default": "locale",
+        "description": "Sets the character that will appear to denote decimals. By default it uses the current locale to define what separator it needs to use. Note the decimal character cannot be same as the locale's thousand separator when the showThousandsSeparator flag is \`true\`, in such cases, the decimal separator will fallback to locale.",
+        "enum": [
+          "locale",
+          ",",
+          ".",
+        ],
+        "examples": [
+          "locale -> 1000.00 (for en-US) 1000,00 (for pt-BR)",
+          "comma (,) -> 1000,00",
+          "period (.) -> 1000.00",
+        ],
+        "type": "string",
+      },
+      "decimalLimit": {
+        "default": 16,
+        "description": "Sets the number of decimal places the user can input in the field. Trying to initialize the component passing a value with more decimal places than this limit will trigger a validation error. If the default value is set and exceeds this decimal limit, the number will be visually trimmed (not rounded) but will be initially present in the submission data with all decimal places. Interacting with the field causes the submission data to be updated with the trimmed value.",
+        "examples": [
+          "2 -> 20.50",
+          "6 -> 20.123456",
+        ],
+        "type": "number",
+      },
+      "displayAsInteger": {
+        "default": false,
+        "description": "When \`true\`, it will always display the number as an integer. Calculations can still include decimals. If this flag is \`true\` and the default value includes decimals, the number with decimal places will be the initial value in the submission data, but any interaction with the field will cause that value to be converted to integer.",
+        "type": "boolean",
+      },
+      "helperText": {
+        "$ref": "#/definitions/InputHelperText",
+      },
+      "label": {
+        "$ref": "#/definitions/Label",
+      },
+      "placeholder": {
+        "description": "An example or short explanation of the requested input. This appears inside of the input by default and disappears when the user enters a value.",
+        "examples": [
+          "First name - Expects the user to type their first name",
+          "Enter your Social Security Number - Expects user's SSN",
+          "dd/MM/YYYY - To show an expected date format (if you need a more robust component, try Date Input",
+        ],
+        "type": "string",
+      },
+      "prefix": {
+        "description": "A symbol or text to display before the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          "$",
+          "@",
+        ],
+        "type": "string",
+      },
+      "suffix": {
+        "description": "A symbol or text to display after the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          ".com",
+        ],
+        "type": "string",
+      },
+      "tooltipDescription": {
+        "description": "Tooltips are floating texts that appear when the cursor is positioned over an icon. They can span across multiple lines and provide hints about the requested data. Setting this property will make a question mark icon to be displayed on the right side of the component's label, and once the user hovers over it, the tooltip text will appear. Moving the cursor outside the icon's area hides the tooltip. Hiding the component's label automatically hides the tooltip.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "NumberFormat": {
+    "description": "Details pertaining to how the input value formatting.",
+    "properties": {
+      "disableAutoComplete": {
+        "default": false,
+        "description": "Prevents browsers from autofilling this field with previously entered values.",
+        "type": "boolean",
+      },
+      "formatAsCurrency": {
+        "default": false,
+        "description": "When \`true\`, formats the number as a currency. Currency symbol position (prefix and/or suffix) and thousand/decimal separators (regardless of the showThousandsSeparator flag) are automatically set. Toggling this option \`true\` overrides any prefix/suffix defined on the component, in other words, even if the currency symbol only appears as a prefix, any defined suffix will not show. Note a currency code is different of a currency symbol (e.g. USD -> $) and this mapping is also done automatically. This currency formatting is purely visual and will not be part of the submission data.",
+        "examples": [
+          "1000 -> formatAsCurrency \`true\` + currencyCode (USD) -> $1,000",
+        ],
+        "type": "boolean",
+      },
+      "inputMask": {
+        "description": "The mask pattern to be applied to the input field. An input mask helps the user with the input by ensuring a predefined format. This can be useful for dates, numerics, and phone numbers. Default masking definitions are: - 9 : numeric - a : alphabetical - * : alphanumeric Note input masks act in a layer above the regular validations, meaning, for instance, a mask can limit the field length to a value shorter than max length",
+        "examples": [
+          [
+            "(999) 999-9999 - Simple phone number (if you need a more robust component, try Phone Number)",
+            "999-99-9999 - Social Security Number",
+            "99999 - Standard US zip code",
+            ".com.aa - Internet domain with variable two letters at the end",
+          ],
+        ],
+        "type": "string",
+      },
+      "showThousandsSeparator": {
+        "default": false,
+        "description": "When \`true\`, adds current locale's thousands separator to the number. Note this setting is purely visual and does not affect how the number is stored in the submission data.",
+        "examples": [
+          "10 -> 10",
+          "1000 -> 1,000",
+          "1000000 -> 1,000,000",
+        ],
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "NumberStepperOptions": {
+    "description": "Options to customize the Number Stepper component. Options include: - hideMinMaxLabels: Hides the min/max labels. It needs to be used with (maxNumber) and/or (minNumber) properties. - stepSize: Describes the size of the "step" to increment/decrement the component value. If no input, defaults to 2.",
+    "properties": {
+      "hideMinMaxLabels": {
+        "default": false,
+        "description": "Hides the min/max labels. It needs to be used with (maxNumber) and/or (minNumber) properties. If a label is not set, this flag has no effect.",
+        "type": "boolean",
+      },
+      "maxNumber": {
+        "description": "Max value (inclusive) the component will allow. For (Range) and (Stepper) types, there is no way to get past this value, it will be used as the max boundary of the slider and the top limit when scrolling using the stepper buttons. If adding (stepSize) makes the current value exceed (maxNumber) - for instance, current value is 5, step size is 2 and max number is 6 - (maxNumber) will never be reached. For (Field) types, values greater than (maxNumber) still can be typed, but a validation error will be triggered.",
+        "type": "number",
+      },
+      "minNumber": {
+        "description": "Min value (inclusive) the component will allow. For (Range) and (Stepper) types, there is no way to get below this value, it will be used as the min boundary of the slider and the bottom limit when scrolling using the stepper buttons. If subtracting (stepSize) makes the current value be less than (minNumber) - for instance, current value is 5, step size is 2 and min number is 4 - (minNumber) will never be reached. For (Field) types, values lower than (minNumber) still can be typed, but a validation error will be triggered.",
+        "type": "number",
+      },
+      "stepSize": {
+        "default": 2,
+        "description": "Describes the size of the "step" to increment/decrement the component value. If no input, defaults to two. Note using decimal step sizes with high precision (e.g.: 2.000005) can create rounding issues.",
+        "type": "number",
+      },
+    },
+    "required": [
+      "hideMinMaxLabels",
+      "stepSize",
+    ],
+    "type": "object",
+  },
+  "NumberStepperStyleTargets": {
+    "properties": {
+      "displayValue": {
+        "description": "Adds styles to Number Stepper's display value.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "errors": {
+        "description": "Adds styles to Number Stepper's error message.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "helperText": {
+        "description": "Adds styles to Number Stepper's helper text.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "label": {
+        "description": "Adds styles to Number Stepper's label.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "maxLabel": {
+        "description": "Adds styles to Number Stepper's maximum value label.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "minLabel": {
+        "description": "Adds styles to Number Stepper's minimum value label.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "minusButton": {
+        "description": "Adds styles to Number Stepper's minus button.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "plusButton": {
+        "description": "Adds styles to Number Stepper's plus button.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "prefix": {
+        "description": "Adds styles to Number Stepper's prefix (the prefix appears on the min value, max value, and display value).",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "readOnly": {
+        "description": "Adds styles to Number Stepper's Read only component.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "root": {
+        "description": "Adds styles to Number Stepper's ComponentWrapper.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "suffix": {
+        "description": "Adds styles to Number Stepper's suffix (the suffix appears on the min value, max value, and display value).",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "tooltipButton": {
+        "description": "Adds styles to Number Stepper's tooltip button.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "tooltipPopover": {
+        "description": "Adds styles to Number Stepper's tooltip popover text.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+    },
+    "type": "object",
+  },
+  "NumberStepperStyling": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "$ref": "#/definitions/NumberStepperStyleTargets",
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "PackageModel": {
+    "description": "The PackageModel describes how the Vega Runtime will resolve dependencies",
+    "properties": {
+      "type": {
+        "description": "Type of package",
+        "type": "string",
+      },
+      "url": {
+        "description": "URL of package",
+        "type": "string",
+      },
+      "version": {
+        "description": "Version of package",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "StylingModel": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "Validation": {
+    "description": "Holds the validation rules and the most current validation results for the component",
+    "properties": {
+      "isDirty": {
+        "description": "Whether or not field has had user interaction. It will be set to true on user interaction.",
+        "type": "boolean",
+      },
+      "result": {
+        "$ref": "#/definitions/ValidationResult",
+      },
+      "rules": {
+        "description": "The set of rules to restrict or define the accepted data for the current component. These are the rules to run for validation of the data input.",
+        "examples": [
+          "You can use it to define the max length of characters in an input field with a custom error message. rules: { required: { type: ValidationRuleTypes.MAX_LENGTH, validation: { maxLength: 5, }, errorMessage: 'Max length is 5', }, },",
+        ],
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "ValidationError": {
+    "properties": {
+      "message": {
+        "description": "The error message",
+        "type": "string",
+      },
+      "type": {
+        "description": "Type of the error",
+        "enum": [
+          "required",
+          "maxLength",
+          "minLength",
+          "arrayMinLength",
+          "arrayMaxLength",
+          "pattern",
+          "min",
+          "max",
+          "mask",
+          "number",
+          "dateinput",
+          "isBeforeDate",
+          "isAfterDate",
+          "customError",
+          "isEmail",
+        ],
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "type",
+    ],
+    "type": "object",
+  },
+  "ValidationResult": {
+    "properties": {
+      "errors": {
+        "items": {
+          "$ref": "#/definitions/ValidationError",
+        },
+        "type": "array",
+      },
+      "isValid": {
+        "type": [
+          "null",
+          "boolean",
+        ],
+      },
+    },
+    "type": "object",
+  },
+}
+`;

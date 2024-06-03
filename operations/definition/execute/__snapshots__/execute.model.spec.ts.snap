@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Execute Operation Model Test should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "ExecuteOptions": {
+      "properties": {
+        "blockExecution": {
+          "default": true,
+          "description": "Tells the runtime to not block execution. Helpful if you know that the operations are not dependent one each other",
+          "type": "boolean",
+        },
+        "shouldExecute": {
+          "default": true,
+          "description": "Tells the runtime to execute the operation if is true",
+          "type": "boolean",
+        },
+        "signalTarget": {
+          "default": "root",
+          "description": "The location to look for operations to execute",
+          "examples": [
+            "root",
+            "myCustomComponentTarget",
+          ],
+          "type": "string",
+        },
+        "targetKey": {
+          "description": "Represents the fully qualified key, or the relative path to an object within Vega",
+          "examples": [
+            "textfield",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "The Execute Operation allows users to invoke operations defined on the "EXECUTE" key. This is a way to call a concept of a function on a different component.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ExecuteOptions",
+    },
+    "type": {
+      "const": "EXECUTE",
+      "examples": [
+        "EXECUTE",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

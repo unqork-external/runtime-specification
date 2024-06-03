@@ -39,6 +39,10 @@ exports[`Set Styling Operation Model should match this JSON Schema 1`] = `
   },
   "description": "This operation should be used to set an entire styling object on a component. This operation will override any pre-existing styling configuration in the component definition.",
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

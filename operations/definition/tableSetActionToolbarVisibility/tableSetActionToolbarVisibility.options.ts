@@ -1,12 +1,17 @@
-import { Property } from '@tsed/schema'
+import { Any, Description, Optional, Required } from '@tsed/schema'
 
 export class TableSetActionToolbarVisibilityOperationOptions {
-  @Property()
+  @Required()
+  @Description('Key of the table component to set action toolbar visibility')
   targetKey: string
 
-  @Property()
+  @Optional()
+  @Description('Set the visibility of the top toolbar in the Table component.')
+  @Any(Boolean, String)
   enableTopToolbar: boolean | string
 
-  @Property()
+  @Optional()
+  @Description('Set the visibility of the bottom toolbar in the Table component.')
+  @Any(Boolean, String)
   enableBottomToolbar: boolean | string
 }

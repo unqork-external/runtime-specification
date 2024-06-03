@@ -1,33 +1,50 @@
-import { Const, Default, Description, DiscriminatorValue, Property } from '@tsed/schema'
+import { Const, DiscriminatorValue, Optional, Required } from '@tsed/schema'
 
+import { TimerStyling } from './styling/timer.styling'
+import { TimerTargets } from './targets/timerTargets.enum'
 import { TimerFormat } from './timerFormat'
 import { TimerOptions } from './timerOptions'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
-import { InputField } from '../../componentComposition/input/component.input'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import { InputField } from '../../component-composition/input/component.input'
+import type { SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
+@TrimmedDescription(`
+  Timer component. Adding time-based rules and logic to user's application. 
+  This component can be used to ensure an end-user spends enough time on a page.
+  it also limits the amount of time an end-user can stay on a page, 
+  automatically reloading a page when the timer expires and detecting if an end-user becomes inactive.
+`)
+@ViewTargets(TimerTargets)
 @DiscriminatorValue('timer')
 export class TimerComponentDefinition extends BaseComponentDefinition {
   @Const('timer')
-  @Description('Type of the component.')
+  @Required()
   type: 'timer' = 'timer' as const
 
-  @Property(Display)
-  @Description('Display settings of the timer.')
+  @Optional()
   display: Display = new Display()
 
-  @Property(InputField)
-  @Description('Field settings of the timer.')
+  @Optional()
   field: InputField = new InputField()
 
-  @Property(TimerOptions)
-  @Description('Field settings of the timer.')
+  @Optional()
   options: TimerOptions = new TimerOptions()
 
-  @Property(TimerFormat)
-  @Description('Format options of the textfield.')
+  @Optional()
   format: TimerFormat = new TimerFormat()
 
-  @Description('Time in seconds remaining after it starts counting.')
+  @Optional()
   declare value?: number
+
+  @Optional()
+  @Examples(targetedStylingExample)
+  declare styling?: TimerStyling
+
+  @Optional()
+  declare signals: SignalTargets<TimerTargets>
 }

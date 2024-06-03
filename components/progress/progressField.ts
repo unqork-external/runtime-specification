@@ -1,17 +1,15 @@
 import { Optional, Default, Description, Property } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
-import { Field } from '../../componentComposition/field/component.field.label'
-import { InputLabel } from '../../componentComposition/input/component.input'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { Field } from '../../component-composition/field/component.field.label'
+import { InputLabel } from '../../component-composition/input/component.input'
 
 export class ProgressField extends Field {
   @Property(InputLabel)
-  @Description(
-    trimAll(`
-      Appears above the progress component to inform what information is being represented. 
-      Labels also help to identify the component on the Module Editor.
-    `),
-  )
+  @TrimmedDescription(`
+    Appears above the progress component to inform what information is being represented. 
+    Labels also help to identify the component on the Module Editor.
+  `)
   label: InputLabel = new InputLabel()
 
   @Default(0)
@@ -42,15 +40,13 @@ export class ProgressField extends Field {
   @Description('Alternative progress text used by screen reader.')
   screenReader?: string
 
-  @Description(
-    trimAll(`
-      Tooltips are floating texts that appear when the cursor is positioned over an icon.
-      They can span across multiple lines and provide hints about the requested data.
-      Setting this property will make a question mark icon to be displayed 
-      on the right side of the component's label, and once the user hovers over it, 
-      the tooltip text will appear. Moving the cursor outside the icon's area hides the tooltip.
-      Hiding the component's label automatically hides the tooltip.
-    `),
-  )
+  @TrimmedDescription(`
+    Tooltips are floating texts that appear when the cursor is positioned over an icon.
+    They can span across multiple lines and provide hints about the requested data.
+    Setting this property will make a question mark icon to be displayed 
+    on the right side of the component's label, and once the user hovers over it, 
+    the tooltip text will appear. Moving the cursor outside the icon's area hides the tooltip.
+    Hiding the component's label automatically hides the tooltip.
+  `)
   tooltipDescription?: string
 }

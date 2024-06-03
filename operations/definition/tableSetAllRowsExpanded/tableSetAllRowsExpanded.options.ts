@@ -1,9 +1,10 @@
-import { Description } from '@tsed/schema'
+import { Any, Description } from '@tsed/schema'
 
 export class TableSetAllRowsExpandedOperationOptions {
   @Description('A key of the table we are targeting for row expansion')
   targetKey: string
 
+  @Any('boolean', 'string')
   @Description('A boolean for setting if rows are expanded')
   areRowsExpanded: boolean | string
 

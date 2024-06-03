@@ -1,9 +1,9 @@
 import { CollectionOf, Default, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display, Field } from '../../componentComposition'
-import { RightAdornmentNestable } from '../../componentComposition/adornments/component.adornments'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display, Field } from '../../component-composition'
+import { RightAdornmentNestable } from '../../component-composition/adornments/component.adornments'
 import { Nestable, NestableType } from '../../nestables'
 
 class MuiMenuItemAdornments {
@@ -42,12 +42,10 @@ export class MuiMenuItemComponentDefinition extends BaseComponentDefinition {
   @Description('Fully qualified child keys for icon nestables. Maintained by nestable api.')
   icon: string[] = []
 
-  @Description(
-    trimAll(`
-      Fully qualified child keys for adornments in the right slot.
-      Maintained by nestable api.
-    `),
-  )
+  @TrimmedDescription(`
+    Fully qualified child keys for adornments in the right slot.
+    Maintained by nestable api.
+  `)
   right?: string[] = []
 
   @Description('Nestable definitions for mui menu item component')

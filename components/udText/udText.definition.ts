@@ -1,8 +1,9 @@
-import { Default, Description, DiscriminatorValue, Enum, Property, Required } from '@tsed/schema'
+import { Default, Description, DiscriminatorValue, Enum, Optional, Property, Required } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import type { SignalTargets } from '../../signals'
+import { UdLinkTargets } from '../udLink/udLinkTargets.enum'
 import { UdViewBasicField } from '../udView'
 
 export enum UdTextAppearance {
@@ -24,18 +25,10 @@ export class UdTextComponentDefinition extends BaseComponentDefinition {
 
   @Enum(UdTextAppearance)
   @Default(UdTextAppearance.INLINE)
-  @Description(
-    trimAll(`
-    Appearance represents the intended visual style and role for the text block.
-  `),
-  )
+  @Description('Appearance represents the intended visual style and role for the text block.')
   appearance?: UdTextAppearance
 
-  @Description(
-    trimAll(`
-    Content represents the content that should be rendered as text.
-  `),
-  )
+  @Description('Content represents the content that should be rendered as text.')
   content?: string
 
   @Property(Display)
@@ -45,4 +38,7 @@ export class UdTextComponentDefinition extends BaseComponentDefinition {
   @Property(UdViewBasicField)
   @Description('Field settings')
   field: UdViewBasicField = new UdViewBasicField()
+
+  @Optional()
+  declare signals?: SignalTargets<UdLinkTargets>
 }

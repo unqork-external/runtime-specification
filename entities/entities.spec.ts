@@ -4,7 +4,7 @@ import { generateSchemaAndValidate } from '../../utilities'
 describe('Entities Spec', () => {
   let validate, schema
   beforeAll(() => {
-    const response = generateSchemaAndValidate(Entity, { debug: true })
+    const response = generateSchemaAndValidate(Entity)
     validate = response.validate
     schema = response.schema
   })
@@ -58,7 +58,7 @@ describe('Entities Spec', () => {
           type: 'string',
         },
         moduleId: {
-          description: 'The module id the entitiy is associated with.',
+          description: 'The module id the entity is associated with.',
           examples: ['12345'],
           minLength: 1,
           type: 'string',

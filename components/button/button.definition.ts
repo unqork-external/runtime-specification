@@ -1,76 +1,93 @@
-import { Const, Default, Description, DiscriminatorValue, Property } from '@tsed/schema'
+import { Const, Default, Description, DiscriminatorValue, Example, Optional } from '@tsed/schema'
 
-import { DomEvents } from './buttonDomEvents'
-import { ButtonField } from './buttonField'
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface'
+import { ButtonDomEvents } from './button.events'
+import { ButtonField } from './button.field'
+import { ButtonOptions } from './button.options'
+import { ButtonStyling } from './button.styling'
+import { ButtonTargets } from './buttonTargets.enum'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface'
 import {
   StandardAdornmentsAsNestables,
   StandardAdornmentsProperties,
-} from '../../componentComposition/adornments/component.adornments'
-import { Display } from '../../componentComposition/display/component.display'
+} from '../../component-composition/adornments/component.adornments'
+import { Display } from '../../component-composition/display/component.display'
 import { Interactions } from '../../interactions/interactions'
 import { NestableDef } from '../../nestables'
+import type { SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
 @DiscriminatorValue('button')
+@ViewTargets(ButtonTargets)
 export class ButtonComponentDefinition extends BaseComponentDefinition {
   @Const('button')
-  @Description('Button component type.')
   type: 'button' = 'button' as const
 
-  @Property()
+  @TrimmedDescription(`
+    Boolean used to determine if the underlying view is simple and unstyled. 
+    For use in Vega Tables. This setting does not exist in Centauri.
+  `)
   @Default(false)
-  useSimpleView?: boolean = false
+  useSimpleView: boolean = false
 
-  @Property()
+  @Optional()
   display: Display = new Display()
 
+  @Description('If `true`, Button will be disabled if forms are invalid.')
+  @Optional()
   @Default(false)
-  @Description('If true, the button will be disabled if the forms are invalid.')
   disableOnInvalidForms: boolean = false
 
+  @Description('Control button disabled state when a submission is created.')
+  @Optional()
   @Default(false)
-  @Description('control button disabled state when a submission is created')
   preventDisableOnSubmitting: boolean = false
 
+  @Description('When `true`, Button becomes disabled after one click.')
+  @Optional()
   @Default(false)
-  @Description('control button disabled state when firing triggers/events')
   oneClickOnly: boolean = false
 
-  @Property(ButtonField)
-  @Description('Button field settings.')
+  @Optional()
   field: ButtonField = new ButtonField()
 
-  @Property(Interactions)
-  @Description('Button interactions.')
+  @Optional()
+  options: ButtonOptions = new ButtonOptions()
+
+  @Optional()
   interactions?: Interactions
 
-  @Description('The goto step path for workflow.')
+  @Optional()
+  @Description('The unique path of the workflow step; you must provide a step path for go-to navigation.')
+  @Example('stepone')
   stepPath?: string
 
-  @Property(DomEvents)
-  @Description('Dom event for creating watchers')
-  domEvents?: DomEvents
+  @Optional()
+  domEvents?: ButtonDomEvents
 
-  @Property(StandardAdornmentsProperties)
+  @Optional()
   adornments = new StandardAdornmentsProperties()
 
-  @Description(
-    trimAll(`
-      Fully qualified child keys for adornments in the left slot.
-      Maintained by nestable api.
-    `),
-  )
-  left?: string[] = []
+  @Description('Fully qualified child keys for adornments in the left slot. Maintained by nestable API.')
+  @Optional()
+  @Default([])
+  left: string[] = []
 
-  @Description(
-    trimAll(`
-      Fully qualified child keys for adornments in the right slot.
-      Maintained by nestable api.
-    `),
-  )
-  right?: string[] = []
+  @Optional()
+  declare signals?: SignalTargets<ButtonTargets>
 
-  @Description('Nestable definitions for adorned button component')
-  nestables?: NestableDef = new StandardAdornmentsAsNestables()
+  @Optional()
+  @Default([])
+  @TrimmedDescription(`
+    Fully qualified child keys for adornments in the right slot.
+    Maintained by nestable api.
+  `)
+  right: string[] = []
+
+  @Optional()
+  nestables: NestableDef = new StandardAdornmentsAsNestables()
+
+  @Example(targetedStylingExample)
+  declare styling?: ButtonStyling
 }

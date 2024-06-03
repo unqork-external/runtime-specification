@@ -1,8 +1,8 @@
 import { CollectionOf, Default, Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
 import { Nestable, NestableType } from '../../nestables'
 
 class ItemsNestable extends Nestable {
@@ -26,11 +26,11 @@ export class MuiMenuComponentDefinition extends BaseComponentDefinition {
   items: BaseComponentDefinition[] | undefined
 
   @Optional()
-  @Description(trimAll(`If \`open\` is true, the menu should be in its open state.`))
+  @TrimmedDescription(`If \`open\` is true, the menu should be in its open state.`)
   open: boolean
 
   @Optional()
-  @Description(trimAll(`\`anchorKey\` refers to where the Menu should appear on the screen.`))
+  @TrimmedDescription(`\`anchorKey\` refers to where the Menu should appear on the screen.`)
   anchorKey: string
 
   @Property(Display)

@@ -23,6 +23,7 @@ import { FocusOperation } from '../definition/focus'
 import { GoGoGadgetClipboardOperation } from '../definition/goGoGadgetClipboard'
 import { IfOperation } from '../definition/if'
 import { LoadModuleOperation } from '../definition/loadModule'
+import { MenuToggleAtOperation } from '../definition/menuToggleAt'
 import { NavigationOperation } from '../definition/navigation'
 import { OpenNewPageOperation } from '../definition/openNewPage'
 import { ParseFormulaOperation } from '../definition/parse-formula'
@@ -43,6 +44,7 @@ import { SubmitOperation } from '../definition/submit'
 import { TableAddColumnOperation } from '../definition/tableAddColumn'
 import { TableAddRowOperation } from '../definition/tableAddRow'
 import { TableClearOperation } from '../definition/tableClear'
+import { TableGoToFirstPageOperation } from '../definition/tableGoToFirstPage'
 import { TableGoToLastPageOperation } from '../definition/tableGoToLastPage'
 import { TableGoToNextPageOperation } from '../definition/tableGoToNextPage'
 import { TableGoToPageOperation } from '../definition/tableGoToPage'
@@ -66,9 +68,12 @@ import { TableSetRowPinningOperation } from '../definition/tableSetRowPinning'
 import { TableSetSelectedRowOperation } from '../definition/tableSetSelectedRow'
 import { TableSortByColumnOperation } from '../definition/tableSortByColumn'
 import { TableToggleGroupingOperation } from '../definition/tableToggleGrouping'
-import { TableToGoFirstPageOperation } from '../definition/tableToGoFirstPage'
 import { ToggleOperation } from '../definition/toggle'
 import { ToggleClassOnTargetOperation } from '../definition/toggleClassOnTarget'
+import { ToggleIteratorPropertyOperation } from '../definition/toggleIteratorProperty'
+import { TrayApplyGroupsOperation } from '../definition/trayApplyGroups'
+import { TrayFilterItemsOperation } from '../definition/trayFilterItems'
+import { TraySetDisabledByOperation } from '../definition/traySetDisabledBy'
 import { TryCatchOperation } from '../definition/tryCatch'
 import { ValidateOperation } from '../definition/validate'
 import { ValidationRuleOperation } from '../definition/validate-rules'
@@ -80,6 +85,10 @@ import { OperationTypes } from '../enums/operation-types.enum'
 export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
+  [OperationTypes.TRAY_SET_DISABLED_BY]: TraySetDisabledByOperation,
+  [OperationTypes.TRAY_FILTER_ITEMS]: TrayFilterItemsOperation,
+  [OperationTypes.TRAY_APPLY_GROUPS]: TrayApplyGroupsOperation,
+  [OperationTypes.TOGGLE_ITERATOR_PROPERTY]: ToggleIteratorPropertyOperation,
   [OperationTypes.CANVAS_APPLY_ALL_ITEM_STATE]: CanvasApplyAllItemStateOperation,
   [OperationTypes.CANVAS_APPLY_STRUCTURED_DATA]: CanvasApplyStructuredDataOperation,
   [OperationTypes.CANVAS_DELETE_ITEM]: CanvasDeleteItemOperation,
@@ -102,7 +111,7 @@ export const OperationTypeMap = {
   [OperationTypes.TABLE_REMOVE_COLUMN]: TableRemoveColumnOperation,
   [OperationTypes.TABLE_GO_TO_PAGE]: TableGoToPageOperation,
   [OperationTypes.TABLE_GO_TO_LAST_PAGE]: TableGoToLastPageOperation,
-  [OperationTypes.TABLE_GO_TO_FIRST_PAGE]: TableToGoFirstPageOperation,
+  [OperationTypes.TABLE_GO_TO_FIRST_PAGE]: TableGoToFirstPageOperation,
   [OperationTypes.TABLE_GO_TO_PREVIOUS_PAGE]: TableGoToPreviousPageOperation,
   [OperationTypes.TABLE_GO_TO_NEXT_PAGE]: TableGoToNextPageOperation,
   [OperationTypes.TABLE_SET_PAGE_SIZE]: TableSetPageSizeOperation,
@@ -155,4 +164,5 @@ export const OperationTypeMap = {
   [OperationTypes.VALIDATE]: ValidateOperation,
   [OperationTypes.VALIDATE_RULES]: ValidationRuleOperation,
   [OperationTypes.PARSE_FORMULA]: ParseFormulaOperation,
+  [OperationTypes.MENU_TOGGLE_AT]: MenuToggleAtOperation,
 } as const

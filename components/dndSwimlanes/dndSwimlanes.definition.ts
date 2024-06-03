@@ -1,97 +1,82 @@
-import { Default, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
-import { ReadonlyDeep } from 'type-fest'
+import { CollectionOf, Const, Default, Description, DiscriminatorValue, MapOf, Optional, Property } from '@tsed/schema'
 
-import {
-  DndCardData,
-  DndCardViewTypeKey,
-  DndComponentsKey,
-  DndDoubleUnderscore,
-  DndSwimlaneDef,
-  DndSwimlaneName,
-  type DndSwimlanesCardData,
-  DndSwimlanesDisplayCard,
-} from './dndSwimlaneDef'
-import { DndSwimlanesDisplay } from './dndSwimlanes.display'
-import { DndSwimlanesEvents } from './dndSwimlanes.events'
 import { DndSwimlanesField } from './dndSwimlanes.field'
+import { DndSwimlanesNestables } from './dndSwimlanes.nestables'
 import { DndSwimlanesOptions } from './dndSwimlanes.options'
 import { DndSwimlanesStyling } from './dndSwimlanes.styling'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Interactions } from '../../interactions/interactions'
-import { Nestable, NestableDef, NestableType } from '../../nestables'
+import { DndSwimlanesTargets } from './dndSwimlanes.targets.enum'
+import { DND_SWIMLANES_ITEM_ID, DndSwimlanesItem } from './item/dndSwimlanesItem.definition'
+import { DndSwimlanesLane } from './lane/dndSwimlanesLane.definition'
+import { DndSwimlanesLayouts } from './layouts/dndSwimlanesLayouts.definition'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface'
+import { Display } from '../../component-composition'
+import type { SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
-// Ex: { '__todo': ['abc-123', ...] }
-export type DndCardViewKeyToIdsMap = Record<DndCardViewTypeKey, string[]>
-
-// Ex: '__todoComponents'
-export type DndCardViewComponentsKey = `${DndDoubleUnderscore}${Lowercase<string>}${DndComponentsKey}`
-
-// Ex: { '__todoComponents': [...componentDefinitions...] }
-export type DndCardViewKeyToComponentsMap = Record<
-  DndCardViewComponentsKey,
-  readonly ReadonlyDeep<BaseComponentDefinition>[]
->
-
-// Ex: [{ 'To Do': '__todo' }]
-export type DndCardViewNameToKeyMap = Record<DndSwimlaneName, DndCardViewTypeKey>
-
-export type DndDisplayCardsMap = Record<DndCardViewTypeKey, DndSwimlanesDisplayCard[]>
 @DiscriminatorValue('dndSwimlanes')
+@ViewTargets(DndSwimlanesTargets)
 export class DndSwimlanesComponentDefinition extends BaseComponentDefinition {
-  @Required()
+  @Const('dndSwimlanes')
   type: 'dndSwimlanes' = 'dndSwimlanes' as const
 
-  @Property()
+  @Optional()
   field: DndSwimlanesField = new DndSwimlanesField()
 
-  @Property()
-  display: DndSwimlanesDisplay = new DndSwimlanesDisplay()
+  @Optional()
+  display: Display = new Display()
 
-  @Property()
+  @Optional()
   options: DndSwimlanesOptions = new DndSwimlanesOptions()
 
+  @Optional()
   @Default({})
-  @Description('The parsed, grouped JSON source data formatted into Swimlanes Data for the view.')
-  swimlanesCardData: DndSwimlanesCardData
+  @MapOf(DndSwimlanesItem)
+  @TrimmedDescription(`
+    The items that are inside the swimlanes. 
+    This can be used to add, remove, or update a swimlane item.
+    If the value prop is set, this will be automatically updated reflect the data in value.
+  `)
+  items: Record<DND_SWIMLANES_ITEM_ID, DndSwimlanesItem> = {}
 
-  @Description('The data to use for the Swimlane columns definitions.')
-  swimlaneDefs: DndSwimlaneDef[] = []
-
-  @Default({})
-  @Description('Standard nestable implementation.')
-  nestables: NestableDef = {}
-
+  @Optional()
   @Default([])
-  @Description('Nested child IDs for rendering.')
-  displayCards: Record<DndCardViewTypeKey, DndSwimlanesDisplayCard[]> = {}
+  @CollectionOf(DndSwimlanesLane)
+  @Description('The lanes which will contain the swimlanes items')
+  lanes: DndSwimlanesLane[] = []
 
-  @Description('Other Components can set this value to be the initial data for the Swimlanes.')
-  initialData: string | []
+  @Optional()
+  layouts: DndSwimlanesLayouts = new DndSwimlanesLayouts()
 
-  @Description('When initialData comes in, we parse and set that to cardData for future use.')
-  cardData: DndCardData[]
-
+  @Optional()
   @Default([])
-  @Description('The values that will be in the list.')
-  value: Pick<DndCardData, string>[][] = []
+  @CollectionOf(BaseComponentDefinition)
+  @Description('A collection of child components to be displayed when the lane is empty.')
+  placeholderComponents: BaseComponentDefinition[] = []
 
   @Property()
-  interactions: Interactions = new Interactions()
-
-  @Description('Event Handlers for Swimlanes.')
-  eventHandlers: DndSwimlanesEvents
-
-  @Description('Styling targets available for the Component.')
-  styling: DndSwimlanesStyling
-}
-
-export class CardsNestable extends Nestable {
-  @Property()
-  propertyName: string = 'rows'
+  nestables: DndSwimlanesNestables = new DndSwimlanesNestables()
 
   @Property()
-  type: NestableType = NestableType.MATRIX
+  rows: string[] = []
 
   @Property()
-  children: string = 'components'
+  placeholder: string[] = []
+
+  @Optional()
+  @Default([])
+  @TrimmedDescription(`
+    A flat array of data attributes for each item in the swimlanes. 
+    These are organized from top to bottom and from left to right.
+  `)
+  value: Record<string, unknown>[] = []
+
+  @Optional()
+  declare signals?: SignalTargets<DndSwimlanesTargets>
+
+  @Optional()
+  @Examples(targetedStylingExample)
+  declare styling?: DndSwimlanesStyling
 }

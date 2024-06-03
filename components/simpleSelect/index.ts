@@ -1,2 +1,5 @@
 export * from './simpleSelect.definition'
+export * from './styling/simpleSelectStyle.targets'
 export * from './simpleSelectField'
+export * from './simpleSelectInputAdornments'
+export * from './targets/simpleSelectTargets.enum'

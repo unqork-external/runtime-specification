@@ -7,7 +7,10 @@ exports[`Operation Model: TableSetAllRowsExpanded Tests should match this JSON S
       "properties": {
         "areRowsExpanded": {
           "description": "A boolean for setting if rows are expanded",
-          "type": "object",
+          "type": [
+            "boolean",
+            "string",
+          ],
         },
         "persist": {
           "description": "a boolean for setting if we want all rows to stay expanded/collapsed even after refreshes",
@@ -22,6 +25,10 @@ exports[`Operation Model: TableSetAllRowsExpanded Tests should match this JSON S
     },
   },
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetRowDensity Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "TableSetRowDensityOptions": {
+      "properties": {
+        "rowDensity": {
+          "description": "The density of the rows",
+          "minLength": 1,
+          "type": "string",
+        },
+        "targetKey": {
+          "description": "Key of the target entity",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "rowDensity",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetRowDensityOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_ROW_DENSITY",
+      "examples": [
+        "TABLE_SET_ROW_DENSITY",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

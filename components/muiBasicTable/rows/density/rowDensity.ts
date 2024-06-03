@@ -1,1 +1,5 @@
-export type RowDensity = 'comfortable' | 'compact' | 'spacious'
+export enum RowDensity {
+  Large = 'spacious',
+  Medium = 'comfortable',
+  Small = 'compact',
+}

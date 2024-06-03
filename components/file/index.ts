@@ -1,1 +1,5 @@
-export * from './file.definition'
+export { FileComponentDefinition } from './file.definition'
+export { FileOptions } from './file.options'
+export { FileStyleTargets } from './styling/fileStyle.targets'
+export { FileTargets, FileStyleClasses } from './targets/fileTargets.enum'
+export type { UploadFile, FileSubmissionValue } from './file.types'

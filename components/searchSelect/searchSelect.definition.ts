@@ -1,28 +1,41 @@
-import { CollectionOf, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
+import { CollectionOf, Const, Default, Description, DiscriminatorValue, Property } from '@tsed/schema'
 
 import { OptionNestable } from './optionNestable'
 import { SearchSelectField } from './searchSelectField'
-import { SearchSelectSimpleViewModel } from './searchSelectSimpleViewModel'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
+import { SearchSelectSimpleViewModel } from './searchSelectSimpleView.model'
+import { SelectedOptionsNestable } from './selectedOptionsNestable'
+import { SearchSelectStyling } from './styling/searchSelect.styling'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
+import { Validation } from '../../validations'
 import { SearchSelectOptionComponentDefinition } from '../searchSelectOption'
 
 @DiscriminatorValue('searchSelect')
+@TrimmedDescription(`
+  The search select component is a primary fields component. 
+  It lets end-users search for, or select, one or more options from a drop-down list.
+  End-users can enter a value into the field and the drop-down list filters options to match that value.
+  End-users then use the arrow keys or their mouse to select an option from the filtered list.
+  Options in the list can also include adornments on the left or right side of the text.
+`)
 export class SearchSelectComponentDefinition extends BaseComponentDefinition {
-  @Required()
+  @Const('searchSelect')
   type: 'searchSelect' = 'searchSelect' as const
 
-  @Property()
-  useSimpleView?: boolean = false
+  @Default(false)
+  @Description('Boolean used to determine if the underlying view is simple and un-styled')
+  useSimpleView: boolean = false
 
   @Property()
   simpleView?: SearchSelectSimpleViewModel = new SearchSelectSimpleViewModel()
 
-  @Property(Display)
+  @Property()
   display: Display = new Display()
 
-  @Property(SearchSelectField)
-  @Description('Field settings of the simpleSelect component.')
+  @Description('Field settings for the Search Select component.')
   field: SearchSelectField = new SearchSelectField()
 
   @CollectionOf(SearchSelectOptionComponentDefinition)
@@ -32,11 +45,28 @@ export class SearchSelectComponentDefinition extends BaseComponentDefinition {
   @Description('Fully qualified child keys for options nestables. Maintained by nestable api.')
   optionKeys?: string[] = []
 
-  @Description('Nestable definitions for simpleSelect component')
+  @CollectionOf(BaseComponentDefinition)
+  @Description('Nested selected option component definitions')
+  selectedOptions?: BaseComponentDefinition[] = []
+
+  @Description('Fully qualified child keys for selectedOptions nestables. Maintained by nestable api.')
+  selected?: string[] = []
+
+  @Description('Nestable definitions for Search Select component')
   nestables = {
     optionKeys: new OptionNestable(),
+    selected: new SelectedOptionsNestable(),
   }
 
-  @Description('Value of the simpleSelect')
+  @Description('Value of the Search Select.')
   declare value?: string[] | null
+
+  @TrimmedDescription(`
+    It holds information about the existing validations including validation types, 
+    rules, error messages, and results when they run
+  `)
+  validation: Validation = new Validation()
+
+  @Examples(targetedStylingExample)
+  declare styling: SearchSelectStyling
 }

@@ -6,19 +6,37 @@ exports[`Operation Model: TableSetActionToolbarVisibility Tests should match thi
     "TableSetActionToolbarVisibilityOperationOptions": {
       "properties": {
         "enableBottomToolbar": {
-          "type": "object",
+          "description": "Set the visibility of the bottom toolbar in the Table component.",
+          "type": [
+            "boolean",
+            "string",
+          ],
         },
         "enableTopToolbar": {
-          "type": "object",
+          "description": "Set the visibility of the top toolbar in the Table component.",
+          "type": [
+            "boolean",
+            "string",
+          ],
         },
         "targetKey": {
+          "description": "Key of the table component to set action toolbar visibility",
+          "minLength": 1,
           "type": "string",
         },
       },
+      "required": [
+        "targetKey",
+      ],
       "type": "object",
     },
   },
+  "description": "Show/Hide top or bottom toolbars for the Table component.",
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

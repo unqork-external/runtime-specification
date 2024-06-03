@@ -453,7 +453,12 @@ exports[`API Call Operation Model should match this JSON Schema 1`] = `
       "type": "object",
     },
   },
+  "description": "An operation to represent legacy behavior from the plugin component. Performs REST API calls with a lot of options.",
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

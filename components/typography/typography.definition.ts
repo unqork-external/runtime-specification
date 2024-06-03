@@ -1,9 +1,12 @@
-import { Required, DiscriminatorValue, Optional, Description, Property, Example, Default } from '@tsed/schema'
+import { Default, Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
 
 import { TypographyStyling } from './styling/typography.styling'
-import { BaseComponentDefinition } from '../../baseComponentInterface'
-import { Display } from '../../componentComposition/display/component.display'
-import { targetedStylingExample } from '../../examples/styling/targeted.styling.example'
+import { TypographyTargetsEnum } from './targets/typographyTargets.enum'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface'
+import { Display } from '../../component-composition/display/component.display'
+import { type SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
 @DiscriminatorValue('typography')
 export class TypographyComponentDefinition extends BaseComponentDefinition {
@@ -26,6 +29,9 @@ export class TypographyComponentDefinition extends BaseComponentDefinition {
   element: keyof HTMLElementTagNameMap = 'div'
 
   @Description('Object that maps customized CSS styling to specific targets on the Typography component.')
-  @Example(targetedStylingExample)
+  @Examples(targetedStylingExample)
   declare styling: TypographyStyling
+
+  @Optional()
+  declare signals?: SignalTargets<TypographyTargetsEnum>
 }

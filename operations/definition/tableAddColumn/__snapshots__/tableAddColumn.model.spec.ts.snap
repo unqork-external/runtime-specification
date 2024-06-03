@@ -2,44 +2,23 @@
 
 exports[`Operation Model: TableAddColumn Tests should match this JSON Schema 1`] = `
 {
-  "definitions": {
-    "TableAddColumnOperationOptions": {
-      "properties": {
-        "definitions": {
-          "description": "The component definition to be added to the target table ",
-          "type": "array",
-        },
-        "isVega": {
-          "description": "Specifies whether the component is a Vega component",
-          "type": "boolean",
-        },
-        "targetKey": {
-          "description": "A unique string identifier used to specify the particular table or component in the application where the column addition operation is to be executed",
-          "type": "string",
-        },
-      },
-      "type": "object",
-    },
+  "creatorSummary": {
+    "description": "A detailed summary of the operation",
+    "type": "string",
   },
-  "properties": {
-    "name": {
-      "description": "Name of the operation",
-      "type": "string",
-    },
-    "options": {
-      "$ref": "#/definitions/TableAddColumnOperationOptions",
-    },
-    "type": {
-      "const": "TABLE_ADD_COLUMN",
-      "examples": [
-        "TABLE_ADD_COLUMN",
-      ],
-      "type": "string",
-    },
+  "name": {
+    "description": "Name of the operation",
+    "type": "string",
   },
-  "required": [
-    "options",
-  ],
-  "type": "object",
+  "options": {
+    "$ref": "#/definitions/TableAddColumnOperationOptions",
+  },
+  "type": {
+    "const": "TABLE_ADD_COLUMN",
+    "examples": [
+      "TABLE_ADD_COLUMN",
+    ],
+    "type": "string",
+  },
 }
 `;

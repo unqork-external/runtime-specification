@@ -1,4 +1,4 @@
-import { ValidationRuleTypes } from './validation.enum'
+import type { ValidationRuleTypes } from './validation.enum'
 
 export type ValidationRuleValidationsValues = {
   [ValidationRuleTypes.REQUIRED]: boolean

@@ -13,6 +13,10 @@ describe('Operation Model: WorkflowNavigate Tests', () => {
     expect(schema).toStrictEqual({
       type: 'object',
       properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
         type: {
           type: 'string',
           const: 'WORKFLOW_NAVIGATE',

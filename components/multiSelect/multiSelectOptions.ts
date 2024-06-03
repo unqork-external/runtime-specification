@@ -1,6 +1,6 @@
 import { Any, CollectionOf, Default, Description, Enum, Example, Required } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { RefreshType } from '../../base-types'
 
 export class MultiSelectOptionModel {
@@ -42,13 +42,11 @@ export class MultiSelectOptions {
   initial?: MultiSelectOptionModel[]
 
   @Any()
-  @Description(
-    trimAll(`
+  @TrimmedDescription(`
     Values coming in to the dropdown to be rendered. 
     Should at least be an Object[] for the drop down to run through, and eventually map
     to the Dropdown Model represented by the \`values\` key
-  `),
-  )
+  `)
   rawValues?: any
 
   @Description('Data reference key or refresh on settings for the dropdown.')

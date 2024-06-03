@@ -1,8 +1,8 @@
-import { Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
+import { Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
 
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
-import { Nestable, NestableDef, NestableType } from '../../nestables'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import { Nestable, NestableType } from '../../nestables'
 
 @DiscriminatorValue('basicDropZone')
 export class BasicDropZoneComponentDefinition extends BaseComponentDefinition {

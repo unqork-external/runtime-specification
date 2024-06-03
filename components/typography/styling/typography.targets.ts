@@ -1,4 +1,4 @@
-import { Css } from '../../../../decorators/css.decorator'
+import { Css } from '../../../../decorators/schema/css.decorator'
 import { type CssClassOrProps } from '../../../styling/cssClassOrProps.type'
 import { TypographyTargetsEnum } from '../targets/typographyTargets.enum'
 

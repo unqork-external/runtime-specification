@@ -1,5 +1,5 @@
-import type { BaseComponentDefinition } from '../baseComponentInterface/base.component.definition'
-import { Nestable } from '../nestables'
+import type { BaseComponentDefinition } from '../base-component-interface/base.component.definition'
+import type { Nestable } from '../nestables'
 
 /**
  * Any component definition class that implements this interface

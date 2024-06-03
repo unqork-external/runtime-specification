@@ -1,20 +1,31 @@
-import { CollectionOf, Default, Description, DiscriminatorValue, Enum, Property, Required } from '@tsed/schema'
+import {
+  CollectionOf,
+  Default,
+  Description,
+  DiscriminatorValue,
+  Enum,
+  Optional,
+  Property,
+  Required,
+} from '@tsed/schema'
 
 import { ColumnState } from './columns/columnState'
 import { ColumnPinningState } from './columns/pinning/columnPinningState'
 import { type ColumnVisibilityState } from './columns/visibility/columnVisibilityState'
+import { MuiBasicTableField } from './field/muiBasicTable.field'
 import { ColumnFilter } from './filters/columnFilter'
 import { PaginationState } from './pagination/paginationState'
-import { type RowDensity } from './rows/density/rowDensity'
 import { PinPosition } from './rows/pinning/pinPosition'
 import { RowPinningState } from './rows/pinning/rowPinningState'
+import { RowState } from './rows/rowState'
 import { RowSelection } from './selection/rowSelection'
 import type { SortingState } from './sorting/sortingState'
 import { TableStyling } from './styling/table.styling'
+import { ToolbarState } from './toolbar/toolbarState'
 import { TableViewTypeEnum } from './views/viewType'
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface'
-import { Display, Field } from '../../componentComposition'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface'
+import { Display } from '../../component-composition'
 import { BasicGridNestables } from '../basicGrid'
 
 @DiscriminatorValue('muiBasicTable')
@@ -29,10 +40,13 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   display: Display = new Display()
 
   @Property()
-  field?: Field
+  field?: MuiBasicTableField
 
   @Property()
   label?: string
+
+  @Optional()
+  isTableFullScreen?: boolean
 
   @Property()
   styling: TableStyling
@@ -45,6 +59,9 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
 
   @Property()
   columnState: ColumnState = new ColumnState()
+
+  @Property()
+  rowState: RowState = new RowState()
 
   @Property()
   @Default(TableViewTypeEnum.SPREADSHEET)
@@ -129,9 +146,6 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   @CollectionOf(BaseComponentDefinition)
   rowComponents: BaseComponentDefinition[]
 
-  @Property()
-  rowDensity: RowDensity
-
   /**
    * Nestables
    */
@@ -154,15 +168,12 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   addRowOnInit: boolean
 
   @Property()
-  @Description(
-    trimAll(`
+  @TrimmedDescription(`
     When columns are grouped, grouped columns are shifted to the left. This setting hides grouped columns implicitly.
     Note: When columns are hidden, they are not invisible - that is - their children still render, can be sorted, can be interacted with.
     If a column in invisible, their children do not render.
-  `),
-  )
-  @Default(true)
-  hideGroupedColumns: boolean = true
+  `)
+  hideGroupedColumns: boolean
 
   /**
    * Pagination Attributes
@@ -175,16 +186,17 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   columnFilters: ColumnFilter[]
 
   @Property()
-  globalFilter: string
+  globalFilter?: string
 
   @Property()
-  @Description(
-    trimAll(`
+  @TrimmedDescription(`
     This only has effect in edit mode. When enabled, 
     users have the ability to press enter and put the focus 
     on the cell that is below the current selection. When disabled,
     it exits the edit mode.
-  `),
-  )
+  `)
   navigateDownOnPressEnter: boolean
+
+  @Description('state data for the toolbar')
+  toolbarState = new ToolbarState()
 }

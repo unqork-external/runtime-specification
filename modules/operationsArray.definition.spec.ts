@@ -5,12 +5,11 @@ import { generateSchemaAndValidate } from '../../utilities'
 import { createOperation, OperationTypes, ResetOperation, SetPropertyOperation } from '../operations'
 
 describe('Operation checks', () => {
-  let validate, schema
+  let validate
 
   beforeAll(() => {
     const response = generateSchemaAndValidate(OperationsArray)
     validate = response.validate
-    schema = response.schema
   })
 
   it('should validate disparate operations', () => {

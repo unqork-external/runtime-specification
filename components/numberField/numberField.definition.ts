@@ -1,88 +1,90 @@
-import { Const, Default, Description, Property } from '@tsed/schema'
+import { Const, Default, Description, DiscriminatorValue, Property } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface'
-import { Display } from '../../componentComposition'
-import { NumberAdornments } from '../number/adornments/adornments'
-import { NumberNestables } from '../number/nesting/numberNestables'
-import { NumberField } from '../number/numberField'
-import { NumberFormat } from '../number/numberFormat'
-import { NumberOptions } from '../number/numberOptions'
-import { NumberSimpleViewModel } from '../number/numberSimpleViewModel'
+import { NumberFieldStyling } from './numberField.styling'
+import { NumberFieldTargets } from './numberFieldTargets.enum'
+import { NumberSimpleViewModel } from './numberSimpleViewModel'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import {
+  Display,
+  NumberFieldSettings,
+  NumberFormat,
+  NumberOptions,
+  StandardAdornmentsAsNestables,
+  StandardAdornmentsProperties,
+} from '../../component-composition'
+import { type SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
+@DiscriminatorValue('numberField')
+@TrimmedDescription(`
+  The Number Field component is part of the core set of input components.
+  It displays the field as a simple text box. The end-user enters the value directly into the field.
+  It is one of the three types of Number components.
+  Non-numeric (and dot) characters will be stripped from the field at keystroke or paste.
+`)
+@ViewTargets(NumberFieldTargets)
 export class NumberFieldComponentDefinition extends BaseComponentDefinition {
   @Const('numberField')
-  @Description('Describes the component type')
   type: string = 'numberField' as const
 
-  @Property()
   @Default(false)
+  @Description('Boolean used to determine if the underlying view is simple and un-styled')
   useSimpleView?: boolean = false
 
   @Property()
   simpleView?: NumberSimpleViewModel
 
-  @Property(Display)
-  @Description('Display settings for the numberField component.')
+  @Property()
   display: Display = new Display()
 
-  @Property(NumberField)
-  @Description('Field settings for the numberField component.')
-  field: NumberField = new NumberField()
+  @Property()
+  field: NumberFieldSettings = new NumberFieldSettings()
 
-  @Property(NumberFormat)
-  @Description('Formatting settings for the numberField component.')
+  @Property()
   format: NumberFormat = new NumberFormat()
 
-  @Property(NumberFormat)
   @Description('Formatted value based on number field settings')
   formattedValue?: string
 
-  @Description(
-    trimAll(`
-        The initial value for the component configured in the designer.
-        - It is the value that will initially appear inside the text box;
-      `),
-  )
+  @TrimmedDescription(`
+    The initial value for the component configured in the designer.
+    - It is the value that will initially appear inside the text box;
+  `)
   defaultValue?: number
 
-  @Description(
-    trimAll(`
-        Options to configure the different interaction types of the numberField component.
-        Each type offers a different set of options. Setting an option not available 
-        to a specific type will not have any effect. 
-        For example, setting the (Step Size) on a (Field) interaction type will do nothing.
-      `),
-  )
+  @Description('Options to configure the numberField component.')
   options: NumberOptions = new NumberOptions()
 
   @Description('Value of the numberField component. It will be undefined if not set.')
   declare value?: number
 
-  @Property(NumberAdornments)
-  adornments? = new NumberAdornments()
+  @Description('Optional icons that can be added to the left or right side of the input field.')
+  adornments?: StandardAdornmentsProperties = new StandardAdornmentsProperties()
 
-  @Description(
-    trimAll(`
-        Fully qualified child keys for adornments in the left slot.
-        Maintained by nestable api.
-      `),
-  )
+  @TrimmedDescription(`
+    Fully qualified child keys for adornments in the left slot.
+    Maintained by nestable api.
+  `)
   left?: string[] = []
 
-  @Description(
-    trimAll(`
-        Fully qualified child keys for adornments in the right slot.
-        Maintained by nestable api.
-      `),
-  )
+  @TrimmedDescription(`
+    Fully qualified child keys for adornments in the right slot.
+    Maintained by nestable api.
+  `)
   right?: string[] = []
 
-  @Description(
-    trimAll(`
-        Nestable definitions for adorned numberField component.
-        Simple Views 
-      `),
-  )
-  nestables?: NumberNestables = new NumberNestables()
+  @TrimmedDescription(`
+    Nestable definitions for adorned numberField component.
+    Simple Views 
+  `)
+  nestables?: StandardAdornmentsAsNestables = new StandardAdornmentsAsNestables()
+
+  @Examples(targetedStylingExample)
+  declare styling: NumberFieldStyling
+
+  @Property()
+  declare signals: SignalTargets<NumberFieldTargets>
 }

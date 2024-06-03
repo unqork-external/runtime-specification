@@ -1,6 +1,6 @@
 import { DiscriminatorValue, Property, Required } from '@tsed/schema'
 
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 
 @DiscriminatorValue('testTextField')
 export class TestTextFieldComponentDefinition extends BaseComponentDefinition {

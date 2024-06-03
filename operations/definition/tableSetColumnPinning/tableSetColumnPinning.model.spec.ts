@@ -16,9 +16,15 @@ describe('Operation Model: TableSetColumnPinning Tests', () => {
           properties: {
             left: {
               type: 'array',
+              items: {
+                type: 'string',
+              },
             },
             right: {
               type: 'array',
+              items: {
+                type: 'string',
+              },
             },
           },
           type: 'object',
@@ -36,6 +42,10 @@ describe('Operation Model: TableSetColumnPinning Tests', () => {
         },
       },
       properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
         name: {
           description: 'Name of the operation',
           type: 'string',

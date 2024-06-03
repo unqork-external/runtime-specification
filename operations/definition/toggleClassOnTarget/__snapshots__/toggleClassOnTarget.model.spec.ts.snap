@@ -31,6 +31,10 @@ exports[`Toggle Class On Target Operation Model should match this JSON Schema 1`
   },
   "description": "This operation will add a classname to a target if it is not currently there, or remove a classname from a target if it already exists on it",
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

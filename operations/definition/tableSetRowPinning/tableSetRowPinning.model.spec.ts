@@ -15,9 +15,15 @@ describe('Operation Model: TableSetRowPinning Tests', () => {
         RowPinningState: {
           properties: {
             bottom: {
+              items: {
+                type: 'string',
+              },
               type: 'array',
             },
             top: {
+              items: {
+                type: 'string',
+              },
               type: 'array',
             },
           },
@@ -36,6 +42,10 @@ describe('Operation Model: TableSetRowPinning Tests', () => {
         },
       },
       properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
         name: {
           description: 'Name of the operation',
           type: 'string',

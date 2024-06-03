@@ -6,18 +6,38 @@ exports[`Operation Model: TableRemoveColumn Tests TableRemoveColumn Model 1`] = 
     "TableRemoveColumnOperationOptions": {
       "properties": {
         "keysToRemove": {
+          "anyOf": [
+            {
+              "type": "string",
+            },
+            {
+              "items": {
+                "type": "string",
+              },
+              "type": "array",
+            },
+          ],
           "description": "The column(s) to be removed from the target table ",
-          "type": "object",
         },
         "targetKey": {
           "description": "A unique string identifier used to specify the particular table or component in the application where the column removal operation is to be executed",
+          "minLength": 1,
           "type": "string",
         },
       },
+      "required": [
+        "targetKey",
+        "keysToRemove",
+      ],
       "type": "object",
     },
   },
+  "description": "Removes columns from the Table based on provided column IDs.",
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

@@ -1,7 +1,7 @@
 import { Any, CollectionOf, DiscriminatorValue, Property, Required } from '@tsed/schema'
 
-import { BaseComponentDefinition } from '../../baseComponentInterface'
-import { Display } from '../../componentComposition/display/component.display'
+import { BaseComponentDefinition } from '../../base-component-interface'
+import { Display } from '../../component-composition/display/component.display'
 import { Nestable, NestableDef, NestableType } from '../../nestables'
 
 @DiscriminatorValue('basicgrid')

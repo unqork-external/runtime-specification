@@ -1,4 +1,4 @@
-import { Nullable, CollectionOf, Property } from '@tsed/schema'
+import { Nullable, CollectionOf, Property, RecordOf } from '@tsed/schema'
 
 import { ValidationError } from './validationError.type'
 
@@ -13,8 +13,8 @@ export class ValidationResult {
 
 export class ModuleValidationResult {
   @Property()
-  isValid: boolean
+  isValid?: boolean
 
-  @CollectionOf(ValidationResult)
+  @RecordOf(ValidationResult)
   results: Record<string, ValidationResult>
 }

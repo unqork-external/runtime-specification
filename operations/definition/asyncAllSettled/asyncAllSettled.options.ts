@@ -1,4 +1,4 @@
-import { CollectionOf, Description, MinItems, Required } from '@tsed/schema'
+import { CollectionOf, Description, Ignore, MinItems, Required } from '@tsed/schema'
 
 import { Operation } from '../../interface'
 
@@ -18,5 +18,7 @@ export class AsyncAllSettledOperationOptions {
 
   // This can be removed once BaseOperationOperations is refactored.
   // https://unqork-jira.atlassian.net/browse/UN-27976
+  // we can ignore properties with type never - Remove this decorator if this type is changed
+  @Ignore()
   targetKey?: never
 }

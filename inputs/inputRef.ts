@@ -1,5 +1,8 @@
-import { Optional, Property, Required } from '@tsed/schema'
+import { Description, Optional, Property, Required } from '@tsed/schema'
 
+@Description(
+  'Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.',
+)
 export class InputRef {
   @Required()
   targetKey: string

@@ -1,6 +1,10 @@
 import { Default, Required } from '@tsed/schema'
 
-export type highlightType = 'INDICATE' | 'WARN' | 'ERROR'
+export enum CanvasHighlightType {
+  INDICATE = 'INDICATE',
+  WARN = 'WARN',
+  ERROR = 'ERROR',
+}
 
 export class CanvasRepresentationControls {
   @Required()
@@ -9,7 +13,7 @@ export class CanvasRepresentationControls {
 
   @Required()
   highlight: {
-    type: highlightType
+    type: CanvasHighlightType
     isHighlighted: boolean
   }
 

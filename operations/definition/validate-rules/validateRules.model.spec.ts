@@ -16,6 +16,10 @@ describe('Validate Rules', () => {
     expect(schema).toStrictEqual({
       type: 'object',
       properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
         options: {
           $ref: '#/definitions/ValidateRulesOptions',
         },

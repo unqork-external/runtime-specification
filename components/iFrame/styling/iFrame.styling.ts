@@ -1,8 +1,9 @@
 import { Property } from '@tsed/schema'
 
-import { IFrameTargets } from './iframe.targets'
+import { IFrameStyleTargets } from './iFrame.targets'
+import { StylingModel } from '../../../styling'
 
-export class IFrameStyling {
+export class IFrameStyling extends StylingModel<IFrameStyleTargets> {
   @Property()
-  targets: IFrameTargets
+  targets: IFrameStyleTargets
 }

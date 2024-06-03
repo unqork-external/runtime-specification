@@ -1,58 +1,61 @@
-import { Const, Default, Description, DiscriminatorValue, Nullable, Property } from '@tsed/schema'
+import { Const, Default, Description, DiscriminatorValue, Optional } from '@tsed/schema'
 
 import { CalendarView } from './calendarView'
 import { DateFormat } from './dateFormat'
+import { DateInputStyling } from './dateInput.styling'
+import { DateInputSimpleViewModel } from './dateInputSimpleView.model'
 import { DateValidation } from './dateValidation'
-import { DateInputSimpleViewModel } from './simpleView/dateInputSimpleView.model'
-import { DateInputStyling } from './styling/dateInput.styling'
+import { DateInputTargets } from './targets/dateInputTargets.enum'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
 import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
-import { InputField } from '../../componentComposition/input/component.input'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display, InputField } from '../../component-composition'
+import { type SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
 @DiscriminatorValue('dateinput')
+@ViewTargets(DateInputTargets)
+@Description(
+  trimAll(`
+    The Date Input component lets your end-user enter or select a date from a specific date range. 
+    By default, all Date Input entries store using the YYYY-MM-DD format and include a timestamp of midnight (00:00) in Coordinated Universal Time (UTC). 
+  `),
+)
 export class DateInputComponentDefinition extends BaseComponentDefinition {
   @Const('dateinput')
-  @Description('Type of the component.')
   type: 'dateinput' = 'dateinput' as const
 
-  @Property()
+  @Optional()
   @Default(false)
-  useSimpleView?: boolean = false
+  @Description('Boolean used to determine if the underlying view is simple and un-styled')
+  useSimpleView: boolean = false
 
-  @Property()
-  simpleView?: DateInputSimpleViewModel = new DateInputSimpleViewModel()
+  @Optional()
+  simpleView: DateInputSimpleViewModel = new DateInputSimpleViewModel()
 
-  @Property(Display)
+  @Optional()
   display: Display = new Display()
 
-  @Property(InputField)
-  @Description('Field settings of the dateinput.')
+  @Optional()
   field: InputField = new InputField()
 
-  @Property(CalendarView)
-  @Description('Calendar settings.')
+  @Optional()
   calendarView: CalendarView = new CalendarView()
 
-  @Property(DateFormat)
-  @Description('Date format settings.')
+  @Optional()
   format: DateFormat = new DateFormat()
 
-  @Property(DateValidation)
-  @Description('Validation settings.')
+  @Optional()
   validation: DateValidation = new DateValidation()
 
-  @Nullable(String)
-  @Description('Value of the component.')
+  @Optional()
   declare value?: string | null
 
-  @Description(
-    trimAll(`
-    Custom styling definition.
-    For each target string, a user may define a CSS class or CSS object that will
-    override the default styles of the targeting elements in the component.
-  `),
-  )
-  @Property()
-  styling: DateInputStyling
+  @Optional()
+  declare signals?: SignalTargets<DateInputTargets>
+
+  @Optional()
+  @Examples(targetedStylingExample)
+  declare styling?: DateInputStyling
 }

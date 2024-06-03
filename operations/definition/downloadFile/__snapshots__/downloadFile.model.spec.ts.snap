@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: DownloadFile Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "DownloadFileOperationOptions": {
+      "properties": {
+        "filename": {
+          "description": "String for the name of the file to be saved as (default: filename in the url)",
+          "minLength": 1,
+          "type": "string",
+        },
+        "url": {
+          "description": "URL to the file to be downloaded",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "url",
+        "filename",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "Downloads a file for a user, and allows users to define a custom file name. As long as the URL is accessible, the web application should use the native download html5 feature.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/DownloadFileOperationOptions",
+    },
+    "type": {
+      "const": "DOWNLOAD_FILE",
+      "examples": [
+        "DOWNLOAD_FILE",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

@@ -56,6 +56,10 @@ describe('Operation Model: If Tests', () => {
 
     expect(d).toEqual({
       properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
         options: {
           $ref: '#/definitions/IfOperationOptions',
         },

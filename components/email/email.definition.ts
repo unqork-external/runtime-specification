@@ -1,31 +1,46 @@
-import { Const, Description, Property, DiscriminatorValue } from '@tsed/schema'
+import { Const, Description, DiscriminatorValue, Property } from '@tsed/schema'
 
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
-import { InputField, InputFormat } from '../../componentComposition/input/component.input'
+import { EmailStyling } from './email.styling'
+import { EmailTargets } from './emailTargets.enum'
+import { ViewTargets } from '../../../decorators'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import { InputField, InputFormat } from '../../component-composition/input/component.input'
+import type { SignalTargets } from '../../signals'
 import { Validation } from '../../validations/validation'
 
 @DiscriminatorValue('email')
+@TrimmedDescription(`
+  The Email component offers a text field with built-in 
+  validation for correct email formatting. It provides a 
+  straightforward way to collect valid email addresses. 
+  However, note that this component does not verify the 
+  activity status of the email address provided.
+`)
+@ViewTargets(EmailTargets)
 export class EmailComponentDefinition extends BaseComponentDefinition {
   @Const('email')
-  @Description('Type of the component.')
   type: 'email' = 'email' as const
 
-  @Property(Display)
+  @Property()
   display: Display = new Display()
 
-  @Property(InputField)
-  @Description('Field settings of the email.')
+  @Property()
   field: InputField = new InputField()
 
   @Description('Value of the email.')
   declare value: string
 
-  @Property(InputFormat)
-  @Description('Format options of the email.')
+  @Property()
   format: InputFormat = new InputFormat()
 
-  @Property(Validation)
-  @Description('Validation of the email.')
+  @Property()
   validation: Validation = new Validation()
+
+  @Property()
+  declare signals: SignalTargets<EmailTargets>
+
+  @Property()
+  declare styling?: EmailStyling
 }

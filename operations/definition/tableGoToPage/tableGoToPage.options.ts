@@ -1,17 +1,12 @@
-import { Any, Description, Property } from '@tsed/schema'
-
-import { trimAll } from '../../../../utilities'
+import { Any, Description, Required } from '@tsed/schema'
 
 export class TableGoToPageOperationOptions {
-  @Description('The key for the component we want to set page size')
-  @Property()
+  @Description('Key of the Table component to change pagination position of')
+  @Required()
   targetKey: string
 
-  @Description(
-    trimAll(`
-    The page number user wants to navigate to
-  `),
-  )
+  @Description('The page number user wants to navigate to. Page number is based on zero based index.')
+  @Required()
   @Any('number', 'string')
   pageNumber: number | string
 }

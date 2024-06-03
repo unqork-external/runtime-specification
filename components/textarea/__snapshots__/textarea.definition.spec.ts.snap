@@ -1,0 +1,500 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Text Area Contract Tests should ensure the contract is clear 1`] = `
+[
+  "key",
+  "type",
+]
+`;
+
+exports[`Text Area Contract Tests should ensure the contract is clear 2`] = `
+{
+  "display": {
+    "$ref": "#/definitions/Display",
+  },
+  "executable": {
+    "default": true,
+    "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
+    "type": "boolean",
+  },
+  "field": {
+    "$ref": "#/definitions/InputField",
+  },
+  "format": {
+    "$ref": "#/definitions/TextareaFormat",
+  },
+  "inputs": {
+    "items": {
+      "$ref": "#/definitions/InputRef",
+    },
+    "type": "array",
+  },
+  "key": {
+    "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
+    "examples": [
+      "I am the key",
+      "bestKeyEver",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "package": {
+    "$ref": "#/definitions/PackageModel",
+  },
+  "signals": {
+    "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
+    "examples": [
+      {
+        "args": {
+          "inputs": {
+            "propertyPath": "value",
+            "required": true,
+            "targetKey": "firstName",
+          },
+        },
+        "id": "firstNameWatcher",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onWatch",
+      },
+      {
+        "id": "textfieldOnBlur",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "textfield received blur event from DOM",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onBlur",
+      },
+      "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+    ],
+    "type": "object",
+  },
+  "styling": {
+    "$ref": "#/definitions/TextAreaStyling",
+  },
+  "type": {
+    "const": "textarea",
+    "description": "Name of the type of component.",
+    "examples": [
+      "textarea",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "validation": {
+    "$ref": "#/definitions/TextareaValidation",
+  },
+  "value": {
+    "description": "Value of the textarea. A textarea always stores its data as a string.",
+    "type": "string",
+  },
+}
+`;
+
+exports[`Text Area Contract Tests should ensure the contract is clear 3`] = `
+{
+  "Display": {
+    "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Read Only View' corresponds to the component being rendered with an input element or as text.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "Setting it to \`true\` hides the component from the view, while \`false\` shows it. Regardless of this setting, the component is always visible in the Module Editor. A hidden component can still receive information from other components.",
+        "type": "boolean",
+      },
+      "interactive": {
+        "default": true,
+        "description": "When \`false\`, it is not possible to interact with or edit the input field. Its appearance is modified (grayed-out by default) to show its state, the HTML 'disabled' attribute is added to the field, and when hovering over it, the cursor also changes to alert of the disabled status. However, the component can still receive information from other components when it's not interactive.",
+        "type": "boolean",
+      },
+      "readOnlyView": {
+        "default": false,
+        "description": "Defines how the component will be displayed. When \`false\`, the component is displayed as an input field. When \`true\`, the component will not accept any input from the user, and its value will be rendered inline as text and not as an input component. If no value is present, the word 'None' is rendered. If a prefix or suffix is set for the component, they also appear as inline text.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "InputField": {
+    "description": "Details to be applied to the input element within a component.",
+    "properties": {
+      "customClass": {
+        "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
+        "type": "string",
+      },
+      "helperText": {
+        "$ref": "#/definitions/InputHelperText",
+      },
+      "label": {
+        "$ref": "#/definitions/InputLabel",
+      },
+      "placeholder": {
+        "description": "An example or short explanation of the requested input. This appears inside of the input by default and disappears when the user enters a value.",
+        "examples": [
+          "First name - Expects the user to type their first name",
+          "Enter your Social Security Number - Expects user's SSN",
+          "dd/MM/YYYY - To show an expected date format (if you need a more robust component, try Date Input",
+        ],
+        "type": "string",
+      },
+      "prefix": {
+        "description": "A symbol or text to display before the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          "$",
+          "@",
+        ],
+        "type": "string",
+      },
+      "suffix": {
+        "description": "A symbol or text to display after the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          ".com",
+        ],
+        "type": "string",
+      },
+      "tooltipDescription": {
+        "description": "Tooltips are floating texts that appear when the cursor is positioned over an icon. They can span across multiple lines and provide hints about the requested data. Setting this property will make a question mark icon to be displayed on the right side of the component's label, and once the user hovers over it, the tooltip text will appear. Moving the cursor outside the icon's area hides the tooltip. Hiding the component's label automatically hides the tooltip.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputHelperText": {
+    "description": "Details pertaining to the helper text element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the helper text of the component.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed underneath the input field. Unlike tooltips, a helper text stays visible under the input field and displays on a single line.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputLabel": {
+    "description": "Details pertaining to the label element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the label of the component. Note the label will still be displayed on the Module Editor.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed above the input field.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputRef": {
+    "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+    "properties": {
+      "alias": {
+        "type": "string",
+      },
+      "propertyPath": {
+        "type": "string",
+      },
+      "required": {
+        "type": "boolean",
+      },
+      "silent": {
+        "type": "boolean",
+      },
+      "targetKey": {
+        "minLength": 1,
+        "type": "string",
+      },
+      "type": {
+        "type": "string",
+      },
+    },
+    "required": [
+      "targetKey",
+    ],
+    "type": "object",
+  },
+  "Label": {
+    "properties": {
+      "text": {
+        "description": "Text displayed as the label for the field",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "PackageModel": {
+    "description": "The PackageModel describes how the Vega Runtime will resolve dependencies",
+    "properties": {
+      "type": {
+        "description": "Type of package",
+        "type": "string",
+      },
+      "url": {
+        "description": "URL of package",
+        "type": "string",
+      },
+      "version": {
+        "description": "Version of package",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "StylingModel": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "TextAreaStyleTargets": {
+    "properties": {
+      "characterLimit": {
+        "description": "Adds styles to TextArea's character limit text.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "errors": {
+        "description": "Adds styles to TextArea's error message.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "helperText": {
+        "description": "Adds styles to TextArea's helper text.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "input": {
+        "description": "Adds styles to TextArea's input field.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "inputPrefix": {
+        "description": "Adds styles to TextArea's prefix.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "inputSuffix": {
+        "description": "Adds styles to TextArea's suffix.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "label": {
+        "description": "Adds styles to TextArea's label.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "readOnly": {
+        "description": "Adds styles to TextArea's read only text.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "root": {
+        "description": "Adds styles to TextArea's ComponentWrapper.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "tooltipButton": {
+        "description": "Adds styles to TextArea's tooltip button.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "tooltipPopover": {
+        "description": "Adds styles to TextArea's tooltip popover text.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+    },
+    "type": "object",
+  },
+  "TextAreaStyling": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "$ref": "#/definitions/TextAreaStyleTargets",
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "TextareaFormat": {
+    "description": "Details pertaining to how the input value formatting.",
+    "properties": {
+      "disableAutoComplete": {
+        "default": false,
+        "description": "Prevents browsers from autofilling this field with previously entered values.",
+        "type": "boolean",
+      },
+      "formatDataWithMask": {
+        "default": false,
+        "description": "Format Data with mask for the textarea.",
+        "type": "boolean",
+      },
+      "inputMask": {
+        "description": "The mask pattern to be applied to the input field. An input mask helps the user with the input by ensuring a predefined format. This can be useful for dates, numerics, and phone numbers. Default masking definitions are: - 9 : numeric - a : alphabetical - * : alphanumeric Note input masks act in a layer above the regular validations, meaning, for instance, a mask can limit the field length to a value shorter than max length",
+        "examples": [
+          [
+            "(999) 999-9999 - Simple phone number (if you need a more robust component, try Phone Number)",
+            "999-99-9999 - Social Security Number",
+            "99999 - Standard US zip code",
+            ".com.aa - Internet domain with variable two letters at the end",
+          ],
+        ],
+        "type": "string",
+      },
+      "rows": {
+        "default": 3,
+        "description": "number of rows that are visible in the textarea.",
+        "multipleOf": 1,
+        "type": "integer",
+      },
+      "useInputMask": {
+        "default": false,
+        "description": "Whether mask is enabled in the textarea.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "TextareaValidation": {
+    "description": "Holds the validation rules and the most current validation results for the component",
+    "properties": {
+      "disableMaxLengthLimitation": {
+        "default": false,
+        "description": "Disable max length limitation for the textarea.",
+        "type": "boolean",
+      },
+      "isDirty": {
+        "description": "Whether or not field has had user interaction. It will be set to true on user interaction.",
+        "type": "boolean",
+      },
+      "result": {
+        "$ref": "#/definitions/ValidationResult",
+      },
+      "rules": {
+        "description": "The set of rules to restrict or define the accepted data for the current component. These are the rules to run for validation of the data input.",
+        "examples": [
+          "You can use it to define the max length of characters in an input field with a custom error message. rules: { required: { type: ValidationRuleTypes.MAX_LENGTH, validation: { maxLength: 5, }, errorMessage: 'Max length is 5', }, },",
+        ],
+        "type": "object",
+      },
+      "showCountdown": {
+        "default": false,
+        "description": "Show countdown for the textarea.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "Validation": {
+    "description": "Holds the validation rules and the most current validation results for the component",
+    "properties": {
+      "isDirty": {
+        "description": "Whether or not field has had user interaction. It will be set to true on user interaction.",
+        "type": "boolean",
+      },
+      "result": {
+        "$ref": "#/definitions/ValidationResult",
+      },
+      "rules": {
+        "description": "The set of rules to restrict or define the accepted data for the current component. These are the rules to run for validation of the data input.",
+        "examples": [
+          "You can use it to define the max length of characters in an input field with a custom error message. rules: { required: { type: ValidationRuleTypes.MAX_LENGTH, validation: { maxLength: 5, }, errorMessage: 'Max length is 5', }, },",
+        ],
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "ValidationError": {
+    "properties": {
+      "message": {
+        "description": "The error message",
+        "type": "string",
+      },
+      "type": {
+        "description": "Type of the error",
+        "enum": [
+          "required",
+          "maxLength",
+          "minLength",
+          "arrayMinLength",
+          "arrayMaxLength",
+          "pattern",
+          "min",
+          "max",
+          "mask",
+          "number",
+          "dateinput",
+          "isBeforeDate",
+          "isAfterDate",
+          "customError",
+          "isEmail",
+        ],
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "type",
+    ],
+    "type": "object",
+  },
+  "ValidationResult": {
+    "properties": {
+      "errors": {
+        "items": {
+          "$ref": "#/definitions/ValidationError",
+        },
+        "type": "array",
+      },
+      "isValid": {
+        "type": [
+          "null",
+          "boolean",
+        ],
+      },
+    },
+    "type": "object",
+  },
+}
+`;

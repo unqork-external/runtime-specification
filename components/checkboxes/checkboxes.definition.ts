@@ -1,30 +1,37 @@
-import { Const, Description, DiscriminatorValue, Property } from '@tsed/schema'
+import { Const, Default, Description, DiscriminatorValue, Optional } from '@tsed/schema'
 
-import { CheckboxesInputField } from './checkboxesInputField'
-import { CheckboxesOptions } from './checkboxesOptions'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
+import { CheckboxesField } from './checkboxes.field'
+import { CheckboxesOptions } from './checkboxes.options'
+import { CheckboxesStyling } from './checkboxes.styling'
+import { CheckboxesTargets } from './checkboxesTargets.enum'
+import { ViewTargets } from '../../../decorators'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import type { SignalTargets } from '../../signals'
 
 @DiscriminatorValue('checkboxes')
+@ViewTargets(CheckboxesTargets)
 export class CheckboxesComponentDefinition extends BaseComponentDefinition {
   @Const('checkboxes')
-  @Description('Type of the component.')
   type: 'checkboxes' = 'checkboxes' as const
 
-  @Property(Display)
+  @Optional()
   display: Display = new Display()
 
-  @Property(CheckboxesInputField)
-  @Description('Field settings of the checkboxes component.')
-  field: CheckboxesInputField = new CheckboxesInputField()
+  @Optional()
+  field: CheckboxesField = new CheckboxesField()
 
-  @Property(CheckboxesOptions)
-  @Description('Options which are taken from the data source')
+  @Optional()
   options: CheckboxesOptions = new CheckboxesOptions()
 
-  @Property()
-  defaultValue: string
-
+  @Optional()
+  @Default([])
   @Description('Store values for selected checkboxes')
   value: string[] = []
+
+  @Optional()
+  declare styling?: CheckboxesStyling
+
+  @Optional()
+  declare signals?: SignalTargets<CheckboxesTargets>
 }

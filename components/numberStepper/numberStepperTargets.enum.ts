@@ -1,0 +1,16 @@
+export enum NumberStepperTargets {
+  root = 'root',
+  errors = 'errors',
+  helperText = 'helperText',
+  displayValue = 'displayValue',
+  label = 'label',
+  readOnly = 'readOnly',
+  prefix = 'prefix',
+  suffix = 'suffix',
+  tooltipButton = 'tooltipButton',
+  tooltipPopover = 'tooltipPopover',
+  minusButton = 'minusButton',
+  plusButton = 'plusButton',
+  minLabel = 'minLabel',
+  maxLabel = 'maxLabel',
+}

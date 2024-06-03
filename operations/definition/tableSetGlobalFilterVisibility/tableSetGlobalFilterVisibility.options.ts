@@ -1,9 +1,9 @@
-import { Property } from '@tsed/schema'
+import { Any, Property } from '@tsed/schema'
 
 export class TableSetGlobalFilterVisibilityOperationOptions {
   @Property()
   targetKey: string
 
-  @Property()
+  @Any('boolean', 'string')
   enableGlobalFilter: boolean | string
 }

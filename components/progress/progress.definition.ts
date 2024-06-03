@@ -1,8 +1,11 @@
-import { Required, DiscriminatorValue, Enum, Default, Description, Property } from '@tsed/schema'
+import { Required, DiscriminatorValue, Enum, Default, Description, Property, Optional } from '@tsed/schema'
 
 import { ProgressField } from './progressField'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
+import { ProgressTargets } from './progressTargets.enum'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import type { SignalTargets } from '../../signals'
 
 export enum ProgressTypes {
   PROGRESS = 'progress',
@@ -10,6 +13,7 @@ export enum ProgressTypes {
 }
 
 @DiscriminatorValue('progress')
+@ViewTargets(ProgressTargets)
 export class ProgressComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'progress' = 'progress' as const
@@ -30,4 +34,7 @@ export class ProgressComponentDefinition extends BaseComponentDefinition {
 
   @Property(Display)
   display: Display = new Display()
+
+  @Optional()
+  declare signals?: SignalTargets<ProgressTargets>
 }

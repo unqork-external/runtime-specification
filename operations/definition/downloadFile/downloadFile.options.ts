@@ -1,11 +1,6 @@
 import { Description, Required } from '@tsed/schema'
 
 export class DownloadFileOperationOptions {
-  @Description(
-    "Key or path to send operation to. If specified, overrides any `targetKey` in dynamic operation's options",
-  )
-  targetKey?: string
-
   @Required()
   @Description('URL to the file to be downloaded')
   url: string

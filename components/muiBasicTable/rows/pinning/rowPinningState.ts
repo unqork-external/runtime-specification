@@ -1,8 +1,9 @@
-import { Property } from '@tsed/schema'
+import { CollectionOf, Property } from '@tsed/schema'
 
 export class RowPinningState {
-  @Property()
+  @CollectionOf(String)
   top: string[]
-  @Property()
+
+  @CollectionOf(String)
   bottom: string[]
 }

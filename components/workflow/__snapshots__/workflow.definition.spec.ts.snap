@@ -1,0 +1,664 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Workflow Contract Tests should ensure the contract is clear 1`] = `
+[
+  "key",
+  "type",
+  "navigationSettings",
+  "workflowData",
+]
+`;
+
+exports[`Workflow Contract Tests should ensure the contract is clear 2`] = `
+{
+  "alertMessage": {
+    "description": "Message to display in popup when page loads if incorrect step requested",
+    "type": "string",
+  },
+  "buttonSettings": {
+    "$ref": "#/definitions/WorkflowButtonSettings",
+  },
+  "childIds": {
+    "description": "Child ids for nestable references",
+    "type": "array",
+  },
+  "components": {
+    "items": {
+      "$ref": "#/definitions/BaseComponentDefinition",
+    },
+    "type": "array",
+  },
+  "executable": {
+    "default": true,
+    "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
+    "type": "boolean",
+  },
+  "flashMessageSettings": {
+    "$ref": "#/definitions/WorkflowFlashMessageSettings",
+  },
+  "headerTitle": {
+    "description": "Text for header that will span across the top of the page",
+    "type": "string",
+  },
+  "inputs": {
+    "items": {
+      "$ref": "#/definitions/InputRef",
+    },
+    "type": "array",
+  },
+  "key": {
+    "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
+    "examples": [
+      "I am the key",
+      "bestKeyEver",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "moduleWorkflowSettings": {
+    "$ref": "#/definitions/ModuleWorkflowSettings",
+  },
+  "navigationInProgress": {
+    "default": false,
+    "description": "workflow navigation loading state",
+    "type": "boolean",
+  },
+  "navigationSettings": {
+    "$ref": "#/definitions/WorkflowNavigationSettings",
+  },
+  "nestables": {
+    "description": "Nestable information for workflow",
+    "type": "object",
+  },
+  "package": {
+    "$ref": "#/definitions/PackageModel",
+  },
+  "saveAndExitAlertSettings": {
+    "$ref": "#/definitions/WorkflowSaveAndExitAlertSettings",
+  },
+  "signals": {
+    "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
+    "examples": [
+      {
+        "args": {
+          "inputs": {
+            "propertyPath": "value",
+            "required": true,
+            "targetKey": "firstName",
+          },
+        },
+        "id": "firstNameWatcher",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onWatch",
+      },
+      {
+        "id": "textfieldOnBlur",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "textfield received blur event from DOM",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onBlur",
+      },
+      "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+    ],
+    "type": "object",
+  },
+  "styling": {
+    "$ref": "#/definitions/StylingModel",
+  },
+  "type": {
+    "const": "workflow",
+    "description": "Name of the type of component.",
+    "examples": [
+      "workflow",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "validation": {
+    "$ref": "#/definitions/Validation",
+  },
+  "validationErrors": {
+    "$ref": "#/definitions/WorkflowValidationErrors",
+  },
+  "validationModalSettings": {
+    "$ref": "#/definitions/WorkflowValidationModalSettings",
+  },
+  "value": {
+    "description": "Current value of the component",
+    "type": [
+      "null",
+      "integer",
+      "number",
+      "string",
+      "boolean",
+      "array",
+      "object",
+    ],
+  },
+  "workflowData": {
+    "$ref": "#/definitions/WorkflowData",
+  },
+}
+`;
+
+exports[`Workflow Contract Tests should ensure the contract is clear 3`] = `
+{
+  "BaseComponentDefinition": {
+    "description": "Base Component Definition is the fundamental interface any component that wishes to leverage the runtime must follow. It is the agreed upon contract between the Runtime and anything that should be recognized as a component.",
+    "properties": {
+      "executable": {
+        "default": true,
+        "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
+        "type": "boolean",
+      },
+      "inputs": {
+        "items": {
+          "$ref": "#/definitions/InputRef",
+        },
+        "type": "array",
+      },
+      "key": {
+        "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
+        "examples": [
+          "I am the key",
+          "bestKeyEver",
+        ],
+        "minLength": 1,
+        "type": "string",
+      },
+      "package": {
+        "$ref": "#/definitions/PackageModel",
+      },
+      "signals": {
+        "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
+        "examples": [
+          {
+            "args": {
+              "inputs": {
+                "propertyPath": "value",
+                "required": true,
+                "targetKey": "firstName",
+              },
+            },
+            "id": "firstNameWatcher",
+            "operations": [
+              {
+                "options": {
+                  "logType": "warn",
+                  "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+                },
+                "type": "PRINTER",
+              },
+            ],
+            "type": "onWatch",
+          },
+          {
+            "id": "textfieldOnBlur",
+            "operations": [
+              {
+                "options": {
+                  "logType": "warn",
+                  "thingToPrint": "textfield received blur event from DOM",
+                },
+                "type": "PRINTER",
+              },
+            ],
+            "type": "onBlur",
+          },
+          "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+        ],
+        "type": "object",
+      },
+      "styling": {
+        "$ref": "#/definitions/StylingModel",
+      },
+      "type": {
+        "description": "Name of the type of component.",
+        "minLength": 1,
+        "type": "string",
+      },
+      "validation": {
+        "$ref": "#/definitions/Validation",
+      },
+      "value": {
+        "description": "Current value of the component",
+        "type": [
+          "null",
+          "integer",
+          "number",
+          "string",
+          "boolean",
+          "array",
+          "object",
+        ],
+      },
+    },
+    "required": [
+      "key",
+      "type",
+    ],
+    "type": "object",
+  },
+  "InputRef": {
+    "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+    "properties": {
+      "alias": {
+        "type": "string",
+      },
+      "propertyPath": {
+        "type": "string",
+      },
+      "required": {
+        "type": "boolean",
+      },
+      "silent": {
+        "type": "boolean",
+      },
+      "targetKey": {
+        "minLength": 1,
+        "type": "string",
+      },
+      "type": {
+        "type": "string",
+      },
+    },
+    "required": [
+      "targetKey",
+    ],
+    "type": "object",
+  },
+  "ModuleWorkflowSettings": {
+    "properties": {
+      "postSaveTrigger": {
+        "description": "postSaveTrigger is the component to trigger after a successful save submission is made.",
+        "type": "string",
+      },
+      "preErrorTrigger": {
+        "description": "preErrorTrigger is the component to trigger before the validation action runs.",
+        "type": "string",
+      },
+      "preSaveTrigger": {
+        "description": "preSaveTrigger is the component to trigger concurrently when saving submission is made.",
+        "type": "string",
+      },
+      "validateOnOpen": {
+        "default": false,
+        "description": "validateOnOpen boolean to run validation when the form is first opened.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "PackageModel": {
+    "description": "The PackageModel describes how the Vega Runtime will resolve dependencies",
+    "properties": {
+      "type": {
+        "description": "Type of package",
+        "type": "string",
+      },
+      "url": {
+        "description": "URL of package",
+        "type": "string",
+      },
+      "version": {
+        "description": "Version of package",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "StylingModel": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "Validation": {
+    "description": "Holds the validation rules and the most current validation results for the component",
+    "properties": {
+      "isDirty": {
+        "description": "Whether or not field has had user interaction. It will be set to true on user interaction.",
+        "type": "boolean",
+      },
+      "result": {
+        "$ref": "#/definitions/ValidationResult",
+      },
+      "rules": {
+        "description": "The set of rules to restrict or define the accepted data for the current component. These are the rules to run for validation of the data input.",
+        "examples": [
+          "You can use it to define the max length of characters in an input field with a custom error message. rules: { required: { type: ValidationRuleTypes.MAX_LENGTH, validation: { maxLength: 5, }, errorMessage: 'Max length is 5', }, },",
+        ],
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "ValidationError": {
+    "properties": {
+      "message": {
+        "description": "The error message",
+        "type": "string",
+      },
+      "type": {
+        "description": "Type of the error",
+        "enum": [
+          "required",
+          "maxLength",
+          "minLength",
+          "arrayMinLength",
+          "arrayMaxLength",
+          "pattern",
+          "min",
+          "max",
+          "mask",
+          "number",
+          "dateinput",
+          "isBeforeDate",
+          "isAfterDate",
+          "customError",
+          "isEmail",
+        ],
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "type",
+    ],
+    "type": "object",
+  },
+  "ValidationResult": {
+    "properties": {
+      "errors": {
+        "items": {
+          "$ref": "#/definitions/ValidationError",
+        },
+        "type": "array",
+      },
+      "isValid": {
+        "type": [
+          "null",
+          "boolean",
+        ],
+      },
+    },
+    "type": "object",
+  },
+  "WorkflowButtonSettings": {
+    "properties": {
+      "hideButtons": {
+        "default": false,
+        "description": "Controls if all navigation buttons will be hidden in the component.",
+        "type": "boolean",
+      },
+      "hideNextButton": {
+        "default": false,
+        "description": "Controls if Next button will appear.",
+        "type": "boolean",
+      },
+      "hidePreviousButton": {
+        "default": false,
+        "description": "Controls if Previous button will appear.",
+        "type": "boolean",
+      },
+      "hideSaveAndExitButton": {
+        "default": false,
+        "description": "Controls if Save and Exit button will appear.",
+        "type": "boolean",
+      },
+      "nextButtonText": {
+        "default": "Next",
+        "description": "Text to display for the button that will advance the user in the workflow.",
+        "type": "string",
+      },
+      "previousButtonText": {
+        "default": "Previous",
+        "description": "Text to display for the button that will move the user back in the workflow.",
+        "type": "string",
+      },
+      "saveAndExitButtonText": {
+        "default": "Save and Exit",
+        "description": "Text to display for the button that will save the current submission and exit the workflow.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "WorkflowData": {
+    "properties": {
+      "workflowId": {
+        "description": "The id of the currently viewed workflow",
+        "minLength": 1,
+        "type": "string",
+      },
+      "workflowPath": {
+        "description": "The path (unique identifier) of the currently viewed workflow",
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "workflowId",
+      "workflowPath",
+    ],
+    "type": "object",
+  },
+  "WorkflowFlashMessageSettings": {
+    "properties": {
+      "dismissible": {
+        "default": false,
+        "description": "Controls if the flash message is dismissible or not.",
+        "type": "boolean",
+      },
+      "show": {
+        "default": false,
+        "description": "Controls if flash message appears or not. dismissible flash messages can be hidden by changing this property to false. Defaults to false",
+        "type": "boolean",
+      },
+      "status": {
+        "default": "warning",
+        "description": "Status of the flash message.",
+        "type": "string",
+      },
+      "text": {
+        "description": "Text for the flash message.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "WorkflowNavigationSettings": {
+    "properties": {
+      "allowNavigationWithErrors": {
+        "default": false,
+        "description": "Controls whether to allow forward navigation when validation errors are present.",
+        "type": "boolean",
+      },
+      "currentStep": {
+        "$ref": "#/definitions/WorkflowNavigationStep",
+      },
+      "currentStepPath": {
+        "description": "The path (unique identifier) of the currently shown navigation step",
+        "minLength": 1,
+        "type": "string",
+      },
+      "displayType": {
+        "default": "steps",
+        "description": "Controls if the navigation progress will be displayed as a list of steps or as a percentage bar",
+        "type": "string",
+      },
+      "enableVerticalNavDisplay": {
+        "default": false,
+        "description": "Controls if the navigation progress will display as horizontal or vertical. Default \`false\` (horizontal)",
+        "type": "boolean",
+      },
+      "gotoNavigationEnabled": {
+        "default": false,
+        "description": "Controls if "go to" navigation is allowed. i.e. User can click on a prior navigation step to navigate to it",
+        "type": "boolean",
+      },
+      "onlyKeepPersistedDataOnNavigation": {
+        "default": false,
+        "description": "Controls if non-persisted data from the current module will be retained in the client-side submission data when the next module in the workflow is shown. Default false (non-persisted data will remain).",
+        "type": "boolean",
+      },
+      "passNonPersistedData": {
+        "default": false,
+        "description": "Controls if non-persisted data will also be sent to the server for use in server-side execute modules (script tasks).",
+        "type": "boolean",
+      },
+      "stateControlType": {
+        "default": "auto",
+        "description": "Determines the type of navigation jumps that can occur in the workflow. "auto" is the default and is more restrictive. "manual" allows for more freedom. i.e. Jumping forward multiple steps.",
+        "type": "string",
+      },
+      "steps": {
+        "description": "List of all steps that are possible to navigate to from the current step. Used to generate navigation progress steps or percentage bar.",
+        "items": {
+          "$ref": "#/definitions/WorkflowNavigationStep",
+        },
+        "type": "array",
+      },
+      "validateOnBackwardNavigation": {
+        "default": false,
+        "description": "Controls if validation will also occur when navigating to a prior step in the workflow.",
+        "type": "boolean",
+      },
+    },
+    "required": [
+      "currentStep",
+      "currentStepPath",
+      "steps",
+    ],
+    "type": "object",
+  },
+  "WorkflowNavigationState": {
+    "properties": {
+      "valid": {
+        "default": false,
+        "description": "True if this step was valid the last time it was visited, false otherwise.",
+        "type": "boolean",
+      },
+      "visited": {
+        "default": false,
+        "description": "True if this step has been visited before for the current submission, false otherwise.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "WorkflowNavigationStep": {
+    "properties": {
+      "current": {
+        "default": false,
+        "description": "True if this is the currently shown step, false otherwise",
+        "type": "boolean",
+      },
+      "lastStep": {
+        "default": false,
+        "description": "True if this step is the last step, false otherwise.",
+        "type": "boolean",
+      },
+      "name": {
+        "description": "Name of the step.",
+        "minLength": 1,
+        "type": "string",
+      },
+      "navigationState": {
+        "$ref": "#/definitions/WorkflowNavigationState",
+      },
+      "path": {
+        "description": "Unique string identifier for this step.",
+        "minLength": 1,
+        "type": "string",
+      },
+      "percentage": {
+        "description": "The percentage of the navigation steps are is complete when you are on this step.",
+        "type": "number",
+      },
+      "percentageForGroup": {
+        "description": "The percentage of the navigation group that is complete when you are on this step.",
+        "type": "number",
+      },
+      "stepNumber": {
+        "description": "The step number of this step within all navigation steps.",
+        "type": "number",
+      },
+      "stepNumberForGroup": {
+        "description": "The step number of this step within the navigation group.",
+        "type": "number",
+      },
+    },
+    "required": [
+      "name",
+      "path",
+      "percentage",
+      "navigationState",
+      "stepNumber",
+    ],
+    "type": "object",
+  },
+  "WorkflowSaveAndExitAlertSettings": {
+    "properties": {
+      "cancelButtonText": {
+        "description": "The Save and Exit alert cancel button text.",
+        "type": "string",
+      },
+      "confirmationButtonText": {
+        "description": "The Save and Exit alert confirmation button text.",
+        "type": "string",
+      },
+      "text": {
+        "description": "The Save and Exit alert text that is displayed when the used clicks on the Save and Exit button.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "WorkflowValidationErrors": {
+    "properties": {
+      "errors": {
+        "type": "object",
+      },
+      "validationMode": {
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "WorkflowValidationModalSettings": {
+    "properties": {
+      "confirmationButtonText": {
+        "description": "The confirmation button text for the error modal.",
+        "type": "string",
+      },
+      "errorMessage": {
+        "description": "The body text for the error modal.",
+        "type": "string",
+      },
+      "errorTitle": {
+        "description": "The title for the error modal.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+}
+`;

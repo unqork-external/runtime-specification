@@ -1,49 +1,61 @@
-import { Const, Default, Description, DiscriminatorValue, Example, Property } from '@tsed/schema'
+import { Const, Default, Description, DiscriminatorValue, Example, Optional } from '@tsed/schema'
 
-import { SingleCheckboxAdornments } from './adornments/adornments'
+import { SingleCheckboxStyling } from './singleCheckbox.styling'
+import { SingleCheckboxAdornments } from './singleCheckboxAdornments'
 import { SingleCheckboxField } from './singleCheckboxField'
-import { SingleCheckboxStyling } from './styling/singleCheckbox.styling'
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { LeftAdornmentNestable, RightAdornmentNestable } from '../../componentComposition'
-import { Display } from '../../componentComposition/display/component.display'
-import { targetedStylingExample } from '../../examples/styling/targeted.styling.example'
+import { SingleCheckboxSimpleViewModel } from './singleCheckboxSimpleView.model'
+import { SingleCheckboxTargets } from './singleCheckboxTargets'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import {
+  LeftAdornmentNestable,
+  RightAdornmentNestable,
+} from '../../component-composition/adornments/component.adornments'
+import { Display } from '../../component-composition/display/component.display'
+import type { SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
 @DiscriminatorValue('checkbox')
+@ViewTargets(SingleCheckboxTargets)
 export class SingleCheckboxComponentDefinition extends BaseComponentDefinition {
   @Const('checkbox')
-  @Description('Type of the component.')
   type: 'checkbox' = 'checkbox' as const
 
-  @Property()
+  @Optional()
   @Default(false)
+  @Description('Boolean used to determine if the underlying view is simple and un-styled')
   useSimpleView: boolean = false
 
-  @Property(Display)
+  @Optional()
+  @Description('When useSimpleView is true, this object holds information about the current view')
+  simpleView?: SingleCheckboxSimpleViewModel
+
+  @Optional()
   display: Display = new Display()
 
-  @Property(SingleCheckboxField)
-  @Description('Field settings of the single checkbox.')
+  @Optional()
   field: SingleCheckboxField = new SingleCheckboxField()
 
-  @Property(SingleCheckboxAdornments)
-  adornments? = new SingleCheckboxAdornments()
+  @Optional()
+  adornments: SingleCheckboxAdornments = new SingleCheckboxAdornments()
 
-  @Description(
-    trimAll(`
-      Fully qualified child keys for adornments in the left slot.
-      Maintained by nestable api.
-    `),
-  )
-  left?: string[] = []
+  @Optional()
+  @Default([])
+  @TrimmedDescription(`
+    Fully qualified child keys for adornments in the left slot.
+    Maintained by nestable api.
+  `)
+  left: string[] = []
 
-  @Description(
-    trimAll(`
-      Fully qualified child keys for adornments in the right slot.
-      Maintained by nestable api.
-    `),
-  )
-  right?: string[] = []
+  @Optional()
+  @Default([])
+  @TrimmedDescription(`
+    Fully qualified child keys for adornments in the right slot.
+    Maintained by nestable api.
+  `)
+  right: string[] = []
 
   @Description('Nestable definitions for adorned single checkbox component.')
   nestables = {
@@ -51,11 +63,14 @@ export class SingleCheckboxComponentDefinition extends BaseComponentDefinition {
     right: new RightAdornmentNestable(),
   }
 
-  @Description('Value of the single checkbox.')
+  @Optional()
+  @Example(true, false)
   declare value?: boolean
 
-  @Property()
-  @Description('Object that maps customized CSS styling to specific targets on the Checkbox.')
-  @Example(targetedStylingExample)
-  declare styling: SingleCheckboxStyling
+  @Optional()
+  declare signals?: SignalTargets<SingleCheckboxTargets>
+
+  @Optional()
+  @Examples(targetedStylingExample)
+  declare styling?: SingleCheckboxStyling
 }

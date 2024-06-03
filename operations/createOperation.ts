@@ -1,4 +1,4 @@
-import { OperationTypes } from './enums/operation-types.enum'
+import type { OperationTypes } from './enums/operation-types.enum'
 import { OperationTypeMap } from './typemaps/operation.typemap'
 
 /**
@@ -22,7 +22,7 @@ import { OperationTypeMap } from './typemaps/operation.typemap'
 export const createOperation = <OpType extends OperationTypes>(
   type: OpType,
   options: InstanceType<(typeof OperationTypeMap)[OpType]>['options'],
-  additionalArgs?: AdditionalArgs,
+  additionalArgs?: Partial<AdditionalArgs>,
 ): InstanceType<(typeof OperationTypeMap)[OpType]> => {
   const classOpType = OperationTypeMap[type]
   const op = new classOpType()
@@ -38,4 +38,5 @@ export const createOperation = <OpType extends OperationTypes>(
 
 interface AdditionalArgs {
   notifyImmediately: boolean
+  creatorSummary: string
 }

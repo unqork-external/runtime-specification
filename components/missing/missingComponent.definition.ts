@@ -1,6 +1,6 @@
-import { Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
+import { Description, DiscriminatorValue, Required } from '@tsed/schema'
 
-import { BaseComponentDefinition } from '../../baseComponentInterface'
+import { BaseComponentDefinition } from '../../base-component-interface'
 
 @DiscriminatorValue('__missing__')
 export class MissingComponentDefinition extends BaseComponentDefinition {

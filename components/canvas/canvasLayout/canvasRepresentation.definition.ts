@@ -26,6 +26,10 @@ export class CanvasRepresentation {
   @Default(false)
   isNestable: boolean
 
+  @Required()
+  @Default(true)
+  showHeader?: boolean = true
+
   @Optional()
   childLayouts?: Record<LAYOUT_ID, ChildCanvasLayout>
 

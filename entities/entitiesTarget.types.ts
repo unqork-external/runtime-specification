@@ -1,11 +1,9 @@
 import { Description, Example, Optional, Required, CollectionOf } from '@tsed/schema'
 
-import { trimAll } from '../../utilities'
+import { TrimmedDescription } from '../../decorators/schema/trimmedDescription.decorator'
 
 @Description(
-  trimAll(`
-  An Entity Target is a representation of a key that maps to an engine value and a property that maps to the Entity data.
-`),
+  'An Entity Target is a representation of a key that maps to an engine value and a property that maps to the Entity data.',
 )
 export class EntityTarget {
   @Required()
@@ -20,13 +18,11 @@ export class EntityTarget {
 
   @Optional()
   @Example('[{keyName: "firstName", value: "{{firstName.value}}" }]', `[{keyName: "optionA", value: true" }]`)
-  @Description(
-    trimAll(`
+  @TrimmedDescription(`
     Targets are an optional collection of engine value references used get and set engine values. 
     An Entity target might optionally need to define exactly what values it cares about. 
     This is useful when dealing with nested data
-  `),
-  )
+  `)
   @CollectionOf(EntityTarget)
   targets?: EntityTarget[]
 }

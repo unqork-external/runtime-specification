@@ -6,22 +6,31 @@ exports[`Operation Model: TableRemoveRows Tests TableRemoveRows Model 1`] = `
     "TableRemoveRowsOperationOptions": {
       "properties": {
         "targetIndexes": {
-          "description": "Index for the rows we want to remove",
+          "description": "Index(es) for the row(s) we want to remove",
+          "items": {
+            "type": "number",
+          },
           "type": "array",
         },
         "targetKey": {
-          "description": "A component key or target syntax for getting a component",
+          "description": "Key of the table component to remove rows",
+          "minLength": 1,
           "type": "string",
         },
-        "targetRowKeys": {
-          "description": "Component key, target key for the rows we want to remove",
-          "type": "array",
-        },
       },
+      "required": [
+        "targetKey",
+        "targetIndexes",
+      ],
       "type": "object",
     },
   },
+  "description": "Removes row(s) from the Table component at specified index(es).",
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

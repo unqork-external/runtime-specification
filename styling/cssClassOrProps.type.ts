@@ -1,4 +1,5 @@
 import type { css } from '@emotion/css'
+import type { ArrayValues } from 'type-fest'
 
 export type CssClassOrProps = CssProps | CssClassString
 
@@ -8,4 +9,4 @@ type CssClassString = string
 
 // Emotion has already defined styling objects ahead of time for us to use for our own typing.
 // Very nice resource.
-type CssProps = Parameters<typeof css>
+export type CssProps = ArrayValues<Parameters<typeof css>>

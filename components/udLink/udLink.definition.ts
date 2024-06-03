@@ -1,8 +1,9 @@
-import { Required, DiscriminatorValue, Optional, Enum, Description, Property, Default } from '@tsed/schema'
+import { Default, Description, DiscriminatorValue, Enum, Optional, Property, Required } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
+import { UdLinkTargets } from './udLinkTargets.enum'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import type { SignalTargets } from '../../signals'
 import { UdViewBasicField } from '../udView'
 
 export enum UdLinkTarget {
@@ -33,19 +34,11 @@ export class UdLinkComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'udLink' = 'udLink' as const
 
-  @Description(
-    trimAll(`
-    Content represents the content that should be rendered as the link.
-  `),
-  )
+  @Description('Content represents the content that should be rendered as the link.')
   content: string
 
   @Required()
-  @Description(
-    trimAll(`
-    Style represent the intended display style for the link.
-  `),
-  )
+  @Description('Style represent the intended display style for the link.')
   to: UdLinkToDefinition | UdLinkToModuleDefinition
 
   @Property(Display)
@@ -55,4 +48,7 @@ export class UdLinkComponentDefinition extends BaseComponentDefinition {
   @Property(UdViewBasicField)
   @Description('Field settings')
   field: UdViewBasicField = new UdViewBasicField()
+
+  @Optional()
+  declare signals?: SignalTargets<UdLinkTargets>
 }

@@ -16,6 +16,10 @@ describe('Operation Model: Navigation Tests', () => {
         type: { type: 'string', const: 'NAVIGATION', examples: ['NAVIGATION'] },
         name: { type: 'string', description: 'Name of the operation' },
         options: { $ref: '#/definitions/NavigationOperationOptions' },
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
       },
       required: ['options'],
       definitions: {

@@ -4,6 +4,7 @@ export enum PositionAriaRoleType {
   ALERT = 'alert',
   ALERTDIALOG = 'alertdialog',
   DIALOG = 'dialog',
+  // eslint-disable-next-line @typescript-eslint/no-duplicate-enum-values
   MODALDIALOG = 'dialog',
   MENU = 'menu',
   POPUP = 'popup',

@@ -1,7 +1,8 @@
 import { CollectionOf, Description, Example, OneOf, Optional, Required } from '@tsed/schema'
 
+import { TrimmedDescription } from '../../decorators/schema/trimmedDescription.decorator'
 import { trimAll } from '../../utilities'
-import { BaseComponentDefinition } from '../baseComponentInterface/base.component.definition'
+import { BaseComponentDefinition } from '../base-component-interface/base.component.definition'
 import { Entity } from '../entities'
 import { TranslationModel } from '../translations/translations.model'
 
@@ -10,26 +11,22 @@ export class ModuleInteractions {
   enableDnd: boolean = false
 }
 
-@Description(trimAll(`Module Definitions`))
+@TrimmedDescription(`Module Definitions`)
 export class ModuleDefinition {
   @Required()
   @Example('658088ff5096efc1899835e7')
-  @Description(
-    trimAll(`
+  @TrimmedDescription(`
     Unqork Module Id which refers to a bundle of components. 
     Vega additionally contains other objects for modifying runtime behavior.
-    `),
-  )
+  `)
   id: string
 
   @Required()
   @Example('Module-Name')
-  @Description(
-    trimAll(`
+  @TrimmedDescription(`
     Unqork Module Name is another unique identifier for this module. 
     Cannot contain spaces or special characters other than - and _.
-    `),
-  )
+  `)
   name: string
 
   @Optional()
@@ -38,39 +35,25 @@ export class ModuleDefinition {
 
   @Optional()
   @Example('Module Title')
-  @Description(
-    trimAll(`
-    Title to describe a module
-  `),
-  )
+  @Description(`Title to describe a module`)
   title?: string
 
   @Optional()
   @Example('Theme')
-  @Description(
-    trimAll(`
-    Used for dynamic UI (we will probably remove this later)
-  `),
-  )
+  @Description(`Used for dynamic UI (we will probably remove this later)`)
   theme?: string
 
   @Optional()
-  @Description(
-    trimAll(`
-    Module settings
-  `),
-  )
+  @Description(`Module settings`)
   settings?: {
     runtimeVersion?: '1.0.0' | '2.0.0'
+    useLegacyWrapper: 'module' | 'workflow'
+    usePreviewBar: boolean
   }
 
   @Required()
   @Example('')
-  @Description(
-    trimAll(`
-    A collection of component definitions
-  `),
-  )
+  @Description(`A collection of component definitions`)
   @OneOf(() => BaseComponentDefinition)
   @CollectionOf(() => BaseComponentDefinition)
   components: BaseComponentDefinition[]
@@ -86,19 +69,11 @@ export class ModuleDefinition {
     }
   `),
   )
-  @Description(
-    trimAll(`
-    A collection of Entities
-  `),
-  )
+  @Description(`A collection of Entities`)
   @CollectionOf(Entity)
   entities?: Entity[]
 
-  @Description(
-    trimAll(`
-      FILL ME OUT WITH SOMETHING USEFUL
-    `),
-  )
-  @Example(trimAll(``))
+  @Description(`FILL ME OUT WITH SOMETHING USEFUL`)
+  @Example('')
   translations?: TranslationModel
 }

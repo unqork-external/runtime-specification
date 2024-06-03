@@ -1,12 +1,14 @@
 import { Default, Description, Enum, Optional } from '@tsed/schema'
 
+import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+
 export class ScrollToOptions {
   @Optional()
-  @Description('The key or path to the container we intend to target for an operation')
-  targetKey?: string
-
-  @Optional()
-  @Description('Element to scroll to')
+  @TrimmedDescription(`
+    TODO: Rename to targetKey
+    "targetElementKey" describes where to scroll the view to.
+    If "targetElementKey" is not set, it will scroll to the top of the view.
+  `)
   targetElementKey?: string
 
   @Optional()

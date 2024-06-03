@@ -1,11 +1,12 @@
-import { Description, Optional, Required } from '@tsed/schema'
+import { CollectionOf, Description, Optional, Required } from '@tsed/schema'
 
-export type IFrameOptionsSandbox =
-  | 'allow-forms'
-  | 'allow-modals'
-  | 'allow-popups'
-  | 'allow-same-origin'
-  | 'allow-scripts'
+export enum IFrameOptionsSandboxEnum {
+  AllowForms = 'allow-forms',
+  AllowModals = 'allow-modals',
+  AllowPopups = 'allow-popups',
+  AllowSameOrigin = 'allow-same-origin',
+  AllowScripts = 'allow-scripts',
+}
 
 export class IFrameOptions {
   @Required()
@@ -22,5 +23,6 @@ export class IFrameOptions {
 
   @Optional()
   @Description('The "sandbox" setting of the IFrame')
-  sandbox?: Array<IFrameOptionsSandbox>
+  @CollectionOf(IFrameOptionsSandboxEnum)
+  sandbox?: Array<IFrameOptionsSandboxEnum>
 }

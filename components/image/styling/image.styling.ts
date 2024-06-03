@@ -1,8 +1,10 @@
-import { Property } from '@tsed/schema'
+import { Description, Property } from '@tsed/schema'
 
-import { ImageTargets } from './image.targets'
+import { ImageStyleTargets } from './image.targets'
+import { StylingModel } from '../../../styling'
 
-export class ImageStyling {
+@Description('The possible targets for Textfield component styling.')
+export class ImageStyling extends StylingModel<ImageStyleTargets> {
   @Property()
-  targets: ImageTargets
+  targets: ImageStyleTargets
 }

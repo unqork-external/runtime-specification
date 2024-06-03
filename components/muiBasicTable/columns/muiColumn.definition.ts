@@ -1,6 +1,6 @@
 import { Description, DiscriminatorValue, Property } from '@tsed/schema'
 
-import { BaseComponentDefinition } from '../../../baseComponentInterface'
+import { BaseComponentDefinition } from '../../../base-component-interface'
 
 @DiscriminatorValue('muiColumn')
 export class MuiColumnDefinition extends BaseComponentDefinition {

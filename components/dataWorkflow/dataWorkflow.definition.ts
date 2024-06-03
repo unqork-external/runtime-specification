@@ -1,7 +1,7 @@
 import { DiscriminatorValue, Property } from '@tsed/schema'
 
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Field } from '../../componentComposition'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Field } from '../../component-composition'
 
 @DiscriminatorValue('dataworkflow')
 export class DataWorkflowComponentDefinition extends BaseComponentDefinition {

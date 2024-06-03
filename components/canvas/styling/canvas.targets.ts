@@ -1,49 +1,119 @@
-import { Css } from '../../../../decorators/css.decorator'
+import { Description } from '@tsed/schema'
+
+import { Css } from '../../../../decorators/schema/css.decorator'
 import { type CssClassOrProps } from '../../../styling/cssClassOrProps.type'
 import { CanvasTargetsEnum } from '../targets/canvasTargets.enum'
 
 export class CanvasTargets {
   @Css()
-  [CanvasTargetsEnum.root]: CssClassOrProps
+  @Description('Adds styles to the root div for the canvas component.')
+  [CanvasTargetsEnum.root]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.canvas]: CssClassOrProps
+  @Description('Adds styles to the div wrapping the canvas.')
+  [CanvasTargetsEnum.canvas]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.canvasEmpty]: CssClassOrProps
+  @Description('Adds styles to for the div wrapping the empty state for the canvas.')
+  [CanvasTargetsEnum.canvasEmpty]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.dropzone]: CssClassOrProps
+  @Description('Adds styles to the div of a dropzone in the canvas.')
+  [CanvasTargetsEnum.dropzone]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.dropzoneWrapper]: CssClassOrProps
+  @Description('Adds styles to the div wrapping the div of a dropzone in the canvas.')
+  [CanvasTargetsEnum.dropzoneWrapper]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.representationViewWrapper]: CssClassOrProps
+  @Description('Adds styles to the div wrapping a representation.')
+  [CanvasTargetsEnum.representationViewWrapper]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.dragPreview]: CssClassOrProps
+  @Description('Adds styles to the div responsible for onClick edit of representation')
+  [CanvasTargetsEnum.representationOnClickWrapper]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.canvasItemHeader]: CssClassOrProps
+  @Description('Adds styles to the div wrapping the dragPreview')
+  [CanvasTargetsEnum.dragPreview]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.canvasItemHeaderWrapper]: CssClassOrProps
+  @Description('Adds styles to the div wrapping a Canvas Item Header')
+  [CanvasTargetsEnum.canvasItemHeader]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.canvasButtonsWrapper]: CssClassOrProps
+  @Description('Adds styles to the div wrapper around the canvas item header')
+  [CanvasTargetsEnum.canvasItemHeaderWrapper]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.representationWrapper]: CssClassOrProps
-  @Css()
-  [CanvasTargetsEnum.representationButtonsOpenEllipse]: CssClassOrProps
+  @Description('Adds styles to the button on the top of the canvas.')
+  [CanvasTargetsEnum.canvasButtonsWrapper]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.representationButtonsWrapper]: CssClassOrProps
+  @Description('Adds styles to the div wrapper of a representation.')
+  [CanvasTargetsEnum.representationWrapper]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.representationInformationWrapper]: CssClassOrProps
+  @Description('Adds styles to the outer div wrapper the inner dropzone.')
+  [CanvasTargetsEnum.representationInnerDropZoneWrapper]: CssClassOrProps;
 
   @Css()
-  [CanvasTargetsEnum.representationInformationSectionWrapper]: CssClassOrProps
+  @Description('Adds styles to the button that opens the representation button menu.')
+  [CanvasTargetsEnum.representationButtonsOpenMenu]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the button that toggles edit in the representation buttons.')
+  [CanvasTargetsEnum.representationButtonsOpenEdit]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the text in the representation button.')
+  [CanvasTargetsEnum.representationButtonsDisplayText]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the icon in the canvas item header.')
+  [CanvasTargetsEnum.canvasItemHeaderIcon]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the icon in the canvas item type.')
+  [CanvasTargetsEnum.canvasItemHeaderType]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the icon in the canvas item label.')
+  [CanvasTargetsEnum.canvasItemHeaderLabel]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the representationButtonsWrapper for the canvas component.')
+  [CanvasTargetsEnum.representationButtonsWrapper]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the wrapper around the representation information.')
+  [CanvasTargetsEnum.representationInformationWrapper]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the button that toggles the representation information state.')
+  [CanvasTargetsEnum.representationInformationOpenButton]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the wrapper around a section in the representation information.')
+  [CanvasTargetsEnum.representationInformationSectionWrapper]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the wrapper around the comment section in the representation information.')
+  [CanvasTargetsEnum.representationCommentSectionWrapper]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the wrapper around the representation information.')
+  [CanvasTargetsEnum.representationInformationDropdown]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the wrapper around the representation information header.')
+  [CanvasTargetsEnum.representationInformationHeader]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the to the wrapper around the representation information item.')
+  [CanvasTargetsEnum.representationInformationItem]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the to the wrapper around the representation information text within an item.')
+  [CanvasTargetsEnum.representationInformationItemText]: CssClassOrProps
 }

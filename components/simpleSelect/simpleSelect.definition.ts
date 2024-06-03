@@ -1,51 +1,87 @@
-import { CollectionOf, Default, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
+import { CollectionOf, Const, Default, Description, DiscriminatorValue, Optional, Property } from '@tsed/schema'
 
-import { OptionNestable } from './optionNestable'
-import { SelectedOptionsNestable } from './selectedOptionsNestable'
 import { SimpleSelectField } from './simpleSelectField'
+import { SimpleSelectInputAdornments } from './simpleSelectInputAdornments'
+import { SimpleSelectNestables } from './simpleSelectNestables'
 import { SimpleSelectSimpleViewModel } from './simpleSelectSimpleView.model'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
+import { SimpleSelectStyling } from './styling/simpleSelect.styling'
+import { SimpleSelectTargets } from './targets/simpleSelectTargets.enum'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import type { SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
 @DiscriminatorValue('simpleSelect')
+@ViewTargets(SimpleSelectTargets)
+@TrimmedDescription(`
+  The Simple Select component is part of the core set of input components.
+  It displays the field as a simple select control. 
+  The end-user selects option value(s) from a list directly into the field.
+  Use the Simple Select component in situations where lists contain many options (e.g. >6) 
+  that don't need to be displayed upfront to the end user.
+  
+  By default the Simple Select component stays collapsed until the end-user clicks to open it. 
+  After making a selection the Simple Select options close.
+`)
 export class SimpleSelectComponentDefinition extends BaseComponentDefinition {
-  @Required()
+  @Const('simpleSelect')
   type: 'simpleSelect' = 'simpleSelect' as const
 
-  @Property()
+  @Optional()
   @Default(false)
-  useSimpleView?: boolean = false
+  @Description('Boolean used to determine if the underlying view is simple and unstyled')
+  useSimpleView: boolean = false
 
   @Property()
-  simpleView: SimpleSelectSimpleViewModel
+  simpleView?: SimpleSelectSimpleViewModel
 
-  @Property()
+  @Optional()
   display: Display = new Display()
 
-  @Property(SimpleSelectField)
-  @Description('Field settings of the simpleSelect component.')
+  @Optional()
   field: SimpleSelectField = new SimpleSelectField()
 
+  @Optional()
+  adornments: SimpleSelectInputAdornments = new SimpleSelectInputAdornments()
+
+  @Property()
+  left: string[] = []
+
+  @Property()
+  right: string[] = []
+
+  @Optional()
   @CollectionOf(BaseComponentDefinition)
   @Description('Nested option component definition.')
-  options?: BaseComponentDefinition[] = []
+  options: BaseComponentDefinition[] = []
 
+  @Optional()
   @Description('Fully qualified child keys for options nestables. Maintained by nestable api.')
-  optionKeys?: string[] = []
+  optionKeys: string[] = []
 
+  @Optional()
   @CollectionOf(BaseComponentDefinition)
   @Description('Nested selected option component definitions')
-  selectedOptions?: BaseComponentDefinition[] = []
+  selectedOptions: BaseComponentDefinition[] = []
 
+  @Optional()
   @Description('Fully qualified child keys for selectedOptions nestables. Maintained by nestable api.')
-  selected?: string[] = []
+  selected: string[] = []
 
-  @Description('Nestable definitions for simpleSelect component')
-  nestables = {
-    optionKeys: new OptionNestable(),
-    selected: new SelectedOptionsNestable(),
-  }
+  @Property()
+  nestables = new SimpleSelectNestables()
 
+  @Optional()
+  declare signals?: SignalTargets<SimpleSelectTargets>
+
+  @Optional()
   @Description('Value of the simpleSelect')
   declare value?: string[] | null
+
+  @Optional()
+  @Examples(targetedStylingExample)
+  declare styling?: SimpleSelectStyling
 }

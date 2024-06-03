@@ -2,6 +2,10 @@
 
 exports[`Operation Model: TableSetGlobalFilter Tests JSON Schema snapshot 1`] = `
 {
+  "creatorSummary": {
+    "description": "A detailed summary of the operation",
+    "type": "string",
+  },
   "name": {
     "description": "Name of the operation",
     "type": "string",

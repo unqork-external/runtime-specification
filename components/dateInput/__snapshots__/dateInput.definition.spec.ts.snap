@@ -1,0 +1,650 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Date Input Contract Tests should ensure the contract is clear 1`] = `
+[
+  "key",
+  "type",
+]
+`;
+
+exports[`Date Input Contract Tests should ensure the contract is clear 2`] = `
+{
+  "calendarView": {
+    "$ref": "#/definitions/CalendarView",
+  },
+  "display": {
+    "$ref": "#/definitions/Display",
+  },
+  "executable": {
+    "default": true,
+    "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
+    "type": "boolean",
+  },
+  "field": {
+    "$ref": "#/definitions/InputField",
+  },
+  "format": {
+    "$ref": "#/definitions/DateFormat",
+  },
+  "inputs": {
+    "items": {
+      "$ref": "#/definitions/InputRef",
+    },
+    "type": "array",
+  },
+  "key": {
+    "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
+    "examples": [
+      "I am the key",
+      "bestKeyEver",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "package": {
+    "$ref": "#/definitions/PackageModel",
+  },
+  "signals": {
+    "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
+    "examples": [
+      {
+        "args": {
+          "inputs": {
+            "propertyPath": "value",
+            "required": true,
+            "targetKey": "firstName",
+          },
+        },
+        "id": "firstNameWatcher",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onWatch",
+      },
+      {
+        "id": "textfieldOnBlur",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "textfield received blur event from DOM",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onBlur",
+      },
+      "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+    ],
+    "type": "object",
+  },
+  "simpleView": {
+    "$ref": "#/definitions/DateInputSimpleViewModel",
+  },
+  "styling": {
+    "$ref": "#/definitions/DateInputStyling",
+  },
+  "type": {
+    "const": "dateinput",
+    "description": "Name of the type of component.",
+    "examples": [
+      "dateinput",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "useSimpleView": {
+    "default": false,
+    "description": "Boolean used to determine if the underlying view is simple and un-styled",
+    "type": "boolean",
+  },
+  "validation": {
+    "$ref": "#/definitions/DateValidation",
+  },
+  "value": {
+    "description": "Current value of the component",
+    "type": "object",
+  },
+}
+`;
+
+exports[`Date Input Contract Tests should ensure the contract is clear 3`] = `
+{
+  "CalendarView": {
+    "description": "Controls range of dates shown to users and allows users to disable date selection",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "Disable ability for user to select date.",
+        "type": "boolean",
+      },
+      "yearOffset": {
+        "default": 10,
+        "description": "Display (+/-) years from the current date.",
+        "examples": [
+          3,
+          5,
+          10,
+        ],
+        "type": "number",
+      },
+    },
+    "type": "object",
+  },
+  "DateFormat": {
+    "description": "Controls format of dates and autocomplete functionality",
+    "properties": {
+      "dateFormat": {
+        "default": "mdY",
+        "description": "Defines the format for the value of this field by using MDY tokens (tokens are case sensitive).",
+        "type": "string",
+      },
+      "disableAutoComplete": {
+        "default": false,
+        "description": "Disable Autocomplete for the DateInput component.",
+        "type": "boolean",
+      },
+      "displayDelimiter": {
+        "default": "/",
+        "description": "Delimiter used for the date.",
+        "type": "string",
+      },
+      "storeDateOnly": {
+        "default": false,
+        "description": "When enabled, this component will not store the timestamp of the date.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "DateInputSimpleViewModel": {
+    "description": "Controls whether SimpleView is rendered as an input or Typography",
+    "properties": {
+      "inEditMode": {
+        "default": true,
+        "description": "When set to "true", the component should allow users input data. When set to "false", the component will render as an unstyled readonly Typography component.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "DateInputStyleTargets": {
+    "properties": {
+      "coreDateInput": {
+        "description": "Adds styles to Component's input subcomponent.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "errorsFieldError": {
+        "description": "Adds styles to Errors Field error root element, which is rendered within the LI elements.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "errorsRoot": {
+        "description": "Adds styles to Errors subcomponent root.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "errorsUnorderedList": {
+        "description": "Adds styles to Errors subcomponent UL element.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "errorsUnorderedListItem": {
+        "description": "Adds styles to Errors subcomponent LI elements.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "inputGroup": {
+        "description": "Adds styles to Component's div with role='presentation' wrapping the input and suffix subcomponents.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "label": {
+        "description": "Adds styles to Component's Label subcomponent.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "readOnly": {
+        "description": "Adds styles to Component's ReadOnly subcomponent.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "root": {
+        "description": "Adds styles to Component's ComponentWrapper subcomponent.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "simpleViewInput": {
+        "description": "Adds styles to Component's SimpleView input subcomponent.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "simpleViewView": {
+        "description": "Adds styles to Component's SimpleView view subcomponent.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "suffix": {
+        "description": "Adds styles to Component's Errors subcomponent.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "tooltipButton": {
+        "description": "Adds styles to Component's Tooltip subcomponent button.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "tooltipPopover": {
+        "description": "Adds styles to Component's Tooltip subcomponent popover.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+    },
+    "type": "object",
+  },
+  "DateInputStyling": {
+    "properties": {
+      "targets": {
+        "$ref": "#/definitions/DateInputStyleTargets",
+      },
+    },
+    "type": "object",
+  },
+  "DateValidation": {
+    "description": "Controls what date values are treated as valid",
+    "properties": {
+      "absoluteDate": {
+        "description": "If date restriction is set, it defaults to 1970-01-30T00:00:00.000Z.",
+        "examples": [
+          "1970-01-01T00:00:00.000Z",
+          "2022-10-10T00:00:00.000Z",
+        ],
+        "type": "string",
+      },
+      "absoluteEndDate": {
+        "description": "This setting has effect if "Before" is selected, or "Between" is selected and "betweenRelationEnd" is set to "absolute". It marks the upper bound to acceptable dates the end-user can input.",
+        "examples": [
+          "1980-01-01T00:00:00.000Z",
+          "2023-06-16T00:00:00.000Z",
+        ],
+        "type": "string",
+      },
+      "absoluteStartDate": {
+        "description": "This setting has effect if "After" is selected, or "Between" is selected and "betweenRelationStart" is set to "absolute". It marks the lower bound to acceptable dates the end-user can input.",
+        "examples": [
+          "1970-01-01T00:00:00.000Z",
+          "2023-06-12T00:00:00.000Z",
+        ],
+        "type": "string",
+      },
+      "betweenNumEnd": {
+        "description": "This setting only applies if "Between" is selected and "betweenRelationEnd" is set to "relative" The number of "betweenUnitEnd" to calculate the upper bound from the current date.",
+        "examples": [
+          1,
+          10,
+        ],
+        "type": "number",
+      },
+      "betweenNumStart": {
+        "description": "This setting only applies if "Between" is selected and "betweenRelationStart" is set to "relative" The number of "betweenUnitStart" to calculate the lower bound from the current date.",
+        "examples": [
+          1,
+          10,
+        ],
+        "type": "number",
+      },
+      "betweenRelationEnd": {
+        "description": "This setting the type of date that must be calculated for the bound for the upper bound of the restrictions. Setting this to "absolute" means that the date is not related to the current date. Setting this to "relative" means that the date will be calculated from the current date. Setting this to “now" means that the upper bound will be the current date. Setting this to infinite removes the upper bound from the restrictions.",
+        "enum": [
+          "absolute",
+          "relative",
+          "now",
+          "infinite",
+        ],
+        "examples": [
+          "now",
+          "absolute",
+        ],
+        "type": "string",
+      },
+      "betweenRelationStart": {
+        "description": "This setting the type of date that must be calculated for the bound for the lower bound of the restrictions. Setting this to "absolute" means that the date is not related to the current date. Setting this to "relative" means that the date will be calculated from the current date. Setting this to “now" means that the lower bound will be the current date. Setting this to infinite removes the lower bound from the restrictions.",
+        "enum": [
+          "absolute",
+          "relative",
+          "now",
+          "infinite",
+        ],
+        "examples": [
+          "now",
+          "absolute",
+        ],
+        "type": "string",
+      },
+      "betweenUnitEnd": {
+        "description": "This setting only applies if "Between" is selected and "betweenRelationEnd" is set to "relative" Unit type to calculate the upper bound from the current date. To use in conjunction with "betweenNumEnd".",
+        "enum": [
+          "days",
+          "months",
+          "years",
+        ],
+        "examples": [
+          "days",
+          "years",
+        ],
+        "type": "string",
+      },
+      "betweenUnitStart": {
+        "description": "This setting only applies if "Between" is selected and "betweenRelationStart" is set to "relative" Unit type to calculate the lower bound from the current date. To use in conjunction with "betweenNumStart".",
+        "enum": [
+          "days",
+          "months",
+          "years",
+        ],
+        "examples": [
+          "days",
+          "years",
+        ],
+        "type": "string",
+      },
+      "dateLimit": {
+        "default": "",
+        "description": "Set restrictions for acceptable dates that the end-user can input.",
+        "enum": [
+          "",
+          "future",
+          "past",
+          "before",
+          "after",
+          "between",
+        ],
+        "examples": [
+          "future",
+          "before",
+        ],
+        "type": "string",
+      },
+      "isDirty": {
+        "description": "Whether or not field has had user interaction. It will be set to true on user interaction.",
+        "type": "boolean",
+      },
+      "result": {
+        "$ref": "#/definitions/ValidationResult",
+      },
+      "rules": {
+        "description": "The set of rules to restrict or define the accepted data for the current component. These are the rules to run for validation of the data input.",
+        "examples": [
+          "You can use it to define the max length of characters in an input field with a custom error message. rules: { required: { type: ValidationRuleTypes.MAX_LENGTH, validation: { maxLength: 5, }, errorMessage: 'Max length is 5', }, },",
+        ],
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "Display": {
+    "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Read Only View' corresponds to the component being rendered with an input element or as text.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "Setting it to \`true\` hides the component from the view, while \`false\` shows it. Regardless of this setting, the component is always visible in the Module Editor. A hidden component can still receive information from other components.",
+        "type": "boolean",
+      },
+      "interactive": {
+        "default": true,
+        "description": "When \`false\`, it is not possible to interact with or edit the input field. Its appearance is modified (grayed-out by default) to show its state, the HTML 'disabled' attribute is added to the field, and when hovering over it, the cursor also changes to alert of the disabled status. However, the component can still receive information from other components when it's not interactive.",
+        "type": "boolean",
+      },
+      "readOnlyView": {
+        "default": false,
+        "description": "Defines how the component will be displayed. When \`false\`, the component is displayed as an input field. When \`true\`, the component will not accept any input from the user, and its value will be rendered inline as text and not as an input component. If no value is present, the word 'None' is rendered. If a prefix or suffix is set for the component, they also appear as inline text.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "InputField": {
+    "description": "Details to be applied to the input element within a component.",
+    "properties": {
+      "customClass": {
+        "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
+        "type": "string",
+      },
+      "helperText": {
+        "$ref": "#/definitions/InputHelperText",
+      },
+      "label": {
+        "$ref": "#/definitions/InputLabel",
+      },
+      "placeholder": {
+        "description": "An example or short explanation of the requested input. This appears inside of the input by default and disappears when the user enters a value.",
+        "examples": [
+          "First name - Expects the user to type their first name",
+          "Enter your Social Security Number - Expects user's SSN",
+          "dd/MM/YYYY - To show an expected date format (if you need a more robust component, try Date Input",
+        ],
+        "type": "string",
+      },
+      "prefix": {
+        "description": "A symbol or text to display before the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          "$",
+          "@",
+        ],
+        "type": "string",
+      },
+      "suffix": {
+        "description": "A symbol or text to display after the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          ".com",
+        ],
+        "type": "string",
+      },
+      "tooltipDescription": {
+        "description": "Tooltips are floating texts that appear when the cursor is positioned over an icon. They can span across multiple lines and provide hints about the requested data. Setting this property will make a question mark icon to be displayed on the right side of the component's label, and once the user hovers over it, the tooltip text will appear. Moving the cursor outside the icon's area hides the tooltip. Hiding the component's label automatically hides the tooltip.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputHelperText": {
+    "description": "Details pertaining to the helper text element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the helper text of the component.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed underneath the input field. Unlike tooltips, a helper text stays visible under the input field and displays on a single line.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputLabel": {
+    "description": "Details pertaining to the label element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the label of the component. Note the label will still be displayed on the Module Editor.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed above the input field.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputRef": {
+    "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+    "properties": {
+      "alias": {
+        "type": "string",
+      },
+      "propertyPath": {
+        "type": "string",
+      },
+      "required": {
+        "type": "boolean",
+      },
+      "silent": {
+        "type": "boolean",
+      },
+      "targetKey": {
+        "minLength": 1,
+        "type": "string",
+      },
+      "type": {
+        "type": "string",
+      },
+    },
+    "required": [
+      "targetKey",
+    ],
+    "type": "object",
+  },
+  "Label": {
+    "properties": {
+      "text": {
+        "description": "Text displayed as the label for the field",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "PackageModel": {
+    "description": "The PackageModel describes how the Vega Runtime will resolve dependencies",
+    "properties": {
+      "type": {
+        "description": "Type of package",
+        "type": "string",
+      },
+      "url": {
+        "description": "URL of package",
+        "type": "string",
+      },
+      "version": {
+        "description": "Version of package",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "StylingModel": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "Validation": {
+    "description": "Holds the validation rules and the most current validation results for the component",
+    "properties": {
+      "isDirty": {
+        "description": "Whether or not field has had user interaction. It will be set to true on user interaction.",
+        "type": "boolean",
+      },
+      "result": {
+        "$ref": "#/definitions/ValidationResult",
+      },
+      "rules": {
+        "description": "The set of rules to restrict or define the accepted data for the current component. These are the rules to run for validation of the data input.",
+        "examples": [
+          "You can use it to define the max length of characters in an input field with a custom error message. rules: { required: { type: ValidationRuleTypes.MAX_LENGTH, validation: { maxLength: 5, }, errorMessage: 'Max length is 5', }, },",
+        ],
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "ValidationError": {
+    "properties": {
+      "message": {
+        "description": "The error message",
+        "type": "string",
+      },
+      "type": {
+        "description": "Type of the error",
+        "enum": [
+          "required",
+          "maxLength",
+          "minLength",
+          "arrayMinLength",
+          "arrayMaxLength",
+          "pattern",
+          "min",
+          "max",
+          "mask",
+          "number",
+          "dateinput",
+          "isBeforeDate",
+          "isAfterDate",
+          "customError",
+          "isEmail",
+        ],
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "type",
+    ],
+    "type": "object",
+  },
+  "ValidationResult": {
+    "properties": {
+      "errors": {
+        "items": {
+          "$ref": "#/definitions/ValidationError",
+        },
+        "type": "array",
+      },
+      "isValid": {
+        "type": [
+          "null",
+          "boolean",
+        ],
+      },
+    },
+    "type": "object",
+  },
+}
+`;

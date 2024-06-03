@@ -1,8 +1,8 @@
 import { Required, DiscriminatorValue, Optional, Enum, Description, Property, Default } from '@tsed/schema'
 
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
-import { Field } from '../../componentComposition/field/component.field.label'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import { Field } from '../../component-composition/field/component.field.label'
 
 export class LinkTextBasicField extends Field {
   @Description('Allows customization of the class HTML parameter for the root element of the component')

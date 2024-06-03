@@ -1,0 +1,41 @@
+export enum FileTargets {
+  ACCEPTED_FILE_LIST = 'acceptedFileList',
+  ERRORS = 'errors',
+  DROP_TARGET = 'dropTarget',
+  FILE_BROWSE_BUTTON = 'fileBrowseButton',
+  FILE_ERROR = 'fileError',
+  IMAGE_PREVIEW = 'imagePreview',
+  LABEL = 'label',
+  MAX_FILE_SIZE = 'maxFileSize',
+  REJECTED_FILE_LIST = 'rejectedFileList',
+  REMOVE_BUTTON = 'removeButton',
+  ROOT = 'root',
+  TOOLTIP_BUTTON = 'tooltipButton',
+  TOOLTIP_POPOVER = 'tooltipPopover',
+  INNER_WRAPPER = 'innerWrapper',
+  UPLOAD_ICON = 'uploadIcon',
+  DROP_ROW = 'dropRow',
+  MAX_SIZE_HELPER_TEXT = 'maxSizeHelperText',
+}
+
+export const FILE_CLASS_PREFIX = 'VGFile-'
+
+export enum FileStyleClasses {
+  ACCEPTED_FILE_LIST = `${FILE_CLASS_PREFIX}${FileTargets.ACCEPTED_FILE_LIST}`,
+  ERRORS = `${FILE_CLASS_PREFIX}${FileTargets.ERRORS}`,
+  DROP_TARGET = `${FILE_CLASS_PREFIX}${FileTargets.DROP_TARGET}`,
+  FILE_BROWSE_BUTTON = `${FILE_CLASS_PREFIX}${FileTargets.FILE_BROWSE_BUTTON}`,
+  FILE_ERROR = `${FILE_CLASS_PREFIX}${FileTargets.FILE_ERROR}`,
+  IMAGE_PREVIEW = `${FILE_CLASS_PREFIX}${FileTargets.IMAGE_PREVIEW}`,
+  LABEL = `${FILE_CLASS_PREFIX}${FileTargets.LABEL}`,
+  MAX_FILE_SIZE = `${FILE_CLASS_PREFIX}${FileTargets.MAX_FILE_SIZE}`,
+  REJECTED_FILE_LIST = `${FILE_CLASS_PREFIX}${FileTargets.REJECTED_FILE_LIST}`,
+  REMOVE_BUTTON = `${FILE_CLASS_PREFIX}${FileTargets.REMOVE_BUTTON}`,
+  ROOT = `${FILE_CLASS_PREFIX}${FileTargets.ROOT}`,
+  TOOLTIP_BUTTON = `${FILE_CLASS_PREFIX}${FileTargets.TOOLTIP_BUTTON}`,
+  TOOLTIP_POPOVER = `${FILE_CLASS_PREFIX}${FileTargets.TOOLTIP_POPOVER}`,
+  INNER_WRAPPER = `${FILE_CLASS_PREFIX}${FileTargets.INNER_WRAPPER}`,
+  UPLOAD_ICON = `${FILE_CLASS_PREFIX}${FileTargets.UPLOAD_ICON}`,
+  DROP_ROW = `${FILE_CLASS_PREFIX}${FileTargets.DROP_ROW}`,
+  MAX_SIZE_HELPER_TEXT = `${FILE_CLASS_PREFIX}${FileTargets.MAX_SIZE_HELPER_TEXT}`,
+}

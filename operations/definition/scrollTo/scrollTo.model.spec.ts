@@ -12,51 +12,7 @@ describe('Operation Model: ScrollTo Tests', () => {
   })
 
   it('should match this JSON Schema', () => {
-    expect(schema).toStrictEqual({
-      type: 'object',
-      properties: {
-        type: {
-          type: 'string',
-          const: 'SCROLL_TO',
-          examples: ['SCROLL_TO'],
-        },
-        options: {
-          $ref: '#/definitions/ScrollToOptions',
-        },
-        name: {
-          description: 'Name of the operation',
-          type: 'string',
-        },
-      },
-      required: ['options'],
-      definitions: {
-        ScrollToOptions: {
-          type: 'object',
-          properties: {
-            targetKey: {
-              description: 'The key or path to the container we intend to target for an operation',
-              type: 'string',
-            },
-            targetElementKey: {
-              description: 'Element to scroll to',
-              type: 'string',
-            },
-            block: {
-              type: 'string',
-              enum: ['start', 'center', 'end', 'nearest'],
-              description: `Defines vertical alignment`,
-              default: 'start',
-            },
-            inline: {
-              type: 'string',
-              enum: ['start', 'center', 'end', 'nearest'],
-              description: `Defines horizontal alignment`,
-              default: 'nearest',
-            },
-          },
-        },
-      },
-    })
+    expect(schema).toMatchSnapshot()
   })
 
   it('scrollTo should validate appropriately with a targetElementKey', () => {

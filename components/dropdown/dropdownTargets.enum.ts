@@ -1,0 +1,17 @@
+export enum DropdownTargets {
+  root = 'root',
+  label = 'label',
+  tooltipButton = 'tooltipButton',
+  tooltipPopover = 'tooltipPopover',
+  helperText = 'helperText',
+  readOnly = 'readOnly',
+  dropdownRoot = 'dropdownRoot',
+  dropdownSelectControl = 'dropdownSelectControl',
+  dropdownOption = 'dropdownOption',
+  dropdownEmptyOption = 'dropdownEmptyOption',
+  dropdownPlaceholderOption = 'dropdownPlaceholderOption',
+  errorsRoot = 'errorsRoot',
+  errorsUnorderedList = 'errorsUnorderedList',
+  errorsUnorderedListItem = 'errorsUnorderedListItem',
+  errorsFieldError = 'errorsFieldError',
+}

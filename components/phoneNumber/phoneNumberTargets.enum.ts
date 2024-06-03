@@ -1,0 +1,16 @@
+export enum PhoneNumberTargets {
+  root = 'root',
+  errorsRoot = 'errorsRoot',
+  errorsUnorderedList = 'errorsUnorderedList',
+  errorsUnorderedListItem = 'errorsUnorderedListItem',
+  errorsFieldError = 'errorsFieldError',
+  input = 'input',
+  label = 'label',
+  readOnly = 'readOnly',
+  inputPrefix = 'inputPrefix',
+  inputSuffix = 'inputSuffix',
+  tooltipButton = 'tooltipButton',
+  tooltipPopover = 'tooltipPopover',
+  countryDopdown = 'countryDropdown',
+  countryDropdownOption = 'countryDropdownOption',
+}

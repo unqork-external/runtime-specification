@@ -1,0 +1,16 @@
+export enum TextfieldTargets {
+  root = 'root',
+  label = 'label',
+  tooltip = 'tooltip',
+  tooltipButton = 'tooltipButton',
+  tooltipPopover = 'tooltipPopover',
+  input = 'input',
+  inputPrefix = 'inputPrefix',
+  inputSuffix = 'inputSuffix',
+  helperText = 'helperText',
+  characterLimit = 'characterLimit',
+  errors = 'errors',
+  readOnly = 'readOnly',
+  simpleEdit = 'simpleEdit',
+  simpleReadOnly = 'simpleReadOnly',
+}

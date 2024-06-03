@@ -1,0 +1,96 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`parseFormula operation should match JSON schema 1`] = `
+{
+  "definitions": {
+    "InputRef": {
+      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+      "properties": {
+        "alias": {
+          "type": "string",
+        },
+        "propertyPath": {
+          "type": "string",
+        },
+        "required": {
+          "type": "boolean",
+        },
+        "silent": {
+          "type": "boolean",
+        },
+        "targetKey": {
+          "minLength": 1,
+          "type": "string",
+        },
+        "type": {
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+    "ParseFormulaOptions": {
+      "properties": {
+        "formula": {
+          "description": "Formula that will be applied",
+          "examples": [
+            "Some examples we can use: [ "=CONCATENATE(A,B)", "=A*5", "=GET(A, \`MyParam\`)" ]",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+        "inputs": {
+          "description": "Inputs must to have references to inputs that will be used by the formula",
+          "items": {
+            "$ref": "#/definitions/InputRef",
+          },
+          "type": "array",
+        },
+        "property": {
+          "default": "value",
+          "description": "Property that will receive the final value after parsing the formula",
+          "minLength": 1,
+          "type": "string",
+        },
+        "targetKey": {
+          "description": "The target must to be a the string reference of the input that will receive the result of the formula operation over the array of reference inputs provided",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "formula",
+        "property",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ParseFormulaOptions",
+    },
+    "type": {
+      "const": "PARSE_FORMULA",
+      "examples": [
+        "PARSE_FORMULA",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

@@ -19,6 +19,10 @@ describe('Operation Model: SetComponentState Tests', () => {
           description: 'Name of the operation',
           type: 'string',
         },
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
       },
       required: ['options'],
       definitions: {

@@ -13,6 +13,10 @@ describe('Operation Model: WorkflowSaveAndExit Tests', () => {
     expect(schema).toStrictEqual({
       type: 'object',
       properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
         type: {
           type: 'string',
           const: 'WORKFLOW_SAVE_AND_EXIT',
@@ -54,10 +58,6 @@ describe('Operation Model: WorkflowSaveAndExit Tests', () => {
             },
             saveAndExitAlertSetting: {
               $ref: '#/definitions/SaveAndExitAlertSetting',
-            },
-            targetKey: {
-              description: 'targetKey refers to the intended target to manipulate.',
-              type: 'object',
             },
           },
           required: ['currentStepPath'],

@@ -4,6 +4,7 @@ exports[`Open New Page Model should match this JSON Schema 1`] = `
 {
   "definitions": {
     "InputRef": {
+      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
       "properties": {
         "alias": {
           "type": "string",
@@ -71,6 +72,10 @@ exports[`Open New Page Model should match this JSON Schema 1`] = `
     },
   },
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

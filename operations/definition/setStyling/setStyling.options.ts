@@ -1,23 +1,19 @@
-import { Description, Example } from '@tsed/schema'
+import { Example } from '@tsed/schema'
 
-import { trimAll } from '../../../../utilities'
+import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 
 export class SetStylingOperationOptions {
-  @Description(
-    trimAll(`
+  @TrimmedDescription(`
     Target component(s) that will receive the \`styling\` update.
     Engine Syntax is supported as a way to access the intended targets. 
-  `),
-  )
+  `)
   @Example('styled-component', 'panel.*')
   targetKey: string
 
-  @Description(
-    trimAll(`
-      The complete configuration to update the components' \`styling.targets\` property with. 
-      This can include CSS classnames and/or CSS objects.
-    `),
-  )
+  @TrimmedDescription(`
+    The complete configuration to update the components' \`styling.targets\` property with. 
+    This can include CSS classnames and/or CSS objects.
+  `)
   @Example({
     root: [
       {

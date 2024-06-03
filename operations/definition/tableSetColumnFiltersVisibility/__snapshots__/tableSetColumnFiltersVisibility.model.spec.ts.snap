@@ -6,7 +6,10 @@ exports[`Operation Model: TableSetColumnFiltersVisibility Tests should match thi
     "TableSetColumnFiltersVisibilityOperationOptions": {
       "properties": {
         "enableColumnFilters": {
-          "type": "object",
+          "type": [
+            "boolean",
+            "string",
+          ],
         },
         "targetKey": {
           "type": "string",
@@ -16,6 +19,10 @@ exports[`Operation Model: TableSetColumnFiltersVisibility Tests should match thi
     },
   },
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

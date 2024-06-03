@@ -1,5 +1,5 @@
 import { ValidateOperation } from './validate.model'
-import { generateSchemaAndValidate, trimAll } from '../../../../utilities'
+import { generateSchemaAndValidate } from '../../../../utilities'
 import { createOperation } from '../../createOperation'
 import { OperationTypes } from '../../enums/operation-types.enum'
 
@@ -19,6 +19,10 @@ describe('Validate Model', () => {
         options: { $ref: '#/definitions/ValidateOptions' },
         name: {
           description: 'Name of the operation',
+          type: 'string',
+        },
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
           type: 'string',
         },
       },
@@ -44,6 +48,18 @@ describe('Validate Model', () => {
                 'If throwOnError is true and validation has failed. Stop execution for this operation chain.',
               type: 'boolean',
             },
+            validateChildren: {
+              default: false,
+              description:
+                'When true, will also validate the children of all matches from `targetKey`, ignoring modals, hidden, and isolated components.',
+              type: 'boolean',
+            },
+            ignoreDirectIsolated: {
+              default: false,
+              description:
+                'When true, will ignore isolated components (i.e. panel modals) that are directly matched by the targetKey. By default, isolated components that are directly matched will be validated.',
+              type: 'boolean',
+            },
             value: {
               description: 'Value to be validated.',
               type: ['null', 'integer', 'number', 'string', 'boolean', 'array', 'object'],
@@ -60,6 +76,8 @@ describe('Validate Model', () => {
       targetKey: 'name1',
       shouldValidate: true,
       throwOnError: true,
+      validateChildren: false,
+      ignoreDirectIsolated: false,
       value: 'hi',
     })
     const isValid = validate(op)

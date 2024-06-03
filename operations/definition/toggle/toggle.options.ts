@@ -1,7 +1,5 @@
 import { Description, Example, Required } from '@tsed/schema'
 
-import { trimAll } from '../../../../utilities'
-
 export class ToggleOptions {
   @Required()
   @Example('firstNameTextField', 'grid.row(0).col(0)')
@@ -11,9 +9,7 @@ export class ToggleOptions {
   @Required()
   @Example('value', 'validation.latest')
   @Description(
-    trimAll(
-      `\`property\` refers to the intended property to mutate. This can be represented as a JSONPath expression.`,
-    ),
+    '`property` refers to the intended property to mutate. This can be represented as a JSONPath expression.',
   )
   property: string = 'value'
 }

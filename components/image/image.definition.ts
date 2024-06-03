@@ -1,55 +1,38 @@
-import { Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
+import { Const, Description, DiscriminatorValue, Optional } from '@tsed/schema'
 
+import { ImageField } from './imageField'
+import { ImageTargets } from './imageTargets.enum'
 import { ImageStyling } from './styling/image.styling'
+import { ViewTargets } from '../../../decorators'
+import { Examples } from '../../../decorators/schema/examples.decorator'
 import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
-import { UdViewBasicField } from '../udView'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import type { SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
-export class ImageSize {
-  @Optional()
-  width?: number
-
-  @Optional()
-  height?: number
-}
-
+@Description(
+  trimAll(`
+        The Vega Image component is a component to display images in the module.
+        Use this component by specifying the URL of external image files, or image files stored in Managed Assets
+    `),
+)
 @DiscriminatorValue('image')
+@ViewTargets(ImageTargets)
 export class ImageComponentDefinition extends BaseComponentDefinition {
-  @Required()
+  @Const('image')
   type: 'image' = 'image' as const
 
-  @Description(
-    trimAll(`
-    Alternative Text represents the visual description of the image in text for assistive technologies.
-  `),
-  )
-  alternativeText?: string
-
-  @Property(Display)
+  @Optional()
   display: Display = new Display()
 
-  @Property(UdViewBasicField)
-  @Description('Field settings')
-  field: UdViewBasicField = new UdViewBasicField()
+  @Optional()
+  field: ImageField = new ImageField()
 
-  @Property(ImageSize)
-  @Required()
-  @Description(
-    trimAll(`
-    Size represents the size of the rendered image in pixels or points.
-  `),
-  )
-  size: ImageSize = new ImageSize()
+  @Optional()
+  @Examples(targetedStylingExample)
+  declare styling?: ImageStyling
 
-  @Required()
-  @Description(
-    trimAll(`
-    Source URL represents the URL of the image.
-  `),
-  )
-  sourceUrl: string
-
-  @Property()
-  styling: ImageStyling
+  @Optional()
+  declare signals?: SignalTargets<ImageTargets>
 }

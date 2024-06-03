@@ -1,6 +1,6 @@
 import { Default, Description, Required } from '@tsed/schema'
 
-import { InputField } from '../../componentComposition/input/component.input'
+import { InputField } from '../../component-composition/input/component.input'
 
 export class MultiSelectInputField extends InputField {
   @Default(false)

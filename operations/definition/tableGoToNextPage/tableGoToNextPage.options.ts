@@ -1,7 +1,7 @@
-import { Description, Property } from '@tsed/schema'
+import { Description, Required } from '@tsed/schema'
 
 export class TableGoToNextPageOperationOptions {
-  @Description('The key for the component we want to perform the operation')
-  @Property()
+  @Description('Key of the Table component to change pagination position of')
+  @Required()
   targetKey: string
 }

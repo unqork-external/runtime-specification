@@ -1,44 +1,53 @@
-import { CollectionOf, Const, Description, DiscriminatorValue, Example, Property } from '@tsed/schema'
+import { CollectionOf, Const, Default, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
 
+import { FieldGroupSettings } from './fieldGroup.field'
 import { FieldGroupStyling } from './fieldGroup.styling'
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
-import { targetedStylingExample } from '../../examples/styling/targeted.styling.example'
+import { FieldGroupTargets } from './fieldGroup.targets'
+import { ViewTargets } from '../../../decorators'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
 import { StandardArrayNestable } from '../../nestables'
+import type { SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
 @DiscriminatorValue('fieldGroup')
-@Description(
-  trimAll(`
-    The Field Group component is part of the core range of Centauri display/layout components.
-    The Field Group component lets you organize fields and components together in one group.
-    You can apply a CSS style to a Field Group component to call the group out to your end-user.
-    Use the Field Group component if you want a stylized group of fields as part of a larger page.
-  `),
-)
+@TrimmedDescription(`
+  The Field Group component is part of the core range of Centauri display/layout components.
+  The Field Group component lets you organize fields and components together in one group.
+  You can apply a CSS style to a Field Group component to call the group out to your end-user.
+  Use the Field Group component if you want a stylized group of fields as part of a larger page.
+  The Field Group component is similar to the Panel component, but you would not use a 
+  Field Group component for navigation, like you would with a Panel.
+`)
+@ViewTargets(FieldGroupTargets)
 export class FieldGroupComponentDefinition extends BaseComponentDefinition {
   @Const('fieldGroup')
-  @Description('Type of component.')
   type: string = 'fieldGroup' as const
 
-  @Property()
-  @Description(`List of IDs that reference a fieldGroup's children.`)
+  @Required()
+  @Description(`List of IDs that reference a Field Group's children.`)
   childIds: string[] = []
 
-  @Property()
+  @Required()
   @CollectionOf(BaseComponentDefinition)
   @Description(`Definitions of children components to be rendered within the Field Group.`)
+  @Default([])
   declare components: BaseComponentDefinition[]
 
-  @Property(Display)
+  @Property()
+  declare signals: SignalTargets<FieldGroupTargets>
+
+  @Property()
   display: Display = new Display()
 
   @Property()
-  @Description('Nestable information for fieldGroup. fieldGroup contains a standard array of unique components.')
+  field: FieldGroupSettings = new FieldGroupSettings()
+
+  @Description('Nestable information for Field Group. Field Group contains a standard array of unique components.')
   nestables = { childIds: new StandardArrayNestable() }
 
-  @Property()
-  @Description('Object that maps customized CSS styling to specific targets on the Field Group.')
-  @Example(targetedStylingExample)
-  declare styling: FieldGroupStyling
+  @Examples(targetedStylingExample)
+  declare styling?: FieldGroupStyling
 }

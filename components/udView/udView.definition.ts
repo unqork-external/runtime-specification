@@ -1,19 +1,21 @@
 import {
+  Optional,
   CollectionOf,
   Default,
   Description,
   DiscriminatorValue,
   Enum,
-  Optional,
   Property,
   Required,
 } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
-import { Field } from '../../componentComposition/field/component.field.label'
+import { UdViewTargets } from './udViewTargets.enum'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import { Field } from '../../component-composition/field/component.field.label'
 import { StandardArrayNestable } from '../../nestables'
+import type { SignalTargets } from '../../signals'
 
 export class UdViewBasicField extends Field {
   @Description('Allows customization of the class HTML parameter for the root element of the component')
@@ -91,26 +93,19 @@ export enum UdViewAppearance {
 }
 
 @DiscriminatorValue('udView')
+@ViewTargets(UdViewTargets)
 export class UdViewComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'udView' = 'udView' as const
 
   @Default(UdViewAppearance.BLOCK)
   @Enum(UdViewAppearance)
-  @Description(
-    trimAll(`
-    Appearance represents the intended visual style and role for the view.
-  `),
-  )
+  @Description('Appearance represents the intended visual style and role for the view.')
   appearance?: UdViewAppearance
 
   @Enum(UdViewDirection)
   @Default(UdViewDirection.VERTICAL)
-  @Description(
-    trimAll(`
-    Direction represents how the view children should be disposed.
-  `),
-  )
+  @Description('Direction represents how the view children should be disposed.')
   direction?: UdViewDirection
 
   @Property(Display)
@@ -141,4 +136,7 @@ export class UdViewComponentDefinition extends BaseComponentDefinition {
 
   @CollectionOf(BaseComponentDefinition)
   components?: BaseComponentDefinition[]
+
+  @Optional()
+  declare signals?: SignalTargets<UdViewTargets>
 }

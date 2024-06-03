@@ -2,6 +2,6 @@ import { Description, Example, Required } from '@tsed/schema'
 
 export class TableClearOperationOptions {
   @Required()
-  @Description('key of the table to apply the clear operation')
+  @Description('Key of the Table component to apply the clear operation')
   public targetKey: string
 }

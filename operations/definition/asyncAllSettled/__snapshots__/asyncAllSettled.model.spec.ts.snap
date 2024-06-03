@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: AsyncAllSettled Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "AsyncAllSettledOperationOptions": {
+      "properties": {
+        "operations": {
+          "description": "Async operations that will run in parallel. When all have either resolved or rejected, this operation will finish",
+          "items": {
+            "$ref": "#/definitions/Operation",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "throwOnAnyRejection": {
+          "description": "Controls if once all promises have settled, if this operation will throw with the rejected values. Default: false.",
+          "type": "boolean",
+        },
+      },
+      "required": [
+        "operations",
+      ],
+      "type": "object",
+    },
+    "Operation": {
+      "properties": {
+        "creatorSummary": {
+          "description": "A detailed summary of the operation",
+          "type": "string",
+        },
+        "name": {
+          "description": "Name of the operation",
+          "type": "string",
+        },
+        "type": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/AsyncAllSettledOperationOptions",
+    },
+    "type": {
+      "const": "ASYNC_ALL_SETTLED",
+      "examples": [
+        "ASYNC_ALL_SETTLED",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

@@ -1,8 +1,8 @@
 import { Required, DiscriminatorValue, Enum, Description } from '@tsed/schema'
 
 import { IconSource } from './iconTypes'
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 
 @DiscriminatorValue('icon')
 export class IconComponentDefinition extends BaseComponentDefinition {
@@ -15,13 +15,11 @@ export class IconComponentDefinition extends BaseComponentDefinition {
   sourceType: IconSource
 
   @Required()
-  @Description(
-    trimAll(`
-      String representing the source of the icon.
-      For url, this should be a fully qualified url to the hosted icon image.
-      For fontAwesome, this should be a string describing the fontAwesome classes.
-      For cssIcon, this string should be the css class definitions to apply.
-    `),
-  )
+  @TrimmedDescription(`
+    String representing the source of the icon.
+    For url, this should be a fully qualified url to the hosted icon image.
+    For fontAwesome, this should be a string describing the fontAwesome classes.
+    For cssIcon, this string should be the css class definitions to apply.
+  `)
   source: string
 }

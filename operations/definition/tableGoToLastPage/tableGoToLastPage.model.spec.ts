@@ -2,10 +2,9 @@ import { TableGoToLastPageOperation } from './tableGoToLastPage.model'
 import { generateSchemaAndValidate } from '../../../../utilities'
 
 describe('Operation Model: TableGoToLastPage Tests', () => {
-  let validate, schema
+  let schema
   beforeAll(() => {
     const response = generateSchemaAndValidate(TableGoToLastPageOperation)
-    validate = response.validate
     schema = response.schema
   })
 

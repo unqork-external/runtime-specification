@@ -2,10 +2,9 @@ import { TableSetActionToolbarVisibilityOperation } from './tableSetActionToolba
 import { generateSchemaAndValidate } from '../../../../utilities'
 
 describe('Operation Model: TableSetActionToolbarVisibility Tests', () => {
-  let validate, schema
+  let schema
   beforeAll(() => {
     const response = generateSchemaAndValidate(TableSetActionToolbarVisibilityOperation)
-    validate = response.validate
     schema = response.schema
   })
 

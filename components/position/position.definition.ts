@@ -1,11 +1,15 @@
-import { CollectionOf, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
+import { CollectionOf, Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
 
 import { PositionDisplay } from './positionDisplay'
 import { PositionOptions } from './positionOptions'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
+import { PositionTargets } from './positionTargets.enum'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { StandardArrayNestable } from '../../nestables'
+import type { SignalTargets } from '../../signals'
 
 @DiscriminatorValue('position')
+@ViewTargets(PositionTargets)
 export class PositionComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'position' = 'position' as const
@@ -24,4 +28,7 @@ export class PositionComponentDefinition extends BaseComponentDefinition {
 
   @Description('Nestable definitions for position component')
   nestables = { childIds: new StandardArrayNestable() }
+
+  @Optional()
+  declare signals?: SignalTargets<PositionTargets>
 }

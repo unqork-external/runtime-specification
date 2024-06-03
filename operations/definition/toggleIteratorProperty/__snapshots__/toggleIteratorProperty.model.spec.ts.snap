@@ -1,0 +1,59 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: ToggleIteratorProperty Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "ToggleIteratorPropertyOperationOptions": {
+      "properties": {
+        "applyToChildren": {
+          "default": false,
+          "description": "If true, apply Op to all children of the target node and expand/collapse any children from this node down.",
+          "type": "boolean",
+        },
+        "rowTargetPath": {
+          "description": "The row path inside the \`targetKey\` to a node to expand/collapse.",
+          "type": "string",
+        },
+        "targetKey": {
+          "description": "Key of the component to expand/collapse.",
+          "type": "string",
+        },
+        "toggleProperty": {
+          "description": "Which property we want to toggle.",
+          "type": "string",
+        },
+        "toggleValue": {
+          "description": "What we should set the toggleProperty to. If no value is set, we flip it.",
+          "type": "boolean",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ToggleIteratorPropertyOperationOptions",
+    },
+    "type": {
+      "const": "TOGGLE_ITERATOR_PROPERTY",
+      "examples": [
+        "TOGGLE_ITERATOR_PROPERTY",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "type": "object",
+}
+`;

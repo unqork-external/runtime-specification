@@ -1,0 +1,15 @@
+export enum TrayTargetsEnum {
+  ROOT = 'root',
+  TRAY_WRAPPER = 'trayWrapper',
+  GROUP_HEADER = 'groupHeader',
+  GROUP_TITLE_WRAPPER = 'groupTitleWrapper',
+  GROUP_TITLE_TEXT = 'groupTitleText',
+  GROUP_TOGGLE_BUTTON_WRAPPER = 'groupToggleButtonWrapper',
+  GROUP_TOGGLE_BUTTON = 'groupToggleButton',
+  GROUP_TOGGLE_BUTTON_ICON = 'groupToggleButtonIcon',
+  DEFAULT_SEARCH_BAR = 'defaultSearchBar',
+  DRAG_WRAPPER = 'dragWrapper',
+  TRAY_ITEM_BUTTON = 'trayItemButton',
+  TRAY_ITEM_ICON = 'trayItemIcon',
+  TRAY_ITEM_TEXT = 'trayItemText',
+}

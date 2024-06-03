@@ -1,6 +1,6 @@
 import { Default, Description, Optional } from '@tsed/schema'
 
-import { Display } from '../../componentComposition/display/component.display'
+import { Display } from '../../component-composition/display/component.display'
 
 export class PositionDisplay extends Display {
   @Optional()

@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Set Property Model should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "SetPropertyOptions": {
+      "description": "SET_PROPERTY will mutate a specific property on a specific target to a specific value. Optionally, if shouldOverwrite is set to false and if a value is already existing on the targeted property, then the Operation will do nothing and exit.",
+      "properties": {
+        "property": {
+          "description": "\`property\` refers to the intended property to mutate. This can be represented as a JSONPath expression.",
+          "examples": [
+            "value",
+            "validation.latest",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+        "resolveSyntax": {
+          "description": "
+    Temporary way to resolve a value as syntax. Currently only used for auto generation of CSMs. 
+    Runtime team to revisit.  
+  ",
+          "type": "boolean",
+        },
+        "shouldOverwrite": {
+          "default": true,
+          "description": "shouldOverwrite refers to the type of behavior that SET_PROPERTY should emulate. If true, SET_PROPERTY will overwrite the value located at the intended property of the target regardless of if the intended property is set. If false, SET_PROPERTY will check if the property's value is set, and if so, SET_PROPERTY will exit.",
+          "type": "boolean",
+        },
+        "targetKey": {
+          "description": "\`targetKey\` refers to the intended target to manipulate. Can work on an array of targetKeys as well.",
+          "examples": [
+            "firstNameTextField",
+            "grid.row(0).col(0)",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+        "value": {
+          "description": "The value refers to the intended value to mutate the intended property to.",
+          "type": [
+            "null",
+            "integer",
+            "number",
+            "string",
+            "boolean",
+            "array",
+            "object",
+          ],
+        },
+      },
+      "required": [
+        "targetKey",
+        "property",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "The Set Property operation sets a value at a property location for a given target.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/SetPropertyOptions",
+    },
+    "type": {
+      "const": "SET_PROPERTY",
+      "examples": [
+        "SET_PROPERTY",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

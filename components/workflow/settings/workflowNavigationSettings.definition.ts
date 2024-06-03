@@ -1,7 +1,7 @@
-import { Required, Optional, Default, Description, OneOf, CollectionOf, Property } from '@tsed/schema'
+import { Required, Default, Description, CollectionOf, Property } from '@tsed/schema'
 
 import { WorkflowNavigationStep } from './workflowNavigationStep.definition'
-import { trimAll } from '../../../../utilities'
+import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 
 export class WorkflowNavigationSettings {
   @Required()
@@ -30,22 +30,18 @@ export class WorkflowNavigationSettings {
   gotoNavigationEnabled: boolean = false
 
   @Default('auto')
-  @Description(
-    trimAll(`
-      Determines the type of navigation jumps that can occur in the workflow.
-      "auto" is the default and is more restrictive.
-      "manual" allows for more freedom. i.e. Jumping forward multiple steps.
-    `),
-  )
+  @TrimmedDescription(`
+    Determines the type of navigation jumps that can occur in the workflow.
+    "auto" is the default and is more restrictive.
+    "manual" allows for more freedom. i.e. Jumping forward multiple steps.
+  `)
   stateControlType: 'auto' | 'manual' = 'auto'
 
   @Required()
-  @Description(
-    trimAll(`
-      List of all steps that are possible to navigate to from the current step.
-      Used to generate navigation progress steps or percentage bar.
-    `),
-  )
+  @TrimmedDescription(`
+    List of all steps that are possible to navigate to from the current step.
+    Used to generate navigation progress steps or percentage bar.
+  `)
   @CollectionOf(WorkflowNavigationStep)
   steps: WorkflowNavigationStep[]
 
@@ -58,19 +54,15 @@ export class WorkflowNavigationSettings {
   allowNavigationWithErrors: boolean = false
 
   @Default(false)
-  @Description(
-    trimAll(`
-      Controls if non-persisted data will also be sent to the server for use in server-side execute modules (script tasks).
-    `),
-  )
+  @TrimmedDescription(`
+    Controls if non-persisted data will also be sent to the server for use in server-side execute modules (script tasks).
+  `)
   passNonPersistedData: boolean = false
 
   @Default(false)
-  @Description(
-    trimAll(`
-      Controls if non-persisted data from the current module will be retained in the client-side submission data when
-      the next module in the workflow is shown. Default false (non-persisted data will remain).
-    `),
-  )
+  @TrimmedDescription(`
+    Controls if non-persisted data from the current module will be retained in the client-side submission data when
+    the next module in the workflow is shown. Default false (non-persisted data will remain).
+  `)
   onlyKeepPersistedDataOnNavigation: boolean = false
 }

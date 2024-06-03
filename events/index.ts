@@ -1,5 +1,0 @@
-export * from './eventHandler.config'
-export * from './event-types.config'
-export * from './watchers'
-export { EventHandlerWrapper } from './eventHandlerWrapper.config'
-export { ComponentEventHandlers } from './component.eventHandlers'

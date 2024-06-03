@@ -10,4 +10,7 @@ export enum TableTargetsEnum {
   groupedCell = 'groupedCell',
   tablePaper = 'tablePaper',
   tableContainer = 'tableContainer',
+  tablePaginationToolbar = 'tablePaginationToolbar',
+  tablePaginationToolbarSelect = 'tablePaginationToolbarSelect',
+  tablePaginationToolbarSelectMenu = 'tablePaginationToolbarSelectMenu',
 }

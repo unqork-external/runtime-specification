@@ -1,8 +1,7 @@
-import { Required, DiscriminatorValue, Description, Optional, Deprecated, Property } from '@tsed/schema'
+import { Required, DiscriminatorValue, Description, Optional, Property } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
 import { UdViewBasicField } from '../udView'
 
 export class UdImageSize {
@@ -19,11 +18,7 @@ export class UdImageComponentDefinition extends BaseComponentDefinition {
   type: 'udImage' = 'udImage' as const
 
   @Required()
-  @Description(
-    trimAll(`
-    AlternativeText represents the visual description of the image in text for assistive technologies.
-  `),
-  )
+  @Description('AlternativeText represents the visual description of the image in text for assistive technologies.')
   alternativeText: string
 
   @Property(Display)
@@ -35,34 +30,18 @@ export class UdImageComponentDefinition extends BaseComponentDefinition {
   field: UdViewBasicField = new UdViewBasicField()
 
   @Required()
-  @Description(
-    trimAll(`
-    Size represents the size of the rendered image in pixels or points.
-  `),
-  )
+  @Description('Size represents the size of the rendered image in pixels or points.')
   size: UdImageSize
 
   @Required()
-  @Description(
-    trimAll(`
-    SourceURL represents the URL of the image.
-  `),
-  )
+  @Description('SourceURL represents the URL of the image.')
   sourceUrl: string
 
   @Optional()
-  @Description(
-    trimAll(`
-    SourceLocation represents the original location of the image, for internal reference.
-  `),
-  )
+  @Description('SourceLocation represents the original location of the image, for internal reference.')
   sourceLocation: string
 
   @Optional()
-  @Description(
-    trimAll(`
-    SourceId represents the ID of the image in the sourceLocation, for internal reference.
-  `),
-  )
+  @Description('SourceId represents the ID of the image in the sourceLocation, for internal reference.')
   sourceId: string
 }

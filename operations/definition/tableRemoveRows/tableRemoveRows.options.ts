@@ -1,12 +1,12 @@
-import { Description } from '@tsed/schema'
+import { Description, Required, CollectionOf } from '@tsed/schema'
 
 export class TableRemoveRowsOperationOptions {
-  @Description('A component key or target syntax for getting a component')
+  @Description('Key of the table component to remove rows')
+  @Required()
   targetKey: string
 
-  @Description('Component key, target key for the rows we want to remove')
-  targetRowKeys?: string[]
-
-  @Description('Index for the rows we want to remove')
+  @Description('Index(es) for the row(s) we want to remove')
+  @Required()
+  @CollectionOf(Number)
   targetIndexes?: number[]
 }

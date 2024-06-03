@@ -1,0 +1,607 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DndSwimlanes Contract Tests should ensure the contract is clear 1`] = `
+[
+  "key",
+  "type",
+]
+`;
+
+exports[`DndSwimlanes Contract Tests should ensure the contract is clear 2`] = `
+{
+  "display": {
+    "$ref": "#/definitions/Display",
+  },
+  "executable": {
+    "default": true,
+    "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
+    "type": "boolean",
+  },
+  "field": {
+    "$ref": "#/definitions/DndSwimlanesField",
+  },
+  "inputs": {
+    "items": {
+      "$ref": "#/definitions/InputRef",
+    },
+    "type": "array",
+  },
+  "items": {
+    "additionalProperties": {
+      "$ref": "#/definitions/DndSwimlanesItem",
+    },
+    "description": "The items that are inside the swimlanes. This can be used to add, remove, or update a swimlane item. If the value prop is set, this will be automatically updated reflect the data in value.",
+    "type": "object",
+  },
+  "key": {
+    "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
+    "examples": [
+      "I am the key",
+      "bestKeyEver",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "lanes": {
+    "description": "The lanes which will contain the swimlanes items",
+    "items": {
+      "$ref": "#/definitions/DndSwimlanesLane",
+    },
+    "type": "array",
+  },
+  "layouts": {
+    "$ref": "#/definitions/DndSwimlanesLayouts",
+  },
+  "nestables": {
+    "$ref": "#/definitions/DndSwimlanesNestables",
+  },
+  "options": {
+    "$ref": "#/definitions/DndSwimlanesOptions",
+  },
+  "package": {
+    "$ref": "#/definitions/PackageModel",
+  },
+  "placeholder": {
+    "type": "array",
+  },
+  "placeholderComponents": {
+    "description": "A collection of child components to be displayed when the lane is empty.",
+    "items": {
+      "$ref": "#/definitions/BaseComponentDefinition",
+    },
+    "type": "array",
+  },
+  "rows": {
+    "type": "array",
+  },
+  "signals": {
+    "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
+    "examples": [
+      {
+        "args": {
+          "inputs": {
+            "propertyPath": "value",
+            "required": true,
+            "targetKey": "firstName",
+          },
+        },
+        "id": "firstNameWatcher",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onWatch",
+      },
+      {
+        "id": "textfieldOnBlur",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "textfield received blur event from DOM",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onBlur",
+      },
+      "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+    ],
+    "type": "object",
+  },
+  "styling": {
+    "$ref": "#/definitions/DndSwimlanesStyling",
+  },
+  "type": {
+    "const": "dndSwimlanes",
+    "description": "Name of the type of component.",
+    "examples": [
+      "dndSwimlanes",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "validation": {
+    "$ref": "#/definitions/Validation",
+  },
+  "value": {
+    "description": "A flat array of data attributes for each item in the swimlanes. These are organized from top to bottom and from left to right.",
+    "items": {
+      "default": [],
+    },
+    "type": "array",
+  },
+}
+`;
+
+exports[`DndSwimlanes Contract Tests should ensure the contract is clear 3`] = `
+{
+  "BaseComponentDefinition": {
+    "description": "Base Component Definition is the fundamental interface any component that wishes to leverage the runtime must follow. It is the agreed upon contract between the Runtime and anything that should be recognized as a component.",
+    "properties": {
+      "executable": {
+        "default": true,
+        "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
+        "type": "boolean",
+      },
+      "inputs": {
+        "items": {
+          "$ref": "#/definitions/InputRef",
+        },
+        "type": "array",
+      },
+      "key": {
+        "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
+        "examples": [
+          "I am the key",
+          "bestKeyEver",
+        ],
+        "minLength": 1,
+        "type": "string",
+      },
+      "package": {
+        "$ref": "#/definitions/PackageModel",
+      },
+      "signals": {
+        "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
+        "examples": [
+          {
+            "args": {
+              "inputs": {
+                "propertyPath": "value",
+                "required": true,
+                "targetKey": "firstName",
+              },
+            },
+            "id": "firstNameWatcher",
+            "operations": [
+              {
+                "options": {
+                  "logType": "warn",
+                  "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+                },
+                "type": "PRINTER",
+              },
+            ],
+            "type": "onWatch",
+          },
+          {
+            "id": "textfieldOnBlur",
+            "operations": [
+              {
+                "options": {
+                  "logType": "warn",
+                  "thingToPrint": "textfield received blur event from DOM",
+                },
+                "type": "PRINTER",
+              },
+            ],
+            "type": "onBlur",
+          },
+          "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+        ],
+        "type": "object",
+      },
+      "styling": {
+        "$ref": "#/definitions/StylingModel",
+      },
+      "type": {
+        "description": "Name of the type of component.",
+        "minLength": 1,
+        "type": "string",
+      },
+      "validation": {
+        "$ref": "#/definitions/Validation",
+      },
+      "value": {
+        "description": "Current value of the component",
+        "type": [
+          "null",
+          "integer",
+          "number",
+          "string",
+          "boolean",
+          "array",
+          "object",
+        ],
+      },
+    },
+    "required": [
+      "key",
+      "type",
+    ],
+    "type": "object",
+  },
+  "Display": {
+    "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Read Only View' corresponds to the component being rendered with an input element or as text.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "Setting it to \`true\` hides the component from the view, while \`false\` shows it. Regardless of this setting, the component is always visible in the Module Editor. A hidden component can still receive information from other components.",
+        "type": "boolean",
+      },
+      "interactive": {
+        "default": true,
+        "description": "When \`false\`, it is not possible to interact with or edit the input field. Its appearance is modified (grayed-out by default) to show its state, the HTML 'disabled' attribute is added to the field, and when hovering over it, the cursor also changes to alert of the disabled status. However, the component can still receive information from other components when it's not interactive.",
+        "type": "boolean",
+      },
+      "readOnlyView": {
+        "default": false,
+        "description": "Defines how the component will be displayed. When \`false\`, the component is displayed as an input field. When \`true\`, the component will not accept any input from the user, and its value will be rendered inline as text and not as an input component. If no value is present, the word 'None' is rendered. If a prefix or suffix is set for the component, they also appear as inline text.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "DndSwimlanesField": {
+    "properties": {
+      "label": {
+        "$ref": "#/definitions/InputLabel",
+      },
+      "showLaneCount": {
+        "default": true,
+        "description": "If, in the header, we should show a count of the number of items in the lane.",
+        "type": "boolean",
+      },
+      "showLaneHeader": {
+        "default": true,
+        "description": "If we should show the lane headers.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "DndSwimlanesItem": {
+    "properties": {
+      "data": {
+        "description": "The data associated with the item. This will be synced with the item's position in the value property. When a card is moved to another lane, the grouping attribute will be updated to reflect the change. If a form field inside the layout changes, the data will reflect the new value of that field.",
+        "type": "object",
+      },
+      "itemId": {
+        "description": "Unique id for the item.",
+        "minLength": 1,
+        "type": "string",
+      },
+      "label": {
+        "description": "An accessible label for the item",
+        "type": "string",
+      },
+      "laneId": {
+        "description": "The current lane of the item.",
+        "type": "string",
+      },
+      "layoutControls": {
+        "type": "object",
+      },
+      "layoutId": {
+        "description": "The nestable qualifier used to identify this item's layout.",
+        "type": "string",
+      },
+      "layoutType": {
+        "default": "default",
+        "description": "The layout type used for this card.",
+        "type": "object",
+      },
+    },
+    "required": [
+      "data",
+      "itemId",
+      "layoutControls",
+    ],
+    "type": "object",
+  },
+  "DndSwimlanesLane": {
+    "properties": {
+      "allowFrom": {
+        "description": "The lanes where you can drag items from and drop here. If not defined, all lanes are allowed.",
+        "items": {
+          "type": "string",
+        },
+        "type": "array",
+      },
+      "items": {
+        "description": "List of item ids that are inside this lane",
+        "items": {
+          "default": [],
+          "type": "string",
+        },
+        "type": "array",
+      },
+      "laneId": {
+        "description": "The id of the Swimlane.",
+        "minLength": 1,
+        "type": "string",
+      },
+      "name": {
+        "description": "The name of the Swimlane displayed at the top.",
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "laneId",
+      "name",
+    ],
+    "type": "object",
+  },
+  "DndSwimlanesLayouts": {
+    "additionalProperties": {
+      "$ref": "#/definitions/BaseComponentDefinition",
+    },
+    "properties": {
+      "default": {
+        "description": "The default set of components to render for a swimlane item. Other layouts can be added, but at least the default layout must be set. This will be applied when no other layout fits the item.",
+        "items": {
+          "$ref": "#/definitions/BaseComponentDefinition",
+        },
+        "type": "array",
+      },
+    },
+    "required": [
+      "default",
+    ],
+    "type": "object",
+  },
+  "DndSwimlanesNestables": {
+    "additionalProperties": true,
+    "properties": {
+      "placeholder": {
+        "type": "object",
+      },
+      "rows": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "DndSwimlanesOptions": {
+    "properties": {
+      "draggableAttribute": {
+        "description": "Syncs an item's draggable state to a data attribute. When the value of this attribute is false the item will not be draggable. If not provided, an item will be draggable by default and can be toggled by setting 'items[itemId].layoutControls.draggable'",
+        "examples": [
+          "isMoveable",
+        ],
+        "type": "string",
+      },
+      "draggableAttributeInvert": {
+        "default": false,
+        "description": "Flips the value of the 'draggableAttribute'. Set this to true if the attribute's value is the inverse of the desired state (ie. 'pinned').",
+        "type": "boolean",
+      },
+      "groupingAttribute": {
+        "description": "Syncs an item's lane to a data attribute. This attribute's value will be updated as cards are moved between lanes. If this property is not set, you have to provide a laneId when you are adding an item or it will not show up.",
+        "examples": [
+          "status",
+          "type",
+        ],
+        "type": "string",
+      },
+      "hiddenAttribute": {
+        "description": "Syncs an item's visibility to a data attribute. When the value of this attribute is true the item not be rendered. If not provided, an item will be visible by default and can be toggled by setting 'items[itemId].layoutControls.hidden'",
+        "examples": [
+          "isHidden",
+          "isVisible",
+        ],
+        "type": "string",
+      },
+      "hiddenAttributeInvert": {
+        "default": false,
+        "description": "Flips the value of the 'hiddenAttribute'. Set this to true if the attribute's value is the inverse of the desired state (ie. 'isVisible').",
+        "type": "boolean",
+      },
+      "interactiveAttribute": {
+        "description": "Syncs an item's interactive state to a data attribute. When the value of this attribute is false the item will have a disabled appearance, will not be draggable, and all child components will be non-interactive. If not provided, an item will be interactive by default and can be toggled by setting 'items[itemId].layoutControls.interactive'",
+        "examples": [
+          "disabled",
+          "active",
+        ],
+        "type": "string",
+      },
+      "interactiveAttributeInvert": {
+        "default": false,
+        "description": "Flips the value of the 'interactiveAttribute'. Set this to true if the attribute's value is the inverse of the desired state (ie. 'disabled').",
+        "type": "boolean",
+      },
+      "itemIdAttribute": {
+        "description": "The data attribute used as the unique id of the swimlane item.",
+        "type": "string",
+      },
+      "itemKey": {
+        "default": "$item",
+        "description": "Unique property key that will be available to the scope of the descendants.",
+        "type": "string",
+      },
+      "itemLabelAttribute": {
+        "description": "The data attribute used as accessible name of the swimlane item.",
+        "examples": [
+          "name",
+        ],
+        "type": "string",
+      },
+      "layoutAttribute": {
+        "description": "Syncs an item's layoutType to a data attribute. The value of this attribute should map to a layout in the layouts property. If not provided or if the attribute's value does not have a corresponding layout, the 'default' layout will be used. If not provided, the item's layoutType can be changed by setting 'items[itemId].layoutType'.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "DndSwimlanesStyling": {
+    "type": "object",
+  },
+  "InputLabel": {
+    "description": "Details pertaining to the label element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the label of the component. Note the label will still be displayed on the Module Editor.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed above the input field.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputRef": {
+    "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+    "properties": {
+      "alias": {
+        "type": "string",
+      },
+      "propertyPath": {
+        "type": "string",
+      },
+      "required": {
+        "type": "boolean",
+      },
+      "silent": {
+        "type": "boolean",
+      },
+      "targetKey": {
+        "minLength": 1,
+        "type": "string",
+      },
+      "type": {
+        "type": "string",
+      },
+    },
+    "required": [
+      "targetKey",
+    ],
+    "type": "object",
+  },
+  "Label": {
+    "properties": {
+      "text": {
+        "description": "Text displayed as the label for the field",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "PackageModel": {
+    "description": "The PackageModel describes how the Vega Runtime will resolve dependencies",
+    "properties": {
+      "type": {
+        "description": "Type of package",
+        "type": "string",
+      },
+      "url": {
+        "description": "URL of package",
+        "type": "string",
+      },
+      "version": {
+        "description": "Version of package",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "StylingModel": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "Validation": {
+    "description": "Holds the validation rules and the most current validation results for the component",
+    "properties": {
+      "isDirty": {
+        "description": "Whether or not field has had user interaction. It will be set to true on user interaction.",
+        "type": "boolean",
+      },
+      "result": {
+        "$ref": "#/definitions/ValidationResult",
+      },
+      "rules": {
+        "description": "The set of rules to restrict or define the accepted data for the current component. These are the rules to run for validation of the data input.",
+        "examples": [
+          "You can use it to define the max length of characters in an input field with a custom error message. rules: { required: { type: ValidationRuleTypes.MAX_LENGTH, validation: { maxLength: 5, }, errorMessage: 'Max length is 5', }, },",
+        ],
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "ValidationError": {
+    "properties": {
+      "message": {
+        "description": "The error message",
+        "type": "string",
+      },
+      "type": {
+        "description": "Type of the error",
+        "enum": [
+          "required",
+          "maxLength",
+          "minLength",
+          "arrayMinLength",
+          "arrayMaxLength",
+          "pattern",
+          "min",
+          "max",
+          "mask",
+          "number",
+          "dateinput",
+          "isBeforeDate",
+          "isAfterDate",
+          "customError",
+          "isEmail",
+        ],
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "type",
+    ],
+    "type": "object",
+  },
+  "ValidationResult": {
+    "properties": {
+      "errors": {
+        "items": {
+          "$ref": "#/definitions/ValidationError",
+        },
+        "type": "array",
+      },
+      "isValid": {
+        "type": [
+          "null",
+          "boolean",
+        ],
+      },
+    },
+    "type": "object",
+  },
+}
+`;

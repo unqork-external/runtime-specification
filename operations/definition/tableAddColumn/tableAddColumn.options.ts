@@ -1,5 +1,6 @@
-import { Description, Property } from '@tsed/schema'
+import { CollectionOf, Description, Property } from '@tsed/schema'
 
+import { BaseComponentDefinition } from '../../../base-component-interface'
 export class TableAddColumnOperationOptions {
   @Description(
     'A unique string identifier used to specify the particular table ' +
@@ -10,7 +11,8 @@ export class TableAddColumnOperationOptions {
 
   @Description('The component definition to be added to the target table ')
   @Property()
-  definitions: object[]
+  @CollectionOf(() => BaseComponentDefinition)
+  definitions: BaseComponentDefinition[]
 
   @Description('Specifies whether the component is a Vega component')
   @Property()

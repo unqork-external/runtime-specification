@@ -1,6 +1,6 @@
 import { Default, Description } from '@tsed/schema'
 
-import { trimAll } from '../../../../utilities'
+import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 
 export class WorkflowFlashMessageSettings {
   @Description('Text for the flash message.')
@@ -15,11 +15,9 @@ export class WorkflowFlashMessageSettings {
   dismissible: boolean = false
 
   @Default(false)
-  @Description(
-    trimAll(`
-      Controls if flash message appears or not. dismissible flash messages
-      can be hidden by changing this property to false. Defaults to false 
-    `),
-  )
+  @TrimmedDescription(`
+    Controls if flash message appears or not. dismissible flash messages
+    can be hidden by changing this property to false. Defaults to false 
+  `)
   show: boolean = false
 }

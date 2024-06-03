@@ -1,32 +1,59 @@
-import { Css } from '../../../../decorators/css.decorator'
+import { Description } from '@tsed/schema'
+
+import { Css } from '../../../../decorators/schema/css.decorator'
 import { type CssClassOrProps } from '../../../styling/cssClassOrProps.type'
-import { TextfieldTargetsEnum } from '../targets/textfieldTargets.enum'
+import { TextfieldTargets } from '../targets/textfieldTargets.enum'
 
 export class TextfieldStyleTargets {
+  @Description("Adds styles to Textfield's ComponentWrapper.")
   @Css()
-  [TextfieldTargetsEnum.root]: CssClassOrProps
+  [TextfieldTargets.ROOT]: CssClassOrProps;
 
+  @Description("Adds styles to Textfield's character limit text.")
   @Css()
-  [TextfieldTargetsEnum.readOnly]: CssClassOrProps
+  [TextfieldTargets.CHARACTER_LIMIT]: CssClassOrProps;
 
+  @Description("Adds styles to Textfield's error message.")
   @Css()
-  [TextfieldTargetsEnum.label]: CssClassOrProps
+  [TextfieldTargets.ERRORS]: CssClassOrProps;
 
+  @Description("Adds styles to Textfield's helper text.")
   @Css()
-  [TextfieldTargetsEnum.tooltip]: CssClassOrProps
+  [TextfieldTargets.HELPER_TEXT]: CssClassOrProps;
 
+  @Description("Adds styles to Textfield's input field.")
   @Css()
-  [TextfieldTargetsEnum.input]: CssClassOrProps
+  [TextfieldTargets.INPUT]: CssClassOrProps;
 
+  @Description("Adds styles to Textfield's label.")
   @Css()
-  [TextfieldTargetsEnum.helperText]: CssClassOrProps
+  [TextfieldTargets.LABEL]: CssClassOrProps;
 
+  @Description("Adds styles to Textfield's prefix.")
   @Css()
-  [TextfieldTargetsEnum.errors]: CssClassOrProps
+  [TextfieldTargets.PREFIX]: CssClassOrProps;
 
+  @Description("Adds styles to Textfield's read only text.")
   @Css()
-  [TextfieldTargetsEnum.simpleEdit]: CssClassOrProps
+  [TextfieldTargets.READ_ONLY]: CssClassOrProps;
 
+  @Description("Adds styles to Textfield's simple edit view.")
   @Css()
-  [TextfieldTargetsEnum.simpleReadOnly]: CssClassOrProps
+  [TextfieldTargets.SIMPLE_EDIT]: CssClassOrProps;
+
+  @Description("Adds styles to Textfield's simple edit's read only text.")
+  @Css()
+  [TextfieldTargets.SIMPLE_READ_ONLY]: CssClassOrProps;
+
+  @Description("Adds styles to Textfield's suffix.")
+  @Css()
+  [TextfieldTargets.SUFFIX]: CssClassOrProps;
+
+  @Description("Adds styles to Textfield's tooltip button.")
+  @Css()
+  [TextfieldTargets.TOOLTIP_BUTTON]: CssClassOrProps;
+
+  @Description("Adds styles to Textfield's tooltip popover text.")
+  @Css()
+  [TextfieldTargets.TOOLTIP_POPOVER]: CssClassOrProps
 }

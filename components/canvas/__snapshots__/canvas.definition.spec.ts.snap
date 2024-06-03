@@ -1,0 +1,503 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Canvas Contract Tests should ensure the contract is clear 1`] = `
+[
+  "key",
+  "type",
+  "canvasItems",
+  "currentLayoutId",
+  "layouts",
+  "keyMap",
+  "emptyText",
+  "disabled",
+  "mode",
+  "childIds",
+]
+`;
+
+exports[`Canvas Contract Tests should ensure the contract is clear 2`] = `
+{
+  "canvasItems": {
+    "default": {},
+    "type": "object",
+  },
+  "childIds": {
+    "type": "array",
+  },
+  "currentLayoutId": {
+    "minLength": 1,
+    "type": "string",
+  },
+  "disabled": {
+    "default": false,
+    "description": "Boolean to determine if the canvas is disabled. This functionality differs from the Runtime concepts of \`executable\` and \`interactive\` in the sense that only some viewActions are disabled. Disabled viewActions include: paste, delete, deleteAll, edit, and handleDropEvent",
+    "type": "boolean",
+  },
+  "emptyText": {
+    "default": "Empty",
+    "minLength": 1,
+    "type": "string",
+  },
+  "executable": {
+    "default": true,
+    "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
+    "type": "boolean",
+  },
+  "inputs": {
+    "items": {
+      "$ref": "#/definitions/InputRef",
+    },
+    "type": "array",
+  },
+  "key": {
+    "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
+    "examples": [
+      "I am the key",
+      "bestKeyEver",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "keyMap": {
+    "default": {},
+    "type": "object",
+  },
+  "layouts": {
+    "default": {},
+    "type": "object",
+  },
+  "mode": {
+    "minLength": 1,
+    "type": "string",
+  },
+  "nestables": {
+    "description": "Nestable information for Canvas",
+    "type": "object",
+  },
+  "package": {
+    "$ref": "#/definitions/PackageModel",
+  },
+  "signals": {
+    "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
+    "examples": [
+      {
+        "args": {
+          "inputs": {
+            "propertyPath": "value",
+            "required": true,
+            "targetKey": "firstName",
+          },
+        },
+        "id": "firstNameWatcher",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onWatch",
+      },
+      {
+        "id": "textfieldOnBlur",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "textfield received blur event from DOM",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onBlur",
+      },
+      "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+    ],
+    "type": "object",
+  },
+  "styling": {
+    "$ref": "#/definitions/CanvasStyling",
+  },
+  "type": {
+    "const": "canvas",
+    "description": "Name of the type of component.",
+    "examples": [
+      "canvas",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "useConverter": {
+    "default": true,
+    "type": "boolean",
+  },
+  "useDefaultStyles": {
+    "default": true,
+    "type": "boolean",
+  },
+  "useVegaDesigner": {
+    "default": false,
+    "type": "boolean",
+  },
+  "validation": {
+    "$ref": "#/definitions/Validation",
+  },
+  "value": {
+    "description": "Current value of the component",
+    "type": [
+      "null",
+      "integer",
+      "number",
+      "string",
+      "boolean",
+      "array",
+      "object",
+    ],
+  },
+  "width": {
+    "type": "number",
+  },
+}
+`;
+
+exports[`Canvas Contract Tests should ensure the contract is clear 3`] = `
+{
+  "CanvasStyling": {
+    "properties": {
+      "targets": {
+        "$ref": "#/definitions/CanvasTargets",
+      },
+    },
+    "type": "object",
+  },
+  "CanvasTargets": {
+    "properties": {
+      "canvas": {
+        "description": "Adds styles to the div wrapping the canvas.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "canvasButtonsWrapper": {
+        "description": "Adds styles to the button on the top of the canvas.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "canvasEmpty": {
+        "description": "Adds styles to for the div wrapping the empty state for the canvas.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "canvasItemHeader": {
+        "description": "Adds styles to the div wrapping a Canvas Item Header",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "canvasItemHeaderIcon": {
+        "description": "Adds styles to the icon in the canvas item header.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "canvasItemHeaderLabel": {
+        "description": "Adds styles to the icon in the canvas item label.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "canvasItemHeaderType": {
+        "description": "Adds styles to the icon in the canvas item type.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "canvasItemHeaderWrapper": {
+        "description": "Adds styles to the div wrapper around the canvas item header",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "dragPreview": {
+        "description": "Adds styles to the div wrapping the dragPreview",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "dropzone": {
+        "description": "Adds styles to the div of a dropzone in the canvas.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "dropzoneWrapper": {
+        "description": "Adds styles to the div wrapping the div of a dropzone in the canvas.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationButtonsDisplayText": {
+        "description": "Adds styles to the text in the representation button.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationButtonsOpenEdit": {
+        "description": "Adds styles to the button that toggles edit in the representation buttons.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationButtonsOpenMenu": {
+        "description": "Adds styles to the button that opens the representation button menu.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationButtonsWrapper": {
+        "description": "Adds styles to the representationButtonsWrapper for the canvas component.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationCommentSectionWrapper": {
+        "description": "Adds styles to the wrapper around the comment section in the representation information.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationInformationDropdown": {
+        "description": "Adds styles to the wrapper around the representation information.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationInformationHeader": {
+        "description": "Adds styles to the wrapper around the representation information header.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationInformationItem": {
+        "description": "Adds styles to the to the wrapper around the representation information item.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationInformationItemText": {
+        "description": "Adds styles to the to the wrapper around the representation information text within an item.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationInformationOpenButton": {
+        "description": "Adds styles to the button that toggles the representation information state.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationInformationSectionWrapper": {
+        "description": "Adds styles to the wrapper around a section in the representation information.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationInformationWrapper": {
+        "description": "Adds styles to the wrapper around the representation information.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationInnerDropZoneWrapper": {
+        "description": "Adds styles to the outer div wrapper the inner dropzone.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationOnClickWrapper": {
+        "description": "Adds styles to the div responsible for onClick edit of representation",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationViewWrapper": {
+        "description": "Adds styles to the div wrapping a representation.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationWrapper": {
+        "description": "Adds styles to the div wrapper of a representation.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "root": {
+        "description": "Adds styles to the root div for the canvas component.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+    },
+    "type": "object",
+  },
+  "InputRef": {
+    "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+    "properties": {
+      "alias": {
+        "type": "string",
+      },
+      "propertyPath": {
+        "type": "string",
+      },
+      "required": {
+        "type": "boolean",
+      },
+      "silent": {
+        "type": "boolean",
+      },
+      "targetKey": {
+        "minLength": 1,
+        "type": "string",
+      },
+      "type": {
+        "type": "string",
+      },
+    },
+    "required": [
+      "targetKey",
+    ],
+    "type": "object",
+  },
+  "PackageModel": {
+    "description": "The PackageModel describes how the Vega Runtime will resolve dependencies",
+    "properties": {
+      "type": {
+        "description": "Type of package",
+        "type": "string",
+      },
+      "url": {
+        "description": "URL of package",
+        "type": "string",
+      },
+      "version": {
+        "description": "Version of package",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "StylingModel": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "Validation": {
+    "description": "Holds the validation rules and the most current validation results for the component",
+    "properties": {
+      "isDirty": {
+        "description": "Whether or not field has had user interaction. It will be set to true on user interaction.",
+        "type": "boolean",
+      },
+      "result": {
+        "$ref": "#/definitions/ValidationResult",
+      },
+      "rules": {
+        "description": "The set of rules to restrict or define the accepted data for the current component. These are the rules to run for validation of the data input.",
+        "examples": [
+          "You can use it to define the max length of characters in an input field with a custom error message. rules: { required: { type: ValidationRuleTypes.MAX_LENGTH, validation: { maxLength: 5, }, errorMessage: 'Max length is 5', }, },",
+        ],
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "ValidationError": {
+    "properties": {
+      "message": {
+        "description": "The error message",
+        "type": "string",
+      },
+      "type": {
+        "description": "Type of the error",
+        "enum": [
+          "required",
+          "maxLength",
+          "minLength",
+          "arrayMinLength",
+          "arrayMaxLength",
+          "pattern",
+          "min",
+          "max",
+          "mask",
+          "number",
+          "dateinput",
+          "isBeforeDate",
+          "isAfterDate",
+          "customError",
+          "isEmail",
+        ],
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "type",
+    ],
+    "type": "object",
+  },
+  "ValidationResult": {
+    "properties": {
+      "errors": {
+        "items": {
+          "$ref": "#/definitions/ValidationError",
+        },
+        "type": "array",
+      },
+      "isValid": {
+        "type": [
+          "null",
+          "boolean",
+        ],
+      },
+    },
+    "type": "object",
+  },
+}
+`;

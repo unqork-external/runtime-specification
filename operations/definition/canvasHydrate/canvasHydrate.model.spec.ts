@@ -30,6 +30,10 @@ describe('CanvasHydrateOperation Model', () => {
         },
       },
       properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
         name: {
           description: 'Name of the operation',
           type: 'string',

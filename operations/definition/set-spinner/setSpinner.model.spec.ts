@@ -12,41 +12,7 @@ describe('Set Spinner Model', () => {
   })
 
   it('should match this JSON Schema', () => {
-    expect(schema).toStrictEqual({
-      type: 'object',
-      properties: {
-        type: {
-          type: 'string',
-          const: 'SET_SPINNER',
-          examples: ['SET_SPINNER'],
-        },
-        options: {
-          $ref: '#/definitions/SetSpinnerOptions',
-        },
-        name: {
-          description: 'Name of the operation',
-          type: 'string',
-        },
-      },
-      required: ['options'],
-      definitions: {
-        SetSpinnerOptions: {
-          type: 'object',
-          properties: {
-            showCursorSpinner: {
-              type: 'boolean',
-              description: `'showCursorSpinner' converts the user's cursor to a spinner when enabled.`,
-              default: false,
-            },
-            showPageSpinner: {
-              type: 'boolean',
-              description: `'showPageSpinner' uses the R1 Page Spinner animation when enabled.`,
-              default: false,
-            },
-          },
-        },
-      },
-    })
+    expect(schema).toMatchSnapshot()
   })
 
   it('Set Spinner should validate appropriately', () => {

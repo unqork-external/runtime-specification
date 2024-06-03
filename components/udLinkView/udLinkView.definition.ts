@@ -9,14 +9,17 @@ import {
   Required,
 } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
+import { UdLinkViewTargets } from './udLinkViewTargets.enum'
+import { ViewTargets } from '../../../decorators'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
 import { StandardArrayNestable } from '../../nestables'
+import type { SignalTargets } from '../../signals'
 import { UdLinkToDefinition, UdLinkToModuleDefinition } from '../udLink/udLink.definition'
 import { UdViewBasicField, UdViewDirection } from '../udView'
 
 @DiscriminatorValue('udLinkView')
+@ViewTargets(UdLinkViewTargets)
 export class UdLinkViewComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'udLinkView' = 'udLinkView' as const
@@ -27,11 +30,7 @@ export class UdLinkViewComponentDefinition extends BaseComponentDefinition {
   @Optional()
   @Enum(UdViewDirection)
   @Default(UdViewDirection.VERTICAL)
-  @Description(
-    trimAll(`
-    Direction represents how the view children should be disposed.
-  `),
-  )
+  @Description('Direction represents how the view children should be disposed.')
   direction?: UdViewDirection
 
   @Property(Display)
@@ -43,11 +42,7 @@ export class UdLinkViewComponentDefinition extends BaseComponentDefinition {
   field: UdViewBasicField = new UdViewBasicField()
 
   @Required()
-  @Description(
-    trimAll(`
-    Style represent the intended display style for the link.
-  `),
-  )
+  @Description('Style represent the intended display style for the link.')
   to: UdLinkToDefinition | UdLinkToModuleDefinition
 
   @Description('Standard nestable implementation')
@@ -55,4 +50,7 @@ export class UdLinkViewComponentDefinition extends BaseComponentDefinition {
 
   @Description('Child IDs for nestable references')
   childIds: string[] = []
+
+  @Optional()
+  declare signals?: SignalTargets<UdLinkViewTargets>
 }

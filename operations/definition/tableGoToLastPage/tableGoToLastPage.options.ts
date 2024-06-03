@@ -1,7 +1,7 @@
-import { Description, Property } from '@tsed/schema'
+import { Description, Required } from '@tsed/schema'
 
 export class TableGoToLastPageOperationOptions {
-  @Description('The key for the component we want to perform the operation')
-  @Property()
+  @Required()
+  @Description('Key of the Table component to change pagination position of')
   targetKey: string
 }

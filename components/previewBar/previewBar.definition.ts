@@ -1,7 +1,7 @@
 import { Required, DiscriminatorValue, Description, Default, Property } from '@tsed/schema'
 
-import { BaseComponentDefinition } from '../../baseComponentInterface'
-import { Display } from '../../componentComposition/display/component.display'
+import { BaseComponentDefinition } from '../../base-component-interface'
+import { Display } from '../../component-composition/display/component.display'
 
 @DiscriminatorValue('previewBar')
 export class PreviewBarComponentDefinition extends BaseComponentDefinition {

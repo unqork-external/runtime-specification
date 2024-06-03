@@ -9,13 +9,16 @@ import {
   Required,
 } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
+import { UdButtonViewTargets } from './udButtonViewTargets.enum'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
 import { StandardArrayNestable } from '../../nestables'
+import { type SignalTargets } from '../../signals'
 import { UdViewBasicField, UdViewDirection, UdViewDraggable } from '../udView'
 
 @DiscriminatorValue('udButtonView')
+@ViewTargets(UdButtonViewTargets)
 export class UdButtonViewComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'udButtonView' = 'udButtonView' as const
@@ -23,11 +26,7 @@ export class UdButtonViewComponentDefinition extends BaseComponentDefinition {
   @Optional()
   @Enum(UdViewDirection)
   @Default(UdViewDirection.VERTICAL)
-  @Description(
-    trimAll(`
-    Direction represents how the view children should be disposed.
-  `),
-  )
+  @Description('Direction represents how the view children should be disposed.')
   direction?: UdViewDirection
 
   @Property(Display)
@@ -50,4 +49,7 @@ export class UdButtonViewComponentDefinition extends BaseComponentDefinition {
 
   @CollectionOf(BaseComponentDefinition)
   components?: BaseComponentDefinition[]
+
+  @Optional()
+  signals?: SignalTargets<UdButtonViewTargets>
 }

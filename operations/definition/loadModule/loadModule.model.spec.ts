@@ -16,6 +16,10 @@ describe('Operation Model: LoadModule Tests', () => {
         type: { type: 'string', const: 'LOAD_MODULE', examples: ['LOAD_MODULE'] },
         name: { type: 'string', description: 'Name of the operation' },
         options: { $ref: '#/definitions/LoadModuleOperationOptions' },
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
       },
       required: ['options'],
       definitions: {
@@ -36,6 +40,10 @@ describe('Operation Model: LoadModule Tests', () => {
               type: 'string',
               description: 'Name of the nestable in which the module should be rendered.',
               minLength: 1,
+            },
+            collisionHandler: {
+              description: 'How should module ID collisions be handled',
+              type: 'string',
             },
           },
           required: ['moduleId', 'targetKey', 'targetNestable'],

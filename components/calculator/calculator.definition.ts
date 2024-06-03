@@ -1,12 +1,19 @@
-import { DiscriminatorValue, Property } from '@tsed/schema'
+import { Const, Description, DiscriminatorValue, Property } from '@tsed/schema'
 
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Field } from '../../componentComposition'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Field } from '../../component-composition'
 
 @DiscriminatorValue('calculator')
+@TrimmedDescription(`
+  The Calculator component is a tool that performs calculations with other
+  components. It can add numbers, join values, handle complex math,
+  calculate durations, and transfer data between components.
+`)
 export class CalculatorComponentDefinition extends BaseComponentDefinition {
-  @Property()
-  type: string = 'calculator'
+  @Const('calculator')
+  @Description('Type of component.')
+  type: 'calculator' = 'calculator' as const
 
   @Property(Field)
   field: Field = new Field()

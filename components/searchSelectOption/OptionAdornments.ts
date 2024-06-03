@@ -1,13 +1,17 @@
-import { CollectionOf, Default, Description } from '@tsed/schema'
+import { CollectionOf, Default, Description, Optional } from '@tsed/schema'
 
 import { IconComponentDefinition } from '../icon'
 
 export class OptionAdornments {
   @CollectionOf(IconComponentDefinition)
   @Description('Left Icon definition.')
-  left: IconComponentDefinition[]
+  @Optional()
+  @Default([])
+  left: IconComponentDefinition[] = []
 
   @CollectionOf(IconComponentDefinition)
   @Description('Right Icon definition.')
-  right: IconComponentDefinition[]
+  @Optional()
+  @Default([])
+  right: IconComponentDefinition[] = []
 }

@@ -1,0 +1,16 @@
+export enum DateInputTargets {
+  root = 'root',
+  label = 'label',
+  tooltipButton = 'tooltipButton',
+  tooltipPopover = 'tooltipPopover',
+  inputGroup = 'inputGroup',
+  suffix = 'suffix',
+  coreDateInput = 'coreDateInput',
+  simpleViewInput = 'simpleViewInput',
+  simpleViewView = 'simpleViewView',
+  readOnly = 'readOnly',
+  errorsRoot = 'errorsRoot',
+  errorsUnorderedList = 'errorsUnorderedList',
+  errorsUnorderedListItem = 'errorsUnorderedListItem',
+  errorsFieldError = 'errorsFieldError',
+}

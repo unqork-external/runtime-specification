@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: Try Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "Operation": {
+      "properties": {
+        "creatorSummary": {
+          "description": "A detailed summary of the operation",
+          "type": "string",
+        },
+        "name": {
+          "description": "Name of the operation",
+          "type": "string",
+        },
+        "type": {
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "TryCatchOperationOptions": {
+      "properties": {
+        "catch": {
+          "description": "Operations to run in the event an error is thrown from the tried operations",
+          "items": {
+            "$ref": "#/definitions/Operation",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+        "try": {
+          "description": "Array of operations to attempt",
+          "items": {
+            "$ref": "#/definitions/Operation",
+          },
+          "minItems": 1,
+          "type": "array",
+        },
+      },
+      "required": [
+        "try",
+        "catch",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TryCatchOperationOptions",
+    },
+    "type": {
+      "const": "TRY_CATCH",
+      "examples": [
+        "TRY_CATCH",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

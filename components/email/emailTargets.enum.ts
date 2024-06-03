@@ -1,0 +1,15 @@
+export enum EmailTargets {
+  root = 'root',
+  errorsRoot = 'errorsRoot',
+  errorsUnorderedList = 'errorsUnorderedList',
+  errorsUnorderedListItem = 'errorsUnorderedListItem',
+  errorsFieldError = 'errorsFieldError',
+  helperText = 'helperText',
+  input = 'input',
+  label = 'label',
+  inputPrefix = 'inputPrefix',
+  readOnly = 'readOnly',
+  inputSuffix = 'inputSuffix',
+  tooltipButton = 'tooltipButton',
+  tooltipPopover = 'tooltipPopover',
+}

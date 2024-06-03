@@ -1,8 +1,0 @@
-export { BaseComponentDefinition } from './base.component.definition'
-export type { CommonInputComponent } from './commonInterfaceTypes/commonInputComponent'
-export type { ComponentWithAdornments } from './commonInterfaceTypes/componentWithAdornments'
-export type { ComponentWithComponents } from './commonInterfaceTypes/componentWithComponents'
-export type { ComponentWithDisplay } from './commonInterfaceTypes/componentWithDisplay'
-export type { ComponentWithNestables } from './commonInterfaceTypes/componentWithNestables'
-export type { ComponentWithStyling } from './commonInterfaceTypes/componentWithStyling'
-export type { ComponentWithSimpleView } from './commonInterfaceTypes/componentWithSimpleView'

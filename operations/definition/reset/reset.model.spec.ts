@@ -21,6 +21,10 @@ describe('Reset Model', () => {
           description: 'Name of the operation',
           type: 'string',
         },
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
       },
       required: ['options'],
       definitions: {

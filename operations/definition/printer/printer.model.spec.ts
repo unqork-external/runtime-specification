@@ -9,6 +9,10 @@ describe('Operation Model: Printer Tests', () => {
       type: { type: 'string', const: 'PRINTER', examples: ['PRINTER'] },
       name: { type: 'string', description: 'Name of the operation' },
       options: { $ref: '#/definitions/PrinterOperationOptions' },
+      creatorSummary: {
+        description: 'A detailed summary of the operation',
+        type: 'string',
+      },
     })
   })
 })

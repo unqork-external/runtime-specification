@@ -19,7 +19,7 @@ import {
   WorkflowSaveAndExitAlertSettings,
   WorkflowValidationErrors,
 } from './settings'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { StandardArrayNestable } from '../../nestables'
 @DiscriminatorValue('workflow')
 export class WorkflowComponentDefinition extends BaseComponentDefinition {

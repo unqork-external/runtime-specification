@@ -6,7 +6,10 @@ exports[`Operation Model: TableSetGlobalFilterVisibility Tests should match this
     "TableSetGlobalFilterVisibilityOperationOptions": {
       "properties": {
         "enableGlobalFilter": {
-          "type": "object",
+          "type": [
+            "boolean",
+            "string",
+          ],
         },
         "targetKey": {
           "type": "string",
@@ -16,6 +19,10 @@ exports[`Operation Model: TableSetGlobalFilterVisibility Tests should match this
     },
   },
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

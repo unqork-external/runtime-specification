@@ -1,7 +1,6 @@
 import { Default, Description, Enum, Optional, Required } from '@tsed/schema'
 
-import { trimAll } from '../../../utilities'
-import { Field } from '../../componentComposition/field/component.field.label'
+import { Field } from '../../component-composition/field/component.field.label'
 
 export const ITERATOR_APPEARANCE = {
   ASIDE: 'aside',
@@ -38,11 +37,7 @@ export class IteratorField extends Field {
   @Required()
   @Default(ITERATOR_APPEARANCE.BLOCK)
   @Enum(ITERATOR_APPEARANCE)
-  @Description(
-    trimAll(`
-    Appearance represents the intended visual style and role for the view.
-  `),
-  )
+  @Description('Appearance represents the intended visual style and role for the view.')
   appearance: IteratorAppearance = ITERATOR_APPEARANCE.BLOCK
 
   @Optional()
@@ -52,11 +47,7 @@ export class IteratorField extends Field {
   @Required()
   @Default(ITERATOR_ITEM_APPEARANCE.AUTOMATIC)
   @Enum(ITERATOR_ITEM_APPEARANCE)
-  @Description(
-    trimAll(`
-    Appearance represents the intended visual style and role for the items.
-  `),
-  )
+  @Description('Appearance represents the intended visual style and role for the items.')
   itemAppearance: IteratorItemAppearance = ITERATOR_ITEM_APPEARANCE.AUTOMATIC
 
   @Optional()

@@ -1,17 +1,14 @@
-import { Default, Description } from '@tsed/schema'
+import { Property } from '@tsed/schema'
 
 import { Nestable, NestableType } from '../../nestables'
 
 export class OptionNestable extends Nestable {
-  @Default('optionKeys')
-  @Description('Nestable property name.')
+  @Property()
   propertyName: string = 'optionKeys'
 
-  @Default(NestableType.ARRAY)
-  @Description('Nestable type.')
+  @Property()
   type: NestableType = NestableType.ARRAY
 
-  @Default('options')
-  @Description('Nestable children.')
+  @Property()
   children: string = 'options'
 }

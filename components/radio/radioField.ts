@@ -1,7 +1,7 @@
-import { Description, Enum, Property } from '@tsed/schema'
+import { Description, Enum, Optional, Property, Required } from '@tsed/schema'
 
-import { Field } from '../../componentComposition/field/component.field.label'
-import { InputSubLabel } from '../../componentComposition/input/component.input'
+import { Field } from '../../component-composition/field/component.field.label'
+import { InputSubLabel } from '../../component-composition/input/component.input'
 
 enum RadioDataSrc {
   None = 'None',
@@ -22,12 +22,13 @@ export class ValuesFromInput {
 export class RadioField extends Field {
   @Description('The data source for the radio component.')
   @Enum(RadioDataSrc)
+  @Required()
   dataSrc: RadioDataSrc
 
-  @Property(InputSubLabel)
-  @Description('The sub-label text of the component')
+  @Property()
   subLabel?: InputSubLabel = new InputSubLabel()
 
+  @Optional()
   @Description('Tooltip for the input')
   tooltipDescription?: string
 

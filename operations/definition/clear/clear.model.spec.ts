@@ -33,6 +33,10 @@ describe('Clear Operation Model Test', () => {
         },
       },
       properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
         options: {
           $ref: '#/definitions/ClearOptions',
         },

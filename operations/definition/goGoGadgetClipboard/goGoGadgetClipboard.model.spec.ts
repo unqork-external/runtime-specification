@@ -28,6 +28,10 @@ describe('Operation Model: GoGoGadgetClipboard Tests', () => {
         },
       },
       properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
         options: {
           $ref: '#/definitions/GoGoGadgetClipboardOperationOptions',
         },

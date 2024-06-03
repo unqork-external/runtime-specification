@@ -23,7 +23,7 @@ import {
 import { HTTPMethodType } from './method.type'
 import { PreRequestTransform } from './preRequestTransform'
 import { ServiceType } from './serviceType.type'
-import { trimAll } from '../../../../utilities'
+import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 
 export class ApiCallHeaders {
   @Optional()
@@ -70,78 +70,64 @@ export class ApiCallOptions {
   queryParams?: string
 
   @Default(true)
-  @Description(
-    trimAll(
-      `
+  @TrimmedDescription(`
     If an output comes back empty, you can either have the data store as an empty value or choose not to store the data. 
     By setting this toggle to true, null or empty strings store as empty values. If set to OFF, the values don't record.
     
     https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05006A-Plug-In_Component.htm?Highlight=Assign%20Empty%20Values#:~:text=Assign%20Values%20if%20They%20Are%20Null%20or%20Empty%20String
     
     By default, this toggle is set to true.
-    `,
-    ),
-  )
+  `)
   assignEmptyValues?: boolean = true
 
   @Default(false)
-  @Description(
-    trimAll(
-      `withCredentials refers to the inclusion of credentials on cross-site requests.
-      When set to true, an application can make cross-site access-control requests using credentials, like cookies.`,
-    ),
-  )
+  @TrimmedDescription(`
+    withCredentials refers to the inclusion of credentials on cross-site requests.
+    When set to true, an application can make cross-site access-control requests using credentials, like cookies.
+  `)
   withCredentials?: boolean = false
 
   // TODO: Put under HTTP/Configuration key?
   @Default(3)
   @Minimum(0)
   @Maximum(10)
-  @Description(
-    trimAll(
-      `maximumRetryCount refers to the maximum number of retries on a failed API call.
-      The maximum number of retries is 10.`,
-    ),
-  )
+  @TrimmedDescription(`
+    maximumRetryCount refers to the maximum number of retries on a failed API call.
+    The maximum number of retries is 10.
+  `)
   maximumRetryCount?: number = 3
 
   @Optional()
   @Minimum(0)
   @Maximum(10000)
-  @Description(
-    trimAll(
-      `retryDelayInMS refers to the number of milliseconds to wait before trying the API call again after it failed.
-      The maximum delay is 10,000 ms.`,
-    ),
-  )
+  @TrimmedDescription(`
+    retryDelayInMS refers to the number of milliseconds to wait before trying the API call again after it failed.
+    The maximum delay is 10,000 ms.
+  `)
   retryDelayInMS?: number
 
   @Optional()
   @Minimum(0)
   @Maximum(120000)
-  @Description(
-    trimAll(
-      `timeoutInMS refers to the number of milliseconds that pass before the API call times out.
-      The maximum timeout is 120,000 ms.`,
-    ),
-  )
+  @TrimmedDescription(`
+    timeoutInMS refers to the number of milliseconds that pass before the API call times out.
+    The maximum timeout is 120,000 ms.
+  `)
   timeoutInMS?: number
 
   // TODO: Put under Unqork Settings key?
   @Default(false)
-  @Description(
-    trimAll(
-      `assignAPIValues refers to how to handle/map responses from the API call.
-    When set to true, API response values may be assigned to components directly.`,
-    ),
-  )
+  @TrimmedDescription(`
+    assignAPIValues refers to how to handle/map responses from the API call.
+    When set to true, API response values may be assigned to components directly.
+  `)
   assignAPIValues?: boolean = false
 
   @Default(false)
-  @Description(
-    trimAll(`assumeDataKeyInResponse refers to how to access data from the response of the API Call.
-    When set to true, the 'data.' prefix can be removed from mapping fields.`),
-  )
+  @TrimmedDescription(`
+    assumeDataKeyInResponse refers to how to access data from the response of the API Call.
+    When set to true, the 'data.' prefix can be removed from mapping fields.
+  `)
   assumeDataKeyInResponse?: boolean = false
 
   @Default(false)
@@ -149,22 +135,18 @@ export class ApiCallOptions {
   convertXmlResponseToJson?: boolean = false
 
   @Default(true)
-  @Description(
-    trimAll(`
+  @TrimmedDescription(`
     By default, all requests made with an API_CALL operation will assume the role provided by engineArgs.assumeRoleOverride.
     To disable this behaviour for a particular operation, set this boolean to false.
-    `),
-  )
+  `)
   assumeRole?: boolean = true
 
   @Default(false)
-  @Description(
-    trimAll(`
+  @TrimmedDescription(`
     expectBinaryResponse should be enabled when you expect the API call to return a large file, 
-     and/or want to store the response in its original file format.
+    and/or want to store the response in its original file format.
     When set to true, the response doesn't convert to or store as base64.
-    `),
-  )
+  `)
   expectBinaryResponse?: boolean = false
 
   @Optional()
@@ -173,19 +155,19 @@ export class ApiCallOptions {
   errorOutputs?: ErrorsArgs[]
 
   @Default(false)
-  @Description(
-    trimAll(`flattenToSingleRecord refers to how the API call results will be stored.
-  When set to true, the module flattens results into a single record value. 
-  When set to OFF, the module leaves the unflattened results in multiple values.`),
-  )
+  @TrimmedDescription(`
+    flattenToSingleRecord refers to how the API call results will be stored.
+    When set to true, the module flattens results into a single record value. 
+    When set to OFF, the module leaves the unflattened results in multiple values.
+  `)
   flattenToSingleRecord?: boolean = false
 
   @Default(false)
-  @Description(
-    trimAll(`outputValuesOnly refers to how the output from the API call should be handled.
+  @TrimmedDescription(`
+    outputValuesOnly refers to how the output from the API call should be handled.
     When set to true, the API response is not logged and the outputs are appropriately mapped and handled. 
-    When set to false, the entire API call response is logged in the DevTools Console before the output handling occurs.`),
-  )
+    When set to false, the entire API call response is logged in the DevTools Console before the output handling occurs.
+  `)
   outputValuesOnly?: boolean = false
 
   @Optional()
@@ -219,22 +201,19 @@ export class ApiCallOptions {
   @Optional()
   @Enum(ServiceType)
   @Default(ServiceType.UNQORK)
-  @Description(
-    trimAll(`serviceType can be set to either 'Unqork' or 'External.
+  @TrimmedDescription(`
+    serviceType can be set to either 'Unqork' or 'External.
     Unqork service type has a number of preconfigured, internal API services. These API calls help you create files, convert files, and access or edit submission data.
-    External service type can make an API call to an external source. You must configure these services in Unqork's Services Administration.`),
-  )
+    External service type can make an API call to an external source. You must configure these services in Unqork's Services Administration.
+  `)
   serviceType?: ServiceType = ServiceType.UNQORK
 
   @Default(false)
-  @Description(
-    trimAll(
-      `topLevelArray should be set to true when you want to add a top level array/object to the request body. 
-      When topLevelArray is true, the string value of 'arrayKeyPromote' will be promoted to the top level.
-      https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05006A-Plug-In_Component.htm#:~:text=multipart%20API%C2%A0call.-,Promote%20Object/Array%20to%20Top%20Level,-%3A%20Use%20this%20setting
-      `,
-    ),
-  )
+  @TrimmedDescription(`
+    topLevelArray should be set to true when you want to add a top level array/object to the request body. 
+    When topLevelArray is true, the string value of 'arrayKeyPromote' will be promoted to the top level.
+    https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05006A-Plug-In_Component.htm#:~:text=multipart%20API%C2%A0call.-,Promote%20Object/Array%20to%20Top%20Level,-%3A%20Use%20this%20setting
+  `)
   topLevelArray?: boolean = false
 
   @Optional()
@@ -243,12 +222,10 @@ export class ApiCallOptions {
 
   // TODO: Put under Unqork Settings / Validation key?
   @Optional()
-  @Description(
-    trimAll(
-      `ensureJSONPathExistsInResponse lets you set a required property path return value. 
-      If the path isn't present in the response body, the call results in an error.`,
-    ),
-  )
+  @TrimmedDescription(`
+    ensureJSONPathExistsInResponse lets you set a required property path return value. 
+    If the path isn't present in the response body, the call results in an error.
+  `)
   ensureJSONPathExistsInResponse?: string
 
   @Optional()
@@ -274,14 +251,12 @@ export class ApiCallOptions {
   blockExecution?: boolean = false
 
   @Default(false)
-  @Description(
-    trimAll(
-      `If the API_CALL fails when attempting to make the request, then this will cause the API_CALL
-      operation to throw an ApiCallResponseError, ApiCallRequestError, or ApiCallPreRequestError. The
-      ApiCallResponseError contains the statusCode and data from the error response. When true, this
-      will also make the API_CALL blockExecution, because errors can only be caught if we await execution.`,
-    ),
-  )
+  @TrimmedDescription(`
+    If the API_CALL fails when attempting to make the request, then this will cause the API_CALL
+    operation to throw an ApiCallResponseError, ApiCallRequestError, or ApiCallPreRequestError. The
+    ApiCallResponseError contains the statusCode and data from the error response. When true, this
+    will also make the API_CALL blockExecution, because errors can only be caught if we await execution.
+  `)
   throwIfErrorStatus?: boolean = false
 
   // TODO: Is this the same as topLevelArray

@@ -1,66 +1,57 @@
 import { Description } from '@tsed/schema'
 
-import { Css } from '../../../decorators/css.decorator'
+import { DndSwimlanesTargets } from './dndSwimlanes.targets.enum'
+import { Css } from '../../../decorators/schema/css.decorator'
+import { StylingModel } from '../../styling'
 import { type CssClassOrProps } from '../../styling/cssClassOrProps.type'
+import { TargetsModel } from '../../viewTargets/targets.model'
 
-export class DndSwimlanesStyling {
+export class DndSwimlanesStyling implements StylingModel<DndSwimlanesStylingTargets> {
   targets: DndSwimlanesStylingTargets
 }
 
-export class DndSwimlanesStylingTargets {
-  @Description('Adds styles to Swimlanes root ComponentWrapper.')
+export class DndSwimlanesStylingTargets implements TargetsModel<DndSwimlanesTargets> {
+  @Description('Adds styles to the root ComponentWrapper.')
   @Css()
-  root: CssClassOrProps
+  [DndSwimlanesTargets.root]: CssClassOrProps;
 
-  @Description("Adds styles to an individual Swimlane's list wrapper.")
+  @Description('Adds styles to the label.')
   @Css()
-  listWrapper: CssClassOrProps
+  [DndSwimlanesTargets.label]: CssClassOrProps;
 
-  @Description("Adds styles to a Swimlane's label wrapper div.")
+  @Description('Adds styles to the lanes wrapper.')
   @Css()
-  labelWrapper: CssClassOrProps
+  [DndSwimlanesTargets.lanes]: CssClassOrProps;
 
-  @Description("Adds styles to a Swimlane's label span.")
+  @Description('Adds styles to each lane.')
   @Css()
-  label: CssClassOrProps
+  [DndSwimlanesTargets.lane]: CssClassOrProps;
 
-  @Description("Adds styles to a Swimlane's card count span.")
+  @Description('Adds styles to the lane wrapper.')
   @Css()
-  swimlaneCardCount: CssClassOrProps
+  [DndSwimlanesTargets.laneWrapper]: CssClassOrProps;
 
-  @Description('Adds styles to the ul list element for the Swimlane.')
+  @Description('Adds styles to the lane header.')
   @Css()
-  listUl: CssClassOrProps
+  [DndSwimlanesTargets.laneHeader]: CssClassOrProps;
 
-  @Description('Adds styles to both Before and After DropTargets.')
+  @Description('Adds styles to the lane label.')
   @Css()
-  cardDropTarget: CssClassOrProps
+  [DndSwimlanesTargets.laneLabel]: CssClassOrProps;
 
-  @Description('Adds styles to just the Before DropTarget.')
+  @Description('Adds styles to the lane count.')
   @Css()
-  cardDropTargetBefore: CssClassOrProps
+  [DndSwimlanesTargets.laneCount]: CssClassOrProps;
 
-  @Description('Adds styles to just the After DropTarget.')
+  @Description('Adds styles to each item.')
   @Css()
-  cardDropTargetAfter: CssClassOrProps
+  [DndSwimlanesTargets.item]: CssClassOrProps;
 
-  @Description('Adds styles to the empty DropTarget if no Cards are in the Swimlane.')
+  @Description('Adds styles to the drop targets.')
   @Css()
-  emptyCardPlaceholder: CssClassOrProps
+  [DndSwimlanesTargets.dropTarget]: CssClassOrProps;
 
-  @Description("Adds styles to an individual Card's outer wrapper.")
+  @Description('Adds styles to the placeholder.')
   @Css()
-  cardOuterWrapper: CssClassOrProps
-
-  @Description('Adds styles to an individual Card inside the outerWrapper.')
-  @Css()
-  card: CssClassOrProps
-
-  @Description("Adds styles to an individual Card's inner wrapper inside card.")
-  @Css()
-  cardInnerWrapper: CssClassOrProps
-
-  @Description('Adds styles to the body of the Card inside the inner wrapper.')
-  @Css()
-  cardBody: CssClassOrProps
+  [DndSwimlanesTargets.placeholder]: CssClassOrProps
 }

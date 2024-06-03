@@ -1,27 +1,40 @@
-import { Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
+import { Const, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
 
-import { ProtectedFieldEvents } from './protectedField.events'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
-import { InputField } from '../../componentComposition/input/component.input'
+import { ProtectedFieldStyling } from './protectedField.styling'
+import { ProtectedFieldTargets } from './protectedField.targets.enum'
+import { ViewTargets } from '../../../decorators'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
+import { InputField } from '../../component-composition/input/component.input'
+import type { SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
+@TrimmedDescription(`
+  The ProtectedField component masks the sensitive information like a Social Security or account number entered in the input.
+  Use ProtectedField component if end-users don't want the information to be visibly seen.
+`)
 @DiscriminatorValue('password')
+@ViewTargets(ProtectedFieldTargets)
 export class ProtectedFieldComponentDefinition extends BaseComponentDefinition {
+  @Const('password')
   @Required()
-  @Description('Type of the component.')
   type: 'password' = 'password' as const
 
-  @Property(Display)
-  @Description('Display settings of the protected field.')
+  @Optional()
   display: Display = new Display()
 
-  @Property(InputField)
-  @Description('Field settings of the protected field.')
+  @Optional()
   field: InputField = new InputField()
 
-  @Description('Value of the protected field.')
+  @Optional()
   declare value: string
 
-  @Property()
-  declare eventHandlers: ProtectedFieldEvents | undefined
+  @Optional()
+  @Examples(targetedStylingExample)
+  declare styling: ProtectedFieldStyling
+
+  @Optional()
+  declare signals: SignalTargets<ProtectedFieldTargets>
 }

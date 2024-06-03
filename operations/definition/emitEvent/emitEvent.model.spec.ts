@@ -4,11 +4,10 @@ import { createOperation } from '../../createOperation'
 import { OperationTypes } from '../../enums/operation-types.enum'
 
 describe('Operation Model: EmitEvent Tests', () => {
-  let validate, schema
+  let validate
   beforeAll(() => {
     const response = generateSchemaAndValidate(EmitEventOperation)
     validate = response.validate
-    schema = response.schema
   })
 
   it('Reset operation should validate appropriately', () => {

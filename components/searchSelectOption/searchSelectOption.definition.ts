@@ -1,32 +1,42 @@
-import { Required, DiscriminatorValue, Property, Description } from '@tsed/schema'
+import { Const, Default, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
 
 import { OptionAdornments } from './OptionAdornments'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
+import { SearchSelectOptionStyling } from './searchSelectOption.styling'
+import { SearchSelectOptionTargets } from './searchSelectOptionTargets.enum'
+import { ViewTargets } from '../../../decorators'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import {
   LeftAdornmentNestable,
   RightAdornmentNestable,
-} from '../../componentComposition/adornments/component.adornments'
-import { Display } from '../../componentComposition/display/component.display'
-import { Field } from '../../componentComposition/field/component.field.label'
+} from '../../component-composition/adornments/component.adornments'
+import { Display } from '../../component-composition/display/component.display'
+import { Field } from '../../component-composition/field/component.field.label'
+import type { SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
 @DiscriminatorValue('searchSelectOption')
+@ViewTargets(SearchSelectOptionTargets)
 export class SearchSelectOptionComponentDefinition extends BaseComponentDefinition {
-  @Required()
+  @Const('searchSelectOption')
   type: 'searchSelectOption' = 'searchSelectOption' as const
 
-  @Property(OptionAdornments)
-  @Description('Adornments component definitions.')
+  @Optional()
   adornments: OptionAdornments = new OptionAdornments()
 
-  @Property(Field)
+  @Optional()
   field: Field = new Field()
 
-  @Property(Display)
+  @Optional()
   display: Display = new Display()
 
+  @Optional()
+  @Default([])
   @Description('Fully qualified child keys for left icon nestables. Maintained by nestable api.')
   left: string[] = []
 
+  @Optional()
+  @Default([])
   @Description('Fully qualified child keys for right icon nestables. Maintained by nestable api.')
   right: string[] = []
 
@@ -36,6 +46,12 @@ export class SearchSelectOptionComponentDefinition extends BaseComponentDefiniti
     right: new RightAdornmentNestable(),
   }
 
-  @Description('Value of the component')
-  value: string
+  @Required()
+  declare value: string
+
+  @Examples(targetedStylingExample)
+  declare styling?: SearchSelectOptionStyling
+
+  @Optional()
+  declare signals?: SignalTargets<SearchSelectOptionTargets>
 }

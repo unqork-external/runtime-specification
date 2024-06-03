@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetColumnVisibility Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "TableSetColumnVisibilityOptions": {
+      "properties": {
+        "column": {
+          "anyOf": [
+            {
+              "type": "string",
+            },
+            {
+              "items": {
+                "type": "string",
+              },
+              "type": "array",
+            },
+          ],
+          "description": "Which column(s) are we setting visibility for?",
+        },
+        "targetKey": {
+          "description": "Key of the target entity",
+          "minLength": 1,
+          "type": "string",
+        },
+        "visibility": {
+          "description": "Should this column be visible or hidden?",
+          "enum": [
+            "VISIBLE",
+            "HIDDEN",
+            "TOGGLE",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "column",
+        "visibility",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetColumnVisibilityOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_COLUMN_VISIBILITY",
+      "examples": [
+        "TABLE_SET_COLUMN_VISIBILITY",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

@@ -1,7 +1,8 @@
 import { Default, Description, Example } from '@tsed/schema'
 
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { trimAll } from '../../../utilities'
-import { InputFormat } from '../../componentComposition/input/component.input'
+import { InputFormat } from '../../component-composition/input/component.input'
 
 export class TextFieldFormat extends InputFormat {
   @Default(false)
@@ -9,14 +10,12 @@ export class TextFieldFormat extends InputFormat {
   useInputMask: boolean = false
 
   @Default(false)
-  @Description(
-    trimAll(`
-      When \`true\`, the textfield value will always include the masking characters in submission data.
-      Note this flag affects how Max/Min length validations work because it changes the number of 
-      characters present in the evaluated data, but at the same time it affects validations,
-      this setting by itself is not considered a validation
-    `),
-  )
+  @TrimmedDescription(`
+    When \`true\`, the textfield value will always include the masking characters in submission data.
+    Note this flag affects how Max/Min length validations work because it changes the number of 
+    characters present in the evaluated data, but at the same time it affects validations,
+    this setting by itself is not considered a validation
+  `)
   @Example(
     trimAll(`
       If the flag is \`true\` and the mask is "(999) 999-9999", when a user types "1", 

@@ -19,6 +19,10 @@ exports[`Clear Styling Operation Model should match this JSON Schema 1`] = `
   },
   "description": "This operation will clear any styles added to a component via \`styling\` configuration.",
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

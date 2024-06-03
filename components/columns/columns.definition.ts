@@ -1,32 +1,31 @@
-import { CollectionOf, Const, Description, DiscriminatorValue, Example } from '@tsed/schema'
+import { CollectionOf, Const, Description, DiscriminatorValue, Property } from '@tsed/schema'
 
 import { ColumnData } from './columnData'
-import { ColumnsStyling } from './columns.styling'
-import { trimAll } from '../../../utilities'
-import { BaseComponentDefinition } from '../../baseComponentInterface/base.component.definition'
-import { Display } from '../../componentComposition/display/component.display'
-import { targetedStylingExample } from '../../examples/styling/targeted.styling.example'
+import { ColumnsField } from './columns.field'
+import { ColumnsStyling } from './styling/columns.styling'
+import { ColumnsTargets } from './targets/columnsTargets.enum'
+import { Examples } from '../../../decorators/schema/examples.decorator'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { Display } from '../../component-composition/display/component.display'
 import { StandardArrayNestable } from '../../nestables'
+import type { SignalTargets } from '../../signals'
+import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
 @DiscriminatorValue('columns')
-@Description(
-  trimAll(`
+@TrimmedDescription(`
     The Columns component is part of the core range of Centauri display and layout components.
     A creator can use the Columns component to customize the layout of their module by organizing the components into columns.
-  `),
-)
+`)
 export class ColumnsComponentDefinition extends BaseComponentDefinition {
   @Const('columns')
-  @Description(`This is a 'Columns' component.`)
   type: 'columns' = 'columns' as const
 
   @CollectionOf(ColumnData)
-  @Description(
-    trimAll(`
+  @TrimmedDescription(`
       The 'columns' property holds an array of objects that describe each column that should be rendered.
       Each column object holds references to the components nested inside of it and details related to it's layout.
-    `),
-  )
+    `)
   columns: ColumnData[]
 
   @CollectionOf(BaseComponentDefinition)
@@ -35,11 +34,14 @@ export class ColumnsComponentDefinition extends BaseComponentDefinition {
   )
   components?: BaseComponentDefinition[]
 
-  @Description('Display settings to be cascaded to the children in the columns.')
+  @Property()
+  field: ColumnsField = new ColumnsField()
+
+  @Property()
   display: Display = new Display()
 
   @Description('Object that maps customized CSS styling to specific targets on the Columns component.')
-  @Example(targetedStylingExample)
+  @Examples(targetedStylingExample)
   declare styling: ColumnsStyling
 
   @Description('Nestable information for columns')
@@ -47,4 +49,7 @@ export class ColumnsComponentDefinition extends BaseComponentDefinition {
 
   @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
+
+  @Property()
+  declare signals?: SignalTargets<ColumnsTargets>
 }

@@ -11,6 +11,8 @@ import { Description, DiscriminatorKey } from '@tsed/schema'
 import { OperationTypes } from '../enums/operation-types.enum'
 
 export class Operation<OpType extends OperationTypes | string = string> {
+  @Description('A detailed summary of the operation')
+  creatorSummary?: string
   @Description('Name of the operation')
   name?: string
   @DiscriminatorKey()

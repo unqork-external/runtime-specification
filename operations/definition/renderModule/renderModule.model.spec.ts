@@ -16,6 +16,10 @@ describe('Operation Model: RenderModule Tests', () => {
         type: { type: 'string', const: 'RENDER_MODULE', examples: ['RENDER_MODULE'] },
         name: { type: 'string', description: 'Name of the operation' },
         options: { $ref: '#/definitions/RenderModuleOperationOptions' },
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
       },
       required: ['options'],
       definitions: {

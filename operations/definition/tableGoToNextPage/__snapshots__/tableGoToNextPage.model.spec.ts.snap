@@ -6,14 +6,23 @@ exports[`Operation Model: TableGoToNextPage Tests should match this JSON Schema 
     "TableGoToNextPageOperationOptions": {
       "properties": {
         "targetKey": {
-          "description": "The key for the component we want to perform the operation",
+          "description": "Key of the Table component to change pagination position of",
+          "minLength": 1,
           "type": "string",
         },
       },
+      "required": [
+        "targetKey",
+      ],
       "type": "object",
     },
   },
+  "description": "Navigates to the next page of a paginated Table component.",
   "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
     "name": {
       "description": "Name of the operation",
       "type": "string",

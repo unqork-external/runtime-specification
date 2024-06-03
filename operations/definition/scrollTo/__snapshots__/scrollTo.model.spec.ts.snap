@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: ScrollTo Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "ScrollToOptions": {
+      "properties": {
+        "block": {
+          "default": "start",
+          "description": "Defines vertical alignment",
+          "enum": [
+            "start",
+            "center",
+            "end",
+            "nearest",
+          ],
+          "type": "string",
+        },
+        "inline": {
+          "default": "nearest",
+          "description": "Defines horizontal alignment",
+          "enum": [
+            "start",
+            "center",
+            "end",
+            "nearest",
+          ],
+          "type": "string",
+        },
+        "targetElementKey": {
+          "description": "TODO: Rename to targetKey "targetElementKey" describes where to scroll the view to. If "targetElementKey" is not set, it will scroll to the top of the view.",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "description": "ScrollToOperation will scroll the page in relation to the targetElementKey. If targetElementKey is unset, it will scroll to the top of the page.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ScrollToOptions",
+    },
+    "type": {
+      "const": "SCROLL_TO",
+      "examples": [
+        "SCROLL_TO",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

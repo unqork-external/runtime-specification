@@ -4,7 +4,7 @@ import { CANVAS_ITEM_ID, CanvasItem } from './canvasItem/canvasItem.definition'
 import { LAYOUT_ID } from './canvasLayout/canvasChildLayout.definition'
 import { CanvasRepresentation } from './canvasLayout/canvasRepresentation.definition'
 import { CanvasStyling } from './styling/canvas.styling'
-import { BaseComponentDefinition } from '../../baseComponentInterface'
+import { BaseComponentDefinition } from '../../base-component-interface'
 import { StandardArrayNestable } from '../../nestables'
 
 export type CanvasModes = 'EDIT' | 'PREVIEW' | 'IDE'
@@ -20,6 +20,14 @@ export class CanvasComponentDefinition extends BaseComponentDefinition {
   @Property()
   @Default(true)
   useDefaultStyles: boolean
+
+  @Property()
+  @Default(true)
+  useConverter: boolean = true
+
+  @Property()
+  @Default(false)
+  useVegaDesigner: boolean = false
 
   @Required()
   @Default({})

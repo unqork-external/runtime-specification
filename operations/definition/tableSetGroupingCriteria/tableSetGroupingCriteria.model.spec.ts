@@ -15,7 +15,15 @@ describe('Operation Model: TableSetGroupingCriteria Tests', () => {
         TableSetGroupingCriteriaOperationOptions: {
           properties: {
             groupBy: {
-              type: 'object',
+              anyOf: [
+                { type: 'string' },
+                {
+                  type: 'array',
+                  items: {
+                    type: 'string',
+                  },
+                },
+              ],
             },
             targetKey: {
               type: 'string',
@@ -25,6 +33,10 @@ describe('Operation Model: TableSetGroupingCriteria Tests', () => {
         },
       },
       properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
         name: {
           description: 'Name of the operation',
           type: 'string',

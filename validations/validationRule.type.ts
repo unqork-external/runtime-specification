@@ -1,4 +1,4 @@
-import { Default, Description, Enum, Property } from '@tsed/schema'
+import { Description, Enum, Property } from '@tsed/schema'
 
 import { ValidationRuleTypes } from './validation.enum'
 
