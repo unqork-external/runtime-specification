@@ -1,5 +1,7 @@
 import { Default, Description, Property } from '@tsed/schema'
 
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+
 class SearchSelectLabel {
   @Description('Label text.')
   text?: string
@@ -21,6 +23,9 @@ export class SearchSelectField {
   multiple: boolean = false
 
   @Default(false)
-  @Description('IF false,  option list will be rendered in a Portal and appended to the bottom of the DOM')
-  disablePortal: boolean = false
+  @TrimmedDescription(`
+    When "true", children stay within parent DOM hierarchy. 
+    When "false", popup element is attached to HTML body as a React Portal
+  `)
+  disablePortal?: boolean = false
 }

@@ -456,7 +456,7 @@ exports[`SearchSelect Contract Tests should ensure the contract is clear 3`] = `
     "properties": {
       "disablePortal": {
         "default": false,
-        "description": "IF false,  option list will be rendered in a Portal and appended to the bottom of the DOM",
+        "description": "When "true", children stay within parent DOM hierarchy. When "false", popup element is attached to HTML body as a React Portal",
         "type": "boolean",
       },
       "label": {

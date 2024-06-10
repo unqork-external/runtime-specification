@@ -474,6 +474,11 @@ exports[`SimpleSelect Contract Tests should ensure the contract is clear 3`] = `
         "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
         "type": "string",
       },
+      "disablePortal": {
+        "default": false,
+        "description": "When "true", children stay within parent DOM hierarchy. When "false", popup element is attached to HTML body as a React Portal",
+        "type": "boolean",
+      },
       "helperText": {
         "$ref": "#/definitions/InputHelperText",
       },

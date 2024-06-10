@@ -1,5 +1,6 @@
 import { Default, Description, Optional, Required } from '@tsed/schema'
 
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { InputField } from '../../component-composition/input/component.input'
 
 export class SimpleSelectRefreshTargetModel {
@@ -16,6 +17,7 @@ export class SimpleSelectRefreshTargetModel {
   @Description('The JSONPath representation of what JSON key want to read from.')
   property: string
 }
+
 export class SimpleSelectField extends InputField {
   @Optional()
   @Default(false)
@@ -37,4 +39,11 @@ export class SimpleSelectField extends InputField {
   @Optional()
   @Description('Adornments property for reference source')
   adornmentsProperty?: string
+
+  @Default(false)
+  @TrimmedDescription(`
+    When "true", children stay within parent DOM hierarchy. 
+    When "false", popup element is attached to HTML body as a React Portal
+  `)
+  disablePortal?: boolean = false
 }
