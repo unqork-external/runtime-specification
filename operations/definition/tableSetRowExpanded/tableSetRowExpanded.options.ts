@@ -1,12 +1,15 @@
-import { Description } from '@tsed/schema'
+import { Description, Required } from '@tsed/schema'
 
 export class TableSetRowExpandedOperationOptions {
-  @Description('A key of the table we are targeting for row expansion')
+  @Required()
+  @Description('Key of the Table component to target for row expansion.')
   targetKey: string
 
-  @Description('The key of the row that we want to expand')
+  @Required()
+  @Description('The key of the parent row group to expand or collapse.')
   targetGroupRow: string
 
-  @Description('A boolean for setting if the row is expanded')
+  @Required()
+  @Description('Indicates if the parent row group should be expanded or collapsed.')
   isRowExpanded: boolean
 }

@@ -6,18 +6,27 @@ exports[`Operation Model: TableSetColumnFiltersVisibility Tests should match thi
     "TableSetColumnFiltersVisibilityOperationOptions": {
       "properties": {
         "enableColumnFilters": {
+          "description": "Set the visibility of the filters in the Table component. This field can receive a true/false value, or a string input for interpolation.",
+          "minLength": 1,
           "type": [
             "boolean",
             "string",
           ],
         },
         "targetKey": {
+          "description": "Key of the Table component to show/hide filters.",
+          "minLength": 1,
           "type": "string",
         },
       },
+      "required": [
+        "targetKey",
+        "enableColumnFilters",
+      ],
       "type": "object",
     },
   },
+  "description": "Show/Hide column filters for the Table component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

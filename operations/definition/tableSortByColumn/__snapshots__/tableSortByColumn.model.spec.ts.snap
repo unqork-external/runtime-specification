@@ -1,49 +1,49 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Operation Model: TableSetColumnFilter Tests should match this JSON Schema 1`] = `
+exports[`Operation Model: TableSortByColumn Tests should match this JSON Schema 1`] = `
 {
   "definitions": {
-    "ColumnFilter": {
+    "SortingState": {
       "properties": {
+        "desc": {
+          "default": false,
+          "description": "Order in which the column should be sorted.",
+          "type": "boolean",
+        },
         "id": {
-          "description": "ID of the column to filter",
+          "description": "Column to be sorted.",
           "minLength": 1,
           "type": "string",
-        },
-        "value": {
-          "description": "Value of the filter",
-          "type": "object",
         },
       },
       "required": [
         "id",
-        "value",
       ],
       "type": "object",
     },
-    "TableSetColumnFilterOperationOptions": {
+    "TableSortByColumnOperationOptions": {
       "properties": {
-        "filters": {
-          "description": "The columns of the Table component to set filtering.",
+        "sortingState": {
+          "description": "Collection of objects containing the id of the column to sort, and a boolean indicating whether the column should be sorted.",
           "items": {
-            "$ref": "#/definitions/ColumnFilter",
+            "$ref": "#/definitions/SortingState",
           },
           "type": "array",
         },
         "targetKey": {
-          "description": "Key of the Table component to set column filtering",
+          "description": "Key of the Table component to perform column sorting.",
           "minLength": 1,
           "type": "string",
         },
       },
       "required": [
         "targetKey",
-        "filters",
+        "sortingState",
       ],
       "type": "object",
     },
   },
-  "description": "Add filter types and/or values to apply to the Table component",
+  "description": "Peforms column sorting in the Table component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",
@@ -54,12 +54,12 @@ exports[`Operation Model: TableSetColumnFilter Tests should match this JSON Sche
       "type": "string",
     },
     "options": {
-      "$ref": "#/definitions/TableSetColumnFilterOperationOptions",
+      "$ref": "#/definitions/TableSortByColumnOperationOptions",
     },
     "type": {
-      "const": "TABLE_SET_COLUMN_FILTER",
+      "const": "TABLE_SORT_BY_COLUMN",
       "examples": [
-        "TABLE_SET_COLUMN_FILTER",
+        "TABLE_SORT_BY_COLUMN",
       ],
       "type": "string",
     },

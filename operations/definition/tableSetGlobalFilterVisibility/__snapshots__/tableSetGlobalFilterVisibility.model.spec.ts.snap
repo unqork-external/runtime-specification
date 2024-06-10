@@ -6,18 +6,27 @@ exports[`Operation Model: TableSetGlobalFilterVisibility Tests should match this
     "TableSetGlobalFilterVisibilityOperationOptions": {
       "properties": {
         "enableGlobalFilter": {
+          "description": "Disable/enable the global filtering feature and hide/show the search icon.",
+          "minLength": 1,
           "type": [
             "boolean",
             "string",
           ],
         },
         "targetKey": {
+          "description": "Key of the Table component to toggle global filter visibility.",
+          "minLength": 1,
           "type": "string",
         },
       },
+      "required": [
+        "targetKey",
+        "enableGlobalFilter",
+      ],
       "type": "object",
     },
   },
+  "description": "Toggles global filter visibility of the Table component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

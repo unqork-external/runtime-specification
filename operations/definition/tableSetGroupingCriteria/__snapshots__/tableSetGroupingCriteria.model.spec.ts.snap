@@ -1,11 +1,11 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Operation Model: TableSetColumnVisibility Tests should match this JSON Schema 1`] = `
+exports[`Operation Model: TableSetGroupingCriteria Tests should match this JSON Schema 1`] = `
 {
   "definitions": {
-    "TableSetColumnVisibilityOptions": {
+    "TableSetGroupingCriteriaOperationOptions": {
       "properties": {
-        "column": {
+        "groupBy": {
           "anyOf": [
             {
               "type": "string",
@@ -17,33 +17,22 @@ exports[`Operation Model: TableSetColumnVisibility Tests should match this JSON 
               "type": "array",
             },
           ],
-          "description": "The column(s) to set visibility for",
+          "description": "The label of the column(s) to group the Table component by.",
         },
         "targetKey": {
-          "description": "Key of the Table component to target for column visibility",
-          "minLength": 1,
-          "type": "string",
-        },
-        "visibility": {
-          "description": "Indicates the type of visibility for the column(s). Available types are Visible, Hidden or Toggle.",
-          "enum": [
-            "VISIBLE",
-            "HIDDEN",
-            "TOGGLE",
-          ],
+          "description": "Key of the Table component to perform column grouping.",
           "minLength": 1,
           "type": "string",
         },
       },
       "required": [
         "targetKey",
-        "column",
-        "visibility",
+        "groupBy",
       ],
       "type": "object",
     },
   },
-  "description": "Sets the column(s) visibility for the Table component",
+  "description": "Sets columns to group on the Table component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",
@@ -54,12 +43,12 @@ exports[`Operation Model: TableSetColumnVisibility Tests should match this JSON 
       "type": "string",
     },
     "options": {
-      "$ref": "#/definitions/TableSetColumnVisibilityOptions",
+      "$ref": "#/definitions/TableSetGroupingCriteriaOperationOptions",
     },
     "type": {
-      "const": "TABLE_SET_COLUMN_VISIBILITY",
+      "const": "TABLE_SET_GROUPING_CRITERIA",
       "examples": [
-        "TABLE_SET_COLUMN_VISIBILITY",
+        "TABLE_SET_GROUPING_CRITERIA",
       ],
       "type": "string",
     },

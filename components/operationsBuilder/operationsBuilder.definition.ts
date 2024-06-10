@@ -1,7 +1,9 @@
-import { Description, DiscriminatorValue, Required } from '@tsed/schema'
+import { Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
 
+import { OpsBuilderTargets } from './operationsBuilderTargets.enum'
 import { BaseComponentDefinition } from '../../base-component-interface'
 import { StandardArrayNestable } from '../../nestables'
+import type { SignalTargets } from '../../signals'
 
 @DiscriminatorValue('operationsBuilder')
 export class OperationsBuilderComponentDefinition extends BaseComponentDefinition {
@@ -20,4 +22,7 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
 
   @Description('Nestable information for operations builder')
   nestables = { childIds: new StandardArrayNestable() }
+
+  @Optional()
+  declare signals: SignalTargets<OpsBuilderTargets>
 }

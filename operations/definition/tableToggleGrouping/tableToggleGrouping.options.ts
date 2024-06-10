@@ -1,6 +1,7 @@
-import { Property } from '@tsed/schema'
+import { Description, Required } from '@tsed/schema'
 
 export class TableToggleGroupingOperationOptions {
-  @Property()
+  @Required()
+  @Description('Key of the Table component to enable/disable grouping.')
   targetKey: string
 }

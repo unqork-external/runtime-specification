@@ -1,9 +1,11 @@
-import { Property } from '@tsed/schema'
+import { Description, Required } from '@tsed/schema'
 
 export class TableSetGlobalFilterOperationOptions {
-  @Property()
+  @Required()
+  @Description('Key of the Table component to apply filters across all columns')
   targetKey: string
 
-  @Property()
+  @Required()
+  @Description('Value to be filtered across all columns of the Table component')
   filter: string
 }

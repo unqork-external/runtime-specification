@@ -202,6 +202,13 @@ exports[`Canvas Contract Tests should ensure the contract is clear 3`] = `
           "object",
         ],
       },
+      "canvasItemHeaderCollapse": {
+        "description": "Adds styles to the collapse icon in the canvas item header for nestable components.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
       "canvasItemHeaderIcon": {
         "description": "Adds styles to the icon in the canvas item header.",
         "type": [

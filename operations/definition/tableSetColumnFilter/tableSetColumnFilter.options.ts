@@ -1,12 +1,14 @@
-import { CollectionOf, Property } from '@tsed/schema'
+import { CollectionOf, Description, Required } from '@tsed/schema'
 
 import { ColumnFilter } from '../../../components/muiBasicTable/filters/columnFilter'
 
 export class TableSetColumnFilterOperationOptions {
-  @Property()
+  @Required()
+  @Description('Key of the Table component to set column filtering')
   targetKey: string
 
-  @Property()
+  @Required()
+  @Description('The columns of the Table component to set filtering.')
   @CollectionOf(ColumnFilter)
   filters: ColumnFilter[]
 }

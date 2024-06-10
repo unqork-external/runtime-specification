@@ -5,16 +5,16 @@ import { ColumnVisibility } from '../../../components/muiBasicTable/columns/visi
 
 export class TableSetColumnVisibilityOptions {
   @Required()
-  @Description('Key of the target entity')
+  @Description('Key of the Table component to target for column visibility')
   targetKey: string
 
   @Required()
-  @Description('Which column(s) are we setting visibility for?')
+  @Description('The column(s) to set visibility for')
   @OneOrMany('string')
   column: string | string[]
 
   @Required()
-  @Description('Should this column be visible or hidden?')
+  @Description('Indicates the type of visibility for the column(s). Available types are Visible, Hidden or Toggle.')
   @Enum(ColumnVisibility)
   visibility: ColumnVisibility
 }

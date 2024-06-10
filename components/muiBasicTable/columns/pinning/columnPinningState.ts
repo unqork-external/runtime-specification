@@ -1,12 +1,15 @@
-import { Property, CollectionOf } from '@tsed/schema'
+import { CollectionOf, Default, Description, Optional } from '@tsed/schema'
 
 export class ColumnPinningState {
-  //left.items.type will be an string instead of an array in this case
+  @Optional()
+  @Default([])
   @CollectionOf(String)
-  @Property()
+  @Description('List of columns to pin to the left of the Table component.')
   left?: string[]
 
+  @Optional()
+  @Default([])
   @CollectionOf(String)
-  @Property()
+  @Description('List of columns to pin to the right of the Table component.')
   right?: string[]
 }

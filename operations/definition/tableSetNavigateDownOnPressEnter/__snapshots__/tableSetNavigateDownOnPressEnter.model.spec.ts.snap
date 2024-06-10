@@ -6,17 +6,23 @@ exports[`Operation Model: TableSetNavigateDownOnPressEnter Tests should match th
     "TableSetNavigateDownOnPressEnterOperationOptions": {
       "properties": {
         "enabled": {
-          "description": "When enabled, pressing Enter on a cell in edit mode will set the focus to the cell immediately below. The new selected cell will also be in edit mode. If there's no cell below the current cell, nothing happens.",
+          "description": "When enabled, pressing Enter on a cell in edit mode sets the focus to the cell immediately below. The new selected cell changes to edit mode. If there's no cell below the current cell, nothing happens.",
           "type": "boolean",
         },
         "targetKey": {
-          "description": "The key for the table we want to set the navigation option",
+          "description": "The key of the Table component to set navigation options.",
+          "minLength": 1,
           "type": "string",
         },
       },
+      "required": [
+        "targetKey",
+        "enabled",
+      ],
       "type": "object",
     },
   },
+  "description": "When the Table component is in edit mode, this will change the navigation behavior to traverse down cells when the end-user presses 'Enter'.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

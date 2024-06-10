@@ -82,6 +82,10 @@ export class CanvasTargets {
   [CanvasTargetsEnum.canvasItemHeaderLabel]: CssClassOrProps;
 
   @Css()
+  @Description('Adds styles to the collapse icon in the canvas item header for nestable components.')
+  [CanvasTargetsEnum.canvasItemHeaderCollapse]: CssClassOrProps;
+
+  @Css()
   @Description('Adds styles to the representationButtonsWrapper for the canvas component.')
   [CanvasTargetsEnum.representationButtonsWrapper]: CssClassOrProps;
 

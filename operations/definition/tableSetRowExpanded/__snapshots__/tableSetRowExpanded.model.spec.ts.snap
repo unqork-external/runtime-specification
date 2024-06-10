@@ -6,21 +6,29 @@ exports[`Operation Model: TableSetRowExpanded Tests should match this JSON Schem
     "TableSetRowExpandedOperationOptions": {
       "properties": {
         "isRowExpanded": {
-          "description": "A boolean for setting if the row is expanded",
+          "description": "Indicates if the parent row group should be expanded or collapsed.",
           "type": "boolean",
         },
         "targetGroupRow": {
-          "description": "The key of the row that we want to expand",
+          "description": "The key of the parent row group to expand or collapse.",
+          "minLength": 1,
           "type": "string",
         },
         "targetKey": {
-          "description": "A key of the table we are targeting for row expansion",
+          "description": "Key of the Table component to target for row expansion.",
+          "minLength": 1,
           "type": "string",
         },
       },
+      "required": [
+        "targetKey",
+        "targetGroupRow",
+        "isRowExpanded",
+      ],
       "type": "object",
     },
   },
+  "description": "Expands/Collapses a parent row group in the Table component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

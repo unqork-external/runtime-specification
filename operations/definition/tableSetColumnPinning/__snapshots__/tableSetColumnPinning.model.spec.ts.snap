@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetColumnPinning Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "ColumnPinningState": {
+      "properties": {
+        "left": {
+          "description": "List of columns to pin to the left of the Table component.",
+          "items": {
+            "default": [],
+            "type": "string",
+          },
+          "type": "array",
+        },
+        "right": {
+          "description": "List of columns to pin to the right of the Table component.",
+          "items": {
+            "default": [],
+            "type": "string",
+          },
+          "type": "array",
+        },
+      },
+      "type": "object",
+    },
+    "TableSetColumnPinningOperationOptions": {
+      "properties": {
+        "columnPinningState": {
+          "$ref": "#/definitions/ColumnPinningState",
+        },
+        "targetKey": {
+          "description": "Key of the Table component to set column pinning.",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "columnPinningState",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "Pins columns to the left or right of the Table component",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetColumnPinningOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_COLUMN_PINNING",
+      "examples": [
+        "TABLE_SET_COLUMN_PINNING",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

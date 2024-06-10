@@ -6,24 +6,31 @@ exports[`Operation Model: TableSetAllRowsExpanded Tests should match this JSON S
     "TableSetAllRowsExpandedOperationOptions": {
       "properties": {
         "areRowsExpanded": {
-          "description": "A boolean for setting if rows are expanded",
+          "description": "Sets rows to be expanded. This field can receive a true/false value, or a string input for interpolation.",
+          "minLength": 1,
           "type": [
             "boolean",
             "string",
           ],
         },
         "persist": {
-          "description": "a boolean for setting if we want all rows to stay expanded/collapsed even after refreshes",
+          "description": "A boolean for setting if all rows will stay expanded/collapsed after a value change or a change to grouping",
           "type": "boolean",
         },
         "targetKey": {
           "description": "A key of the table we are targeting for row expansion",
+          "minLength": 1,
           "type": "string",
         },
       },
+      "required": [
+        "targetKey",
+        "areRowsExpanded",
+      ],
       "type": "object",
     },
   },
+  "description": "Sets all rows of the Table component to either expanded or collapsed.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

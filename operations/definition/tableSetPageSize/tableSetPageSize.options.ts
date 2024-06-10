@@ -1,11 +1,12 @@
-import { Any, Description, Property } from '@tsed/schema'
+import { Any, Description, Required } from '@tsed/schema'
 
 export class TableSetPageSizeOperationOptions {
-  @Description('The key for the component we want to set page size')
-  @Property()
+  @Required()
+  @Description('The key of the Table component to set page size.')
   targetKey: string
 
-  @Description('Page size')
+  @Required()
+  @Description('Sets the number of rows displayed per page.')
   @Any('number', 'string')
   pageSize: number | string
 }

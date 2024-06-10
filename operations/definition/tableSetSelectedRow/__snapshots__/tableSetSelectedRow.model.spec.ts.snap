@@ -1,32 +1,30 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Operation Model: TableSetPageSize Tests should match this JSON Schema 1`] = `
+exports[`Operation Model: TableSetSelectedRow Tests should match this JSON Schema 1`] = `
 {
   "definitions": {
-    "TableSetPageSizeOperationOptions": {
+    "RowSelection": {
+      "type": "object",
+    },
+    "TableSetSelectedRowOperationOptions": {
       "properties": {
-        "pageSize": {
-          "description": "Sets the number of rows displayed per page.",
-          "minLength": 1,
-          "type": [
-            "number",
-            "string",
-          ],
+        "selectedRows": {
+          "$ref": "#/definitions/RowSelection",
         },
         "targetKey": {
-          "description": "The key of the Table component to set page size.",
+          "description": "Key of the Table component to target for row selection",
           "minLength": 1,
           "type": "string",
         },
       },
       "required": [
         "targetKey",
-        "pageSize",
+        "selectedRows",
       ],
       "type": "object",
     },
   },
-  "description": "Sets the number of rows displayed per page of the Table component.",
+  "description": "Highlights the selected row(s) in the Table component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",
@@ -37,12 +35,12 @@ exports[`Operation Model: TableSetPageSize Tests should match this JSON Schema 1
       "type": "string",
     },
     "options": {
-      "$ref": "#/definitions/TableSetPageSizeOperationOptions",
+      "$ref": "#/definitions/TableSetSelectedRowOperationOptions",
     },
     "type": {
-      "const": "TABLE_SET_PAGE_SIZE",
+      "const": "TABLE_SET_SELECTED_ROW",
       "examples": [
-        "TABLE_SET_PAGE_SIZE",
+        "TABLE_SET_SELECTED_ROW",
       ],
       "type": "string",
     },

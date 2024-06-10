@@ -1,8 +1,11 @@
-import { Property } from '@tsed/schema'
+import { Description, Required } from '@tsed/schema'
 
 export class ColumnFilter {
-  @Property()
+  @Required()
+  @Description('ID of the column to filter')
   id: string
-  @Property()
+
+  @Required()
+  @Description('Value of the filter')
   value: unknown
 }

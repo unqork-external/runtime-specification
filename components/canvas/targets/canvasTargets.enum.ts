@@ -10,6 +10,7 @@ export enum CanvasTargetsEnum {
   canvasItemHeader = 'canvasItemHeader',
   canvasItemHeaderIcon = 'canvasItemHeaderIcon',
   canvasItemHeaderType = 'canvasItemHeaderType',
+  canvasItemHeaderCollapse = 'canvasItemHeaderCollapse',
   canvasItemHeaderLabel = 'canvasItemHeaderLabel',
   canvasItemHeaderWrapper = 'canvasItemHeaderWrapper',
   representationWrapper = 'representationWrapper',

@@ -10,43 +10,6 @@ describe('Operation Model: TableSetSelectedRow Tests', () => {
   })
 
   it('should match this JSON Schema', () => {
-    expect(schema).toStrictEqual({
-      definitions: {
-        RowSelection: {
-          type: 'object',
-        },
-        TableSetSelectedRowOperationOptions: {
-          properties: {
-            selectedRows: {
-              $ref: '#/definitions/RowSelection',
-            },
-            targetKey: {
-              type: 'string',
-            },
-          },
-          type: 'object',
-        },
-      },
-      properties: {
-        creatorSummary: {
-          description: 'A detailed summary of the operation',
-          type: 'string',
-        },
-        name: {
-          description: 'Name of the operation',
-          type: 'string',
-        },
-        options: {
-          $ref: '#/definitions/TableSetSelectedRowOperationOptions',
-        },
-        type: {
-          const: 'TABLE_SET_SELECTED_ROW',
-          examples: ['TABLE_SET_SELECTED_ROW'],
-          type: 'string',
-        },
-      },
-      required: ['options'],
-      type: 'object',
-    })
+    expect(schema).toMatchSnapshot()
   })
 })

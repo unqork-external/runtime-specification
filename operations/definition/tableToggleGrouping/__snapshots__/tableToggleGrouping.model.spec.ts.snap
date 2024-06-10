@@ -1,32 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Operation Model: TableSetPageSize Tests should match this JSON Schema 1`] = `
+exports[`Operation Model: TableToggleGrouping Tests should match this JSON Schema 1`] = `
 {
   "definitions": {
-    "TableSetPageSizeOperationOptions": {
+    "TableToggleGroupingOperationOptions": {
       "properties": {
-        "pageSize": {
-          "description": "Sets the number of rows displayed per page.",
-          "minLength": 1,
-          "type": [
-            "number",
-            "string",
-          ],
-        },
         "targetKey": {
-          "description": "The key of the Table component to set page size.",
+          "description": "Key of the Table component to enable/disable grouping.",
           "minLength": 1,
           "type": "string",
         },
       },
       "required": [
         "targetKey",
-        "pageSize",
       ],
       "type": "object",
     },
   },
-  "description": "Sets the number of rows displayed per page of the Table component.",
+  "description": "Toggle the enableGrouping feature.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",
@@ -37,12 +28,12 @@ exports[`Operation Model: TableSetPageSize Tests should match this JSON Schema 1
       "type": "string",
     },
     "options": {
-      "$ref": "#/definitions/TableSetPageSizeOperationOptions",
+      "$ref": "#/definitions/TableToggleGroupingOperationOptions",
     },
     "type": {
-      "const": "TABLE_SET_PAGE_SIZE",
+      "const": "TABLE_TOGGLE_GROUPING",
       "examples": [
-        "TABLE_SET_PAGE_SIZE",
+        "TABLE_TOGGLE_GROUPING",
       ],
       "type": "string",
     },
