@@ -10,8 +10,15 @@ import type { SignalTargets } from '../../signals'
 // Valid data types for a row
 export type IteratorRowData = string | number | boolean | null | object | Date | IteratorRow
 
-export interface IteratorRow {
+/**
+ * This is not exact representation of iterator values
+ * It's store hidden "components" that creates nested children from it!!!!
+ */
+export type IteratorRow = {
   [key: string]: IteratorRowData
+} & {
+  // private property to maintain the order in the original recursive structure
+  __index?: number
 }
 
 export type IteratorDisplayRow = {
