@@ -167,7 +167,7 @@ exports[`Date Input Contract Tests should ensure the contract is clear 3`] = `
     "description": "Controls whether SimpleView is rendered as an input or Typography",
     "properties": {
       "inEditMode": {
-        "default": true,
+        "default": false,
         "description": "When set to "true", the component should allow users input data. When set to "false", the component will render as an unstyled readonly Typography component.",
         "type": "boolean",
       },
