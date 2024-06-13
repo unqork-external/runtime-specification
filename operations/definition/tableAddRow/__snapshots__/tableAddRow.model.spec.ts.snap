@@ -23,7 +23,7 @@ exports[`Operation Model: TableAddRow Tests should match this JSON Schema 1`] = 
           ],
         },
         "targetKey": {
-          "description": "The key for the component we want to add a row",
+          "description": "Key of the Table component to add a row",
           "minLength": 1,
           "type": "string",
         },

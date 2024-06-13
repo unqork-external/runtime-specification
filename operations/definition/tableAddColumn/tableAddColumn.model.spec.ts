@@ -9,6 +9,6 @@ describe('Operation Model: TableAddColumn Tests', () => {
   })
 
   it('should match this JSON Schema', () => {
-    expect(schema.properties).toMatchSnapshot()
+    expect(schema).toMatchSnapshot()
   })
 })

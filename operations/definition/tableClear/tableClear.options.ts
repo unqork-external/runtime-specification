@@ -1,4 +1,4 @@
-import { Description, Example, Required } from '@tsed/schema'
+import { Description, Required } from '@tsed/schema'
 
 export class TableClearOperationOptions {
   @Required()

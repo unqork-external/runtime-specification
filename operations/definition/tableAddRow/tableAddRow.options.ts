@@ -4,7 +4,7 @@ import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescrip
 import { trimAll } from '../../../../utilities'
 
 export class TableAddRowOperationOptions {
-  @Description('The key for the component we want to add a row')
+  @Description('Key of the Table component to add a row')
   @Required()
   targetKey: string
 
