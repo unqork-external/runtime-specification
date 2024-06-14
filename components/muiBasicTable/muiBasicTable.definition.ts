@@ -21,14 +21,18 @@ import { RowState } from './rows/rowState'
 import { RowSelection } from './selection/rowSelection'
 import type { SortingState } from './sorting/sortingState'
 import { TableStyling } from './styling/table.styling'
+import { TableTargetsEnum } from './targets/tableTargets.enum'
 import { ToolbarState } from './toolbar/toolbarState'
 import { TableViewTypeEnum } from './views/viewType'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
+import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface'
 import { Display } from '../../component-composition'
+import type { SignalTargets } from '../../signals'
 import { BasicGridNestables } from '../basicGrid'
 
 @DiscriminatorValue('muiBasicTable')
+@ViewTargets(TableTargetsEnum)
 export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'muiBasicTable' = 'muiBasicTable' as const
@@ -199,4 +203,7 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
 
   @Description('state data for the toolbar')
   toolbarState = new ToolbarState()
+
+  @Optional()
+  declare signals?: SignalTargets<TableTargetsEnum>
 }
