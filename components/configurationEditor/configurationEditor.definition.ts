@@ -1,4 +1,4 @@
-import { Default, Description, DiscriminatorValue, Required } from '@tsed/schema'
+import { Default, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
 
 import { BaseSettingDefinition } from '../../../designer-specification'
 import { BaseComponentDefinition } from '../../base-component-interface'
@@ -26,6 +26,12 @@ export class ConfigurationEditorComponentDefinition extends BaseComponentDefinit
 
   @Description('Child ids for nestable references')
   childIds: string[] = []
+
+  @Required()
+  @Property()
+  @Default(false)
+  @Description('Boolean to determine if default styles should be used.')
+  useLegacy: boolean = false
 
   @Description('Nestable information for configuration editor')
   nestables = { childIds: new StandardArrayNestable() }

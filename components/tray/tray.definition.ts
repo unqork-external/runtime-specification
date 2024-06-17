@@ -41,6 +41,12 @@ export class TrayComponentDefinition extends BaseComponentDefinition {
 
   @Required()
   @Property()
+  @Default(false)
+  @Description('Boolean to determine if default styles should be used.')
+  useLegacy: boolean = false
+
+  @Required()
+  @Property()
   @Default('')
   @Description('Text which the tray filters based on label, type, and searchCriteria of a BaseTrayItemDefinition.')
   filterText: string = ''

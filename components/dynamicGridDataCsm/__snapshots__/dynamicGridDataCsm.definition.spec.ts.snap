@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DynamicGridDataCsm Contract Tests should ensure the contract is clear 1`] = `
+[
+  "key",
+  "type",
+  "columnEditorOpen",
+  "value",
+]
+`;
+
+exports[`DynamicGridDataCsm Contract Tests should ensure the contract is clear 2`] = `
+{
+  "childIds": {
+    "description": "Child ids for nestable references",
+    "type": "array",
+  },
+  "columnEditorCurrentIndex": {
+    "description": "Index of rhe column being edited in the modal",
+    "type": "number",
+  },
+  "columnEditorCurrentType": {
+    "description": "Column Type of the component being edited in the modal",
+    "type": "string",
+  },
+  "columnEditorOpen": {
+    "default": false,
+    "description": "Flag denoting if the if a column is editor is open",
+    "type": "boolean",
+  },
+  "currentColumnsConfiguration": {
+    "default": {},
+    "description": "Holds the state of the column configuration being edited",
+    "type": "object",
+  },
+  "executable": {
+    "default": true,
+    "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
+    "type": "boolean",
+  },
+  "inputs": {
+    "items": {
+      "$ref": "#/definitions/InputRef",
+    },
+    "type": "array",
+  },
+  "key": {
+    "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
+    "examples": [
+      "I am the key",
+      "bestKeyEver",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "nestables": {
+    "description": "Nestable information",
+    "type": "object",
+  },
+  "package": {
+    "$ref": "#/definitions/PackageModel",
+  },
+  "signals": {
+    "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
+    "examples": [
+      {
+        "args": {
+          "inputs": {
+            "propertyPath": "value",
+            "required": true,
+            "targetKey": "firstName",
+          },
+        },
+        "id": "firstNameWatcher",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onWatch",
+      },
+      {
+        "id": "textfieldOnBlur",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "textfield received blur event from DOM",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onBlur",
+      },
+      "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+    ],
+    "type": "object",
+  },
+  "styling": {
+    "$ref": "#/definitions/DynamicGridDataCsmStyling",
+  },
+  "type": {
+    "const": "dynamicGridDataCSM",
+    "description": "Name of the type of component.",
+    "examples": [
+      "dynamicGridDataCSM",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "validation": {
+    "$ref": "#/definitions/Validation",
+  },
+  "value": {
+    "description": "Current value of the component",
+    "items": {
+      "default": [],
+    },
+    "type": "array",
+  },
+}
+`;

@@ -13,6 +13,7 @@ import { CanvasHydrateOperation } from '../definition/canvasHydrate'
 import { ClearOperation } from '../definition/clear'
 import { ClearValidationErrorOperation } from '../definition/clear-validation-errors'
 import { ClearStylingOperation } from '../definition/clearStyling'
+import { ConfigurationEditorToggleReflexiveInputOperation } from '../definition/configurationEditorToggleReflexiveInput'
 import { DataWorkflowOperation } from '../definition/dataworkflow'
 import { DecideOperation } from '../definition/decide'
 import { DownloadFileOperation } from '../definition/downloadFile'
@@ -86,6 +87,7 @@ import { OperationTypes } from '../enums/operation-types.enum'
 export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
+  [OperationTypes.CONFIGURATION_EDITOR_TOGGLE_REFLEXIVE_INPUT]: ConfigurationEditorToggleReflexiveInputOperation,
   [OperationTypes.CANVAS_GET_COMPONENT_CHILDREN]: CanvasGetComponentChildrenOperation,
   [OperationTypes.TRAY_SET_DISABLED_BY]: TraySetDisabledByOperation,
   [OperationTypes.TRAY_FILTER_ITEMS]: TrayFilterItemsOperation,

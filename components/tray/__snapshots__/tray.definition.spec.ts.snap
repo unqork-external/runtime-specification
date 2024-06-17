@@ -8,6 +8,7 @@ exports[`Tray Contract Tests should ensure the contract is clear 1`] = `
   "useSpecFromAssets",
   "useDefaultSearchBar",
   "useDefaultStyles",
+  "useLegacy",
   "filterText",
 ]
 `;
@@ -116,6 +117,11 @@ exports[`Tray Contract Tests should ensure the contract is clear 2`] = `
     "type": "boolean",
   },
   "useDefaultStyles": {
+    "default": false,
+    "description": "Boolean to determine if default styles should be used.",
+    "type": "boolean",
+  },
+  "useLegacy": {
     "default": false,
     "description": "Boolean to determine if default styles should be used.",
     "type": "boolean",

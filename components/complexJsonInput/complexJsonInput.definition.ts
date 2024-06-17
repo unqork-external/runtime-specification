@@ -3,11 +3,15 @@ import { Default, Description, DiscriminatorValue, Property, Required } from '@t
 import { BaseComponentDefinition } from '../../base-component-interface'
 import { StandardArrayNestable } from '../../nestables'
 import { DropdownOptionModel } from '../dropdown'
+import { Display } from '../../component-composition'
 
 @DiscriminatorValue('complexJsonInput')
 export class ComplexJsonInputComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'complexJsonInput' = 'complexJsonInput' as const
+
+  @Property()
+  display: Display = new Display()
 
   @Property()
   @Description('The type of the value component selected in the dropdown.')

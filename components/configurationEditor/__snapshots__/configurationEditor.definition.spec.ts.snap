@@ -7,6 +7,7 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
   "currentConfig",
   "assetsSettingsSpecs",
   "useSpecFromAssets",
+  "useLegacy",
 ]
 `;
 
@@ -104,6 +105,11 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
     ],
     "minLength": 1,
     "type": "string",
+  },
+  "useLegacy": {
+    "default": false,
+    "description": "Boolean to determine if default styles should be used.",
+    "type": "boolean",
   },
   "useSpecFromAssets": {
     "default": false,
