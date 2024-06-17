@@ -81,7 +81,7 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     "type": "object",
   },
   "styling": {
-    "$ref": "#/definitions/StylingModel",
+    "$ref": "#/definitions/OpsBuilderStyling",
   },
   "type": {
     "const": "operationsBuilder",
@@ -91,6 +91,10 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     ],
     "minLength": 1,
     "type": "string",
+  },
+  "useDefaultStyles": {
+    "default": false,
+    "type": "boolean",
   },
   "validation": {
     "$ref": "#/definitions/Validation",
@@ -138,6 +142,15 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 3`
     "required": [
       "targetKey",
     ],
+    "type": "object",
+  },
+  "OpsBuilderStyling": {
+    "description": "An object containing styling for the component.",
+    "properties": {
+      "targets": {
+        "type": "object",
+      },
+    },
     "type": "object",
   },
   "PackageModel": {
