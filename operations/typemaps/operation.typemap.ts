@@ -51,6 +51,7 @@ import { TableGoToLastPageOperation } from '../definition/tableGoToLastPage'
 import { TableGoToNextPageOperation } from '../definition/tableGoToNextPage'
 import { TableGoToPageOperation } from '../definition/tableGoToPage'
 import { TableGoToPreviousPageOperation } from '../definition/tableGoToPreviousPage'
+import { TablePasteValuesOperation } from '../definition/tablePasteValues'
 import { TableRemoveColumnOperation } from '../definition/tableRemoveColumn'
 import { TableRemoveRowsOperation } from '../definition/tableRemoveRows'
 import { TableSetActionToolbarVisibilityOperation } from '../definition/tableSetActionToolbarVisibility'
@@ -133,6 +134,7 @@ export const OperationTypeMap = {
   [OperationTypes.TABLE_TOGGLE_GROUPING]: TableToggleGroupingOperation,
   [OperationTypes.TABLE_ADD_ROW]: TableAddRowOperation,
   [OperationTypes.TABLE_SORT_BY_COLUMN]: TableSortByColumnOperation,
+  [OperationTypes.TABLE_PASTE_VALUES]: TablePasteValuesOperation,
   [OperationTypes.PRINTER]: PrinterOperation,
   [OperationTypes.DOWNLOAD_FILE]: DownloadFileOperation,
   [OperationTypes.SCROLL_TO]: ScrollToOperation,
