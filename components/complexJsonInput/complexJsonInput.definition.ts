@@ -1,9 +1,9 @@
 import { Default, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
 
 import { BaseComponentDefinition } from '../../base-component-interface'
+import { Display } from '../../component-composition'
 import { StandardArrayNestable } from '../../nestables'
 import { DropdownOptionModel } from '../dropdown'
-import { Display } from '../../component-composition'
 
 @DiscriminatorValue('complexJsonInput')
 export class ComplexJsonInputComponentDefinition extends BaseComponentDefinition {

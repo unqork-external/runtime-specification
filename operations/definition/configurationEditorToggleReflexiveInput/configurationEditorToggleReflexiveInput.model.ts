@@ -8,7 +8,8 @@ import { Operation } from '../../interface/operations.interface'
 export class ConfigurationEditorToggleReflexiveInputOperation extends Operation<OperationTypes.CONFIGURATION_EDITOR_TOGGLE_REFLEXIVE_INPUT> {
   @Required()
   public type = OperationTypes.CONFIGURATION_EDITOR_TOGGLE_REFLEXIVE_INPUT as const
-  
+
   @Required()
-  public options: ConfigurationEditorToggleReflexiveInputOperationOptions = new ConfigurationEditorToggleReflexiveInputOperationOptions()
+  public options: ConfigurationEditorToggleReflexiveInputOperationOptions =
+    new ConfigurationEditorToggleReflexiveInputOperationOptions()
 }
