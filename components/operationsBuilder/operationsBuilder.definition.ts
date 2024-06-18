@@ -17,7 +17,9 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   visible: boolean = false
   eventKeys?: string[]
   operationKeys?: string[]
+  selectedEvent?: string
   currentEvent?: string
+  selectedOperationKey?: string
   currentOperationKey?: string
   operationsComponentsMap?: Record<string, any>
   currentOperation: Record<string, any> = {}
@@ -38,4 +40,7 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
 
   @Default(false)
   useDefaultStyles: boolean = false
+
+  @Default(false)
+  showCloseButton: boolean = false
 }

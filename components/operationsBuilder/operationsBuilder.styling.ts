@@ -39,6 +39,10 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.eventOption]: CssClassOrProps;
 
+  @Description('Adds styles to Add Event button in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.addEvent]: CssClassOrProps;
+
   @Description('Adds styles to Delete Event button in Ops Builder.')
   @Css()
   [OpsBuilderTargets.deleteEvent]: CssClassOrProps;
@@ -50,6 +54,10 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Description('Adds styles to operation selector in Ops Builder.')
   @Css()
   [OpsBuilderTargets.operationSelector]: CssClassOrProps;
+
+  @Description('Adds styles to Add operation button in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.addOperation]: CssClassOrProps;
 
   @Description('Adds styles to operations dropdown in Ops Builder.')
   @Css()
