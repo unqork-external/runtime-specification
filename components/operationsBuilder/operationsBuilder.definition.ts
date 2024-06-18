@@ -21,6 +21,8 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   currentOperationKey?: string
   operationsComponentsMap?: Record<string, any>
   currentOperation: Record<string, any> = {}
+  editMode: boolean = false
+  operationIndex: number = -1
 
   @Description('Child ids for nestable references')
   childIds: string[] = []
