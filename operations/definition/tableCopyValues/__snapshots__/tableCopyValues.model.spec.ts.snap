@@ -1,16 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Operation Model: TablePasteValues Tests TablePasteValues Model 1`] = `
+exports[`Operation Model: TableCopyValues Tests TableCopyValues Model 1`] = `
 {
   "definitions": {
-    "TablePasteValuesOperationOptions": {
+    "TableCopyValuesOperationOptions": {
       "properties": {
-        "pasteMode": {
-          "description": "Specifies how we should treat the values already present in the Table. Append: Will append the data in the clipboard to Tables' current values. Replace: Will replace Tables' current values with the clipboard data.",
-          "type": "string",
-        },
         "targetKey": {
-          "description": "Key of the Table component to paste the values from the clipboard.",
+          "description": "Key of the Table component to copy the values to the clipboard.",
           "minLength": 1,
           "type": "string",
         },
@@ -31,12 +27,12 @@ exports[`Operation Model: TablePasteValues Tests TablePasteValues Model 1`] = `
       "type": "string",
     },
     "options": {
-      "$ref": "#/definitions/TablePasteValuesOperationOptions",
+      "$ref": "#/definitions/TableCopyValuesOperationOptions",
     },
     "type": {
-      "const": "TABLE_PASTE_VALUES",
+      "const": "TABLE_COPY_VALUES",
       "examples": [
-        "TABLE_PASTE_VALUES",
+        "TABLE_COPY_VALUES",
       ],
       "type": "object",
     },

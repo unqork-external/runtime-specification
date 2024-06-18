@@ -1,4 +1,4 @@
 export enum TablePasteMode {
-  Append,
-  Replace,
+  Append = 'append',
+  Replace = 'replace',
 }

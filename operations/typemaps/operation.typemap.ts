@@ -46,6 +46,7 @@ import { SubmitOperation } from '../definition/submit'
 import { TableAddColumnOperation } from '../definition/tableAddColumn'
 import { TableAddRowOperation } from '../definition/tableAddRow'
 import { TableClearOperation } from '../definition/tableClear'
+import { TableCopyValuesOperation } from '../definition/tableCopyValues'
 import { TableGoToFirstPageOperation } from '../definition/tableGoToFirstPage'
 import { TableGoToLastPageOperation } from '../definition/tableGoToLastPage'
 import { TableGoToNextPageOperation } from '../definition/tableGoToNextPage'
@@ -135,6 +136,7 @@ export const OperationTypeMap = {
   [OperationTypes.TABLE_ADD_ROW]: TableAddRowOperation,
   [OperationTypes.TABLE_SORT_BY_COLUMN]: TableSortByColumnOperation,
   [OperationTypes.TABLE_PASTE_VALUES]: TablePasteValuesOperation,
+  [OperationTypes.TABLE_COPY_VALUES]: TableCopyValuesOperation,
   [OperationTypes.PRINTER]: PrinterOperation,
   [OperationTypes.DOWNLOAD_FILE]: DownloadFileOperation,
   [OperationTypes.SCROLL_TO]: ScrollToOperation,
