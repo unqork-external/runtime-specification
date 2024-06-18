@@ -46,4 +46,6 @@ export class DynamicGridDataCsmComponentDefinition extends BaseComponentDefiniti
 
   @Description('Nestable information')
   nestables = { childIds: new StandardArrayNestable() }
+
+  useDefaultStyles: boolean = false
 }

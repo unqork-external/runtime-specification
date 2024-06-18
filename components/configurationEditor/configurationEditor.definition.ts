@@ -24,6 +24,8 @@ export class ConfigurationEditorComponentDefinition extends BaseComponentDefinit
   @Description('Boolean to determine if the config areas should be pulled from the assets.')
   useSpecFromAssets: boolean = false
 
+  useDefaultStyles: boolean
+
   @Description('Child ids for nestable references')
   childIds: string[] = []
 

@@ -1,0 +1,46 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: ConfigurationEditorSave Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "ConfigurationEditorSaveOperationOptions": {
+      "properties": {
+        "targetKey": {
+          "description": "key of the configurationEditor to target",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ConfigurationEditorSaveOperationOptions",
+    },
+    "type": {
+      "const": "CONFIGURATION_EDITOR_SAVE",
+      "examples": [
+        "CONFIGURATION_EDITOR_SAVE",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "type": "object",
+}
+`;
