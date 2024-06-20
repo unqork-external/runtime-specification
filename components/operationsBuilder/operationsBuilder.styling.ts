@@ -67,6 +67,14 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.operationOption]: CssClassOrProps;
 
+  @Description('Adds styles to operations dropdown option label in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.operationOptionLabel]: CssClassOrProps;
+
+  @Description('Adds styles to operations dropdown option description in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.operationOptionDescription]: CssClassOrProps;
+
   @Description('Adds styles to operation form container in Ops Builder.')
   @Css()
   [OpsBuilderTargets.operationDetails]: CssClassOrProps;

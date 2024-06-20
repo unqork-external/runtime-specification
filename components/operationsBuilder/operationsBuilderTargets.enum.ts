@@ -14,6 +14,8 @@ export enum OpsBuilderTargets {
   addOperation = 'addOperation',
   operationOptions = 'operationOptions',
   operationOption = 'operationOption',
+  operationOptionLabel = 'operationOptionLabel',
+  operationOptionDescription = 'operationOptionDescription',
   operationDetails = 'operationDetails',
   operationForm = 'operationForm',
   operationActions = 'operationActions',

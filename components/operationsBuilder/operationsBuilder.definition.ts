@@ -21,7 +21,8 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   currentEvent?: string
   selectedOperationKey?: string
   currentOperationKey?: string
-  operationsComponentsMap?: Record<string, any>
+  operationsComponentsMap: Record<string, any>
+  operationsDescriptionsMap: Record<string, any>
   currentOperation: Record<string, any> = {}
   editMode: boolean = false
   operationIndex: number = -1
