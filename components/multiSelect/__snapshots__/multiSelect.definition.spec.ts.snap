@@ -318,6 +318,10 @@ exports[`Multi-Select Contract Tests should ensure the contract is clear 3`] = `
   },
   "MultiSelectOptionModel": {
     "properties": {
+      "description": {
+        "description": "Option description",
+        "type": "string",
+      },
       "label": {
         "description": "Option label",
         "minLength": 1,

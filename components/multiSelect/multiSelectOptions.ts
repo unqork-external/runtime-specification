@@ -1,4 +1,4 @@
-import { Any, CollectionOf, Default, Description, Enum, Example, Required } from '@tsed/schema'
+import { Any, CollectionOf, Default, Description, Enum, Example, Optional, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { RefreshType } from '../../base-types'
@@ -11,6 +11,10 @@ export class MultiSelectOptionModel {
   @Required()
   @Description('Option value')
   value: string
+
+  @Optional()
+  @Description('Option description')
+  description?: string
 }
 
 export class MultiRefreshTargetModel {

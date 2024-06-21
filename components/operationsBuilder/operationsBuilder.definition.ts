@@ -8,6 +8,7 @@ import { BaseComponentDefinition } from '../../base-component-interface'
 import { StandardArrayNestable } from '../../nestables'
 import type { SignalTargets } from '../../signals'
 import { targetedStylingExample } from '../../styling/targeted.styling.example'
+import { MultiSelectOptionModel } from '../multiSelect'
 
 @DiscriminatorValue('operationsBuilder')
 @ViewTargets(OpsBuilderTargets)
@@ -19,7 +20,7 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   operationKeys?: string[]
   selectedEvent?: string
   currentEvent?: string
-  selectedOperationKey?: string
+  selectedOperation?: MultiSelectOptionModel
   currentOperationKey?: string
   operationsComponentsMap: Record<string, any>
   operationsDescriptionsMap: Record<string, any>
