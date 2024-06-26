@@ -67,6 +67,7 @@ exports[`Operation Model: TableSetColumnVisibility Tests should match this JSON 
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

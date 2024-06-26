@@ -41,6 +41,7 @@ exports[`Operation Model: TableGoToNextPage Tests should match this JSON Schema 
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

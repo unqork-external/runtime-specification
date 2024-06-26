@@ -41,6 +41,7 @@ exports[`Operation Model: TableClear Tests should match this JSON Schema 1`] = `
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

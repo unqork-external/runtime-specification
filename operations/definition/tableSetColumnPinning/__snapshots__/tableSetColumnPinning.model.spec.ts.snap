@@ -66,6 +66,7 @@ exports[`Operation Model: TableSetColumnPinning Tests should match this JSON Sch
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

@@ -46,6 +46,7 @@ exports[`Operation Model: TableSetNavigateDownOnPressEnter Tests should match th
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

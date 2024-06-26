@@ -41,6 +41,7 @@ exports[`Operation Model: TableToggleGrouping Tests should match this JSON Schem
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

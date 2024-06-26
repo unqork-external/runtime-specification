@@ -38,6 +38,7 @@ exports[`Operation Model: TableSetRowPinning Tests should match this JSON Schema
         "targetKey",
         "rowPinningState",
       ],
+      "stability": "STABLE",
       "type": "object",
     },
   },
@@ -65,6 +66,7 @@ exports[`Operation Model: TableSetRowPinning Tests should match this JSON Schema
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

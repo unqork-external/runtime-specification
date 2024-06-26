@@ -48,6 +48,7 @@ exports[`Operation Model: TableSetSelectedRow Tests should match this JSON Schem
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

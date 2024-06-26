@@ -67,6 +67,7 @@ exports[`Operation Model: TableSetColumnFilter Tests should match this JSON Sche
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

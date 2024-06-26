@@ -52,6 +52,7 @@ exports[`Operation Model: TableSetRowExpanded Tests should match this JSON Schem
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

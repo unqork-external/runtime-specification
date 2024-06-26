@@ -50,6 +50,7 @@ exports[`Operation Model: TableSetGlobalFilterVisibility Tests should match this
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

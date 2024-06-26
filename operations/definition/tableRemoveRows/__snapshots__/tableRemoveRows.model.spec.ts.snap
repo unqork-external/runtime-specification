@@ -49,6 +49,7 @@ exports[`Operation Model: TableRemoveRows Tests TableRemoveRows Model 1`] = `
   "required": [
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;
