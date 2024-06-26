@@ -3,6 +3,7 @@ import { Any, CollectionOf, Default, Description, DiscriminatorKey, Property, Re
 import { TrimmedDescription } from '../../decorators/schema/trimmedDescription.decorator'
 import { InputRef } from '../inputs/inputRef'
 import { RootObject } from '../root-object/rootObject'
+import { RuntimeMetadata } from '../runtime-metadata/runtimeMetadata.type'
 import { StylingModel } from '../styling'
 import { Validation } from '../validations/validation'
 
@@ -41,4 +42,10 @@ export class BaseComponentDefinition extends RootObject {
   @Any()
   @Description(`Current value of the component`)
   value?: unknown
+
+  /**
+   * INTERNAL RUNTIME USE ONLY
+   * Not exposed via public spec. Use getComponentMetadataByKey() to access.
+   */
+  __VEGA_RUNTIME_METADATA__?: RuntimeMetadata
 }
