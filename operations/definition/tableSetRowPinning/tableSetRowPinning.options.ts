@@ -1,10 +1,11 @@
 import { Description, Required } from '@tsed/schema'
 
-import { Stable } from '../../../../decorators/stability/stable.decorator'
+import { OpsBuilderStable, Stable } from '../../../../decorators/stability'
 import { RowPinningState } from '../../../components/muiBasicTable/rows/pinning/rowPinningState'
 
 @Description('Sets the pinned rows of Table component.')
 @Stable()
+@OpsBuilderStable()
 export class TableSetRowPinningOperationOptions {
   @Required()
   @Description('Key of the Table component to perform row pinning.')

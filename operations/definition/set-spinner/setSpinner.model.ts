@@ -2,7 +2,7 @@ import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { SetSpinnerOptions } from './setSpinner.options'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
-import { Stable } from '../../../../decorators/stability/stable.decorator'
+import { OpsBuilderStable, Stable } from '../../../../decorators/stability'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
@@ -14,6 +14,7 @@ import { Operation } from '../../interface/operations.interface'
     If "showPageSpinner" is set to true, then the page will have a small spinner enabled.
 `)
 @Stable()
+@OpsBuilderStable()
 export class SetSpinnerOperation extends Operation<OperationTypes.SET_SPINNER> {
   public type = OperationTypes.SET_SPINNER as const
 

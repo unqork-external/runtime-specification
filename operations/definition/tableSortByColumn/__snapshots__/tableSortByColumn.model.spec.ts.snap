@@ -43,7 +43,7 @@ exports[`Operation Model: TableSortByColumn Tests should match this JSON Schema 
       "type": "object",
     },
   },
-  "description": "Peforms column sorting in the Table component.",
+  "description": "Performs column sorting in the Table component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",
