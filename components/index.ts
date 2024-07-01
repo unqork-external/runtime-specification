@@ -25,8 +25,6 @@ export * from './numberStepper'
 
 export * from './basicDropZone/basicDropZone.definition'
 export * from './basicGrid/basicGrid.definition'
-export * from './chessboard/chessboard.definition'
-export * from './confetti/confetti.definition'
 export * from './dragContext/dragContext.definition'
 export * from './icon'
 export * from './image/image.definition'
