@@ -1,11 +1,30 @@
-import { Description, Optional, Required } from '@tsed/schema'
+import { Description, Example, Optional, Required } from '@tsed/schema'
 
-import { COLLISION_HANDLER } from '@unqork/runtime-types'
+import type {
+  BaseComponentDefinition,
+  COLLISION_HANDLER,
+  ModuleDefinition,
+  R1ComponentDefinition,
+  R1ModuleDefinition,
+} from '@unqork/runtime-types'
 
 export class LoadModuleOperationOptions {
-  @Required()
-  @Description('Id corresponding to module that should be loaded.')
-  moduleId: string
+  @Description('ID corresponding to module that should be loaded.')
+  moduleId?: string
+
+  @Description(`
+    URL to load module spec from.
+    Most commonly used with server-side executes or transforms
+  `)
+  @Example('path/to/my/sse-module')
+  moduleUrl?: string
+
+  @Description(`
+    A full module definition or array of components to render at the target slot
+
+    Support Vega or Centauri spec, will be converted to Vega before rendering
+  `)
+  moduleSpec?: ModuleDefinition | R1ModuleDefinition | Array<BaseComponentDefinition> | Array<R1ComponentDefinition>
 
   @Required()
   @Description('Target Key identifying component in which the module should be rendered.')
