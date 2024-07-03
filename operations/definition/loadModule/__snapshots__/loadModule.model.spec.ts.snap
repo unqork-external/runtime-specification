@@ -9,6 +9,13 @@ exports[`Operation Model: LoadModule Tests should match this JSON Schema 1`] = `
           "description": "How should module ID collisions be handled",
           "type": "string",
         },
+        "method": {
+          "default": "GET",
+          "description": "
+    HTTP Method to use when loading module
+  ",
+          "type": "object",
+        },
         "moduleId": {
           "description": "ID corresponding to module that should be loaded.",
           "type": "string",
@@ -28,6 +35,17 @@ exports[`Operation Model: LoadModule Tests should match this JSON Schema 1`] = `
   ",
           "examples": [
             "path/to/my/sse-module",
+          ],
+          "type": "string",
+        },
+        "pathToModuleDefinition": {
+          "description": "
+    Path to module definition
+
+    Used with moduleUrl to extract definition from a path
+  ",
+          "examples": [
+            "data.moduleDefinition",
           ],
           "type": "string",
         },

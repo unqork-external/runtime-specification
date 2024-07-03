@@ -1,4 +1,4 @@
-import { Description, Example, Optional, Required } from '@tsed/schema'
+import { Default, Description, Example, Optional, Required } from '@tsed/schema'
 
 import type {
   BaseComponentDefinition,
@@ -18,6 +18,20 @@ export class LoadModuleOperationOptions {
   `)
   @Example('path/to/my/sse-module')
   moduleUrl?: string
+
+  @Description(`
+    Path to module definition
+
+    Used with moduleUrl to extract definition from a path
+  `)
+  @Example('data.moduleDefinition')
+  pathToModuleDefinition?: string
+
+  @Description(`
+    HTTP Method to use when loading module
+  `)
+  @Default('GET')
+  method? = 'GET'
 
   @Description(`
     A full module definition or array of components to render at the target slot
