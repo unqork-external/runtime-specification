@@ -4,6 +4,13 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 1`
 [
   "key",
   "type",
+  "visible",
+  "signalTypes",
+  "operationsComponentsMap",
+  "operationsDescriptionsMap",
+  "editMode",
+  "operationIndex",
+  "useDefaultStyles",
 ]
 `;
 
@@ -12,6 +19,25 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
   "childIds": {
     "description": "Child ids for nestable references",
     "type": "array",
+  },
+  "currentOperation": {
+    "default": {},
+    "description": "The schema for selection operation's options",
+    "type": "object",
+  },
+  "currentOperationKey": {
+    "default": "",
+    "description": "The selected operation type that is being actively configured",
+    "type": "string",
+  },
+  "currentSignal": {
+    "description": "Signal selected from Signals or Events list",
+    "type": "object",
+  },
+  "editMode": {
+    "default": false,
+    "description": "Indicates that an operation is being edited and is an existing operation",
+    "type": "boolean",
   },
   "executable": {
     "default": true,
@@ -37,12 +63,48 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     "description": "Nestable information for operations builder",
     "type": "object",
   },
+  "operationIndex": {
+    "default": -1,
+    "description": "Index of the operation being edited",
+    "type": "number",
+  },
+  "operationKeys": {
+    "description": "List of operation types",
+    "items": {
+      "default": [],
+    },
+    "type": "array",
+  },
+  "operationsComponentsMap": {
+    "description": "A map of all operations and their schemas",
+    "type": "object",
+  },
+  "operationsDescriptionsMap": {
+    "description": "A map of all operations and their descriptions",
+    "type": "object",
+  },
   "package": {
     "$ref": "#/definitions/PackageModel",
   },
+  "selectedOperation": {
+    "$ref": "#/definitions/MultiSelectOptionModel",
+  },
+  "selectedSignalType": {
+    "default": "",
+    "description": "Type of the signal selected from the Signals or Events dropdown",
+    "type": "string",
+  },
   "showCloseButton": {
     "default": false,
+    "description": "Show or Hide the Close button",
     "type": "boolean",
+  },
+  "signalTypes": {
+    "description": "List of signal types",
+    "items": {
+      "default": [],
+    },
+    "type": "array",
   },
   "signals": {
     "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
@@ -98,22 +160,19 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
   },
   "useDefaultStyles": {
     "default": false,
+    "description": "Indicates whether to allow styles directly defined in the component",
     "type": "boolean",
   },
   "validation": {
     "$ref": "#/definitions/Validation",
   },
   "value": {
-    "description": "Current value of the component",
-    "type": [
-      "null",
-      "integer",
-      "number",
-      "string",
-      "boolean",
-      "array",
-      "object",
-    ],
+    "description": "Value of the Ops Builder component. Ops Builder always stores its data as a JSON object.",
+    "type": "object",
+  },
+  "visible": {
+    "default": false,
+    "type": "boolean",
   },
 }
 `;
@@ -145,6 +204,29 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 3`
     },
     "required": [
       "targetKey",
+    ],
+    "type": "object",
+  },
+  "MultiSelectOptionModel": {
+    "properties": {
+      "description": {
+        "description": "Option description",
+        "type": "string",
+      },
+      "label": {
+        "description": "Option label",
+        "minLength": 1,
+        "type": "string",
+      },
+      "value": {
+        "description": "Option value",
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "label",
+      "value",
     ],
     "type": "object",
   },

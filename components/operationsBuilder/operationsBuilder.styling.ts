@@ -19,33 +19,57 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.actions]: CssClassOrProps;
 
-  @Description('Adds styles to close event button in Ops Builder.')
+  @Description('Adds styles to Close button in Ops Builder.')
   @Css()
   [OpsBuilderTargets.close]: CssClassOrProps;
 
-  @Description('Adds styles to events column in Ops Builder.')
+  @Description('Adds styles to signals column in Ops Builder.')
   @Css()
-  [OpsBuilderTargets.events]: CssClassOrProps;
+  [OpsBuilderTargets.signals]: CssClassOrProps;
 
-  @Description('Adds styles to event selector in Ops Builder.')
+  @Description('Adds styles to signal selector in Ops Builder.')
   @Css()
-  [OpsBuilderTargets.eventSelector]: CssClassOrProps;
+  [OpsBuilderTargets.signalSelector]: CssClassOrProps;
 
-  @Description('Adds styles to events dropdown in Ops Builder.')
+  @Description('Adds styles to signals dropdown in Ops Builder.')
   @Css()
-  [OpsBuilderTargets.eventOptions]: CssClassOrProps;
+  [OpsBuilderTargets.signalOptions]: CssClassOrProps;
 
-  @Description('Adds styles to events dropdown option in Ops Builder.')
+  @Description('Adds styles to signals dropdown option in Ops Builder.')
   @Css()
-  [OpsBuilderTargets.eventOption]: CssClassOrProps;
+  [OpsBuilderTargets.signalOption]: CssClassOrProps;
 
-  @Description('Adds styles to Add Event button in Ops Builder.')
+  @Description('Adds styles to Add Signal button in Ops Builder.')
   @Css()
-  [OpsBuilderTargets.addEvent]: CssClassOrProps;
+  [OpsBuilderTargets.addSignal]: CssClassOrProps;
 
-  @Description('Adds styles to Delete Event button in Ops Builder.')
+  @Description('Adds styles to Delete Signal button in Ops Builder.')
   @Css()
-  [OpsBuilderTargets.deleteEvent]: CssClassOrProps;
+  [OpsBuilderTargets.deleteSignal]: CssClassOrProps;
+
+  @Description('Adds styles to signals list in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.signalsList]: CssClassOrProps;
+
+  @Description('Adds styles to signal item in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.signalItem]: CssClassOrProps;
+
+  @Description('Adds styles to the selected signal item in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.selectedSignalItem]: CssClassOrProps;
+
+  @Description('Adds styles to signal item content in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.signalItemContent]: CssClassOrProps;
+
+  @Description('Adds styles to signal item label in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.signalItemLabel]: CssClassOrProps;
+
+  @Description('Adds styles to signal item actions in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.signalItemActions]: CssClassOrProps;
 
   @Description('Adds styles to operations column in Ops Builder.')
   @Css()
