@@ -25,6 +25,7 @@ export enum RuntimeEvent {
   // DOM EVENTS
   // TODO: Normalize DOM events. We discussed this earlier, but the change never happened.
   BLUR = 'BLUR',
+  FOCUS = 'FOCUS',
   KEY_DOWN = 'KEY_DOWN',
   CHANGE = 'CHANGE',
   ON_CLICK = 'ON_CLICK',
