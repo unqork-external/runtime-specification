@@ -51,12 +51,6 @@ exports[`UD View Contract Tests should ensure the contract is clear 2`] = `
   "display": {
     "$ref": "#/definitions/Display",
   },
-  "draggable": {
-    "$ref": "#/definitions/UdViewDraggable",
-  },
-  "droppable": {
-    "$ref": "#/definitions/UdViewDroppable",
-  },
   "executable": {
     "default": true,
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
@@ -143,7 +137,6 @@ exports[`UD View Contract Tests should ensure the contract is clear 2`] = `
     "$ref": "#/definitions/Validation",
   },
   "value": {
-    "$ref": "#/definitions/UdViewDroppableValue",
     "description": "Current value of the component",
     "type": [
       "null",
@@ -349,73 +342,6 @@ exports[`UD View Contract Tests should ensure the contract is clear 3`] = `
       },
       "label": {
         "$ref": "#/definitions/Label",
-      },
-    },
-    "type": "object",
-  },
-  "UdViewDraggable": {
-    "properties": {
-      "dragData": {
-        "description": "The data this object transmits when being dropped",
-        "type": "string",
-      },
-      "dragGroup": {
-        "description": "The drag group this component belongs to",
-        "type": "string",
-      },
-      "isDraggable": {
-        "description": "Indicates a component is draggable",
-        "type": "boolean",
-      },
-    },
-    "type": "object",
-  },
-  "UdViewDroppable": {
-    "properties": {
-      "allowedDragGroups": {
-        "description": "Array of strings for the drag groups that can be dropped in this component",
-        "type": "array",
-      },
-      "dropTrigger": {
-        "description": "Component key to trigger when a component is dropped",
-        "type": "string",
-      },
-      "emptyText": {
-        "description": "Text to display when the component has no children",
-        "type": "string",
-      },
-      "isDroppable": {
-        "description": "Indicates a component is droppable",
-        "type": "boolean",
-      },
-      "locationId": {
-        "description": "Location metadata to be sent to the parent droppable component in case a droppable child receives a drop",
-        "type": "string",
-      },
-      "placementText": {
-        "description": "Text to display in the location that will accept a component while its being dragged over this component",
-        "type": "string",
-      },
-    },
-    "type": "object",
-  },
-  "UdViewDroppableValue": {
-    "properties": {
-      "droppedDragData": {
-        "description": "The data from the dropped item",
-        "type": "string",
-      },
-      "droppedDragGroup": {
-        "description": "The drag group of the dropped item",
-        "type": "string",
-      },
-      "droppedIndex": {
-        "description": "Index within the droppable component where the drop happened, -1 if above the first element",
-        "type": "number",
-      },
-      "droppedLocationId": {
-        "description": "Location metadata from the droppable component highest on the DOM tree that received the drop",
-        "type": "string",
       },
     },
     "type": "object",

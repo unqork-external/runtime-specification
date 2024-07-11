@@ -32,9 +32,6 @@ exports[`UD Button View Contract Tests should ensure the contract is clear 2`] =
   "display": {
     "$ref": "#/definitions/Display",
   },
-  "draggable": {
-    "$ref": "#/definitions/UdViewDraggable",
-  },
   "executable": {
     "default": true,
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
@@ -326,23 +323,6 @@ exports[`UD Button View Contract Tests should ensure the contract is clear 3`] =
       },
       "label": {
         "$ref": "#/definitions/Label",
-      },
-    },
-    "type": "object",
-  },
-  "UdViewDraggable": {
-    "properties": {
-      "dragData": {
-        "description": "The data this object transmits when being dropped",
-        "type": "string",
-      },
-      "dragGroup": {
-        "description": "The drag group this component belongs to",
-        "type": "string",
-      },
-      "isDraggable": {
-        "description": "Indicates a component is draggable",
-        "type": "boolean",
       },
     },
     "type": "object",

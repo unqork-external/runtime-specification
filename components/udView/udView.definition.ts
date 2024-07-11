@@ -22,55 +22,6 @@ export class UdViewBasicField extends Field {
   customClass?: string
 }
 
-export class UdViewDraggable {
-  @Description('The data this object transmits when being dropped')
-  dragData?: string
-
-  @Description('The drag group this component belongs to')
-  dragGroup?: string
-
-  @Description('Indicates a component is draggable')
-  isDraggable?: boolean = false
-}
-
-export class UdViewDroppable {
-  @Description('Array of strings for the drag groups that can be dropped in this component')
-  allowedDragGroups?: string[]
-
-  @Description('Component key to trigger when a component is dropped')
-  dropTrigger?: string
-
-  @Description('Text to display when the component has no children')
-  emptyText?: string
-
-  @Description('Indicates a component is droppable')
-  isDroppable?: boolean = false
-
-  @Description(
-    'Location metadata to be sent to the parent droppable component in case a droppable child receives a drop',
-  )
-  locationId?: string = ''
-
-  @Description(
-    'Text to display in the location that will accept a component while its being dragged over this component',
-  )
-  placementText?: string
-}
-
-export class UdViewDroppableValue {
-  @Description('Location metadata from the droppable component highest on the DOM tree that received the drop')
-  droppedLocationId?: string
-
-  @Description('Index within the droppable component where the drop happened, -1 if above the first element')
-  droppedIndex?: number
-
-  @Description('The drag group of the dropped item')
-  droppedDragGroup?: string
-
-  @Description('The data from the dropped item')
-  droppedDragData?: string
-}
-
 export enum UdViewDirection {
   HORIZONTAL = 'horizontal',
   DEFAULT = 'default',
@@ -112,21 +63,9 @@ export class UdViewComponentDefinition extends BaseComponentDefinition {
   @Description('Display settings')
   display: Display = new Display()
 
-  @Property(UdViewDraggable)
-  @Description('Draggable properties')
-  draggable?: UdViewDraggable
-
-  @Property(UdViewDroppable)
-  @Description('Droppable properties')
-  droppable?: UdViewDroppable
-
   @Property(UdViewBasicField)
   @Description('Field settings')
   field: UdViewBasicField = new UdViewBasicField()
-
-  @Property(UdViewDroppableValue)
-  @Description('Component value including data from drop events')
-  declare value?: UdViewDroppableValue
 
   @Description('Standard nestable implementation')
   nestables = { childIds: new StandardArrayNestable() }

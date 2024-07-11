@@ -15,7 +15,7 @@ import { BaseComponentDefinition } from '../../base-component-interface/base.com
 import { Display } from '../../component-composition/display/component.display'
 import { StandardArrayNestable } from '../../nestables'
 import { type SignalTargets } from '../../signals'
-import { UdViewBasicField, UdViewDirection, UdViewDraggable } from '../udView'
+import { UdViewBasicField, UdViewDirection } from '../udView'
 
 @DiscriminatorValue('udButtonView')
 @ViewTargets(UdButtonViewTargets)
@@ -32,10 +32,6 @@ export class UdButtonViewComponentDefinition extends BaseComponentDefinition {
   @Property(Display)
   @Description('Display settings')
   display: Display = new Display()
-
-  @Property(UdViewDraggable)
-  @Description('Draggable properties')
-  draggable?: UdViewDraggable
 
   @Property(UdViewBasicField)
   @Description('Field settings')
