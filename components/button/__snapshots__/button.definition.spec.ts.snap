@@ -37,9 +37,6 @@ exports[`Button Contract Tests should ensure the contract is clear 2`] = `
     },
     "type": "array",
   },
-  "interactions": {
-    "$ref": "#/definitions/Interactions",
-  },
   "key": {
     "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
     "examples": [
@@ -422,21 +419,6 @@ exports[`Button Contract Tests should ensure the contract is clear 3`] = `
     "required": [
       "targetKey",
     ],
-    "type": "object",
-  },
-  "Interactions": {
-    "properties": {
-      "isDraggable": {
-        "default": false,
-        "description": "Allows the component to be draggable. This does not mean the Component will be able to be dropped without being dragged into a \`isDroppable\` component. Ensure you've defined a DragContext in order to enable drag/drop behavior.",
-        "type": "boolean",
-      },
-      "isDroppable": {
-        "default": false,
-        "description": "Allows the component to be droppable. This does not mean the Component will be able to be dropped without being dragged into a \`isDroppable\` component. Ensure you've defined a DragContext in order to enable drag/drop behavior.",
-        "type": "boolean",
-      },
-    },
     "type": "object",
   },
   "Label": {

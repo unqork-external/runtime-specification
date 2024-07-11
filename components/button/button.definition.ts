@@ -13,7 +13,6 @@ import {
   StandardAdornmentsProperties,
 } from '../../component-composition/adornments/component.adornments'
 import { Display } from '../../component-composition/display/component.display'
-import { Interactions } from '../../interactions/interactions'
 import { NestableDef } from '../../nestables'
 import type { SignalTargets } from '../../signals'
 import { targetedStylingExample } from '../../styling/targeted.styling.example'
@@ -54,9 +53,6 @@ export class ButtonComponentDefinition extends BaseComponentDefinition {
 
   @Optional()
   options: ButtonOptions = new ButtonOptions()
-
-  @Optional()
-  interactions?: Interactions
 
   @Optional()
   @Description('The unique path of the workflow step; you must provide a step path for go-to navigation.')
