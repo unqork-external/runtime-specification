@@ -9,6 +9,7 @@ import {
   Required,
 } from '@tsed/schema'
 
+import { MuiColumnDefinition } from './columns'
 import { ColumnState } from './columns/columnState'
 import { ColumnPinningState } from './columns/pinning/columnPinningState'
 import { type ColumnVisibilityState } from './columns/visibility/columnVisibilityState'
@@ -140,8 +141,9 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   @Property()
   columnHeaders: string[]
 
-  @CollectionOf(BaseComponentDefinition)
-  columnComponents: BaseComponentDefinition[]
+  @Optional()
+  @Description('A record mapping column keys to column definitions')
+  columnComponents?: Record<string, MuiColumnDefinition>
 
   /**
    * Row Attributes

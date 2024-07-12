@@ -1,4 +1,4 @@
-import { Description, DiscriminatorValue, Property } from '@tsed/schema'
+import { Description, DiscriminatorValue, Optional, Property } from '@tsed/schema'
 
 import { BaseComponentDefinition } from '../../../base-component-interface'
 
@@ -19,6 +19,10 @@ export class MuiColumnDefinition extends BaseComponentDefinition {
   @Property()
   @Description(`Flag for sorting rows based on this column`)
   allowSort: boolean = true
+
+  @Optional()
+  @Description(`Column label`)
+  label?: string
 
   @Property()
   component?: BaseComponentDefinition
