@@ -1,21 +1,26 @@
 import { Default, Description, Example, Optional } from '@tsed/schema'
 
+import { DndSwimlanesDataAttributes } from './dndSwimlanes.dataAttributes.enum'
+import {
+  DndSwimlanesLayoutControlsDataAttributes,
+  DndSwimlanesLayoutControlsInvertAttributes,
+} from './layouts/DndSwimlanesLayoutControls.dataAttributes.enum'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 
 export class DndSwimlanesOptions {
   @Optional()
   @Default('$item')
   @Description('Unique property key that will be available to the scope of the descendants.')
-  itemKey: string = '$item'
+  itemKey: string = '$item';
 
   @Optional()
   @Description('The data attribute used as the unique id of the swimlane item.')
-  itemIdAttribute?: string
+  [DndSwimlanesDataAttributes.itemId]?: string;
 
   @Optional()
   @Description('The data attribute used as accessible name of the swimlane item.')
   @Example('name')
-  itemLabelAttribute?: string
+  [DndSwimlanesDataAttributes.label]?: string;
 
   @Optional()
   @TrimmedDescription(`
@@ -24,7 +29,7 @@ export class DndSwimlanesOptions {
     If this property is not set, you have to provide a laneId when you are adding an item or it will not show up.
   `)
   @Example('status', 'type')
-  groupingAttribute?: string
+  [DndSwimlanesDataAttributes.laneId]?: string;
 
   @Optional()
   @TrimmedDescription(`
@@ -33,7 +38,7 @@ export class DndSwimlanesOptions {
     If not provided or if the attribute's value does not have a corresponding layout, the 'default' layout will be used.
     If not provided, the item's layoutType can be changed by setting 'items[itemId].layoutType'.
   `)
-  layoutAttribute?: string
+  [DndSwimlanesDataAttributes.layoutType]?: string;
 
   @Optional()
   @TrimmedDescription(`
@@ -42,7 +47,7 @@ export class DndSwimlanesOptions {
     If not provided, an item will be interactive by default and can be toggled by setting 'items[itemId].layoutControls.interactive'
   `)
   @Example('disabled', 'active')
-  interactiveAttribute?: string
+  [DndSwimlanesLayoutControlsDataAttributes.interactive]?: string;
 
   @Optional()
   @Default(false)
@@ -50,7 +55,7 @@ export class DndSwimlanesOptions {
     Flips the value of the 'interactiveAttribute'.
     Set this to true if the attribute's value is the inverse of the desired state (ie. 'disabled').
   `)
-  interactiveAttributeInvert: boolean = false
+  [DndSwimlanesLayoutControlsInvertAttributes.interactive]: boolean = false;
 
   @Optional()
   @TrimmedDescription(`
@@ -59,7 +64,7 @@ export class DndSwimlanesOptions {
     If not provided, an item will be visible by default and can be toggled by setting 'items[itemId].layoutControls.hidden'
   `)
   @Example('isHidden', 'isVisible')
-  hiddenAttribute?: string
+  [DndSwimlanesLayoutControlsDataAttributes.hidden]?: string;
 
   @Optional()
   @Default(false)
@@ -67,7 +72,7 @@ export class DndSwimlanesOptions {
     Flips the value of the 'hiddenAttribute'.
     Set this to true if the attribute's value is the inverse of the desired state (ie. 'isVisible').
   `)
-  hiddenAttributeInvert: boolean = false
+  [DndSwimlanesLayoutControlsInvertAttributes.hidden]: boolean = false;
 
   @Optional()
   @TrimmedDescription(`
@@ -76,7 +81,7 @@ export class DndSwimlanesOptions {
     If not provided, an item will be draggable by default and can be toggled by setting 'items[itemId].layoutControls.draggable'
   `)
   @Example('isMoveable')
-  draggableAttribute?: string
+  [DndSwimlanesLayoutControlsDataAttributes.draggable]?: string;
 
   @Optional()
   @Default(false)
@@ -84,5 +89,5 @@ export class DndSwimlanesOptions {
     Flips the value of the 'draggableAttribute'.
     Set this to true if the attribute's value is the inverse of the desired state (ie. 'pinned').
   `)
-  draggableAttributeInvert: boolean = false
+  [DndSwimlanesLayoutControlsInvertAttributes.draggable]: boolean = false
 }
