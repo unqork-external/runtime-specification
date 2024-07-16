@@ -16,10 +16,7 @@ exports[`Set Property Model should match this JSON Schema 1`] = `
           "type": "string",
         },
         "resolveSyntax": {
-          "description": "
-    Temporary way to resolve a value as syntax. Currently only used for auto generation of CSMs. 
-    Runtime team to revisit.  
-  ",
+          "description": "Temporary way to resolve a value as syntax. Currently only used for auto generation of CSMs. Runtime team to revisit.",
           "type": "boolean",
         },
         "shouldOverwrite": {

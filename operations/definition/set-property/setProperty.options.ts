@@ -34,7 +34,7 @@ export class SetPropertyOptions {
   shouldOverwrite?: boolean = true
 
   @Optional()
-  @Description(
+  @TrimmedDescription(
     `
     Temporary way to resolve a value as syntax. Currently only used for auto generation of CSMs. 
     Runtime team to revisit.  

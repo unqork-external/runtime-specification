@@ -1,5 +1,6 @@
 import { DiscriminatorValue, Property, Required } from '@tsed/schema'
 
+import { KeyWithinModule } from '../../../decorators/designer/KeyWithinModule.decorator'
 import {
   AutoGenerationAnyExample,
   AutoGenerationBasicPropertyExample,
@@ -16,6 +17,10 @@ import { BaseComponentDefinition } from '../../base-component-interface'
 export class AutoGenerationExampleComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: '__autoGenerationExample' = '__autoGenerationExample' as const
+
+  @Property()
+  @KeyWithinModule()
+  target: string
 
   @Property()
   basic: AutoGenerationBasicPropertyExample
