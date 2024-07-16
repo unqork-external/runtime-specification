@@ -8,6 +8,7 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 1`
   "signalTypes",
   "operationsComponentsMap",
   "operationsDescriptionsMap",
+  "operationsStabilityMap",
   "editMode",
   "operationIndex",
   "useDefaultStyles",
@@ -81,6 +82,10 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
   },
   "operationsDescriptionsMap": {
     "description": "A map of all operations and their descriptions",
+    "type": "object",
+  },
+  "operationsStabilityMap": {
+    "description": "A map of all operations and their level of stability",
     "type": "object",
   },
   "package": {

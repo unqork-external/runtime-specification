@@ -111,6 +111,14 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.operationActions]: CssClassOrProps;
 
+  @Description('Adds styles to unsupported operations warning message.')
+  @Css()
+  [OpsBuilderTargets.operationTypeWarning]: CssClassOrProps;
+
+  @Description('Adds styles to operations selector label.')
+  @Css()
+  [OpsBuilderTargets.operationSelectorLabel]: CssClassOrProps;
+
   @Description('Adds styles to Save operation button in Ops Builder.')
   @Css()
   [OpsBuilderTargets.saveOperation]: CssClassOrProps;

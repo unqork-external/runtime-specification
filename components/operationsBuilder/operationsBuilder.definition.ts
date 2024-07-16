@@ -56,6 +56,10 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   @Description('A map of all operations and their descriptions')
   operationsDescriptionsMap: Record<string, any>
 
+  @Required()
+  @Description('A map of all operations and their level of stability')
+  operationsStabilityMap: Record<string, any>
+
   @Optional()
   @Description('The selected operation in Operations dropdown')
   selectedOperation?: MultiSelectOptionModel
