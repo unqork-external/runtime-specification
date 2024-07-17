@@ -36,4 +36,6 @@ export enum OpsBuilderTargets {
   deleteOperation = 'deleteOperation',
   moveUpOperation = 'moveUpOperation',
   moveDownOperation = 'moveDownOperation',
+  signalTypeWarning = 'signalTypeWarning',
+  unsupportedSignalAsterisks = 'unsupportedSignalAsterisks',
 }

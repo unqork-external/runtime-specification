@@ -153,7 +153,15 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
 
   @Description('Adds styles to Move Down button in Ops Builder.')
   @Css()
-  [OpsBuilderTargets.moveDownOperation]: CssClassOrProps
+  [OpsBuilderTargets.moveDownOperation]: CssClassOrProps;
+
+  @Description('Adds styles to signal Type warning message in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.signalTypeWarning]: CssClassOrProps;
+
+  @Description('Adds styles to astericks from unsupported signal item label in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.unsupportedSignalAsterisks]: CssClassOrProps
 }
 
 @Description('An object containing styling for the component.')

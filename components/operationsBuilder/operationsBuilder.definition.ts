@@ -22,8 +22,13 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
 
   @Default([])
   @Required()
-  @Description('List of signal types')
-  signalTypes: string[] = []
+  @Description('List of signal types in dropdown list')
+  signalTypes: MultiSelectOptionModel[] = []
+
+  @Default([])
+  @Required()
+  @Description('List of initial signal types')
+  initialSignalTypes: MultiSelectOptionModel[] = []
 
   @Default([])
   @Optional()

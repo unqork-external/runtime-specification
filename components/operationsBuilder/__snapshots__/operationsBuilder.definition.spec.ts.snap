@@ -6,6 +6,7 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 1`
   "type",
   "visible",
   "signalTypes",
+  "initialSignalTypes",
   "operationsComponentsMap",
   "operationsDescriptionsMap",
   "operationsStabilityMap",
@@ -44,6 +45,13 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     "default": true,
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
+  },
+  "initialSignalTypes": {
+    "description": "List of initial signal types",
+    "items": {
+      "default": [],
+    },
+    "type": "array",
   },
   "inputs": {
     "items": {
@@ -105,7 +113,7 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     "type": "boolean",
   },
   "signalTypes": {
-    "description": "List of signal types",
+    "description": "List of signal types in dropdown list",
     "items": {
       "default": [],
     },
