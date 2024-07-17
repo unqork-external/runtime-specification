@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CanvasHydrateOperation Model should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "CanvasHydrateOperationOptions": {
+      "properties": {
+        "definitions": {
+          "description": "An array or an an a array in the for of a string of component definitions to hydrate the canvas",
+          "type": "object",
+        },
+        "replace": {
+          "default": false,
+          "description": "When true, the definitions passed to this operation will replace any current canvas items. When false, the definitions passed to this operation will append to the end of the list.",
+          "type": "boolean",
+        },
+        "targetKey": {
+          "description": "key of the canvas to hydrate",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "definitions",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/CanvasHydrateOperationOptions",
+    },
+    "type": {
+      "const": "CANVAS_HYDRATE",
+      "examples": [
+        "CANVAS_HYDRATE",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;
