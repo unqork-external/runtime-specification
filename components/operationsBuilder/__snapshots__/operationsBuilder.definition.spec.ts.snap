@@ -49,7 +49,7 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
   "initialSignalTypes": {
     "description": "List of initial signal types",
     "items": {
-      "default": [],
+      "$ref": "#/definitions/SignalOption",
     },
     "type": "array",
   },
@@ -115,7 +115,7 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
   "signalTypes": {
     "description": "List of signal types in dropdown list",
     "items": {
-      "default": [],
+      "$ref": "#/definitions/SignalOption",
     },
     "type": "array",
   },
@@ -268,6 +268,33 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 3`
         "type": "string",
       },
     },
+    "type": "object",
+  },
+  "SignalOption": {
+    "properties": {
+      "description": {
+        "description": "Option description",
+        "type": "string",
+      },
+      "id": {
+        "description": "Id of the Signal",
+        "type": "string",
+      },
+      "label": {
+        "description": "Option label",
+        "minLength": 1,
+        "type": "string",
+      },
+      "value": {
+        "description": "Option value",
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "label",
+      "value",
+    ],
     "type": "object",
   },
   "StylingModel": {

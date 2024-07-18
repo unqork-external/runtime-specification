@@ -1,7 +1,8 @@
-import { Default, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
+import { CollectionOf, Default, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
 
 import { OpsBuilderStyling } from './operationsBuilder.styling'
 import { OpsBuilderTargets } from './operationsBuilderTargets.enum'
+import { SignalOption } from './signalOption'
 import { ViewTargets } from '../../../decorators'
 import { Examples } from '../../../decorators/schema/examples.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface'
@@ -22,13 +23,15 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
 
   @Default([])
   @Required()
+  @CollectionOf(SignalOption)
   @Description('List of signal types in dropdown list')
-  signalTypes: MultiSelectOptionModel[] = []
+  signalTypes: SignalOption[] = []
 
   @Default([])
   @Required()
+  @CollectionOf(SignalOption)
   @Description('List of initial signal types')
-  initialSignalTypes: MultiSelectOptionModel[] = []
+  initialSignalTypes: SignalOption[] = []
 
   @Default([])
   @Optional()
