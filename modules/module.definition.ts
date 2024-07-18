@@ -49,6 +49,7 @@ export class ModuleDefinition {
     runtimeVersion?: '1.0.0' | '2.0.0'
     useLegacyWrapper: 'module' | 'workflow'
     usePreviewBar: boolean
+    enableAnonymous?: boolean
   }
 
   @Required()
