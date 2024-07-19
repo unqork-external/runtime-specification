@@ -9,8 +9,16 @@ exports[`UD Data Workflow Canvas Contract Tests should ensure the contract is cl
 
 exports[`UD Data Workflow Canvas Contract Tests should ensure the contract is clear 2`] = `
 {
+  "currentComponentId": {
+    "description": "Id of the DWF component being edited. When this property is changed the DWF will grab the corresponding data from the canvas.",
+    "type": "string",
+  },
   "display": {
     "$ref": "#/definitions/Display",
+  },
+  "excludeVegaOperation": {
+    "description": "Excludes Vega Operation",
+    "type": "boolean",
   },
   "executable": {
     "default": true,

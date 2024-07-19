@@ -1,4 +1,4 @@
-import { Required, DiscriminatorValue, Description, Example, Optional, Property } from '@tsed/schema'
+import { Description, DiscriminatorValue, Example, Optional, Property, Required } from '@tsed/schema'
 
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { Display } from '../../component-composition/display/component.display'
@@ -47,4 +47,14 @@ export class UdDataWorkflowCanvasComponentDefinition extends BaseComponentDefini
 
   @Description('Options for the canvas. Includes dropdown items.')
   options: DWFCanvasOptions = new DWFCanvasOptions()
+
+  @Optional()
+  @Description(
+    'Id of the DWF component being edited. When this property is changed the DWF will grab the corresponding data from the canvas.',
+  )
+  currentComponentId?: string
+
+  @Optional()
+  @Description('Excludes Vega Operation')
+  excludeVegaOperation?: boolean
 }
