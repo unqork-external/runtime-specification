@@ -56,6 +56,7 @@ import { TableGoToPreviousPageOperation } from '../definition/tableGoToPreviousP
 import { TablePasteValuesOperation } from '../definition/tablePasteValues'
 import { TableRemoveColumnOperation } from '../definition/tableRemoveColumn'
 import { TableRemoveRowsOperation } from '../definition/tableRemoveRows'
+import { TableRenameColumnOperation } from '../definition/tableRenameColumn'
 import { TableSetActionToolbarVisibilityOperation } from '../definition/tableSetActionToolbarVisibility'
 import { TableSetAllRowsExpandedOperation } from '../definition/tableSetAllRowsExpanded'
 import { TableSetColumnFilterOperation } from '../definition/tableSetColumnFilter'
@@ -117,6 +118,7 @@ export const OperationTypeMap = {
   [OperationTypes.TABLE_SET_ROW_EXPANDED]: TableSetRowExpandedOperation,
   [OperationTypes.TABLE_REMOVE_ROWS]: TableRemoveRowsOperation,
   [OperationTypes.TABLE_REMOVE_COLUMN]: TableRemoveColumnOperation,
+  [OperationTypes.TABLE_RENAME_COLUMN]: TableRenameColumnOperation,
   [OperationTypes.TABLE_GO_TO_PAGE]: TableGoToPageOperation,
   [OperationTypes.TABLE_GO_TO_LAST_PAGE]: TableGoToLastPageOperation,
   [OperationTypes.TABLE_GO_TO_FIRST_PAGE]: TableGoToFirstPageOperation,

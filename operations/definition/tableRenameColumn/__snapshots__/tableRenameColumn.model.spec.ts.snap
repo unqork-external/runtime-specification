@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableRenameColumn Tests TableRemoveColumn Model 1`] = `
+{
+  "definitions": {
+    "TableRenameColumnOperationOptions": {
+      "properties": {
+        "keysToRename": {
+          "description": "An object mapping column keys to their new labels",
+          "examples": [
+            "
+    keysToRename: {
+      "firstName": "Name",
+      "dob": "Date of Birth",
+    }
+  ",
+          ],
+          "type": "object",
+        },
+        "targetKey": {
+          "description": "A unique string identifier used to specify the particular table or component in the application where the renaming operation is to be executed",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "keysToRename",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "Renames column labels of the Table component.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableRenameColumnOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_RENAME_COLUMN",
+      "examples": [
+        "TABLE_RENAME_COLUMN",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "stability": "STABLE",
+  "type": "object",
+}
+`;
