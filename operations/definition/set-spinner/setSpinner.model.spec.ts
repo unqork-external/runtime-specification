@@ -25,7 +25,7 @@ describe('Set Spinner Model', () => {
     expect(isValid).toBeTrue()
   })
 
-  it('Ensure showCursorSpinner is set to default', () => {
+  it('Ensure showCursorSpinner defaults to false', () => {
     const op = createOperation(OperationTypes.SET_SPINNER, {
       showPageSpinner: true,
     })
@@ -34,7 +34,7 @@ describe('Set Spinner Model', () => {
     expect(op.options.showPageSpinner).toBe(true)
   })
 
-  it('Ensure showPageSpinner is set to default', () => {
+  it('Ensure showPageSpinner defaults to false', () => {
     const op = createOperation(OperationTypes.SET_SPINNER, {
       showCursorSpinner: true,
     })
