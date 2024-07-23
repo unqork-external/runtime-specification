@@ -10,6 +10,7 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 1`
   "operationsComponentsMap",
   "operationsDescriptionsMap",
   "operationsStabilityMap",
+  "operationsDefinitionMap",
   "editMode",
   "operationIndex",
   "useDefaultStyles",
@@ -86,6 +87,10 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
   },
   "operationsComponentsMap": {
     "description": "A map of all operations and their schemas",
+    "type": "object",
+  },
+  "operationsDefinitionMap": {
+    "description": "A map of all operations and their definition ref key",
     "type": "object",
   },
   "operationsDescriptionsMap": {
