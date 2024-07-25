@@ -20,4 +20,8 @@ export class CanvasRepresentationControls {
   @Required()
   @Default('')
   iconClass?: string
+
+  @Required()
+  @Default(false)
+  showActionButtons: boolean
 }

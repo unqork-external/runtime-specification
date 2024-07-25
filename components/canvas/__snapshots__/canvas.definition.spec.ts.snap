@@ -258,6 +258,48 @@ exports[`Canvas Contract Tests should ensure the contract is clear 3`] = `
           "object",
         ],
       },
+      "representationActionButton": {
+        "description": "Adds styles to the representationActionButton for the canvas component.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationActionButtonPopoverContent": {
+        "description": "Adds styles to the representationActionButtonPopoverContent for the canvas component.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationActionButtonPopoverKeyboardShortcut": {
+        "description": "Adds styles to the representationActionButtonPopoverKeyboardShortcut for the canvas component.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationActionButtonPopoverLabel": {
+        "description": "Adds styles to the representationActionButtonPopoverLabel for the canvas component.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationActionButtonPopoverRoot": {
+        "description": "Adds styles to the representationActionButtonPopoverRoot for the canvas component.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "representationActionButtonRoot": {
+        "description": "Adds styles to the representationActionButtonRoot for the canvas component.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
       "representationButtonsDisplayText": {
         "description": "Adds styles to the text in the representation button.",
         "type": [

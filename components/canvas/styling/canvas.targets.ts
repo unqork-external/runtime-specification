@@ -90,6 +90,30 @@ export class CanvasTargets {
   [CanvasTargetsEnum.representationButtonsWrapper]: CssClassOrProps;
 
   @Css()
+  @Description('Adds styles to the representationActionButtonRoot for the canvas component.')
+  [CanvasTargetsEnum.representationActionButtonRoot]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the representationActionButton for the canvas component.')
+  [CanvasTargetsEnum.representationActionButton]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the representationActionButtonPopoverRoot for the canvas component.')
+  [CanvasTargetsEnum.representationActionButtonPopoverRoot]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the representationActionButtonPopoverContent for the canvas component.')
+  [CanvasTargetsEnum.representationActionButtonPopoverContent]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the representationActionButtonPopoverLabel for the canvas component.')
+  [CanvasTargetsEnum.representationActionButtonPopoverLabel]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the representationActionButtonPopoverKeyboardShortcut for the canvas component.')
+  [CanvasTargetsEnum.representationActionButtonPopoverKeyboardShortcut]: CssClassOrProps;
+
+  @Css()
   @Description('Adds styles to the wrapper around the representation information.')
   [CanvasTargetsEnum.representationInformationWrapper]: CssClassOrProps;
 
