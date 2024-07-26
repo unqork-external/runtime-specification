@@ -50,4 +50,11 @@ export class NumberFieldSettings extends InputField {
   `)
   @Example('2 -> 20.50', '6 -> 20.123456')
   decimalLimit: number = 16
+
+  @TrimmedDescription(`
+    Minimum number of decimal places.
+    It will be effective if formatAsCurrency is true.
+  `)
+  @Default(2)
+  minDecimalLimit: number = 2
 }

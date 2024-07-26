@@ -46,9 +46,6 @@ export class NumberFieldComponentDefinition extends BaseComponentDefinition {
   @Property()
   format: NumberFormat = new NumberFormat()
 
-  @Description('Formatted value based on number field settings')
-  formattedValue?: string
-
   @TrimmedDescription(`
     The initial value for the component configured in the designer.
     - It is the value that will initially appear inside the text box;

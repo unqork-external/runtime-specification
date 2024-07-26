@@ -252,6 +252,11 @@ exports[`Number Range Contract Tests should ensure the contract is clear 3`] = `
       "label": {
         "$ref": "#/definitions/Label",
       },
+      "minDecimalLimit": {
+        "default": 2,
+        "description": "Minimum number of decimal places. It will be effective if formatAsCurrency is true.",
+        "type": "number",
+      },
       "placeholder": {
         "description": "An example or short explanation of the requested input. This appears inside of the input by default and disappears when the user enters a value.",
         "examples": [
