@@ -77,8 +77,8 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   enableRowSelection: boolean
 
   @Property()
-  @Default(true)
-  enableRowPinning: boolean = true
+  @Default(false)
+  enableRowPinning: boolean = false
 
   @Property()
   enableColumnResizing: boolean
