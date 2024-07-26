@@ -7,10 +7,7 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 1`
   "visible",
   "signalTypes",
   "initialSignalTypes",
-  "operationsComponentsMap",
-  "operationsDescriptionsMap",
-  "operationsStabilityMap",
-  "operationsDefinitionMap",
+  "operationsMap",
   "editMode",
   "operationIndex",
   "useDefaultStyles",
@@ -78,27 +75,8 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     "description": "Index of the operation being edited",
     "type": "number",
   },
-  "operationKeys": {
-    "description": "List of operation types",
-    "items": {
-      "default": [],
-    },
-    "type": "array",
-  },
-  "operationsComponentsMap": {
-    "description": "A map of all operations and their schemas",
-    "type": "object",
-  },
-  "operationsDefinitionMap": {
-    "description": "A map of all operations and their definition ref key",
-    "type": "object",
-  },
-  "operationsDescriptionsMap": {
-    "description": "A map of all operations and their descriptions",
-    "type": "object",
-  },
-  "operationsStabilityMap": {
-    "description": "A map of all operations and their level of stability",
+  "operationsMap": {
+    "description": "A map of all operations and their schemas, definitions, descriptions, and stability",
     "type": "object",
   },
   "package": {

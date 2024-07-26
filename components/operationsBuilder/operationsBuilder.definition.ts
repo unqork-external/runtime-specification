@@ -1,12 +1,14 @@
 import { CollectionOf, Default, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
 
 import { OpsBuilderStyling } from './operationsBuilder.styling'
+import { OperationsBuilderOperation } from './operationsBuilderOperation'
 import { OpsBuilderTargets } from './operationsBuilderTargets.enum'
 import { SignalOption } from './signalOption'
 import { ViewTargets } from '../../../decorators'
 import { Examples } from '../../../decorators/schema/examples.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface'
 import { StandardArrayNestable } from '../../nestables'
+import { OperationTypes } from '../../operations'
 import type { Signal, SignalTargets } from '../../signals'
 import { targetedStylingExample } from '../../styling/targeted.styling.example'
 import { MultiSelectOptionModel } from '../multiSelect'
@@ -33,11 +35,6 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   @Description('List of initial signal types')
   initialSignalTypes: SignalOption[] = []
 
-  @Default([])
-  @Optional()
-  @Description('List of operation types')
-  operationKeys?: string[] = []
-
   @Optional()
   @Default('')
   @Description('Type of the signal selected from the Signals or Events dropdown')
@@ -57,20 +54,8 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   currentOperationKey: string = ''
 
   @Required()
-  @Description('A map of all operations and their schemas')
-  operationsComponentsMap: Record<string, any>
-
-  @Required()
-  @Description('A map of all operations and their descriptions')
-  operationsDescriptionsMap: Record<string, any>
-
-  @Required()
-  @Description('A map of all operations and their level of stability')
-  operationsStabilityMap: Record<string, any>
-
-  @Required()
-  @Description('A map of all operations and their definition ref key')
-  operationsDefinitionMap: Record<string, any>
+  @Description('A map of all operations and their schemas, definitions, descriptions, and stability')
+  operationsMap: Record<keyof typeof OperationTypes, OperationsBuilderOperation>
 
   @Optional()
   @Description('The selected operation in Operations dropdown')
