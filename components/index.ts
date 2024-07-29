@@ -24,6 +24,7 @@ export * from './numberRange'
 export * from './numberStepper'
 
 export * from './basicGrid/basicGrid.definition'
+export * from './combobox'
 export * from './icon'
 export * from './image/image.definition'
 export * from './iterator/iterator.definition'

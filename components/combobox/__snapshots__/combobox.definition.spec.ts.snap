@@ -1,0 +1,158 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Combobox Contract Tests should ensure the contract is clear 1`] = `
+[
+  "key",
+  "type",
+  "data",
+  "display",
+  "field",
+]
+`;
+
+exports[`Combobox Contract Tests should ensure the contract is clear 2`] = `
+{
+  "childIds": {
+    "description": "Child IDs for all nestable references within the component.",
+    "type": "array",
+  },
+  "data": {
+    "$ref": "#/definitions/ComboboxData",
+  },
+  "display": {
+    "$ref": "#/definitions/ComboboxDisplay",
+  },
+  "executable": {
+    "default": true,
+    "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
+    "type": "boolean",
+  },
+  "field": {
+    "$ref": "#/definitions/ComboboxField",
+  },
+  "iconKey": {
+    "description": "Key of the icon to display on the leading side of the Combobox, as defined in the \`icons\` nestable.",
+    "type": "string",
+  },
+  "icons": {
+    "description": "Children definition for all the icons used in this component.",
+    "items": {
+      "$ref": "#/definitions/IconComponentDefinition",
+    },
+    "type": "array",
+  },
+  "inputs": {
+    "items": {
+      "$ref": "#/definitions/InputRef",
+    },
+    "type": "array",
+  },
+  "key": {
+    "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
+    "examples": [
+      "I am the key",
+      "bestKeyEver",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "nestables": {
+    "description": "Nestable configuration.",
+    "type": "object",
+  },
+  "package": {
+    "$ref": "#/definitions/PackageModel",
+  },
+  "searchValue": {
+    "description": "Read-only value of the search input as the user modifies it.",
+    "type": "string",
+  },
+  "signals": {
+    "description": "Map of signals configuration for specific targets.",
+    "examples": [
+      {
+        "args": {
+          "inputs": {
+            "propertyPath": "value",
+            "required": true,
+            "targetKey": "firstName",
+          },
+        },
+        "id": "firstNameWatcher",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onWatch",
+      },
+      {
+        "id": "textfieldOnBlur",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "textfield received blur event from DOM",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onBlur",
+      },
+      "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+    ],
+    "type": "object",
+  },
+  "simpleView": {
+    "description": "Simple view configuration.",
+    "type": "object",
+  },
+  "styling": {
+    "$ref": "#/definitions/ComboboxStyling",
+  },
+  "type": {
+    "const": "combobox",
+    "description": "Name of the type of component.",
+    "examples": [
+      "combobox",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "useSimpleView": {
+    "default": false,
+    "description": "Simple view state.",
+    "type": "object",
+  },
+  "validation": {
+    "$ref": "#/definitions/Validation",
+  },
+  "value": {
+    "anyOf": [
+      {
+        "type": "string",
+      },
+      {
+        "items": {
+          "type": "string",
+        },
+        "type": "array",
+      },
+    ],
+    "description": "Value for the Combobox. \`string\` if field.multiple is disabled, \`Array<sting>\` if it is enabled.",
+    "type": [
+      "null",
+      "integer",
+      "number",
+      "string",
+      "boolean",
+      "array",
+      "object",
+    ],
+  },
+}
+`;
