@@ -1,7 +1,8 @@
-import { Description, Required } from '@tsed/schema'
+import { Default, Description, Optional } from '@tsed/schema'
 
 export class ComboboxSimpleViewModel {
-  @Required()
+  @Optional()
   @Description('Internal indicator for whether the simple view is in edit mode.')
-  inEditMode: boolean
+  @Default(false)
+  inEditMode: boolean = false
 }
