@@ -30,6 +30,11 @@ exports[`Tray Contract Tests should ensure the contract is clear 2`] = `
     "minLength": 1,
     "type": "string",
   },
+  "groupExpansionMap": {
+    "default": {},
+    "description": "Mapping of each tray group to its expanded or collapsed state",
+    "type": "object",
+  },
   "groups": {
     "description": "Used to display groups of BaseTrayItemDefinitions on the tray.",
     "items": {
@@ -113,7 +118,7 @@ exports[`Tray Contract Tests should ensure the contract is clear 2`] = `
   },
   "useDefaultSearchBar": {
     "default": false,
-    "description": "",
+    "description": "Boolean to determine if default searchbar should be used.",
     "type": "boolean",
   },
   "useDefaultStyles": {

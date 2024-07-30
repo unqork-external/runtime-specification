@@ -1,5 +1,6 @@
-import { CollectionOf, Default, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
+import { CollectionOf, Const, Default, Description, DiscriminatorValue, Required } from '@tsed/schema'
 
+import type { GroupExpansionMap } from './groupExpansionMap.type'
 import { TrayStyling } from './styling/tray.styling'
 import { TrayGroupDefinition } from './trayGroup.definition'
 import { BaseComponentDefinition } from '../../base-component-interface'
@@ -7,46 +8,42 @@ import { StandardArrayNestable } from '../../nestables'
 
 @DiscriminatorValue('tray')
 export class TrayComponentDefinition extends BaseComponentDefinition {
-  @Required()
+  @Const('tray')
   type: 'tray' = 'tray' as const
 
-  @Property()
   @Description('Styling target for the tray.')
   styling: TrayStyling
 
   @Required()
-  @Property()
   @CollectionOf(TrayGroupDefinition)
   @Description('Used to display groups of BaseTrayItemDefinitions on the tray.')
   groups: TrayGroupDefinition[] = []
 
+  @Description('Mapping of each tray group to its expanded or collapsed state')
+  @Default({})
+  groupExpansionMap: GroupExpansionMap = {}
+
   @Required()
-  @Property()
   @Default(false)
   @Description('Boolean to determine if the tray should be pulled from the assets.')
   useSpecFromAssets: boolean = false
 
   @Required()
-  @Property()
   @Default(false)
-  @Description('')
   @Description('Boolean to determine if default searchbar should be used.')
   useDefaultSearchBar: boolean = false
 
   @Required()
-  @Property()
   @Default(false)
   @Description('Boolean to determine if default styles should be used.')
   useDefaultStyles: boolean = false
 
   @Required()
-  @Property()
   @Default(false)
   @Description('Boolean to determine if default styles should be used.')
   useLegacy: boolean = false
 
   @Required()
-  @Property()
   @Default('')
   @Description('Text which the tray filters based on label, type, and searchCriteria of a BaseTrayItemDefinition.')
   filterText: string = ''
