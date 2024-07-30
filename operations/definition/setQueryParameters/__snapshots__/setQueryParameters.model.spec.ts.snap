@@ -1,0 +1,55 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: SetQueryParameters Tests SetQueryParameters Model 1`] = `
+{
+  "definitions": {
+    "SetQueryParametersOperationOptions": {
+      "properties": {
+        "params": {
+          "description": "Parameters to set on the URL",
+          "type": "object",
+        },
+        "queryParamLocation": {
+          "default": "default",
+          "description": "Determines the location in which this operation will update query parameters. Either in the default location as specified by RFC 3968 Section 3.4, or appended to in the URL fragment (RFC 3968 Section 3.5).",
+          "type": "string",
+        },
+        "redirect": {
+          "default": false,
+          "description": "Determines if changing the params should cause the page to redirect to the url with the new query parameters.",
+          "type": "boolean",
+        },
+      },
+      "required": [
+        "params",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "This operation should be used to set query parameters on the url. This operation will override the existing query parameters on the url.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/SetQueryParametersOperationOptions",
+    },
+    "type": {
+      "const": "SET_QUERY_PARAMETERS",
+      "examples": [
+        "SET_QUERY_PARAMETERS",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

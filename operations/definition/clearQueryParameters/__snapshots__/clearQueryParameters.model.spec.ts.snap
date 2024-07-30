@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: ClearQueryParameters Tests ClearQueryParameters Model 1`] = `
+{
+  "definitions": {
+    "ClearQueryParametersOperationOptions": {
+      "properties": {
+        "queryParamLocation": {
+          "default": "default",
+          "description": "Determines the location in which this operation will update query parameters. Either in the default location as specified by RFC 3968 Section 3.4, or appended to in the URL fragment (RFC 3968 Section 3.5).",
+          "type": "string",
+        },
+        "redirect": {
+          "default": false,
+          "description": "Determines if changing the params should cause the page to redirect to the url with the new query parameters.",
+          "type": "boolean",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "description": "This operation should be used to clear query parameters on the url.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ClearQueryParametersOperationOptions",
+    },
+    "type": {
+      "const": "CLEAR_QUERY_PARAMETERS",
+      "examples": [
+        "CLEAR_QUERY_PARAMETERS",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

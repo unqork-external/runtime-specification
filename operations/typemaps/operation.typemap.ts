@@ -1,6 +1,7 @@
 // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
 // OPERATION_IMPORT_STATEMENT
 import { AddNestedComponentsOperation } from '../definition/addNestedComponents'
+import { AddQueryParametersOperation } from '../definition/addQueryParameters'
 import { ApiCallOperation } from '../definition/api-call'
 import { AppendStylingOperation } from '../definition/appendStyling'
 import { AsyncAllSettledOperation } from '../definition/asyncAllSettled'
@@ -12,6 +13,7 @@ import { CanvasGetComponentChildrenOperation } from '../definition/canvasGetComp
 import { CanvasHydrateOperation } from '../definition/canvasHydrate'
 import { ClearOperation } from '../definition/clear'
 import { ClearValidationErrorOperation } from '../definition/clear-validation-errors'
+import { ClearQueryParametersOperation } from '../definition/clearQueryParameters'
 import { ClearStylingOperation } from '../definition/clearStyling'
 import { ConfigurationEditorSaveOperation } from '../definition/configurationEditorSave'
 import { ConfigurationEditorToggleReflexiveInputOperation } from '../definition/configurationEditorToggleReflexiveInput'
@@ -32,6 +34,7 @@ import { OpenNewPageOperation } from '../definition/openNewPage'
 import { ParseFormulaOperation } from '../definition/parse-formula'
 import { PrinterOperation } from '../definition/printer'
 import { RemoveNestedComponentsOperation } from '../definition/removeNestedComponents'
+import { RemoveQueryParametersOperation } from '../definition/removeQueryParameters'
 import { RenderModuleOperation } from '../definition/renderModule'
 import { ResetOperation } from '../definition/reset'
 import { ScrollToOperation } from '../definition/scrollTo'
@@ -41,6 +44,7 @@ import { SetSpinnerOperation } from '../definition/set-spinner'
 import { SetValidationRuleOperation } from '../definition/set-validation-rules'
 import { SetComponentStateOperation } from '../definition/setComponentState'
 import { SetModalOperation } from '../definition/setModal'
+import { SetQueryParametersOperation } from '../definition/setQueryParameters'
 import { SetStylingOperation } from '../definition/setStyling'
 import { SetStylingTargetOperation } from '../definition/setStylingTarget'
 import { SubmitOperation } from '../definition/submit'
@@ -91,6 +95,10 @@ import { OperationTypes } from '../enums/operation-types.enum'
 export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
+  [OperationTypes.CLEAR_QUERY_PARAMETERS]: ClearQueryParametersOperation,
+  [OperationTypes.REMOVE_QUERY_PARAMETERS]: RemoveQueryParametersOperation,
+  [OperationTypes.ADD_QUERY_PARAMETERS]: AddQueryParametersOperation,
+  [OperationTypes.SET_QUERY_PARAMETERS]: SetQueryParametersOperation,
   [OperationTypes.CONFIGURATION_EDITOR_SAVE]: ConfigurationEditorSaveOperation,
   [OperationTypes.CONFIGURATION_EDITOR_TOGGLE_REFLEXIVE_INPUT]: ConfigurationEditorToggleReflexiveInputOperation,
   [OperationTypes.CANVAS_GET_COMPONENT_CHILDREN]: CanvasGetComponentChildrenOperation,
