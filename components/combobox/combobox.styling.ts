@@ -32,6 +32,10 @@ export class ComboboxStyleTargets implements TargetsModel<ComboboxTargets> {
   [ComboboxTargets.helperText]: CssClassOrProps;
 
   @Css()
+  @Description('Icon container styles.')
+  [ComboboxTargets.icon]: CssClassOrProps;
+
+  @Css()
   @Description('Label styles.')
   [ComboboxTargets.label]: CssClassOrProps;
 
@@ -64,12 +68,20 @@ export class ComboboxStyleTargets implements TargetsModel<ComboboxTargets> {
   [ComboboxTargets.optionGroupList]: CssClassOrProps;
 
   @Css()
+  @Description('Option icon container styles.')
+  [ComboboxTargets.optionIcon]: CssClassOrProps;
+
+  @Css()
   @Description('Option item styles.')
   [ComboboxTargets.optionItem]: CssClassOrProps;
 
   @Css()
   @Description('Option label styles.')
   [ComboboxTargets.optionLabel]: CssClassOrProps;
+
+  @Css()
+  @Description('Option text styles.')
+  [ComboboxTargets.optionText]: CssClassOrProps;
 
   @Css()
   @Description('Popover wrapper styles.')
