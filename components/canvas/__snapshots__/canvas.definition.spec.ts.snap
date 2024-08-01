@@ -237,6 +237,13 @@ exports[`Canvas Contract Tests should ensure the contract is clear 3`] = `
           "object",
         ],
       },
+      "canvasItemStatusMessage": {
+        "description": "Adds styles to the to the wrapper around the canvas item status message.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
       "dragPreview": {
         "description": "Adds styles to the div wrapping the dragPreview",
         "type": [

@@ -143,5 +143,9 @@ export class CanvasTargets {
 
   @Css()
   @Description('Adds styles to the to the wrapper around the representation information text within an item.')
-  [CanvasTargetsEnum.representationInformationItemText]: CssClassOrProps
+  [CanvasTargetsEnum.representationInformationItemText]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the to the wrapper around the canvas item status message.')
+  [CanvasTargetsEnum.canvasItemStatusMessage]: CssClassOrProps
 }

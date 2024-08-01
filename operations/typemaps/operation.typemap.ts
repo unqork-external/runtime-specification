@@ -11,6 +11,7 @@ import { CanvasApplyStructuredDataOperation } from '../definition/canvasApplyStr
 import { CanvasDeleteItemOperation } from '../definition/canvasDeleteItem'
 import { CanvasGetComponentChildrenOperation } from '../definition/canvasGetComponentChildren'
 import { CanvasHydrateOperation } from '../definition/canvasHydrate'
+import { CanvasSetItemStatusOperation } from '../definition/canvasSetItemStatus'
 import { ClearOperation } from '../definition/clear'
 import { ClearValidationErrorOperation } from '../definition/clear-validation-errors'
 import { ClearQueryParametersOperation } from '../definition/clearQueryParameters'
@@ -95,6 +96,7 @@ import { OperationTypes } from '../enums/operation-types.enum'
 export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
+  [OperationTypes.CANVAS_SET_ITEM_STATUS]: CanvasSetItemStatusOperation,
   [OperationTypes.CLEAR_QUERY_PARAMETERS]: ClearQueryParametersOperation,
   [OperationTypes.REMOVE_QUERY_PARAMETERS]: RemoveQueryParametersOperation,
   [OperationTypes.ADD_QUERY_PARAMETERS]: AddQueryParametersOperation,
