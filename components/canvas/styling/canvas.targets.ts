@@ -82,6 +82,18 @@ export class CanvasTargets {
   [CanvasTargetsEnum.canvasItemHeaderLabel]: CssClassOrProps;
 
   @Css()
+  @Description('Adds styles to the badge ui in the canvas item label.')
+  [CanvasTargetsEnum.canvasItemHeaderBadgeRoot]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the text content in the badge ui in the canvas item label.')
+  [CanvasTargetsEnum.canvasItemHeaderBadgeText]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the icon in the badge ui in the canvas item label.')
+  [CanvasTargetsEnum.canvasItemHeaderBadgeIcon]: CssClassOrProps;
+
+  @Css()
   @Description('Adds styles to the collapse icon in the canvas item header for nestable components.')
   [CanvasTargetsEnum.canvasItemHeaderCollapse]: CssClassOrProps;
 

@@ -202,6 +202,27 @@ exports[`Canvas Contract Tests should ensure the contract is clear 3`] = `
           "object",
         ],
       },
+      "canvasItemHeaderBadgeIcon": {
+        "description": "Adds styles to the icon in the badge ui in the canvas item label.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "canvasItemHeaderBadgeRoot": {
+        "description": "Adds styles to the badge ui in the canvas item label.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
+      "canvasItemHeaderBadgeText": {
+        "description": "Adds styles to the text content in the badge ui in the canvas item label.",
+        "type": [
+          "string",
+          "object",
+        ],
+      },
       "canvasItemHeaderCollapse": {
         "description": "Adds styles to the collapse icon in the canvas item header for nestable components.",
         "type": [

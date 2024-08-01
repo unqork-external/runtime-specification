@@ -1,4 +1,4 @@
-import { Default, Property, Required } from '@tsed/schema'
+import { Default, Optional, Property, Required } from '@tsed/schema'
 
 import { ActionButtonVisibility } from './canvasActionButtonVisibility.definition'
 
@@ -7,6 +7,7 @@ export enum CanvasHighlightType {
   WARN = 'WARN',
   ERROR = 'ERROR',
 }
+
 export class CanvasRepresentationControls {
   @Required()
   @Default(false)
@@ -24,4 +25,11 @@ export class CanvasRepresentationControls {
   @Required()
   @Default('')
   iconClass?: string
+
+  @Optional()
+  headerBadge?: {
+    text?: string
+    badgeClass?: string
+    iconClass?: string
+  }
 }
