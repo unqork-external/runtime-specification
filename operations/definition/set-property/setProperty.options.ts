@@ -1,6 +1,6 @@
-import { Any, Default, Description, Example, Optional, Property, Required } from '@tsed/schema'
+import { Default, Description, Example, Optional, Property, Required } from '@tsed/schema'
 
-import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { TrimmedDescription, Unknown } from '../../../../decorators/schema'
 import { OperationOptions } from '../../interface'
 
 @TrimmedDescription(`
@@ -23,7 +23,7 @@ export class SetPropertyOptions extends OperationOptions {
   )
   property: string = 'value'
 
-  @Any()
+  @Unknown()
   @Description('The value refers to the intended value to mutate the intended property to.')
   declare value: unknown
 

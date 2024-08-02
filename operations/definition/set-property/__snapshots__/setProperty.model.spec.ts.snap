@@ -86,13 +86,11 @@ exports[`Set Property Model should match this JSON Schema 1`] = `
         "value": {
           "description": "The value refers to the intended value to mutate the intended property to.",
           "type": [
-            "null",
-            "integer",
-            "number",
             "string",
+            "number",
             "boolean",
-            "array",
             "object",
+            "array",
           ],
         },
       },

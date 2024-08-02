@@ -12,7 +12,14 @@ exports[`Operation Model: TableSetColumnFilter Tests should match this JSON Sche
         },
         "value": {
           "description": "Value of the filter",
-          "type": "object",
+          "minLength": 1,
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "object",
+            "array",
+          ],
         },
       },
       "required": [

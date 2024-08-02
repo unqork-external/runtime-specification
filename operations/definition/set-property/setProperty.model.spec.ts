@@ -69,17 +69,6 @@ describe('Set Property Model', () => {
     expect(isValid).toBeTrue()
   })
 
-  it('should not error if value is null', () => {
-    const op = createOperation(OperationTypes.SET_PROPERTY, {
-      targetKey: 'firstName',
-      value: null,
-      property: 'property',
-    })
-
-    const isValid = validate(op)
-    expect(isValid).toBeTrue()
-  })
-
   it('should not error if value is undefined', () => {
     const op = createOperation(OperationTypes.SET_PROPERTY, {
       targetKey: 'firstName',
