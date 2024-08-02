@@ -1,7 +1,3 @@
-import { Description, Required } from '@tsed/schema'
+import { TargetedOperationOptions } from '../../interface'
 
-export class TableClearOperationOptions {
-  @Required()
-  @Description('Key of the Table component to apply the clear operation')
-  public targetKey: string
-}
+export class TableClearOperationOptions extends TargetedOperationOptions {}

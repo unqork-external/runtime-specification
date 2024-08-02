@@ -1,5 +1,7 @@
 import { Default, Description, Required } from '@tsed/schema'
 
+import { TargetedOperationOptions } from '../../interface'
+
 class SearchData {
   @Required()
   targetKey: string
@@ -24,10 +26,7 @@ class Output {
   property?: string = 'value'
 }
 
-export class AutocompleteOperationOptions {
-  @Required()
-  targetKey: string
-
+export class AutocompleteOperationOptions extends TargetedOperationOptions {
   @Default('value')
   property?: string = 'value'
 

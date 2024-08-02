@@ -1,6 +1,8 @@
 import { Default, Property } from '@tsed/schema'
 
-export class PrinterOperationOptions {
+import { OperationOptions } from '../../interface'
+
+export class PrinterOperationOptions extends OperationOptions {
   @Property()
   thingToPrint: string
 

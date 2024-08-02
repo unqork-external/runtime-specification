@@ -1,6 +1,8 @@
 import { Description, Required } from '@tsed/schema'
 
-export class DownloadFileOperationOptions {
+import { OperationOptions } from '../../interface'
+
+export class DownloadFileOperationOptions extends OperationOptions {
   @Required()
   @Description('URL to the file to be downloaded')
   url: string

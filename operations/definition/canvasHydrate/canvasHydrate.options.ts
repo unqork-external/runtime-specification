@@ -2,11 +2,9 @@ import { Default, Description, Optional, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 
-export class CanvasHydrateOperationOptions {
-  @Required()
-  @Description('key of the canvas to hydrate')
-  public targetKey: string
+import { TargetedOperationOptions } from '../../interface'
 
+export class CanvasHydrateOperationOptions extends TargetedOperationOptions {
   @Required()
   @Description('An array or an an a array in the for of a string of component definitions to hydrate the canvas')
   definitions: any[] | string

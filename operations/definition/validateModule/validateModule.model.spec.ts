@@ -13,7 +13,6 @@ describe('Operation Model: ValidateModule Tests', () => {
 
   it('Validate operation should validate appropriately', () => {
     const op = createOperation(OperationTypes.VALIDATE_MODULE, {
-      targetKey: 'd',
       moduleId: 'MODULE',
     })
     const isValid = validate(op)

@@ -1,7 +1,3 @@
-import { Description, Required } from '@tsed/schema'
+import { TargetedOperationOptions } from '../../interface'
 
-export class TableGoToPreviousPageOperationOptions {
-  @Description('Key of the Table component to change pagination position of.')
-  @Required()
-  targetKey: string
-}
+export class TableGoToPreviousPageOperationOptions extends TargetedOperationOptions {}

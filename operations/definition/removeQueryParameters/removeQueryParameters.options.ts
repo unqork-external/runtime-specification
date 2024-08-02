@@ -1,6 +1,8 @@
 import { Default, Description, Optional, Required } from '@tsed/schema'
 
-export class RemoveQueryParametersOperationOptions {
+import { OperationOptions } from '../../interface'
+
+export class RemoveQueryParametersOperationOptions extends OperationOptions {
   @Description('Parameters to remove from the URL')
   @Required()
   params: Array<string>

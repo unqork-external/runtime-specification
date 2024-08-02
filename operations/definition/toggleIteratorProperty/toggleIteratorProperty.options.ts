@@ -1,9 +1,8 @@
 import { Default, Description, Optional } from '@tsed/schema'
 
-export class ToggleIteratorPropertyOperationOptions {
-  @Description('Key of the component to expand/collapse.')
-  targetKey: string
+import { TargetedOperationOptions } from '../../interface'
 
+export class ToggleIteratorPropertyOperationOptions extends TargetedOperationOptions {
   @Description('The row path inside the `targetKey` to a node to expand/collapse.')
   rowTargetPath?: string
 

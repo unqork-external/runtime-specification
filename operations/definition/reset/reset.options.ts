@@ -1,8 +1,3 @@
-import { Description, Example, Required } from '@tsed/schema'
+import { TargetedOperationOptions } from '../../interface'
 
-export class ResetOperationOptions {
-  @Required()
-  @Example('firstNameTextField', 'grid.row(0).col(0)')
-  @Description('targetKey refers to the intended target to reset.')
-  targetKey: string
-}
+export class ResetOperationOptions extends TargetedOperationOptions {}

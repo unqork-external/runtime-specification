@@ -1,8 +1,9 @@
 import { Default, Description, Enum, Optional } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { OperationOptions } from '../../interface'
 
-export class ScrollToOptions {
+export class ScrollToOptions extends OperationOptions {
   @Optional()
   @TrimmedDescription(`
     TODO: Rename to targetKey

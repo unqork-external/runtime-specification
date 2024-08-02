@@ -1,12 +1,14 @@
 import { Optional, Property } from '@tsed/schema'
 
-export class DataWorkflowOptions {
-  @Optional()
-  targetKey?: string
+import { OperationOptions } from '../../interface'
+
+export class DataWorkflowOptions extends OperationOptions {
   @Optional()
   value?: unknown
+  // DWF Inputs have a different shape than all other operation inputs
+  // So we name them something different to make that clear
   @Property()
-  inputs: DataWorkflowInputs
+  dwfInputs: DataWorkflowInputs
   @Property()
   outputs: DataWorkflowOutputs
   @Property()

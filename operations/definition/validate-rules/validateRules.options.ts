@@ -1,13 +1,9 @@
 import { CollectionOf, Description, Example, Optional, Required, Any } from '@tsed/schema'
 
 import { ValidationRule, ValidationRuleTypes } from '../../../validations'
+import { TargetedOperationOptions } from '../../interface'
 
-export class ValidateRulesOptions {
-  @Required()
-  @Example('firstNameTextField')
-  @Description('targetKey refers to the intended target for an operation.')
-  targetKey: string
-
+export class ValidateRulesOptions extends TargetedOperationOptions {
   @Optional()
   @Any()
   @Description('Value to be validated with different types of validation handlers.')

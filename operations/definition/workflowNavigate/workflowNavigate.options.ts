@@ -1,6 +1,7 @@
 import { Description, Enum, Example, Property, Required } from '@tsed/schema'
 
 import { WorkflowNavigationActionType } from '../../../base-types'
+import { TargetedOperationOptions } from '../../interface'
 export class SuccessMessageOptions {
   @Description('The body text for the success modal.')
   successMessage: string = 'Success!'
@@ -36,10 +37,8 @@ export class ButtonOptions {
   @Description('control button disabled state when firing triggers/events')
   oneClickOnly: boolean
 }
-export class WorkflowNavigateOperationOptions {
-  @Description('The key or path to the container we intend to target for an operation')
-  targetKey: string
-
+// TODO - why is this targeted?
+export class WorkflowNavigateOperationOptions extends TargetedOperationOptions {
   @Required()
   @Enum(WorkflowNavigationActionType)
   @Description('Workflow navigation action type.')

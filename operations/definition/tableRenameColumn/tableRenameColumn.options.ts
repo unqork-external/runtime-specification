@@ -1,15 +1,8 @@
 import { Description, Example, Required } from '@tsed/schema'
 
-import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { TargetedOperationOptions } from '../../interface'
 
-export class TableRenameColumnOperationOptions {
-  @TrimmedDescription(`
-    A unique string identifier used to specify the particular table
-    or component in the application where the renaming operation is to be executed
-  `)
-  @Required()
-  targetKey: string
-
+export class TableRenameColumnOperationOptions extends TargetedOperationOptions {
   @Description('An object mapping column keys to their new labels')
   @Required()
   @Example(`

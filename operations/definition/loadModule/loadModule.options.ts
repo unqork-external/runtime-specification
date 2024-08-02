@@ -1,14 +1,16 @@
 import { Default, Description, Example, Optional, Required } from '@tsed/schema'
 
-import type {
-  BaseComponentDefinition,
-  COLLISION_HANDLER,
-  ModuleDefinition,
-  R1ComponentDefinition,
-  R1ModuleDefinition,
+import {
+  type BaseComponentDefinition,
+  type COLLISION_HANDLER,
+  type ModuleDefinition,
+  type R1ComponentDefinition,
+  type R1ModuleDefinition,
 } from '@unqork/runtime-types'
 
-export class LoadModuleOperationOptions {
+import { TargetedOperationOptions } from '../../interface'
+
+export class LoadModuleOperationOptions extends TargetedOperationOptions {
   @Description('ID corresponding to module that should be loaded.')
   moduleId?: string
 
@@ -39,10 +41,6 @@ export class LoadModuleOperationOptions {
     Support Vega or Centauri spec, will be converted to Vega before rendering
   `)
   moduleSpec?: ModuleDefinition | R1ModuleDefinition | Array<BaseComponentDefinition> | Array<R1ComponentDefinition>
-
-  @Required()
-  @Description('Target Key identifying component in which the module should be rendered.')
-  targetKey: string
 
   @Required()
   @Description('Name of the nestable in which the module should be rendered.')

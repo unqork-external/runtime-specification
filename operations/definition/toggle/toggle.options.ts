@@ -1,11 +1,8 @@
 import { Description, Example, Required } from '@tsed/schema'
 
-export class ToggleOptions {
-  @Required()
-  @Example('firstNameTextField', 'grid.row(0).col(0)')
-  @Description('targetKey refers to the intended target to manipulate.')
-  targetKey: string
+import { TargetedOperationOptions } from '../../interface'
 
+export class ToggleOptions extends TargetedOperationOptions {
   @Required()
   @Example('value', 'validation.latest')
   @Description(

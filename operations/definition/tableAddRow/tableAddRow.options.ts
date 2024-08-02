@@ -1,13 +1,10 @@
-import { Description, Example, Any, Required } from '@tsed/schema'
+import { Example, Any } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 import { trimAll } from '../../../../utilities'
+import { TargetedOperationOptions } from '../../interface'
 
-export class TableAddRowOperationOptions {
-  @Description('Key of the Table component to add a row')
-  @Required()
-  targetKey: string
-
+export class TableAddRowOperationOptions extends TargetedOperationOptions {
   @TrimmedDescription(`
     The index where we would like to place the new row. 
     Table rows are zero index-based, meaning zero represents the first position.

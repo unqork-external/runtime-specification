@@ -1,10 +1,8 @@
 import { Description, Example, Required } from '@tsed/schema'
 
-export class TraySetDisabledByOperationOptions {
-  @Required()
-  @Description('key of the tray to target')
-  targetKey: string
+import { TargetedOperationOptions } from '../../interface'
 
+export class TraySetDisabledByOperationOptions extends TargetedOperationOptions {
   @Required()
   @Description('Property to match targets to')
   @Example('key, type')

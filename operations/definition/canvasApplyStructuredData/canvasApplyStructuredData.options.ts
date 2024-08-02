@@ -1,10 +1,8 @@
-import { Default, Description, Example, Optional, Required } from '@tsed/schema'
+import { Default, Description, Example, Optional } from '@tsed/schema'
 
-export class CanvasApplyStructuredDataOperationOptions {
-  @Required()
-  @Description('key of the canvas to target')
-  targetKey: string
+import { TargetedOperationOptions } from '../../interface'
 
+export class CanvasApplyStructuredDataOperationOptions extends TargetedOperationOptions {
   @Optional()
   @Description('the id of layout you want to start collecting from')
   @Example('root')

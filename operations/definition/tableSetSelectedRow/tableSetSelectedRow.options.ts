@@ -1,13 +1,10 @@
-import { Description, Example, Required } from '@tsed/schema'
+import { Example, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 import { RowSelection } from '../../../components/muiBasicTable/selection/rowSelection'
+import { TargetedOperationOptions } from '../../interface'
 
-export class TableSetSelectedRowOperationOptions {
-  @Required()
-  @Description('Key of the Table component to target for row selection')
-  targetKey: string
-
+export class TableSetSelectedRowOperationOptions extends TargetedOperationOptions {
   @Required()
   @TrimmedDescription(`
     Row(s) to be selected.

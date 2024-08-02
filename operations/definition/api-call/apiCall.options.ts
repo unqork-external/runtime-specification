@@ -24,6 +24,7 @@ import { HTTPMethodType } from './method.type'
 import { PreRequestTransform } from './preRequestTransform'
 import { ServiceType } from './serviceType.type'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { OperationOptions } from '../../interface'
 
 export class ApiCallHeaders {
   @Optional()
@@ -48,7 +49,9 @@ export class ApiCallHeaders {
     },
   },
 })
-export class ApiCallOptions {
+export class ApiCallOptions extends OperationOptions {
+  // TODO - What is this here for?
+  @Optional()
   targetKey?: string
 
   // TODO: Put in HTTP key?

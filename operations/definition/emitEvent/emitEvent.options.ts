@@ -1,11 +1,8 @@
 import { Description, Example, Required, Optional } from '@tsed/schema'
 
-export class EmitEventOperationOptions {
-  @Optional()
-  //TODO: Should we change this at some point?
-  @Description('This is not used for this event but is required by all operation options')
-  targetKey: string
+import { OperationOptions } from '../../interface'
 
+export class EmitEventOperationOptions extends OperationOptions {
   @Required()
   @Example('myCustomEvent')
   @Description('a creator defined name of an event to fire in the system')

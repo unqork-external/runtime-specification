@@ -1,13 +1,10 @@
-import { Any, Default, Description, Example, Required } from '@tsed/schema'
+import { Any, Default, Description } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { TargetedOperationOptions } from '../../interface'
 
-export class SetComponentStateOperationOptions {
-  @Required()
-  @Example('firstNameTextField')
-  @Description('targetKey refers to the intended target to manipulate.')
-  targetKey: string
-
+// TODO - what's the point of this one? If just setting lots of properties at once, we should normalize with SET_PROPERTY
+export class SetComponentStateOperationOptions extends TargetedOperationOptions {
   @Any()
   @Description('The value refers to the intended value to mutate the intended targetKey to.')
   value: unknown

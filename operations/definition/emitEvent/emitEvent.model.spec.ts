@@ -12,7 +12,6 @@ describe('Operation Model: EmitEvent Tests', () => {
 
   it('Reset operation should validate appropriately', () => {
     const op = createOperation(OperationTypes.EMIT_EVENT, {
-      targetKey: '',
       event: 'helloEvent',
       payload: {},
     })

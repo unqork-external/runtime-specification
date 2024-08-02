@@ -1,13 +1,15 @@
 import { Any, Default, Description, Example, Optional, Property, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { OperationOptions } from '../../interface'
 
 @TrimmedDescription(`
   SET_PROPERTY will mutate a specific property on a specific target to a specific value. 
   Optionally, if shouldOverwrite is set to false and if a value is already existing on the targeted property, 
   then the Operation will do nothing and exit.
 `)
-export class SetPropertyOptions {
+export class SetPropertyOptions extends OperationOptions {
+  // TODO - When all operations also support string[], update TargetedOperationOptions and remove this
   @Required()
   @Property(String)
   @Example('firstNameTextField', 'grid.row(0).col(0)')

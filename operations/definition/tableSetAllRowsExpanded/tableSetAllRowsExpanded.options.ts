@@ -1,12 +1,9 @@
 import { Any, Description, Optional, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { TargetedOperationOptions } from '../../interface'
 
-export class TableSetAllRowsExpandedOperationOptions {
-  @Required()
-  @Description('A key of the table we are targeting for row expansion')
-  targetKey: string
-
+export class TableSetAllRowsExpandedOperationOptions extends TargetedOperationOptions {
   @Required()
   @Any('boolean', 'string')
   @TrimmedDescription(`

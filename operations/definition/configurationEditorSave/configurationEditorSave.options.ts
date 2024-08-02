@@ -1,7 +1,3 @@
-import { Description, Required } from '@tsed/schema'
+import { TargetedOperationOptions } from '../../interface'
 
-export class ConfigurationEditorSaveOperationOptions {
-  @Required()
-  @Description('key of the configurationEditor to target')
-  targetKey: string
-}
+export class ConfigurationEditorSaveOperationOptions extends TargetedOperationOptions {}

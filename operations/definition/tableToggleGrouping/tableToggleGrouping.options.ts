@@ -1,7 +1,3 @@
-import { Description, Required } from '@tsed/schema'
+import { TargetedOperationOptions } from '../../interface'
 
-export class TableToggleGroupingOperationOptions {
-  @Required()
-  @Description('Key of the Table component to enable/disable grouping.')
-  targetKey: string
-}
+export class TableToggleGroupingOperationOptions extends TargetedOperationOptions {}

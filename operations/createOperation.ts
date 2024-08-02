@@ -21,7 +21,7 @@ import { OperationTypeMap } from './typemaps/operation.typemap'
  */
 export const createOperation = <OpType extends OperationTypes>(
   type: OpType,
-  options: InstanceType<(typeof OperationTypeMap)[OpType]>['options'],
+  options: Partial<InstanceType<(typeof OperationTypeMap)[OpType]>['options']>,
   additionalArgs?: Partial<AdditionalArgs>,
 ): InstanceType<(typeof OperationTypeMap)[OpType]> => {
   const classOpType = OperationTypeMap[type]
@@ -33,7 +33,7 @@ export const createOperation = <OpType extends OperationTypes>(
       ...options,
     },
     ...additionalArgs,
-  })
+  }) as InstanceType<(typeof OperationTypeMap)[OpType]>
 }
 
 interface AdditionalArgs {

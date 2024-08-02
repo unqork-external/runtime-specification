@@ -255,25 +255,28 @@ exports[`BasicGrid Contract Tests should ensure the contract is clear 3`] = `
     "type": "object",
   },
   "InputRef": {
-    "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+    "description": "Inputs can be used to utlize dynamic values from other state within the runtime
+  within a particular execution of an operation",
     "properties": {
       "alias": {
+        "description": "Optionally alias resolved value for use in formulas",
         "type": "string",
       },
       "propertyPath": {
+        "description": "Path to property on target to resolve",
         "type": "string",
       },
       "required": {
+        "description": "If true, operation won't execute if targeted property has no value",
         "type": "boolean",
       },
       "silent": {
+        "description": "Not used in later formulas, only used to determine if operation should execute",
         "type": "boolean",
       },
       "targetKey": {
+        "description": "Key of target this input depends on",
         "minLength": 1,
-        "type": "string",
-      },
-      "type": {
         "type": "string",
       },
     },
