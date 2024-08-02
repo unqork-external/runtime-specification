@@ -1,7 +1,6 @@
 import { Default, Description, Optional, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
-
 import { TargetedOperationOptions } from '../../interface'
 
 export class CanvasHydrateOperationOptions extends TargetedOperationOptions {
