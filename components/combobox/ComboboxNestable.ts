@@ -4,7 +4,7 @@ import { Nestable, NestableType } from '../../nestables'
 
 export class ComboboxIconsNestable extends Nestable {
   @Property()
-  propertyName: string = 'childIds'
+  propertyName: string = 'iconsKeys'
 
   @Property()
   type: NestableType = NestableType.ARRAY
@@ -16,5 +16,5 @@ export class ComboboxIconsNestable extends Nestable {
 export class ComboboxNestable {
   @Required()
   @Description('Nestable configuration for the `childIds` property.')
-  childIds: ComboboxIconsNestable = new ComboboxIconsNestable()
+  iconsKeys: ComboboxIconsNestable = new ComboboxIconsNestable()
 }

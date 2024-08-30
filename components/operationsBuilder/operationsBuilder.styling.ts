@@ -27,6 +27,10 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.signals]: CssClassOrProps;
 
+  @Description('Adds styles to signal selector label in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.signalSelectorLabel]: CssClassOrProps;
+
   @Description('Adds styles to signal selector in Ops Builder.')
   @Css()
   [OpsBuilderTargets.signalSelector]: CssClassOrProps;
@@ -38,6 +42,14 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Description('Adds styles to signals dropdown option in Ops Builder.')
   @Css()
   [OpsBuilderTargets.signalOption]: CssClassOrProps;
+
+  @Description('Adds styles to signals dropdown option label in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.signalOptionLabel]: CssClassOrProps;
+
+  @Description('Adds styles to signals dropdown option description in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.signalOptionDescription]: CssClassOrProps;
 
   @Description('Adds styles to Add Signal button in Ops Builder.')
   @Css()
@@ -161,7 +173,23 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
 
   @Description('Adds styles to astericks from unsupported signal item label in Ops Builder.')
   @Css()
-  [OpsBuilderTargets.unsupportedSignalAsterisks]: CssClassOrProps
+  [OpsBuilderTargets.unsupportedSignalAsterisks]: CssClassOrProps;
+
+  @Description('Adds styles to welcome screen in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.welcomeScreen]: CssClassOrProps;
+
+  @Description('Adds styles to image container in welcome screen in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.welcomeScreenImage]: CssClassOrProps;
+
+  @Description('Adds styles to text in welcome screen in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.welcomeScreenText]: CssClassOrProps;
+
+  @Description('Adds styles to subtext in welcome screen in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.welcomeScreenSubtext]: CssClassOrProps
 }
 
 @Description('An object containing styling for the component.')

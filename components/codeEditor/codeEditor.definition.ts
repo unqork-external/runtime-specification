@@ -1,4 +1,4 @@
-import { Required, DiscriminatorValue, Description, Property } from '@tsed/schema'
+import { Required, DiscriminatorValue, Description, Property, Optional, Default } from '@tsed/schema'
 
 import { CodeEditorFormat } from './codeEditorFormat'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
@@ -7,20 +7,31 @@ import { InputField } from '../../component-composition/input/component.input'
 
 @DiscriminatorValue('codeEditor')
 export class CodeEditorComponentDefinition extends BaseComponentDefinition {
-  @Property(InputField)
-  @Description('Field settings of the codeEditor.')
+  @Description('Field settings of the codeEditor')
   field: InputField = new InputField()
 
-  @Property(Display)
+  @Property()
   display: Display = new Display()
 
   @Required()
   type: 'codeEditor' = 'codeEditor' as const
 
-  @Description('Code editor value')
-  declare value: string
+  @Description('Parsed value based on language format')
+  declare value: string | object
 
-  @Property(CodeEditorFormat)
   @Description('Formatting options')
   format: CodeEditorFormat = new CodeEditorFormat()
+
+  @Optional()
+  @Default(false)
+  @Description('Value as object')
+  valueIsObject: boolean = false
+
+  @Optional()
+  @Description('The value read by CodeMirror component')
+  controlValue?: string
+
+  @Optional()
+  @Description('Error message when parsing a JSON object')
+  errorMessage?: string
 }

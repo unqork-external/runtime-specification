@@ -1,6 +1,6 @@
 import { Default, Description } from '@tsed/schema'
 
-type SUPPORTED_LANGUAGES = 'json' | 'xml' | 'njk' | 'default'
+export type SUPPORTED_LANGUAGES = 'json' | 'xml' | 'njk' | 'default'
 
 export class CodeEditorFormat {
   @Description('Tab size for code editor')

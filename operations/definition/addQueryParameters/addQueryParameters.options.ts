@@ -1,8 +1,6 @@
 import { Default, Description, Optional, Required } from '@tsed/schema'
 
-import { OperationOptions } from '../../interface'
-
-export class AddQueryParametersOperationOptions extends OperationOptions {
+export class AddQueryParametersOperationOptions {
   @Description('Parameters to add to the URL')
   @Required()
   params: Record<string, string | number | boolean>

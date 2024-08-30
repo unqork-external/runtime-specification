@@ -1,9 +1,13 @@
 import { Description, Example, Optional, Required } from '@tsed/schema'
 
 import { CanvasItemStatus } from '../../../components'
-import { TargetedOperationOptions } from '../../interface'
 
-export class CanvasSetItemStatusOperationOptions extends TargetedOperationOptions {
+// TODO - update to TargetedOperationOptions once †hat PR is merged
+export class CanvasSetItemStatusOperationOptions {
+  @Description('Target key of the canvas component that holds this item')
+  @Required()
+  targetKey: string
+
   @Description('ID of the item to set this status on')
   @Example('f7bb5ebd-fcea-49f9-9cff-44fe81b51152')
   @Optional()

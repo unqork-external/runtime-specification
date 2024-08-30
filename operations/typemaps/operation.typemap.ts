@@ -48,6 +48,10 @@ import { SetModalOperation } from '../definition/setModal'
 import { SetQueryParametersOperation } from '../definition/setQueryParameters'
 import { SetStylingOperation } from '../definition/setStyling'
 import { SetStylingTargetOperation } from '../definition/setStylingTarget'
+import { SpreadsheetInputInsertColumnsOperation } from '../definition/spreadsheetInputInsertColumns'
+import { SpreadsheetInputInsertRowsOperation } from '../definition/spreadsheetInputInsertRows'
+import { SpreadsheetInputRemoveColumnOperation } from '../definition/spreadsheetInputRemoveColumn'
+import { SpreadsheetInputRemoveRowOperation } from '../definition/spreadsheetInputRemoveRow'
 import { SubmitOperation } from '../definition/submit'
 import { TableAddColumnOperation } from '../definition/tableAddColumn'
 import { TableAddRowOperation } from '../definition/tableAddRow'
@@ -96,6 +100,11 @@ import { OperationTypes } from '../enums/operation-types.enum'
 export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
+
+  [OperationTypes.SPREADSHEET_INPUT_REMOVE_COLUMN]: SpreadsheetInputRemoveColumnOperation,
+  [OperationTypes.SPREADSHEET_INPUT_REMOVE_ROW]: SpreadsheetInputRemoveRowOperation,
+  [OperationTypes.SPREADSHEET_INPUT_INSERT_ROWS]: SpreadsheetInputInsertRowsOperation,
+  [OperationTypes.SPREADSHEET_INPUT_INSERT_COLUMNS]: SpreadsheetInputInsertColumnsOperation,
   [OperationTypes.CANVAS_SET_ITEM_STATUS]: CanvasSetItemStatusOperation,
   [OperationTypes.CLEAR_QUERY_PARAMETERS]: ClearQueryParametersOperation,
   [OperationTypes.REMOVE_QUERY_PARAMETERS]: RemoveQueryParametersOperation,

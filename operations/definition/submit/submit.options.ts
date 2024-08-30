@@ -1,8 +1,6 @@
 import { Description, Example, Required } from '@tsed/schema'
 
-import { OperationOptions } from '../../interface'
-
-export class SubmitOptions extends OperationOptions {
+export class SubmitOptions {
   @Required()
   @Description('Key of a target entity')
   @Example('submissionData')

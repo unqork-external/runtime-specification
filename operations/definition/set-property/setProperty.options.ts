@@ -1,15 +1,13 @@
 import { Default, Description, Example, Optional, Property, Required } from '@tsed/schema'
 
 import { TrimmedDescription, Unknown } from '../../../../decorators/schema'
-import { OperationOptions } from '../../interface'
 
 @TrimmedDescription(`
-  SET_PROPERTY will mutate a specific property on a specific target to a specific value. 
-  Optionally, if shouldOverwrite is set to false and if a value is already existing on the targeted property, 
+  SET_PROPERTY will mutate a specific property on a specific target to a specific value.
+  Optionally, if shouldOverwrite is set to false and if a value is already existing on the targeted property,
   then the Operation will do nothing and exit.
 `)
-export class SetPropertyOptions extends OperationOptions {
-  // TODO - When all operations also support string[], update TargetedOperationOptions and remove this
+export class SetPropertyOptions {
   @Required()
   @Property(String)
   @Example('firstNameTextField', 'grid.row(0).col(0)')
@@ -38,9 +36,17 @@ export class SetPropertyOptions extends OperationOptions {
   @Optional()
   @TrimmedDescription(
     `
-    Temporary way to resolve a value as syntax. Currently only used for auto generation of CSMs. 
-    Runtime team to revisit.  
+    Temporary way to resolve a value as syntax. Currently only used for auto generation of CSMs.
+    Runtime team to revisit.
   `,
   )
   resolveSyntax?: boolean
+
+  @Optional()
+  @TrimmedDescription(
+    `
+    If true, SET_PROPERTY will skip interpolation
+  `,
+  )
+  skipInterpolation?: boolean
 }

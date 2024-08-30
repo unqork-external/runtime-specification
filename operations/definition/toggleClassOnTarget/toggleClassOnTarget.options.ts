@@ -1,8 +1,15 @@
 import { Description, Example } from '@tsed/schema'
 
-import { TargetedOperationOptions } from '../../interface'
+import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 
-export class ToggleClassOnTargetOperationOptions extends TargetedOperationOptions {
+export class ToggleClassOnTargetOperationOptions {
+  @TrimmedDescription(`
+    Target component(s) that will receive the \`styling\` update.
+    Engine Syntax is supported as a way to access the intended targets. 
+  `)
+  @Example('styled-component', 'panel.*')
+  targetKey: string
+
   @Description('The styling target where the classname will toggle.')
   @Example('root', 'tableHeaderCell')
   stylingTarget: string

@@ -1,9 +1,12 @@
 import { Description, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
-import { TargetedOperationOptions } from '../../interface'
 
-export class TableSetNavigateDownOnPressEnterOperationOptions extends TargetedOperationOptions {
+export class TableSetNavigateDownOnPressEnterOperationOptions {
+  @Required()
+  @Description('The key of the Table component to set navigation options.')
+  targetKey: string
+
   @Required()
   @TrimmedDescription(`
     When enabled, pressing Enter on a cell in edit mode sets the focus to the cell immediately below.

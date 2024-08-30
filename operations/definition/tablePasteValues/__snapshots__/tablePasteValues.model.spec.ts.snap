@@ -3,69 +3,14 @@
 exports[`Operation Model: TablePasteValues Tests TablePasteValues Model 1`] = `
 {
   "definitions": {
-    "InputRef": {
-      "description": "Inputs can be used to utlize dynamic values from other state within the runtime
-  within a particular execution of an operation",
-      "properties": {
-        "alias": {
-          "description": "Optionally alias resolved value for use in formulas",
-          "type": "string",
-        },
-        "propertyPath": {
-          "description": "Path to property on target to resolve",
-          "type": "string",
-        },
-        "required": {
-          "description": "If true, operation won't execute if targeted property has no value",
-          "type": "boolean",
-        },
-        "silent": {
-          "description": "Not used in later formulas, only used to determine if operation should execute",
-          "type": "boolean",
-        },
-        "targetKey": {
-          "description": "Key of target this input depends on",
-          "minLength": 1,
-          "type": "string",
-        },
-      },
-      "required": [
-        "targetKey",
-      ],
-      "type": "object",
-    },
     "TablePasteValuesOperationOptions": {
       "properties": {
-        "inputs": {
-          "description": "
-    Inputs to be used within formulas in other operation options
-  ",
-          "items": {
-            "$ref": "#/definitions/InputRef",
-          },
-          "type": "array",
-        },
         "pasteMode": {
           "description": "Specifies how we should treat the values already present in the Table. Append: Will append the data in the clipboard to Tables' current values. Replace: Will replace Tables' current values with the clipboard data.",
           "type": "string",
         },
-        "shouldExecute": {
-          "description": "
-    Conditionally execute this operation based on a formula.
-    Can set to false to temporarily disabled when debugging
-  ",
-          "type": [
-            "string",
-            "boolean",
-          ],
-        },
         "targetKey": {
-          "description": "Key or path that this operation should target or operate upon",
-          "examples": [
-            "myComponent",
-            "panel.*",
-            "grid.row(#).col(name)",
-          ],
+          "description": "Key of the Table component to paste the values from the clipboard.",
           "minLength": 1,
           "type": "string",
         },

@@ -12,7 +12,47 @@ describe('Clear Operation Model Test', () => {
   })
 
   it('should match this JSON Schema', () => {
-    expect(schema).toMatchSnapshot()
+    expect(schema).toStrictEqual({
+      definitions: {
+        ClearOptions: {
+          properties: {
+            DO_NOT_USE_ignoreChildComponentTypes: {
+              description: 'List of component types to ignore when the clear operation runs.',
+              examples: [['textfield', 'textarea']],
+              type: 'array',
+            },
+            targetKey: {
+              description: 'key of target to apply the clear operation',
+              examples: ['textfield'],
+              minLength: 1,
+              type: 'string',
+            },
+          },
+          required: ['targetKey'],
+          type: 'object',
+        },
+      },
+      properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
+        options: {
+          $ref: '#/definitions/ClearOptions',
+        },
+        type: {
+          const: 'CLEAR',
+          examples: ['CLEAR'],
+          type: 'string',
+        },
+        name: {
+          description: 'Name of the operation',
+          type: 'string',
+        },
+      },
+      required: ['options'],
+      type: 'object',
+    })
   })
 
   it('should validate appropriately', () => {

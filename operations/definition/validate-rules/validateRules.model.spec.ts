@@ -13,7 +13,98 @@ describe('Validate Rules', () => {
   })
 
   it('should match this JSON Schema', () => {
-    expect(schema).toMatchSnapshot()
+    expect(schema).toStrictEqual({
+      type: 'object',
+      properties: {
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
+        options: {
+          $ref: '#/definitions/ValidateRulesOptions',
+        },
+        type: {
+          const: 'VALIDATE_RULES',
+          examples: ['VALIDATE_RULES'],
+          type: 'string',
+        },
+        name: {
+          description: 'Name of the operation',
+          type: 'string',
+        },
+      },
+      definitions: {
+        ValidateRulesOptions: {
+          properties: {
+            rules: {
+              description: 'A list of validation rules.',
+              examples: [
+                [
+                  {
+                    errorMessage: 'I am required',
+                    type: 'required',
+                    validation: {
+                      required: true,
+                    },
+                  },
+                ],
+              ],
+              items: {
+                $ref: '#/definitions/ValidationRule',
+              },
+              type: 'array',
+            },
+            targetKey: {
+              description: 'targetKey refers to the intended target for an operation.',
+              examples: ['firstNameTextField'],
+              minLength: 1,
+              type: 'string',
+            },
+            value: {
+              description: 'Value to be validated with different types of validation handlers.',
+              type: ['null', 'integer', 'number', 'string', 'boolean', 'array', 'object'],
+            },
+          },
+          required: ['targetKey', 'rules'],
+          type: 'object',
+        },
+        ValidationRule: {
+          type: 'object',
+          properties: {
+            errorMessage: {
+              description: 'What message to show when this rule is not met',
+              type: 'string',
+            },
+            type: {
+              description: 'What type of validation rule is this',
+              type: 'string',
+              enum: [
+                'required',
+                'maxLength',
+                'minLength',
+                'arrayMinLength',
+                'arrayMaxLength',
+                'pattern',
+                'min',
+                'max',
+                'mask',
+                'number',
+                'dateinput',
+                'isBeforeDate',
+                'isAfterDate',
+                'customError',
+                'isEmail',
+              ],
+            },
+            validation: {
+              description: 'Nested validation record',
+              type: 'object',
+            },
+          },
+        },
+      },
+      required: ['options'],
+    })
   })
 
   it('Validate rule operation should validate appropriately', () => {

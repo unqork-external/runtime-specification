@@ -1,8 +1,10 @@
 import { Description, Required } from '@tsed/schema'
 
-import { TargetedOperationOptions } from '../../interface'
+export class TableSetRowExpandedOperationOptions {
+  @Required()
+  @Description('Key of the Table component to target for row expansion.')
+  targetKey: string
 
-export class TableSetRowExpandedOperationOptions extends TargetedOperationOptions {
   @Required()
   @Description('The key of the parent row group to expand or collapse.')
   targetGroupRow: string

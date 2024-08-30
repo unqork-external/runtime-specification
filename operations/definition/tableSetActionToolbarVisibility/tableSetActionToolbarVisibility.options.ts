@@ -1,8 +1,10 @@
 import { Any, Description, Optional, Required } from '@tsed/schema'
 
-import { TargetedOperationOptions } from '../../interface'
+export class TableSetActionToolbarVisibilityOperationOptions {
+  @Required()
+  @Description('Key of the table component to set action toolbar visibility')
+  targetKey: string
 
-export class TableSetActionToolbarVisibilityOperationOptions extends TargetedOperationOptions {
   @Optional()
   @Description('Set the visibility of the top toolbar in the Table component.')
   @Any(Boolean, String)

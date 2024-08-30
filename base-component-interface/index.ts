@@ -5,5 +5,4 @@ export type { ComponentWithComponents } from './common-interface-types/component
 export type { ComponentWithDisplay } from './common-interface-types/componentWithDisplay'
 export type { ComponentWithNestables } from './common-interface-types/componentWithNestables'
 export type { ComponentWithStyling } from './common-interface-types/componentWithStyling'
-export * from './common-interface-types/anyComponentDefinition'
 export { CommonSimpleViewModel, type ComponentWithSimpleView } from './common-interface-types/componentWithSimpleView'

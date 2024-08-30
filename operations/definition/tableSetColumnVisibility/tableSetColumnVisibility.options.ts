@@ -2,9 +2,12 @@ import { Description, Enum, Required } from '@tsed/schema'
 
 import { OneOrMany } from '../../../../decorators/schema/oneOrMany.decorator'
 import { ColumnVisibility } from '../../../components/muiBasicTable/columns/visibility/columnVisibility'
-import { TargetedOperationOptions } from '../../interface'
 
-export class TableSetColumnVisibilityOptions extends TargetedOperationOptions {
+export class TableSetColumnVisibilityOptions {
+  @Required()
+  @Description('Key of the Table component to target for column visibility')
+  targetKey: string
+
   @Required()
   @Description('The column(s) to set visibility for')
   @OneOrMany('string')

@@ -1,8 +1,10 @@
-import { Description, Example } from '@tsed/schema'
+import { Description, Example, Required } from '@tsed/schema'
 
-import { TargetedOperationOptions } from '../../interface'
+export class NavigationOperationOptions {
+  @Required()
+  @Description('targetKey refers to the intended target to manipulate.')
+  targetKey: string
 
-export class NavigationOperationOptions extends TargetedOperationOptions {
   @Description('Value refers to what type of the action to do.')
   @Example('next', 'previous', 'draft', 'submit')
   value?: string

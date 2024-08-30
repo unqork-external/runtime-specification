@@ -1,6 +1,5 @@
-import { TargetedOperationOptions } from '../../interface'
-
-export class ConfigurationEditorToggleReflexiveInputOperationOptions extends TargetedOperationOptions {
+export class ConfigurationEditorToggleReflexiveInputOperationOptions {
+  target: string
   pathToValue: string
   expectedResult: unknown
 }

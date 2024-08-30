@@ -1,6 +1,7 @@
 import { Default, Description, Optional } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import type { CssClassOrProps } from '../../../styling'
 
 export class DndSwimlanesLayoutControls {
   @Optional()
@@ -20,4 +21,8 @@ export class DndSwimlanesLayoutControls {
     When false, the card has a disabled appearance, is not draggable, and all child components have 'display.interactive' set to false. 
   `)
   interactive: boolean = true
+
+  @Optional()
+  @Description('Classname or style object for an individual card')
+  styling?: CssClassOrProps
 }

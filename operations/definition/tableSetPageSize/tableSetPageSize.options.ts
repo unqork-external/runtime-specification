@@ -1,8 +1,10 @@
 import { Any, Description, Required } from '@tsed/schema'
 
-import { TargetedOperationOptions } from '../../interface'
+export class TableSetPageSizeOperationOptions {
+  @Required()
+  @Description('The key of the Table component to set page size.')
+  targetKey: string
 
-export class TableSetPageSizeOperationOptions extends TargetedOperationOptions {
   @Required()
   @Description('Sets the number of rows displayed per page.')
   @Any('number', 'string')

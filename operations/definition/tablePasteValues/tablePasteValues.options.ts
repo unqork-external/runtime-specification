@@ -1,8 +1,13 @@
+import { Description, Required } from '@tsed/schema'
+
 import { TablePasteMode } from './tablePasteMode.enum'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
-import { TargetedOperationOptions } from '../../interface'
 
-export class TablePasteValuesOperationOptions extends TargetedOperationOptions {
+export class TablePasteValuesOperationOptions {
+  @Description('Key of the Table component to paste the values from the clipboard.')
+  @Required()
+  targetKey: string
+
   @TrimmedDescription(`
     Specifies how we should treat the values already present in the Table.
     Append: Will append the data in the clipboard to Tables' current values.

@@ -1,3 +1,8 @@
-import { TargetedOperationOptions } from '../../interface'
+import { Description, Example, Required } from '@tsed/schema'
 
-export class FocusOperationOptions extends TargetedOperationOptions {}
+export class FocusOperationOptions {
+  @Required()
+  @Description('key of target')
+  @Example('textfield')
+  declare targetKey: string
+}

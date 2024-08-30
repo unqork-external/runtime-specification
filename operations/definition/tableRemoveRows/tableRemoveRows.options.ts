@@ -1,8 +1,10 @@
 import { Description, Required, CollectionOf } from '@tsed/schema'
 
-import { TargetedOperationOptions } from '../../interface'
+export class TableRemoveRowsOperationOptions {
+  @Description('Key of the table component to remove rows')
+  @Required()
+  targetKey: string
 
-export class TableRemoveRowsOperationOptions extends TargetedOperationOptions {
   @Description('Index(es) for the row(s) we want to remove')
   @Required()
   @CollectionOf(Number)

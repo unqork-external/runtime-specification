@@ -14,7 +14,64 @@ describe('setValidation', () => {
   })
 
   it('should match JSON schema', () => {
-    expect(schema).toMatchSnapshot()
+    expect(schema).toStrictEqual({
+      type: 'object',
+      properties: {
+        type: { type: 'string', const: 'SET_VALIDATION_RULE', examples: ['SET_VALIDATION_RULE'] },
+        name: { type: 'string', description: 'Name of the operation' },
+        options: { $ref: '#/definitions/SetValidationRuleOptions' },
+        creatorSummary: {
+          description: 'A detailed summary of the operation',
+          type: 'string',
+        },
+      },
+      required: ['options'],
+      definitions: {
+        SetValidationRuleOptions: {
+          type: 'object',
+          properties: {
+            targetKey: {
+              type: 'string',
+              description: 'Key of target to apply set validation rule',
+              minLength: 1,
+            },
+            rule: { $ref: '#/definitions/ValidationRule' },
+          },
+          required: ['targetKey'],
+        },
+        ValidationRule: {
+          type: 'object',
+          properties: {
+            type: {
+              type: 'string',
+              description: 'What type of validation rule is this',
+              enum: [
+                'required',
+                'maxLength',
+                'minLength',
+                'arrayMinLength',
+                'arrayMaxLength',
+                'pattern',
+                'min',
+                'max',
+                'mask',
+                'number',
+                'dateinput',
+                'isBeforeDate',
+                'isAfterDate',
+                'customError',
+                'isEmail',
+              ],
+            },
+            errorMessage: {
+              type: 'string',
+              description: 'What message to show when this rule is not met',
+            },
+            validation: { type: 'object', description: 'Nested validation record' },
+          },
+        },
+      },
+    })
   })
 
   it('should validate submit operation with all required keys', () => {

@@ -3,49 +3,9 @@
 exports[`Set Property Model should match this JSON Schema 1`] = `
 {
   "definitions": {
-    "InputRef": {
-      "description": "Inputs can be used to utlize dynamic values from other state within the runtime
-  within a particular execution of an operation",
-      "properties": {
-        "alias": {
-          "description": "Optionally alias resolved value for use in formulas",
-          "type": "string",
-        },
-        "propertyPath": {
-          "description": "Path to property on target to resolve",
-          "type": "string",
-        },
-        "required": {
-          "description": "If true, operation won't execute if targeted property has no value",
-          "type": "boolean",
-        },
-        "silent": {
-          "description": "Not used in later formulas, only used to determine if operation should execute",
-          "type": "boolean",
-        },
-        "targetKey": {
-          "description": "Key of target this input depends on",
-          "minLength": 1,
-          "type": "string",
-        },
-      },
-      "required": [
-        "targetKey",
-      ],
-      "type": "object",
-    },
     "SetPropertyOptions": {
       "description": "SET_PROPERTY will mutate a specific property on a specific target to a specific value. Optionally, if shouldOverwrite is set to false and if a value is already existing on the targeted property, then the Operation will do nothing and exit.",
       "properties": {
-        "inputs": {
-          "description": "
-    Inputs to be used within formulas in other operation options
-  ",
-          "items": {
-            "$ref": "#/definitions/InputRef",
-          },
-          "type": "array",
-        },
         "property": {
           "description": "\`property\` refers to the intended property to mutate. This can be represented as a JSONPath expression.",
           "examples": [
@@ -59,19 +19,13 @@ exports[`Set Property Model should match this JSON Schema 1`] = `
           "description": "Temporary way to resolve a value as syntax. Currently only used for auto generation of CSMs. Runtime team to revisit.",
           "type": "boolean",
         },
-        "shouldExecute": {
-          "description": "
-    Conditionally execute this operation based on a formula.
-    Can set to false to temporarily disabled when debugging
-  ",
-          "type": [
-            "string",
-            "boolean",
-          ],
-        },
         "shouldOverwrite": {
           "default": true,
           "description": "shouldOverwrite refers to the type of behavior that SET_PROPERTY should emulate. If true, SET_PROPERTY will overwrite the value located at the intended property of the target regardless of if the intended property is set. If false, SET_PROPERTY will check if the property's value is set, and if so, SET_PROPERTY will exit.",
+          "type": "boolean",
+        },
+        "skipInterpolation": {
+          "description": "If true, SET_PROPERTY will skip interpolation",
           "type": "boolean",
         },
         "targetKey": {

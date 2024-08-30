@@ -176,303 +176,963 @@ exports[`Canvas Contract Tests should ensure the contract is clear 3`] = `
     "properties": {
       "canvas": {
         "description": "Adds styles to the div wrapping the canvas.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasButtonsWrapper": {
         "description": "Adds styles to the button on the top of the canvas.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasEmpty": {
         "description": "Adds styles to for the div wrapping the empty state for the canvas.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasItemHeader": {
         "description": "Adds styles to the div wrapping a Canvas Item Header",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasItemHeaderBadgeIcon": {
         "description": "Adds styles to the icon in the badge ui in the canvas item label.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasItemHeaderBadgeRoot": {
         "description": "Adds styles to the badge ui in the canvas item label.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasItemHeaderBadgeText": {
         "description": "Adds styles to the text content in the badge ui in the canvas item label.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasItemHeaderCollapse": {
         "description": "Adds styles to the collapse icon in the canvas item header for nestable components.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasItemHeaderIcon": {
         "description": "Adds styles to the icon in the canvas item header.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasItemHeaderLabel": {
         "description": "Adds styles to the icon in the canvas item label.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasItemHeaderType": {
         "description": "Adds styles to the icon in the canvas item type.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasItemHeaderWrapper": {
         "description": "Adds styles to the div wrapper around the canvas item header",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "canvasItemStatusMessage": {
         "description": "Adds styles to the to the wrapper around the canvas item status message.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "dragPreview": {
         "description": "Adds styles to the div wrapping the dragPreview",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "dropzone": {
         "description": "Adds styles to the div of a dropzone in the canvas.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "dropzoneWrapper": {
         "description": "Adds styles to the div wrapping the div of a dropzone in the canvas.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationActionButton": {
         "description": "Adds styles to the representationActionButton for the canvas component.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationActionButtonPopoverContent": {
         "description": "Adds styles to the representationActionButtonPopoverContent for the canvas component.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationActionButtonPopoverKeyboardShortcut": {
         "description": "Adds styles to the representationActionButtonPopoverKeyboardShortcut for the canvas component.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationActionButtonPopoverLabel": {
         "description": "Adds styles to the representationActionButtonPopoverLabel for the canvas component.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationActionButtonPopoverRoot": {
         "description": "Adds styles to the representationActionButtonPopoverRoot for the canvas component.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationActionButtonRoot": {
         "description": "Adds styles to the representationActionButtonRoot for the canvas component.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationButtonsDisplayText": {
         "description": "Adds styles to the text in the representation button.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationButtonsOpenEdit": {
         "description": "Adds styles to the button that toggles edit in the representation buttons.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationButtonsOpenMenu": {
         "description": "Adds styles to the button that opens the representation button menu.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationButtonsWrapper": {
         "description": "Adds styles to the representationButtonsWrapper for the canvas component.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationCommentSectionWrapper": {
         "description": "Adds styles to the wrapper around the comment section in the representation information.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationInformationDropdown": {
         "description": "Adds styles to the wrapper around the representation information.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationInformationHeader": {
         "description": "Adds styles to the wrapper around the representation information header.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationInformationItem": {
         "description": "Adds styles to the to the wrapper around the representation information item.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationInformationItemText": {
         "description": "Adds styles to the to the wrapper around the representation information text within an item.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationInformationOpenButton": {
         "description": "Adds styles to the button that toggles the representation information state.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationInformationSectionWrapper": {
         "description": "Adds styles to the wrapper around a section in the representation information.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationInformationWrapper": {
         "description": "Adds styles to the wrapper around the representation information.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationInnerDropZoneWrapper": {
         "description": "Adds styles to the outer div wrapper the inner dropzone.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationOnClickWrapper": {
         "description": "Adds styles to the div responsible for onClick edit of representation",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationViewWrapper": {
         "description": "Adds styles to the div wrapping a representation.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "representationWrapper": {
         "description": "Adds styles to the div wrapper of a representation.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "root": {
         "description": "Adds styles to the root div for the canvas component.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
     },
     "type": "object",
   },
   "InputRef": {
-    "description": "Inputs can be used to utlize dynamic values from other state within the runtime
-  within a particular execution of an operation",
+    "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
     "properties": {
       "alias": {
-        "description": "Optionally alias resolved value for use in formulas",
         "type": "string",
       },
       "propertyPath": {
-        "description": "Path to property on target to resolve",
         "type": "string",
       },
       "required": {
-        "description": "If true, operation won't execute if targeted property has no value",
         "type": "boolean",
       },
       "silent": {
-        "description": "Not used in later formulas, only used to determine if operation should execute",
         "type": "boolean",
       },
       "targetKey": {
-        "description": "Key of target this input depends on",
         "minLength": 1,
+        "type": "string",
+      },
+      "type": {
         "type": "string",
       },
     },

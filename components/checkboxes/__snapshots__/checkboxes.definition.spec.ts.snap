@@ -292,128 +292,434 @@ exports[`Checkboxes Contract Tests should ensure the contract is clear 3`] = `
     "properties": {
       "checkbox": {
         "description": "Adds styles to Checkboxes checkbox elements.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "checkboxColumns": {
         "description": "Adds styles to Checkboxes checkbox column elements.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "checkboxColumnsWrapper": {
         "description": "Adds styles to Checkboxes checkbox columns wrapper element.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "checkboxLabel": {
         "description": "Adds styles to Checkboxes checkbox label elements.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "checkboxLabelText": {
         "description": "Adds styles to Checkboxes checkbox label text elements.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "checkboxLabelWrapper": {
         "description": "Adds styles to Checkboxes checkbox label wrapper elements.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "checkboxWrapper": {
         "description": "Adds styles to Checkboxes checkbox wrapper elements.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "errorsFieldError": {
         "description": "Adds styles to Errors Field error root element, which is rendered within the LI elements.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "errorsRoot": {
         "description": "Adds styles to Errors component root, which is rendered within the Checkboxes component.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "errorsUnorderedList": {
         "description": "Adds styles to Errors component UL element.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "errorsUnorderedListItem": {
         "description": "Adds styles to Errors component LI elements.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "helperText": {
         "description": "Adds styles to Checkboxes helper text element.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "label": {
         "description": "Adds styles to Checkboxes label element.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "readOnly": {
         "description": "Adds styles to checkboxes read only component.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "root": {
         "description": "Adds styles to checkboxes root ComponentWrapper.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "subLabel": {
         "description": "Adds styles to Checkboxes sub-label element.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "tooltipButton": {
         "description": "Adds styles to Checkboxes tooltip button element.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "tooltipPopover": {
         "description": "Adds styles to Checkboxes tooltip popover element.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
     },
@@ -503,28 +809,25 @@ exports[`Checkboxes Contract Tests should ensure the contract is clear 3`] = `
     "type": "object",
   },
   "InputRef": {
-    "description": "Inputs can be used to utlize dynamic values from other state within the runtime
-  within a particular execution of an operation",
+    "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
     "properties": {
       "alias": {
-        "description": "Optionally alias resolved value for use in formulas",
         "type": "string",
       },
       "propertyPath": {
-        "description": "Path to property on target to resolve",
         "type": "string",
       },
       "required": {
-        "description": "If true, operation won't execute if targeted property has no value",
         "type": "boolean",
       },
       "silent": {
-        "description": "Not used in later formulas, only used to determine if operation should execute",
         "type": "boolean",
       },
       "targetKey": {
-        "description": "Key of target this input depends on",
         "minLength": 1,
+        "type": "string",
+      },
+      "type": {
         "type": "string",
       },
     },

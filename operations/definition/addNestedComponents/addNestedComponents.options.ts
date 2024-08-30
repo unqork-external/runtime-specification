@@ -1,15 +1,9 @@
-import { CollectionOf, Default, Description, Optional } from '@tsed/schema'
+import { CollectionOf, Default, Description } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
-import { AnyComponentDefinition } from '../../../base-component-interface'
 import { BaseComponentDefinition } from '../../../base-component-interface/base.component.definition'
-import { OperationOptions } from '../../interface'
 
-export class AddNestedComponentsOperationOptions extends OperationOptions {
-  @Optional()
-  @Description('Key or path that this operation should target or operate upon')
-  targetKey?: string
-
+export class AddNestedComponentsOperationOptions {
   @TrimmedDescription(`
     The new API to replace the existing options. Cannot replace the existing options due to:
     1. lack of versioning
@@ -18,6 +12,9 @@ export class AddNestedComponentsOperationOptions extends OperationOptions {
     Adding by groups optimizes the amount of writing we'll do.
   `)
   byGroup?: AddByGroup[]
+
+  @Description('Key of the component to add nested components to.')
+  targetKey?: string
 
   @Description('Key of the nestable in which the new components should be added.')
   nestable?: string

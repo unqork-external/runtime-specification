@@ -36,9 +36,8 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   initialSignalTypes: SignalOption[] = []
 
   @Optional()
-  @Default('')
-  @Description('Type of the signal selected from the Signals or Events dropdown')
-  selectedSignalType: string = ''
+  @Description('The selected signal in Signals or Events dropdown')
+  selectedSignal?: MultiSelectOptionModel
 
   @Optional()
   @Description('Signal selected from Signals or Events list')

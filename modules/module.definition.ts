@@ -1,5 +1,6 @@
 import { CollectionOf, Description, Example, OneOf, Optional, Required } from '@tsed/schema'
 
+import { ModuleSettings } from './module.settings'
 import { TrimmedDescription } from '../../decorators/schema/trimmedDescription.decorator'
 import { trimAll } from '../../utilities'
 import { BaseComponentDefinition } from '../base-component-interface/base.component.definition'
@@ -16,7 +17,7 @@ export class ModuleDefinition {
   @Required()
   @Example('658088ff5096efc1899835e7')
   @TrimmedDescription(`
-    Unqork Module Id which refers to a bundle of components. 
+    Unqork Module Id which refers to a bundle of components.
     Vega additionally contains other objects for modifying runtime behavior.
   `)
   id: string
@@ -24,7 +25,7 @@ export class ModuleDefinition {
   @Required()
   @Example('Module-Name')
   @TrimmedDescription(`
-    Unqork Module Name is another unique identifier for this module. 
+    Unqork Module Name is another unique identifier for this module.
     Cannot contain spaces or special characters other than - and _.
   `)
   name: string
@@ -44,13 +45,8 @@ export class ModuleDefinition {
   theme?: string
 
   @Optional()
-  @Description(`Module settings`)
-  settings?: {
-    runtimeVersion?: '1.0.0' | '2.0.0'
-    useLegacyWrapper: 'module' | 'workflow'
-    usePreviewBar: boolean
-    enableAnonymous?: boolean
-  }
+  @TrimmedDescription(`Module settings.`)
+  settings?: ModuleSettings = new ModuleSettings()
 
   @Required()
   @Example('')
@@ -63,7 +59,7 @@ export class ModuleDefinition {
   @Example(
     trimAll(`
     {
-      key: "moduleId", 
+      key: "moduleId",
       targets: [
         {key: "name", property: "name"}
       ]

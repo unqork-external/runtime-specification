@@ -1,8 +1,10 @@
 import { Default, Description, Example, Optional, Required } from '@tsed/schema'
 
-import { TargetedOperationOptions } from '../../interface'
+export class CanvasGetComponentChildrenOperationOptions {
+  @Required()
+  @Description('Key of the canvas to target')
+  targetKey: string
 
-export class CanvasGetComponentChildrenOperationOptions extends TargetedOperationOptions {
   @Required()
   @Description('Id of the component within the canvas to get children for')
   componentId: string

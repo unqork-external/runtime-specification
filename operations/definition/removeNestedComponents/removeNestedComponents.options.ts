@@ -1,8 +1,9 @@
 import { CollectionOf, Description, Default } from '@tsed/schema'
 
-import { TargetedOperationOptions } from '../../interface'
+export class RemoveNestedComponentsOperationOptions {
+  @Description('Key of the component for which we want to remove the nested component')
+  targetKey: string
 
-export class RemoveNestedComponentsOperationOptions extends TargetedOperationOptions {
   @Description('Key of the nestable in which the new components should be removed.')
   nestable: string
 

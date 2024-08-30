@@ -42,6 +42,12 @@ export class MenuComponentDefinition extends BaseComponentDefinition {
     itemKeys: new ItemsNestable(),
   }
 
+  @Default(false)
+  @TrimmedDescription(
+    `When \`ON\`, it will lock the menu to the anchor component. When \`OFF\`, the menu will move on scroll.`,
+  )
+  disableScrollLock: boolean = true
+
   @Property()
   declare signals: SignalTargets<MenuTargets>
 

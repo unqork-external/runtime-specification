@@ -3,48 +3,8 @@
 exports[`Operation Model: SetQueryParameters Tests SetQueryParameters Model 1`] = `
 {
   "definitions": {
-    "InputRef": {
-      "description": "Inputs can be used to utlize dynamic values from other state within the runtime
-  within a particular execution of an operation",
-      "properties": {
-        "alias": {
-          "description": "Optionally alias resolved value for use in formulas",
-          "type": "string",
-        },
-        "propertyPath": {
-          "description": "Path to property on target to resolve",
-          "type": "string",
-        },
-        "required": {
-          "description": "If true, operation won't execute if targeted property has no value",
-          "type": "boolean",
-        },
-        "silent": {
-          "description": "Not used in later formulas, only used to determine if operation should execute",
-          "type": "boolean",
-        },
-        "targetKey": {
-          "description": "Key of target this input depends on",
-          "minLength": 1,
-          "type": "string",
-        },
-      },
-      "required": [
-        "targetKey",
-      ],
-      "type": "object",
-    },
     "SetQueryParametersOperationOptions": {
       "properties": {
-        "inputs": {
-          "description": "
-    Inputs to be used within formulas in other operation options
-  ",
-          "items": {
-            "$ref": "#/definitions/InputRef",
-          },
-          "type": "array",
-        },
         "params": {
           "description": "Parameters to set on the URL",
           "type": "object",
@@ -58,16 +18,6 @@ exports[`Operation Model: SetQueryParameters Tests SetQueryParameters Model 1`] 
           "default": false,
           "description": "Determines if changing the params should cause the page to redirect to the url with the new query parameters.",
           "type": "boolean",
-        },
-        "shouldExecute": {
-          "description": "
-    Conditionally execute this operation based on a formula.
-    Can set to false to temporarily disabled when debugging
-  ",
-          "type": [
-            "string",
-            "boolean",
-          ],
         },
       },
       "required": [

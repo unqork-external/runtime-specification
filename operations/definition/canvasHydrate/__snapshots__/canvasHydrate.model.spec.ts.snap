@@ -9,37 +9,13 @@ exports[`CanvasHydrateOperation Model should match this JSON Schema 1`] = `
           "description": "An array or an an a array in the for of a string of component definitions to hydrate the canvas",
           "type": "object",
         },
-        "inputs": {
-          "description": "
-    Inputs to be used within formulas in other operation options
-  ",
-          "items": {
-            "$ref": "#/definitions/InputRef",
-          },
-          "type": "array",
-        },
         "replace": {
           "default": false,
           "description": "When true, the definitions passed to this operation will replace any current canvas items. When false, the definitions passed to this operation will append to the end of the list.",
           "type": "boolean",
         },
-        "shouldExecute": {
-          "description": "
-    Conditionally execute this operation based on a formula.
-    Can set to false to temporarily disabled when debugging
-  ",
-          "type": [
-            "string",
-            "boolean",
-          ],
-        },
         "targetKey": {
-          "description": "Key or path that this operation should target or operate upon",
-          "examples": [
-            "myComponent",
-            "panel.*",
-            "grid.row(#).col(name)",
-          ],
+          "description": "key of the canvas to hydrate",
           "minLength": 1,
           "type": "string",
         },
@@ -47,37 +23,6 @@ exports[`CanvasHydrateOperation Model should match this JSON Schema 1`] = `
       "required": [
         "targetKey",
         "definitions",
-      ],
-      "type": "object",
-    },
-    "InputRef": {
-      "description": "Inputs can be used to utlize dynamic values from other state within the runtime
-  within a particular execution of an operation",
-      "properties": {
-        "alias": {
-          "description": "Optionally alias resolved value for use in formulas",
-          "type": "string",
-        },
-        "propertyPath": {
-          "description": "Path to property on target to resolve",
-          "type": "string",
-        },
-        "required": {
-          "description": "If true, operation won't execute if targeted property has no value",
-          "type": "boolean",
-        },
-        "silent": {
-          "description": "Not used in later formulas, only used to determine if operation should execute",
-          "type": "boolean",
-        },
-        "targetKey": {
-          "description": "Key of target this input depends on",
-          "minLength": 1,
-          "type": "string",
-        },
-      },
-      "required": [
-        "targetKey",
       ],
       "type": "object",
     },

@@ -3,64 +3,14 @@
 exports[`Operation Model: TableAddRow Tests should match this JSON Schema 1`] = `
 {
   "definitions": {
-    "InputRef": {
-      "description": "Inputs can be used to utlize dynamic values from other state within the runtime
-  within a particular execution of an operation",
-      "properties": {
-        "alias": {
-          "description": "Optionally alias resolved value for use in formulas",
-          "type": "string",
-        },
-        "propertyPath": {
-          "description": "Path to property on target to resolve",
-          "type": "string",
-        },
-        "required": {
-          "description": "If true, operation won't execute if targeted property has no value",
-          "type": "boolean",
-        },
-        "silent": {
-          "description": "Not used in later formulas, only used to determine if operation should execute",
-          "type": "boolean",
-        },
-        "targetKey": {
-          "description": "Key of target this input depends on",
-          "minLength": 1,
-          "type": "string",
-        },
-      },
-      "required": [
-        "targetKey",
-      ],
-      "type": "object",
-    },
     "TableAddRowOperationOptions": {
       "properties": {
-        "inputs": {
-          "description": "
-    Inputs to be used within formulas in other operation options
-  ",
-          "items": {
-            "$ref": "#/definitions/InputRef",
-          },
-          "type": "array",
-        },
         "rowValue": {
           "description": "A JSON object that contains the values for the new row. Object keys must match existing column keys otherwise the value will be ignored. Value data types must match the column's component definition, i.e: if the column has a NumberComponent, trying to assign an array to it won't play nice If rowValue is not specified, an empty row will be added.",
           "examples": [
             "{ "Name": "AppOne", "Date": "12/01/2023", "Number": 123, }",
           ],
           "type": "object",
-        },
-        "shouldExecute": {
-          "description": "
-    Conditionally execute this operation based on a formula.
-    Can set to false to temporarily disabled when debugging
-  ",
-          "type": [
-            "string",
-            "boolean",
-          ],
         },
         "targetIndex": {
           "description": "The index where we would like to place the new row. Table rows are zero index-based, meaning zero represents the first position. Zero, Negative and Undefined values will add the row at the top of the table and values larger than the number of rows will add the new row at the bottom of the table. This field supports interpolation.",
@@ -73,12 +23,7 @@ exports[`Operation Model: TableAddRow Tests should match this JSON Schema 1`] = 
           ],
         },
         "targetKey": {
-          "description": "Key or path that this operation should target or operate upon",
-          "examples": [
-            "myComponent",
-            "panel.*",
-            "grid.row(#).col(name)",
-          ],
+          "description": "Key of the Table component to add a row",
           "minLength": 1,
           "type": "string",
         },

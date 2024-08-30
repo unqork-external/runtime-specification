@@ -1,9 +1,12 @@
-import { Any, Required } from '@tsed/schema'
+import { Any, Description, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
-import { TargetedOperationOptions } from '../../interface'
 
-export class TableSetColumnFiltersVisibilityOperationOptions extends TargetedOperationOptions {
+export class TableSetColumnFiltersVisibilityOperationOptions {
+  @Required()
+  @Description('Key of the Table component to show/hide filters.')
+  targetKey: string
+
   @Required()
   @TrimmedDescription(`
   Set the visibility of the filters in the Table component.

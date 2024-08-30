@@ -1,9 +1,12 @@
 import { CollectionOf, Description, Required } from '@tsed/schema'
 
 import { BaseComponentDefinition } from '../../../base-component-interface'
-import { TargetedOperationOptions } from '../../interface'
 
-export class TableAddColumnOperationOptions extends TargetedOperationOptions {
+export class TableAddColumnOperationOptions {
+  @Description('Key of the Table component to add a column')
+  @Required()
+  targetKey: string
+
   @Description('The component definition(s) to be added to the target Table component')
   @Required()
   @CollectionOf(() => BaseComponentDefinition)

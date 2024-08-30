@@ -1,6 +1,4 @@
-import { Description, Required } from '@tsed/schema'
-
-import { OperationOptions } from '../../interface'
+import { Description, Ignore, Required } from '@tsed/schema'
 
 export class SaveAndExitAlertSetting {
   @Description('message for save and exit modal')
@@ -13,7 +11,13 @@ export class SaveAndExitAlertSetting {
   confirmButtonText: string = 'OK'
 }
 
-export class WorkflowSaveAndExitOperationOptions extends OperationOptions {
+export class WorkflowSaveAndExitOperationOptions {
+  // This can be removed once BaseOperationOperations is refactored.
+  @Description('targetKey refers to the intended target to manipulate.')
+  // we can ignore properties with type never - Remove this decorator if this type is changed
+  @Ignore()
+  targetKey?: never
+
   @Required()
   @Description('current step of the workflow')
   currentStepPath: string

@@ -178,100 +178,338 @@ exports[`Date Input Contract Tests should ensure the contract is clear 3`] = `
     "properties": {
       "coreDateInput": {
         "description": "Adds styles to Component's input subcomponent.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "errorsFieldError": {
         "description": "Adds styles to Errors Field error root element, which is rendered within the LI elements.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "errorsRoot": {
         "description": "Adds styles to Errors subcomponent root.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "errorsUnorderedList": {
         "description": "Adds styles to Errors subcomponent UL element.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "errorsUnorderedListItem": {
         "description": "Adds styles to Errors subcomponent LI elements.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "inputGroup": {
         "description": "Adds styles to Component's div with role='presentation' wrapping the input and suffix subcomponents.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "label": {
         "description": "Adds styles to Component's Label subcomponent.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "readOnly": {
         "description": "Adds styles to Component's ReadOnly subcomponent.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "root": {
         "description": "Adds styles to Component's ComponentWrapper subcomponent.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "simpleViewInput": {
         "description": "Adds styles to Component's SimpleView input subcomponent.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "simpleViewView": {
         "description": "Adds styles to Component's SimpleView view subcomponent.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "suffix": {
         "description": "Adds styles to Component's Errors subcomponent.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "tooltipButton": {
         "description": "Adds styles to Component's Tooltip subcomponent button.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
       "tooltipPopover": {
         "description": "Adds styles to Component's Tooltip subcomponent popover.",
-        "type": [
-          "string",
-          "object",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
         ],
       },
     },
@@ -512,28 +750,25 @@ exports[`Date Input Contract Tests should ensure the contract is clear 3`] = `
     "type": "object",
   },
   "InputRef": {
-    "description": "Inputs can be used to utlize dynamic values from other state within the runtime
-  within a particular execution of an operation",
+    "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
     "properties": {
       "alias": {
-        "description": "Optionally alias resolved value for use in formulas",
         "type": "string",
       },
       "propertyPath": {
-        "description": "Path to property on target to resolve",
         "type": "string",
       },
       "required": {
-        "description": "If true, operation won't execute if targeted property has no value",
         "type": "boolean",
       },
       "silent": {
-        "description": "Not used in later formulas, only used to determine if operation should execute",
         "type": "boolean",
       },
       "targetKey": {
-        "description": "Key of target this input depends on",
         "minLength": 1,
+        "type": "string",
+      },
+      "type": {
         "type": "string",
       },
     },

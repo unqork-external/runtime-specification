@@ -1,9 +1,9 @@
-import { Description, Required } from '@tsed/schema'
+import { Required } from '@tsed/schema'
 
-import { TargetedOperationOptions } from '../../interface'
-
-export class GoGoGadgetClipboardOperationOptions extends TargetedOperationOptions {
+export class GoGoGadgetClipboardOperationOptions {
   @Required()
-  @Description('Which property of the target should be copied to the clipboard')
+  targetKey: string
+
+  @Required()
   property: string = 'value'
 }
