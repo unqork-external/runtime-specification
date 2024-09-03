@@ -24,6 +24,7 @@ import { DownloadFileOperation } from '../definition/downloadFile'
 import { DynamicOperation } from '../definition/dynamic'
 import { EmitEventOperation } from '../definition/emitEvent'
 import { ExecuteOperation } from '../definition/execute'
+import { ExecuteExternalCommandOperation } from '../definition/executeExternalCommand'
 import { FetchModuleOperation } from '../definition/fetchModule'
 import { FocusOperation } from '../definition/focus'
 import { GoGoGadgetClipboardOperation } from '../definition/goGoGadgetClipboard'
@@ -101,6 +102,7 @@ export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
 
+  [OperationTypes.EXECUTE_EXTERNAL_COMMAND]: ExecuteExternalCommandOperation,
   [OperationTypes.SPREADSHEET_INPUT_REMOVE_COLUMN]: SpreadsheetInputRemoveColumnOperation,
   [OperationTypes.SPREADSHEET_INPUT_REMOVE_ROW]: SpreadsheetInputRemoveRowOperation,
   [OperationTypes.SPREADSHEET_INPUT_INSERT_ROWS]: SpreadsheetInputInsertRowsOperation,

@@ -1,0 +1,60 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: ExecuteExternalCommand Tests ExecuteExternalCommand Model 1`] = `
+{
+  "definitions": {
+    "ExecuteExternalCommandOperationOptions": {
+      "properties": {
+        "command": {
+          "description": "Name of the command to run, will be passed directly to external application.",
+          "enum": [
+            "trigger",
+            "value",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+        "data": {
+          "description": "Parameters to pass through to parent command, can be any data type",
+          "type": "object",
+        },
+        "target": {
+          "description": "External target for this command",
+          "type": "string",
+        },
+      },
+      "required": [
+        "command",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "The Execute External Command operation allows interacting with the external or parent application.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ExecuteExternalCommandOperationOptions",
+    },
+    "type": {
+      "const": "EXECUTE_EXTERNAL_COMMAND",
+      "examples": [
+        "EXECUTE_EXTERNAL_COMMAND",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "stability": "STABLE",
+  "type": "object",
+}
+`;
