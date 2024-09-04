@@ -10,7 +10,6 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 1`
   "operationsMap",
   "editMode",
   "operationIndex",
-  "useDefaultStyles",
 ]
 `;
 
@@ -31,7 +30,7 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     "type": "string",
   },
   "currentSignal": {
-    "description": "Signal selected from Signals or Events list",
+    "description": "Event selected from Events list",
     "type": "object",
   },
   "editMode": {
@@ -45,7 +44,20 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     "type": "boolean",
   },
   "initialSignalTypes": {
-    "description": "List of initial signal types",
+    "description": "List of initial event types",
+    "examples": [
+      {
+        "description": "Occurs when an input component has lost focus.",
+        "label": "On Blur",
+        "value": "onBlur",
+      },
+      {
+        "description": "Occurs on click of any UI component that is not disabled.",
+        "label": "On Click",
+        "value": "onClick",
+      },
+      "<Example> Prompt: "I want to build a component with signal types" Response: {"type":"operationsBuilder","signalTypes":[{"label":"On Blur","value":"onBlur","description":"Occurs when an input component has lost focus."},{"label":"On Click","value":"onClick","description":"Occurs on click of any UI component that is not disabled."}]} </Example>",
+    ],
     "items": {
       "$ref": "#/definitions/SignalOption",
     },
@@ -94,7 +106,20 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     "type": "boolean",
   },
   "signalTypes": {
-    "description": "List of signal types in dropdown list",
+    "description": "List of event types in dropdown list",
+    "examples": [
+      {
+        "description": "Occurs when an input component has lost focus.",
+        "label": "On Blur",
+        "value": "onBlur",
+      },
+      {
+        "description": "Occurs on click of any UI component that is not disabled.",
+        "label": "On Click",
+        "value": "onClick",
+      },
+      "<Example> Prompt: "I want to build a component with signal types" Response: {"type":"operationsBuilder","signalTypes":[{"label":"On Blur","value":"onBlur","description":"Occurs when an input component has lost focus."},{"label":"On Click","value":"onClick","description":"Occurs on click of any UI component that is not disabled."}]} </Example>",
+    ],
     "items": {
       "$ref": "#/definitions/SignalOption",
     },
@@ -162,6 +187,42 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
   },
   "value": {
     "description": "Value of the Ops Builder component. Ops Builder always stores its data as a JSON object.",
+    "examples": [
+      {
+        "args": {
+          "inputs": {
+            "propertyPath": "value",
+            "required": true,
+            "targetKey": "firstName",
+          },
+        },
+        "id": "firstNameWatcher",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onWatch",
+      },
+      {
+        "id": "textfieldOnBlur",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "textfield received blur event from DOM",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onBlur",
+      },
+      "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+    ],
     "type": "object",
   },
   "visible": {
