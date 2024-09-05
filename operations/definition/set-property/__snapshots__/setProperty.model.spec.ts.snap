@@ -15,10 +15,6 @@ exports[`Set Property Model should match this JSON Schema 1`] = `
           "minLength": 1,
           "type": "string",
         },
-        "resolveSyntax": {
-          "description": "Temporary way to resolve a value as syntax. Currently only used for auto generation of CSMs. Runtime team to revisit.",
-          "type": "boolean",
-        },
         "shouldOverwrite": {
           "default": true,
           "description": "shouldOverwrite refers to the type of behavior that SET_PROPERTY should emulate. If true, SET_PROPERTY will overwrite the value located at the intended property of the target regardless of if the intended property is set. If false, SET_PROPERTY will check if the property's value is set, and if so, SET_PROPERTY will exit.",

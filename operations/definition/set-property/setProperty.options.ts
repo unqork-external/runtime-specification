@@ -1,4 +1,4 @@
-import { Default, Description, Example, Optional, Property, Required } from '@tsed/schema'
+import { Default, Description, Example, Ignore, Optional, Property, Required } from '@tsed/schema'
 
 import { TrimmedDescription, Unknown } from '../../../../decorators/schema'
 
@@ -33,6 +33,7 @@ export class SetPropertyOptions {
   `)
   shouldOverwrite?: boolean = true
 
+  @Ignore()
   @Optional()
   @TrimmedDescription(
     `
