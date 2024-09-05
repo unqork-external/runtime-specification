@@ -10,8 +10,13 @@ export type CanvasItemSettings = Record<string, unknown> & {
   type: string
 }
 
+export enum CanvasItemStatusCode {
+  DUPLICATE_ITEM_KEY = 'duplicateItemKey',
+}
+
 export type CanvasItemStatus = {
   type: 'error' | 'warn' | 'info' | 'success'
+  code?: CanvasItemStatusCode
   message: string
 }
 

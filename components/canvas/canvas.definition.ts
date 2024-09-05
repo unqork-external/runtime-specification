@@ -44,6 +44,11 @@ export class CanvasComponentDefinition extends BaseComponentDefinition {
   @Default({})
   keyMap: Record<string, boolean> = {}
 
+  /**
+   * Delete me immediately when you do this better
+   */
+  duplicateKeys: Record<string, boolean> = {}
+
   @Required()
   @Default('Empty')
   emptyText: string
