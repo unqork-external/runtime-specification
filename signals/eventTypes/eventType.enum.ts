@@ -44,6 +44,7 @@ export enum EventType {
   ON_EDIT_SUBMISSION = 'onEditSubmission',
   ON_EXECUTE = 'onExecute',
   ON_FINISH_COUNTING = 'onFinishCounting',
+  ON_FIRST_RENDER = 'onFirstRender',
   ON_FOCUS = 'onFocus',
   ON_INITIALIZE = 'onInitialize',
   ON_KEYSTROKE = 'onKeystroke',

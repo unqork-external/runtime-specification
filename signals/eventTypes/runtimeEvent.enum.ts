@@ -21,6 +21,10 @@ export enum RuntimeEvent {
    * containers have down their own local setups.
    */
   READY = 'READY',
+  /**
+   * Adding here until bigger event system refactor
+   */
+  ON_FIRST_RENDER = 'ON_FIRST_RENDER',
 
   // DOM EVENTS
   // TODO: Normalize DOM events. We discussed this earlier, but the change never happened.

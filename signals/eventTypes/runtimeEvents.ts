@@ -10,6 +10,7 @@ import { EventType } from './eventType.enum'
 export const RuntimeEvents = [
   EventType.ON_EXECUTE,
   EventType.ON_EDIT_SUBMISSION,
+  EventType.ON_FIRST_RENDER,
   EventType.ON_INITIALIZE,
   EventType.ON_NEW_SUBMISSION,
   EventType.ON_REFRESH,
