@@ -94,6 +94,11 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
   "package": {
     "$ref": "#/definitions/PackageModel",
   },
+  "readOnly": {
+    "default": false,
+    "description": "Sets Operations Builder to be in Readonly mode",
+    "type": "boolean",
+  },
   "selectedOperation": {
     "$ref": "#/definitions/MultiSelectOptionModel",
   },

@@ -101,4 +101,9 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   @Default(false)
   @Description('Show or Hide the Close button')
   showCloseButton: boolean = false
+
+  @Optional()
+  @Default(false)
+  @Description('Sets Operations Builder to be in Readonly mode')
+  readOnly: boolean = false
 }

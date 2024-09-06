@@ -147,7 +147,19 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.operationItem]: CssClassOrProps;
 
-  @Description('Adds styles to operation name in Operations Builder.')
+  @Description('Adds styles to operation menu in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.operationMenu]: CssClassOrProps;
+
+  @Description('Adds styles to operation menu button in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.operationMenuButton]: CssClassOrProps;
+
+  @Description('Adds styles to operation menu wrapper in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.operationMenuWrapper]: CssClassOrProps;
+
+  @Description('Adds styles to operation name in Ops Builder.')
   @Css()
   [OpsBuilderTargets.operationType]: CssClassOrProps;
 
@@ -155,19 +167,51 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.editOperation]: CssClassOrProps;
 
-  @Description('Adds styles to Delete operation button in Operations Builder.')
+  @Description('Adds styles to Edit operation button label in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.editOperationLabel]: CssClassOrProps;
+
+  @Description('Adds styles to Edit operation button icon in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.editOperationIcon]: CssClassOrProps;
+
+  @Description('Adds styles to Delete operation button in Ops Builder.')
   @Css()
   [OpsBuilderTargets.deleteOperation]: CssClassOrProps;
 
-  @Description('Adds styles to Move Up button in Operations Builder.')
+  @Description('Adds styles to Delete operation button label in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.deleteOperationLabel]: CssClassOrProps;
+
+  @Description('Adds styles to Delete operation button icon in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.deleteOperationIcon]: CssClassOrProps;
+
+  @Description('Adds styles to Move Up button in Ops Builder.')
   @Css()
   [OpsBuilderTargets.moveUpOperation]: CssClassOrProps;
 
-  @Description('Adds styles to Move Down button in Operations Builder.')
+  @Description('Adds styles to Move Up button label in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.moveUpOperationLabel]: CssClassOrProps;
+
+  @Description('Adds styles to Move Up button icon in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.moveUpOperationIcon]: CssClassOrProps;
+
+  @Description('Adds styles to Move Down button in Ops Builder.')
   @Css()
   [OpsBuilderTargets.moveDownOperation]: CssClassOrProps;
 
-  @Description('Adds styles to event Type warning message in Operations Builder.')
+  @Description('Adds styles to Move Down button label in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.moveDownOperationLabel]: CssClassOrProps;
+
+  @Description('Adds styles to Move Down button icon in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.moveDownOperationIcon]: CssClassOrProps;
+
+  @Description('Adds styles to signal Type warning message in Ops Builder.')
   @Css()
   [OpsBuilderTargets.signalTypeWarning]: CssClassOrProps;
 
