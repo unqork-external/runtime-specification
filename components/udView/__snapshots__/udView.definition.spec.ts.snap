@@ -38,16 +38,6 @@ exports[`UD View Contract Tests should ensure the contract is clear 2`] = `
     },
     "type": "array",
   },
-  "direction": {
-    "default": "vertical",
-    "description": "Direction represents how the view children should be disposed.",
-    "enum": [
-      "horizontal",
-      "default",
-      "vertical",
-    ],
-    "type": "string",
-  },
   "display": {
     "$ref": "#/definitions/Display",
   },
@@ -122,7 +112,7 @@ exports[`UD View Contract Tests should ensure the contract is clear 2`] = `
     "type": "object",
   },
   "styling": {
-    "$ref": "#/definitions/StylingModel",
+    "$ref": "#/definitions/UdViewStyling",
   },
   "type": {
     "const": "udView",
@@ -336,12 +326,59 @@ exports[`UD View Contract Tests should ensure the contract is clear 3`] = `
   },
   "UdViewBasicField": {
     "properties": {
+      "ariaLabel": {
+        "description": "Accessible label that describes the view for screen readers.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "Accessible ARIA role for assistive technology tools based.",
+        "type": "string",
+      },
       "customClass": {
         "description": "Allows customization of the class HTML parameter for the root element of the component",
         "type": "string",
       },
       "label": {
         "$ref": "#/definitions/Label",
+      },
+    },
+    "type": "object",
+  },
+  "UdViewStyleTargets": {
+    "properties": {
+      "root": {
+        "description": "Root element styles.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+    },
+    "type": "object",
+  },
+  "UdViewStyling": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "$ref": "#/definitions/UdViewStyleTargets",
+        "type": "object",
       },
     },
     "type": "object",

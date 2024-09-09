@@ -217,6 +217,14 @@ exports[`UD Text Contract Tests should ensure the contract is clear 3`] = `
   },
   "UdViewBasicField": {
     "properties": {
+      "ariaLabel": {
+        "description": "Accessible label that describes the view for screen readers.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "Accessible ARIA role for assistive technology tools based.",
+        "type": "string",
+      },
       "customClass": {
         "description": "Allows customization of the class HTML parameter for the root element of the component",
         "type": "string",
