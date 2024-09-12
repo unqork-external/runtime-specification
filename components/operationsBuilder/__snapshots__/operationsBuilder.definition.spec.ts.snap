@@ -20,12 +20,10 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     "type": "array",
   },
   "currentOperation": {
-    "default": {},
     "description": "The schema for selection operation's options",
     "type": "object",
   },
   "currentOperationKey": {
-    "default": "",
     "description": "The selected operation type that is being actively configured",
     "type": "string",
   },

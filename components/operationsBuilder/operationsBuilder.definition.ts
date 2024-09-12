@@ -50,14 +50,12 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   currentSignal?: Signal
 
   @Optional()
-  @Default({})
   @Description(`The schema for selection operation's options`)
-  currentOperation: Record<string, any> = {}
+  currentOperation?: Record<string, any>
 
   @Optional()
-  @Default('')
   @Description('The selected operation type that is being actively configured')
-  currentOperationKey: string = ''
+  currentOperationKey?: string
 
   @Required()
   @Description('A map of all operations and their schemas, definitions, descriptions, and stability')
