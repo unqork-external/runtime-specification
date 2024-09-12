@@ -1,8 +1,8 @@
 import { CollectionOf, Example, Optional, Required } from '@tsed/schema'
 
-import { type EventType } from './eventTypes/eventType.enum'
-import { TrimmedDescription } from '../../decorators/schema/trimmedDescription.decorator'
-import { Operation } from '../operations/interface/operations.interface'
+import { type EventType } from './eventTypes'
+import { TrimmedDescription } from '../../decorators'
+import { Operation } from '../operations'
 
 @TrimmedDescription(
   `A Signal is a data structure which allows Runtime Objects
