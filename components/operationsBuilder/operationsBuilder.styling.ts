@@ -91,6 +91,10 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.operationSelector]: CssClassOrProps;
 
+  @Description('Adds styles to Add or Edit Operation heading in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.addEditOperationHeading]: CssClassOrProps;
+
   @Description('Adds styles to Add operation button in Operations Builder.')
   @Css()
   [OpsBuilderTargets.addOperation]: CssClassOrProps;

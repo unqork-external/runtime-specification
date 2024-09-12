@@ -20,6 +20,7 @@ export enum OpsBuilderTargets {
   signalItemActions = 'signalItemActions',
   operations = 'operations',
   operationSelector = 'operationSelector',
+  addEditOperationHeading = 'addEditOperationHeading',
   operationSelectorLabel = 'operationSelectorLabel',
   operationTypeWarning = 'operationTypeWarning',
   addOperation = 'addOperation',
