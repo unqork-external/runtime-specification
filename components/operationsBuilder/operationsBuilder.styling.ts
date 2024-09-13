@@ -1,7 +1,7 @@
 import { Description } from '@tsed/schema'
 
 import { OpsBuilderTargets } from './operationsBuilderTargets.enum'
-import { Css } from '../../../decorators/schema/css.decorator'
+import { Css } from '../../../decorators'
 import { type CssClassOrProps, StylingModel } from '../../styling'
 import { TargetsModel } from '../../viewTargets/targets.model'
 
@@ -90,6 +90,22 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Description('Adds styles to operation selector in Operations Builder.')
   @Css()
   [OpsBuilderTargets.operationSelector]: CssClassOrProps;
+
+  @Description('Adds styles to operation summary helper text in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationSummaryHelperText]: CssClassOrProps;
+
+  @Description('Adds styles to operation summary label in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationSummaryLabel]: CssClassOrProps;
+
+  @Description('Adds styles to operation summary in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationSummary]: CssClassOrProps;
+
+  @Description('Adds styles to operation item subtext in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationItemSubtext]: CssClassOrProps;
 
   @Description('Adds styles to Add or Edit Operation heading in Operations Builder.')
   @Css()

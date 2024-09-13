@@ -27,6 +27,11 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     "description": "The selected operation type that is being actively configured",
     "type": "string",
   },
+  "currentOperationSummary": {
+    "default": "",
+    "description": "The summary for current operation",
+    "type": "string",
+  },
   "currentSignal": {
     "description": "Event selected from Events list",
     "type": "object",

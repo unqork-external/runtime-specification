@@ -5,8 +5,7 @@ import { OperationsBuilderOperation } from './operationsBuilderOperation'
 import { OpsBuilderTargets } from './operationsBuilderTargets.enum'
 import { SignalOption } from './signalOption'
 import { signalOptionsExamples } from './signalOption.example'
-import { TrimmedDescription, ViewTargets } from '../../../decorators'
-import { Examples } from '../../../decorators/schema/examples.decorator'
+import { TrimmedDescription, ViewTargets, Examples } from '../../../decorators'
 import { BaseComponentDefinition } from '../../base-component-interface'
 import { StandardArrayNestable } from '../../nestables'
 import { OperationTypes } from '../../operations'
@@ -52,6 +51,11 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   @Optional()
   @Description(`The schema for selection operation's options`)
   currentOperation?: Record<string, any>
+
+  @Optional()
+  @Default('')
+  @Description(`The summary for current operation`)
+  currentOperationSummary?: string = ''
 
   @Optional()
   @Description('The selected operation type that is being actively configured')
