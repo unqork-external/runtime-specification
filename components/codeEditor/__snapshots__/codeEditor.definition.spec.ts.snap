@@ -90,7 +90,7 @@ exports[`Code Editor Contract Tests should ensure the contract is clear 2`] = `
     "type": "object",
   },
   "styling": {
-    "$ref": "#/definitions/StylingModel",
+    "$ref": "#/definitions/CodeEditorStyling",
   },
   "type": {
     "const": "codeEditor",
@@ -132,6 +132,15 @@ exports[`Code Editor Contract Tests should ensure the contract is clear 3`] = `
       "tabSize": {
         "description": "Tab size for code editor",
         "type": "number",
+      },
+    },
+    "type": "object",
+  },
+  "CodeEditorStyling": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "type": "object",
       },
     },
     "type": "object",
