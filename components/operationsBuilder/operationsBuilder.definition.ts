@@ -53,7 +53,6 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   currentOperation?: Record<string, any>
 
   @Optional()
-  @Default('')
   @Description(`The summary for current operation`)
   currentOperationSummary?: string = ''
 

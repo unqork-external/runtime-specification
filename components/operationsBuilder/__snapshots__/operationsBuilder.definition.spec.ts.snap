@@ -28,7 +28,6 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
     "type": "string",
   },
   "currentOperationSummary": {
-    "default": "",
     "description": "The summary for current operation",
     "type": "string",
   },

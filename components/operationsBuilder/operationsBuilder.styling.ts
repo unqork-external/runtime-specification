@@ -163,6 +163,18 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.operationList]: CssClassOrProps;
 
+  @Description('Adds styles to operations list header in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationListHeader]: CssClassOrProps;
+
+  @Description('Adds styles to operations list header text in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationListHeaderText]: CssClassOrProps;
+
+  @Description('Adds styles to operations list header actions in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationListHeaderActions]: CssClassOrProps;
+
   @Description('Adds styles to operations item in Operations Builder.')
   @Css()
   [OpsBuilderTargets.operationItem]: CssClassOrProps;
@@ -230,6 +242,22 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Description('Adds styles to Move Down button icon in Ops Builder.')
   @Css()
   [OpsBuilderTargets.moveDownOperationIcon]: CssClassOrProps;
+
+  @Description('Adds styles to Copy to clipboard button in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.copyOperation]: CssClassOrProps;
+
+  @Description('Adds styles to Copy to clipboard button label in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.copyOperationLabel]: CssClassOrProps;
+
+  @Description('Adds styles to Copy to clipboard button icon in Ops Builder.')
+  @Css()
+  [OpsBuilderTargets.copyOperationIcon]: CssClassOrProps;
+
+  @Description('Adds styles to Paste Operation button in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.pasteOperation]: CssClassOrProps;
 
   @Description('Adds styles to signal Type warning message in Ops Builder.')
   @Css()
