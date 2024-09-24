@@ -1,13 +1,4 @@
-import {
-  CollectionOf,
-  Default,
-  Description,
-  DiscriminatorValue,
-  Enum,
-  Optional,
-  Property,
-  Required,
-} from '@tsed/schema'
+import { CollectionOf, Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
 
 import { UdLinkViewTargets } from './udLinkViewTargets.enum'
 import { ViewTargets } from '../../../decorators'
@@ -16,7 +7,7 @@ import { Display } from '../../component-composition/display/component.display'
 import { StandardArrayNestable } from '../../nestables'
 import type { SignalTargets } from '../../signals'
 import { UdLinkToDefinition, UdLinkToModuleDefinition } from '../udLink/udLink.definition'
-import { UdViewBasicField, UdViewDirection } from '../udView'
+import { UdViewBasicField } from '../udView'
 
 @DiscriminatorValue('udLinkView')
 @ViewTargets(UdLinkViewTargets)
@@ -26,12 +17,6 @@ export class UdLinkViewComponentDefinition extends BaseComponentDefinition {
 
   @CollectionOf(BaseComponentDefinition)
   components?: BaseComponentDefinition[]
-
-  @Optional()
-  @Enum(UdViewDirection)
-  @Default(UdViewDirection.VERTICAL)
-  @Description('Direction represents how the view children should be disposed.')
-  direction?: UdViewDirection
 
   @Property(Display)
   @Description('Display settings')
