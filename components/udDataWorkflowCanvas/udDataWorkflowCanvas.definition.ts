@@ -1,4 +1,4 @@
-import { Description, DiscriminatorValue, Example, Optional, Property, Required } from '@tsed/schema'
+import { Default, Description, DiscriminatorValue, Example, Optional, Property, Required } from '@tsed/schema'
 
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { Display } from '../../component-composition/display/component.display'
@@ -34,6 +34,11 @@ export class DWFCanvasOptions {
 
   @Description('List of options for the output action dropdown')
   actionList: DWFCanvasDropdownOptions = new DWFCanvasDropdownOptions()
+
+  @Optional()
+  @Default(100)
+  @Description('Debounce time in ms of change events from the diagram')
+  debounceTimeInMS?: number = 100
 }
 
 @DiscriminatorValue('uddataworkflowcanvas')

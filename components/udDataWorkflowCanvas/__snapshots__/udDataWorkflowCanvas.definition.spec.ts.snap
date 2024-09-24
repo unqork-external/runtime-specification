@@ -147,6 +147,11 @@ exports[`UD Data Workflow Canvas Contract Tests should ensure the contract is cl
       "componentList": {
         "$ref": "#/definitions/DWFCanvasDropdownOptions",
       },
+      "debounceTimeInMS": {
+        "default": 100,
+        "description": "Debounce time in ms of change events from the diagram",
+        "type": "number",
+      },
     },
     "type": "object",
   },
