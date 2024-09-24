@@ -19,16 +19,6 @@ exports[`UD Button View Contract Tests should ensure the contract is clear 2`] =
     },
     "type": "array",
   },
-  "direction": {
-    "default": "vertical",
-    "description": "Direction represents how the view children should be disposed.",
-    "enum": [
-      "horizontal",
-      "default",
-      "vertical",
-    ],
-    "type": "string",
-  },
   "display": {
     "$ref": "#/definitions/Display",
   },
