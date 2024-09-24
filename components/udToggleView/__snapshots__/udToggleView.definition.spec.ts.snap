@@ -38,14 +38,8 @@ exports[`UD Toggle View Contract Tests should ensure the contract is clear 2`] =
     ],
     "type": "string",
   },
-  "contentDirection": {
-    "default": "default",
-    "description": "Direction represents how the content children should be disposed.",
-    "enum": [
-      "horizontal",
-      "default",
-      "vertical",
-    ],
+  "contentAriaRole": {
+    "description": "Accessible ARIA role for assistive technology tools for the content.",
     "type": "string",
   },
   "display": {
@@ -57,7 +51,7 @@ exports[`UD Toggle View Contract Tests should ensure the contract is clear 2`] =
     "type": "boolean",
   },
   "field": {
-    "$ref": "#/definitions/UdViewBasicField",
+    "$ref": "#/definitions/UdToggleViewField",
   },
   "headerAppearance": {
     "default": "block",
@@ -78,14 +72,8 @@ exports[`UD Toggle View Contract Tests should ensure the contract is clear 2`] =
     ],
     "type": "string",
   },
-  "headerDirection": {
-    "default": "default",
-    "description": "Direction represents how the header children should be disposed.",
-    "enum": [
-      "horizontal",
-      "default",
-      "vertical",
-    ],
+  "headerAriaLabel": {
+    "description": "Accessible label that describes the header for screen readers.",
     "type": "string",
   },
   "inputs": {
@@ -156,7 +144,7 @@ exports[`UD Toggle View Contract Tests should ensure the contract is clear 2`] =
     "type": "object",
   },
   "styling": {
-    "$ref": "#/definitions/StylingModel",
+    "$ref": "#/definitions/UdToggleViewStyling",
   },
   "type": {
     "const": "udToggleView",
@@ -368,22 +356,101 @@ exports[`UD Toggle View Contract Tests should ensure the contract is clear 3`] =
     },
     "type": "object",
   },
-  "UdViewBasicField": {
+  "UdToggleViewField": {
     "properties": {
-      "ariaLabel": {
-        "description": "Accessible label that describes the view for screen readers.",
-        "type": "string",
-      },
-      "ariaRole": {
-        "description": "Accessible ARIA role for assistive technology tools based.",
-        "type": "string",
-      },
       "customClass": {
         "description": "Allows customization of the class HTML parameter for the root element of the component",
         "type": "string",
       },
       "label": {
         "$ref": "#/definitions/Label",
+      },
+    },
+    "type": "object",
+  },
+  "UdToggleViewStyleTargets": {
+    "properties": {
+      "content": {
+        "description": "Content element styles.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "header": {
+        "description": "Header element styles.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "root": {
+        "description": "Root element styles.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+    },
+    "type": "object",
+  },
+  "UdToggleViewStyling": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "$ref": "#/definitions/UdToggleViewStyleTargets",
+        "type": "object",
       },
     },
     "type": "object",
