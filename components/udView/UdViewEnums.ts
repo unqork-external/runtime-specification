@@ -12,10 +12,3 @@ export enum UdViewAppearance {
   SECTION = 'section',
   UNORDERED_LIST = 'unordered-list',
 }
-
-// TODO: Remove once all Ud*View components are not using it
-export enum UdViewDirection {
-  HORIZONTAL = 'horizontal',
-  DEFAULT = 'default',
-  VERTICAL = 'vertical',
-}
