@@ -12,10 +12,6 @@ exports[`Combobox Contract Tests should ensure the contract is clear 1`] = `
 
 exports[`Combobox Contract Tests should ensure the contract is clear 2`] = `
 {
-  "childIds": {
-    "description": "Child IDs for all nestable references within the component.",
-    "type": "array",
-  },
   "data": {
     "$ref": "#/definitions/ComboboxData",
   },
@@ -39,6 +35,10 @@ exports[`Combobox Contract Tests should ensure the contract is clear 2`] = `
     "items": {
       "$ref": "#/definitions/IconComponentDefinition",
     },
+    "type": "array",
+  },
+  "iconsKeys": {
+    "description": "Child IDs for all nestable references within the component.",
     "type": "array",
   },
   "inputs": {

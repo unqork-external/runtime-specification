@@ -24,7 +24,7 @@ export class ComboboxComponentDefinition extends BaseComponentDefinition impleme
 
   @Optional()
   @Description('Child IDs for all nestable references within the component.')
-  childIds?: string[] = []
+  iconsKeys?: string[] = []
 
   @Required()
   @Description('Data for the Combobox options.')
