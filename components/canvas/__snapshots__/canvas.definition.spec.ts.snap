@@ -60,6 +60,7 @@ exports[`Canvas Contract Tests should ensure the contract is clear 2`] = `
   },
   "keyMap": {
     "default": {},
+    "description": "Map containing all component keys and their counts in the module definition",
     "type": "object",
   },
   "layouts": {

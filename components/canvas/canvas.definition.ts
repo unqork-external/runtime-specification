@@ -42,12 +42,8 @@ export class CanvasComponentDefinition extends BaseComponentDefinition {
 
   @Required()
   @Default({})
-  keyMap: Record<string, boolean> = {}
-
-  /**
-   * Delete me immediately when you do this better
-   */
-  duplicateKeys: Record<string, boolean> = {}
+  @Description('Map containing all component keys and their counts in the module definition')
+  keyMap: Record<string, number> = {}
 
   @Required()
   @Default('Empty')
