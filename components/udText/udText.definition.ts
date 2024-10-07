@@ -1,5 +1,7 @@
 import { Default, Description, DiscriminatorValue, Enum, Optional, Property, Required } from '@tsed/schema'
 
+import { UdTextStyling } from './udText.styling'
+import { UdTextTargets } from './udTextTargets.enum'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { Display } from '../../component-composition/display/component.display'
 import type { SignalTargets } from '../../signals'
@@ -15,6 +17,7 @@ export enum UdTextAppearance {
   HEADING_5 = 'heading-5',
   HEADING_6 = 'heading-6',
   INLINE = 'inline',
+  NONE = 'none',
   PARAGRAPH = 'paragraph',
 }
 
@@ -40,5 +43,10 @@ export class UdTextComponentDefinition extends BaseComponentDefinition {
   field: UdViewBasicField = new UdViewBasicField()
 
   @Optional()
-  declare signals?: SignalTargets<UdLinkTargets>
+  declare signals?: SignalTargets<UdTextTargets>
+
+  @Optional()
+  @Description('Map of customized CSS styling for specific targets.')
+  @Property(UdTextStyling)
+  styling?: UdTextStyling
 }

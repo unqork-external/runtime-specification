@@ -21,6 +21,7 @@ exports[`UD Text Contract Tests should ensure the contract is clear 2`] = `
       "heading-5",
       "heading-6",
       "inline",
+      "none",
       "paragraph",
     ],
     "type": "string",
@@ -99,7 +100,7 @@ exports[`UD Text Contract Tests should ensure the contract is clear 2`] = `
     "type": "object",
   },
   "styling": {
-    "$ref": "#/definitions/StylingModel",
+    "$ref": "#/definitions/UdTextStyling",
   },
   "type": {
     "const": "udText",
@@ -210,6 +211,45 @@ exports[`UD Text Contract Tests should ensure the contract is clear 3`] = `
     "description": "Holds information for targeted styling of the component.",
     "properties": {
       "targets": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "UdTextStyleTargets": {
+    "properties": {
+      "root": {
+        "description": "Root element styles.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+    },
+    "type": "object",
+  },
+  "UdTextStyling": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "$ref": "#/definitions/UdTextStyleTargets",
         "type": "object",
       },
     },
