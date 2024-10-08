@@ -5,7 +5,7 @@ import { TrimmedDescription } from '../../../../decorators'
 export class ExecuteExternalCommandOperationOptions {
   @Required()
   @TrimmedDescription(`
-    Name of the command to run, will be passed directly to external application.
+    The name of the command to run, will be passed directly to external application.
   `)
   // This Enum isn't actually a limit for the operation, but we need to include
   // it in the spec since Ops Builder should show a dropdown for this option
@@ -15,7 +15,7 @@ export class ExecuteExternalCommandOperationOptions {
 
   @Optional()
   @TrimmedDescription(`
-    External target for this command
+    The external target for this command.
   `)
   // Deliberately not `targetKey` because it refers to an external target
   // rather than an internal target within the runtime
@@ -23,7 +23,7 @@ export class ExecuteExternalCommandOperationOptions {
 
   @Optional()
   @TrimmedDescription(`
-    Parameters to pass through to parent command, can be any data type
+    The parameters to pass through to parent command, can be any data type.
   `)
   data?: unknown
 }

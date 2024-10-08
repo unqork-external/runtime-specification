@@ -6,7 +6,7 @@ exports[`Operation Model: ExecuteExternalCommand Tests ExecuteExternalCommand Mo
     "ExecuteExternalCommandOperationOptions": {
       "properties": {
         "command": {
-          "description": "Name of the command to run, will be passed directly to external application.",
+          "description": "The name of the command to run, will be passed directly to external application.",
           "enum": [
             "trigger",
             "value",
@@ -15,11 +15,11 @@ exports[`Operation Model: ExecuteExternalCommand Tests ExecuteExternalCommand Mo
           "type": "string",
         },
         "data": {
-          "description": "Parameters to pass through to parent command, can be any data type",
+          "description": "The parameters to pass through to parent command, can be any data type.",
           "type": "object",
         },
         "target": {
-          "description": "External target for this command",
+          "description": "The external target for this command.",
           "type": "string",
         },
       },
@@ -29,7 +29,7 @@ exports[`Operation Model: ExecuteExternalCommand Tests ExecuteExternalCommand Mo
       "type": "object",
     },
   },
-  "description": "The Execute External Command operation allows interacting with the external or parent application.",
+  "description": "The Execute External Command operation allows Embedded Vega applications to interact with their parent Centauri application by triggering logic components and setting parent component values, as specified by the operation options.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",
