@@ -1,4 +1,4 @@
-import { CollectionOf, Default, Description, Example, Required } from '@tsed/schema'
+import { CollectionOf, Default, Description, Example, Ignore, Optional, Required } from '@tsed/schema'
 
 import { InputRef } from '../../../inputs/inputRef'
 
@@ -22,4 +22,18 @@ export class ParseFormulaOptions {
   @Description('Property that will receive the final value after parsing the formula')
   @Default('value')
   property: string = 'value'
+
+  @Ignore()
+  @Optional()
+  @Description('If true, convert yes/no and true/false string to booleans.')
+  @Default(false)
+  coerceBooleans?: boolean = false
+
+  @Ignore()
+  @Optional()
+  @Description(
+    'If true, invert the booleans. e.g. Centauri {disabled: true} needs to be inverted to Vega {executable: false, interactive: false}',
+  )
+  @Default(false)
+  invertBooleans?: boolean = false
 }
