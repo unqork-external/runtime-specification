@@ -1,9 +1,9 @@
 import { Description, DiscriminatorValue, Required } from '@tsed/schema'
 
 import { TableSetColumnPinningOperationOptions } from './tableSetColumnPinning.options'
-import { OpsBuilderStable, Stable } from '../../../../decorators/stability'
+import { OpsBuilderStable, Stable } from '../../../../decorators'
 import { OperationTypes } from '../../enums/operation-types.enum'
-import { Operation } from '../../interface/operations.interface'
+import { Operation } from '../../interface'
 
 @DiscriminatorValue(OperationTypes.TABLE_SET_COLUMN_PINNING)
 @Description('Pins columns to the left or right of the Table component')
