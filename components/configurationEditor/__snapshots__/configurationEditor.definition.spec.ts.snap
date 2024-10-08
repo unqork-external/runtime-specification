@@ -32,6 +32,10 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
   },
+  "externalComponentRefs": {
+    "description": "References to external components",
+    "type": "array",
+  },
   "inputs": {
     "items": {
       "$ref": "#/definitions/InputRef",

@@ -1,5 +1,6 @@
 import { Default, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
 
+import { ExternalComponentRef } from './configurationEditor.types'
 import { BaseSettingDefinition } from '../../../designer-specification'
 import { BaseComponentDefinition } from '../../base-component-interface'
 import { StandardArrayNestable } from '../../nestables'
@@ -37,4 +38,7 @@ export class ConfigurationEditorComponentDefinition extends BaseComponentDefinit
 
   @Description('Nestable information for configuration editor')
   nestables = { childIds: new StandardArrayNestable() }
+
+  @Description('References to external components')
+  externalComponentRefs: ExternalComponentRef[]
 }
