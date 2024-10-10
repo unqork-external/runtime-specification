@@ -1,20 +1,17 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - component definition 1`] = `
+exports[`ConfigurationEditor Contract Tests should ensure the contract is clear - component definition 1`] = `
 [
   "key",
   "type",
+  "label",
+  "schemas",
+  "isArray",
 ]
 `;
 
-exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - component definition 2`] = `
+exports[`ConfigurationEditor Contract Tests should ensure the contract is clear - component definition 2`] = `
 {
-  "components": {
-    "items": {
-      "$ref": "#/definitions/BaseComponentDefinition",
-    },
-    "type": "array",
-  },
   "display": {
     "$ref": "#/definitions/Display",
   },
@@ -23,14 +20,21 @@ exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - co
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
   },
-  "gridProps": {
-    "type": "object",
+  "initialComponentSetup": {
+    "default": false,
+    "description": "Flag designated to indicate the initial component has be set up.",
+    "type": "boolean",
   },
   "inputs": {
     "items": {
       "$ref": "#/definitions/InputRef",
     },
     "type": "array",
+  },
+  "isArray": {
+    "default": false,
+    "description": "Flag designated to indicate the array case.",
+    "type": "boolean",
   },
   "key": {
     "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
@@ -41,11 +45,35 @@ exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - co
     "minLength": 1,
     "type": "string",
   },
+  "label": {
+    "default": "",
+    "description": "A label used for the component.",
+    "minLength": 1,
+    "type": "string",
+  },
   "nestables": {
+    "description": "Nestable information for the Complex Json Input component.",
     "type": "object",
+  },
+  "options": {
+    "description": "The type options available to the dropdown.",
+    "items": {
+      "default": [],
+    },
+    "type": "array",
   },
   "package": {
     "$ref": "#/definitions/PackageModel",
+  },
+  "schemas": {
+    "default": "",
+    "description": "A Schemas to process and close in the array array use case.",
+    "type": "object",
+  },
+  "selectedType": {
+    "default": "string",
+    "description": "The type of the value component selected in the dropdown.",
+    "type": "string",
   },
   "signals": {
     "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
@@ -91,10 +119,10 @@ exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - co
     "$ref": "#/definitions/StylingModel",
   },
   "type": {
-    "const": "muiLayoutGrid",
+    "const": "complexJsonInput",
     "description": "Name of the type of component.",
     "examples": [
-      "muiLayoutGrid",
+      "complexJsonInput",
     ],
     "minLength": 1,
     "type": "string",
@@ -117,104 +145,8 @@ exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - co
 }
 `;
 
-exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - component definition 3`] = `
+exports[`ConfigurationEditor Contract Tests should ensure the contract is clear - component definition 3`] = `
 {
-  "BaseComponentDefinition": {
-    "description": "Base Component Definition is the fundamental interface any component that wishes to leverage the runtime must follow. It is the agreed upon contract between the Runtime and anything that should be recognized as a component.",
-    "properties": {
-      "executable": {
-        "default": true,
-        "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
-        "type": "boolean",
-      },
-      "inputs": {
-        "items": {
-          "$ref": "#/definitions/InputRef",
-        },
-        "type": "array",
-      },
-      "key": {
-        "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
-        "examples": [
-          "I am the key",
-          "bestKeyEver",
-        ],
-        "minLength": 1,
-        "type": "string",
-      },
-      "package": {
-        "$ref": "#/definitions/PackageModel",
-      },
-      "signals": {
-        "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
-        "examples": [
-          {
-            "args": {
-              "inputs": {
-                "propertyPath": "value",
-                "required": true,
-                "targetKey": "firstName",
-              },
-            },
-            "id": "firstNameWatcher",
-            "operations": [
-              {
-                "options": {
-                  "logType": "warn",
-                  "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
-                },
-                "type": "PRINTER",
-              },
-            ],
-            "type": "onWatch",
-          },
-          {
-            "id": "textfieldOnBlur",
-            "operations": [
-              {
-                "options": {
-                  "logType": "warn",
-                  "thingToPrint": "textfield received blur event from DOM",
-                },
-                "type": "PRINTER",
-              },
-            ],
-            "type": "onBlur",
-          },
-          "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
-        ],
-        "type": "object",
-      },
-      "styling": {
-        "$ref": "#/definitions/StylingModel",
-      },
-      "type": {
-        "description": "Name of the type of component.",
-        "minLength": 1,
-        "type": "string",
-      },
-      "validation": {
-        "$ref": "#/definitions/Validation",
-      },
-      "value": {
-        "description": "Current value of the component",
-        "type": [
-          "null",
-          "integer",
-          "number",
-          "string",
-          "boolean",
-          "array",
-          "object",
-        ],
-      },
-    },
-    "required": [
-      "key",
-      "type",
-    ],
-    "type": "object",
-  },
   "Display": {
     "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Read Only View' corresponds to the component being rendered with an input element or as text.",
     "properties": {
@@ -365,22 +297,24 @@ exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - co
 }
 `;
 
-exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - component state 1`] = `
+exports[`ConfigurationEditor Contract Tests should ensure the contract is clear - component state 1`] = `
 [
   "key",
   "type",
+  "label",
+  "schemas",
+  "isArray",
 ]
 `;
 
-exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - component state 2`] = `
+exports[`ConfigurationEditor Contract Tests should ensure the contract is clear - component state 2`] = `
 {
   "childIds": {
+    "description": "Child ids for nestable references.",
     "type": "array",
   },
-  "components": {
-    "items": {
-      "$ref": "#/definitions/BaseComponentDefinition",
-    },
+  "children": {
+    "description": "Children for nestable references.",
     "type": "array",
   },
   "display": {
@@ -391,14 +325,21 @@ exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - co
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
   },
-  "gridProps": {
-    "type": "object",
+  "initialComponentSetup": {
+    "default": false,
+    "description": "Flag designated to indicate the initial component has be set up.",
+    "type": "boolean",
   },
   "inputs": {
     "items": {
       "$ref": "#/definitions/InputRef",
     },
     "type": "array",
+  },
+  "isArray": {
+    "default": false,
+    "description": "Flag designated to indicate the array case.",
+    "type": "boolean",
   },
   "key": {
     "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
@@ -409,11 +350,35 @@ exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - co
     "minLength": 1,
     "type": "string",
   },
+  "label": {
+    "default": "",
+    "description": "A label used for the component.",
+    "minLength": 1,
+    "type": "string",
+  },
   "nestables": {
+    "description": "Nestable information for the Complex Json Input component.",
     "type": "object",
+  },
+  "options": {
+    "description": "The type options available to the dropdown.",
+    "items": {
+      "default": [],
+    },
+    "type": "array",
   },
   "package": {
     "$ref": "#/definitions/PackageModel",
+  },
+  "schemas": {
+    "default": "",
+    "description": "A Schemas to process and close in the array array use case.",
+    "type": "object",
+  },
+  "selectedType": {
+    "default": "string",
+    "description": "The type of the value component selected in the dropdown.",
+    "type": "string",
   },
   "signals": {
     "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
@@ -492,10 +457,10 @@ exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - co
     "$ref": "#/definitions/StylingModel",
   },
   "type": {
-    "const": "muiLayoutGrid",
+    "const": "complexJsonInput",
     "description": "Name of the type of component.",
     "examples": [
-      "muiLayoutGrid",
+      "complexJsonInput",
     ],
     "minLength": 1,
     "type": "string",
@@ -518,104 +483,8 @@ exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - co
 }
 `;
 
-exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - component state 3`] = `
+exports[`ConfigurationEditor Contract Tests should ensure the contract is clear - component state 3`] = `
 {
-  "BaseComponentDefinition": {
-    "description": "Base Component Definition is the fundamental interface any component that wishes to leverage the runtime must follow. It is the agreed upon contract between the Runtime and anything that should be recognized as a component.",
-    "properties": {
-      "executable": {
-        "default": true,
-        "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
-        "type": "boolean",
-      },
-      "inputs": {
-        "items": {
-          "$ref": "#/definitions/InputRef",
-        },
-        "type": "array",
-      },
-      "key": {
-        "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
-        "examples": [
-          "I am the key",
-          "bestKeyEver",
-        ],
-        "minLength": 1,
-        "type": "string",
-      },
-      "package": {
-        "$ref": "#/definitions/PackageModel",
-      },
-      "signals": {
-        "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
-        "examples": [
-          {
-            "args": {
-              "inputs": {
-                "propertyPath": "value",
-                "required": true,
-                "targetKey": "firstName",
-              },
-            },
-            "id": "firstNameWatcher",
-            "operations": [
-              {
-                "options": {
-                  "logType": "warn",
-                  "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
-                },
-                "type": "PRINTER",
-              },
-            ],
-            "type": "onWatch",
-          },
-          {
-            "id": "textfieldOnBlur",
-            "operations": [
-              {
-                "options": {
-                  "logType": "warn",
-                  "thingToPrint": "textfield received blur event from DOM",
-                },
-                "type": "PRINTER",
-              },
-            ],
-            "type": "onBlur",
-          },
-          "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
-        ],
-        "type": "object",
-      },
-      "styling": {
-        "$ref": "#/definitions/StylingModel",
-      },
-      "type": {
-        "description": "Name of the type of component.",
-        "minLength": 1,
-        "type": "string",
-      },
-      "validation": {
-        "$ref": "#/definitions/Validation",
-      },
-      "value": {
-        "description": "Current value of the component",
-        "type": [
-          "null",
-          "integer",
-          "number",
-          "string",
-          "boolean",
-          "array",
-          "object",
-        ],
-      },
-    },
-    "required": [
-      "key",
-      "type",
-    ],
-    "type": "object",
-  },
   "Display": {
     "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Read Only View' corresponds to the component being rendered with an input element or as text.",
     "properties": {

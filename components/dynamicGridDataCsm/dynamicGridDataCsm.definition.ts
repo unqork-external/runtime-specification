@@ -41,11 +41,13 @@ export class DynamicGridDataCsmComponentDefinition extends BaseComponentDefiniti
   @Default([])
   value: any[] = []
 
-  @Description('Child ids for nestable references')
-  childIds: string[] = []
+  useDefaultStyles: boolean = false
 
   @Description('Nestable information')
   nestables = { childIds: new StandardArrayNestable() }
+}
 
-  useDefaultStyles: boolean = false
+export class DynamicGridDataCsmComponentState extends DynamicGridDataCsmComponentDefinition {
+  @Description('Child ids for nestable references')
+  childIds: string[] = []
 }

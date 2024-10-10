@@ -1,4 +1,4 @@
-export { PositionComponentDefinition } from './position.definition'
+export { PositionComponentDefinition, PositionComponentState } from './position.definition'
 export {
   PositionOptions,
   PositionDirectionType,

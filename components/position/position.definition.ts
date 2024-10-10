@@ -23,12 +23,14 @@ export class PositionComponentDefinition extends BaseComponentDefinition {
   @Property(PositionOptions)
   options: PositionOptions = new PositionOptions()
 
-  @Description('Fully qualified child keys for items nestables. Maintained by nestable api.')
-  childIds: string[] = []
+  @Optional()
+  declare signals?: SignalTargets<PositionTargets>
 
   @Description('Nestable definitions for position component')
   nestables = { childIds: new StandardArrayNestable() }
+}
 
-  @Optional()
-  declare signals?: SignalTargets<PositionTargets>
+export class PositionComponentState extends PositionComponentDefinition {
+  @Description('Fully qualified child keys for items nestables. Maintained by nestable api.')
+  childIds: string[] = []
 }

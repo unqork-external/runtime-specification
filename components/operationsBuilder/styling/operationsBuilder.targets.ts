@@ -1,9 +1,9 @@
 import { Description } from '@tsed/schema'
 
-import { OpsBuilderTargets } from './operationsBuilderTargets.enum'
-import { Css } from '../../../decorators'
-import { type CssClassOrProps, StylingModel } from '../../styling'
-import { TargetsModel } from '../../viewTargets/targets.model'
+import { Css } from '../../../../decorators'
+import { type CssClassOrProps } from '../../../styling'
+import { TargetsModel } from '../../../viewTargets/targets.model'
+import { OpsBuilderTargets } from '../targets/operationsBuilderTargets.enum'
 
 @Description('The possible targets for Operations Builder component styling.')
 export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets> {
@@ -282,9 +282,4 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Description('Adds styles to subtext in welcome screen in Operations Builder.')
   @Css()
   [OpsBuilderTargets.welcomeScreenSubtext]: CssClassOrProps
-}
-
-@Description('An object containing styling for the component.')
-export class OpsBuilderStyling extends StylingModel<OpsBuilderStylingTargets> {
-  targets: OpsBuilderStylingTargets
 }

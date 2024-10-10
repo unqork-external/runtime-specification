@@ -1,10 +1,19 @@
-import { CollectionOf, Const, Default, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
+import {
+  CollectionOf,
+  Const,
+  Default,
+  Description,
+  DiscriminatorValue,
+  Optional,
+  Property,
+  Required,
+} from '@tsed/schema'
 
-import { OpsBuilderStyling } from './operationsBuilder.styling'
 import { OperationsBuilderOperation } from './operationsBuilderOperation'
-import { OpsBuilderTargets } from './operationsBuilderTargets.enum'
 import { SignalOption } from './signalOption'
 import { signalOptionsExamples } from './signalOption.example'
+import { OpsBuilderStyling } from './styling/operationsBuilder.styling'
+import { OpsBuilderTargets } from './targets/operationsBuilderTargets.enum'
 import { TrimmedDescription, ViewTargets, Examples } from '../../../decorators'
 import { BaseComponentDefinition } from '../../base-component-interface'
 import { StandardArrayNestable } from '../../nestables'
@@ -79,13 +88,6 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   @Description('Index of the operation being edited')
   operationIndex: number = -1
 
-  @Optional()
-  @Description('Child ids for nestable references')
-  childIds: string[] = []
-
-  @Description('Nestable information for operations builder')
-  nestables = { childIds: new StandardArrayNestable() }
-
   @Description('Value of the Ops Builder component. Ops Builder always stores its data as a JSON object.')
   @Examples(signalExamples)
   declare value: SignalTargets<OpsBuilderTargets>
@@ -107,4 +109,13 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   @Default(false)
   @Description('Sets Operations Builder to be in Readonly mode')
   readOnly: boolean = false
+
+  @Description('Nestable information for operations builder')
+  nestables = { childIds: new StandardArrayNestable() }
+}
+
+export class OperationsBuilderComponentState extends OperationsBuilderComponentDefinition {
+  @Optional()
+  @Description('Child ids for nestable references')
+  childIds: string[] = []
 }

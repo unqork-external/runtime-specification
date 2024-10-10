@@ -1,12 +1,9 @@
-import {
-  ConfigurationEditorComponentDefinition,
-  ConfigurationEditorComponentState,
-} from './configurationEditor.definition'
+import { ComplexJsonInputComponentDefinition, ComplexJsonInputComponentState } from './complexJsonInput.definition'
 import { generateSchemaAndValidate } from '../../../utilities'
 
 describe('ConfigurationEditor Contract Tests', function () {
   it('should ensure the contract is clear - component definition', function () {
-    const { schema } = generateSchemaAndValidate(ConfigurationEditorComponentDefinition)
+    const { schema } = generateSchemaAndValidate(ComplexJsonInputComponentDefinition)
 
     expect(schema.required).toMatchSnapshot()
     expect(schema.properties).toMatchSnapshot()
@@ -14,7 +11,7 @@ describe('ConfigurationEditor Contract Tests', function () {
   })
 
   it('should ensure the contract is clear - component state', function () {
-    const { schema } = generateSchemaAndValidate(ConfigurationEditorComponentState)
+    const { schema } = generateSchemaAndValidate(ComplexJsonInputComponentState)
 
     expect(schema.required).toMatchSnapshot()
     expect(schema.properties).toMatchSnapshot()

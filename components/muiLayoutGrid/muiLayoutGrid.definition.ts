@@ -10,9 +10,6 @@ export class MuiLayoutGridComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'muiLayoutGrid' = 'muiLayoutGrid' as const
 
-  @Property()
-  childIds: string[] = []
-
   @CollectionOf(BaseComponentDefinition)
   components?: BaseComponentDefinition[]
 
@@ -24,4 +21,9 @@ export class MuiLayoutGridComponentDefinition extends BaseComponentDefinition {
 
   @Property()
   nestables = { childIds: new StandardArrayNestable() }
+}
+
+export class MuiLayoutGridComponentState extends MuiLayoutGridComponentDefinition {
+  @Property()
+  childIds: string[] = []
 }

@@ -29,9 +29,6 @@ export class PanelComponentDefinition extends BaseComponentDefinition {
   @Default([])
   components: BaseComponentDefinition[] = []
 
-  @Property()
-  childIds: string[] = []
-
   @Optional()
   display: Display = new Display()
 
@@ -49,14 +46,19 @@ export class PanelComponentDefinition extends BaseComponentDefinition {
   modalIsOpen: boolean = false
 
   @Optional()
-  nestables = new PanelNestable()
-
-  @Optional()
   declare signals?: SignalTargets<PanelTargets>
 
   @Optional()
   @Examples(targetedStylingExample)
   declare styling?: PanelStyling
+
+  @Optional()
+  nestables = new PanelNestable()
+}
+
+export class PanelComponentState extends PanelComponentDefinition {
+  @Property()
+  childIds: string[] = []
 }
 
 class PanelNestable {

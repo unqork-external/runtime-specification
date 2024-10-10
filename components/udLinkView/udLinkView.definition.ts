@@ -30,12 +30,14 @@ export class UdLinkViewComponentDefinition extends BaseComponentDefinition {
   @Description('Style represent the intended display style for the link.')
   to: UdLinkToDefinition | UdLinkToModuleDefinition
 
-  @Description('Standard nestable implementation')
-  nestables = { childIds: new StandardArrayNestable() }
-
-  @Description('Child IDs for nestable references')
-  childIds: string[] = []
-
   @Optional()
   declare signals?: SignalTargets<UdLinkViewTargets>
+
+  @Description('Standard nestable implementation')
+  nestables = { childIds: new StandardArrayNestable() }
+}
+
+export class UdLinkViewComponentState extends UdLinkViewComponentDefinition {
+  @Description('Child IDs for nestable references')
+  childIds: string[] = []
 }

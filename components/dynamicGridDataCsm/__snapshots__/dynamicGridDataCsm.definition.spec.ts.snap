@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`DynamicGridDataCsm Contract Tests should ensure the contract is clear 1`] = `
+exports[`DynamicGridDataCsm Contract Tests should ensure the contract is clear - component definition 1`] = `
 [
   "key",
   "type",
@@ -9,12 +9,8 @@ exports[`DynamicGridDataCsm Contract Tests should ensure the contract is clear 1
 ]
 `;
 
-exports[`DynamicGridDataCsm Contract Tests should ensure the contract is clear 2`] = `
+exports[`DynamicGridDataCsm Contract Tests should ensure the contract is clear - component definition 2`] = `
 {
-  "childIds": {
-    "description": "Child ids for nestable references",
-    "type": "array",
-  },
   "columnEditorCurrentIndex": {
     "description": "Index of rhe column being edited in the modal",
     "type": "number",

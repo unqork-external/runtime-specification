@@ -22,15 +22,17 @@ export class UdButtonViewComponentDefinition extends BaseComponentDefinition {
   @Description('Field settings')
   field: UdViewBasicField = new UdViewBasicField()
 
-  @Description('Standard nestable implementation')
-  nestables = { childIds: new StandardArrayNestable() }
-
-  @Description('Child IDs for nestable references')
-  childIds: string[] = []
-
   @CollectionOf(BaseComponentDefinition)
   components?: BaseComponentDefinition[]
 
   @Optional()
   signals?: SignalTargets<UdButtonViewTargets>
+
+  @Description('Standard nestable implementation')
+  nestables = { childIds: new StandardArrayNestable() }
+}
+
+export class UdButtonViewComponentState extends UdButtonViewComponentDefinition {
+  @Description('Child IDs for nestable references')
+  childIds: string[] = []
 }

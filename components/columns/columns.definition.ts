@@ -1,4 +1,4 @@
-import { CollectionOf, Const, Description, DiscriminatorValue, Property } from '@tsed/schema'
+import { CollectionOf, Const, Default, Description, DiscriminatorValue, Property, Schema } from '@tsed/schema'
 
 import { ColumnData } from './columnData'
 import { ColumnsField } from './columns.field'
@@ -10,7 +10,6 @@ import { BaseComponentDefinition } from '../../base-component-interface/base.com
 import { Display } from '../../component-composition/display/component.display'
 import { StandardArrayNestable } from '../../nestables'
 import type { SignalTargets } from '../../signals'
-import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
 @DiscriminatorValue('columns')
 @TrimmedDescription(`
@@ -40,16 +39,17 @@ export class ColumnsComponentDefinition extends BaseComponentDefinition {
   @Property()
   display: Display = new Display()
 
-  @Description('Object that maps customized CSS styling to specific targets on the Columns component.')
-  @Examples(targetedStylingExample)
+  @Property()
+  declare signals?: SignalTargets<ColumnsTargets>
+
+  @Property()
   declare styling: ColumnsStyling
 
   @Description('Nestable information for columns')
   nestables = { childIds: new StandardArrayNestable() }
+}
 
+export class ColumnsComponentState extends ColumnsComponentDefinition {
   @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
-
-  @Property()
-  declare signals?: SignalTargets<ColumnsTargets>
 }

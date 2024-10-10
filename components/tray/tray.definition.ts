@@ -48,9 +48,11 @@ export class TrayComponentDefinition extends BaseComponentDefinition {
   @Description('Text which the tray filters based on label, type, and searchCriteria of a BaseTrayItemDefinition.')
   filterText: string = ''
 
-  @Description('Child ids for nestable references')
-  childIds: string[] = []
-
   @Description('Nestable information for tray')
   nestables = { childIds: new StandardArrayNestable() }
+}
+
+export class TrayComponentState extends TrayComponentDefinition {
+  @Description('Child ids for nestable references')
+  childIds: string[] = []
 }

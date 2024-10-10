@@ -38,12 +38,6 @@ export class UdViewComponentDefinition extends BaseComponentDefinition {
   @Description('Field settings')
   field: UdViewBasicField = new UdViewBasicField()
 
-  @Description('Standard nestable implementation')
-  nestables = { childIds: new StandardArrayNestable() }
-
-  @Description('Child IDs for nestable references')
-  childIds: string[] = []
-
   @CollectionOf(BaseComponentDefinition)
   components?: BaseComponentDefinition[]
 
@@ -54,4 +48,12 @@ export class UdViewComponentDefinition extends BaseComponentDefinition {
   @Description('Map of customized CSS styling for specific targets.')
   @Property(UdViewStyling)
   styling?: UdViewStyling
+
+  @Description('Standard nestable implementation')
+  nestables = { childIds: new StandardArrayNestable() }
+}
+
+export class UdViewComponentState extends UdViewComponentDefinition {
+  @Description('Child IDs for nestable references')
+  childIds: string[] = []
 }

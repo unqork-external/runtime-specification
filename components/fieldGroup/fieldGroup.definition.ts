@@ -1,10 +1,9 @@
 import { CollectionOf, Const, Default, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
 
 import { FieldGroupSettings } from './fieldGroup.field'
-import { FieldGroupStyling } from './fieldGroup.styling'
-import { FieldGroupTargets } from './fieldGroup.targets'
-import { ViewTargets } from '../../../decorators'
-import { Examples } from '../../../decorators/schema/examples.decorator'
+import { FieldGroupStyling } from './styling/fieldGroup.styling'
+import { FieldGroupTargets } from './targets/fieldGroupTargets.enum'
+import { Examples, ViewTargets } from '../../../decorators'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { Display } from '../../component-composition/display/component.display'
@@ -27,10 +26,6 @@ export class FieldGroupComponentDefinition extends BaseComponentDefinition {
   type: string = 'fieldGroup' as const
 
   @Required()
-  @Description(`List of IDs that reference a Field Group's children.`)
-  childIds: string[] = []
-
-  @Required()
   @CollectionOf(BaseComponentDefinition)
   @Description(`Definitions of children components to be rendered within the Field Group.`)
   @Default([])
@@ -45,9 +40,15 @@ export class FieldGroupComponentDefinition extends BaseComponentDefinition {
   @Property()
   field: FieldGroupSettings = new FieldGroupSettings()
 
-  @Description('Nestable information for Field Group. Field Group contains a standard array of unique components.')
-  nestables = { childIds: new StandardArrayNestable() }
-
   @Examples(targetedStylingExample)
   declare styling?: FieldGroupStyling
+
+  @Description('Nestable information for Field Group. Field Group contains a standard array of unique components.')
+  nestables = { childIds: new StandardArrayNestable() }
+}
+
+export class FieldGroupComponentState extends FieldGroupComponentDefinition {
+  @Required()
+  @Description(`List of IDs that reference a Field Group's children.`)
+  childIds: string[] = []
 }

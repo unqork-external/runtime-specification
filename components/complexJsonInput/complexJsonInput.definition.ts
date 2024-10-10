@@ -46,12 +46,14 @@ export class ComplexJsonInputComponentDefinition extends BaseComponentDefinition
   @Default([])
   options: DropdownOptionModel[] = []
 
+  @Description('Nestable information for the Complex Json Input component.')
+  nestables = { childIds: new StandardArrayNestable() }
+}
+
+export class ComplexJsonInputComponentState extends ComplexJsonInputComponentDefinition {
   @Description('Children for nestable references.')
   children: string[] = []
 
   @Description('Child ids for nestable references.')
   childIds: string[] = []
-
-  @Description('Nestable information for the Complex Json Input component.')
-  nestables = { childIds: new StandardArrayNestable() }
 }

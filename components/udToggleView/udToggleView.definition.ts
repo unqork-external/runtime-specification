@@ -61,12 +61,6 @@ export class UdToggleViewComponentDefinition extends BaseComponentDefinition {
   // TODO: "open" should be a generic state for components, not only modals
   modalIsOpen?: boolean
 
-  @Description('Standard nestable implementation')
-  nestables = { childIds: new StandardArrayNestable() }
-
-  @Description('Child IDs for nestable references')
-  childIds: string[] = []
-
   @Optional()
   declare signals?: SignalTargets<UdToggleViewTargets>
 
@@ -74,4 +68,12 @@ export class UdToggleViewComponentDefinition extends BaseComponentDefinition {
   @Description('Map of customized CSS styling for specific targets.')
   @Property(UdToggleViewStyling)
   styling?: UdToggleViewStyling
+
+  @Description('Standard nestable implementation')
+  nestables = { childIds: new StandardArrayNestable() }
+}
+
+export class UdToggleViewComponentState extends UdToggleViewComponentDefinition {
+  @Description('Child IDs for nestable references')
+  childIds: string[] = []
 }

@@ -61,12 +61,6 @@ export class WorkflowComponentDefinition extends BaseComponentDefinition {
   @Description('Validation errors for invalid navigation panels in a nav group')
   validationErrors = new WorkflowValidationErrors()
 
-  @Description('Nestable information for workflow')
-  nestables = { childIds: new StandardArrayNestable() }
-
-  @Description('Child ids for nestable references')
-  childIds: string[] = []
-
   @CollectionOf(BaseComponentDefinition)
   components?: BaseComponentDefinition[]
 
@@ -81,6 +75,14 @@ export class WorkflowComponentDefinition extends BaseComponentDefinition {
   @Optional()
   @Description('Message to display in popup when page loads if incorrect step requested')
   alertMessage?: string
+
+  @Description('Nestable information for workflow')
+  nestables = { childIds: new StandardArrayNestable() }
+}
+
+export class WorkflowComponentState extends WorkflowComponentDefinition {
+  @Description('Child ids for nestable references')
+  childIds: string[] = []
 }
 
 export * from './settings'

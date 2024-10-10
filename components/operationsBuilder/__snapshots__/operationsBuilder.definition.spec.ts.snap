@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`OperationsBuilder Contract Tests should ensure the contract is clear 1`] = `
+exports[`OperationsBuilder Contract Tests should ensure the contract is clear - component definition 1`] = `
 [
   "key",
   "type",
@@ -13,12 +13,8 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 1`
 ]
 `;
 
-exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`] = `
+exports[`OperationsBuilder Contract Tests should ensure the contract is clear - component definition 2`] = `
 {
-  "childIds": {
-    "description": "Child ids for nestable references",
-    "type": "array",
-  },
   "currentOperation": {
     "description": "The schema for selection operation's options",
     "type": "object",
@@ -239,7 +235,7 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 2`
 }
 `;
 
-exports[`OperationsBuilder Contract Tests should ensure the contract is clear 3`] = `
+exports[`OperationsBuilder Contract Tests should ensure the contract is clear - component definition 3`] = `
 {
   "InputRef": {
     "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
@@ -294,6 +290,22 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear 3`
   },
   "OpsBuilderStyling": {
     "description": "An object containing styling for the component.",
+    "examples": [
+      {
+        "styling": {
+          "targets": {
+            "root": [
+              "very-fancy-custom-class",
+              {
+                "color": "red",
+              },
+              "another-custom-class",
+            ],
+          },
+        },
+      },
+      "<Example> Prompt: "I want to be able to style the textfield component on root element with the style class 'very-fancy-custom-class', with red color and another style class 'another-custom-class'" Response: [{"key":"yourGeneratedTextfield","type":"textfield","styling":{"targets":{"root":["very-fancy-custom-class",{"color":"red"},"another-custom-class"]}}}] </Example>",
+    ],
     "properties": {
       "targets": {
         "type": "object",

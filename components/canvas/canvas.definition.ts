@@ -65,9 +65,11 @@ export class CanvasComponentDefinition extends BaseComponentDefinition {
   @Optional()
   width: number
 
-  @Required()
-  childIds: string[] = []
-
   @Description('Nestable information for Canvas')
   nestables = { childIds: new StandardArrayNestable() }
+}
+
+export class CanvasComponentState extends CanvasComponentDefinition {
+  @Required()
+  childIds: string[] = []
 }
