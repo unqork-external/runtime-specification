@@ -21,6 +21,9 @@ export type DataWorkflowInput = {
   inputLabel?: string
   key?: number
   source?: 'Default' | 'Binded Table' | 'Group Input'
+  // If we've explicitly defined the property to target via .property()
+  // syntax, it's stored here
+  property?: string
 }
 
 export type DataWorkflowOutput = {
