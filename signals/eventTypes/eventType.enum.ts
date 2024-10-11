@@ -37,7 +37,6 @@ export enum EventType {
   OBJECT_VALIDATED = 'system.validation.validated',
   ON_BLUR = 'onBlur',
   ON_CHANGE = 'onChange',
-  ON_CLEAR = 'onClear',
   ON_CLICK = 'onClick',
   ON_CLOSE = 'onClose',
   ON_DROP = 'onDrop',

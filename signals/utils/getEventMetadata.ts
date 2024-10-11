@@ -170,13 +170,6 @@ const DOM_EVENTS: EventMetadataList = [
     categories: [EventCategories.DOM],
     stability: StabilityEnum.STABLE,
   },
-  // https://unqork-jira.atlassian.net/browse/UQE-6951
-  // {
-  //   name: 'On Clear',
-  //   type: 'onClear',
-  //   categories: [DOM],
-  //   stability: StabilityEnum.STABLE,
-  // },
   {
     name: 'On Click',
     type: 'onClick',
