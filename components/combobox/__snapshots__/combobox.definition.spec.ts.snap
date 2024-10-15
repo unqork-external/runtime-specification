@@ -26,20 +26,8 @@ exports[`Combobox Contract Tests should ensure the contract is clear 2`] = `
   "field": {
     "$ref": "#/definitions/ComboboxField",
   },
-  "iconKey": {
-    "description": "Key of the icon to display on the leading side of the Combobox, as defined in the \`icons\` nestable.",
-    "type": "string",
-  },
-  "icons": {
-    "description": "Children definition for all the icons used in this component.",
-    "items": {
-      "$ref": "#/definitions/IconComponentDefinition",
-    },
-    "type": "array",
-  },
-  "iconsKeys": {
-    "description": "Child IDs for all nestable references within the component.",
-    "type": "array",
+  "icon": {
+    "$ref": "#/definitions/ComboboxIcon",
   },
   "inputs": {
     "items": {
@@ -55,10 +43,6 @@ exports[`Combobox Contract Tests should ensure the contract is clear 2`] = `
     ],
     "minLength": 1,
     "type": "string",
-  },
-  "nestables": {
-    "description": "Nestable configuration.",
-    "type": "object",
   },
   "package": {
     "$ref": "#/definitions/PackageModel",

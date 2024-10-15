@@ -40,10 +40,6 @@ export class ComboboxStyleTargets implements TargetsModel<ComboboxTargets> {
   [ComboboxTargets.label]: CssClassOrProps;
 
   @Css()
-  @Description('Option list styles.')
-  [ComboboxTargets.listbox]: CssClassOrProps;
-
-  @Css()
   @Description('Loading label styles.')
   [ComboboxTargets.loadingLabel]: CssClassOrProps;
 
@@ -62,10 +58,6 @@ export class ComboboxStyleTargets implements TargetsModel<ComboboxTargets> {
   @Css()
   @Description('Option group list item styles.')
   [ComboboxTargets.optionGroupItem]: CssClassOrProps;
-
-  @Css()
-  @Description('Option group list styles.')
-  [ComboboxTargets.optionGroupList]: CssClassOrProps;
 
   @Css()
   @Description('Option icon container styles.')
@@ -108,8 +100,8 @@ export class ComboboxStyleTargets implements TargetsModel<ComboboxTargets> {
   [ComboboxTargets.selectedOptionTag]: CssClassOrProps;
 
   @Css()
-  @Description('Selected option tag label icon styles (when multiple is enabled).')
-  [ComboboxTargets.selectedOptionTagIcon]: CssClassOrProps;
+  @Description('Selected option tag label delete button styles (when multiple is enabled).')
+  [ComboboxTargets.selectedOptionTagDeleteButton]: CssClassOrProps;
 
   @Css()
   @Description('Selected option tag label text styles (when multiple is enabled).')

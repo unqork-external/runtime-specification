@@ -1,13 +1,17 @@
-import { Default, Description, Optional, Required } from '@tsed/schema'
+import { Default, Description, Hidden, Optional, Property, Required } from '@tsed/schema'
+
+import { ComboboxIcon } from './ComboboxIcon'
+import { ComboboxOptionTypes } from './ComboboxOptionTypes'
 
 export class ComboboxOption {
+  @Hidden()
+  @Description('Internal option type.')
+  @Default(ComboboxOptionTypes.option)
+  type?: ComboboxOptionTypes = ComboboxOptionTypes.option
+
   @Required()
   @Description('Unique key for the option, which is set as the Combobox value when selected.')
   key: string
-
-  @Optional()
-  @Description('Internally used indicator that the option is the creatable option.')
-  creatableOption?: boolean | undefined
 
   @Optional()
   @Description('Option description displayed after the label.')
@@ -23,8 +27,9 @@ export class ComboboxOption {
   groupLabel?: string
 
   @Optional()
-  @Description('Key of the icon displayed before the option label, as defined in the `components` nestable.')
-  iconKey?: string
+  @Property(ComboboxIcon)
+  @Description('Icon displayed before the option label.')
+  icon?: ComboboxIcon
 
   @Optional()
   @Description('Option label.')

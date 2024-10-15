@@ -1,10 +1,10 @@
-import { CollectionOf, Const, Default, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
+import { Const, Default, Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
 
 import { ComboboxStyling } from './combobox.styling'
 import { ComboboxData } from './ComboboxData'
 import { ComboboxDisplay } from './ComboboxDisplay'
 import { ComboboxField } from './ComboboxField'
-import { ComboboxNestable } from './ComboboxNestable'
+import { ComboboxIcon } from './ComboboxIcon'
 import { ComboboxTargets } from './comboboxTargets.enum'
 import { ViewTargets } from '../../../decorators'
 import { OneOrMany } from '../../../decorators/schema/oneOrMany.decorator'
@@ -14,17 +14,12 @@ import {
   type ComponentWithSimpleView,
 } from '../../base-component-interface'
 import type { SignalTargets } from '../../signals'
-import { IconComponentDefinition } from '../icon'
 
 @DiscriminatorValue('combobox')
 @ViewTargets(ComboboxTargets)
 export class ComboboxComponentDefinition extends BaseComponentDefinition implements ComponentWithSimpleView {
   @Const('combobox')
   type: 'combobox' = 'combobox' as const
-
-  @Optional()
-  @Description('Child IDs for all nestable references within the component.')
-  iconsKeys?: string[] = []
 
   @Required()
   @Description('Data for the Combobox options.')
@@ -39,16 +34,9 @@ export class ComboboxComponentDefinition extends BaseComponentDefinition impleme
   field: ComboboxField
 
   @Optional()
-  @Description('Key of the icon to display on the leading side of the Combobox, as defined in the `icons` nestable.')
-  iconKey?: string
-
-  @CollectionOf(IconComponentDefinition)
-  @Description('Children definition for all the icons used in this component.')
-  icons?: IconComponentDefinition[] = []
-
-  @Optional()
-  @Description('Nestable configuration.')
-  nestables? = new ComboboxNestable()
+  @Property(ComboboxIcon)
+  @Description('Icon to display on the leading side of the Combobox.')
+  icon?: ComboboxIcon
 
   @Optional()
   @Description('Read-only value of the search input as the user modifies it.')

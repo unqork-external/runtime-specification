@@ -70,10 +70,9 @@ export class ComboboxField extends Field {
 
   @Optional()
   @Description(
-    'Whether the options popup should remain open after a selection is made. Useful when multiple selections are allowed.',
+    'The label to display as the accessible value of the button that removes selected options when allowing multiple selections.',
   )
-  @Default(false)
-  remainOpenAfterSelection? = false
+  removeSelectedOptionLabel?: string
 
   @Optional()
   @Description('Whether the selected options should be removed from the options list.')
@@ -93,11 +92,4 @@ export class ComboboxField extends Field {
   @Optional()
   @Description("Text for the component's tooltip.")
   tooltipDescription?: string
-
-  @Optional()
-  @Description(
-    'Whether to enable the typeahead behavior on the search text input as the user selects options with the keyboard.',
-  )
-  @Default(false)
-  typeahead? = false
 }
