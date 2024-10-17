@@ -1,13 +1,4 @@
-import {
-  CollectionOf,
-  Const,
-  Default,
-  Description,
-  DiscriminatorValue,
-  Optional,
-  Property,
-  Required,
-} from '@tsed/schema'
+import { CollectionOf, Const, Default, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
 
 import { OperationsBuilderOperation } from './operationsBuilderOperation'
 import { SignalOption } from './signalOption'
@@ -53,9 +44,8 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   @Description('The selected signal in Signals or Events dropdown')
   selectedSignal?: MultiSelectOptionModel
 
-  @Optional()
   @Description('Event selected from Events list')
-  currentSignal?: Signal
+  currentSignal: Signal | undefined = undefined
 
   @Optional()
   @Description(`The schema for selection operation's options`)
@@ -68,10 +58,6 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   @Optional()
   @Description('The selected operation type that is being actively configured')
   currentOperationKey?: string
-
-  @Required()
-  @Description('A map of all operations and their schemas, definitions, descriptions, and stability')
-  operationsMap: Record<keyof typeof OperationTypes, OperationsBuilderOperation>
 
   @Optional()
   @Description('The selected operation in Operations dropdown')
@@ -90,7 +76,7 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
 
   @Description('Value of the Ops Builder component. Ops Builder always stores its data as a JSON object.')
   @Examples(signalExamples)
-  declare value: SignalTargets<OpsBuilderTargets>
+  value: SignalTargets<OpsBuilderTargets> | undefined = undefined
 
   @Examples(targetedStylingExample)
   declare styling: OpsBuilderStyling
@@ -118,4 +104,8 @@ export class OperationsBuilderComponentState extends OperationsBuilderComponentD
   @Optional()
   @Description('Child ids for nestable references')
   childIds: string[] = []
+
+  @Required()
+  @Description('A map of all operations and their schemas, definitions, descriptions, and stability')
+  operationsMap: Record<keyof typeof OperationTypes, OperationsBuilderOperation>
 }

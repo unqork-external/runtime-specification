@@ -1,0 +1,50 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: ResetInitialConfig Tests ResetInitialConfig Model 1`] = `
+{
+  "definitions": {
+    "ResetInitialConfigOperationOptions": {
+      "properties": {
+        "targetKey": {
+          "description": "targetKey refers to the intended target to reset to the initial config.",
+          "examples": [
+            "firstNameTextField",
+            "panel.*",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ResetInitialConfigOperationOptions",
+    },
+    "type": {
+      "const": "RESET_INITIAL_CONFIG",
+      "examples": [
+        "RESET_INITIAL_CONFIG",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "type": "object",
+}
+`;

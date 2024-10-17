@@ -39,6 +39,7 @@ import { RemoveNestedComponentsOperation } from '../definition/removeNestedCompo
 import { RemoveQueryParametersOperation } from '../definition/removeQueryParameters'
 import { RenderModuleOperation } from '../definition/renderModule'
 import { ResetOperation } from '../definition/reset'
+import { ResetInitialConfigOperation } from '../definition/resetInitialConfig'
 import { ScrollToOperation } from '../definition/scrollTo'
 import { SetPopupAlertOperation } from '../definition/set-popup-alert'
 import { SetPropertyOperation } from '../definition/set-property'
@@ -102,6 +103,7 @@ export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
 
+  [OperationTypes.RESET_INITIAL_CONFIG]: ResetInitialConfigOperation,
   [OperationTypes.EXECUTE_EXTERNAL_COMMAND]: ExecuteExternalCommandOperation,
   [OperationTypes.SPREADSHEET_INPUT_REMOVE_COLUMN]: SpreadsheetInputRemoveColumnOperation,
   [OperationTypes.SPREADSHEET_INPUT_REMOVE_ROW]: SpreadsheetInputRemoveRowOperation,
