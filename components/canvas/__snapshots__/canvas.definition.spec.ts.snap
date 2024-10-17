@@ -30,7 +30,7 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
     "type": "boolean",
   },
   "emptyText": {
-    "default": "Empty",
+    "default": "Drag & Drop a module component or",
     "minLength": 1,
     "type": "string",
   },
@@ -222,7 +222,151 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
         ],
       },
       "canvasEmpty": {
-        "description": "Adds styles to for the div wrapping the empty state for the canvas.",
+        "description": "Adds styles to the div wrapping the empty state for the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateButton": {
+        "description": "Adds styles to the button on the empty state of the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateImage": {
+        "description": "Adds styles to the div wrapping the icon on the empty state of the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateNestedDropzone": {
+        "description": "Adds styles to the div wrapping the empty state for nested dropzones within the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateNestedDropzoneText": {
+        "description": "Adds styles to the <p> with the text for the empty state for nested dropzones within the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateSubtext": {
+        "description": "Adds styles to the <p> with the subtext on the empty state of the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateText": {
+        "description": "Adds styles to the <p> with the main text on the empty state of the canvas.",
         "oneOf": [
           {
             "type": "string",
@@ -1275,7 +1419,7 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
     "type": "boolean",
   },
   "emptyText": {
-    "default": "Empty",
+    "default": "Drag & Drop a module component or",
     "minLength": 1,
     "type": "string",
   },
@@ -1500,7 +1644,151 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
         ],
       },
       "canvasEmpty": {
-        "description": "Adds styles to for the div wrapping the empty state for the canvas.",
+        "description": "Adds styles to the div wrapping the empty state for the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateButton": {
+        "description": "Adds styles to the button on the empty state of the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateImage": {
+        "description": "Adds styles to the div wrapping the icon on the empty state of the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateNestedDropzone": {
+        "description": "Adds styles to the div wrapping the empty state for nested dropzones within the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateNestedDropzoneText": {
+        "description": "Adds styles to the <p> with the text for the empty state for nested dropzones within the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateSubtext": {
+        "description": "Adds styles to the <p> with the subtext on the empty state of the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasEmptyStateText": {
+        "description": "Adds styles to the <p> with the main text on the empty state of the canvas.",
         "oneOf": [
           {
             "type": "string",

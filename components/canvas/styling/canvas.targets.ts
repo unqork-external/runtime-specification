@@ -15,8 +15,32 @@ export class CanvasTargets implements TargetsModel<CanvasTargetsEnum> {
   [CanvasTargetsEnum.canvas]: CssClassOrProps;
 
   @Css()
-  @Description('Adds styles to for the div wrapping the empty state for the canvas.')
+  @Description('Adds styles to the div wrapping the empty state for the canvas.')
   [CanvasTargetsEnum.canvasEmpty]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the div wrapping the icon on the empty state of the canvas.')
+  [CanvasTargetsEnum.canvasEmptyStateImage]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the <p> with the main text on the empty state of the canvas.')
+  [CanvasTargetsEnum.canvasEmptyStateText]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the <p> with the subtext on the empty state of the canvas.')
+  [CanvasTargetsEnum.canvasEmptyStateSubtext]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the button on the empty state of the canvas.')
+  [CanvasTargetsEnum.canvasEmptyStateButton]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the div wrapping the empty state for nested dropzones within the canvas.')
+  [CanvasTargetsEnum.canvasEmptyStateNestedDropzone]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the <p> with the text for the empty state for nested dropzones within the canvas.')
+  [CanvasTargetsEnum.canvasEmptyStateNestedDropzoneText]: CssClassOrProps;
 
   @Css()
   @Description('Adds styles to the div of a dropzone in the canvas.')

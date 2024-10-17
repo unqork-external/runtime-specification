@@ -46,8 +46,8 @@ export class CanvasComponentDefinition extends BaseComponentDefinition {
   keyMap: Record<string, number> = {}
 
   @Required()
-  @Default('Empty')
-  emptyText: string
+  @Default('Drag & Drop a module component or')
+  emptyText: string = 'Drag & Drop a module component or'
 
   @Required()
   @Default(false)
