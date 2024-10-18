@@ -44,9 +44,9 @@ export class MenuComponentDefinition extends BaseComponentDefinition {
 
   @Default(false)
   @TrimmedDescription(
-    `When \`ON\`, it will lock the menu to the anchor component. When \`OFF\`, the menu will move on scroll.`,
+    `When \`OFF\`, it will lock the menu to the anchor component. When \`ON\`, the menu will move on scroll.`,
   )
-  disableScrollLock: boolean = true
+  scrollLock: boolean = false
 
   @Property()
   declare signals: SignalTargets<MenuTargets>

@@ -17,11 +17,6 @@ exports[`Menu Contract Tests should ensure the contract is clear 2`] = `
     "description": "Any custom CSS classes to apply to the component, provided by the configurators",
     "type": "string",
   },
-  "disableScrollLock": {
-    "default": false,
-    "description": "When \`ON\`, it will lock the menu to the anchor component. When \`OFF\`, the menu will move on scroll.",
-    "type": "boolean",
-  },
   "display": {
     "$ref": "#/definitions/Display",
   },
@@ -67,6 +62,11 @@ exports[`Menu Contract Tests should ensure the contract is clear 2`] = `
   },
   "package": {
     "$ref": "#/definitions/PackageModel",
+  },
+  "scrollLock": {
+    "default": false,
+    "description": "When \`OFF\`, it will lock the menu to the anchor component. When \`ON\`, the menu will move on scroll.",
+    "type": "boolean",
   },
   "shouldCloseOnClick": {
     "description": "a flag to determine whether the close the menu on option click or to let the configurator handle that",
