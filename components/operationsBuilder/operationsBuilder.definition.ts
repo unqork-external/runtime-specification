@@ -48,21 +48,25 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   currentSignal: Signal | undefined = undefined
 
   @Optional()
-  @Description(`The schema for selection operation's options`)
-  currentOperation?: Record<string, any>
+  @Description('The selected operation in Operations dropdown')
+  @Examples(multiSelectOptionModelExamples)
+  selectedOperation?: MultiSelectOptionModel
 
   @Optional()
-  @Description(`The summary for current operation`)
-  currentOperationSummary?: string = ''
+  @Description(`The schema for selection operation's options`)
+  currentOperation?: Record<string, any>
 
   @Optional()
   @Description('The selected operation type that is being actively configured')
   currentOperationKey?: string
 
   @Optional()
-  @Description('The selected operation in Operations dropdown')
-  @Examples(multiSelectOptionModelExamples)
-  selectedOperation?: MultiSelectOptionModel
+  @Description(`The summary for current operation`)
+  currentOperationSummary?: string = ''
+
+  @Required()
+  @Description('A map of all operations and their schemas, definitions, descriptions, and stability')
+  operationsMap: Record<keyof typeof OperationTypes, OperationsBuilderOperation>
 
   @Required()
   @Default(false)
