@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetColumnOrdering Tests TableSetColumnOrdering Model 1`] = `
+{
+  "definitions": {
+    "TableSetColumnOrderingOperationOptions": {
+      "properties": {
+        "columnsOrder": {
+          "description": "The columns in the desired order. Existing columns not specified in this list will be placed after the entries of the list. This field can read the ordering array from a different component through interpolation",
+          "minLength": 1,
+          "type": "string",
+        },
+        "targetKey": {
+          "description": "Key of the table component to set column ordering",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "columnsOrder",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetColumnOrderingOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_COLUMN_ORDERING",
+      "examples": [
+        "TABLE_SET_COLUMN_ORDERING",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "type": "object",
+}
+`;

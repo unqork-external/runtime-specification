@@ -72,6 +72,7 @@ import { TableSetActionToolbarVisibilityOperation } from '../definition/tableSet
 import { TableSetAllRowsExpandedOperation } from '../definition/tableSetAllRowsExpanded'
 import { TableSetColumnFilterOperation } from '../definition/tableSetColumnFilter'
 import { TableSetColumnFiltersVisibilityOperation } from '../definition/tableSetColumnFiltersVisibility'
+import { TableSetColumnOrderingOperation } from '../definition/tableSetColumnOrdering'
 import { TableSetColumnPinningOperation } from '../definition/tableSetColumnPinning'
 import { TableSetColumnVisibilityOperation } from '../definition/tableSetColumnVisibility'
 import { TableSetGlobalFilterOperation } from '../definition/tableSetGlobalFilter'
@@ -152,6 +153,7 @@ export const OperationTypeMap = {
   [OperationTypes.TABLE_CLEAR]: TableClearOperation,
   [OperationTypes.TABLE_SET_COLUMN_FILTER]: TableSetColumnFilterOperation,
   [OperationTypes.TABLE_SET_GLOBAL_FILTER]: TableSetGlobalFilterOperation,
+  [OperationTypes.TABLE_SET_COLUMN_ORDERING]: TableSetColumnOrderingOperation,
   [OperationTypes.TABLE_SET_ROW_PINNING]: TableSetRowPinningOperation,
   [OperationTypes.TABLE_SET_COLUMN_PINNING]: TableSetColumnPinningOperation,
   [OperationTypes.TABLE_SET_NAVIGATE_DOWN_ON_PRESS_ENTER]: TableSetNavigateDownOnPressEnterOperation,
