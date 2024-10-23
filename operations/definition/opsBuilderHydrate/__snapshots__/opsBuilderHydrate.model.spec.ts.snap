@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: OpsBuilderHydrate Tests OpsBuilderHydrate Model 1`] = `
+{
+  "definitions": {
+    "OpsBuilderHydrateOperationOptions": {
+      "properties": {
+        "targetKey": {
+          "description": "key of the Ops Builder component to hydrate",
+          "examples": [
+            "opsBuilder",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+        "value": {
+          "description": "an object of root signals that resolves to an object to hydrate the ops builder component",
+          "type": "object",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/OpsBuilderHydrateOperationOptions",
+    },
+    "type": {
+      "const": "OPS_BUILDER_HYDRATE",
+      "examples": [
+        "OPS_BUILDER_HYDRATE",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "stability": "UD_ONLY",
+  "type": "object",
+}
+`;

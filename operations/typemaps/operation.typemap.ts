@@ -1,4 +1,3 @@
-// DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
 // OPERATION_IMPORT_STATEMENT
 import { AddNestedComponentsOperation } from '../definition/addNestedComponents'
 import { AddQueryParametersOperation } from '../definition/addQueryParameters'
@@ -33,6 +32,7 @@ import { LoadModuleOperation } from '../definition/loadModule'
 import { MenuToggleAtOperation } from '../definition/menuToggleAt'
 import { NavigationOperation } from '../definition/navigation'
 import { OpenNewPageOperation } from '../definition/openNewPage'
+import { OpsBuilderHydrateOperation } from '../definition/opsBuilderHydrate'
 import { ParseFormulaOperation } from '../definition/parse-formula'
 import { PrinterOperation } from '../definition/printer'
 import { RemoveNestedComponentsOperation } from '../definition/removeNestedComponents'
@@ -102,8 +102,8 @@ import { OperationTypes } from '../enums/operation-types.enum'
 export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
-
   [OperationTypes.RESET_INITIAL_CONFIG]: ResetInitialConfigOperation,
+  [OperationTypes.OPS_BUILDER_HYDRATE]: OpsBuilderHydrateOperation,
   [OperationTypes.EXECUTE_EXTERNAL_COMMAND]: ExecuteExternalCommandOperation,
   [OperationTypes.SPREADSHEET_INPUT_REMOVE_COLUMN]: SpreadsheetInputRemoveColumnOperation,
   [OperationTypes.SPREADSHEET_INPUT_REMOVE_ROW]: SpreadsheetInputRemoveRowOperation,
