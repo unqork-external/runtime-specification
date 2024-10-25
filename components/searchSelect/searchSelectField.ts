@@ -1,4 +1,4 @@
-import { Default, Description, Property } from '@tsed/schema'
+import { Default, Description, Optional, Property, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 
@@ -10,7 +10,21 @@ class SearchSelectLabel {
   hidden: boolean = false
 }
 
+export class SearchSelectRefreshTargetModel {
+  @Required()
+  @Description('The target entity to refer to.')
+  target: string
+
+  @Required()
+  @Description('The JSONPath representation of what JSON key want to read from.')
+  property: string
+}
+
 export class SearchSelectField {
+  @Optional()
+  @Description('Adornments property for reference source')
+  adornmentsProperty?: string
+
   @Property(SearchSelectLabel)
   @Description('Label related settings of the component')
   label: SearchSelectLabel = new SearchSelectLabel()
@@ -28,4 +42,16 @@ export class SearchSelectField {
     When "false", popup element is attached to HTML body as a React Portal
   `)
   disablePortal?: boolean = false
+
+  @Optional()
+  @Description('Data reference key settings for the dropdown.')
+  refreshTarget?: SearchSelectRefreshTargetModel
+
+  @Optional()
+  @Description('Label property for reference source')
+  labelProperty?: string
+
+  @Optional()
+  @Description('Key property for reference source')
+  keyProperty?: string
 }

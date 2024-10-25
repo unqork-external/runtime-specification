@@ -454,13 +454,25 @@ exports[`SearchSelect Contract Tests should ensure the contract is clear 3`] = `
   },
   "SearchSelectField": {
     "properties": {
+      "adornmentsProperty": {
+        "description": "Adornments property for reference source",
+        "type": "string",
+      },
       "disablePortal": {
         "default": false,
         "description": "When "true", children stay within parent DOM hierarchy. When "false", popup element is attached to HTML body as a React Portal",
         "type": "boolean",
       },
+      "keyProperty": {
+        "description": "Key property for reference source",
+        "type": "string",
+      },
       "label": {
         "$ref": "#/definitions/SearchSelectLabel",
+      },
+      "labelProperty": {
+        "description": "Label property for reference source",
+        "type": "string",
       },
       "multiple": {
         "default": false,
@@ -470,6 +482,9 @@ exports[`SearchSelect Contract Tests should ensure the contract is clear 3`] = `
       "placeholder": {
         "description": "Adds placeholder inside of input",
         "type": "string",
+      },
+      "refreshTarget": {
+        "$ref": "#/definitions/SearchSelectRefreshTargetModel",
       },
     },
     "type": "object",
@@ -669,6 +684,25 @@ exports[`SearchSelect Contract Tests should ensure the contract is clear 3`] = `
         "type": "object",
       },
     },
+    "type": "object",
+  },
+  "SearchSelectRefreshTargetModel": {
+    "properties": {
+      "property": {
+        "description": "The JSONPath representation of what JSON key want to read from.",
+        "minLength": 1,
+        "type": "string",
+      },
+      "target": {
+        "description": "The target entity to refer to.",
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "target",
+      "property",
+    ],
     "type": "object",
   },
   "SearchSelectSimpleViewModel": {
