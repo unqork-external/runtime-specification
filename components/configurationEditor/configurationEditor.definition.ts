@@ -42,6 +42,7 @@ export class ConfigurationEditorComponentDefinition extends BaseComponentDefinit
 }
 
 export class ConfigurationEditorComponentState extends ConfigurationEditorComponentDefinition {
-  @Description('Child ids for nestable references')
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

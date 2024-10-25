@@ -457,6 +457,7 @@ exports[`UD View Contract Tests should ensure the contract is clear - component 
 [
   "key",
   "type",
+  "childIds",
 ]
 `;
 
@@ -482,7 +483,7 @@ exports[`UD View Contract Tests should ensure the contract is clear - component 
     "type": "string",
   },
   "childIds": {
-    "description": "Child IDs for nestable references",
+    "description": "Child ids for all nestable references within the component.",
     "type": "array",
   },
   "components": {

@@ -33,6 +33,7 @@ export class UdButtonViewComponentDefinition extends BaseComponentDefinition {
 }
 
 export class UdButtonViewComponentState extends UdButtonViewComponentDefinition {
-  @Description('Child IDs for nestable references')
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

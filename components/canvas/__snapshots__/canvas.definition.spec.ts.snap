@@ -1407,6 +1407,7 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
     "type": "object",
   },
   "childIds": {
+    "description": "Child ids for all nestable references within the component.",
     "type": "array",
   },
   "currentLayoutId": {

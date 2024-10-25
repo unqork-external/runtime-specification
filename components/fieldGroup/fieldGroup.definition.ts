@@ -49,6 +49,6 @@ export class FieldGroupComponentDefinition extends BaseComponentDefinition {
 
 export class FieldGroupComponentState extends FieldGroupComponentDefinition {
   @Required()
-  @Description(`List of IDs that reference a Field Group's children.`)
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

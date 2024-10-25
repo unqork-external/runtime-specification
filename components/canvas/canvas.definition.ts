@@ -71,5 +71,6 @@ export class CanvasComponentDefinition extends BaseComponentDefinition {
 
 export class CanvasComponentState extends CanvasComponentDefinition {
   @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

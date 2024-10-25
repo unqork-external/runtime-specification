@@ -48,6 +48,7 @@ export class DynamicGridDataCsmComponentDefinition extends BaseComponentDefiniti
 }
 
 export class DynamicGridDataCsmComponentState extends DynamicGridDataCsmComponentDefinition {
-  @Description('Child ids for nestable references')
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

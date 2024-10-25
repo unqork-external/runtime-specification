@@ -1,4 +1,13 @@
-import { CollectionOf, Const, Default, Description, DiscriminatorValue, Optional, Property } from '@tsed/schema'
+import {
+  CollectionOf,
+  Const,
+  Default,
+  Description,
+  DiscriminatorValue,
+  Optional,
+  Property,
+  Required,
+} from '@tsed/schema'
 
 import { PanelField } from './panel.field'
 import { PanelStyling } from './styling/panel.styling'
@@ -62,6 +71,7 @@ export class PanelComponentState extends PanelComponentDefinition {
 }
 
 class PanelNestable {
-  @Property()
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: StandardArrayNestable = new StandardArrayNestable()
 }

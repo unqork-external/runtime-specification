@@ -405,13 +405,14 @@ exports[`UD Link View Contract Tests should ensure the contract is clear - compo
   "key",
   "type",
   "to",
+  "childIds",
 ]
 `;
 
 exports[`UD Link View Contract Tests should ensure the contract is clear - component state 2`] = `
 {
   "childIds": {
-    "description": "Child IDs for nestable references",
+    "description": "Child ids for all nestable references within the component.",
     "type": "array",
   },
   "components": {

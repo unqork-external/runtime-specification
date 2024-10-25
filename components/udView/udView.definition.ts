@@ -54,6 +54,7 @@ export class UdViewComponentDefinition extends BaseComponentDefinition {
 }
 
 export class UdViewComponentState extends UdViewComponentDefinition {
-  @Description('Child IDs for nestable references')
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

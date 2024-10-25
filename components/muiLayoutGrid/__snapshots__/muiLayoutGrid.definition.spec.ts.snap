@@ -369,12 +369,14 @@ exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - co
 [
   "key",
   "type",
+  "childIds",
 ]
 `;
 
 exports[`MUI Layout Grid Contract Tests should ensure the contract is clear - component state 2`] = `
 {
   "childIds": {
+    "description": "Child ids for all nestable references within the component.",
     "type": "array",
   },
   "components": {

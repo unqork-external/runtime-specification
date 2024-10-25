@@ -454,7 +454,7 @@ exports[`Field Group Contract Tests should ensure the contract is clear - compon
 exports[`Field Group Contract Tests should ensure the contract is clear - component state 2`] = `
 {
   "childIds": {
-    "description": "List of IDs that reference a Field Group's children.",
+    "description": "Child ids for all nestable references within the component.",
     "type": "array",
   },
   "components": {

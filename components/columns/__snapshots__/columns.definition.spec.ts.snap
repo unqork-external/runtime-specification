@@ -536,6 +536,7 @@ exports[`Columns Contract Tests should ensure the contract is clear - component 
 [
   "key",
   "type",
+  "childIds",
 ]
 `;
 

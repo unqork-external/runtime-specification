@@ -444,13 +444,14 @@ exports[`Position Contract Tests should ensure the contract is clear - component
 [
   "key",
   "type",
+  "childIds",
 ]
 `;
 
 exports[`Position Contract Tests should ensure the contract is clear - component state 2`] = `
 {
   "childIds": {
-    "description": "Fully qualified child keys for items nestables. Maintained by nestable api.",
+    "description": "Child ids for all nestable references within the component.",
     "type": "array",
   },
   "components": {

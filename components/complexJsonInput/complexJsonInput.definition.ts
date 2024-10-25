@@ -54,6 +54,7 @@ export class ComplexJsonInputComponentState extends ComplexJsonInputComponentDef
   @Description('Children for nestable references.')
   children: string[] = []
 
-  @Description('Child ids for nestable references.')
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

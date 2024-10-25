@@ -598,13 +598,14 @@ exports[`Tray Contract Tests should ensure the contract is clear - component sta
   "useDefaultStyles",
   "useLegacy",
   "filterText",
+  "childIds",
 ]
 `;
 
 exports[`Tray Contract Tests should ensure the contract is clear - component state 2`] = `
 {
   "childIds": {
-    "description": "Child ids for nestable references",
+    "description": "Child ids for all nestable references within the component.",
     "type": "array",
   },
   "executable": {

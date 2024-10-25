@@ -1,10 +1,9 @@
-import { CollectionOf, Const, Default, Description, DiscriminatorValue, Property, Schema } from '@tsed/schema'
+import { CollectionOf, Const, Description, DiscriminatorValue, Property, Required, Schema } from '@tsed/schema'
 
 import { ColumnData } from './columnData'
 import { ColumnsField } from './columns.field'
 import { ColumnsStyling } from './styling/columns.styling'
 import { ColumnsTargets } from './targets/columnsTargets.enum'
-import { Examples } from '../../../decorators/schema/examples.decorator'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { Display } from '../../component-composition/display/component.display'
@@ -50,6 +49,7 @@ export class ColumnsComponentDefinition extends BaseComponentDefinition {
 }
 
 export class ColumnsComponentState extends ColumnsComponentDefinition {
+  @Required()
   @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

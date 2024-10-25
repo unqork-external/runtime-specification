@@ -31,6 +31,7 @@ export class PositionComponentDefinition extends BaseComponentDefinition {
 }
 
 export class PositionComponentState extends PositionComponentDefinition {
-  @Description('Fully qualified child keys for items nestables. Maintained by nestable api.')
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

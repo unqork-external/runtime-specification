@@ -665,6 +665,7 @@ exports[`Workflow Contract Tests should ensure the contract is clear - component
   "type",
   "navigationSettings",
   "workflowData",
+  "childIds",
 ]
 `;
 
@@ -678,7 +679,7 @@ exports[`Workflow Contract Tests should ensure the contract is clear - component
     "$ref": "#/definitions/WorkflowButtonSettings",
   },
   "childIds": {
-    "description": "Child ids for nestable references",
+    "description": "Child ids for all nestable references within the component.",
     "type": "array",
   },
   "components": {

@@ -276,6 +276,7 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
   "assetsSettingsSpecs",
   "useSpecFromAssets",
   "useLegacy",
+  "childIds",
 ]
 `;
 
@@ -287,7 +288,7 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
     "type": "object",
   },
   "childIds": {
-    "description": "Child ids for nestable references",
+    "description": "Child ids for all nestable references within the component.",
     "type": "array",
   },
   "currentConfig": {

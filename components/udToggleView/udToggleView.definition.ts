@@ -74,6 +74,7 @@ export class UdToggleViewComponentDefinition extends BaseComponentDefinition {
 }
 
 export class UdToggleViewComponentState extends UdToggleViewComponentDefinition {
-  @Description('Child IDs for nestable references')
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

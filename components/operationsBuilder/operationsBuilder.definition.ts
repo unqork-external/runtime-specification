@@ -105,8 +105,8 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
 }
 
 export class OperationsBuilderComponentState extends OperationsBuilderComponentDefinition {
-  @Optional()
-  @Description('Child ids for nestable references')
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 
   @Required()

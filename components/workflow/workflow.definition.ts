@@ -81,7 +81,8 @@ export class WorkflowComponentDefinition extends BaseComponentDefinition {
 }
 
 export class WorkflowComponentState extends WorkflowComponentDefinition {
-  @Description('Child ids for nestable references')
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }
 

@@ -1,5 +1,5 @@
 import type { GridTypeMap } from '@mui/material/Grid/Grid'
-import { CollectionOf, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
+import { CollectionOf, Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
 
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { Display } from '../../component-composition/display/component.display'
@@ -24,6 +24,7 @@ export class MuiLayoutGridComponentDefinition extends BaseComponentDefinition {
 }
 
 export class MuiLayoutGridComponentState extends MuiLayoutGridComponentDefinition {
-  @Property()
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

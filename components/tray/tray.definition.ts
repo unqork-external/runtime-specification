@@ -53,6 +53,7 @@ export class TrayComponentDefinition extends BaseComponentDefinition {
 }
 
 export class TrayComponentState extends TrayComponentDefinition {
-  @Description('Child ids for nestable references')
+  @Required()
+  @Description('Child ids for all nestable references within the component.')
   childIds: string[] = []
 }

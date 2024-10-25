@@ -529,13 +529,14 @@ exports[`UD Toggle View Contract Tests should ensure the contract is clear - com
 [
   "key",
   "type",
+  "childIds",
 ]
 `;
 
 exports[`UD Toggle View Contract Tests should ensure the contract is clear - component state 2`] = `
 {
   "childIds": {
-    "description": "Child IDs for nestable references",
+    "description": "Child ids for all nestable references within the component.",
     "type": "array",
   },
   "components": {
