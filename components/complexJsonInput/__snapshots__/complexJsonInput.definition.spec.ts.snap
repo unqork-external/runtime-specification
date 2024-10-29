@@ -4,7 +4,6 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
 [
   "key",
   "type",
-  "label",
   "schemas",
   "isArray",
 ]
@@ -20,10 +19,8 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
   },
-  "initialComponentSetup": {
-    "default": false,
-    "description": "Flag designated to indicate the initial component has be set up.",
-    "type": "boolean",
+  "field": {
+    "$ref": "#/definitions/InputField",
   },
   "inputs": {
     "items": {
@@ -42,12 +39,6 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
       "I am the key",
       "bestKeyEver",
     ],
-    "minLength": 1,
-    "type": "string",
-  },
-  "label": {
-    "default": "",
-    "description": "A label used for the component.",
     "minLength": 1,
     "type": "string",
   },
@@ -116,7 +107,7 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
     "type": "object",
   },
   "styling": {
-    "$ref": "#/definitions/StylingModel",
+    "$ref": "#/definitions/ComplexJsonInputStyling",
   },
   "type": {
     "const": "complexJsonInput",
@@ -147,6 +138,31 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
 
 exports[`ConfigurationEditor Contract Tests should ensure the contract is clear - component definition 3`] = `
 {
+  "ComplexJsonInputStyling": {
+    "description": "An object containing styling for the component.",
+    "examples": [
+      {
+        "styling": {
+          "targets": {
+            "root": [
+              "very-fancy-custom-class",
+              {
+                "color": "red",
+              },
+              "another-custom-class",
+            ],
+          },
+        },
+      },
+      "<Example> Prompt: "I want to be able to style the textfield component on root element with the style class 'very-fancy-custom-class', with red color and another style class 'another-custom-class'" Response: [{"key":"yourGeneratedTextfield","type":"textfield","styling":{"targets":{"root":["very-fancy-custom-class",{"color":"red"},"another-custom-class"]}}}] </Example>",
+    ],
+    "properties": {
+      "targets": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
   "Display": {
     "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Read Only View' corresponds to the component being rendered with an input element or as text.",
     "properties": {
@@ -164,6 +180,80 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
         "default": false,
         "description": "Defines how the component will be displayed. When \`false\`, the component is displayed as an input field. When \`true\`, the component will not accept any input from the user, and its value will be rendered inline as text and not as an input component. If no value is present, the word 'None' is rendered. If a prefix or suffix is set for the component, they also appear as inline text.",
         "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "InputField": {
+    "description": "Details to be applied to the input element within a component.",
+    "properties": {
+      "customClass": {
+        "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
+        "type": "string",
+      },
+      "helperText": {
+        "$ref": "#/definitions/InputHelperText",
+      },
+      "label": {
+        "$ref": "#/definitions/InputLabel",
+      },
+      "placeholder": {
+        "description": "An example or short explanation of the requested input. This appears inside of the input by default and disappears when the user enters a value.",
+        "examples": [
+          "First name - Expects the user to type their first name",
+          "Enter your Social Security Number - Expects user's SSN",
+          "dd/MM/YYYY - To show an expected date format (if you need a more robust component, try Date Input",
+        ],
+        "type": "string",
+      },
+      "prefix": {
+        "description": "A symbol or text to display before the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          "$",
+          "@",
+        ],
+        "type": "string",
+      },
+      "suffix": {
+        "description": "A symbol or text to display after the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          ".com",
+        ],
+        "type": "string",
+      },
+      "tooltipDescription": {
+        "description": "Tooltips are floating texts that appear when the cursor is positioned over an icon. They can span across multiple lines and provide hints about the requested data. Setting this property will make a question mark icon to be displayed on the right side of the component's label, and once the user hovers over it, the tooltip text will appear. Moving the cursor outside the icon's area hides the tooltip. Hiding the component's label automatically hides the tooltip.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputHelperText": {
+    "description": "Details pertaining to the helper text element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the helper text of the component.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed underneath the input field. Unlike tooltips, a helper text stays visible under the input field and displays on a single line.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputLabel": {
+    "description": "Details pertaining to the label element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the label of the component. Note the label will still be displayed on the Module Editor.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed above the input field.",
+        "type": "string",
       },
     },
     "type": "object",
@@ -194,6 +284,15 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
     "required": [
       "targetKey",
     ],
+    "type": "object",
+  },
+  "Label": {
+    "properties": {
+      "text": {
+        "description": "Text displayed as the label for the field",
+        "type": "string",
+      },
+    },
     "type": "object",
   },
   "PackageModel": {
@@ -301,7 +400,6 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
 [
   "key",
   "type",
-  "label",
   "schemas",
   "isArray",
   "childIds",
@@ -326,10 +424,8 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
   },
-  "initialComponentSetup": {
-    "default": false,
-    "description": "Flag designated to indicate the initial component has be set up.",
-    "type": "boolean",
+  "field": {
+    "$ref": "#/definitions/InputField",
   },
   "inputs": {
     "items": {
@@ -348,12 +444,6 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
       "I am the key",
       "bestKeyEver",
     ],
-    "minLength": 1,
-    "type": "string",
-  },
-  "label": {
-    "default": "",
-    "description": "A label used for the component.",
     "minLength": 1,
     "type": "string",
   },
@@ -486,6 +576,31 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
 
 exports[`ConfigurationEditor Contract Tests should ensure the contract is clear - component state 3`] = `
 {
+  "ComplexJsonInputStyling": {
+    "description": "An object containing styling for the component.",
+    "examples": [
+      {
+        "styling": {
+          "targets": {
+            "root": [
+              "very-fancy-custom-class",
+              {
+                "color": "red",
+              },
+              "another-custom-class",
+            ],
+          },
+        },
+      },
+      "<Example> Prompt: "I want to be able to style the textfield component on root element with the style class 'very-fancy-custom-class', with red color and another style class 'another-custom-class'" Response: [{"key":"yourGeneratedTextfield","type":"textfield","styling":{"targets":{"root":["very-fancy-custom-class",{"color":"red"},"another-custom-class"]}}}] </Example>",
+    ],
+    "properties": {
+      "targets": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
   "Display": {
     "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Read Only View' corresponds to the component being rendered with an input element or as text.",
     "properties": {
@@ -503,6 +618,80 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
         "default": false,
         "description": "Defines how the component will be displayed. When \`false\`, the component is displayed as an input field. When \`true\`, the component will not accept any input from the user, and its value will be rendered inline as text and not as an input component. If no value is present, the word 'None' is rendered. If a prefix or suffix is set for the component, they also appear as inline text.",
         "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "InputField": {
+    "description": "Details to be applied to the input element within a component.",
+    "properties": {
+      "customClass": {
+        "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
+        "type": "string",
+      },
+      "helperText": {
+        "$ref": "#/definitions/InputHelperText",
+      },
+      "label": {
+        "$ref": "#/definitions/InputLabel",
+      },
+      "placeholder": {
+        "description": "An example or short explanation of the requested input. This appears inside of the input by default and disappears when the user enters a value.",
+        "examples": [
+          "First name - Expects the user to type their first name",
+          "Enter your Social Security Number - Expects user's SSN",
+          "dd/MM/YYYY - To show an expected date format (if you need a more robust component, try Date Input",
+        ],
+        "type": "string",
+      },
+      "prefix": {
+        "description": "A symbol or text to display before the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          "$",
+          "@",
+        ],
+        "type": "string",
+      },
+      "suffix": {
+        "description": "A symbol or text to display after the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          ".com",
+        ],
+        "type": "string",
+      },
+      "tooltipDescription": {
+        "description": "Tooltips are floating texts that appear when the cursor is positioned over an icon. They can span across multiple lines and provide hints about the requested data. Setting this property will make a question mark icon to be displayed on the right side of the component's label, and once the user hovers over it, the tooltip text will appear. Moving the cursor outside the icon's area hides the tooltip. Hiding the component's label automatically hides the tooltip.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputHelperText": {
+    "description": "Details pertaining to the helper text element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the helper text of the component.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed underneath the input field. Unlike tooltips, a helper text stays visible under the input field and displays on a single line.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputLabel": {
+    "description": "Details pertaining to the label element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the label of the component. Note the label will still be displayed on the Module Editor.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed above the input field.",
+        "type": "string",
       },
     },
     "type": "object",
@@ -533,6 +722,15 @@ exports[`ConfigurationEditor Contract Tests should ensure the contract is clear 
     "required": [
       "targetKey",
     ],
+    "type": "object",
+  },
+  "Label": {
+    "properties": {
+      "text": {
+        "description": "Text displayed as the label for the field",
+        "type": "string",
+      },
+    },
     "type": "object",
   },
   "PackageModel": {

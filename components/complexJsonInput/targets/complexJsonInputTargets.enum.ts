@@ -1,0 +1,17 @@
+export enum ComplexJsonInputTargetsEnum {
+  root = 'root',
+  label = 'label',
+  tooltip = 'tooltip',
+  tooltipPopover = 'tooltipPopover',
+  complexJsonInputTypeSelector = 'complexJsonInputTypeSelector',
+  complexJsonInputAddClearWrapper = 'complexJsonInputAddClearWrapper',
+  addButton = 'addButton',
+  clearButton = 'clearButton',
+  deleteButton = 'deleteButton',
+  complexJsonInputChildrenWrapper = 'complexJsonInputChildrenWrapper',
+  complexJsonInputChildItem = 'complexJsonInputChildItem',
+  complexJsonInput = 'complexJsonInput',
+  complexJsonInputSelectOption = 'complexJsonInputSelectOption',
+  complexJsonInputSelectOptionLabel = 'complexJsonInputSelectOptionLabel',
+  errors = 'errors',
+}
