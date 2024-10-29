@@ -64,5 +64,49 @@ export class ComplexJsonInputStylingTargets implements TargetsModel<ComplexJsonI
 
   @Css()
   @Description('Adds styles to the error messages for complexJsonInput component.')
-  [ComplexJsonInputTargetsEnum.errors]: CssClassOrProps
+  [ComplexJsonInputTargetsEnum.errors]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to array item menu wrapper in complexJsonInput component.')
+  [ComplexJsonInputTargetsEnum.arrayItemMenuWrapper]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to array item menu button in complexJsonInput component.')
+  [ComplexJsonInputTargetsEnum.arrayItemMenuButton]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to array item menu in complexJsonInput component.')
+  [ComplexJsonInputTargetsEnum.arrayItemMenu]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to array item menu option move up in complexJsonInput component.')
+  [ComplexJsonInputTargetsEnum.moveItemUp]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to array item menu option move down in complexJsonInput component.')
+  [ComplexJsonInputTargetsEnum.moveItemDown]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to move up icon in array item menu in complexJsonInput component.')
+  [ComplexJsonInputTargetsEnum.moveItemUpIcon]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to move down icon in array item menu in complexJsonInput component.')
+  [ComplexJsonInputTargetsEnum.moveItemDownIcon]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to delete icon in array item menu in complexJsonInput component.')
+  [ComplexJsonInputTargetsEnum.deleteIcon]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to move up item label in array item menu in complexJsonInput component.')
+  [ComplexJsonInputTargetsEnum.moveItemUpLabel]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to move down item label in array item menu in complexJsonInput component.')
+  [ComplexJsonInputTargetsEnum.moveItemDownLabel]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to delete item label in array item menu in complexJsonInput component.')
+  [ComplexJsonInputTargetsEnum.deleteLabel]: CssClassOrProps
 }

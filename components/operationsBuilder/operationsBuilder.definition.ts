@@ -65,10 +65,6 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   currentOperationSummary?: string = ''
 
   @Required()
-  @Description('A map of all operations and their schemas, definitions, descriptions, and stability')
-  operationsMap: Record<keyof typeof OperationTypes, OperationsBuilderOperation>
-
-  @Required()
   @Default(false)
   @Description('Indicates that an operation is being edited and is an existing operation')
   editMode: boolean = false
