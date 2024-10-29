@@ -10,7 +10,7 @@ export class ComboboxIconsNestable extends Nestable {
   type: NestableType = NestableType.ARRAY
 
   @Optional()
-  children?: string = 'icons'
+  children: string = 'icons'
 }
 
 export class ComboboxNestable {

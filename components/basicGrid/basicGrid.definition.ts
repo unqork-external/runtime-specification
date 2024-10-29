@@ -56,7 +56,7 @@ export class ColumnNestables extends Nestable {
   type: NestableType = NestableType.ARRAY
 
   @Property()
-  children?: string = 'columnComponents'
+  children: string = 'columnComponents'
 }
 
 export class RowNestables extends Nestable {
@@ -67,7 +67,7 @@ export class RowNestables extends Nestable {
   type: NestableType = NestableType.MATRIX
 
   @Property()
-  children?: string = 'rowComponents'
+  children: string = 'rowComponents'
 
   watchFor?: string = 'value'
 }

@@ -11,5 +11,5 @@ export class StandardArrayNestable extends Nestable {
 
   @Optional()
   @Property()
-  children?: string = 'components'
+  children: string = 'components'
 }
