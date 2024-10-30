@@ -21,6 +21,7 @@ export * from './dropdown'
 export * from './dynamicGridDataCsm'
 
 export * from './email'
+export * from './embedded/embedded.definition'
 
 export * from './fieldGroup'
 export * from './file'
