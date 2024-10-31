@@ -42,7 +42,7 @@ exports[`Operation Model: TableSetColumnPinning Tests should match this JSON Sch
       "type": "object",
     },
   },
-  "description": "Pins columns to the left or right of the Table component",
+  "description": "Pins columns to the left or right of the Table component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

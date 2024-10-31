@@ -50,7 +50,7 @@ exports[`Operation Model: TableSetColumnFilter Tests should match this JSON Sche
       "type": "object",
     },
   },
-  "description": "Add filter types and/or values to apply to the Table component",
+  "description": "Add filter types and/or values to apply to the Table component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

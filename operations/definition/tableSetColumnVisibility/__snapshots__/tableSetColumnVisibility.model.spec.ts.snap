@@ -43,7 +43,7 @@ exports[`Operation Model: TableSetColumnVisibility Tests should match this JSON 
       "type": "object",
     },
   },
-  "description": "Sets the column(s) visibility for the Table component",
+  "description": "Sets the column(s) visibility for the Table component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

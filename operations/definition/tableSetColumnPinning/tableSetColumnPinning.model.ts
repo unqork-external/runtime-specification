@@ -6,7 +6,7 @@ import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface'
 
 @DiscriminatorValue(OperationTypes.TABLE_SET_COLUMN_PINNING)
-@Description('Pins columns to the left or right of the Table component')
+@Description('Pins columns to the left or right of the Table component.')
 @Stable()
 @OpsBuilderStable()
 export class TableSetColumnPinningOperation extends Operation<OperationTypes.TABLE_SET_COLUMN_PINNING> {

@@ -6,7 +6,7 @@ import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.TABLE_SET_COLUMN_VISIBILITY)
-@Description('Sets the column(s) visibility for the Table component')
+@Description('Sets the column(s) visibility for the Table component.')
 @Stable()
 @OpsBuilderStable()
 export class TableSetColumnVisibilityOperation extends Operation<OperationTypes.TABLE_SET_COLUMN_VISIBILITY> {
