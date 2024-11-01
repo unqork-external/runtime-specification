@@ -23,6 +23,7 @@ export enum CanvasTargetsEnum {
   canvasItemHeaderBadgeIcon = 'canvasItemHeaderBadgeIcon',
   canvasItemHeaderWrapper = 'canvasItemHeaderWrapper',
   representationWrapper = 'representationWrapper',
+  representationScrollTarget = 'representationScrollTarget',
   representationInnerDropZoneWrapper = 'representationInnerDropZoneWrapper',
   representationButtonsOpenMenu = 'representationButtonsOpenMenu',
   representationButtonsOpenEdit = 'representationButtonsOpenEdit',

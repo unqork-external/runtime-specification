@@ -1181,6 +1181,30 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
           },
         ],
       },
+      "representationScrollTarget": {
+        "description": "Adds styles to the scroll target of a representation.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
       "representationViewWrapper": {
         "description": "Adds styles to the div wrapping a representation.",
         "oneOf": [
@@ -2582,6 +2606,30 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
       },
       "representationOnClickWrapper": {
         "description": "Adds styles to the div responsible for onClick edit of representation",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "representationScrollTarget": {
+        "description": "Adds styles to the scroll target of a representation.",
         "oneOf": [
           {
             "type": "string",

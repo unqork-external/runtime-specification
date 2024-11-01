@@ -79,6 +79,10 @@ export class CanvasTargets implements TargetsModel<CanvasTargetsEnum> {
   [CanvasTargetsEnum.representationWrapper]: CssClassOrProps;
 
   @Css()
+  @Description('Adds styles to the scroll target of a representation.')
+  [CanvasTargetsEnum.representationScrollTarget]: CssClassOrProps;
+
+  @Css()
   @Description('Adds styles to the outer div wrapper the inner dropzone.')
   [CanvasTargetsEnum.representationInnerDropZoneWrapper]: CssClassOrProps;
 
