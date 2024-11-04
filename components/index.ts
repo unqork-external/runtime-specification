@@ -5,6 +5,7 @@ export * from './button'
 
 export * from './calculator/calculator.definition'
 export * from './canvas'
+export * from './chart'
 export * from './checkboxes'
 export * from './codeEditor'
 export * from './columns'
