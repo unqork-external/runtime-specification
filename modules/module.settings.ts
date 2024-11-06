@@ -1,6 +1,7 @@
 import { Example, Optional, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../decorators'
+import { DEFAULT_LANGUAGE } from '../translations'
 
 @TrimmedDescription(`Module Settings`)
 export class ModuleSettings {
@@ -35,4 +36,11 @@ export class ModuleSettings {
    the value in Page Title will be visible in the browser tab appending the Site Name
   `)
   pageTitle?: string
+
+  @Optional()
+  @Example('fr')
+  @TrimmedDescription(`
+    The ISO 639-1 language code for the module.
+  `)
+  language: string = DEFAULT_LANGUAGE
 }

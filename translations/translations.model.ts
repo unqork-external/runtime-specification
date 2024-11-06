@@ -20,6 +20,8 @@ type ReferenceToTranslation = Record<ReferenceKey, TranslationString>
 
 export type TranslationMap = Record<LanguageKey, ReferenceToTranslation>
 
+export const DEFAULT_LANGUAGE = 'en'
+
 export class TranslationModel {
   @TrimmedDescription(`
     The \`translations\` key represents a top level language key like 'en' for English or 'sp' for spanish.
