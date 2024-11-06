@@ -115,7 +115,14 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
 
   @Property()
   @Enum(PinPosition)
-  rowPinningDisplayMode: PinPosition | string
+  rowPinningDisplayMode: PinPosition | string = PinPosition.TopAndBottom
+
+  @TrimmedDescription(`
+    When \`false\`, pinned rows will not be visible if they are filtered or paginated out of the table. 
+    When \`true\`, pinned rows will always be visible regardless of filtering or pagination.
+  `)
+  @Optional()
+  keepPinnedRows: boolean = false
 
   @Property()
   rowPinning: RowPinningState
