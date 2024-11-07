@@ -1,7 +1,7 @@
-import { Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
+import { Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
 
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
-import { Display } from '../../component-composition/display/component.display'
+import { OperationTypes, OperationsAllowMode } from '../../operations'
 
 export class EmbeddedData {
   @Optional()
@@ -15,6 +15,16 @@ export class EmbeddedData {
   @Optional()
   @Description('Property of the targetKey component to pull data from')
   property?: string
+}
+
+export class EmbeddedOperationsOptions {
+  @Optional()
+  @Description('Mode to control how operations are allowed to run')
+  mode?: OperationsAllowMode
+
+  @Optional()
+  @Description('List of operations to restrict/allow')
+  operations?: OperationTypes[]
 }
 
 export class EmbeddedOptions {
@@ -33,6 +43,10 @@ export class EmbeddedOptions {
   @Optional()
   @Description('Key used to identify the embedded instance and attach to the window/global')
   embeddingKey?: string
+
+  @Optional()
+  @Description('Controls what operations are available to the embedded module')
+  operationsOptions?: EmbeddedOperationsOptions
 }
 
 @DiscriminatorValue('embedded')

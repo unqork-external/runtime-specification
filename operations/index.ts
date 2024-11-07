@@ -1,4 +1,5 @@
 export * from './enums/operation-types.enum'
+export * from './enums/operations-settings'
 export * from './interface'
 export * from './typemaps/operation.typemap'
 export * from './createOperation'
