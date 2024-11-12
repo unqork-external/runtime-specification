@@ -43,7 +43,7 @@ export class SearchSelectComponentDefinition extends BaseComponentDefinition {
   options: SearchSelectOptionComponentDefinition[] = []
 
   @Description('Fully qualified child keys for options nestables. Maintained by nestable api.')
-  optionKeys?: string[] = []
+  optionKeys: string[] = []
 
   @CollectionOf(BaseComponentDefinition)
   @Description('Nested selected option component definitions')
