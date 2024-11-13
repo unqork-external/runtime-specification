@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: ChartRemoveSeries Tests ChartRemoveSeries Model 1`] = `
+{
+  "definitions": {
+    "ChartRemoveSeriesOperationOptions": {
+      "properties": {
+        "targetIds": {
+          "description": "The IDs of the series to be removed.",
+          "examples": [
+            [
+              "seriesA",
+            ],
+          ],
+          "items": {
+            "type": "string",
+          },
+          "type": "array",
+        },
+        "targetKey": {
+          "description": "The Property ID for the target Chart component.",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "targetIds",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "Removes series from a Chart component.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ChartRemoveSeriesOperationOptions",
+    },
+    "type": {
+      "const": "CHART_REMOVE_SERIES",
+      "examples": [
+        "CHART_REMOVE_SERIES",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "stability": "STABLE",
+  "type": "object",
+}
+`;

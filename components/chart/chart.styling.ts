@@ -8,7 +8,7 @@ import { TargetsModel } from '../../viewTargets/targets.model'
 
 export class ChartStyleTargets implements TargetsModel<ChartTargets> {
   @Css()
-  @Description('Styles for the chart root wrapper.')
+  @Description('Styles for the Chart component root wrapper.')
   [ChartTargets.root]: CssClassOrProps
 }
 

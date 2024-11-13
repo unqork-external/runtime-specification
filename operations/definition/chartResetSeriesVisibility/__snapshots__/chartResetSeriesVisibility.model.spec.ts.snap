@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: ChartResetSeriesVisibility Tests ChartResetSeriesVisibility Model 1`] = `
+{
+  "definitions": {
+    "ChartResetSeriesVisibilityOperationOptions": {
+      "properties": {
+        "targetKey": {
+          "description": "The Property ID for the target Chart component.",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "Resets all series to visible on a Chart component.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ChartResetSeriesVisibilityOperationOptions",
+    },
+    "type": {
+      "const": "CHART_RESET_SERIES_VISIBILITY",
+      "examples": [
+        "CHART_RESET_SERIES_VISIBILITY",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "stability": "STABLE",
+  "type": "object",
+}
+`;

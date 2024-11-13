@@ -11,6 +11,12 @@ import { CanvasDeleteItemOperation } from '../definition/canvasDeleteItem'
 import { CanvasGetComponentChildrenOperation } from '../definition/canvasGetComponentChildren'
 import { CanvasHydrateOperation } from '../definition/canvasHydrate'
 import { CanvasSetItemStatusOperation } from '../definition/canvasSetItemStatus'
+import { ChartAddSeriesOperation } from '../definition/chartAddSeries'
+import { ChartRemoveSeriesOperation } from '../definition/chartRemoveSeries'
+import { ChartResetSeriesVisibilityOperation } from '../definition/chartResetSeriesVisibility'
+import { ChartSetLegendPositionOperation } from '../definition/chartSetLegendPosition'
+import { ChartSetSeriesOperation } from '../definition/chartSetSeries'
+import { ChartToggleSeriesVisibilityOperation } from '../definition/chartToggleSeriesVisibility'
 import { ClearOperation } from '../definition/clear'
 import { ClearValidationErrorOperation } from '../definition/clear-validation-errors'
 import { ClearQueryParametersOperation } from '../definition/clearQueryParameters'
@@ -111,6 +117,12 @@ export const OperationTypeMap = {
   [OperationTypes.SPREADSHEET_INPUT_INSERT_ROWS]: SpreadsheetInputInsertRowsOperation,
   [OperationTypes.SPREADSHEET_INPUT_INSERT_COLUMNS]: SpreadsheetInputInsertColumnsOperation,
   [OperationTypes.CANVAS_SET_ITEM_STATUS]: CanvasSetItemStatusOperation,
+  [OperationTypes.CHART_ADD_SERIES]: ChartAddSeriesOperation,
+  [OperationTypes.CHART_REMOVE_SERIES]: ChartRemoveSeriesOperation,
+  [OperationTypes.CHART_RESET_SERIES_VISIBILITY]: ChartResetSeriesVisibilityOperation,
+  [OperationTypes.CHART_SET_LEGEND_POSITION]: ChartSetLegendPositionOperation,
+  [OperationTypes.CHART_SET_SERIES]: ChartSetSeriesOperation,
+  [OperationTypes.CHART_TOGGLE_SERIES_VISIBILITY]: ChartToggleSeriesVisibilityOperation,
   [OperationTypes.CLEAR_QUERY_PARAMETERS]: ClearQueryParametersOperation,
   [OperationTypes.REMOVE_QUERY_PARAMETERS]: RemoveQueryParametersOperation,
   [OperationTypes.ADD_QUERY_PARAMETERS]: AddQueryParametersOperation,

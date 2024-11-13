@@ -1,0 +1,143 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: ChartSetSeries Tests ChartSetSeries Model 1`] = `
+{
+  "definitions": {
+    "ChartPropertyMap": {
+      "properties": {
+        "x": {
+          "description": "The property name of the X values for the data of the series.",
+          "minLength": 1,
+          "type": "string",
+        },
+        "y": {
+          "description": "The property name of the Y values for the data of the series.",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "x",
+        "y",
+      ],
+      "type": "object",
+    },
+    "ChartRefreshTarget": {
+      "properties": {
+        "property": {
+          "default": "value",
+          "description": "The property in the component state that holds the data for the series.",
+          "type": "string",
+        },
+        "propertyMap": {
+          "$ref": "#/definitions/ChartPropertyMap",
+        },
+        "target": {
+          "description": "The property ID of the component that holds the data for the series.",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "target",
+        "propertyMap",
+      ],
+      "type": "object",
+    },
+    "ChartSeries": {
+      "properties": {
+        "color": {
+          "description": "The color of the new series to be displayed in the Chart component. Accepts color hex code, prefixed with #. ex: #990000 for dark red.",
+          "examples": [
+            "#990000",
+          ],
+          "type": "string",
+        },
+        "id": {
+          "description": "The unique identifier for the series of the Chart component.",
+          "minLength": 1,
+          "type": "string",
+        },
+        "label": {
+          "description": "The label of the series. Shown in the Legend and when the user hovers over the chart.",
+          "type": "string",
+        },
+        "refreshTarget": {
+          "$ref": "#/definitions/ChartRefreshTarget",
+        },
+        "stackGroup": {
+          "description": "The logical grouping name of the series, which then becomes stacked with other series that use the exact same group name.",
+          "type": "string",
+        },
+        "type": {
+          "description": "The type of chart to be displayed for the series.",
+          "enum": [
+            "area",
+            "bar",
+            "column",
+            "line",
+            "pie",
+            "scatter",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "id",
+        "type",
+        "refreshTarget",
+      ],
+      "type": "object",
+    },
+    "ChartSetSeriesOperationOptions": {
+      "properties": {
+        "series": {
+          "description": "The series configuration to update.",
+          "items": {
+            "$ref": "#/definitions/ChartSeries",
+          },
+          "type": "array",
+        },
+        "targetKey": {
+          "description": "The Property ID for the target Chart component.",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "series",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "Updates series properties on a Chart component.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ChartSetSeriesOperationOptions",
+    },
+    "type": {
+      "const": "CHART_SET_SERIES",
+      "examples": [
+        "CHART_SET_SERIES",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "stability": "STABLE",
+  "type": "object",
+}
+`;

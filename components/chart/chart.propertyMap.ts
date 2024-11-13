@@ -2,10 +2,10 @@ import { Description, Required } from '@tsed/schema'
 
 export class ChartPropertyMap {
   @Required()
-  @Description('Label or value for the X axis.')
+  @Description('The property name of the X values for the data of the series.')
   x: string
 
   @Required()
-  @Description('Value for the Y axis.')
+  @Description('The property name of the Y values for the data of the series.')
   y: string
 }
