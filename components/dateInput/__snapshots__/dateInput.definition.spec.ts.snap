@@ -142,7 +142,14 @@ exports[`Date Input Contract Tests should ensure the contract is clear 3`] = `
     "properties": {
       "dateFormat": {
         "default": "mdY",
-        "description": "Defines the format for the value of this field by using MDY tokens (tokens are case sensitive).",
+        "description": "Defines the format for the value of this field by using MDY tokens (tokens are case sensitive).
+                m = month, d = day, y = year with two digits, Y = year with four digits.",
+        "examples": [
+          "ymd",
+          "dmY",
+          "mdY",
+        ],
+        "pattern": "^(?=[^Yy]*[Yy])(?=[^m]*m)(?=[^d]*d)[Yymd]{3}$",
         "type": "string",
       },
       "disableAutoComplete": {

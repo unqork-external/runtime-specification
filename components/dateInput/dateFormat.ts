@@ -1,4 +1,8 @@
-import { Default, Description, Optional } from '@tsed/schema'
+import { Default, Description, Optional, Pattern } from '@tsed/schema'
+
+import { dateFormatExamples } from './dateFormat.examples'
+import { DateInputDefaults } from './dateInputDefaults.enum'
+import { Examples } from '../../../decorators/schema/examples.decorator'
 
 @Description('Controls format of dates and autocomplete functionality')
 export class DateFormat {
@@ -18,7 +22,12 @@ export class DateFormat {
   disableAutoComplete: boolean = false
 
   @Optional()
-  @Default('mdY')
-  @Description('Defines the format for the value of this field by using MDY tokens (tokens are case sensitive).')
-  dateFormat: string = 'mdY'
+  @Default(DateInputDefaults.DEFAULT_DATE_FORMAT)
+  @Description(`Defines the format for the value of this field by using MDY tokens (tokens are case sensitive).
+                m = month, d = day, y = year with two digits, Y = year with four digits.`)
+  @Examples(dateFormatExamples)
+  // The following regex matches each of (Y or y), m, and d only once.
+  // Once we implement schema validation, this will help us enforce it
+  @Pattern('^(?=[^Yy]*[Yy])(?=[^m]*m)(?=[^d]*d)[Yymd]{3}$')
+  dateFormat: string = DateInputDefaults.DEFAULT_DATE_FORMAT
 }
