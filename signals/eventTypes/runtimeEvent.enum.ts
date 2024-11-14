@@ -55,6 +55,8 @@ export enum RuntimeEvent {
   ON_EDIT_ROW = 'ON_EDIT_ROW',
   // TODO: Component specific event. belongs on the component specifically.
   ON_SAVE_ROW = 'ON_SAVE_ROW',
+  // TODO: Component specific event. belongs on the component specifically.
+  ON_CANVAS_HYDRATE = 'ON_CANVAS_HYDRATE',
 
   // Used by Angular Proxy
   // TODO: Component specific event. belongs on the component specifically.
