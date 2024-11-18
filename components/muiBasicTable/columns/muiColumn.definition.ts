@@ -1,29 +1,14 @@
-import { Description, DiscriminatorValue, Optional, Property } from '@tsed/schema'
+import { Description, DiscriminatorValue, Optional } from '@tsed/schema'
 
-import { BaseComponentDefinition } from '../../../base-component-interface'
+import { MuiColumnSizingDefinition } from './sizing/muiColumnSizing.definition'
 
 @DiscriminatorValue('muiColumn')
-export class MuiColumnDefinition extends BaseComponentDefinition {
-  @Property()
-  @Description(`Flag for resizing column width`)
-  allowResize: boolean = true
-
-  @Property()
-  @Description(`Flag for reordering the column on the table`)
-  allowReorder: boolean = true
-
-  @Property()
-  @Description(`Flag for filtering rows based on this column`)
-  allowFilter: boolean = true
-
-  @Property()
-  @Description(`Flag for sorting rows based on this column`)
-  allowSort: boolean = true
-
+export class MuiColumnDefinition {
   @Optional()
   @Description(`Column label`)
   label?: string
 
-  @Property()
-  component?: BaseComponentDefinition
+  @Optional()
+  @Description(`Configurations to control column sizing`)
+  columnSizing?: MuiColumnSizingDefinition
 }

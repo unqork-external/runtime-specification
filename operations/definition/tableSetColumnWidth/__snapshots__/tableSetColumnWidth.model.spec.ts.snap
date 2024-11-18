@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetColumnWidth Tests TableSetColumnWidth Model 1`] = `
+{
+  "definitions": {
+    "TableSetColumnWidthOperationOptions": {
+      "properties": {
+        "columnSizing": {
+          "description": "A record mapping column keys to column sizing definitions. A column size definition provides 'size', 'minSize', and 'maxSize' to control the column width (all values in pixels) and an optional flag 'grow' which, when set to true, makes the column to expand filling all the remaining space.",
+          "examples": [
+            "
+    columnSizing: {
+      "firstName": {
+        "size": 180
+      },
+      "dob": {
+        "size": 80,
+        "grow": true
+      },
+      "status": {
+        "minSize": 40,
+        "maxSize": 120
+      },
+    }
+  ",
+          ],
+          "type": "object",
+        },
+        "targetKey": {
+          "description": "Key of the Table component to target for column visibility",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "columnSizing",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetColumnWidthOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_COLUMN_WIDTH",
+      "examples": [
+        "TABLE_SET_COLUMN_WIDTH",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "type": "object",
+}
+`;

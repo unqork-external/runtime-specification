@@ -81,6 +81,7 @@ import { TableSetColumnFiltersVisibilityOperation } from '../definition/tableSet
 import { TableSetColumnOrderingOperation } from '../definition/tableSetColumnOrdering'
 import { TableSetColumnPinningOperation } from '../definition/tableSetColumnPinning'
 import { TableSetColumnVisibilityOperation } from '../definition/tableSetColumnVisibility'
+import { TableSetColumnWidthOperation } from '../definition/tableSetColumnWidth'
 import { TableSetGlobalFilterOperation } from '../definition/tableSetGlobalFilter'
 import { TableSetGlobalFilterVisibilityOperation } from '../definition/tableSetGlobalFilterVisibility'
 import { TableSetGroupingCriteriaOperation } from '../definition/tableSetGroupingCriteria'
@@ -172,6 +173,7 @@ export const OperationTypeMap = {
   [OperationTypes.TABLE_SET_SELECTED_ROW]: TableSetSelectedRowOperation,
   [OperationTypes.TABLE_SET_GROUPING_CRITERIA]: TableSetGroupingCriteriaOperation,
   [OperationTypes.TABLE_SET_COLUMN_VISIBILITY]: TableSetColumnVisibilityOperation,
+  [OperationTypes.TABLE_SET_COLUMN_WIDTH]: TableSetColumnWidthOperation,
   [OperationTypes.TABLE_SET_ROW_DENSITY]: TableSetRowDensityOperation,
   [OperationTypes.TABLE_TOGGLE_GROUPING]: TableToggleGroupingOperation,
   [OperationTypes.TABLE_ADD_ROW]: TableAddRowOperation,
