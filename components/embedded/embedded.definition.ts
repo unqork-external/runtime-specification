@@ -1,6 +1,7 @@
 import { Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
 
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import type { HeaderFooterOverride } from '../../header-footer'
 import { OperationTypes, OperationsAllowMode } from '../../operations'
 
 export class EmbeddedData {
@@ -47,6 +48,10 @@ export class EmbeddedOptions {
   @Optional()
   @Description('Controls what operations are available to the embedded module')
   operationsOptions?: EmbeddedOperationsOptions
+
+  @Optional()
+  @Description('Override the environment header/footer modules')
+  headerFooterOverride?: HeaderFooterOverride
 }
 
 @DiscriminatorValue('embedded')
