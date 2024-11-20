@@ -606,7 +606,7 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
         ],
       },
       "canvasItemStatusMessage": {
-        "description": "Adds styles to the to the wrapper around the canvas item status message.",
+        "description": "Adds styles to the wrapper around the canvas item status message.",
         "oneOf": [
           {
             "type": "string",
@@ -965,6 +965,54 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
           },
         ],
       },
+      "representationDraggedIcon": {
+        "description": "Adds styles to the wrapper around the canvas dragged representation icon.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "representationDraggedKey": {
+        "description": "Adds styles to the wrapper around the canvas dragged representation component key.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
       "representationInformationDropdown": {
         "description": "Adds styles to the wrapper around the representation information.",
         "oneOf": [
@@ -1038,7 +1086,7 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
         ],
       },
       "representationInformationItemText": {
-        "description": "Adds styles to the to the wrapper around the representation information text within an item.",
+        "description": "Adds styles to the wrapper around the representation information text within an item.",
         "oneOf": [
           {
             "type": "string",
@@ -2053,7 +2101,7 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
         ],
       },
       "canvasItemStatusMessage": {
-        "description": "Adds styles to the to the wrapper around the canvas item status message.",
+        "description": "Adds styles to the wrapper around the canvas item status message.",
         "oneOf": [
           {
             "type": "string",
@@ -2412,6 +2460,54 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
           },
         ],
       },
+      "representationDraggedIcon": {
+        "description": "Adds styles to the wrapper around the canvas dragged representation icon.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "representationDraggedKey": {
+        "description": "Adds styles to the wrapper around the canvas dragged representation component key.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
       "representationInformationDropdown": {
         "description": "Adds styles to the wrapper around the representation information.",
         "oneOf": [
@@ -2485,7 +2581,7 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
         ],
       },
       "representationInformationItemText": {
-        "description": "Adds styles to the to the wrapper around the representation information text within an item.",
+        "description": "Adds styles to the wrapper around the representation information text within an item.",
         "oneOf": [
           {
             "type": "string",

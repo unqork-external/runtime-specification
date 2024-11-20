@@ -45,4 +45,6 @@ export enum CanvasTargetsEnum {
   representationInformationItem = 'representationInformationItem',
   representationInformationItemText = 'representationInformationItemText',
   canvasItemStatusMessage = 'canvasItemStatusMessage',
+  representationDraggedIcon = 'representationDraggedIcon',
+  representationDraggedKey = 'representationDraggedKey',
 }

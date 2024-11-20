@@ -183,10 +183,18 @@ export class CanvasTargets implements TargetsModel<CanvasTargetsEnum> {
   [CanvasTargetsEnum.representationInformationItem]: CssClassOrProps;
 
   @Css()
-  @Description('Adds styles to the to the wrapper around the representation information text within an item.')
+  @Description('Adds styles to the wrapper around the representation information text within an item.')
   [CanvasTargetsEnum.representationInformationItemText]: CssClassOrProps;
 
   @Css()
-  @Description('Adds styles to the to the wrapper around the canvas item status message.')
-  [CanvasTargetsEnum.canvasItemStatusMessage]: CssClassOrProps
+  @Description('Adds styles to the wrapper around the canvas item status message.')
+  [CanvasTargetsEnum.canvasItemStatusMessage]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the wrapper around the canvas dragged representation icon.')
+  [CanvasTargetsEnum.representationDraggedIcon]: CssClassOrProps;
+
+  @Css()
+  @Description('Adds styles to the wrapper around the canvas dragged representation component key.')
+  [CanvasTargetsEnum.representationDraggedKey]: CssClassOrProps
 }
