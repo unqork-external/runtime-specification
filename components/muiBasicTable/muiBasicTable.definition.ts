@@ -98,7 +98,9 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   @Property()
   enableGlobalFilter: boolean = true
 
-  @Property()
+  @Description(
+    'Allows column filters to be applied to the Table component, and displays the column filter icon in the Toolbar.',
+  )
   enableColumnFilters: boolean = true
 
   @Property()

@@ -6,7 +6,9 @@ import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.TABLE_SET_COLUMN_FILTER)
-@Description('Add filter types and/or values to apply to the Table component.')
+@Description(
+  'Add column filter types and/or values to the Table component. The column filters are only applied if the Table component has column filtering enabled.',
+)
 @Stable()
 @OpsBuilderStable()
 export class TableSetColumnFilterOperation extends Operation<OperationTypes.TABLE_SET_COLUMN_FILTER> {

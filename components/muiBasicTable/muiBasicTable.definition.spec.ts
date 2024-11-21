@@ -5,7 +5,8 @@ describe('MuiBasicTable Contract Tests', function () {
   it('should ensure the contract is clear', function () {
     const { schema } = generateSchemaAndValidate(MuiBasicTableComponentDefinition)
 
-    expect(schema.required).toEqual(['key', 'type'])
-    // expect(schema.properties).toEqual({})
+    expect(schema.required).toMatchSnapshot()
+    expect(schema.properties).toMatchSnapshot()
+    expect(schema.definitions).toMatchSnapshot()
   })
 })
