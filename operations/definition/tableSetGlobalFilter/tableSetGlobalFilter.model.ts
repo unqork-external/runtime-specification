@@ -5,7 +5,9 @@ import { OpsBuilderStable, Stable } from '../../../../decorators/stability'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
-@Description('Sets filters across all columns of the Table component.')
+@Description(
+  'Sets filters across all columns of the Table component. The filters are only applied if the Table component has global filtering enabled.',
+)
 @DiscriminatorValue(OperationTypes.TABLE_SET_GLOBAL_FILTER)
 @Stable()
 @OpsBuilderStable()

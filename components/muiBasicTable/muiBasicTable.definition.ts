@@ -95,7 +95,9 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   @Property()
   enablePagination: boolean
 
-  @Property()
+  @Description(
+    'Allows global filters to be applied to the Table component, and displays the global filter search icon in the Toolbar.',
+  )
   enableGlobalFilter: boolean = true
 
   @Description(

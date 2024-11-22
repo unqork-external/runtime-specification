@@ -1,24 +1,53 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Operation Model: TableSetGlobalFilter Tests JSON Schema snapshot 1`] = `
+exports[`Operation Model: TableSetGlobalFilterVisibility Tests should match this JSON Schema 1`] = `
 {
-  "creatorSummary": {
-    "description": "A detailed summary of the operation",
-    "type": "string",
+  "definitions": {
+    "TableSetGlobalFilterOperationOptions": {
+      "properties": {
+        "filter": {
+          "description": "Value to be filtered across all columns of the Table component",
+          "minLength": 1,
+          "type": "string",
+        },
+        "targetKey": {
+          "description": "Key of the Table component to apply filters across all columns",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "filter",
+      ],
+      "type": "object",
+    },
   },
-  "name": {
-    "description": "Name of the operation",
-    "type": "string",
+  "description": "Sets filters across all columns of the Table component. The filters are only applied if the Table component has global filtering enabled.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetGlobalFilterOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_GLOBAL_FILTER",
+      "examples": [
+        "TABLE_SET_GLOBAL_FILTER",
+      ],
+      "type": "string",
+    },
   },
-  "options": {
-    "$ref": "#/definitions/TableSetGlobalFilterOperationOptions",
-  },
-  "type": {
-    "const": "TABLE_SET_GLOBAL_FILTER",
-    "examples": [
-      "TABLE_SET_GLOBAL_FILTER",
-    ],
-    "type": "string",
-  },
+  "required": [
+    "options",
+  ],
+  "stability": "STABLE",
+  "type": "object",
 }
 `;

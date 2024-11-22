@@ -1,10 +1,15 @@
 import { TableSetGlobalFilterOperation } from './tableSetGlobalFilter.model'
 import { generateSchemaAndValidate } from '../../../../utilities'
 
-describe('Operation Model: TableSetGlobalFilter Tests', () => {
-  it('JSON Schema snapshot', () => {
-    const { schema } = generateSchemaAndValidate(TableSetGlobalFilterOperation)
+describe('Operation Model: TableSetGlobalFilterVisibility Tests', () => {
+  let validate, schema
+  beforeAll(() => {
+    const response = generateSchemaAndValidate(TableSetGlobalFilterOperation)
+    validate = response.validate
+    schema = response.schema
+  })
 
-    expect(schema.properties).toMatchSnapshot()
+  it('should match this JSON Schema', () => {
+    expect(schema).toMatchSnapshot()
   })
 })

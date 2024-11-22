@@ -63,6 +63,7 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 2`] = 
     "type": "boolean",
   },
   "enableGlobalFilter": {
+    "description": "Allows global filters to be applied to the Table component, and displays the global filter search icon in the Toolbar.",
     "type": "boolean",
   },
   "enableGrouping": {
