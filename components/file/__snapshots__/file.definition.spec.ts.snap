@@ -139,6 +139,10 @@ exports[`File Contract Tests should ensure the contract is clear 3`] = `
         "description": "Compresses images if enabled (only supports .jpg and .png image formats)",
         "type": "boolean",
       },
+      "delimiterChar": {
+        "description": "When parseOnUpload is TRUE, this character will be used to separate values.",
+        "type": "string",
+      },
       "dragDropNotSupported": {
         "default": "File Drag/Drop is not supported for this browser",
         "description": "Text to display if user's browser doesn't support drag and drop",

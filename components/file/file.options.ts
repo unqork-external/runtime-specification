@@ -95,4 +95,7 @@ export class FileOptions {
   @Default(FILE_DEFAULTS.parseOnUpload)
   @Description('File data encoded as Base64 string as part of submission data')
   parseOnUpload: boolean = FILE_DEFAULTS.parseOnUpload
+
+  @Description('When parseOnUpload is TRUE, this character will be used to separate values.')
+  delimiterChar?: string
 }
