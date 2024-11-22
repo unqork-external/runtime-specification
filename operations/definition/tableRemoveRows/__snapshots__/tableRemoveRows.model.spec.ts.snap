@@ -8,7 +8,14 @@ exports[`Operation Model: TableRemoveRows Tests TableRemoveRows Model 1`] = `
         "targetIndexes": {
           "description": "Index(es) for the row(s) we want to remove",
           "items": {
-            "type": "number",
+            "anyOf": [
+              {
+                "type": "string",
+              },
+              {
+                "type": "number",
+              },
+            ],
           },
           "type": "array",
         },

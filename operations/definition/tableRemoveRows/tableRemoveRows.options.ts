@@ -1,4 +1,4 @@
-import { Description, Required, CollectionOf } from '@tsed/schema'
+import { Description, Required, AnyOf } from '@tsed/schema'
 
 export class TableRemoveRowsOperationOptions {
   @Description('Key of the table component to remove rows')
@@ -7,6 +7,6 @@ export class TableRemoveRowsOperationOptions {
 
   @Description('Index(es) for the row(s) we want to remove')
   @Required()
-  @CollectionOf(Number)
-  targetIndexes?: number[]
+  @AnyOf(String, Number)
+  targetIndexes?: (number | string)[]
 }
