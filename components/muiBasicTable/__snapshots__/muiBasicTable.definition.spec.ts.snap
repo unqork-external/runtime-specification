@@ -500,15 +500,35 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 3`] = 
   },
   "PaginationState": {
     "properties": {
+      "autoResetPageIndex": {
+        "default": false,
+        "description": "When set to "true" it will reset the page index to zero when sorting/filtering",
+        "type": "object",
+      },
+      "manualPagination": {
+        "default": false,
+        "description": "When set to "true", it enables server-side pagination. In this case, the component will assume that the data that is passed to the Table already has had the pagination logic applied. Usually this would happen in an external API.",
+        "type": "boolean",
+      },
+      "offset": {
+        "default": 0,
+        "description": "The position of the results set relative to 'pageIndex'. It's the result of 'pageIndex * pageSize'. Setting it from the configuration has no effect because it will always be derived from the above math.",
+        "type": "object",
+      },
       "pageIndex": {
         "default": 0,
-        "description": "The page number that the user is on",
-        "type": "number",
+        "description": "The zero-based index of the page to which the data should be navigated. This should be a non-negative integer where zero indicates the first page.",
+        "type": "object",
       },
       "pageSize": {
         "default": 20,
         "description": "Number of rows per page",
-        "type": "number",
+        "type": "object",
+      },
+      "total": {
+        "default": 0,
+        "description": "Total number of rows on the dataset. This is automatically calculated by the Table except when manualPagination is "true"",
+        "type": "object",
       },
     },
     "type": "object",
