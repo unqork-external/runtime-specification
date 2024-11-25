@@ -1,4 +1,4 @@
-import { Description, DiscriminatorValue, Optional } from '@tsed/schema'
+import { Description, DiscriminatorValue, Optional, Property } from '@tsed/schema'
 
 import { MuiColumnSizingDefinition } from './sizing/muiColumnSizing.definition'
 
@@ -11,4 +11,8 @@ export class MuiColumnDefinition {
   @Optional()
   @Description(`Configurations to control column sizing`)
   columnSizing?: MuiColumnSizingDefinition
+
+  @Property()
+  @Description('filter type of the column')
+  filterType: string
 }

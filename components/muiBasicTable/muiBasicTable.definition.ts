@@ -89,6 +89,10 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   @Property()
   enableColumnOrdering: boolean
 
+  @Default(true)
+  @Description('enable the MRT to scan the data and automatically generate filter options')
+  enableFacetedValues: boolean = true
+
   @Property()
   enableColumnPinning: boolean
 

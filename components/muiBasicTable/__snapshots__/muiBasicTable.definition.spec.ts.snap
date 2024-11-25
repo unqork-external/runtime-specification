@@ -62,6 +62,11 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 2`] = 
   "enableColumnResizing": {
     "type": "boolean",
   },
+  "enableFacetedValues": {
+    "default": true,
+    "description": "enable the MRT to scan the data and automatically generate filter options",
+    "type": "boolean",
+  },
   "enableGlobalFilter": {
     "description": "Allows global filters to be applied to the Table component, and displays the global filter search icon in the Toolbar.",
     "type": "boolean",

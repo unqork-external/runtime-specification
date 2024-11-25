@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: TableSetFilterTypes Tests TableSetFilterTypes Model 1`] = `
+{
+  "definitions": {
+    "ColumnFilterType": {
+      "properties": {
+        "id": {
+          "description": "ID of the column to set filter type",
+          "minLength": 1,
+          "type": "string",
+        },
+        "type": {
+          "description": "Type of filter for the column",
+          "minLength": 1,
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "object",
+            "array",
+          ],
+        },
+      },
+      "required": [
+        "id",
+        "type",
+      ],
+      "type": "object",
+    },
+    "TableSetFilterTypesOperationOptions": {
+      "properties": {
+        "filters": {
+          "description": "The columns of the Table component to set filtering.",
+          "items": {
+            "$ref": "#/definitions/ColumnFilterType",
+          },
+          "type": "array",
+        },
+        "targetKey": {
+          "description": "Key of the Table component to set column filtering",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "filters",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/TableSetFilterTypesOperationOptions",
+    },
+    "type": {
+      "const": "TABLE_SET_FILTER_TYPES",
+      "examples": [
+        "TABLE_SET_FILTER_TYPES",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "type": "object",
+}
+`;
