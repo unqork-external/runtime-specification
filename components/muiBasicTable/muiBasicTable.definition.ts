@@ -119,6 +119,17 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   enableBottomToolbar: boolean = false
 
   @Property()
+  enableRowNumbers?: boolean = false
+
+  @Property()
+  @Description(`
+    In the default rowNumberDisplayMode (static), row numbers are just a static part of the table in their own column. 
+    They act like the row numbers in an excel spreadsheet. 
+    Sorting and filtering will not affect the row numbers.
+  `)
+  rowNumberDisplayMode: 'original' | 'static' = 'static'
+
+  @Property()
   initialData: object[]
 
   @Property()

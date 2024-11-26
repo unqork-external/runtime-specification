@@ -77,6 +77,9 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 2`] = 
   "enablePagination": {
     "type": "boolean",
   },
+  "enableRowNumbers": {
+    "type": "boolean",
+  },
   "enableRowPinning": {
     "default": false,
     "type": "boolean",
@@ -157,6 +160,14 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 2`] = 
       "$ref": "#/definitions/BaseComponentDefinition",
     },
     "type": "array",
+  },
+  "rowNumberDisplayMode": {
+    "description": "
+    In the default rowNumberDisplayMode (static), row numbers are just a static part of the table in their own column. 
+    They act like the row numbers in an excel spreadsheet. 
+    Sorting and filtering will not affect the row numbers.
+  ",
+    "type": "string",
   },
   "rowPinning": {
     "$ref": "#/definitions/RowPinningState",
