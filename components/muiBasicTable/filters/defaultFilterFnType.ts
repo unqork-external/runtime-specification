@@ -1,5 +1,6 @@
 export enum DefaultFilterFnType {
-  Text = 'fuzzy',
-  MultiSelect = 'arrIncludesSome',
-  SingleSelect = 'equals',
+  Fuzzy = 'fuzzy',
+  ArrIncludesSome = 'arrIncludesSome',
+  Equals = 'equals',
+  BetweenInclusive = 'betweenInclusive',
 }
