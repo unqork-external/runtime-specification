@@ -12,8 +12,8 @@ export class EntityTarget {
   keyName: string
 
   @Required()
-  @Example('{{firstName.value}}', 'true', 'unknownValue')
-  @Description('Either the explicit value for the entity or an interpolated path to resolve the entity value')
+  @Example('firstName.value', 'true', 'unknownValue')
+  @Description('The explicit path to the value for the entity')
   value: string
 
   @Optional()
