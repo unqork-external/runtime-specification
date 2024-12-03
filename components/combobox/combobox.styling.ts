@@ -52,10 +52,6 @@ export class ComboboxStyleTargets implements TargetsModel<ComboboxTargets> {
   [ComboboxTargets.optionDescription]: CssClassOrProps;
 
   @Css()
-  @Description('Option group header styles.')
-  [ComboboxTargets.optionGroupHeader]: CssClassOrProps;
-
-  @Css()
   @Description('Option group list item styles.')
   [ComboboxTargets.optionGroupItem]: CssClassOrProps;
 

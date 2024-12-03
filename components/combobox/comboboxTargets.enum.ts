@@ -10,7 +10,6 @@ export enum ComboboxTargets {
   loadingLabel = 'loadingLabel',
   noOptionsLabel = 'noOptionsLabel',
   optionDescription = 'optionDescription',
-  optionGroupHeader = 'optionGroupHeader',
   optionGroupItem = 'optionGroupItem',
   optionIcon = 'optionIcon',
   optionItem = 'optionItem',
