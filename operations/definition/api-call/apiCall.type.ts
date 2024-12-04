@@ -1,4 +1,4 @@
-import { Default, Description, Example, Optional, Property, Required } from '@tsed/schema'
+import { Default, Description, Example, Optional, Required } from '@tsed/schema'
 
 export class OutputModifiers {
   @Default(true)

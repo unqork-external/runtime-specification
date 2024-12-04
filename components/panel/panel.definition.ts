@@ -12,6 +12,7 @@ import {
 import { PanelField } from './panel.field'
 import { PanelStyling } from './styling/panel.styling'
 import { PanelTargets } from './targets/panelTargets.enum'
+import { TrimmedDescription } from '../../../decorators'
 import { Examples } from '../../../decorators/schema/examples.decorator'
 import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
 import { trimAll } from '../../../utilities'
@@ -25,7 +26,7 @@ import { targetedStylingExample } from '../../styling/targeted.styling.example'
 @ViewTargets(PanelTargets)
 @Description(
   trimAll(`
-  The Panel component creates self-contained sections or pages in modules. Panels act as a storage unit that houses components. 
+  The Panel component creates self-contained sections or pages in modules. Panels act as a storage unit that houses components.
   You can also use Panels to help with navigation, create pop-up modals, or display components from other modules.
   `),
 )
@@ -63,6 +64,18 @@ export class PanelComponentDefinition extends BaseComponentDefinition {
 
   @Optional()
   nestables = new PanelNestable()
+
+  @Optional()
+  @TrimmedDescription(
+    'When using the `dynamic import` feature, this is the id of the application that an imported module should get its context from.',
+  )
+  resolveDynamicPanelApplicationId?: string
+
+  @Optional()
+  @TrimmedDescription(
+    'When using the `dynamic import` feature, this is the version of the application that an imported module should get its context from.',
+  )
+  resolveDynamicPanelApplicationVersion?: string
 }
 
 export class PanelComponentState extends PanelComponentDefinition {

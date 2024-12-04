@@ -3,7 +3,7 @@ import { generateSchemaAndValidate } from '../../../../utilities'
 import { createOperation } from '../../createOperation'
 import { OperationTypes } from '../../enums/operation-types.enum'
 
-describe('Set Property Model', () => {
+describe('Clear Validation Error Model', () => {
   let validate, schema
   beforeAll(() => {
     const response = generateSchemaAndValidate(ClearValidationErrorOperation)

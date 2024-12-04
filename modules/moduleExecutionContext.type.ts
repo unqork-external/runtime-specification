@@ -1,5 +1,5 @@
 import type { ModuleDefinition } from './module.definition'
 
-export type ModuleExecutionContext = {
+export type ModuleExecutionType = {
   moduleDefinition: ModuleDefinition
 }

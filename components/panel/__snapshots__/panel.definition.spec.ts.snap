@@ -57,6 +57,14 @@ exports[`Panel Contract Tests should ensure the contract is clear - component de
   "package": {
     "$ref": "#/definitions/PackageModel",
   },
+  "resolveDynamicPanelApplicationId": {
+    "description": "When using the \`dynamic import\` feature, this is the id of the application that an imported module should get its context from.",
+    "type": "string",
+  },
+  "resolveDynamicPanelApplicationVersion": {
+    "description": "When using the \`dynamic import\` feature, this is the version of the application that an imported module should get its context from.",
+    "type": "string",
+  },
   "signals": {
     "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
     "examples": [
@@ -755,6 +763,14 @@ exports[`Panel Contract Tests should ensure the contract is clear - component st
   },
   "package": {
     "$ref": "#/definitions/PackageModel",
+  },
+  "resolveDynamicPanelApplicationId": {
+    "description": "When using the \`dynamic import\` feature, this is the id of the application that an imported module should get its context from.",
+    "type": "string",
+  },
+  "resolveDynamicPanelApplicationVersion": {
+    "description": "When using the \`dynamic import\` feature, this is the version of the application that an imported module should get its context from.",
+    "type": "string",
   },
   "signals": {
     "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
