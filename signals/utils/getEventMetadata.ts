@@ -116,6 +116,20 @@ const VEGA_TABLE_COMPONENT_EVENTS: EventMetadataList = [
     categories: [EventCategories.VEGA_TABLE],
     stability: StabilityEnum.STABLE,
   },
+  {
+    name: 'On Table Page Size Change',
+    type: 'onTablePageSizeChange',
+    description: "Occurs when there is a change to the Vega Table's page size.",
+    categories: [EventCategories.VEGA_TABLE],
+    stability: StabilityEnum.STABLE,
+  },
+  {
+    name: 'On Table Pagination Change',
+    type: 'onTablePaginationChange',
+    description: "Occurs when there is a change to the Vega Table's page index.",
+    categories: [EventCategories.VEGA_TABLE],
+    stability: StabilityEnum.STABLE,
+  },
 ]
 
 // TODO: Move out of here and into component registered event
