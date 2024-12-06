@@ -12,7 +12,7 @@ import { Validation } from '../validations/validation'
 `)
 export class BaseComponentDefinition extends RootObject {
   @Required()
-  key: string
+  declare key: string
 
   /**
    *  TODO: Type will be supplanted by `package` in the near future
@@ -20,7 +20,7 @@ export class BaseComponentDefinition extends RootObject {
   @Required()
   @Description(`Name of the type of component.`)
   @DiscriminatorKey()
-  type: string
+  declare type: string
 
   @Default(true)
   executable?: boolean = true
@@ -30,10 +30,10 @@ export class BaseComponentDefinition extends RootObject {
    * As Variables are introduced, Inputs will be phased out
    */
   @CollectionOf(InputRef)
-  inputs?: InputRef[]
+  declare inputs?: InputRef[]
 
   @Property()
-  styling?: StylingModel<any>
+  declare styling?: StylingModel<any>
 
   @Property()
   validation?: Validation

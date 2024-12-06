@@ -67,7 +67,7 @@ export class UdToggleViewComponentDefinition extends BaseComponentDefinition {
   @Optional()
   @Description('Map of customized CSS styling for specific targets.')
   @Property(UdToggleViewStyling)
-  styling?: UdToggleViewStyling
+  declare styling?: UdToggleViewStyling
 
   @Description('Standard nestable implementation')
   nestables = { childIds: new StandardArrayNestable() }

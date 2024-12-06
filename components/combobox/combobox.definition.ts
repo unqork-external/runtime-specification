@@ -48,11 +48,11 @@ export class ComboboxComponentDefinition extends BaseComponentDefinition impleme
 
   @Optional()
   @Description('Map of customized CSS styling for specific targets.')
-  styling?: ComboboxStyling
+  declare styling?: ComboboxStyling
 
   @Optional()
   @Description('Map of signals configuration for specific targets.')
-  signals?: SignalTargets<ComboboxTargets>
+  declare signals?: SignalTargets<ComboboxTargets>
 
   @Optional()
   @Description('Simple view state.')
@@ -62,5 +62,5 @@ export class ComboboxComponentDefinition extends BaseComponentDefinition impleme
   @Optional()
   @Description('Value for the Combobox. `string` if field.multiple is disabled, `Array<sting>` if it is enabled.')
   @OneOrMany('string')
-  value: string | string[]
+  declare value: string | string[]
 }

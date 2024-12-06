@@ -13,9 +13,9 @@ import type { SignalTargets } from '../../signals'
 @DiscriminatorValue('iframe')
 @ViewTargets(IFrameTargets)
 @TrimmedDescription(`
-  The Vega iFrame component is a versatile tool within the User Interface category that allows 
-  for the embedding of external web content directly into your modules. 
-  This component is designed to display HTML content through an iframe, 
+  The Vega iFrame component is a versatile tool within the User Interface category that allows
+  for the embedding of external web content directly into your modules.
+  This component is designed to display HTML content through an iframe,
   which can include anything from a webpage to interactive media or other online resources.
 `)
 export class IFrameComponentDefinition extends BaseComponentDefinition {
@@ -32,7 +32,7 @@ export class IFrameComponentDefinition extends BaseComponentDefinition {
   options: IFrameOptions
 
   @Optional()
-  styling?: IFrameStyling
+  declare styling?: IFrameStyling
 
   @Optional()
   declare signals?: SignalTargets<IFrameTargets>

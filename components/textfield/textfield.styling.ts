@@ -66,5 +66,5 @@ export class TextfieldStylingTargets implements TargetsModel<TextfieldTargets> {
 
 @Description('An object containing styling for the component.')
 export class TextfieldStyling extends StylingModel<TextfieldStylingTargets> {
-  targets: TextfieldStylingTargets
+  declare targets: TextfieldStylingTargets
 }

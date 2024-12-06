@@ -50,5 +50,5 @@ export class ProtectedFieldStyleTargets implements TargetsModel<ProtectedFieldTa
 
 export class ProtectedFieldStyling extends StylingModel<ProtectedFieldStyleTargets> {
   @Description('ProtectedField subComponents that can accept additional styles.')
-  targets: ProtectedFieldStyleTargets
+  declare targets: ProtectedFieldStyleTargets
 }

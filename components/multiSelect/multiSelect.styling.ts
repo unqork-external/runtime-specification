@@ -17,5 +17,5 @@ export class MultiSelectStylingTargets implements TargetsModel<MultiSelectTarget
 
 export class MultiSelectStyling extends StylingModel<MultiSelectStylingTargets> {
   @Property()
-  targets: MultiSelectStylingTargets
+  declare targets: MultiSelectStylingTargets
 }

@@ -17,5 +17,5 @@ class LayoutStyleTargets implements TargetsModel<LayoutTargets> {
 
 export class LayoutStyling extends StylingModel<LayoutStyleTargets> {
   @Property()
-  targets: LayoutStyleTargets
+  declare targets: LayoutStyleTargets
 }

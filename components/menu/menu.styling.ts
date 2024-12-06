@@ -12,5 +12,5 @@ export class MenuStylingTargets implements TargetsModel<MenuTargets> {
 
 export class MenuStyling extends StylingModel<MenuStylingTargets> {
   @Property()
-  targets: MenuStylingTargets
+  declare targets: MenuStylingTargets
 }

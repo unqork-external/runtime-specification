@@ -20,7 +20,7 @@ export class PluginComponentDefinition extends BaseComponentDefinition {
     `Whenever a plugin's API_CALL operation is executed, the response should be stored under this key. It could be any data type.`,
   )
   @Examples(pluginValueExample)
-  value?: unknown
+  declare value?: unknown
 
   @Property()
   declare signals: SignalTargets<'root'>

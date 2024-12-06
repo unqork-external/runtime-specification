@@ -47,7 +47,7 @@ export class UdViewComponentDefinition extends BaseComponentDefinition {
   @Optional()
   @Description('Map of customized CSS styling for specific targets.')
   @Property(UdViewStyling)
-  styling?: UdViewStyling
+  declare styling?: UdViewStyling
 
   @Description('Standard nestable implementation')
   nestables = { childIds: new StandardArrayNestable() }

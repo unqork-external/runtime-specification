@@ -49,5 +49,5 @@ class SingleCheckboxStyleTargets implements TargetsModel<SingleCheckboxTargets> 
 
 export class SingleCheckboxStyling extends StylingModel<SingleCheckboxStyleTargets> {
   @Property()
-  targets: SingleCheckboxStyleTargets
+  declare targets: SingleCheckboxStyleTargets
 }

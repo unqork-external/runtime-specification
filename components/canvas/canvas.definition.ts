@@ -15,7 +15,7 @@ export class CanvasComponentDefinition extends BaseComponentDefinition {
   type: 'canvas' = 'canvas' as const
 
   @Property()
-  styling: CanvasStyling
+  declare styling: CanvasStyling
 
   @Property()
   @Default(true)

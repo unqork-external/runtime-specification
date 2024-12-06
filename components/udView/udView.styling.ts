@@ -14,5 +14,5 @@ export class UdViewStyleTargets implements TargetsModel<UdViewTargets> {
 
 export class UdViewStyling extends StylingModel<UdViewStyleTargets> {
   @Property(UdViewStyleTargets)
-  targets: UdViewStyleTargets
+  declare targets: UdViewStyleTargets
 }

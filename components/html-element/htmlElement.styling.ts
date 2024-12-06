@@ -13,5 +13,5 @@ export class HtmlElementStyleTargets {
 
 export class HtmlElementStyling extends StylingModel<HtmlElementStyleTargets> {
   @Property()
-  targets: HtmlElementStyleTargets
+  declare targets: HtmlElementStyleTargets
 }

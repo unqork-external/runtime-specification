@@ -82,5 +82,5 @@ export class CheckboxesStyleTargets implements TargetsModel<CheckboxesTargets> {
 
 export class CheckboxesStyling extends StylingModel<CheckboxesStyleTargets> {
   @Property()
-  targets: CheckboxesStyleTargets
+  declare targets: CheckboxesStyleTargets
 }

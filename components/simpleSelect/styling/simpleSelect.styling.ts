@@ -5,5 +5,5 @@ import { StylingModel } from '../../../styling'
 
 export class SimpleSelectStyling extends StylingModel<SimpleSelectStyleTargets> {
   @Property()
-  targets: SimpleSelectStyleTargets
+  declare targets: SimpleSelectStyleTargets
 }

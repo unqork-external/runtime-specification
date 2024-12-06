@@ -45,5 +45,5 @@ export class CodeEditorStyleTargets implements TargetsModel<CodeEditorTargets> {
 }
 
 export class CodeEditorStyling extends StylingModel<CodeEditorStyleTargets> {
-  targets: CodeEditorStyleTargets
+  declare targets: CodeEditorStyleTargets
 }

@@ -8,5 +8,5 @@ import { targetedStylingExample } from '../../../styling/targeted.styling.exampl
 @Description('An object containing styling for the component.')
 @Examples(targetedStylingExample)
 export class ComplexJsonInputStyling extends StylingModel<ComplexJsonInputStylingTargets> {
-  targets: ComplexJsonInputStylingTargets
+  declare targets: ComplexJsonInputStylingTargets
 }

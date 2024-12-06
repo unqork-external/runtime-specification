@@ -22,5 +22,5 @@ export class UdToggleViewStyleTargets implements TargetsModel<UdToggleViewTarget
 
 export class UdToggleViewStyling extends StylingModel<UdToggleViewStyleTargets> {
   @Property(UdToggleViewStyleTargets)
-  targets: UdToggleViewStyleTargets
+  declare targets: UdToggleViewStyleTargets
 }

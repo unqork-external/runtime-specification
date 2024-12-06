@@ -18,11 +18,11 @@ export class DndSwimlanesLayoutControls {
   @Default(true)
   @TrimmedDescription(`
     Whether the card is interactive.
-    When false, the card has a disabled appearance, is not draggable, and all child components have 'display.interactive' set to false. 
+    When false, the card has a disabled appearance, is not draggable, and all child components have 'display.interactive' set to false.
   `)
   interactive: boolean = true
 
   @Optional()
   @Description('Classname or style object for an individual card')
-  styling?: CssClassOrProps
+  declare styling?: CssClassOrProps
 }

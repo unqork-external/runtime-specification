@@ -10,7 +10,7 @@ export class RepeaterComponentDefinition extends BaseComponentDefinition {
   type: 'repeater' = 'repeater' as const
 
   @Property()
-  value: object[]
+  declare value: object[]
 
   @Property()
   display: Display = new Display()

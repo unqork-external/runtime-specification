@@ -62,5 +62,5 @@ export class RadioStyleTargets implements TargetsModel<RadioTargets> {
 
 export class RadioStyling extends StylingModel<RadioStyleTargets> {
   @Property()
-  targets: RadioStyleTargets
+  declare targets: RadioStyleTargets
 }

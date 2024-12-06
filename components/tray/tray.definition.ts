@@ -12,7 +12,7 @@ export class TrayComponentDefinition extends BaseComponentDefinition {
   type: 'tray' = 'tray' as const
 
   @Description('Styling target for the tray.')
-  styling: TrayStyling
+  declare styling: TrayStyling
 
   @Required()
   @CollectionOf(TrayGroupDefinition)

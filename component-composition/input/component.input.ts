@@ -9,7 +9,7 @@ import { Field, Label } from '../field/component.field.label'
 export class InputLabel extends Label {
   @Property()
   @Description(`Configurable text that is displayed above the input field.`)
-  text?: string
+  declare text?: string
 
   @Default(false)
   @TrimmedDescription(`
@@ -28,7 +28,7 @@ export class InputHelperText {
     Configurable text that is displayed underneath the input field.
     Unlike tooltips, a helper text stays visible under the input field and displays on a single line.
   `)
-  text?: string
+  declare text?: string
 
   @Optional()
   @Default(false)
@@ -42,7 +42,7 @@ export class InputHelperText {
 export class InputSubLabel {
   @Optional()
   @Description('Sub-label text for the component')
-  text?: string
+  declare text?: string
 
   @Optional()
   @Default(false)
@@ -54,14 +54,14 @@ export class InputSubLabel {
 export class InputFormat {
   @Optional()
   @TrimmedDescription(`
-    The mask pattern to be applied to the input field. An input mask helps the user 
+    The mask pattern to be applied to the input field. An input mask helps the user
     with the input by ensuring a predefined format. This can be useful for dates, numerics, and phone numbers.
     Default masking definitions are:
     - 9 : numeric
     - a : alphabetical
     - * : alphanumeric
 
-    Note input masks act in a layer above the regular validations, meaning, for instance, 
+    Note input masks act in a layer above the regular validations, meaning, for instance,
     a mask can limit the field length to a value shorter than max length
   `)
   @Example([
@@ -82,7 +82,7 @@ export class InputFormat {
 export class InputField extends Field {
   @Optional()
   @TrimmedDescription(`
-    Appears above the input field to inform what information is being requested. 
+    Appears above the input field to inform what information is being requested.
     Labels also help to identify the component on the Module Editor.
   `)
   label: InputLabel = new InputLabel()
@@ -92,7 +92,7 @@ export class InputField extends Field {
 
   @Optional()
   @TrimmedDescription(`
-    An example or short explanation of the requested input. This appears inside of the 
+    An example or short explanation of the requested input. This appears inside of the
     input by default and disappears when the user enters a value.
   `)
   @Example(
@@ -125,8 +125,8 @@ export class InputField extends Field {
   @TrimmedDescription(`
     Tooltips are floating texts that appear when the cursor is positioned over an icon.
     They can span across multiple lines and provide hints about the requested data.
-    Setting this property will make a question mark icon to be displayed 
-    on the right side of the component's label, and once the user hovers over it, 
+    Setting this property will make a question mark icon to be displayed
+    on the right side of the component's label, and once the user hovers over it,
     the tooltip text will appear. Moving the cursor outside the icon's area hides the tooltip.
     Hiding the component's label automatically hides the tooltip.
   `)

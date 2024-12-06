@@ -5,5 +5,5 @@ import { StylingModel } from '../../../styling/styling.model'
 
 export class CanvasStyling extends StylingModel<CanvasTargets> {
   @Property()
-  targets: CanvasTargets
+  declare targets: CanvasTargets
 }

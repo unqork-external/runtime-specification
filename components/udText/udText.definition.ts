@@ -48,5 +48,5 @@ export class UdTextComponentDefinition extends BaseComponentDefinition {
   @Optional()
   @Description('Map of customized CSS styling for specific targets.')
   @Property(UdTextStyling)
-  styling?: UdTextStyling
+  declare styling?: UdTextStyling
 }

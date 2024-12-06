@@ -51,5 +51,5 @@ export class SpreadsheetInputStyleTargets implements TargetsModel<SpreadsheetInp
 
 export class SpreadsheetInputStyling extends StylingModel<SpreadsheetInputStyleTargets> {
   @Property()
-  targets: SpreadsheetInputStyleTargets
+  declare targets: SpreadsheetInputStyleTargets
 }

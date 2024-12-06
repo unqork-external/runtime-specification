@@ -66,5 +66,5 @@ export class PhoneNumberStyleTargets implements TargetsModel<PhoneNumberTargets>
 
 export class PhoneNumberStyling extends StylingModel<PhoneNumberStyleTargets> {
   @Required()
-  targets: PhoneNumberStyleTargets
+  declare targets: PhoneNumberStyleTargets
 }

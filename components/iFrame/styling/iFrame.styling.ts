@@ -5,5 +5,5 @@ import { StylingModel } from '../../../styling'
 
 export class IFrameStyling extends StylingModel<IFrameStyleTargets> {
   @Property()
-  targets: IFrameStyleTargets
+  declare targets: IFrameStyleTargets
 }

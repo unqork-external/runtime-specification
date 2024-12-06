@@ -59,5 +59,5 @@ export class ButtonStyleTargets implements TargetsModel<ButtonTargets> {
 
 export class ButtonStyling extends StylingModel<ButtonStyleTargets> {
   @Property()
-  targets: ButtonStyleTargets
+  declare targets: ButtonStyleTargets
 }

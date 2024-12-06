@@ -53,5 +53,5 @@ export class TextAreaStyleTargets implements TargetsModel<TextAreaTargets> {
 
 export class TextAreaStyling extends StylingModel<TextAreaStyleTargets> {
   @Description("TextArea's subcomponents that can accept additional styles.")
-  targets: TextAreaStyleTargets
+  declare targets: TextAreaStyleTargets
 }

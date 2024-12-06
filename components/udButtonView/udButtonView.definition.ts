@@ -26,7 +26,7 @@ export class UdButtonViewComponentDefinition extends BaseComponentDefinition {
   components?: BaseComponentDefinition[]
 
   @Optional()
-  signals?: SignalTargets<UdButtonViewTargets>
+  declare signals?: SignalTargets<UdButtonViewTargets>
 
   @Description('Standard nestable implementation')
   nestables = { childIds: new StandardArrayNestable() }

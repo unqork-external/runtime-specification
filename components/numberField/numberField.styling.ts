@@ -59,5 +59,5 @@ export class NumberFieldStyleTargets implements TargetsModel<NumberFieldTargets>
 export class NumberFieldStyling extends StylingModel<NumberFieldStyleTargets> {
   @Description("Number Field's subcomponents that can accept additional styles.")
   @Property()
-  targets: NumberFieldStyleTargets
+  declare targets: NumberFieldStyleTargets
 }

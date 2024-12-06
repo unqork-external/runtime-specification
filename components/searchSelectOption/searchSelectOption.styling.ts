@@ -17,5 +17,5 @@ class SearchSelectOptionStyleTargets implements TargetsModel<SearchSelectOptionT
 
 export class SearchSelectOptionStyling extends StylingModel<SearchSelectOptionStyleTargets> {
   @Description("Search Select Option's subcomponents that can accept additional styles.")
-  targets: SearchSelectOptionStyleTargets
+  declare targets: SearchSelectOptionStyleTargets
 }

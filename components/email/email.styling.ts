@@ -63,5 +63,5 @@ export class EmailStyleTargets implements TargetsModel<EmailTargets> {
 
 export class EmailStyling extends StylingModel<EmailStyleTargets> {
   @Property()
-  targets: EmailStyleTargets
+  declare targets: EmailStyleTargets
 }

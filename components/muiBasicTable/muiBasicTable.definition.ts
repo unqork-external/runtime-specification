@@ -54,7 +54,7 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   isTableFullScreen?: boolean
 
   @Property()
-  styling: TableStyling
+  declare styling: TableStyling
 
   @Property()
   isExpanded?: boolean

@@ -29,5 +29,5 @@ export class SimpleSelectOptionStyleTargets implements TargetsModel<SimpleSelect
 
 export class SimpleSelectOptionStyling extends StylingModel<SimpleSelectOptionStyleTargets> {
   @Property()
-  targets: SimpleSelectOptionStyleTargets
+  declare targets: SimpleSelectOptionStyleTargets
 }

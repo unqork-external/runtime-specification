@@ -5,5 +5,5 @@ import { StylingModel } from '../../../styling'
 
 export class FileStyling extends StylingModel<FileStyleTargets> {
   @Property()
-  targets: FileStyleTargets
+  declare targets: FileStyleTargets
 }

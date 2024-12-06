@@ -14,5 +14,5 @@ export class UdTextStyleTargets implements TargetsModel<UdTextTargets> {
 
 export class UdTextStyling extends StylingModel<UdTextStyleTargets> {
   @Property(UdTextStyleTargets)
-  targets: UdTextStyleTargets
+  declare targets: UdTextStyleTargets
 }

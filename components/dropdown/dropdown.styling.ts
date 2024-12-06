@@ -73,5 +73,5 @@ export class DropdownStyleTargets implements TargetsModel<DropdownTargets> {
 
 export class DropdownStyling extends StylingModel<DropdownStyleTargets> {
   @Property()
-  targets: DropdownStyleTargets
+  declare targets: DropdownStyleTargets
 }

@@ -6,5 +6,5 @@ import { StylingModel } from '../../../styling'
 @Description('The possible targets for Textfield component styling.')
 export class ImageStyling extends StylingModel<ImageStyleTargets> {
   @Property()
-  targets: ImageStyleTargets
+  declare targets: ImageStyleTargets
 }

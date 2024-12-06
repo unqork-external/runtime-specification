@@ -14,5 +14,5 @@ export class DynamicGridDataCsmStyleTargets implements TargetsModel<DynamicGridD
 
 export class DynamicGridDataCsmStyling extends StylingModel<DynamicGridDataCsmStyleTargets> {
   @Property()
-  targets: DynamicGridDataCsmStyleTargets
+  declare targets: DynamicGridDataCsmStyleTargets
 }

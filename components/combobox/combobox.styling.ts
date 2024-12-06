@@ -130,5 +130,5 @@ export class ComboboxStyleTargets implements TargetsModel<ComboboxTargets> {
 
 export class ComboboxStyling extends StylingModel<ComboboxStyleTargets> {
   @Property()
-  targets: ComboboxStyleTargets
+  declare targets: ComboboxStyleTargets
 }

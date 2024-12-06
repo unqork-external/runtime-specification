@@ -70,5 +70,5 @@ export class NumberStepperStyleTargets implements TargetsModel<NumberStepperTarg
 
 export class NumberStepperStyling extends StylingModel<NumberStepperStyleTargets> {
   @Property()
-  targets: NumberStepperStyleTargets
+  declare targets: NumberStepperStyleTargets
 }

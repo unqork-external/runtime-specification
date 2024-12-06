@@ -14,5 +14,5 @@ export class ChartStyleTargets implements TargetsModel<ChartTargets> {
 
 export class ChartStyling extends StylingModel<ChartStyleTargets> {
   @Property()
-  targets: ChartStyleTargets
+  declare targets: ChartStyleTargets
 }

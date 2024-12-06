@@ -78,5 +78,5 @@ export class NumberRangeStyleTargets implements TargetsModel<NumberRangeTargets>
 
 export class NumberRangeStyling extends StylingModel<NumberRangeStyleTargets> {
   @Description("Number Range's subComponents that can accept additional styles.")
-  targets: NumberRangeStyleTargets
+  declare targets: NumberRangeStyleTargets
 }

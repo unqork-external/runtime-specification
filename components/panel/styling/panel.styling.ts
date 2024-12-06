@@ -5,5 +5,5 @@ import { StylingModel } from '../../../styling'
 
 export class PanelStyling extends StylingModel<PanelStyleTargets> {
   @Property()
-  targets: PanelStyleTargets
+  declare targets: PanelStyleTargets
 }
