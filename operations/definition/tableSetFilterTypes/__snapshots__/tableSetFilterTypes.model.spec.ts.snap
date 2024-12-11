@@ -5,21 +5,40 @@ exports[`Operation Model: TableSetFilterTypes Tests TableSetFilterTypes Model 1`
   "definitions": {
     "ColumnFilterType": {
       "properties": {
+        "dateFormat": {
+          "description": "The date format shown in the date range filter UI.",
+          "type": "string",
+        },
         "id": {
-          "description": "ID of the column to set filter type",
+          "description": "ID of the column to set filter type.",
           "minLength": 1,
           "type": "string",
         },
+        "max": {
+          "description": "The maximum value that the number range filter can accept. This is an inclusive, meaning rows with this value will be included.",
+          "type": "number",
+        },
+        "min": {
+          "description": "The minimum value that the number range filter can accept. This is an inclusive, meaning rows with this value will be included.",
+          "type": "number",
+        },
+        "step": {
+          "description": "The interval between acceptable values in number range filter. Cannot exceed the max value for the range or be 0.",
+          "type": "number",
+        },
         "type": {
-          "description": "Type of filter for the column",
-          "minLength": 1,
-          "type": [
-            "string",
-            "number",
-            "boolean",
-            "object",
-            "array",
+          "description": "Type of filter for the column.",
+          "enum": [
+            "checkbox",
+            "text",
+            "select",
+            "multi-select",
+            "range-slider",
+            "range",
+            "date-range",
           ],
+          "minLength": 1,
+          "type": "string",
         },
       },
       "required": [
@@ -31,14 +50,14 @@ exports[`Operation Model: TableSetFilterTypes Tests TableSetFilterTypes Model 1`
     "TableSetFilterTypesOperationOptions": {
       "properties": {
         "filters": {
-          "description": "The columns of the Table component to set filtering.",
+          "description": "The columns of the Table component to set filter types.",
           "items": {
             "$ref": "#/definitions/ColumnFilterType",
           },
           "type": "array",
         },
         "targetKey": {
-          "description": "Key of the Table component to set column filtering",
+          "description": "Key of the Table component to set column filter types.",
           "minLength": 1,
           "type": "string",
         },
@@ -50,6 +69,7 @@ exports[`Operation Model: TableSetFilterTypes Tests TableSetFilterTypes Model 1`
       "type": "object",
     },
   },
+  "description": "Set the types and custom options for column filters in the Table component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",
@@ -74,6 +94,7 @@ exports[`Operation Model: TableSetFilterTypes Tests TableSetFilterTypes Model 1`
     "type",
     "options",
   ],
+  "stability": "STABLE",
   "type": "object",
 }
 `;

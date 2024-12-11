@@ -1,6 +1,4 @@
-import { Description, Required } from '@tsed/schema'
-
-import { Unknown } from '../../../../decorators/schema'
+import { Description, Enum, Optional, Required } from '@tsed/schema'
 
 export enum ColumnFilterTypes {
   Checkbox = 'checkbox',
@@ -14,11 +12,33 @@ export enum ColumnFilterTypes {
 
 export class ColumnFilterType {
   @Required()
-  @Description('ID of the column to set filter type')
+  @Description('ID of the column to set filter type.')
   id: string
 
   @Required()
-  @Unknown()
-  @Description('Type of filter for the column')
-  type: unknown
+  @Enum(ColumnFilterTypes)
+  @Description('Type of filter for the column.')
+  type: string
+
+  @Optional()
+  @Description(
+    'The minimum value that the number range filter can accept. This is an inclusive, meaning rows with this value will be included.',
+  )
+  min?: number
+
+  @Optional()
+  @Description(
+    'The maximum value that the number range filter can accept. This is an inclusive, meaning rows with this value will be included.',
+  )
+  max?: number
+
+  @Optional()
+  @Description(
+    'The interval between acceptable values in number range filter. Cannot exceed the max value for the range or be 0.',
+  )
+  step?: number
+
+  @Optional()
+  @Description('The date format shown in the date range filter UI.')
+  dateFormat?: string
 }
