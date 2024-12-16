@@ -5,24 +5,10 @@ import { ApiCallOperation } from '../definition/api-call'
 import { AppendStylingOperation } from '../definition/appendStyling'
 import { AsyncAllSettledOperation } from '../definition/asyncAllSettled'
 import { AutocompleteOperation } from '../definition/autocomplete'
-import { CanvasApplyAllItemStateOperation } from '../definition/canvasApplyAllItemState'
-import { CanvasApplyStructuredDataOperation } from '../definition/canvasApplyStructuredData'
-import { CanvasDeleteItemOperation } from '../definition/canvasDeleteItem'
-import { CanvasGetComponentChildrenOperation } from '../definition/canvasGetComponentChildren'
-import { CanvasHydrateOperation } from '../definition/canvasHydrate'
-import { CanvasSetItemStatusOperation } from '../definition/canvasSetItemStatus'
-import { ChartAddSeriesOperation } from '../definition/chartAddSeries'
-import { ChartRemoveSeriesOperation } from '../definition/chartRemoveSeries'
-import { ChartResetSeriesVisibilityOperation } from '../definition/chartResetSeriesVisibility'
-import { ChartSetLegendPositionOperation } from '../definition/chartSetLegendPosition'
-import { ChartSetSeriesOperation } from '../definition/chartSetSeries'
-import { ChartToggleSeriesVisibilityOperation } from '../definition/chartToggleSeriesVisibility'
 import { ClearOperation } from '../definition/clear'
 import { ClearValidationErrorOperation } from '../definition/clear-validation-errors'
 import { ClearQueryParametersOperation } from '../definition/clearQueryParameters'
 import { ClearStylingOperation } from '../definition/clearStyling'
-import { ConfigurationEditorSaveOperation } from '../definition/configurationEditorSave'
-import { ConfigurationEditorToggleReflexiveInputOperation } from '../definition/configurationEditorToggleReflexiveInput'
 import { DataWorkflowOperation } from '../definition/dataworkflow'
 import { DecideOperation } from '../definition/decide'
 import { DownloadFileOperation } from '../definition/downloadFile'
@@ -35,10 +21,8 @@ import { FocusOperation } from '../definition/focus'
 import { GoGoGadgetClipboardOperation } from '../definition/goGoGadgetClipboard'
 import { IfOperation } from '../definition/if'
 import { LoadModuleOperation } from '../definition/loadModule'
-import { MenuToggleAtOperation } from '../definition/menuToggleAt'
 import { NavigationOperation } from '../definition/navigation'
 import { OpenNewPageOperation } from '../definition/openNewPage'
-import { OpsBuilderHydrateOperation } from '../definition/opsBuilderHydrate'
 import { ParseFormulaOperation } from '../definition/parse-formula'
 import { PrinterOperation } from '../definition/printer'
 import { RemoveNestedComponentsOperation } from '../definition/removeNestedComponents'
@@ -56,50 +40,9 @@ import { SetModalOperation } from '../definition/setModal'
 import { SetQueryParametersOperation } from '../definition/setQueryParameters'
 import { SetStylingOperation } from '../definition/setStyling'
 import { SetStylingTargetOperation } from '../definition/setStylingTarget'
-import { SpreadsheetInputInsertColumnsOperation } from '../definition/spreadsheetInputInsertColumns'
-import { SpreadsheetInputInsertRowsOperation } from '../definition/spreadsheetInputInsertRows'
-import { SpreadsheetInputRemoveColumnOperation } from '../definition/spreadsheetInputRemoveColumn'
-import { SpreadsheetInputRemoveRowOperation } from '../definition/spreadsheetInputRemoveRow'
 import { SubmitOperation } from '../definition/submit'
-import { TableAddColumnOperation } from '../definition/tableAddColumn'
-import { TableAddRowOperation } from '../definition/tableAddRow'
-import { TableClearOperation } from '../definition/tableClear'
-import { TableCopyValuesOperation } from '../definition/tableCopyValues'
-import { TableGoToFirstPageOperation } from '../definition/tableGoToFirstPage'
-import { TableGoToLastPageOperation } from '../definition/tableGoToLastPage'
-import { TableGoToNextPageOperation } from '../definition/tableGoToNextPage'
-import { TableGoToPageOperation } from '../definition/tableGoToPage'
-import { TableGoToPreviousPageOperation } from '../definition/tableGoToPreviousPage'
-import { TablePasteValuesOperation } from '../definition/tablePasteValues'
-import { TableRemoveColumnOperation } from '../definition/tableRemoveColumn'
-import { TableRemoveRowsOperation } from '../definition/tableRemoveRows'
-import { TableRenameColumnOperation } from '../definition/tableRenameColumn'
-import { TableSetActionToolbarVisibilityOperation } from '../definition/tableSetActionToolbarVisibility'
-import { TableSetAllRowsExpandedOperation } from '../definition/tableSetAllRowsExpanded'
-import { TableSetColumnFilterOperation } from '../definition/tableSetColumnFilter'
-import { TableSetColumnFiltersVisibilityOperation } from '../definition/tableSetColumnFiltersVisibility'
-import { TableSetColumnOrderingOperation } from '../definition/tableSetColumnOrdering'
-import { TableSetColumnPinningOperation } from '../definition/tableSetColumnPinning'
-import { TableSetColumnVisibilityOperation } from '../definition/tableSetColumnVisibility'
-import { TableSetColumnWidthOperation } from '../definition/tableSetColumnWidth'
-import { TableSetFilterTypesOperation } from '../definition/tableSetFilterTypes'
-import { TableSetGlobalFilterOperation } from '../definition/tableSetGlobalFilter'
-import { TableSetGlobalFilterVisibilityOperation } from '../definition/tableSetGlobalFilterVisibility'
-import { TableSetGroupingCriteriaOperation } from '../definition/tableSetGroupingCriteria'
-import { TableSetNavigateDownOnPressEnterOperation } from '../definition/tableSetNavigateDownOnPressEnter'
-import { TableSetPageSizeOperation } from '../definition/tableSetPageSize'
-import { TableSetRowDensityOperation } from '../definition/tableSetRowDensity'
-import { TableSetRowExpandedOperation } from '../definition/tableSetRowExpanded'
-import { TableSetRowPinningOperation } from '../definition/tableSetRowPinning'
-import { TableSetSelectedRowOperation } from '../definition/tableSetSelectedRow'
-import { TableSortByColumnOperation } from '../definition/tableSortByColumn'
-import { TableToggleGroupingOperation } from '../definition/tableToggleGrouping'
 import { ToggleOperation } from '../definition/toggle'
 import { ToggleClassOnTargetOperation } from '../definition/toggleClassOnTarget'
-import { ToggleIteratorPropertyOperation } from '../definition/toggleIteratorProperty'
-import { TrayApplyGroupsOperation } from '../definition/trayApplyGroups'
-import { TrayFilterItemsOperation } from '../definition/trayFilterItems'
-import { TraySetDisabledByOperation } from '../definition/traySetDisabledBy'
 import { TryCatchOperation } from '../definition/tryCatch'
 import { ValidateOperation } from '../definition/validate'
 import { ValidationRuleOperation } from '../definition/validate-rules'
@@ -112,34 +55,11 @@ export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
   [OperationTypes.RESET_INITIAL_CONFIG]: ResetInitialConfigOperation,
-  [OperationTypes.OPS_BUILDER_HYDRATE]: OpsBuilderHydrateOperation,
   [OperationTypes.EXECUTE_EXTERNAL_COMMAND]: ExecuteExternalCommandOperation,
-  [OperationTypes.SPREADSHEET_INPUT_REMOVE_COLUMN]: SpreadsheetInputRemoveColumnOperation,
-  [OperationTypes.SPREADSHEET_INPUT_REMOVE_ROW]: SpreadsheetInputRemoveRowOperation,
-  [OperationTypes.SPREADSHEET_INPUT_INSERT_ROWS]: SpreadsheetInputInsertRowsOperation,
-  [OperationTypes.SPREADSHEET_INPUT_INSERT_COLUMNS]: SpreadsheetInputInsertColumnsOperation,
-  [OperationTypes.CANVAS_SET_ITEM_STATUS]: CanvasSetItemStatusOperation,
-  [OperationTypes.CHART_ADD_SERIES]: ChartAddSeriesOperation,
-  [OperationTypes.CHART_REMOVE_SERIES]: ChartRemoveSeriesOperation,
-  [OperationTypes.CHART_RESET_SERIES_VISIBILITY]: ChartResetSeriesVisibilityOperation,
-  [OperationTypes.CHART_SET_LEGEND_POSITION]: ChartSetLegendPositionOperation,
-  [OperationTypes.CHART_SET_SERIES]: ChartSetSeriesOperation,
-  [OperationTypes.CHART_TOGGLE_SERIES_VISIBILITY]: ChartToggleSeriesVisibilityOperation,
   [OperationTypes.CLEAR_QUERY_PARAMETERS]: ClearQueryParametersOperation,
   [OperationTypes.REMOVE_QUERY_PARAMETERS]: RemoveQueryParametersOperation,
   [OperationTypes.ADD_QUERY_PARAMETERS]: AddQueryParametersOperation,
   [OperationTypes.SET_QUERY_PARAMETERS]: SetQueryParametersOperation,
-  [OperationTypes.CONFIGURATION_EDITOR_SAVE]: ConfigurationEditorSaveOperation,
-  [OperationTypes.CONFIGURATION_EDITOR_TOGGLE_REFLEXIVE_INPUT]: ConfigurationEditorToggleReflexiveInputOperation,
-  [OperationTypes.CANVAS_GET_COMPONENT_CHILDREN]: CanvasGetComponentChildrenOperation,
-  [OperationTypes.TRAY_SET_DISABLED_BY]: TraySetDisabledByOperation,
-  [OperationTypes.TRAY_FILTER_ITEMS]: TrayFilterItemsOperation,
-  [OperationTypes.TRAY_APPLY_GROUPS]: TrayApplyGroupsOperation,
-  [OperationTypes.TOGGLE_ITERATOR_PROPERTY]: ToggleIteratorPropertyOperation,
-  [OperationTypes.CANVAS_APPLY_ALL_ITEM_STATE]: CanvasApplyAllItemStateOperation,
-  [OperationTypes.CANVAS_APPLY_STRUCTURED_DATA]: CanvasApplyStructuredDataOperation,
-  [OperationTypes.CANVAS_DELETE_ITEM]: CanvasDeleteItemOperation,
-  [OperationTypes.CANVAS_HYDRATE]: CanvasHydrateOperation,
   [OperationTypes.ASYNC_ALL_SETTLED]: AsyncAllSettledOperation,
   [OperationTypes.TRY_CATCH]: TryCatchOperation,
   [OperationTypes.VALIDATE_MODULE]: ValidateModuleOperation,
@@ -149,39 +69,6 @@ export const OperationTypeMap = {
   [OperationTypes.SET_STYLING_TARGET]: SetStylingTargetOperation,
   [OperationTypes.SET_STYLING]: SetStylingOperation,
   [OperationTypes.EMIT_EVENT]: EmitEventOperation,
-  [OperationTypes.TABLE_SET_ACTION_TOOLBAR_VISIBILITY]: TableSetActionToolbarVisibilityOperation,
-  [OperationTypes.TABLE_SET_GLOBAL_FILTER_VISIBILITY]: TableSetGlobalFilterVisibilityOperation,
-  [OperationTypes.TABLE_SET_COLUMN_FILTERS_VISIBILITY]: TableSetColumnFiltersVisibilityOperation,
-  [OperationTypes.TABLE_SET_ALL_ROWS_EXPANDED]: TableSetAllRowsExpandedOperation,
-  [OperationTypes.TABLE_SET_ROW_EXPANDED]: TableSetRowExpandedOperation,
-  [OperationTypes.TABLE_REMOVE_ROWS]: TableRemoveRowsOperation,
-  [OperationTypes.TABLE_REMOVE_COLUMN]: TableRemoveColumnOperation,
-  [OperationTypes.TABLE_RENAME_COLUMN]: TableRenameColumnOperation,
-  [OperationTypes.TABLE_GO_TO_PAGE]: TableGoToPageOperation,
-  [OperationTypes.TABLE_GO_TO_LAST_PAGE]: TableGoToLastPageOperation,
-  [OperationTypes.TABLE_GO_TO_FIRST_PAGE]: TableGoToFirstPageOperation,
-  [OperationTypes.TABLE_GO_TO_PREVIOUS_PAGE]: TableGoToPreviousPageOperation,
-  [OperationTypes.TABLE_GO_TO_NEXT_PAGE]: TableGoToNextPageOperation,
-  [OperationTypes.TABLE_SET_PAGE_SIZE]: TableSetPageSizeOperation,
-  [OperationTypes.TABLE_ADD_COLUMN]: TableAddColumnOperation,
-  [OperationTypes.TABLE_CLEAR]: TableClearOperation,
-  [OperationTypes.TABLE_SET_FILTER_TYPES]: TableSetFilterTypesOperation,
-  [OperationTypes.TABLE_SET_COLUMN_FILTER]: TableSetColumnFilterOperation,
-  [OperationTypes.TABLE_SET_GLOBAL_FILTER]: TableSetGlobalFilterOperation,
-  [OperationTypes.TABLE_SET_COLUMN_ORDERING]: TableSetColumnOrderingOperation,
-  [OperationTypes.TABLE_SET_ROW_PINNING]: TableSetRowPinningOperation,
-  [OperationTypes.TABLE_SET_COLUMN_PINNING]: TableSetColumnPinningOperation,
-  [OperationTypes.TABLE_SET_NAVIGATE_DOWN_ON_PRESS_ENTER]: TableSetNavigateDownOnPressEnterOperation,
-  [OperationTypes.TABLE_SET_SELECTED_ROW]: TableSetSelectedRowOperation,
-  [OperationTypes.TABLE_SET_GROUPING_CRITERIA]: TableSetGroupingCriteriaOperation,
-  [OperationTypes.TABLE_SET_COLUMN_VISIBILITY]: TableSetColumnVisibilityOperation,
-  [OperationTypes.TABLE_SET_COLUMN_WIDTH]: TableSetColumnWidthOperation,
-  [OperationTypes.TABLE_SET_ROW_DENSITY]: TableSetRowDensityOperation,
-  [OperationTypes.TABLE_TOGGLE_GROUPING]: TableToggleGroupingOperation,
-  [OperationTypes.TABLE_ADD_ROW]: TableAddRowOperation,
-  [OperationTypes.TABLE_SORT_BY_COLUMN]: TableSortByColumnOperation,
-  [OperationTypes.TABLE_PASTE_VALUES]: TablePasteValuesOperation,
-  [OperationTypes.TABLE_COPY_VALUES]: TableCopyValuesOperation,
   [OperationTypes.PRINTER]: PrinterOperation,
   [OperationTypes.DOWNLOAD_FILE]: DownloadFileOperation,
   [OperationTypes.SCROLL_TO]: ScrollToOperation,
@@ -217,5 +104,4 @@ export const OperationTypeMap = {
   [OperationTypes.VALIDATE]: ValidateOperation,
   [OperationTypes.VALIDATE_RULES]: ValidationRuleOperation,
   [OperationTypes.PARSE_FORMULA]: ParseFormulaOperation,
-  [OperationTypes.MENU_TOGGLE_AT]: MenuToggleAtOperation,
 } as const

@@ -1,6 +1,7 @@
 import { CollectionOf, Example, Optional, Required } from '@tsed/schema'
 
-import { type EventType } from './eventTypes'
+import { EventType } from '../../events'
+import { SignalOptions } from './signalOptions/signalOptions'
 import { TrimmedDescription } from '../../decorators'
 import { Operation } from '../operations'
 
@@ -32,13 +33,17 @@ export class Signal {
 
   @Required()
   @TrimmedDescription(`The Signal type defines how the Signal is processed and handled by the Runtime.`)
-  @Example('onBlur', 'onWatch', 'onClick')
+  @Example(EventType.ON_FOCUS, 'ON_CLICK')
   type: EventType | string
 
   @Required()
   @CollectionOf(Operation)
   @TrimmedDescription('The operations to perform when the triggering event is emitted.')
   operations: Operation[]
+
+  @Optional()
+  @TrimmedDescription('The options of the Signal')
+  options?: SignalOptions = new SignalOptions()
 }
 
 /**

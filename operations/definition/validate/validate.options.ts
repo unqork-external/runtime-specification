@@ -1,8 +1,9 @@
 import { Default, Optional, Required, Example, Description, Any } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { OperationOptions } from '../../interface'
 
-export class ValidateOptions {
+export class ValidateOptions extends OperationOptions {
   @Required()
   @Example('firstNameTextField', 'grid.row(0).col(0)')
   @Description('targetKey refers to the intended target to validate.')

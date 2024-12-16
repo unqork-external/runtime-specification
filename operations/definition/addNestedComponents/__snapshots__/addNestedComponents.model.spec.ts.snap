@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddNestedComponentsOperation Model should match this JSON Schema 1`] = `
+{
+  "description": "Given a target, add a set of component templates to that location as children. Primarily created for UDesigner to create child components. Not encouraged for use due to direct exposure of the specification.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "type": "object",
+    },
+    "type": {
+      "const": "ADD_NESTED_COMPONENTS",
+      "examples": [
+        "ADD_NESTED_COMPONENTS",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

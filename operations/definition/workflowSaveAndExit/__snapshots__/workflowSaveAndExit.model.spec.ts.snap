@@ -1,0 +1,113 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: WorkflowSaveAndExit Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "InputRef": {
+      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+      "properties": {
+        "alias": {
+          "type": "string",
+        },
+        "propertyPath": {
+          "type": "string",
+        },
+        "required": {
+          "type": "boolean",
+        },
+        "silent": {
+          "type": "boolean",
+        },
+        "targetKey": {
+          "minLength": 1,
+          "type": "string",
+        },
+        "type": {
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+    "SaveAndExitAlertSetting": {
+      "properties": {
+        "cancelButtonText": {
+          "description": "The cancel button text for save and exit modal.",
+          "type": "string",
+        },
+        "confirmButtonText": {
+          "description": "The confirmation button text for save and exit modal.",
+          "type": "string",
+        },
+        "saveAndExitMessage": {
+          "description": "message for save and exit modal",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+    "WorkflowSaveAndExitOperationOptions": {
+      "properties": {
+        "currentStepPath": {
+          "description": "current step of the workflow",
+          "minLength": 1,
+          "type": "string",
+        },
+        "inputs": {
+          "description": "
+    Inputs to be used within formulas in other operation options.
+  ",
+          "items": {
+            "$ref": "#/definitions/InputRef",
+          },
+          "type": "array",
+        },
+        "saveAndExitAlertSetting": {
+          "$ref": "#/definitions/SaveAndExitAlertSetting",
+        },
+        "shouldExecute": {
+          "default": true,
+          "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+          "type": [
+            "string",
+            "boolean",
+          ],
+        },
+      },
+      "required": [
+        "currentStepPath",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/WorkflowSaveAndExitOperationOptions",
+    },
+    "type": {
+      "const": "WORKFLOW_SAVE_AND_EXIT",
+      "examples": [
+        "WORKFLOW_SAVE_AND_EXIT",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

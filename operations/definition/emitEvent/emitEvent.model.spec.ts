@@ -4,10 +4,15 @@ import { createOperation } from '../../createOperation'
 import { OperationTypes } from '../../enums/operation-types.enum'
 
 describe('Operation Model: EmitEvent Tests', () => {
-  let validate
+  let validate, schema
   beforeAll(() => {
     const response = generateSchemaAndValidate(EmitEventOperation)
     validate = response.validate
+    schema = schema = response.schema
+  })
+
+  it('should match this JSON Schema', () => {
+    expect(schema).toMatchSnapshot()
   })
 
   it('Reset operation should validate appropriately', () => {

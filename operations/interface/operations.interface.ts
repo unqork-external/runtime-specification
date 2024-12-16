@@ -1,24 +1,41 @@
-/**
- * New Operation Schema as discussed in Confluence:
- * https://unqork-wiki.atlassian.net/wiki/spaces/PLAT/pages/2594275362/Events+Watcher+Schema#Watchers-Schema
- *
- * This should give us a scalable way of representing our event schema for Runtime2.0. If we need to change something
- * it should be changed here.
- */
+import { Any, CollectionOf, Default, Description, DiscriminatorKey } from '@tsed/schema'
 
-import { Description, DiscriminatorKey } from '@tsed/schema'
-
+import { InputRef } from '../../inputs/inputRef'
+import { SyntaxObject } from '../../syntax'
 import { OperationTypes } from '../enums/operation-types.enum'
 
-export class Operation<OpType extends OperationTypes | string = string> {
-  @Description('A detailed summary of the operation')
-  creatorSummary?: string
-  @Description('Name of the operation')
-  name?: string
+export class Operation<
+  OpType extends OperationTypes | string = string,
+  Options extends OperationOptions = OperationOptions,
+> {
   @DiscriminatorKey()
   type: OpType
-  options: OperationOptions | any
+
+  //TODO: UQE-8764 => Without 'any' type, the build fails.
+  //  Figure out how to make ts happy after removing it.
+  options: Options | any
+
+  @Description('Name of the operation')
+  name?: string
+
+  @Description('A detailed summary of the operation')
+  creatorSummary?: string
+
   notifyImmediately?: boolean
 }
 
-export interface OperationOptions {}
+export class OperationOptions {
+  @Description(`
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  `)
+  @Any('string', 'boolean')
+  @Default(true)
+  shouldExecute?: boolean | string | SyntaxObject = true
+
+  @Description(`
+    Inputs to be used within formulas in other operation options.
+  `)
+  @CollectionOf(InputRef)
+  inputs?: InputRef[]
+}

@@ -2,9 +2,10 @@ import { getJsonSchema } from '@tsed/schema'
 import Ajv2020 from 'ajv/dist/2020'
 
 import { BaseComponentDefinition } from './base.component.definition'
+import { EventType } from '../../events'
 import { generateSchemaAndValidate } from '../../utilities'
 import { OperationTypes } from '../operations'
-import { EventType } from '../signals'
+import { EventScope } from '../signals'
 
 describe('Vega Base Component Interface Validation', () => {
   // We must use Ajv2020 to access certain JSON Schema features (e.g. dependentRequired)
@@ -54,6 +55,9 @@ describe('Vega Base Component Interface Validation', () => {
               options: {},
             },
           ],
+          options: {
+            eventScopes: [EventScope.Self],
+          },
         },
       ],
     }

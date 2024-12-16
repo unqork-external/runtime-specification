@@ -2,7 +2,57 @@
 
 exports[`Append Styling To Target Operation Model should match this JSON Schema 1`] = `
 {
+  "definitions": {
+    "InputRef": {
+      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+      "properties": {
+        "alias": {
+          "type": "string",
+        },
+        "propertyPath": {
+          "type": "string",
+        },
+        "required": {
+          "type": "boolean",
+        },
+        "silent": {
+          "type": "boolean",
+        },
+        "targetKey": {
+          "minLength": 1,
+          "type": "string",
+        },
+        "type": {
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+  },
   "properties": {
+    "inputs": {
+      "description": "
+    Inputs to be used within formulas in other operation options.
+  ",
+      "items": {
+        "$ref": "#/definitions/InputRef",
+      },
+      "type": "array",
+    },
+    "shouldExecute": {
+      "default": true,
+      "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+      "type": [
+        "string",
+        "boolean",
+      ],
+    },
     "targetKey": {
       "description": "Target component(s) that will receive the \`styling\` update. Engine Syntax is supported as a way to access the intended targets.",
       "examples": [

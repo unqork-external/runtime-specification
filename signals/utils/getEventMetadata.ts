@@ -1,5 +1,5 @@
 import { StabilityEnum } from '../../../decorators'
-import { RuntimeEvent } from '../eventTypes'
+import { EventType } from '../../../events'
 
 /**
  * Provides metadata about the events that can be used with the runtime. Provides
@@ -38,7 +38,7 @@ type EventMetadata = {
   stability: StabilityEnum
   description?: string
   // TODO See if we can remove this when we take on the Event refactor spike. https://unqork-jira.atlassian.net/browse/UQE-6405
-  id?: RuntimeEvent
+  id?: string
 }
 
 type EventMetadataList = Array<EventMetadata>
@@ -162,7 +162,7 @@ const ITERATOR_COMPONENT_EVENTS: EventMetadataList = [
 const TIMER_COMPONENT_EVENTS: EventMetadataList = [
   {
     name: 'On Finish Counting',
-    type: 'onFinishCounting',
+    type: 'FINISHED_COUNTING',
     categories: [EventCategories.TIMER],
     stability: StabilityEnum.ALPHA,
   },
@@ -171,14 +171,14 @@ const TIMER_COMPONENT_EVENTS: EventMetadataList = [
 const DOM_EVENTS: EventMetadataList = [
   {
     name: 'On Blur',
-    type: 'onBlur',
+    type: EventType.ON_BLUR,
     description: 'Occurs when an input component has lost focus.',
     categories: [EventCategories.DOM],
     stability: StabilityEnum.STABLE,
   },
   {
     name: 'On Change',
-    type: 'onChange',
+    type: EventType.ON_CHANGE,
     description:
       "Occurs when an input component's value has changed. Fired when the end-user commits a value change. Note: Does not apply in cases like typing in a Search Select until the selection for the component has been made.",
     categories: [EventCategories.DOM],
@@ -186,7 +186,7 @@ const DOM_EVENTS: EventMetadataList = [
   },
   {
     name: 'On Click',
-    type: 'onClick',
+    type: EventType.ON_CLICK,
     description: 'Occurs on click of any UI component that is not disabled.',
     categories: [EventCategories.DOM],
     stability: StabilityEnum.STABLE,
@@ -200,27 +200,27 @@ const DOM_EVENTS: EventMetadataList = [
   // },
   {
     name: 'On Drop',
-    type: 'onDrop',
+    type: EventType.ON_DROP,
     categories: [EventCategories.DOM],
     stability: StabilityEnum.ALPHA,
   },
   {
     name: 'On Focus',
-    type: 'onFocus',
+    type: EventType.ON_FOCUS,
     description: 'Occurs when an input component has received focus.',
     categories: [EventCategories.DOM],
     stability: StabilityEnum.STABLE,
   },
   {
     name: 'On Mouse Enter',
-    type: 'onMouseEnter',
+    type: EventType.ON_MOUSE_ENTER,
     description: 'Occurs when a cursor (mouse) has moved into a UI component (hovering over).',
     categories: [EventCategories.DOM],
     stability: StabilityEnum.STABLE,
   },
   {
     name: 'On Mouse Leave',
-    type: 'onMouseLeave',
+    type: EventType.ON_MOUSE_LEAVE,
     description: 'Occurs when a cursor (mouse) has moved off a UI component (leaving hovering).',
     categories: [EventCategories.DOM],
     stability: StabilityEnum.STABLE,
@@ -230,39 +230,39 @@ const DOM_EVENTS: EventMetadataList = [
 const RUNTIME_EVENTS: EventMetadataList = [
   {
     name: 'On Edit Submission',
-    type: 'onEditSubmission',
+    type: EventType.EDIT_SUBMISSION,
     description:
       'Occurs on Edit Submission. Occurs on load of a module with a submission. Similar to Initializer component Edit Submission.',
     categories: [EventCategories.RUNTIME],
     stability: StabilityEnum.STABLE,
-    id: RuntimeEvent.EDIT_SUBMISSION,
+    id: EventType.EDIT_SUBMISSION,
   },
   {
     name: 'On Execute',
-    type: 'onExecute',
+    type: EventType.EXECUTE,
     description:
       'Occurs when a component has been executed using the Execute Operation or triggered with the "trigger" output type in logic components.',
     categories: [EventCategories.RUNTIME],
     stability: StabilityEnum.STABLE,
-    id: RuntimeEvent.EXECUTE,
+    id: EventType.EXECUTE,
   },
   {
     name: 'On Initialize',
-    type: 'onInitialize',
+    type: EventType.INITIALIZE,
     description:
       'Occurs the moment a component has been loaded on the page, either by on page load or Dynamic Refresh. This includes if components are hidden, since they are still loaded onto the page as hidden.',
     categories: [EventCategories.RUNTIME],
     stability: StabilityEnum.STABLE,
-    id: RuntimeEvent.INITIALIZE,
+    id: EventType.INITIALIZE,
   },
   {
     name: 'On New Submission',
-    type: 'onNewSubmission',
+    type: EventType.NEW_SUBMISSION,
     description:
       'Occurs on New Submission. Occurs on load of a module without a submission. Similar to Initializer component New Submission.',
     categories: [EventCategories.RUNTIME],
     stability: StabilityEnum.STABLE,
-    id: RuntimeEvent.NEW_SUBMISSION,
+    id: EventType.NEW_SUBMISSION,
   },
 ]
 

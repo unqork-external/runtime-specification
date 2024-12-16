@@ -207,6 +207,17 @@ exports[`API Call Operation Model should match this JSON Schema 1`] = `
           ],
           "type": "string",
         },
+        "shouldExecute": {
+          "default": true,
+          "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+          "type": [
+            "string",
+            "boolean",
+          ],
+        },
         "spinnerOptions": {
           "$ref": "#/definitions/ApiCallSpinnerOptions",
         },
@@ -375,6 +386,34 @@ exports[`API Call Operation Model should match this JSON Schema 1`] = `
             "errorModal",
           ],
           "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+    "InputRef": {
+      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+      "properties": {
+        "alias": {
+          "type": "string",
+        },
+        "propertyPath": {
+          "type": "string",
+        },
+        "required": {
+          "type": "boolean",
+        },
+        "silent": {
+          "type": "boolean",
+        },
+        "targetKey": {
+          "minLength": 1,
+          "type": "string",
+        },
+        "type": {
           "type": "string",
         },
       },

@@ -24,6 +24,7 @@ import { HTTPMethodType } from './method.type'
 import { PreRequestTransform } from './preRequestTransform'
 import { ServiceType } from './serviceType.type'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { OperationOptions } from '../../interface'
 
 export class ApiCallHeaders {
   @Optional()
@@ -48,7 +49,7 @@ export class ApiCallHeaders {
     },
   },
 })
-export class ApiCallOptions {
+export class ApiCallOptions extends OperationOptions {
   targetKey?: string
 
   // TODO: Put in HTTP key?
@@ -173,7 +174,7 @@ export class ApiCallOptions {
   @Optional()
   @CollectionOf(ApiInputs)
   @Description('inputs refers to the options that let you map data from components in your module into an API call.')
-  inputs?: ApiInputs[]
+  declare inputs?: ApiInputs[]
 
   @Required()
   @CollectionOf(ApiOutputArgs)

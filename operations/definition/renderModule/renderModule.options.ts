@@ -1,6 +1,8 @@
 import { Description, Required } from '@tsed/schema'
 
-export class RenderModuleOperationOptions {
+import { OperationOptions } from '../../interface'
+
+export class RenderModuleOperationOptions extends OperationOptions {
   @Required()
   @Description('Id corresponding to loaded module that should be rendered.')
   moduleId: string

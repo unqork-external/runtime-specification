@@ -19,3 +19,8 @@ export class InputRef {
   @Property()
   type?: string
 }
+
+export class ResolvedInputRef extends InputRef {
+  @Description('Resolved value for this input')
+  value: any
+}

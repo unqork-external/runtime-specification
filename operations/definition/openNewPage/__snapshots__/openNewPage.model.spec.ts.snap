@@ -43,6 +43,17 @@ exports[`Open New Page Model should match this JSON Schema 1`] = `
           },
           "type": "array",
         },
+        "shouldExecute": {
+          "default": true,
+          "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+          "type": [
+            "string",
+            "boolean",
+          ],
+        },
         "type": {
           "description": "type should be either PAGEOPEN or PAGE",
           "enum": [

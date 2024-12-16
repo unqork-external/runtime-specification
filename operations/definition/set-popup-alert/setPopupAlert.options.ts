@@ -1,6 +1,8 @@
 import { Default, Description, Required } from '@tsed/schema'
 import { SweetAlertCustomClass } from 'sweetalert2'
 
+import { OperationOptions } from '../../interface'
+
 // TODO:
 //  Add the other options in relation to Swal, but not literally matching it
 //  so we can curate our own Alert Schema.
@@ -55,7 +57,7 @@ export class PopUpAlertOptions {
   @Description('Should autoclose the popup without user interaction')
   shouldAutoClose?: boolean = false
 }
-export class SetPopupAlertOptions {
+export class SetPopupAlertOptions extends OperationOptions {
   @Required()
   public value: PopUpAlertOptions = new PopUpAlertOptions()
 }

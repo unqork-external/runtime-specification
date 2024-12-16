@@ -1,6 +1,8 @@
 import { Description, Example, Required } from '@tsed/schema'
 
-export class ValidateModuleOperationOptions {
+import { OperationOptions } from '../../interface'
+
+export class ValidateModuleOperationOptions extends OperationOptions {
   @Required()
   targetKey: string
 

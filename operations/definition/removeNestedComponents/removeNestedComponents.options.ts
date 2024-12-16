@@ -1,6 +1,8 @@
 import { CollectionOf, Description, Default } from '@tsed/schema'
 
-export class RemoveNestedComponentsOperationOptions {
+import { OperationOptions } from '../../interface'
+
+export class RemoveNestedComponentsOperationOptions extends OperationOptions {
   @Description('Key of the component for which we want to remove the nested component')
   targetKey: string
 

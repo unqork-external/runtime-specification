@@ -42,7 +42,9 @@ exports[`parseFormula operation should match JSON schema 1`] = `
           "type": "string",
         },
         "inputs": {
-          "description": "Inputs must to have references to inputs that will be used by the formula",
+          "description": "
+    Inputs to be used within formulas in other operation options.
+  ",
           "items": {
             "$ref": "#/definitions/InputRef",
           },
@@ -53,6 +55,17 @@ exports[`parseFormula operation should match JSON schema 1`] = `
           "description": "Property that will receive the final value after parsing the formula",
           "minLength": 1,
           "type": "string",
+        },
+        "shouldExecute": {
+          "default": true,
+          "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+          "type": [
+            "string",
+            "boolean",
+          ],
         },
         "targetKey": {
           "description": "The target must to be a the string reference of the input that will receive the result of the formula operation over the array of reference inputs provided",

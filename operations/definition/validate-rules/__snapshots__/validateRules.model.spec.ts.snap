@@ -1,0 +1,161 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Validate Rules should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "InputRef": {
+      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+      "properties": {
+        "alias": {
+          "type": "string",
+        },
+        "propertyPath": {
+          "type": "string",
+        },
+        "required": {
+          "type": "boolean",
+        },
+        "silent": {
+          "type": "boolean",
+        },
+        "targetKey": {
+          "minLength": 1,
+          "type": "string",
+        },
+        "type": {
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+    "ValidateRulesOptions": {
+      "properties": {
+        "inputs": {
+          "description": "
+    Inputs to be used within formulas in other operation options.
+  ",
+          "items": {
+            "$ref": "#/definitions/InputRef",
+          },
+          "type": "array",
+        },
+        "rules": {
+          "description": "A list of validation rules.",
+          "examples": [
+            [
+              {
+                "errorMessage": "I am required",
+                "type": "required",
+                "validation": {
+                  "required": true,
+                },
+              },
+            ],
+          ],
+          "items": {
+            "$ref": "#/definitions/ValidationRule",
+          },
+          "type": "array",
+        },
+        "shouldExecute": {
+          "default": true,
+          "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+          "type": [
+            "string",
+            "boolean",
+          ],
+        },
+        "targetKey": {
+          "description": "targetKey refers to the intended target for an operation.",
+          "examples": [
+            "firstNameTextField",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+        "value": {
+          "description": "Value to be validated with different types of validation handlers.",
+          "type": [
+            "null",
+            "integer",
+            "number",
+            "string",
+            "boolean",
+            "array",
+            "object",
+          ],
+        },
+      },
+      "required": [
+        "targetKey",
+        "rules",
+      ],
+      "type": "object",
+    },
+    "ValidationRule": {
+      "properties": {
+        "errorMessage": {
+          "description": "What message to show when this rule is not met",
+          "type": "string",
+        },
+        "type": {
+          "description": "What type of validation rule is this",
+          "enum": [
+            "required",
+            "maxLength",
+            "minLength",
+            "arrayMinLength",
+            "arrayMaxLength",
+            "pattern",
+            "min",
+            "max",
+            "mask",
+            "number",
+            "dateinput",
+            "isBeforeDate",
+            "isAfterDate",
+            "customError",
+            "isEmail",
+          ],
+          "type": "string",
+        },
+        "validation": {
+          "description": "Nested validation record",
+          "type": "object",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ValidateRulesOptions",
+    },
+    "type": {
+      "const": "VALIDATE_RULES",
+      "examples": [
+        "VALIDATE_RULES",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

@@ -1,6 +1,8 @@
 import { Description, Default, Optional } from '@tsed/schema'
 
-export class ClearQueryParametersOperationOptions {
+import { OperationOptions } from '../../interface'
+
+export class ClearQueryParametersOperationOptions extends OperationOptions {
   @Description(
     'Determines if changing the params should cause the page to redirect to the url with the new query parameters.',
   )

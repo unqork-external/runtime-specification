@@ -1,8 +1,8 @@
 import { CollectionOf, Description, Ignore, MinItems, Required } from '@tsed/schema'
 
-import { Operation } from '../../interface'
+import { Operation, OperationOptions } from '../../interface'
 
-export class TryCatchOperationOptions {
+export class TryCatchOperationOptions extends OperationOptions {
   @CollectionOf(Operation)
   @Required()
   @MinItems(1)

@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: DynamicOperation Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "DynamicOperationOptions": {
+      "properties": {
+        "inputs": {
+          "description": "
+    Inputs to be used within formulas in other operation options.
+  ",
+          "items": {
+            "$ref": "#/definitions/InputRef",
+          },
+          "type": "array",
+        },
+        "operation": {
+          "description": "Formula or interpolation string that resolves to a full operation",
+          "minLength": 1,
+          "type": "string",
+        },
+        "shouldExecute": {
+          "default": true,
+          "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+          "type": [
+            "string",
+            "boolean",
+          ],
+        },
+        "targetKey": {
+          "description": "Key or path to send operation to. If specified, overrides any \`targetKey\` in dynamic operation's options",
+          "type": "string",
+        },
+      },
+      "required": [
+        "operation",
+      ],
+      "type": "object",
+    },
+    "InputRef": {
+      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+      "properties": {
+        "alias": {
+          "type": "string",
+        },
+        "propertyPath": {
+          "type": "string",
+        },
+        "required": {
+          "type": "boolean",
+        },
+        "silent": {
+          "type": "boolean",
+        },
+        "targetKey": {
+          "minLength": 1,
+          "type": "string",
+        },
+        "type": {
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/DynamicOperationOptions",
+    },
+    "type": {
+      "const": "DYNAMIC",
+      "examples": [
+        "DYNAMIC",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

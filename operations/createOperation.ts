@@ -1,5 +1,6 @@
 import type { OperationTypes } from './enums/operation-types.enum'
 import { OperationTypeMap } from './typemaps/operation.typemap'
+import type { CustomOperationTypeMap } from '../../operations'
 
 /**
  * Given an OperationType, Typescript will complete the options list.
@@ -36,7 +37,26 @@ export const createOperation = <OpType extends OperationTypes>(
   })
 }
 
+export const createCustomOperation = <OperationEnum extends string, OpType extends OperationEnum>(
+  type: OpType,
+  options: InstanceType<CustomOperationTypeMap<OperationEnum>[OpType]['model']>['options'],
+  typeMap: CustomOperationTypeMap<OperationEnum>,
+  additionalArgs?: Partial<AdditionalArgs>,
+) => {
+  const classOpType = typeMap[type].model
+  const op = new classOpType()
+  return Object.assign(op, {
+    type,
+    options: {
+      ...op.options,
+      ...options,
+    },
+    ...additionalArgs,
+  })
+}
+
 interface AdditionalArgs {
+  name: string
   notifyImmediately: boolean
   creatorSummary: string
 }

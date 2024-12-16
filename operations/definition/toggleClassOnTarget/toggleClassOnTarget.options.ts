@@ -1,8 +1,9 @@
 import { Description, Example } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { OperationOptions } from '../../interface'
 
-export class ToggleClassOnTargetOperationOptions {
+export class ToggleClassOnTargetOperationOptions extends OperationOptions {
   @TrimmedDescription(`
     Target component(s) that will receive the \`styling\` update.
     Engine Syntax is supported as a way to access the intended targets. 

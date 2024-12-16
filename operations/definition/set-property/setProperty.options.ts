@@ -1,13 +1,14 @@
 import { Default, Description, Example, Ignore, Optional, Property, Required } from '@tsed/schema'
 
 import { TrimmedDescription, Unknown } from '../../../../decorators/schema'
+import { OperationOptions } from '../../interface'
 
 @TrimmedDescription(`
   SET_PROPERTY will mutate a specific property on a specific target to a specific value.
   Optionally, if shouldOverwrite is set to false and if a value is already existing on the targeted property,
   then the Operation will do nothing and exit.
 `)
-export class SetPropertyOptions {
+export class SetPropertyOptions extends OperationOptions {
   @Required()
   @Property(String)
   @Example('firstNameTextField', 'grid.row(0).col(0)')
@@ -43,11 +44,13 @@ export class SetPropertyOptions {
   )
   resolveSyntax?: boolean
 
+  // Need Default() decorator to ensure checkbox field is rendered on load in ops builder
   @Optional()
+  @Default(false)
   @TrimmedDescription(
     `
     If true, SET_PROPERTY will skip interpolation
   `,
   )
-  skipInterpolation?: boolean
+  skipInterpolation?: boolean = false
 }

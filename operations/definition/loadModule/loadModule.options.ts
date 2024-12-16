@@ -1,14 +1,16 @@
 import { Default, Description, Example, Optional, Required } from '@tsed/schema'
 
-import type {
-  BaseComponentDefinition,
-  COLLISION_HANDLER,
-  ModuleDefinition,
-  R1ComponentDefinition,
-  R1ModuleDefinition,
+import {
+  type BaseComponentDefinition,
+  type COLLISION_HANDLER,
+  type ModuleDefinition,
+  type R1ComponentDefinition,
+  type R1ModuleDefinition,
 } from '@unqork/runtime-types'
 
-export class LoadModuleOperationOptions {
+import { OperationOptions } from '../../interface'
+
+export class LoadModuleOperationOptions extends OperationOptions {
   @Description('ID corresponding to module that should be loaded.')
   moduleId?: string
 

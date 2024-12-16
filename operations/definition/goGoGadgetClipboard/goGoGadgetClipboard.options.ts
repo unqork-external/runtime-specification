@@ -1,6 +1,8 @@
 import { Required } from '@tsed/schema'
 
-export class GoGoGadgetClipboardOperationOptions {
+import { OperationOptions } from '../../interface'
+
+export class GoGoGadgetClipboardOperationOptions extends OperationOptions {
   @Required()
   targetKey: string
 

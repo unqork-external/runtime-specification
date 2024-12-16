@@ -1,8 +1,9 @@
 import { Any, Default, Description, Example, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { OperationOptions } from '../../interface'
 
-export class SetComponentStateOperationOptions {
+export class SetComponentStateOperationOptions extends OperationOptions {
   @Required()
   @Example('firstNameTextField')
   @Description('targetKey refers to the intended target to manipulate.')

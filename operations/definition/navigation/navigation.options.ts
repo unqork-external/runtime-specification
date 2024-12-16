@@ -1,6 +1,8 @@
 import { Description, Example, Required } from '@tsed/schema'
 
-export class NavigationOperationOptions {
+import { OperationOptions } from '../../interface'
+
+export class NavigationOperationOptions extends OperationOptions {
   @Required()
   @Description('targetKey refers to the intended target to manipulate.')
   targetKey: string

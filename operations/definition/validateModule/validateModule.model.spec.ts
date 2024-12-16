@@ -11,6 +11,10 @@ describe('Operation Model: ValidateModule Tests', () => {
     schema = response.schema
   })
 
+  it('should match this JSON Schema', () => {
+    expect(schema).toMatchSnapshot()
+  })
+
   it('Validate operation should validate appropriately', () => {
     const op = createOperation(OperationTypes.VALIDATE_MODULE, {
       targetKey: 'd',

@@ -1,8 +1,9 @@
 import { Enum, Optional, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators'
+import { OperationOptions } from '../../interface'
 
-export class ExecuteExternalCommandOperationOptions {
+export class ExecuteExternalCommandOperationOptions extends OperationOptions {
   @Required()
   @TrimmedDescription(`
     The name of the command to run, will be passed directly to external application.

@@ -2,8 +2,9 @@ import { CollectionOf, Default, Description } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 import { BaseComponentDefinition } from '../../../base-component-interface/base.component.definition'
+import { OperationOptions } from '../../interface'
 
-export class AddNestedComponentsOperationOptions {
+export class AddNestedComponentsOperationOptions extends OperationOptions {
   @TrimmedDescription(`
     The new API to replace the existing options. Cannot replace the existing options due to:
     1. lack of versioning

@@ -1,0 +1,106 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: RemoveNestedComponentsOperation Tests should match this JSON Schema 1`] = `
+{
+  "definitions": {
+    "InputRef": {
+      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+      "properties": {
+        "alias": {
+          "type": "string",
+        },
+        "propertyPath": {
+          "type": "string",
+        },
+        "required": {
+          "type": "boolean",
+        },
+        "silent": {
+          "type": "boolean",
+        },
+        "targetKey": {
+          "minLength": 1,
+          "type": "string",
+        },
+        "type": {
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+      ],
+      "type": "object",
+    },
+    "RemoveNestedComponentsOperationOptions": {
+      "properties": {
+        "inputs": {
+          "description": "
+    Inputs to be used within formulas in other operation options.
+  ",
+          "items": {
+            "$ref": "#/definitions/InputRef",
+          },
+          "type": "array",
+        },
+        "nestable": {
+          "description": "Key of the nestable in which the new components should be removed.",
+          "type": "string",
+        },
+        "nestablesToRemove": {
+          "description": "Ids of the nestable components to  be removed.",
+          "items": {
+            "default": [],
+            "type": "string",
+          },
+          "type": "array",
+        },
+        "removeAllChildren": {
+          "default": false,
+          "description": "Optional parameter. If true, any components currently in the named nestable will be removed.",
+          "type": "boolean",
+        },
+        "shouldExecute": {
+          "default": true,
+          "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+          "type": [
+            "string",
+            "boolean",
+          ],
+        },
+        "targetKey": {
+          "description": "Key of the component for which we want to remove the nested component",
+          "type": "string",
+        },
+      },
+      "type": "object",
+    },
+  },
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/RemoveNestedComponentsOperationOptions",
+    },
+    "type": {
+      "const": "REMOVE_NESTED_COMPONENTS",
+      "examples": [
+        "REMOVE_NESTED_COMPONENTS",
+      ],
+      "type": "string",
+    },
+  },
+  "required": [
+    "options",
+  ],
+  "type": "object",
+}
+`;

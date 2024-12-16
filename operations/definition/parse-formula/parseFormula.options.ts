@@ -1,17 +1,14 @@
 import { CollectionOf, Default, Description, Example, Ignore, Optional, Required } from '@tsed/schema'
 
 import { InputRef } from '../../../inputs/inputRef'
+import { OperationOptions } from '../../interface'
 
-export class ParseFormulaOptions {
+export class ParseFormulaOptions extends OperationOptions {
   @Required()
   @Description(
     `The target must to be a the string reference of the input that will receive the result of the formula operation over the array of reference inputs provided`,
   )
   public declare targetKey: string
-
-  @CollectionOf(InputRef)
-  @Description('Inputs must to have references to inputs that will be used by the formula')
-  inputs: InputRef[]
 
   @Required()
   @Description('Formula that will be applied')

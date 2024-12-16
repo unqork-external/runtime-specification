@@ -1,7 +1,7 @@
 import { Any, CollectionOf, Description, Example, Optional, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
-import { Operation } from '../../interface/operations.interface'
+import { Operation, OperationOptions } from '../../interface'
 
 export class Condition {
   @Required()
@@ -23,7 +23,7 @@ export class Condition {
   resultValue: unknown
 }
 
-export class IfOperationOptions {
+export class IfOperationOptions extends OperationOptions {
   @CollectionOf(Condition)
   @TrimmedDescription(`
     The set of conditions to fire or evaluate.

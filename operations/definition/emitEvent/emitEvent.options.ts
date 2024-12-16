@@ -1,6 +1,8 @@
 import { Description, Example, Required, Optional } from '@tsed/schema'
 
-export class EmitEventOperationOptions {
+import { OperationOptions } from '../../interface'
+
+export class EmitEventOperationOptions extends OperationOptions {
   @Optional()
   //TODO: Should we change this at some point?
   @Description('This is not used for this event but is required by all operation options')

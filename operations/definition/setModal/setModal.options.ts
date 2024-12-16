@@ -1,6 +1,8 @@
 import { Description, Example, Property, Required } from '@tsed/schema'
 
-export class SetModalOptions {
+import { OperationOptions } from '../../interface'
+
+export class SetModalOptions extends OperationOptions {
   @Description('The key or path to the container we intend to target for an operation')
   targetKey: string
 

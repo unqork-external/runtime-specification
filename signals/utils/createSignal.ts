@@ -1,5 +1,5 @@
+import type { EventType } from '../../../events/eventType.enum'
 import type { Operation } from '../../operations/interface/operations.interface'
-import type { EventType } from '../eventTypes/eventType.enum'
 import type { Signal } from '../signal.config'
 
 export const createSignal = (

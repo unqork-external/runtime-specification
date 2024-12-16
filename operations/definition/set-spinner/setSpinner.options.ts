@@ -1,6 +1,8 @@
 import { Default, Description, Optional } from '@tsed/schema'
 
-export class SetSpinnerOptions {
+import { OperationOptions } from '../../interface'
+
+export class SetSpinnerOptions extends OperationOptions {
   @Optional()
   @Default(false)
   @Description(`'showCursorSpinner' converts the user's cursor to a spinner when enabled.`)
