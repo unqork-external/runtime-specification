@@ -15,6 +15,12 @@ export class ParseFormulaOptions extends OperationOptions {
   @Example('Some examples we can use: [ "=CONCATENATE(A,B)", "=A*5", "=GET(A, `MyParam`)" ]')
   formula: string
 
+  @Description(`
+    Inputs to be used within formulas in other operation options.
+  `)
+  @CollectionOf(InputRef)
+  inputs?: InputRef[]
+
   @Required()
   @Description('Property that will receive the final value after parsing the formula')
   @Default('value')

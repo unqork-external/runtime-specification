@@ -5,15 +5,6 @@ exports[`Operation Model: GoGoGadgetClipboard Tests should match the basic schem
   "definitions": {
     "GoGoGadgetClipboardOperationOptions": {
       "properties": {
-        "inputs": {
-          "description": "
-    Inputs to be used within formulas in other operation options.
-  ",
-          "items": {
-            "$ref": "#/definitions/InputRef",
-          },
-          "type": "array",
-        },
         "property": {
           "minLength": 1,
           "type": "string",
@@ -37,34 +28,6 @@ exports[`Operation Model: GoGoGadgetClipboard Tests should match the basic schem
       "required": [
         "targetKey",
         "property",
-      ],
-      "type": "object",
-    },
-    "InputRef": {
-      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
-      "properties": {
-        "alias": {
-          "type": "string",
-        },
-        "propertyPath": {
-          "type": "string",
-        },
-        "required": {
-          "type": "boolean",
-        },
-        "silent": {
-          "type": "boolean",
-        },
-        "targetKey": {
-          "minLength": 1,
-          "type": "string",
-        },
-        "type": {
-          "type": "string",
-        },
-      },
-      "required": [
-        "targetKey",
       ],
       "type": "object",
     },

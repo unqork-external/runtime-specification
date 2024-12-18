@@ -3,45 +3,8 @@
 exports[`Operation Model: SetComponentState Tests should match this JSON Schema 1`] = `
 {
   "definitions": {
-    "InputRef": {
-      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
-      "properties": {
-        "alias": {
-          "type": "string",
-        },
-        "propertyPath": {
-          "type": "string",
-        },
-        "required": {
-          "type": "boolean",
-        },
-        "silent": {
-          "type": "boolean",
-        },
-        "targetKey": {
-          "minLength": 1,
-          "type": "string",
-        },
-        "type": {
-          "type": "string",
-        },
-      },
-      "required": [
-        "targetKey",
-      ],
-      "type": "object",
-    },
     "SetComponentStateOperationOptions": {
       "properties": {
-        "inputs": {
-          "description": "
-    Inputs to be used within formulas in other operation options.
-  ",
-          "items": {
-            "$ref": "#/definitions/InputRef",
-          },
-          "type": "array",
-        },
         "override": {
           "default": false,
           "description": "override refers to the type of behavior that SET_COMPONENT_STATE should emulate. If true, SET_COMPONENT_STATE will check if the targetKey's value is set, if so, will overwrite the value of the targetKey in state components. Otherwise set the targetKey with value as a new field. If false, SET_COMPONENT_STATE will only update value of targetKey.",

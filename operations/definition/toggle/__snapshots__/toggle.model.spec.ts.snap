@@ -3,45 +3,8 @@
 exports[`Operation Model: ToggleOperation Tests should match this JSON Schema 1`] = `
 {
   "definitions": {
-    "InputRef": {
-      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
-      "properties": {
-        "alias": {
-          "type": "string",
-        },
-        "propertyPath": {
-          "type": "string",
-        },
-        "required": {
-          "type": "boolean",
-        },
-        "silent": {
-          "type": "boolean",
-        },
-        "targetKey": {
-          "minLength": 1,
-          "type": "string",
-        },
-        "type": {
-          "type": "string",
-        },
-      },
-      "required": [
-        "targetKey",
-      ],
-      "type": "object",
-    },
     "ToggleOptions": {
       "properties": {
-        "inputs": {
-          "description": "
-    Inputs to be used within formulas in other operation options.
-  ",
-          "items": {
-            "$ref": "#/definitions/InputRef",
-          },
-          "type": "array",
-        },
         "property": {
           "description": "\`property\` refers to the intended property to mutate. This can be represented as a JSONPath expression.",
           "examples": [

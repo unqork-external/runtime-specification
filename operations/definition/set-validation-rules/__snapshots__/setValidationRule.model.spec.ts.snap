@@ -3,45 +3,8 @@
 exports[`setValidation should match JSON schema 1`] = `
 {
   "definitions": {
-    "InputRef": {
-      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
-      "properties": {
-        "alias": {
-          "type": "string",
-        },
-        "propertyPath": {
-          "type": "string",
-        },
-        "required": {
-          "type": "boolean",
-        },
-        "silent": {
-          "type": "boolean",
-        },
-        "targetKey": {
-          "minLength": 1,
-          "type": "string",
-        },
-        "type": {
-          "type": "string",
-        },
-      },
-      "required": [
-        "targetKey",
-      ],
-      "type": "object",
-    },
     "SetValidationRuleOptions": {
       "properties": {
-        "inputs": {
-          "description": "
-    Inputs to be used within formulas in other operation options.
-  ",
-          "items": {
-            "$ref": "#/definitions/InputRef",
-          },
-          "type": "array",
-        },
         "rule": {
           "$ref": "#/definitions/ValidationRule",
         },

@@ -3,49 +3,12 @@
 exports[`Validate Model should match this JSON Schema 1`] = `
 {
   "definitions": {
-    "InputRef": {
-      "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
-      "properties": {
-        "alias": {
-          "type": "string",
-        },
-        "propertyPath": {
-          "type": "string",
-        },
-        "required": {
-          "type": "boolean",
-        },
-        "silent": {
-          "type": "boolean",
-        },
-        "targetKey": {
-          "minLength": 1,
-          "type": "string",
-        },
-        "type": {
-          "type": "string",
-        },
-      },
-      "required": [
-        "targetKey",
-      ],
-      "type": "object",
-    },
     "ValidateOptions": {
       "properties": {
         "ignoreDirectIsolated": {
           "default": false,
           "description": "When true, will ignore isolated components (i.e. panel modals) that are directly matched by the targetKey. By default, isolated components that are directly matched will be validated.",
           "type": "boolean",
-        },
-        "inputs": {
-          "description": "
-    Inputs to be used within formulas in other operation options.
-  ",
-          "items": {
-            "$ref": "#/definitions/InputRef",
-          },
-          "type": "array",
         },
         "shouldExecute": {
           "default": true,

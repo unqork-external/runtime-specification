@@ -32,10 +32,4 @@ export class OperationOptions {
   @Any('string', 'boolean')
   @Default(true)
   shouldExecute?: boolean | string | SyntaxObject = true
-
-  @Description(`
-    Inputs to be used within formulas in other operation options.
-  `)
-  @CollectionOf(InputRef)
-  inputs?: InputRef[]
 }
