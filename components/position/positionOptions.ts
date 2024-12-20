@@ -91,4 +91,8 @@ export class PositionOptions {
   @Optional()
   @Description('Whether the position should be closed when user clicks outside the child component')
   outsideDismiss?: boolean
+
+  @Optional()
+  @Description('If true, rendered elements will be nested under the parent DOM node instead of using a portal')
+  disablePortal?: boolean
 }
