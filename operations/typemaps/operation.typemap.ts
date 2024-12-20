@@ -43,6 +43,7 @@ import { SetStylingTargetOperation } from '../definition/setStylingTarget'
 import { SubmitOperation } from '../definition/submit'
 import { ToggleOperation } from '../definition/toggle'
 import { ToggleClassOnTargetOperation } from '../definition/toggleClassOnTarget'
+import { ToggleReflexiveInputOperation } from '../definition/toggleReflexiveInput'
 import { TryCatchOperation } from '../definition/tryCatch'
 import { ValidateOperation } from '../definition/validate'
 import { ValidationRuleOperation } from '../definition/validate-rules'
@@ -54,6 +55,7 @@ import { OperationTypes } from '../enums/operation-types.enum'
 export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
+  [OperationTypes.TOGGLE_REFLEXIVE_INPUT]: ToggleReflexiveInputOperation,
   [OperationTypes.RESET_INITIAL_CONFIG]: ResetInitialConfigOperation,
   [OperationTypes.EXECUTE_EXTERNAL_COMMAND]: ExecuteExternalCommandOperation,
   [OperationTypes.CLEAR_QUERY_PARAMETERS]: ClearQueryParametersOperation,

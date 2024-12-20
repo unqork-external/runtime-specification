@@ -1,0 +1,76 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: ToggleReflexiveInput Tests ToggleReflexiveInput Model 1`] = `
+{
+  "definitions": {
+    "ToggleReflexiveInputOperationOptions": {
+      "properties": {
+        "expectedValue": {
+          "description": "The value of \`pathToValue\` that should toggle the reflexive input.",
+          "minLength": 1,
+          "type": [
+            "string",
+            "number",
+            "boolean",
+            "object",
+            "array",
+          ],
+        },
+        "pathToValue": {
+          "description": "The component path to the key that should be watched to toggle the reflexive input.",
+          "minLength": 1,
+          "type": "string",
+        },
+        "shouldExecute": {
+          "default": true,
+          "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+          "type": [
+            "string",
+            "boolean",
+          ],
+        },
+        "targetKey": {
+          "description": "The key of the input that should be reflexive.",
+          "minLength": 1,
+          "type": "string",
+        },
+      },
+      "required": [
+        "targetKey",
+        "pathToValue",
+        "expectedValue",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "This operation will toggle the reflexive input in configuration editor or in ops builder. The reflexive input toggle is determined by whether the target component being watched matches the expected value.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ToggleReflexiveInputOperationOptions",
+    },
+    "type": {
+      "const": "TOGGLE_REFLEXIVE_INPUT",
+      "examples": [
+        "TOGGLE_REFLEXIVE_INPUT",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "type": "object",
+}
+`;
