@@ -39,4 +39,6 @@ export class CanvasItem {
     Displayed as a message box above canvas representation.
   `)
   status?: CanvasItemStatus
+  @Description(`If a container is created for the the representation of this canvas item it will be applied here.`)
+  containerKey?: string
 }
