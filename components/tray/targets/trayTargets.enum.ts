@@ -15,4 +15,5 @@ export enum TrayTargetsEnum {
   TRAY_ITEM_BADGE_ROOT = 'trayItemBadgeRoot',
   TRAY_ITEM_BADGE_TEXT = 'trayItemBadgeText',
   TRAY_ITEM_BADGE_ICON = 'trayItemBadgeIcon',
+  TRAY_ITEM_BUTTON_DISABLED = 'trayItemButtonDisabled',
 }

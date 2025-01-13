@@ -15,6 +15,9 @@ exports[`Tray Contract Tests should ensure the contract is clear - component def
 
 exports[`Tray Contract Tests should ensure the contract is clear - component defintion 2`] = `
 {
+  "display": {
+    "$ref": "#/definitions/Display",
+  },
   "executable": {
     "default": true,
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
@@ -152,6 +155,27 @@ exports[`Tray Contract Tests should ensure the contract is clear - component def
 
 exports[`Tray Contract Tests should ensure the contract is clear - component defintion 3`] = `
 {
+  "Display": {
+    "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Read Only View' corresponds to the component being rendered with an input element or as text.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "Setting it to \`true\` hides the component from the view, while \`false\` shows it. Regardless of this setting, the component is always visible in the Module Editor. A hidden component can still receive information from other components.",
+        "type": "boolean",
+      },
+      "interactive": {
+        "default": true,
+        "description": "When \`false\`, it is not possible to interact with or edit the input field. Its appearance is modified (grayed-out by default) to show its state, the HTML 'disabled' attribute is added to the field, and when hovering over it, the cursor also changes to alert of the disabled status. However, the component can still receive information from other components when it's not interactive.",
+        "type": "boolean",
+      },
+      "readOnlyView": {
+        "default": false,
+        "description": "Defines how the component will be displayed. When \`false\`, the component is displayed as an input field. When \`true\`, the component will not accept any input from the user, and its value will be rendered inline as text and not as an input component. If no value is present, the word 'None' is rendered. If a prefix or suffix is set for the component, they also appear as inline text.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
   "InputRef": {
     "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
     "properties": {
@@ -465,6 +489,29 @@ exports[`Tray Contract Tests should ensure the contract is clear - component def
           },
         ],
       },
+      "trayItemButtonDisabled": {
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
       "trayItemIcon": {
         "oneOf": [
           {
@@ -607,6 +654,9 @@ exports[`Tray Contract Tests should ensure the contract is clear - component sta
   "childIds": {
     "description": "Child ids for all nestable references within the component.",
     "type": "array",
+  },
+  "display": {
+    "$ref": "#/definitions/Display",
   },
   "executable": {
     "default": true,
@@ -778,6 +828,27 @@ exports[`Tray Contract Tests should ensure the contract is clear - component sta
 
 exports[`Tray Contract Tests should ensure the contract is clear - component state 3`] = `
 {
+  "Display": {
+    "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Read Only View' corresponds to the component being rendered with an input element or as text.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "Setting it to \`true\` hides the component from the view, while \`false\` shows it. Regardless of this setting, the component is always visible in the Module Editor. A hidden component can still receive information from other components.",
+        "type": "boolean",
+      },
+      "interactive": {
+        "default": true,
+        "description": "When \`false\`, it is not possible to interact with or edit the input field. Its appearance is modified (grayed-out by default) to show its state, the HTML 'disabled' attribute is added to the field, and when hovering over it, the cursor also changes to alert of the disabled status. However, the component can still receive information from other components when it's not interactive.",
+        "type": "boolean",
+      },
+      "readOnlyView": {
+        "default": false,
+        "description": "Defines how the component will be displayed. When \`false\`, the component is displayed as an input field. When \`true\`, the component will not accept any input from the user, and its value will be rendered inline as text and not as an input component. If no value is present, the word 'None' is rendered. If a prefix or suffix is set for the component, they also appear as inline text.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
   "InputRef": {
     "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
     "properties": {
@@ -1069,6 +1140,29 @@ exports[`Tray Contract Tests should ensure the contract is clear - component sta
         ],
       },
       "trayItemButton": {
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "trayItemButtonDisabled": {
         "oneOf": [
           {
             "type": "string",

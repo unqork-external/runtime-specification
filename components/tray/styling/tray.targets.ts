@@ -26,5 +26,7 @@ export class TrayTargets {
   @Css()
   [TrayTargetsEnum.TRAY_ITEM_ICON]: CssClassOrProps;
   @Css()
-  [TrayTargetsEnum.TRAY_ITEM_TEXT]: CssClassOrProps
+  [TrayTargetsEnum.TRAY_ITEM_TEXT]: CssClassOrProps;
+  @Css()
+  [TrayTargetsEnum.TRAY_ITEM_BUTTON_DISABLED]: CssClassOrProps
 }

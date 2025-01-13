@@ -1,9 +1,10 @@
-import { CollectionOf, Const, Default, Description, DiscriminatorValue, Required } from '@tsed/schema'
+import { CollectionOf, Const, Default, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
 
 import type { GroupExpansionMap } from './groupExpansionMap.type'
 import { TrayStyling } from './styling/tray.styling'
 import { TrayGroupDefinition } from './trayGroup.definition'
 import { BaseComponentDefinition } from '../../base-component-interface'
+import { Display } from '../../component-composition/display/component.display'
 import { StandardArrayNestable } from '../../nestables'
 
 @DiscriminatorValue('tray')
@@ -13,6 +14,9 @@ export class TrayComponentDefinition extends BaseComponentDefinition {
 
   @Description('Styling target for the tray.')
   declare styling: TrayStyling
+
+  @Property()
+  display: Display = new Display()
 
   @Required()
   @CollectionOf(TrayGroupDefinition)
