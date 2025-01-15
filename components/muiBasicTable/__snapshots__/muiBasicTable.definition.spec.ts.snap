@@ -163,8 +163,8 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 2`] = 
   },
   "rowNumberDisplayMode": {
     "description": "
-    In the default rowNumberDisplayMode (static), row numbers are just a static part of the table in their own column. 
-    They act like the row numbers in an excel spreadsheet. 
+    In the default rowNumberDisplayMode (static), row numbers are just a static part of the table in their own column.
+    They act like the row numbers in an excel spreadsheet.
     Sorting and filtering will not affect the row numbers.
   ",
     "type": "string",
@@ -234,6 +234,9 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 2`] = 
     "type": "object",
   },
   "sortState": {
+    "items": {
+      "default": [],
+    },
     "type": "array",
   },
   "styling": {

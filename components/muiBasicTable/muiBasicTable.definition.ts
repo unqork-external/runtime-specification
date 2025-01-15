@@ -123,8 +123,8 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
 
   @Property()
   @Description(`
-    In the default rowNumberDisplayMode (static), row numbers are just a static part of the table in their own column. 
-    They act like the row numbers in an excel spreadsheet. 
+    In the default rowNumberDisplayMode (static), row numbers are just a static part of the table in their own column.
+    They act like the row numbers in an excel spreadsheet.
     Sorting and filtering will not affect the row numbers.
   `)
   rowNumberDisplayMode: 'original' | 'static' = 'static'
@@ -137,7 +137,7 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   rowPinningDisplayMode: PinPosition | string = PinPosition.TopAndBottom
 
   @TrimmedDescription(`
-    When \`false\`, pinned rows will not be visible if they are filtered or paginated out of the table. 
+    When \`false\`, pinned rows will not be visible if they are filtered or paginated out of the table.
     When \`true\`, pinned rows will always be visible regardless of filtering or pagination.
   `)
   @Optional()
@@ -155,8 +155,9 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   @Property()
   selectedRows: RowSelection
 
-  @Property()
-  sortState: SortingState[]
+  @Optional()
+  @Default([])
+  sortState: SortingState[] = []
 
   @Property()
   groupBy: string[]
@@ -223,8 +224,8 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
 
   @Property()
   @TrimmedDescription(`
-    This only has effect in edit mode. When enabled, 
-    users have the ability to press enter and put the focus 
+    This only has effect in edit mode. When enabled,
+    users have the ability to press enter and put the focus
     on the cell that is below the current selection. When disabled,
     it exits the edit mode.
   `)
