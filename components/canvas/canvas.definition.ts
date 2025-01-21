@@ -67,6 +67,10 @@ export class CanvasComponentDefinition extends BaseComponentDefinition {
 
   @Description('Nestable information for Canvas')
   nestables = { childIds: new StandardArrayNestable() }
+
+  @Optional()
+  @Description('This refers to the id of canvas representation item that is currently selected on the canvas.')
+  currentSelectedCanvasItemId?: string
 }
 
 export class CanvasComponentState extends CanvasComponentDefinition {

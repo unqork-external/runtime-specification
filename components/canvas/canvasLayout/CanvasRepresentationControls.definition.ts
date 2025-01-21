@@ -36,4 +36,8 @@ export class CanvasRepresentationControls {
     badgeClass?: string
     iconClass?: string
   }
+
+  @Optional()
+  @Description('Whether the canvas representation item is selected on the canvas.')
+  selected?: boolean
 }

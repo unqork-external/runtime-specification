@@ -24,6 +24,10 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
     "minLength": 1,
     "type": "string",
   },
+  "currentSelectedCanvasItemId": {
+    "description": "This refers to the id of canvas representation item that is currently selected on the canvas.",
+    "type": "string",
+  },
   "disabled": {
     "default": false,
     "description": "Boolean to determine if the canvas is disabled. This functionality differs from the Runtime concepts of \`executable\` and \`interactive\` in the sense that only some viewActions are disabled. Disabled viewActions include: paste, delete, deleteAll, edit, and handleDropEvent",
@@ -1484,6 +1488,10 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
   },
   "currentLayoutId": {
     "minLength": 1,
+    "type": "string",
+  },
+  "currentSelectedCanvasItemId": {
+    "description": "This refers to the id of canvas representation item that is currently selected on the canvas.",
     "type": "string",
   },
   "disabled": {
