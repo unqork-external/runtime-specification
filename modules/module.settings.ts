@@ -1,6 +1,7 @@
 import { Example, Optional, Required } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../decorators'
+import { SyntaxObject } from '../syntax'
 import { DEFAULT_LANGUAGE } from '../translations'
 
 @TrimmedDescription(`Module Settings`)
@@ -35,7 +36,7 @@ export class ModuleSettings {
    When "Show Page Title" is turned on in module settings,
    the value in Page Title will be visible in the browser tab appending the Site Name
   `)
-  pageTitle?: string
+  pageTitle?: string | SyntaxObject
 
   @Optional()
   @Example('fr')
