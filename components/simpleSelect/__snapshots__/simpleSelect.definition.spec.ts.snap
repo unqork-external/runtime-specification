@@ -241,7 +241,7 @@ exports[`SimpleSelect Contract Tests should ensure the contract is clear 3`] = `
     "type": "object",
   },
   "Display": {
-    "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Read Only View' corresponds to the component being rendered with an input element or as text.",
+    "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Display as Text' corresponds to the component being rendered with an input element or as text.",
     "properties": {
       "hidden": {
         "default": false,
