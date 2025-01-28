@@ -327,6 +327,14 @@ exports[`Panel Contract Tests should ensure the contract is clear - component de
         "description": "Current open/closed state of the accordion.",
         "type": "boolean",
       },
+      "ariaLabel": {
+        "description": "Adds a custom aria-label to the component.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "Adds a custom role to the component.",
+        "type": "string",
+      },
       "customClass": {
         "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
         "type": "string",
@@ -1066,6 +1074,14 @@ exports[`Panel Contract Tests should ensure the contract is clear - component st
         "default": false,
         "description": "Current open/closed state of the accordion.",
         "type": "boolean",
+      },
+      "ariaLabel": {
+        "description": "Adds a custom aria-label to the component.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "Adds a custom role to the component.",
+        "type": "string",
       },
       "customClass": {
         "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",

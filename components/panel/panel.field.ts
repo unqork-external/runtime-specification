@@ -20,6 +20,14 @@ export class PanelField {
   customClass?: string
 
   @Optional()
+  @Description('Adds a custom role to the component.')
+  ariaRole?: string
+
+  @Optional()
+  @Description('Adds a custom aria-label to the component.')
+  ariaLabel?: string
+
+  @Optional()
   label: InputLabel = new InputLabel()
 
   @Optional()

@@ -241,6 +241,14 @@ exports[`Field Group Contract Tests should ensure the contract is clear - compon
   },
   "FieldGroupSettings": {
     "properties": {
+      "ariaLabel": {
+        "description": "Adds a custom aria-label to the component.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "Adds a custom role to the component.",
+        "type": "string",
+      },
       "customClass": {
         "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
         "type": "string",
@@ -721,6 +729,14 @@ exports[`Field Group Contract Tests should ensure the contract is clear - compon
   },
   "FieldGroupSettings": {
     "properties": {
+      "ariaLabel": {
+        "description": "Adds a custom aria-label to the component.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "Adds a custom role to the component.",
+        "type": "string",
+      },
       "customClass": {
         "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
         "type": "string",
