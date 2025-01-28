@@ -21,6 +21,7 @@ import { FocusOperation } from '../definition/focus'
 import { GoGoGadgetClipboardOperation } from '../definition/goGoGadgetClipboard'
 import { IfOperation } from '../definition/if'
 import { LoadModuleOperation } from '../definition/loadModule'
+import { ManipulateDomUnsafeOperation } from '../definition/manipulateDomUnsafe'
 import { NavigationOperation } from '../definition/navigation'
 import { OpenNewPageOperation } from '../definition/openNewPage'
 import { ParseFormulaOperation } from '../definition/parse-formula'
@@ -55,6 +56,7 @@ import { OperationTypes } from '../enums/operation-types.enum'
 export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
+  [OperationTypes.MANIPULATE_DOM_UNSAFE]: ManipulateDomUnsafeOperation,
   [OperationTypes.TOGGLE_REFLEXIVE_INPUT]: ToggleReflexiveInputOperation,
   [OperationTypes.RESET_INITIAL_CONFIG]: ResetInitialConfigOperation,
   [OperationTypes.EXECUTE_EXTERNAL_COMMAND]: ExecuteExternalCommandOperation,

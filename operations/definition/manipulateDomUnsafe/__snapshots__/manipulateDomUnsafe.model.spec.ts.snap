@@ -1,0 +1,89 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: ManipulateDomUnsafe Tests ManipulateDomUnsafe Model 1`] = `
+{
+  "definitions": {
+    "ManipulateDomUnsafeOperationOptions": {
+      "properties": {
+        "attribute": {
+          "description": "The name of the HTML attribute to set",
+          "examples": [
+            "class",
+            "style",
+            "data-example-attribute",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+        "mode": {
+          "default": "replace",
+          "description": "The type of manipulation to perform",
+          "enum": [
+            "replace",
+            "append",
+            "remove",
+            "clear",
+          ],
+          "type": "string",
+        },
+        "selector": {
+          "description": "The CSS selector to use for finding the target DOM node(s)",
+          "examples": [
+            "body",
+            ".targetClass",
+            "#elementId",
+          ],
+          "minLength": 1,
+          "type": "string",
+        },
+        "shouldExecute": {
+          "default": true,
+          "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+          "type": [
+            "string",
+            "boolean",
+          ],
+        },
+        "value": {
+          "description": "The value to set for the given attribute",
+          "type": "string",
+        },
+      },
+      "required": [
+        "selector",
+        "attribute",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "The ManipulateDomUnsafe operation directly sets HTML attributes on DOM node(s) targeted using CSS selectors.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/ManipulateDomUnsafeOperationOptions",
+    },
+    "type": {
+      "const": "MANIPULATE_DOM_UNSAFE",
+      "examples": [
+        "MANIPULATE_DOM_UNSAFE",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "type": "object",
+}
+`;
