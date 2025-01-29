@@ -61,6 +61,10 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   currentOperationKey?: string
 
   @Optional()
+  @Description('The name for current operation')
+  currentOperationName?: string = ''
+
+  @Optional()
   @Description(`The summary for current operation`)
   currentOperationSummary?: string = ''
 

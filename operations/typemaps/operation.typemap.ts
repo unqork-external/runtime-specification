@@ -11,6 +11,7 @@ import { ClearQueryParametersOperation } from '../definition/clearQueryParameter
 import { ClearStylingOperation } from '../definition/clearStyling'
 import { DataWorkflowOperation } from '../definition/dataworkflow'
 import { DecideOperation } from '../definition/decide'
+import { DeletePersistedDataOperation } from '../definition/deletePersistedData'
 import { DownloadFileOperation } from '../definition/downloadFile'
 import { DynamicOperation } from '../definition/dynamic'
 import { EmitEventOperation } from '../definition/emitEvent'
@@ -26,6 +27,7 @@ import { NavigationOperation } from '../definition/navigation'
 import { OpenNewPageOperation } from '../definition/openNewPage'
 import { ParseFormulaOperation } from '../definition/parse-formula'
 import { PrinterOperation } from '../definition/printer'
+import { ReadPersistedDataOperation } from '../definition/readPersistedData'
 import { RemoveNestedComponentsOperation } from '../definition/removeNestedComponents'
 import { RemoveQueryParametersOperation } from '../definition/removeQueryParameters'
 import { RenderModuleOperation } from '../definition/renderModule'
@@ -38,6 +40,7 @@ import { SetSpinnerOperation } from '../definition/set-spinner'
 import { SetValidationRuleOperation } from '../definition/set-validation-rules'
 import { SetComponentStateOperation } from '../definition/setComponentState'
 import { SetModalOperation } from '../definition/setModal'
+import { SetPersistedDataOperation } from '../definition/setPersistedData'
 import { SetQueryParametersOperation } from '../definition/setQueryParameters'
 import { SetStylingOperation } from '../definition/setStyling'
 import { SetStylingTargetOperation } from '../definition/setStylingTarget'
@@ -56,6 +59,9 @@ import { OperationTypes } from '../enums/operation-types.enum'
 export const OperationTypeMap = {
   // DONT REMOVE THE BELOW COMMENT - FOR OPERATION GENERATION
   // OPERATION_TYPE_MAP
+  [OperationTypes.DELETE_PERSISTED_DATA]: DeletePersistedDataOperation,
+  [OperationTypes.READ_PERSISTED_DATA]: ReadPersistedDataOperation,
+  [OperationTypes.SET_PERSISTED_DATA]: SetPersistedDataOperation,
   [OperationTypes.MANIPULATE_DOM_UNSAFE]: ManipulateDomUnsafeOperation,
   [OperationTypes.TOGGLE_REFLEXIVE_INPUT]: ToggleReflexiveInputOperation,
   [OperationTypes.RESET_INITIAL_CONFIG]: ResetInitialConfigOperation,

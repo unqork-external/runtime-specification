@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: DeletePersistedData Tests DeletePersistedData Model 1`] = `
+{
+  "definitions": {
+    "DeletePersistedDataOperationOptions": {
+      "properties": {
+        "key": {
+          "description": "Key for the data to be deleted.",
+          "minLength": 1,
+          "type": "string",
+        },
+        "namespace": {
+          "description": "A namespace associated with the data to be saved.",
+          "minLength": 1,
+          "type": "string",
+        },
+        "shouldExecute": {
+          "default": true,
+          "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+          "type": [
+            "string",
+            "boolean",
+          ],
+        },
+      },
+      "required": [
+        "namespace",
+        "key",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "The Delete Persisted Data operation deletes the record in Browser Storage.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/DeletePersistedDataOperationOptions",
+    },
+    "type": {
+      "const": "DELETE_PERSISTED_DATA",
+      "examples": [
+        "DELETE_PERSISTED_DATA",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "stability": "STABLE",
+  "type": "object",
+}
+`;

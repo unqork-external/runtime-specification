@@ -281,5 +281,21 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
 
   @Description('Adds styles to subtext in welcome screen in Operations Builder.')
   @Css()
-  [OpsBuilderTargets.welcomeScreenSubtext]: CssClassOrProps
+  [OpsBuilderTargets.welcomeScreenSubtext]: CssClassOrProps;
+
+  @Description('Adds styles to operation name wrapper in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationNameWrapper]: CssClassOrProps;
+
+  @Description('Adds styles to operation name label in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationNameLabel]: CssClassOrProps;
+
+  @Description('Adds styles to operation name helper text in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationNameHelperText]: CssClassOrProps;
+
+  @Description('Adds styles to operation name in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationName]: CssClassOrProps
 }

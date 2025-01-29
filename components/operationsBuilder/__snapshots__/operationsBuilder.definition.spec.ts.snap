@@ -22,6 +22,10 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear - 
     "description": "The selected operation type that is being actively configured",
     "type": "string",
   },
+  "currentOperationName": {
+    "description": "The name for current operation",
+    "type": "string",
+  },
   "currentOperationSummary": {
     "description": "The summary for current operation",
     "type": "string",

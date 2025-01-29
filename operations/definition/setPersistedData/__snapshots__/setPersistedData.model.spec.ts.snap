@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Operation Model: SetPersistedData Tests SetPersistedData Model 1`] = `
+{
+  "definitions": {
+    "SetPersistedDataOperationOptions": {
+      "properties": {
+        "key": {
+          "description": "Key for the data to be stored at.",
+          "minLength": 1,
+          "type": "string",
+        },
+        "namespace": {
+          "description": "A namespace associated with the data to be saved.",
+          "minLength": 1,
+          "type": "string",
+        },
+        "shouldExecute": {
+          "default": true,
+          "description": "
+    Conditionally execute this operation.
+    Can set to false to temporarily disabled when debugging.
+  ",
+          "type": [
+            "string",
+            "boolean",
+          ],
+        },
+        "ttl": {
+          "description": "Milliseconds for this data to be valid for",
+          "type": "number",
+        },
+        "value": {
+          "description": "Value to store at this key.",
+          "type": "object",
+        },
+      },
+      "required": [
+        "namespace",
+        "key",
+      ],
+      "type": "object",
+    },
+  },
+  "description": "The Set Persisted Data operation sets or replaces record in Browser Storage.",
+  "properties": {
+    "creatorSummary": {
+      "description": "A detailed summary of the operation",
+      "type": "string",
+    },
+    "name": {
+      "description": "Name of the operation",
+      "type": "string",
+    },
+    "options": {
+      "$ref": "#/definitions/SetPersistedDataOperationOptions",
+    },
+    "type": {
+      "const": "SET_PERSISTED_DATA",
+      "examples": [
+        "SET_PERSISTED_DATA",
+      ],
+      "type": "object",
+    },
+  },
+  "required": [
+    "type",
+    "options",
+  ],
+  "stability": "STABLE",
+  "type": "object",
+}
+`;
