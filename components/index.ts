@@ -69,6 +69,7 @@ export * from './protectedField'
 export * from './radio'
 export * from './repeater/repeater.definition'
 export * from './richTextEditor/richTextEditor.definition'
+export * from './richTextEditorCentauriV1/richTextEditorCentauriV1.definition'
 
 export * from './searchSelect'
 export * from './searchSelectOption'
