@@ -269,6 +269,14 @@ exports[`Columns Contract Tests should ensure the contract is clear - component 
   "ColumnsField": {
     "description": "Columns component Field settings",
     "properties": {
+      "ariaLabel": {
+        "description": "Adds a custom aria-label to the component.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "Adds a custom role to the component.",
+        "type": "string",
+      },
       "customClass": {
         "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
         "type": "string",
@@ -839,6 +847,14 @@ exports[`Columns Contract Tests should ensure the contract is clear - component 
   "ColumnsField": {
     "description": "Columns component Field settings",
     "properties": {
+      "ariaLabel": {
+        "description": "Adds a custom aria-label to the component.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "Adds a custom role to the component.",
+        "type": "string",
+      },
       "customClass": {
         "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
         "type": "string",
