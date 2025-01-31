@@ -9,12 +9,12 @@ exports[`Code Editor Contract Tests should ensure the contract is clear 1`] = `
 
 exports[`Code Editor Contract Tests should ensure the contract is clear 2`] = `
 {
-  "controlValue": {
-    "description": "The value read by CodeMirror component",
-    "type": "string",
-  },
   "display": {
     "$ref": "#/definitions/Display",
+  },
+  "displayValue": {
+    "description": "The value read by CodeMirror component and displayed to the user",
+    "type": "string",
   },
   "errorMessage": {
     "description": "Error message when parsing a JSON object",
@@ -105,12 +105,12 @@ exports[`Code Editor Contract Tests should ensure the contract is clear 2`] = `
     "$ref": "#/definitions/Validation",
   },
   "value": {
-    "description": "Parsed value based on language format",
+    "description": "Parsed value based on language format. We ONLY set value to null when editor is set up to handle JSON and JSON.parse() fails.",
     "type": "object",
   },
   "valueIsObject": {
     "default": false,
-    "description": "Value as object",
+    "description": "This property is used to only introduce the parsing behavior when explicitly needed (for ops builder). By default, even if language === 'json' in Code Editor, JSON will not be parsed. valueIsObject needs to be explicitly set to TRUE for the display value to be parsed and stored as a JSON object in value in state.",
     "type": "boolean",
   },
 }

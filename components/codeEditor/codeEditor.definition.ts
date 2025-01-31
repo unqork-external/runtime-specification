@@ -3,6 +3,7 @@ import { Required, DiscriminatorValue, Description, Property, Optional, Default,
 import { CodeEditorStyling } from './codeEditor.styling'
 import { CodeEditorFormat } from './codeEditorFormat'
 import { CodeEditorTargets } from './codeEditorTargets.enum'
+import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { Display } from '../../component-composition/display/component.display'
@@ -21,20 +22,29 @@ export class CodeEditorComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'codeEditor' = 'codeEditor' as const
 
-  @Description('Parsed value based on language format')
-  declare value: string | object
+  @TrimmedDescription(
+    `Parsed value based on language format.
+     We ONLY set value to null when editor is set up to handle JSON and JSON.parse() fails.`,
+  )
+  declare value: string | object | null
+
+  @Optional()
+  @Description('The value read by CodeMirror component and displayed to the user')
+  displayValue?: string
 
   @Description('Formatting options')
   format: CodeEditorFormat = new CodeEditorFormat()
 
+  // TODO: UQE-9254 - Investigate whether this property can be removed or renamed.
   @Optional()
   @Default(false)
-  @Description('Value as object')
+  @TrimmedDescription(
+    `This property is used to only introduce the parsing behavior when explicitly needed (for ops builder).
+     By default, even if language === 'json' in Code Editor, JSON will not be parsed. valueIsObject needs
+     to be explicitly set to TRUE for the display value to be parsed and stored as a JSON object
+     in value in state.`,
+  )
   valueIsObject: boolean = false
-
-  @Optional()
-  @Description('The value read by CodeMirror component')
-  controlValue?: string
 
   @Optional()
   @Description('Error message when parsing a JSON object')
