@@ -191,13 +191,12 @@ const DOM_EVENTS: EventMetadataList = [
     categories: [EventCategories.DOM],
     stability: StabilityEnum.STABLE,
   },
-  // https://unqork-jira.atlassian.net/browse/UQE-6949
-  // {
-  //   name: 'On Double Click',
-  //   type: 'onDoubleClick',
-  //   categories: [DOM],
-  //   stability: StabilityEnum.STABLE,
-  // },
+  {
+    name: 'On Double Click',
+    type: EventType.ON_DOUBLE_CLICK,
+    categories: [EventCategories.DOM],
+    stability: StabilityEnum.STABLE,
+  },
   {
     name: 'On Drop',
     type: EventType.ON_DROP,

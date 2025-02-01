@@ -283,6 +283,18 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.welcomeScreenSubtext]: CssClassOrProps;
 
+  @Description('Adds styles to container for the Event Scopes selector in Operations Builder')
+  @Css()
+  [OpsBuilderTargets.eventScopeSelector]: CssClassOrProps;
+
+  @Description('Adds styles to the label for the Event Scopes selector in Operations Builder')
+  @Css()
+  [OpsBuilderTargets.eventScopeSelectorLabel]: CssClassOrProps;
+
+  @Description('Adds styles to the select component for the Event Scopes selector in Operations Builder')
+  @Css()
+  [OpsBuilderTargets.eventScopeSelectorOptions]: CssClassOrProps;
+
   @Description('Adds styles to operation name wrapper in Operations Builder.')
   @Css()
   [OpsBuilderTargets.operationNameWrapper]: CssClassOrProps;

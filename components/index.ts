@@ -97,4 +97,6 @@ export * from './udToggleView'
 export * from './udView'
 
 export * from './workflow/workflow.definition'
+
 export * from './agGridTable/agGridTable.definition'
+export * from './advancedModeJsonDiffer/advancedModeJsonDiffer.definition'

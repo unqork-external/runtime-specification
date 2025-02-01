@@ -1,8 +1,8 @@
 import { CollectionOf, Example, Optional, Required } from '@tsed/schema'
 
-import { EventType } from '../../events'
 import { SignalOptions } from './signalOptions/signalOptions'
 import { TrimmedDescription } from '../../decorators'
+import { EventType } from '../../events'
 import { Operation } from '../operations'
 
 @TrimmedDescription(

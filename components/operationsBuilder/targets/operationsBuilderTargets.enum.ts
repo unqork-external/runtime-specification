@@ -72,4 +72,7 @@ export enum OpsBuilderTargets {
   welcomeScreenImage = 'welcomeScreenImage',
   welcomeScreenText = 'welcomeScreenText',
   welcomeScreenSubtext = 'welcomeScreenSubtext',
+  eventScopeSelector = 'eventScopeSelector',
+  eventScopeSelectorLabel = 'eventScopeSelectorLabel',
+  eventScopeSelectorOptions = 'eventScopeSelectorOptions',
 }

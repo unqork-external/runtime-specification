@@ -3,7 +3,9 @@ import { Default, Required } from '@tsed/schema'
 import { TrimmedDescription } from '../../../decorators'
 
 export enum EventScope {
+  Target = 'target',
   Self = 'self',
+  Child = 'child',
   Global = 'global',
 }
 
@@ -11,8 +13,11 @@ export class SignalOptions {
   @Required()
   @Default([EventScope.Self])
   @TrimmedDescription(
-    `Scopes in which this signal triggers: EventScope.Self (object itself) or EventScope.Global (all).
-     Activates if any scope matches the event originator.`,
+    `Determines when this signal will run its operations in response to events that have different originators:
+      EventScope.Target - will run if the event originator targetm matches this signal target
+      EventScope.Self - will run if the event originator key matches the key of the object this signal is on
+      EventScope.Global - will always run, no matter the event originator
+     `,
   )
   eventScopes: EventScope[] = [EventScope.Self]
 }
