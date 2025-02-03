@@ -71,6 +71,10 @@ export class CanvasComponentDefinition extends BaseComponentDefinition {
   @Optional()
   @Description('This refers to the id of canvas representation item that is currently selected on the canvas.')
   currentSelectedCanvasItemId?: string
+
+  @Optional()
+  @Description('This refers to the id of canvas representation item that is currently highlighted on the canvas.')
+  currentHighlightedCanvasItemId?: string
 }
 
 export class CanvasComponentState extends CanvasComponentDefinition {

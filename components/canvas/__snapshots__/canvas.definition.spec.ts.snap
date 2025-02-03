@@ -20,6 +20,10 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
     "default": {},
     "type": "object",
   },
+  "currentHighlightedCanvasItemId": {
+    "description": "This refers to the id of canvas representation item that is currently highlighted on the canvas.",
+    "type": "string",
+  },
   "currentLayoutId": {
     "minLength": 1,
     "type": "string",
@@ -1485,6 +1489,10 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
   "childIds": {
     "description": "Child ids for all nestable references within the component.",
     "type": "array",
+  },
+  "currentHighlightedCanvasItemId": {
+    "description": "This refers to the id of canvas representation item that is currently highlighted on the canvas.",
+    "type": "string",
   },
   "currentLayoutId": {
     "minLength": 1,
