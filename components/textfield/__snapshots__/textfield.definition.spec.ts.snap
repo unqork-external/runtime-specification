@@ -13,7 +13,7 @@ exports[`Textfield Contract Tests should ensure the contract is clear 2`] = `
     "$ref": "#/definitions/StandardAdornmentsProperties",
   },
   "display": {
-    "$ref": "#/definitions/Display",
+    "$ref": "#/definitions/InputDisplay",
   },
   "executable": {
     "default": true,
@@ -224,12 +224,17 @@ exports[`Textfield Contract Tests should ensure the contract is clear 3`] = `
     ],
     "type": "object",
   },
-  "Display": {
-    "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Display as Text' corresponds to the component being rendered with an input element or as text.",
+  "InputDisplay": {
+    "description": "InputDisplay is an extension of Display. It applies additional properties to components that use the HTML <input> tag under the hood.",
     "properties": {
       "hidden": {
         "default": false,
         "description": "Setting it to \`true\` hides the component from the view, while \`false\` shows it. Regardless of this setting, the component is always visible in the Module Editor. A hidden component can still receive information from other components.",
+        "type": "boolean",
+      },
+      "htmlReadOnly": {
+        "default": false,
+        "description": "When htmlReadOnly = true, it will apply the readonly property to the component's <input>. This property is distinct from readOnlyView (aka 'Display as Text'). htmlReadOnly is useful for accessibility (a11y) so that we can support setting the <input> field to readonly.",
         "type": "boolean",
       },
       "interactive": {

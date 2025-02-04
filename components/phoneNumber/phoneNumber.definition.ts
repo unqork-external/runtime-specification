@@ -9,8 +9,7 @@ import { Examples } from '../../../decorators/schema/examples.decorator'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
-import { InputFormat } from '../../component-composition'
-import { Display } from '../../component-composition/display/component.display'
+import { InputDisplay, InputFormat } from '../../component-composition'
 import type { SignalTargets } from '../../signals'
 import { targetedStylingExample } from '../../styling/targeted.styling.example'
 import { Validation } from '../../validations/validation'
@@ -32,7 +31,7 @@ export class PhoneNumberComponentDefinition extends BaseComponentDefinition {
   type: 'phoneNumber' = 'phoneNumber' as const
 
   @Optional()
-  display: Display = new Display()
+  display: InputDisplay = new InputDisplay()
 
   @Optional()
   field: PhoneNumberField = new PhoneNumberField()

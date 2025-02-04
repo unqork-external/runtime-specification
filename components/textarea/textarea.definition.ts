@@ -6,7 +6,7 @@ import { TextAreaTargets } from './textAreaTargets.enum'
 import { TextareaValidation } from './textareaValidation'
 import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
-import { Display } from '../../component-composition/display/component.display'
+import { InputDisplay } from '../../component-composition/display/component.display'
 import { InputField } from '../../component-composition/input/component.input'
 import { type SignalTargets } from '../../signals'
 
@@ -17,7 +17,7 @@ export class TextareaComponentDefinition extends BaseComponentDefinition {
   type: 'textarea' = 'textarea' as const
 
   @Property()
-  display: Display = new Display()
+  display: InputDisplay = new InputDisplay()
 
   @Property()
   field: InputField = new InputField()

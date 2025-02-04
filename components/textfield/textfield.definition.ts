@@ -14,7 +14,7 @@ import {
   RightAdornmentNestable,
   StandardAdornmentsProperties,
 } from '../../component-composition/adornments/component.adornments'
-import { Display } from '../../component-composition/display/component.display'
+import { InputDisplay } from '../../component-composition/display/component.display'
 import { InputField } from '../../component-composition/input/component.input'
 import type { SignalTargets } from '../../signals'
 import { targetedStylingExample } from '../../styling/targeted.styling.example'
@@ -40,7 +40,7 @@ export class TextFieldComponentDefinition extends BaseComponentDefinition {
   simpleView: TextfieldSimpleViewModel
 
   @Property()
-  display: Display = new Display()
+  display: InputDisplay = new InputDisplay()
 
   @Property()
   field: InputField = new InputField()

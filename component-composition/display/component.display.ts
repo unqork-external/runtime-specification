@@ -42,3 +42,18 @@ export class Display {
   // The label was changed for accessibility purposes but the underlying property name remains the same.
   readOnlyView?: boolean = false
 }
+
+@TrimmedDescription(`
+  InputDisplay is an extension of Display.
+  It applies additional properties to components that use the HTML <input> tag under the hood.
+`)
+export class InputDisplay extends Display {
+  @Optional()
+  @Default(false)
+  @TrimmedDescription(`
+   When htmlReadOnly = true, it will apply the readonly property to the component's <input>.
+   This property is distinct from readOnlyView (aka 'Display as Text').
+   htmlReadOnly is useful for accessibility (a11y) so that we can support setting the  <input> field to readonly.
+  `)
+  htmlReadOnly?: boolean = false
+}
