@@ -59,7 +59,6 @@ exports[`Operation Model: DeletePersistedData Tests DeletePersistedData Model 1`
     "type",
     "options",
   ],
-  "stability": "STABLE",
   "type": "object",
 }
 `;

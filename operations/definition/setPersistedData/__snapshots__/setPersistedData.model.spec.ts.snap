@@ -67,7 +67,6 @@ exports[`Operation Model: SetPersistedData Tests SetPersistedData Model 1`] = `
     "type",
     "options",
   ],
-  "stability": "STABLE",
   "type": "object",
 }
 `;
