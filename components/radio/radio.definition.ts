@@ -1,4 +1,4 @@
-import { Any, CollectionOf, Const, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
+import { Any, CollectionOf, Const, Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
 
 import { RadioStyling } from './radio.styling'
 import { RadioField } from './radioField'
@@ -43,8 +43,10 @@ export class RadioComponentDefinition extends BaseComponentDefinition {
   @Description('The values to use for the Radio field')
   values: RadioOption[] = []
 
+  @Optional()
+  @Any('string', 'boolean')
   @Description('Value of the Radio component.')
-  declare value?: string
+  declare value?: string | boolean
 
   @Examples(targetedStylingExample)
   declare styling: RadioStyling

@@ -104,7 +104,15 @@ exports[`Radio Contract Tests should ensure the contract is clear 2`] = `
   },
   "value": {
     "description": "Value of the Radio component.",
-    "type": "string",
+    "type": [
+      "null",
+      "integer",
+      "number",
+      "string",
+      "boolean",
+      "array",
+      "object",
+    ],
   },
   "values": {
     "description": "The values to use for the Radio field",
