@@ -9,7 +9,8 @@ export class CodeEditorFormat {
   @Description('Language type')
   language: SUPPORTED_LANGUAGES = 'default'
 
-  @Description('true if we want json to be formatted before we add it to code editor')
+  @Description(`If true, attempts to format values received by the editor as JSON,
+   regardless of the language type`)
   @Default(false)
   prettifyJson: boolean = false
 }

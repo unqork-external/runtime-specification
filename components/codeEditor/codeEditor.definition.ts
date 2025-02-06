@@ -23,10 +23,9 @@ export class CodeEditorComponentDefinition extends BaseComponentDefinition {
   type: 'codeEditor' = 'codeEditor' as const
 
   @TrimmedDescription(
-    `Parsed value based on language format.
-     We ONLY set value to null when editor is set up to handle JSON and JSON.parse() fails.`,
+    `User can provide any value: string, number, object, array, null, boolean that will be stringified and displayed`,
   )
-  declare value: string | object | null
+  declare value: any
 
   @Optional()
   @Description('The value read by CodeMirror component and displayed to the user')
@@ -41,8 +40,7 @@ export class CodeEditorComponentDefinition extends BaseComponentDefinition {
   @TrimmedDescription(
     `This property is used to only introduce the parsing behavior when explicitly needed (for ops builder).
      By default, even if language === 'json' in Code Editor, JSON will not be parsed. valueIsObject needs
-     to be explicitly set to TRUE for the display value to be parsed and stored as a JSON object
-     in value in state.`,
+     to be explicitly set to TRUE to value be stored as an object in state`,
   )
   valueIsObject: boolean = false
 
