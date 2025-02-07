@@ -24,6 +24,10 @@ export class AdvancedModeJsonDifferComponentDefinition extends BaseComponentDefi
   @Description('The target JSON or plain text')
   target: JSON | string
 
+  @Description(`The target JSON or plain text used to initialize the edit section's value. ' +
+    'If undefined, the edit section will default to the source value`)
+  initialEditSection?: JSON | string
+
   @Description('The type of data being provided to JSON Differ Component')
   docType: 'json' | 'html'
 

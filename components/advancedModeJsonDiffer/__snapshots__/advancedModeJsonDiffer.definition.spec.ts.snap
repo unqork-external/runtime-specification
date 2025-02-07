@@ -22,6 +22,11 @@ exports[`AdvancedModeJsonDiffer Contract Tests should ensure the contract is cle
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
   },
+  "initialEditSection": {
+    "description": "The target JSON or plain text used to initialize the edit section's value. ' +
+    'If undefined, the edit section will default to the source value",
+    "type": "object",
+  },
   "inputs": {
     "items": {
       "$ref": "#/definitions/InputRef",
