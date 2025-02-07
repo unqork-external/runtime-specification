@@ -2,11 +2,12 @@ import { Default, Optional } from '@tsed/schema'
 
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 
-@TrimmedDescription(`Basic UI settings related to how a component may be displayed and interacted with.
+const displayDescription = `Basic UI settings related to how a component may be displayed and interacted with.
   'Hidden' corresponds to visibility.
   'Interactive' corresponds to the end-user's ability to interact with input components.
-  'Display as Text' corresponds to the component being rendered with an input element or as text.
-`)
+  'Display as Text' corresponds to the component being rendered with an input element or as text.`
+
+@TrimmedDescription(displayDescription)
 export class Display {
   @Optional()
   @Default(false)
@@ -43,17 +44,22 @@ export class Display {
   readOnlyView?: boolean = false
 }
 
-@TrimmedDescription(`
+@TrimmedDescription(
+  `
   InputDisplay is an extension of Display.
   It applies additional properties to components that use the HTML <input> tag under the hood.
-`)
+  'HTML Read Only' corresponds to applying the readonly property to the component's <input>.
+
+  Display Description: 
+` + displayDescription,
+)
 export class InputDisplay extends Display {
   @Optional()
   @Default(false)
   @TrimmedDescription(`
-   When htmlReadOnly = true, it will apply the readonly property to the component's <input>.
+   When htmlReadOnly = true, it will make the field non-editable and will apply the readonly property to the component's <input>.
    This property is distinct from readOnlyView (aka 'Display as Text').
-   htmlReadOnly is useful for accessibility (a11y) so that we can support setting the  <input> field to readonly.
+   htmlReadOnly is useful for accessibility (a11y) so that we can support setting the <input> field to readonly.
   `)
   htmlReadOnly?: boolean = false
 }

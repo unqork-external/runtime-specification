@@ -10,7 +10,7 @@ import { Examples } from '../../../decorators/schema/examples.decorator'
 import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
 import { trimAll } from '../../../utilities'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
-import { Display, InputField } from '../../component-composition'
+import { InputDisplay, InputField } from '../../component-composition'
 import { type SignalTargets } from '../../signals'
 import { targetedStylingExample } from '../../styling/targeted.styling.example'
 
@@ -35,7 +35,7 @@ export class DateInputComponentDefinition extends BaseComponentDefinition {
   simpleView: DateInputSimpleViewModel = new DateInputSimpleViewModel()
 
   @Optional()
-  display: Display = new Display()
+  display: InputDisplay = new InputDisplay()
 
   @Optional()
   field: InputField = new InputField()

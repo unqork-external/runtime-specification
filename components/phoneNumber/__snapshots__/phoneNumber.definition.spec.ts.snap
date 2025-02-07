@@ -109,7 +109,7 @@ exports[`Phone Number Contract Tests should ensure the contract is clear 2`] = `
 exports[`Phone Number Contract Tests should ensure the contract is clear 3`] = `
 {
   "InputDisplay": {
-    "description": "InputDisplay is an extension of Display. It applies additional properties to components that use the HTML <input> tag under the hood.",
+    "description": "InputDisplay is an extension of Display. It applies additional properties to components that use the HTML <input> tag under the hood. 'HTML Read Only' corresponds to applying the readonly property to the component's <input>. Display Description: Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Display as Text' corresponds to the component being rendered with an input element or as text.",
     "properties": {
       "hidden": {
         "default": false,
@@ -118,7 +118,7 @@ exports[`Phone Number Contract Tests should ensure the contract is clear 3`] = `
       },
       "htmlReadOnly": {
         "default": false,
-        "description": "When htmlReadOnly = true, it will apply the readonly property to the component's <input>. This property is distinct from readOnlyView (aka 'Display as Text'). htmlReadOnly is useful for accessibility (a11y) so that we can support setting the <input> field to readonly.",
+        "description": "When htmlReadOnly = true, it will make the field non-editable and will apply the readonly property to the component's <input>. This property is distinct from readOnlyView (aka 'Display as Text'). htmlReadOnly is useful for accessibility (a11y) so that we can support setting the <input> field to readonly.",
         "type": "boolean",
       },
       "interactive": {

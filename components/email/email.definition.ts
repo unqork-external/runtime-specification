@@ -5,7 +5,7 @@ import { EmailTargets } from './emailTargets.enum'
 import { ViewTargets } from '../../../decorators'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
-import { Display } from '../../component-composition/display/component.display'
+import { InputDisplay } from '../../component-composition/display/component.display'
 import { InputField, InputFormat } from '../../component-composition/input/component.input'
 import type { SignalTargets } from '../../signals'
 import { Validation } from '../../validations/validation'
@@ -24,7 +24,7 @@ export class EmailComponentDefinition extends BaseComponentDefinition {
   type: 'email' = 'email' as const
 
   @Property()
-  display: Display = new Display()
+  display: InputDisplay = new InputDisplay()
 
   @Property()
   field: InputField = new InputField()
