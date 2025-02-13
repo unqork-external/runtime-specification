@@ -100,3 +100,4 @@ export * from './workflow/workflow.definition'
 
 export * from './agGridTable/agGridTable.definition'
 export * from './advancedModeJsonDiffer/advancedModeJsonDiffer.definition'
+export * from './testableNestables'

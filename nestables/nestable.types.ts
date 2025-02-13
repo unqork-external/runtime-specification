@@ -21,8 +21,4 @@ export class Nestable {
   @Property()
   @Description('Points to the property where the child definitions can be found.')
   children: string = 'components'
-
-  // TODO: Iterate on this key for creating a way to extract children values to watch for.
-  // @Property()
-  // watchFor?: string = 'value'
 }
