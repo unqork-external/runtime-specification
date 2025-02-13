@@ -18,6 +18,11 @@ exports[`Panel Contract Tests should ensure the contract is clear - component de
   "display": {
     "$ref": "#/definitions/Display",
   },
+  "enforceFocus": {
+    "default": true,
+    "description": "Controls if the Modal enforces holding focus.",
+    "type": "boolean",
+  },
   "executable": {
     "default": true,
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
@@ -732,6 +737,11 @@ exports[`Panel Contract Tests should ensure the contract is clear - component st
   },
   "display": {
     "$ref": "#/definitions/Display",
+  },
+  "enforceFocus": {
+    "default": true,
+    "description": "Controls if the Modal enforces holding focus.",
+    "type": "boolean",
   },
   "executable": {
     "default": true,
