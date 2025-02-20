@@ -18,6 +18,7 @@ export type CanvasItemStatus = {
   type: 'error' | 'warn' | 'info' | 'success'
   code?: CanvasItemStatusCode
   message: string
+  duplicateIds?: CANVAS_ITEM_ID[]
 }
 
 /**
