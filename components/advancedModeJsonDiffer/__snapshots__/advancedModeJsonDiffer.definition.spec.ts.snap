@@ -9,6 +9,10 @@ exports[`AdvancedModeJsonDiffer Contract Tests should ensure the contract is cle
 
 exports[`AdvancedModeJsonDiffer Contract Tests should ensure the contract is clear 2`] = `
 {
+  "advancedControls": {
+    "description": "When true shows advanced mode controls",
+    "type": "boolean",
+  },
   "docType": {
     "description": "The type of data being provided to JSON Differ Component",
     "type": "string",

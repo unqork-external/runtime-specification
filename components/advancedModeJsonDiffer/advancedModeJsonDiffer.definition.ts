@@ -42,4 +42,7 @@ export class AdvancedModeJsonDifferComponentDefinition extends BaseComponentDefi
 
   @Description('When true applies loading state to component')
   isLoading: boolean = false
+
+  @Description('When true shows advanced mode controls')
+  advancedControls: boolean = true
 }
