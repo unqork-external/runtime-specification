@@ -26,6 +26,7 @@ enum EventCategories {
   VEGA_TABLE = 'vegaTable',
   POSITION = 'position',
   ITERATOR = 'iterator',
+  FILE = 'file',
   TIMER = 'timer',
   DOM = 'dom',
   RUNTIME = 'runtime',
@@ -159,6 +160,16 @@ const ITERATOR_COMPONENT_EVENTS: EventMetadataList = [
 ]
 
 // TODO: Move out of here and into component registered event
+const FILE_COMPONENT_EVENTS: EventMetadataList = [
+  {
+    name: 'On File Delete',
+    type: 'FILE_DELETE',
+    categories: [EventCategories.FILE],
+    stability: StabilityEnum.ALPHA,
+  },
+]
+
+// TODO: Move out of here and into component registered event
 const TIMER_COMPONENT_EVENTS: EventMetadataList = [
   {
     name: 'On Finish Counting',
@@ -272,4 +283,5 @@ const EVENTS: EventMetadataList = [
   ...TIMER_COMPONENT_EVENTS,
   ...DOM_EVENTS,
   ...RUNTIME_EVENTS,
+  ...FILE_COMPONENT_EVENTS,
 ]

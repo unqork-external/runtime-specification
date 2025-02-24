@@ -3,6 +3,11 @@ export type UploadFile = Pick<File, 'name' | 'size' | 'type'> & {
   id: string
   url: string
   storage: 'base64' | 'cloud'
+  // raw is needed for cloud upload
+  raw?: File
+  // in case we parse e.g csv files it will generate this
+  json?: string
+  headings?: string
 }
 
 export type FileSubmissionValue = {
@@ -13,4 +18,7 @@ export type FileSubmissionValue = {
   id?: string
   url?: string
   data?: Blob
+  // in case we parse e.g csv files it will generate this
+  json?: string
+  headings?: string
 }

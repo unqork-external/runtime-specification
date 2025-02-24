@@ -1,4 +1,4 @@
-import { Const, Description, DiscriminatorValue, Property } from '@tsed/schema'
+import { Const, Description, DiscriminatorValue, Optional, Property } from '@tsed/schema'
 
 import { FileOptions } from './file.options'
 import { FileSubmissionValue, UploadFile } from './file.types'
@@ -15,7 +15,7 @@ import { targetedStylingExample } from '../../styling/targeted.styling.example'
 import { Validation } from '../../validations/validation'
 
 @TrimmedDescription(`
-  File upload component. Displays a file input element for users to drag and drop a file 
+  File upload component. Displays a file input element for users to drag and drop a file
   or browse using the native file dialog.
 `)
 @DiscriminatorValue('file')
@@ -30,7 +30,7 @@ export class FileComponentDefinition extends BaseComponentDefinition {
   @Property()
   field: InputField = new InputField()
 
-  @Property()
+  @Optional()
   options: FileOptions = new FileOptions()
 
   @Property()

@@ -192,6 +192,11 @@ exports[`File Contract Tests should ensure the contract is clear 3`] = `
         "description": "Whether a user can select multiple files to upload",
         "type": "boolean",
       },
+      "parseFilesRaw": {
+        "default": false,
+        "description": "When enabled, plain text values will not be parsed.",
+        "type": "boolean",
+      },
       "parseOnUpload": {
         "default": false,
         "description": "File data encoded as Base64 string as part of submission data",
