@@ -3,7 +3,7 @@
 exports[`Operation Model: ToggleReflexiveInput Tests ToggleReflexiveInput Model 1`] = `
 {
   "definitions": {
-    "ToggleReflexiveInputOperationOptions": {
+    "ReflexiveInputCondition": {
       "properties": {
         "expectedValue": {
           "description": "The value of \`pathToValue\` that should toggle the reflexive input.",
@@ -20,6 +20,22 @@ exports[`Operation Model: ToggleReflexiveInput Tests ToggleReflexiveInput Model 
           "description": "The component path to the key that should be watched to toggle the reflexive input.",
           "minLength": 1,
           "type": "string",
+        },
+      },
+      "required": [
+        "pathToValue",
+        "expectedValue",
+      ],
+      "type": "object",
+    },
+    "ToggleReflexiveInputOperationOptions": {
+      "properties": {
+        "conditions": {
+          "items": {
+            "$ref": "#/definitions/ReflexiveInputCondition",
+          },
+          "minItems": 1,
+          "type": "array",
         },
         "shouldExecute": {
           "default": true,
@@ -40,8 +56,7 @@ exports[`Operation Model: ToggleReflexiveInput Tests ToggleReflexiveInput Model 
       },
       "required": [
         "targetKey",
-        "pathToValue",
-        "expectedValue",
+        "conditions",
       ],
       "type": "object",
     },

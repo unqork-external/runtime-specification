@@ -67,7 +67,10 @@ export class ColumnFilterType {
   @Optional()
   @Description('The custom list of options for a multi-select or select filter type.')
   @CollectionOf(FilterListOptions)
-  @ReflexiveDecorator({ path: 'type', value: [ColumnFilterTypes.MultiSelect, ColumnFilterTypes.Select] })
+  @ReflexiveDecorator([
+    { path: 'type', value: [ColumnFilterTypes.MultiSelect, ColumnFilterTypes.Select] },
+    { path: 'useFacetedOptions', value: false },
+  ])
   filterOptions: FilterListOptions[]
 
   @Default(false)

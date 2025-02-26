@@ -1,6 +1,6 @@
-import { Description, Required } from '@tsed/schema'
+import { CollectionOf, Description, MinItems, Required } from '@tsed/schema'
 
-import { Unknown } from '../../../../decorators/schema'
+import { ReflexiveInputCondition } from './ReflexiveInputCondition'
 import { OperationOptions } from '../../interface'
 
 export class ToggleReflexiveInputOperationOptions extends OperationOptions {
@@ -9,11 +9,7 @@ export class ToggleReflexiveInputOperationOptions extends OperationOptions {
   targetKey: string
 
   @Required()
-  @Description('The component path to the key that should be watched to toggle the reflexive input.')
-  pathToValue: string
-
-  @Required()
-  @Unknown()
-  @Description('The value of `pathToValue` that should toggle the reflexive input.')
-  expectedValue: unknown
+  @MinItems(1)
+  @CollectionOf(ReflexiveInputCondition)
+  conditions: ReflexiveInputCondition[]
 }
