@@ -18,9 +18,6 @@ exports[`IFrame Contract Tests should ensure the contract is clear 2`] = `
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
   },
-  "field": {
-    "$ref": "#/definitions/Field",
-  },
   "inputs": {
     "items": {
       "$ref": "#/definitions/InputRef",
@@ -85,6 +82,10 @@ exports[`IFrame Contract Tests should ensure the contract is clear 2`] = `
   "styling": {
     "$ref": "#/definitions/IFrameStyling",
   },
+  "title": {
+    "description": "A title that accurately conveys the contents of the iframe component. This is helpful for people navigating with assistive technology.",
+    "type": "string",
+  },
   "type": {
     "const": "iframe",
     "description": "Name of the type of component.",
@@ -131,14 +132,6 @@ exports[`IFrame Contract Tests should ensure the contract is clear 3`] = `
         "default": false,
         "description": "Defines how the component will be displayed. When \`false\`, the component is displayed as an input field. When \`true\`, the component will not accept any input from the user, and its value will be rendered inline as text and not as an input component. If no value is present, the word 'None' is rendered. If a prefix or suffix is set for the component, they also appear as inline text.",
         "type": "boolean",
-      },
-    },
-    "type": "object",
-  },
-  "Field": {
-    "properties": {
-      "label": {
-        "$ref": "#/definitions/Label",
       },
     },
     "type": "object",
@@ -236,15 +229,6 @@ exports[`IFrame Contract Tests should ensure the contract is clear 3`] = `
     "required": [
       "targetKey",
     ],
-    "type": "object",
-  },
-  "Label": {
-    "properties": {
-      "text": {
-        "description": "Text displayed as the label for the field",
-        "type": "string",
-      },
-    },
     "type": "object",
   },
   "PackageModel": {

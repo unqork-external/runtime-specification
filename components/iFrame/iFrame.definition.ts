@@ -1,4 +1,4 @@
-import { Const, DiscriminatorValue, Optional, Required } from '@tsed/schema'
+import { Const, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
 
 import { IFrameOptions } from './iFrameOptions'
 import { IFrameStyling } from './styling/iFrame.styling'
@@ -7,7 +7,6 @@ import { ViewTargets } from '../../../decorators'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { Display } from '../../component-composition/display/component.display'
-import { Field } from '../../component-composition/field/component.field.label'
 import type { SignalTargets } from '../../signals'
 
 @DiscriminatorValue('iframe')
@@ -25,11 +24,14 @@ export class IFrameComponentDefinition extends BaseComponentDefinition {
   @Optional()
   display: Display = new Display()
 
-  @Optional()
-  field: Field = new Field()
-
   @Required()
   options: IFrameOptions
+
+  @Optional()
+  @Description(
+    'A title that accurately conveys the contents of the iframe component. This is helpful for people navigating with assistive technology.',
+  )
+  title?: string
 
   @Optional()
   declare styling?: IFrameStyling
