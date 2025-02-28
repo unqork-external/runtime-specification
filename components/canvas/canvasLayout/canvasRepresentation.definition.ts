@@ -31,4 +31,8 @@ export class CanvasRepresentation {
 
   @Optional()
   componentSpecifics?: Record<string, unknown>
+
+  @Optional()
+  @Default(true)
+  isDroppable?: boolean = true
 }
