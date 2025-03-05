@@ -14,7 +14,7 @@ import { ColumnState } from './columns/columnState'
 import { ColumnPinningState } from './columns/pinning/columnPinningState'
 import { type ColumnVisibilityState } from './columns/visibility/columnVisibilityState'
 import { MuiBasicTableField } from './field/muiBasicTable.field'
-import { ColumnFilter } from './filters/columnFilter'
+import { ExtendedColumnFilter } from './filters/columnFilter'
 import { PaginationState } from './pagination/paginationState'
 import { PinPosition } from './rows/pinning/pinPosition'
 import { RowPinningState } from './rows/pinning/rowPinningState'
@@ -216,8 +216,8 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   pagination: PaginationState = new PaginationState()
 
   @Property()
-  @CollectionOf(ColumnFilter)
-  columnFilters: ColumnFilter[]
+  @CollectionOf(ExtendedColumnFilter)
+  columnFilters: ExtendedColumnFilter[]
 
   @Property()
   globalFilter?: string
