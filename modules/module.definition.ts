@@ -40,6 +40,11 @@ export class ModuleDefinition {
   title?: string
 
   @Optional()
+  @Example('Application Name')
+  @Description(`Application name for the module`)
+  applicationName?: string
+
+  @Optional()
   @Example('Theme')
   @Description(`Used for dynamic UI (we will probably remove this later)`)
   theme?: string
