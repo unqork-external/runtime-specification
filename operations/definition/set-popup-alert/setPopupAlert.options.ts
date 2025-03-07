@@ -1,6 +1,7 @@
 import { Default, Description, Required } from '@tsed/schema'
 import { SweetAlertCustomClass } from 'sweetalert2'
 
+import { TrimmedDescription } from '../../../../decorators'
 import { OperationOptions } from '../../interface'
 
 // TODO:
@@ -56,6 +57,12 @@ export class PopUpAlertOptions {
   @Default(false)
   @Description('Should autoclose the popup without user interaction')
   shouldAutoClose?: boolean = false
+
+  @TrimmedDescription(
+    `We can provide a function to SweetAlert to asynchronously run after the popup has been shown on screen.
+     Provides popup DOM element as the argument. In previous versions of SweetAlert, this hook was named onOpen.`,
+  )
+  didOpen?: (modal: HTMLElement) => void
 }
 export class SetPopupAlertOptions extends OperationOptions {
   @Required()

@@ -35,6 +35,10 @@ exports[`Set Property Model should match this JSON Schema 1`] = `
           "description": "Used to add classes for components inside of the modal.",
           "type": "object",
         },
+        "didOpen": {
+          "description": "We can provide a function to SweetAlert to asynchronously run after the popup has been shown on screen. Provides popup DOM element as the argument. In previous versions of SweetAlert, this hook was named onOpen.",
+          "type": "object",
+        },
         "icon": {
           "description": "An icon for the modal. SweetAlert comes with 5 built-in icons that you can use",
           "type": "string",
