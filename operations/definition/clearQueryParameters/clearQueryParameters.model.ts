@@ -1,8 +1,7 @@
 import { Const, DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ClearQueryParametersOperationOptions } from './clearQueryParameters.options'
-import { TrimmedDescription } from '../../../../decorators'
-import { Beta } from '../../../../decorators/stability/beta.decorator'
+import { Alpha, TrimmedDescription } from '../../../../decorators'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
@@ -10,7 +9,7 @@ import { Operation } from '../../interface/operations.interface'
 @TrimmedDescription(`
   This operation should be used to clear query parameters on the url.
 `)
-@Beta()
+@Alpha()
 export class ClearQueryParametersOperation extends Operation<OperationTypes.CLEAR_QUERY_PARAMETERS> {
   @Const(OperationTypes.CLEAR_QUERY_PARAMETERS)
   public type = OperationTypes.CLEAR_QUERY_PARAMETERS as const

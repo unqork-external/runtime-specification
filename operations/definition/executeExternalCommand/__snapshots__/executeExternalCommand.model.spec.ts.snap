@@ -65,7 +65,6 @@ exports[`Operation Model: ExecuteExternalCommand Tests ExecuteExternalCommand Mo
     "type",
     "options",
   ],
-  "stability": "STABLE",
   "type": "object",
 }
 `;

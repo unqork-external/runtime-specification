@@ -1,7 +1,7 @@
 import { Const, Description, DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ExecuteExternalCommandOperationOptions } from './executeExternalCommand.options'
-import { OpsBuilderStable, Stable, TrimmedDescription } from '../../../../decorators'
+import { Stable, TrimmedDescription } from '../../../../decorators'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
@@ -11,7 +11,6 @@ import { Operation } from '../../interface/operations.interface'
   application by triggering logic components and setting parent component values, as specified by the operation options.
 `)
 @Stable()
-@OpsBuilderStable()
 export class ExecuteExternalCommandOperation extends Operation<OperationTypes.EXECUTE_EXTERNAL_COMMAND> {
   @Required()
   @Const(OperationTypes.EXECUTE_EXTERNAL_COMMAND)

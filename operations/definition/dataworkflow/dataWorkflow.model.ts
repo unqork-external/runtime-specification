@@ -1,10 +1,12 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { DataWorkflowOptions } from './dataworkflow.options'
+import { Alpha } from '../../../../decorators'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.DATA_WORKFLOW)
+@Alpha()
 export class DataWorkflowOperation extends Operation<OperationTypes.DATA_WORKFLOW> {
   public type = OperationTypes.DATA_WORKFLOW as const
 

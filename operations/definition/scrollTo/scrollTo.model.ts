@@ -1,8 +1,8 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ScrollToOptions } from './scrollTo.options'
+import { Beta } from '../../../../decorators'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
-import { Alpha } from '../../../../decorators/stability/alpha.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
@@ -11,7 +11,7 @@ import { Operation } from '../../interface/operations.interface'
   ScrollToOperation will scroll the page in relation to the targetElementKey.
   If targetElementKey is unset, it will scroll to the top of the page.
 `)
-@Alpha()
+@Beta()
 export class ScrollToOperation extends Operation<OperationTypes.SCROLL_TO> {
   public type = OperationTypes.SCROLL_TO as const
 

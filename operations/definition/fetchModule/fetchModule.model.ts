@@ -1,10 +1,12 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { FetchModuleOperationOptions } from './fetchModule.options'
+import { Alpha } from '../../../../decorators'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.FETCH_MODULE)
+@Alpha()
 export class FetchModuleOperation extends Operation<OperationTypes.FETCH_MODULE> {
   public type = OperationTypes.FETCH_MODULE as const
   @Required()
