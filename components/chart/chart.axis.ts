@@ -11,8 +11,11 @@ export class ChartAxis {
   @Description('A soft minimum for the axis.')
   softMin?: number
 
-  @Property(ChartText)
   @Optional()
   @Description("The chart's main title.")
   title?: ChartText
+
+  @Optional()
+  @Description('Description for the axis to expose to screen readers.')
+  description?: ChartText
 }
