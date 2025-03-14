@@ -1,7 +1,7 @@
 import { CollectionOf, Description, Optional, Required } from '@tsed/schema'
 
+import { FilterOption } from './columnFilterType'
 import { Unknown } from '../../../../decorators/schema'
-import { FilterListOptions } from '../columns/muiColumn.definition'
 
 export class ColumnFilter {
   @Required()
@@ -48,8 +48,8 @@ export class ExtendedColumnFilter extends ColumnFilter {
 
   @Optional()
   @Description('The custom list of options for a multi-select or select filter type.')
-  @CollectionOf(FilterListOptions)
-  filterOptions?: FilterListOptions[]
+  @CollectionOf(FilterOption)
+  filterOptions?: FilterOption[]
 
   @Optional()
   @Description('When enabled, blank values in table will always show when a filter is applied.')

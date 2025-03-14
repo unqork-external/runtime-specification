@@ -12,7 +12,7 @@ export enum ColumnFilterTypes {
   DatePicker = 'date-range',
 }
 
-class FilterListOptions {
+export class FilterOption {
   @Required()
   @Description('label of the option.')
   label: string
@@ -66,12 +66,12 @@ export class ColumnFilterType {
 
   @Optional()
   @Description('The custom list of options for a multi-select or select filter type.')
-  @CollectionOf(FilterListOptions)
+  @CollectionOf(FilterOption)
   @ReflexiveDecorator([
     { path: 'type', value: [ColumnFilterTypes.MultiSelect, ColumnFilterTypes.Select] },
     { path: 'useFacetedOptions', value: false },
   ])
-  filterOptions: FilterListOptions[]
+  filterOptions: FilterOption[]
 
   @Default(false)
   @Description('When enabled, blank values in table will always show when a filter is applied.')

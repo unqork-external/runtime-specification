@@ -1,16 +1,8 @@
 import { CollectionOf, Default, Description, DiscriminatorValue, Optional, Property, Required } from '@tsed/schema'
 
 import { MuiColumnSizingDefinition } from './sizing/muiColumnSizing.definition'
+import { FilterOption } from '../filters/columnFilterType'
 
-export class FilterListOptions {
-  @Required()
-  @Description('label of the option.')
-  label: string
-
-  @Required()
-  @Description('value of the option.')
-  value: string
-}
 @DiscriminatorValue('muiColumn')
 export class MuiColumnDefinition {
   @Optional()
@@ -55,8 +47,8 @@ export class MuiColumnDefinition {
 
   @Optional()
   @Description('The custom list of options for a multi-select or select filter type.')
-  @CollectionOf(FilterListOptions)
-  filterOptions?: FilterListOptions[]
+  @CollectionOf(FilterOption)
+  filterOptions?: FilterOption[]
 
   @Default(false)
   @Description('When enabled, blank values in table will always show when a filter is applied.')

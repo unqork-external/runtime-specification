@@ -436,7 +436,7 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 3`] = 
       "filterOptions": {
         "description": "The custom list of options for a multi-select or select filter type.",
         "items": {
-          "$ref": "#/definitions/FilterListOptions",
+          "$ref": "#/definitions/FilterOption",
         },
         "type": "array",
       },
@@ -489,7 +489,7 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 3`] = 
     ],
     "type": "object",
   },
-  "FilterListOptions": {
+  "FilterOption": {
     "properties": {
       "label": {
         "description": "label of the option.",
