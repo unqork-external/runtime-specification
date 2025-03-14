@@ -259,14 +259,6 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.pasteOperation]: CssClassOrProps;
 
-  @Description('Adds styles to signal Type warning message in Ops Builder.')
-  @Css()
-  [OpsBuilderTargets.signalTypeWarning]: CssClassOrProps;
-
-  @Description('Adds styles to astericks from unsupported event item label in Operations Builder.')
-  @Css()
-  [OpsBuilderTargets.unsupportedSignalAsterisks]: CssClassOrProps;
-
   @Description('Adds styles to welcome screen in Operations Builder.')
   @Css()
   [OpsBuilderTargets.welcomeScreen]: CssClassOrProps;

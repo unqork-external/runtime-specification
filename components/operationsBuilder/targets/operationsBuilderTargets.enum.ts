@@ -66,8 +66,6 @@ export enum OpsBuilderTargets {
   copyOperationLabel = 'copyOperationLabel',
   copyOperationIcon = 'copyOperationIcon',
   pasteOperation = 'pasteOperation',
-  signalTypeWarning = 'signalTypeWarning',
-  unsupportedSignalAsterisks = 'unsupportedSignalAsterisks',
   welcomeScreen = 'welcomeScreen',
   welcomeScreenImage = 'welcomeScreenImage',
   welcomeScreenText = 'welcomeScreenText',
