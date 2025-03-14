@@ -235,7 +235,7 @@ exports[`Code Editor Contract Tests should ensure the contract is clear 3`] = `
         "type": "boolean",
       },
       "text": {
-        "description": "Configurable text that is displayed above the input field.",
+        "description": "Configurable text that is displayed above the input field. If the label of the component is visually hidden this text will still be read by screen readers.",
         "type": "string",
       },
     },

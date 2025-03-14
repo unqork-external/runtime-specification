@@ -8,7 +8,10 @@ import { Field, Label } from '../field/component.field.label'
 )
 export class InputLabel extends Label {
   @Property()
-  @Description(`Configurable text that is displayed above the input field.`)
+  @TrimmedDescription(`
+    Configurable text that is displayed above the input field.
+    If the label of the component is visually hidden this text will still be read by screen readers.
+    `)
   declare text?: string
 
   @Default(false)
