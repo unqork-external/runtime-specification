@@ -137,6 +137,10 @@ exports[`Phone Number Contract Tests should ensure the contract is clear 3`] = `
   "InputFormat": {
     "description": "Details pertaining to how the input value formatting.",
     "properties": {
+      "autocomplete": {
+        "description": "Defines the type of data the browser can autofill for this field.",
+        "type": "string",
+      },
       "disableAutoComplete": {
         "default": false,
         "description": "Prevents browsers from autofilling this field with previously entered values.",

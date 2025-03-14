@@ -53,6 +53,10 @@ export class InputSubLabel {
 @Description('Details pertaining to how the input value formatting.')
 export class InputFormat {
   @Optional()
+  @Description('Defines the type of data the browser can autofill for this field.')
+  autocomplete?: string
+
+  @Optional()
   @TrimmedDescription(`
     The mask pattern to be applied to the input field. An input mask helps the user
     with the input by ensuring a predefined format. This can be useful for dates, numerics, and phone numbers.

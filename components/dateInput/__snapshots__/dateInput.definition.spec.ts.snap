@@ -140,6 +140,10 @@ exports[`Date Input Contract Tests should ensure the contract is clear 3`] = `
   "DateFormat": {
     "description": "Controls format of dates and autocomplete functionality",
     "properties": {
+      "autocomplete": {
+        "description": "Defines the type of data the browser can autofill for this field.",
+        "type": "string",
+      },
       "dateFormat": {
         "default": "mdY",
         "description": "Defines the format for the value of this field by using MDY tokens (tokens are case sensitive).

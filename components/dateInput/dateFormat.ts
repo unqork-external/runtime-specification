@@ -7,6 +7,10 @@ import { Examples } from '../../../decorators/schema/examples.decorator'
 @Description('Controls format of dates and autocomplete functionality')
 export class DateFormat {
   @Optional()
+  @Description('Defines the type of data the browser can autofill for this field.')
+  autocomplete?: string
+
+  @Optional()
   @Default(false)
   @Description('When enabled, this component will not store the timestamp of the date.')
   storeDateOnly: boolean = false
