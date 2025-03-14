@@ -22,9 +22,9 @@ export class CanvasRepresentation {
   @Required()
   layoutIndex: number
 
-  @Required()
+  @Optional()
   @Default(false)
-  isNestable: boolean
+  isNestable: boolean = false
 
   @Optional()
   childLayouts?: Record<LAYOUT_ID, ChildCanvasLayout>
@@ -34,5 +34,9 @@ export class CanvasRepresentation {
 
   @Optional()
   @Default(true)
-  isDroppable?: boolean = true
+  isDroppable: boolean = true
+
+  @Optional()
+  @Default(false)
+  hideRepresentationView: boolean = false
 }
