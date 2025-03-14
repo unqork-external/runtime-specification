@@ -108,9 +108,6 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 2`] = 
     "description": "When columns are grouped, grouped columns are shifted to the left. This setting hides grouped columns implicitly. Note: When columns are hidden, they are not invisible - that is - their children still render, can be sorted, can be interacted with. If a column in invisible, their children do not render.",
     "type": "boolean",
   },
-  "ignoreValueUpdate": {
-    "type": "string",
-  },
   "initialData": {
     "type": "array",
   },

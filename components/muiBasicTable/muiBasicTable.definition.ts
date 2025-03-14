@@ -60,9 +60,6 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   isExpanded?: boolean
 
   @Property()
-  ignoreValueUpdate: string
-
-  @Property()
   columnState: ColumnState = new ColumnState()
 
   @Property()
