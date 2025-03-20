@@ -159,10 +159,6 @@ export class MuiBasicTableComponentDefinition extends BaseComponentDefinition {
   @Property()
   groupBy: string[]
 
-  /**
-   * Column Attributes
-   * Unused until after we prioritize column transforms.
-   */
   @Property()
   columnHeaders: string[]
 
