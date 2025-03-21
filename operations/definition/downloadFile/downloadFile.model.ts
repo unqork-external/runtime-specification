@@ -1,8 +1,7 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { DownloadFileOperationOptions } from './downloadFile.options'
-import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
-import { Alpha } from '../../../../decorators/stability/alpha.decorator'
+import { TrimmedDescription, Alpha } from '../../../../decorators'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 

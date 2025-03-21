@@ -1,8 +1,7 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ScrollToOptions } from './scrollTo.options'
-import { Beta } from '../../../../decorators'
-import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { TrimmedDescription, Beta } from '../../../../decorators'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 

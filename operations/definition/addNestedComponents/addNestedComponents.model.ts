@@ -1,17 +1,16 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { AddNestedComponentsOperationOptions } from './addNestedComponents.options'
-import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
-import { Alpha } from '../../../../decorators/stability/alpha.decorator'
+import { TrimmedDescription, Alpha } from '../../../../decorators'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.ADD_NESTED_COMPONENTS)
 @TrimmedDescription(`
   Given a target, add a set of component templates to that location as children.
-  
-  Primarily created for UDesigner to create child components. 
-  
+
+  Primarily created for UDesigner to create child components.
+
   Not encouraged for use due to direct exposure of the specification.
 `)
 @Alpha()

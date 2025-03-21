@@ -1,7 +1,7 @@
 import { Description, DiscriminatorValue, Required } from '@tsed/schema'
 
 import { FocusOperationOptions } from './focus.options'
-import { Beta } from '../../../../decorators/stability/beta.decorator'
+import { Beta } from '../../../../decorators'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
