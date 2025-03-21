@@ -9,6 +9,17 @@ import { StandardArrayNestable } from '../../nestables'
 
 export type CanvasModes = 'EDIT' | 'PREVIEW' | 'IDE'
 
+export enum CanvasHighlightType {
+  INDICATE = 'INDICATE',
+  WARN = 'WARN',
+  ERROR = 'ERROR',
+}
+
+export type CanvasHighlight = {
+  type: CanvasHighlightType
+  isHighlighted: boolean
+}
+
 @DiscriminatorValue('canvas')
 export class CanvasComponentDefinition extends BaseComponentDefinition {
   @Required()
@@ -72,9 +83,8 @@ export class CanvasComponentDefinition extends BaseComponentDefinition {
   @Description('This refers to the id of canvas representation item that is currently selected on the canvas.')
   currentSelectedCanvasItemId?: string
 
-  @Optional()
-  @Description('This refers to the id of canvas representation item that is currently highlighted on the canvas.')
-  currentHighlightedCanvasItemId?: string
+  @Required()
+  highlights: Record<CANVAS_ITEM_ID, CanvasHighlight> = {}
 }
 
 export class CanvasComponentState extends CanvasComponentDefinition {

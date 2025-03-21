@@ -11,6 +11,7 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
   "emptyText",
   "disabled",
   "mode",
+  "highlights",
 ]
 `;
 
@@ -19,10 +20,6 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
   "canvasItems": {
     "default": {},
     "type": "object",
-  },
-  "currentHighlightedCanvasItemId": {
-    "description": "This refers to the id of canvas representation item that is currently highlighted on the canvas.",
-    "type": "string",
   },
   "currentLayoutId": {
     "minLength": 1,
@@ -46,6 +43,9 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
     "default": true,
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
+  },
+  "highlights": {
+    "type": "object",
   },
   "inputs": {
     "items": {
@@ -1476,6 +1476,7 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
   "emptyText",
   "disabled",
   "mode",
+  "highlights",
   "childIds",
 ]
 `;
@@ -1489,10 +1490,6 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
   "childIds": {
     "description": "Child ids for all nestable references within the component.",
     "type": "array",
-  },
-  "currentHighlightedCanvasItemId": {
-    "description": "This refers to the id of canvas representation item that is currently highlighted on the canvas.",
-    "type": "string",
   },
   "currentLayoutId": {
     "minLength": 1,
@@ -1516,6 +1513,9 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
     "default": true,
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
+  },
+  "highlights": {
+    "type": "object",
   },
   "inputs": {
     "items": {
