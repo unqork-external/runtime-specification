@@ -17,9 +17,9 @@ exports[`Operation Model: FocusOperation Tests should match this JSON Schema 1`]
           ],
         },
         "targetKey": {
-          "description": "key of target",
+          "description": ""targetKey" refers to the intended target to focus on.",
           "examples": [
-            "textfield",
+            "firstNameTextField",
           ],
           "minLength": 1,
           "type": "string",

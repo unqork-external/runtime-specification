@@ -15,13 +15,19 @@ describe('Operation Model: ScrollTo Tests', () => {
     expect(schema).toMatchSnapshot()
   })
 
-  it('scrollTo should validate appropriately with a targetElementKey', () => {
+  it('scrollTo should validate appropriately with a targetElementKey in order to gracefully handle old module definitions.', () => {
     const op = createOperation(OperationTypes.SCROLL_TO, { targetElementKey: 'test' })
     const isValid = validate(op)
     expect(isValid).toBeTrue()
   })
 
-  it('scrollTo should validate appropriately without a targetElementKey', () => {
+  it('scrollTo should validate appropriately with a targetKey', () => {
+    const op = createOperation(OperationTypes.SCROLL_TO, { targetKey: 'test' })
+    const isValid = validate(op)
+    expect(isValid).toBeTrue()
+  })
+
+  it('scrollTo should validate appropriately without a targetKey', () => {
     const op = createOperation(OperationTypes.SCROLL_TO, {})
     const isValid = validate(op)
     expect(isValid).toBeTrue()

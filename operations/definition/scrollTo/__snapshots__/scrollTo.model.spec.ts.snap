@@ -38,15 +38,15 @@ exports[`Operation Model: ScrollTo Tests should match this JSON Schema 1`] = `
             "boolean",
           ],
         },
-        "targetElementKey": {
-          "description": "TODO: Rename to targetKey "targetElementKey" describes where to scroll the view to. If "targetElementKey" is not set, it will scroll to the top of the view.",
+        "targetKey": {
+          "description": ""targetKey" describes where to scroll the view to. If targetKey is unset, it will scroll to the top of the page.",
           "type": "string",
         },
       },
       "type": "object",
     },
   },
-  "description": "ScrollToOperation will scroll the page in relation to the targetElementKey. If targetElementKey is unset, it will scroll to the top of the page.",
+  "description": "ScrollToOperation will scroll the page in relation to the targetKey. If targetKey is unset, it will scroll to the top of the page.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

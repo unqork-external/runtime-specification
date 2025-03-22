@@ -7,8 +7,8 @@ import { Operation } from '../../interface/operations.interface'
 
 @DiscriminatorValue(OperationTypes.SCROLL_TO)
 @TrimmedDescription(`
-  ScrollToOperation will scroll the page in relation to the targetElementKey.
-  If targetElementKey is unset, it will scroll to the top of the page.
+  ScrollToOperation will scroll the page in relation to the targetKey.
+  If targetKey is unset, it will scroll to the top of the page.
 `)
 @Beta()
 export class ScrollToOperation extends Operation<OperationTypes.SCROLL_TO> {
