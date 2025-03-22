@@ -2,6 +2,7 @@
 
 exports[`Reset Model should match this JSON Schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "ResetOperationOptions": {
       "properties": {

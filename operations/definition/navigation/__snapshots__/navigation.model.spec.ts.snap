@@ -2,6 +2,7 @@
 
 exports[`Operation Model: Navigation Tests should match this JSON Schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "NavigationOperationOptions": {
       "properties": {

@@ -2,6 +2,7 @@
 
 exports[`Operation Model: SetPersistedData Tests SetPersistedData Model 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "SetPersistedDataOperationOptions": {
       "properties": {

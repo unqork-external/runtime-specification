@@ -2,6 +2,7 @@
 
 exports[`Operation Model: WorkflowNavigate Tests should match this JSON Schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "SuccessMessageOptions": {
       "properties": {

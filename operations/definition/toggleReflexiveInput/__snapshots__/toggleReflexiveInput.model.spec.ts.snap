@@ -2,6 +2,7 @@
 
 exports[`Operation Model: ToggleReflexiveInput Tests ToggleReflexiveInput Model 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "ReflexiveInputCondition": {
       "properties": {

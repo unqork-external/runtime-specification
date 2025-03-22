@@ -3,6 +3,7 @@ import { DiscriminatorValue, Required } from '@tsed/schema'
 import { ToggleReflexiveInputOperationOptions } from './toggleReflexiveInput.options'
 import { Alpha } from '../../../../decorators'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
@@ -12,6 +13,7 @@ import { Operation } from '../../interface/operations.interface'
     The reflexive input toggle is determined by whether the target component being watched matches the expected value.
 `)
 @Alpha()
+@AutogenDisabled()
 export class ToggleReflexiveInputOperation extends Operation<OperationTypes.TOGGLE_REFLEXIVE_INPUT> {
   @Required()
   public type = OperationTypes.TOGGLE_REFLEXIVE_INPUT as const

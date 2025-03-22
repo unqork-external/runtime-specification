@@ -3,6 +3,7 @@ import { DiscriminatorValue, Required } from '@tsed/schema'
 import { SetStylingTargetOperationOptions } from './setStylingTarget.options'
 import { Alpha } from '../../../../decorators'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
+import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
@@ -12,6 +13,7 @@ import { Operation } from '../../interface/operations.interface'
   This operation will overwrite any previously set styling config for that specific target.
 `)
 @Alpha()
+@AutogenDisabled()
 export class SetStylingTargetOperation extends Operation<OperationTypes.SET_STYLING_TARGET> {
   public type = OperationTypes.SET_STYLING_TARGET as const
 

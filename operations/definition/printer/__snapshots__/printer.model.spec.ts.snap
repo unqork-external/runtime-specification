@@ -2,6 +2,7 @@
 
 exports[`Operation Model: Printer Tests Printer Model 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "PrinterOperationOptions": {
       "properties": {

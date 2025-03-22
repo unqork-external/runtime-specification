@@ -2,6 +2,7 @@
 
 exports[`parseFormula operation should match JSON schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "InputRef": {
       "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",

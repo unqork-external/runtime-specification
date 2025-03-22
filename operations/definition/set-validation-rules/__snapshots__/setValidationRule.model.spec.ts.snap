@@ -2,6 +2,7 @@
 
 exports[`setValidation should match JSON schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "SetValidationRuleOptions": {
       "properties": {

@@ -2,6 +2,7 @@
 
 exports[`Operation Model: GoGoGadgetClipboard Tests should match the basic schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "GoGoGadgetClipboardOperationOptions": {
       "properties": {

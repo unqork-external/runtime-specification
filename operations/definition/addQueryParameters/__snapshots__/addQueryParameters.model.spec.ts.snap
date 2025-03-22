@@ -2,6 +2,7 @@
 
 exports[`Operation Model: AddQueryParameters Tests AddQueryParameters Model 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "AddQueryParametersOperationOptions": {
       "properties": {

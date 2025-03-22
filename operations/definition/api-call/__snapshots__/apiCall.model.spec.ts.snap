@@ -2,6 +2,7 @@
 
 exports[`API Call Operation Model should match this JSON Schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "ApiCallModalOptions": {
       "properties": {

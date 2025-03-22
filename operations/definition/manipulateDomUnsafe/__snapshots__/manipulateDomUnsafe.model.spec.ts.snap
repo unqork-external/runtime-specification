@@ -2,6 +2,7 @@
 
 exports[`Operation Model: ManipulateDomUnsafe Tests ManipulateDomUnsafe Model 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "ManipulateDomUnsafeOperationOptions": {
       "properties": {

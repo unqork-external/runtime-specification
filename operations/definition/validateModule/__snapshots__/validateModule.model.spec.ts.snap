@@ -2,6 +2,7 @@
 
 exports[`Operation Model: ValidateModule Tests should match this JSON Schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "ValidateModuleOperationOptions": {
       "properties": {

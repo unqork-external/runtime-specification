@@ -2,6 +2,7 @@
 
 exports[`Toggle Class On Target Operation Model should match this JSON Schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "ToggleClassOnTargetOperationOptions": {
       "properties": {

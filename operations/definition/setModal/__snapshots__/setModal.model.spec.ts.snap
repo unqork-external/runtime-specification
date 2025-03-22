@@ -2,6 +2,7 @@
 
 exports[`setModal should match this JSON Schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "SetModalOptions": {
       "properties": {

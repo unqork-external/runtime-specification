@@ -2,6 +2,7 @@
 
 exports[`Open New Page Model should match this JSON Schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "InputRef": {
       "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",

@@ -2,6 +2,7 @@ import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ScrollToOptions } from './scrollTo.options'
 import { TrimmedDescription, Beta } from '../../../../decorators'
+import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
@@ -11,6 +12,7 @@ import { Operation } from '../../interface/operations.interface'
   If targetKey is unset, it will scroll to the top of the page.
 `)
 @Beta()
+@AutogenDisabled()
 export class ScrollToOperation extends Operation<OperationTypes.SCROLL_TO> {
   public type = OperationTypes.SCROLL_TO as const
 

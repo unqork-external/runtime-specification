@@ -2,6 +2,7 @@
 
 exports[`Validate Model should match this JSON Schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "ValidateOptions": {
       "properties": {

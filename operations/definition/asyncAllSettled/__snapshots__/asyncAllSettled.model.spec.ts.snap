@@ -2,6 +2,7 @@
 
 exports[`Operation Model: AsyncAllSettled Tests should match this JSON Schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "AsyncAllSettledOperationOptions": {
       "properties": {

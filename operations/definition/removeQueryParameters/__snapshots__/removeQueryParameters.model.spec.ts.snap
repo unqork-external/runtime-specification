@@ -2,6 +2,7 @@
 
 exports[`Operation Model: RemoveQueryParameters Tests RemoveQueryParameters Model 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "RemoveQueryParametersOperationOptions": {
       "properties": {

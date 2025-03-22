@@ -2,6 +2,7 @@
 
 exports[`Validate Rules should match this JSON Schema 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "ValidateRulesOptions": {
       "properties": {

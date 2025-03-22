@@ -2,6 +2,7 @@
 
 exports[`Operation Model: ReadPersistedData Tests ReadPersistedData Model 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "ReadPersistedDataOperationOptions": {
       "properties": {

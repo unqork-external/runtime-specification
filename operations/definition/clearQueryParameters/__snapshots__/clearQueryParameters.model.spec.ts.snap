@@ -2,6 +2,7 @@
 
 exports[`Operation Model: ClearQueryParameters Tests ClearQueryParameters Model 1`] = `
 {
+  "autogenDisabled": true,
   "definitions": {
     "ClearQueryParametersOperationOptions": {
       "properties": {
