@@ -397,6 +397,78 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
           },
         ],
       },
+      "canvasItemEmptyContent": {
+        "description": "Adds styles to the text content of a component's empty state.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasItemEmptyContentTitle": {
+        "description": "Adds styles to the title of a component's empty state.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasItemEmptyRoot": {
+        "description": "Adds styles to the wrapper element of a component's empty state.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
       "canvasItemHeader": {
         "description": "Adds styles to the div wrapping a Canvas Item Header",
         "oneOf": [
@@ -1878,6 +1950,78 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
       },
       "canvasEmptyStateText": {
         "description": "Adds styles to the <p> with the main text on the empty state of the canvas.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasItemEmptyContent": {
+        "description": "Adds styles to the text content of a component's empty state.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasItemEmptyContentTitle": {
+        "description": "Adds styles to the title of a component's empty state.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "canvasItemEmptyRoot": {
+        "description": "Adds styles to the wrapper element of a component's empty state.",
         "oneOf": [
           {
             "type": "string",

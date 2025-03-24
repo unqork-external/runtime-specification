@@ -127,6 +127,18 @@ export class CanvasTargets implements TargetsModel<CanvasTargetsEnum> {
   [CanvasTargetsEnum.canvasItemHeaderCollapse]: CssClassOrProps;
 
   @Css()
+  @Description("Adds styles to the wrapper element of a component's empty state.")
+  [CanvasTargetsEnum.canvasItemEmptyRoot]: CssClassOrProps;
+
+  @Css()
+  @Description("Adds styles to the text content of a component's empty state.")
+  [CanvasTargetsEnum.canvasItemEmptyContent]: CssClassOrProps;
+
+  @Css()
+  @Description("Adds styles to the title of a component's empty state.")
+  [CanvasTargetsEnum.canvasItemEmptyContentTitle]: CssClassOrProps;
+
+  @Css()
   @Description('Adds styles to the representationButtonsWrapper for the canvas component.')
   [CanvasTargetsEnum.representationButtonsWrapper]: CssClassOrProps;
 
