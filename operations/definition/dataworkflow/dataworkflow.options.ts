@@ -19,7 +19,7 @@ export class DataWorkflowOptions extends OperationOptions {
 
 export type DataWorkflowInput = {
   id: string
-  required: boolean
+  required?: boolean
   inputLabel?: string
   key?: number
   source?: 'Default' | 'Binded Table' | 'Group Input'
