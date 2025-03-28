@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`MuiBasicTable Contract Tests should ensure the contract is clear 1`] = `undefined`;
+
+exports[`MuiBasicTable Contract Tests should ensure the contract is clear 2`] = `
+{
+  "allowFilterBlank": {
+    "default": false,
+    "description": "Creates extra option in Select Type and Text Type Filters for blanks. For Selected Type, when selected, only blank rows are shown. If other filter values are selected (and not the blank one), then the blank rows don’t show. For Text Type, when typing '(blanks)', only blank rows are shown. If other filter values are selected (and not the blank one), then the blank rows don’t show.",
+    "type": "boolean",
+  },
+  "columnSizing": {
+    "$ref": "#/definitions/MuiColumnSizingDefinition",
+  },
+  "dateFormat": {
+    "description": "The date format shown in the date range filter UI.",
+    "type": "string",
+  },
+  "filterOptions": {
+    "description": "The custom list of options for a multi-select or select filter type.",
+    "items": {
+      "$ref": "#/definitions/FilterOption",
+    },
+    "type": "array",
+  },
+  "filterType": {
+    "description": "filter type of the column",
+    "type": "string",
+  },
+  "includeBlanksInFilter": {
+    "default": false,
+    "description": "When enabled, blank values in table will always show when a filter is applied.",
+    "type": "boolean",
+  },
+  "label": {
+    "description": "Column label",
+    "type": "string",
+  },
+  "max": {
+    "description": "The maximum value that the number range filter can accept. This is an inclusive, meaning rows with this value will be included.",
+    "type": "number",
+  },
+  "min": {
+    "description": "The minimum value that the number range filter can accept. This is an inclusive, meaning rows with this value will be included.",
+    "type": "number",
+  },
+  "step": {
+    "description": "The interval between acceptable values in number range filter. Cannot exceed the max value for the range or be 0.",
+    "type": "number",
+  },
+  "useFacetedOptions": {
+    "default": true,
+    "description": "If enabled, the filter select options will be automatically generated from the unique list of values in the column.",
+    "type": "boolean",
+  },
+}
+`;
+
+exports[`MuiBasicTable Contract Tests should ensure the contract is clear 3`] = `
+{
+  "FilterOption": {
+    "properties": {
+      "label": {
+        "description": "label of the option.",
+        "minLength": 1,
+        "type": "string",
+      },
+      "value": {
+        "description": "value of the option.",
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "label",
+      "value",
+    ],
+    "type": "object",
+  },
+  "MuiColumnSizingDefinition": {
+    "properties": {
+      "grow": {
+        "default": 1,
+        "description": "
+    Should the column grow to fill the remaining space? When set to a number, the number represents the proportion of the table's free space, if any, that should be added to the column width. Must be a positive number. A value of 0 or false will prevent the column from growing. A value of true is the same as a value of 1.
+  ",
+        "minimum": 0,
+        "type": [
+          "number",
+          "boolean",
+        ],
+      },
+      "maxSize": {
+        "description": "The maximum size of the column in pixels.",
+        "type": "number",
+      },
+      "minSize": {
+        "description": "The minimum size of the column in pixels.",
+        "type": "number",
+      },
+      "size": {
+        "default": 180,
+        "description": "The size of the column in pixels. The default value is 180px.",
+        "type": "number",
+      },
+    },
+    "type": "object",
+  },
+}
+`;

@@ -11,7 +11,8 @@ export class MuiColumnDefinition {
 
   @Optional()
   @Description(`Configurations to control column sizing`)
-  columnSizing?: MuiColumnSizingDefinition
+  @Property(MuiColumnSizingDefinition)
+  columnSizing?: Partial<MuiColumnSizingDefinition>
 
   @Property()
   @Description('filter type of the column')
