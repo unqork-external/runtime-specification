@@ -580,7 +580,7 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 3`] = 
       "autoResetPageIndex": {
         "default": false,
         "description": "When set to "true" it will reset the page index to zero when sorting/filtering",
-        "type": "object",
+        "type": "boolean",
       },
       "manualPagination": {
         "default": false,
@@ -590,22 +590,36 @@ exports[`MuiBasicTable Contract Tests should ensure the contract is clear 3`] = 
       "offset": {
         "default": 0,
         "description": "The position of the results set relative to 'pageIndex'. It's the result of 'pageIndex * pageSize'. Setting it from the configuration has no effect because it will always be derived from the above math.",
-        "type": "object",
+        "type": "number",
       },
       "pageIndex": {
         "default": 0,
         "description": "The zero-based index of the page to which the data should be navigated. This should be a non-negative integer where zero indicates the first page.",
-        "type": "object",
+        "type": "number",
       },
       "pageSize": {
         "default": 20,
         "description": "Number of rows per page",
-        "type": "object",
+        "type": "number",
+      },
+      "rowsPerPageOptions": {
+        "description": "Specifies the row count options for the Rows Per Page dropdown",
+        "items": {
+          "default": [
+            5,
+            10,
+            15,
+            20,
+            30,
+          ],
+          "type": "number",
+        },
+        "type": "array",
       },
       "total": {
         "default": 0,
         "description": "Total number of rows on the dataset. This is automatically calculated by the Table except when manualPagination is "true"",
-        "type": "object",
+        "type": "number",
       },
     },
     "type": "object",
