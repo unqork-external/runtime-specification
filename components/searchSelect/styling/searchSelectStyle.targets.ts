@@ -2,9 +2,11 @@ import { Description } from '@tsed/schema'
 
 import { Css } from '../../../../decorators/schema/css.decorator'
 import { type CssClassOrProps } from '../../../styling/cssClassOrProps.type'
+import { TargetsModel } from '../../../viewTargets/targets.model'
 import { SearchSelectTargets } from '../targets/searchSelectTargets.enum'
 
-export class SearchSelectStyleTargets {
+@Description('The possible targets for Search Select component styling.')
+export class SearchSelectStyleTargets implements TargetsModel<SearchSelectTargets> {
   @Description("Adds styles to Search Select's ComponentWrapper.")
   @Css()
   [SearchSelectTargets.ROOT]: CssClassOrProps;

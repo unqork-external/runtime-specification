@@ -5,7 +5,7 @@ import { type CssClassOrProps } from '../../../styling/cssClassOrProps.type'
 import { TargetsModel } from '../../../viewTargets/targets.model'
 import { CanvasTargetsEnum } from '../targets/canvasTargets.enum'
 
-export class CanvasTargets implements TargetsModel<CanvasTargetsEnum> {
+export class CanvasStylingTargets implements TargetsModel<CanvasTargetsEnum> {
   @Css()
   @Description('Adds styles to the root div for the canvas component.')
   [CanvasTargetsEnum.root]: CssClassOrProps;

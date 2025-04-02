@@ -8,3 +8,4 @@ export {
   PositionPlacement,
 } from './positionOptions'
 export { PositionDisplay } from './positionDisplay'
+export * from './positionTargets.enum'

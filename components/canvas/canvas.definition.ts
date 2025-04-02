@@ -4,6 +4,8 @@ import { CANVAS_ITEM_ID, CanvasItem } from './canvasItem/canvasItem.definition'
 import { LAYOUT_ID } from './canvasLayout/canvasChildLayout.definition'
 import { CanvasRepresentation } from './canvasLayout/canvasRepresentation.definition'
 import { CanvasStyling } from './styling/canvas.styling'
+import { CanvasTargetsEnum } from './targets/canvasTargets.enum'
+import { ViewTargets } from '../../../decorators'
 import { BaseComponentDefinition } from '../../base-component-interface'
 import { StandardArrayNestable } from '../../nestables'
 
@@ -21,6 +23,7 @@ export type CanvasHighlight = {
 }
 
 @DiscriminatorValue('canvas')
+@ViewTargets(CanvasTargetsEnum)
 export class CanvasComponentDefinition extends BaseComponentDefinition {
   @Required()
   type: 'canvas' = 'canvas' as const

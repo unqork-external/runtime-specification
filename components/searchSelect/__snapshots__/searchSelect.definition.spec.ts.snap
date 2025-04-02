@@ -715,6 +715,7 @@ exports[`SearchSelect Contract Tests should ensure the contract is clear 3`] = `
     "type": "object",
   },
   "SearchSelectStyleTargets": {
+    "description": "The possible targets for Search Select component styling.",
     "properties": {
       "customPopper": {
         "description": "Adds styles to Search Select's custom popper.",

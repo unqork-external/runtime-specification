@@ -1,9 +1,9 @@
 import { Property } from '@tsed/schema'
 
-import { CanvasTargets } from './canvas.targets'
+import { CanvasStylingTargets } from './canvasStylingTargets'
 import { StylingModel } from '../../../styling/styling.model'
 
-export class CanvasStyling extends StylingModel<CanvasTargets> {
+export class CanvasStyling extends StylingModel<CanvasStylingTargets> {
   @Property()
-  declare targets: CanvasTargets
+  declare targets: CanvasStylingTargets
 }

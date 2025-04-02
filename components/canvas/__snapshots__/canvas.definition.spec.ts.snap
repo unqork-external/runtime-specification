@@ -173,13 +173,13 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
     "description": "Holds information for targeted styling of the component.",
     "properties": {
       "targets": {
-        "$ref": "#/definitions/CanvasTargets",
+        "$ref": "#/definitions/CanvasStylingTargets",
         "type": "object",
       },
     },
     "type": "object",
   },
-  "CanvasTargets": {
+  "CanvasStylingTargets": {
     "properties": {
       "canvas": {
         "description": "Adds styles to the div wrapping the canvas.",
@@ -1748,13 +1748,13 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
     "description": "Holds information for targeted styling of the component.",
     "properties": {
       "targets": {
-        "$ref": "#/definitions/CanvasTargets",
+        "$ref": "#/definitions/CanvasStylingTargets",
         "type": "object",
       },
     },
     "type": "object",
   },
-  "CanvasTargets": {
+  "CanvasStylingTargets": {
     "properties": {
       "canvas": {
         "description": "Adds styles to the div wrapping the canvas.",

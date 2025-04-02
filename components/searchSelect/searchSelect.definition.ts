@@ -5,6 +5,8 @@ import { SearchSelectField } from './searchSelectField'
 import { SearchSelectSimpleViewModel } from './searchSelectSimpleView.model'
 import { SelectedOptionsNestable } from './selectedOptionsNestable'
 import { SearchSelectStyling } from './styling/searchSelect.styling'
+import { SearchSelectTargets } from './targets/searchSelectTargets.enum'
+import { ViewTargets } from '../../../decorators'
 import { Examples } from '../../../decorators/schema/examples.decorator'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
@@ -15,12 +17,13 @@ import { SearchSelectOptionComponentDefinition } from '../searchSelectOption'
 
 @DiscriminatorValue('searchSelect')
 @TrimmedDescription(`
-  The search select component is a primary fields component. 
+  The search select component is a primary fields component.
   It lets end-users search for, or select, one or more options from a drop-down list.
   End-users can enter a value into the field and the drop-down list filters options to match that value.
   End-users then use the arrow keys or their mouse to select an option from the filtered list.
   Options in the list can also include adornments on the left or right side of the text.
 `)
+@ViewTargets(SearchSelectTargets)
 export class SearchSelectComponentDefinition extends BaseComponentDefinition {
   @Const('searchSelect')
   type: 'searchSelect' = 'searchSelect' as const
@@ -62,7 +65,7 @@ export class SearchSelectComponentDefinition extends BaseComponentDefinition {
   declare value?: string[] | null
 
   @TrimmedDescription(`
-    It holds information about the existing validations including validation types, 
+    It holds information about the existing validations including validation types,
     rules, error messages, and results when they run
   `)
   validation: Validation = new Validation()

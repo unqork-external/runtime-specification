@@ -1,8 +1,10 @@
-import { Required, DiscriminatorValue, Optional, Enum, Description, Property, Default } from '@tsed/schema'
+import { Default, Description, DiscriminatorValue, Enum, Optional, Property, Required } from '@tsed/schema'
 
+import { TextLinkTargets } from './textLinkTargets.enum'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { Display } from '../../component-composition/display/component.display'
 import { Field } from '../../component-composition/field/component.field.label'
+import type { SignalTargets } from '../../signals'
 
 export class LinkTextBasicField extends Field {
   @Description('Allows customization of the class HTML parameter for the root element of the component')
@@ -47,4 +49,7 @@ export class TextLinkComponentDefinition extends BaseComponentDefinition {
   @Property(LinkTextBasicField)
   @Description('Field settings')
   field: LinkTextBasicField = new LinkTextBasicField()
+
+  @Property()
+  declare signals: SignalTargets<TextLinkTargets>
 }

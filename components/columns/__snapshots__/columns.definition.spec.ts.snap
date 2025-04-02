@@ -383,6 +383,7 @@ exports[`Columns Contract Tests should ensure the contract is clear - component 
     "properties": {
       "targets": {
         "$ref": "#/definitions/ColumnsStyleTargets",
+        "type": "object",
       },
     },
     "type": "object",
@@ -961,6 +962,7 @@ exports[`Columns Contract Tests should ensure the contract is clear - component 
     "properties": {
       "targets": {
         "$ref": "#/definitions/ColumnsStyleTargets",
+        "type": "object",
       },
     },
     "type": "object",

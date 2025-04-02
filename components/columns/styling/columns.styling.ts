@@ -7,7 +7,7 @@ import { targetedStylingExample } from '../../../styling/targeted.styling.exampl
 
 @Description('Object that maps customized CSS styling to specific targets on the Columns component.')
 @Examples(targetedStylingExample)
-export class ColumnsStyling implements StylingModel<ColumnsStyleTargets> {
+export class ColumnsStyling extends StylingModel<ColumnsStyleTargets> {
   @Property()
-  targets: ColumnsStyleTargets
+  declare targets: ColumnsStyleTargets
 }

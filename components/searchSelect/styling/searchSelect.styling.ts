@@ -1,4 +1,4 @@
-import { Description, Property } from '@tsed/schema'
+import { Description } from '@tsed/schema'
 
 import { SearchSelectStyleTargets } from './searchSelectStyle.targets'
 import { StylingModel } from '../../../styling'

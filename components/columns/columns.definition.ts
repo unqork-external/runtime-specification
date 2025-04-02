@@ -1,9 +1,10 @@
-import { CollectionOf, Const, Description, DiscriminatorValue, Property, Required, Schema } from '@tsed/schema'
+import { CollectionOf, Const, Description, DiscriminatorValue, Property, Required } from '@tsed/schema'
 
 import { ColumnData } from './columnData'
 import { ColumnsField } from './columns.field'
 import { ColumnsStyling } from './styling/columns.styling'
 import { ColumnsTargets } from './targets/columnsTargets.enum'
+import { ViewTargets } from '../../../decorators'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import { Display } from '../../component-composition/display/component.display'
@@ -15,6 +16,7 @@ import type { SignalTargets } from '../../signals'
     The Columns component is part of the core range of Centauri display and layout components.
     A creator can use the Columns component to customize the layout of their module by organizing the components into columns.
 `)
+@ViewTargets(ColumnsTargets)
 export class ColumnsComponentDefinition extends BaseComponentDefinition {
   @Const('columns')
   type: 'columns' = 'columns' as const

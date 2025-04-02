@@ -57,7 +57,7 @@ export class PhoneNumberStyleTargets implements TargetsModel<PhoneNumberTargets>
 
   @Description("Adds styles to Intl PhoneNumber's dropdown component.")
   @Css()
-  [PhoneNumberTargets.countryDopdown]: CssClassOrProps;
+  [PhoneNumberTargets.countryDropdown]: CssClassOrProps;
 
   @Description("Adds styles to Intl PhoneNumber's options.")
   @Css()
