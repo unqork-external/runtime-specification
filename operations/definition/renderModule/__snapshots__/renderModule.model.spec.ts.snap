@@ -7,9 +7,12 @@ exports[`Operation Model: RenderModule Tests should match this JSON Schema 1`] =
     "RenderModuleOperationOptions": {
       "properties": {
         "moduleId": {
-          "description": "Id corresponding to loaded module that should be rendered.",
-          "minLength": 1,
+          "description": "ID corresponding to an already fetched module that should be rendered.",
           "type": "string",
+        },
+        "moduleSpec": {
+          "description": "A full module definition or array of components to render at the target slot",
+          "type": "object",
         },
         "shouldExecute": {
           "default": true,
@@ -34,7 +37,6 @@ exports[`Operation Model: RenderModule Tests should match this JSON Schema 1`] =
         },
       },
       "required": [
-        "moduleId",
         "targetKey",
         "targetNestable",
       ],

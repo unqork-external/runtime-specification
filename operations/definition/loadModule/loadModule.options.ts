@@ -1,46 +1,46 @@
 import { Default, Description, Example, Optional, Required } from '@tsed/schema'
 
-import {
-  type BaseComponentDefinition,
-  type COLLISION_HANDLER,
-  type ModuleDefinition,
-  type R1ComponentDefinition,
-  type R1ModuleDefinition,
-} from '@unqork/runtime-types'
+import type { BaseComponentDefinition, COLLISION_HANDLER, ModuleDefinition } from '@unqork/runtime-types'
 
+import { TrimmedDescription, Beta } from '../../../../decorators'
 import { OperationOptions } from '../../interface'
 
+@Beta()
 export class LoadModuleOperationOptions extends OperationOptions {
-  @Description('ID corresponding to module that should be loaded.')
+  @Optional()
+  @Description('ID of the module to load')
   moduleId?: string
 
-  @Description(`
-    URL to load module spec from.
+  @Optional()
+  @TrimmedDescription(`
+    URL to load the module spec from
+
     Most commonly used with server-side executes or transforms
   `)
-  @Example('path/to/my/sse-module')
+  @Example('path/to/my/sse-module', 'https://myserver.com/generate-custom-module')
   moduleUrl?: string
 
-  @Description(`
-    Path to module definition
+  @Optional()
+  @TrimmedDescription(`
+    Path to the module definition within the URL response
 
-    Used with moduleUrl to extract definition from a path
+    Used with moduleUrl to extract a definition from the specified path
   `)
-  @Example('data.moduleDefinition')
+  @Example('data.moduleDefinition', 'modules[0]')
   pathToModuleDefinition?: string
 
-  @Description(`
+  @Optional()
+  @TrimmedDescription(`
     HTTP Method to use when loading module
   `)
   @Default('GET')
   method? = 'GET'
 
-  @Description(`
+  @Optional()
+  @TrimmedDescription(`
     A full module definition or array of components to render at the target slot
-
-    Support Vega or Centauri spec, will be converted to Vega before rendering
   `)
-  moduleSpec?: ModuleDefinition | R1ModuleDefinition | Array<BaseComponentDefinition> | Array<R1ComponentDefinition>
+  moduleSpec?: ModuleDefinition | Array<BaseComponentDefinition>
 
   @Required()
   @Description('Target Key identifying component in which the module should be rendered.')

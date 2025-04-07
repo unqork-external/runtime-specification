@@ -12,41 +12,30 @@ exports[`Operation Model: LoadModule Tests should match this JSON Schema 1`] = `
         },
         "method": {
           "default": "GET",
-          "description": "
-    HTTP Method to use when loading module
-  ",
+          "description": "HTTP Method to use when loading module",
           "type": "object",
         },
         "moduleId": {
-          "description": "ID corresponding to module that should be loaded.",
+          "description": "ID of the module to load",
           "type": "string",
         },
         "moduleSpec": {
-          "description": "
-    A full module definition or array of components to render at the target slot
-
-    Support Vega or Centauri spec, will be converted to Vega before rendering
-  ",
+          "description": "A full module definition or array of components to render at the target slot",
           "type": "object",
         },
         "moduleUrl": {
-          "description": "
-    URL to load module spec from.
-    Most commonly used with server-side executes or transforms
-  ",
+          "description": "URL to load the module spec from Most commonly used with server-side executes or transforms",
           "examples": [
             "path/to/my/sse-module",
+            "https://myserver.com/generate-custom-module",
           ],
           "type": "string",
         },
         "pathToModuleDefinition": {
-          "description": "
-    Path to module definition
-
-    Used with moduleUrl to extract definition from a path
-  ",
+          "description": "Path to the module definition within the URL response Used with moduleUrl to extract a definition from the specified path",
           "examples": [
             "data.moduleDefinition",
+            "modules[0]",
           ],
           "type": "string",
         },

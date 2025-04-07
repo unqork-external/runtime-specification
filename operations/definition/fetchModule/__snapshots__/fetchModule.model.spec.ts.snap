@@ -10,9 +10,29 @@ exports[`Operation Model: FetchModule Tests should match this JSON Schema 1`] = 
           "description": "How should module ID collisions be handled",
           "type": "string",
         },
+        "method": {
+          "default": "GET",
+          "description": "HTTP Method to use when loading module via moduleUrl",
+          "type": "object",
+        },
         "moduleId": {
-          "description": "Id that identifies module to fetch",
-          "minLength": 1,
+          "description": "ID of the module to fetch",
+          "type": "string",
+        },
+        "moduleUrl": {
+          "description": "URL to load the module spec from. Most commonly used with server-side executes or transforms",
+          "examples": [
+            "path/to/my/sse-module",
+            "https://myserver.com/generate-custom-module",
+          ],
+          "type": "string",
+        },
+        "pathToModuleDefinition": {
+          "description": "Path to the module definition within the URL response Used with moduleUrl to extract a definition from the specified path",
+          "examples": [
+            "data.moduleDefinition",
+            "modules[0]",
+          ],
           "type": "string",
         },
         "shouldExecute": {
@@ -26,10 +46,11 @@ exports[`Operation Model: FetchModule Tests should match this JSON Schema 1`] = 
             "boolean",
           ],
         },
+        "storeModuleAs": {
+          "description": "Custom ID to store module as in state Most commonly used when fetching a module via moduleUrl to enable rendering later",
+          "type": "string",
+        },
       },
-      "required": [
-        "moduleId",
-      ],
       "type": "object",
     },
   },
