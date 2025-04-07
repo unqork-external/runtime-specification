@@ -8,6 +8,10 @@ export type CanvasItemSettings = Record<string, unknown> & {
   componentId: string
   key: string
   type: string
+  label?: string // some centauri components use this property instead of 'title' for label field
+  title?: string // some centauri components use this property instead of 'label' for label field
+  tooltip?: string // some centauri components use this property instead of 'description' for tooltip field
+  description?: string // some centauri components use this property instead of 'tooltip' for tooltip field
 }
 
 export enum CanvasItemStatusCode {
