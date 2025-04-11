@@ -1,0 +1,1267 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddressSearch Contract Tests should ensure the contract is clear 1`] = `
+[
+  "key",
+  "type",
+  "options",
+]
+`;
+
+exports[`AddressSearch Contract Tests should ensure the contract is clear 2`] = `
+{
+  "display": {
+    "$ref": "#/definitions/AddressSearchDisplay",
+  },
+  "executable": {
+    "default": true,
+    "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
+    "type": "boolean",
+  },
+  "field": {
+    "$ref": "#/definitions/AddressSearchField",
+  },
+  "inputs": {
+    "items": {
+      "$ref": "#/definitions/InputRef",
+    },
+    "type": "array",
+  },
+  "key": {
+    "description": "'key' is the user-defined, unique identifier for an object within a module. It doesn't have to be unique across different modules. Objects within the runtime use keys to target other objects.",
+    "examples": [
+      "I am the key",
+      "bestKeyEver",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "options": {
+    "$ref": "#/definitions/AddressSearchOptions",
+  },
+  "package": {
+    "$ref": "#/definitions/PackageModel",
+  },
+  "signals": {
+    "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
+    "examples": [
+      {
+        "args": {
+          "inputs": {
+            "propertyPath": "value",
+            "required": true,
+            "targetKey": "firstName",
+          },
+        },
+        "id": "firstNameWatcher",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "firstNameWatcher operations fired: value watcher triggered",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onWatch",
+      },
+      {
+        "id": "textfieldOnBlur",
+        "operations": [
+          {
+            "options": {
+              "logType": "warn",
+              "thingToPrint": "textfield received blur event from DOM",
+            },
+            "type": "PRINTER",
+          },
+        ],
+        "type": "onBlur",
+      },
+      "<Example> Prompt: "I want a textfield that will trigger the root execute signal on myValidationComponent when the textfield input receives a blur event." Response: [{"key":"yourGeneratedTextfield","type":"textfield","signals":{"input":[{"id":"textfieldOnBlur","operations":[{"type":"EXECUTE","options":{"targetKey":"myValidationComponent","signalTarget":"root","shouldExecute":true}}],"type":"onBlur"}]}}] </Example>",
+    ],
+    "type": "object",
+  },
+  "styling": {
+    "$ref": "#/definitions/AddressSearchStyling",
+  },
+  "type": {
+    "const": "addressSearch",
+    "description": "Name of the type of component.",
+    "examples": [
+      "addressSearch",
+    ],
+    "minLength": 1,
+    "type": "string",
+  },
+  "validation": {
+    "$ref": "#/definitions/Validation",
+  },
+  "value": {
+    "$ref": "#/definitions/AddressSearchValue",
+    "description": "Current value of the component",
+    "type": [
+      "null",
+      "integer",
+      "number",
+      "string",
+      "boolean",
+      "array",
+      "object",
+    ],
+  },
+}
+`;
+
+exports[`AddressSearch Contract Tests should ensure the contract is clear 3`] = `
+{
+  "AddressSearchDisplay": {
+    "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Display as Text' corresponds to the component being rendered with an input element or as text.",
+    "properties": {
+      "city": {
+        "default": false,
+        "description": "Whether to show the city input field.",
+        "type": "boolean",
+      },
+      "country": {
+        "default": false,
+        "description": "Whether to show the country input field.",
+        "type": "boolean",
+      },
+      "countrySelector": {
+        "default": false,
+        "description": "Allow a user to select the country to restrict results. This is only displayed when the options.serviceType is canada-post.",
+        "reflexive": [
+          {
+            "path": "options.serviceType",
+            "value": "canada-post",
+          },
+        ],
+        "type": "boolean",
+      },
+      "hidden": {
+        "default": false,
+        "description": "Setting it to \`true\` hides the component from the view, while \`false\` shows it. Regardless of this setting, the component is always visible in the Module Editor. A hidden component can still receive information from other components.",
+        "type": "boolean",
+      },
+      "hideSearch": {
+        "default": false,
+        "description": "Whether to hide the address search box.",
+        "type": "boolean",
+      },
+      "htmlReadOnly": {
+        "default": false,
+        "description": "When htmlReadOnly = true, it will make the field non-editable and will apply the readonly property to the component's <input>. This property is distinct from readOnlyView (aka 'Display as Text'). htmlReadOnly is useful for accessibility (a11y) so that we can support setting the <input> field to readonly.",
+        "type": "boolean",
+      },
+      "interactive": {
+        "default": true,
+        "description": "When \`false\`, it is not possible to interact with or edit the input field. Its appearance is modified (grayed-out by default) to show its state, the HTML 'disabled' attribute is added to the field, and when hovering over it, the cursor also changes to alert of the disabled status. However, the component can still receive information from other components when it's not interactive.",
+        "type": "boolean",
+      },
+      "readOnlyView": {
+        "default": false,
+        "description": "Defines how the component will be displayed. When \`false\`, the component is displayed as an input field. When \`true\`, the component will not accept any input from the user, and its value will be rendered inline as text and not as an input component. If no value is present, the word 'None' is rendered. If a prefix or suffix is set for the component, they also appear as inline text.",
+        "type": "boolean",
+      },
+      "shortFormatAddress": {
+        "default": false,
+        "description": "Show address in the address parts inputs in shortened format (ie Ave instead of Avenue, NY instead of New York, etc). This is only displayed when the options.serviceType is google-places.",
+        "reflexive": [
+          {
+            "path": "options.serviceType",
+            "value": "google-places",
+          },
+        ],
+        "type": "boolean",
+      },
+      "state": {
+        "default": false,
+        "description": "Whether to show the state input field.",
+        "type": "boolean",
+      },
+      "street": {
+        "default": false,
+        "description": "Whether to show the street input field.",
+        "type": "boolean",
+      },
+      "street2": {
+        "default": false,
+        "description": "Whether to show the street 2 input field.",
+        "type": "boolean",
+      },
+      "zip": {
+        "default": false,
+        "description": "Whether to show the zip input field.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "AddressSearchField": {
+    "properties": {
+      "cityLabel": {
+        "description": "Label for the city input",
+        "type": "string",
+      },
+      "closeButtonLabel": {
+        "description": "Label for the close menu indicator button used by screen readers.",
+        "type": "string",
+      },
+      "countryLabel": {
+        "description": "Label for the country input",
+        "type": "string",
+      },
+      "countrySelectorLabel": {
+        "description": "Label for the country selector. This is only displayed when the options.serviceType is canada-post.",
+        "reflexive": [
+          {
+            "path": "options.serviceType",
+            "value": "canada-post",
+          },
+        ],
+        "type": "string",
+      },
+      "helperText": {
+        "$ref": "#/definitions/InputHelperText",
+      },
+      "label": {
+        "$ref": "#/definitions/InputLabel",
+      },
+      "loadingLabel": {
+        "description": "Label displayed in the options list when suggestions are being fetched.",
+        "type": "string",
+      },
+      "noOptionsLabel": {
+        "description": "Label displayed when there are no options.",
+        "type": "string",
+      },
+      "openButtonLabel": {
+        "description": "Label for the open menu indicator button used by screen readers.",
+        "type": "string",
+      },
+      "placeholder": {
+        "description": "Text displayed as a placeholder label when there are no options selected.",
+        "type": "string",
+      },
+      "stateLabel": {
+        "description": "Label for the state input",
+        "type": "string",
+      },
+      "street2Label": {
+        "description": "Label for the street 2 input",
+        "type": "string",
+      },
+      "streetLabel": {
+        "description": "Label for the street input",
+        "type": "string",
+      },
+      "tooltipDescription": {
+        "description": "Text for the component's tooltip.",
+        "type": "string",
+      },
+      "zipLabel": {
+        "description": "Label for the zip input",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "AddressSearchOptions": {
+    "properties": {
+      "countryFilter": {
+        "description": "A grouping of places to which you would like to restrict your results. Currently, you can use components to filter by up to 5 countries. Countries must be passed as a two character, ISO 3166-1 Alpha-2 compatible country code.
+    
+    Multiple countries must be passed as multiple country:XX filters, with the pipe character | as a separator.",
+        "examples": [
+          "country:US",
+          "country:US|country:PR|country:VI|country:GU|country:MP",
+        ],
+        "reflexive": [
+          {
+            "path": "options.serviceType",
+            "value": "google-places",
+          },
+        ],
+        "type": "string",
+      },
+      "countryISO": {
+        "default": "CA",
+        "description": "An ISO 3166-1 Alpha-2 compatible country code used to filter the results to a specific country.
+    
+    This is only used when the options.serviceType is canada-post.",
+        "examples": [
+          "CA",
+        ],
+        "reflexive": [
+          {
+            "path": "options.serviceType",
+            "value": "canada-post",
+          },
+        ],
+        "type": "string",
+      },
+      "location": {
+        "description": "The point around which to retrieve place information. This must be specified as latitude,longitude. The radius parameter must also be provided when specifying a location. If radius is not provided, the location parameter is ignored.
+    
+    This is only used when the options.serviceType is google-places.",
+        "examples": [
+          "37.76999, -122.44696",
+        ],
+        "reflexive": [
+          {
+            "path": "options.serviceType",
+            "value": "google-places",
+          },
+        ],
+        "type": "string",
+      },
+      "radius": {
+        "description": "The distance (in meters) within which to return place results. The maximum allowed radius is 50,000 meters.  
+  
+  You may bias results to a specified circle by passing a location and a radius parameter. Doing so instructs the service to prefer showing results within that circle; results outside of the defined area may still be displayed. 
+  
+  This is only used when the options.serviceType is google-places.",
+        "reflexive": [
+          {
+            "path": "options.serviceType",
+            "value": "google-places",
+          },
+        ],
+        "type": "number",
+      },
+      "service": {
+        "description": "The name of the places service to use. This needs to reference a service setup in the environment's services administration.",
+        "minLength": 1,
+        "type": "string",
+      },
+      "serviceType": {
+        "description": "The type of places api used. This can be Google Places or Canada Post",
+        "enum": [
+          "google-places",
+          "canada-post",
+        ],
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "service",
+      "serviceType",
+    ],
+    "type": "object",
+  },
+  "AddressSearchStyleTargets": {
+    "properties": {
+      "addressPartInput": {
+        "description": "Styles applied to all address part inputs",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "addressPartLabel": {
+        "description": "Styles applied to all address part labels",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "cityInput": {
+        "description": "City Input styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "cityLabel": {
+        "description": "City Label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "countryInput": {
+        "description": "Country Input styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "countryLabel": {
+        "description": "Country Label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "errors": {
+        "description": "Errors wrapper styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "helperText": {
+        "description": "Helper text styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "label": {
+        "description": "Label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "loadingIcon": {
+        "description": "Loading icon styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "loadingLabel": {
+        "description": "Loading label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "menu": {
+        "description": "Menu styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "noOptionsLabel": {
+        "description": "No options label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "option": {
+        "description": "Option styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "popupIndicatorButton": {
+        "description": "Popup indicator styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "readOnly": {
+        "description": "Read only styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "root": {
+        "description": "Wrapper styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "searchInput": {
+        "description": "Search input styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "stateInput": {
+        "description": "State Input styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "stateLabel": {
+        "description": "State Label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "street2Input": {
+        "description": "Street2 Input styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "street2Label": {
+        "description": "Street2 Label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "streetInput": {
+        "description": "Street Input styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "streetLabel": {
+        "description": "Street Label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "tooltip": {
+        "description": "Tooltip styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "tooltipButton": {
+        "description": "Tooltip button styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "tooltipPopover": {
+        "description": "Tooltip popover styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "zipInput": {
+        "description": "Zip Input styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "zipLabel": {
+        "description": "Zip Label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+    },
+    "type": "object",
+  },
+  "AddressSearchStyling": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "$ref": "#/definitions/AddressSearchStyleTargets",
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "AddressSearchValue": {
+    "additionalProperties": {
+      "type": "string",
+    },
+    "properties": {
+      "city": {
+        "description": "The city, town, neighborhood, borough, or district of the selected place.",
+        "type": "string",
+      },
+      "country": {
+        "description": "The country of the selected place.",
+        "type": "string",
+      },
+      "formatted": {
+        "description": "The human-readable address of the selected place.",
+        "type": "string",
+      },
+      "state": {
+        "description": "The state, province, oblast, or prefecture of the selected place.",
+        "type": "string",
+      },
+      "street": {
+        "description": "The street of the selected place.",
+        "type": "string",
+      },
+      "street2": {
+        "description": "The second street of the selected place.",
+        "type": "string",
+      },
+      "zip": {
+        "description": "The postal code of the selected place.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputHelperText": {
+    "description": "Details pertaining to the helper text element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the helper text of the component.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed underneath the input field. Unlike tooltips, a helper text stays visible under the input field and displays on a single line.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputLabel": {
+    "description": "Details pertaining to the label element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the label of the component. Note the label will still be displayed on the Module Editor.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed above the input field. If the label of the component is visually hidden this text will still be read by screen readers.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputRef": {
+    "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
+    "properties": {
+      "alias": {
+        "type": "string",
+      },
+      "propertyPath": {
+        "type": "string",
+      },
+      "required": {
+        "type": "boolean",
+      },
+      "silent": {
+        "type": "boolean",
+      },
+      "targetKey": {
+        "minLength": 1,
+        "type": "string",
+      },
+      "type": {
+        "type": "string",
+      },
+    },
+    "required": [
+      "targetKey",
+    ],
+    "type": "object",
+  },
+  "Label": {
+    "properties": {
+      "text": {
+        "description": "Text displayed as the label for the field",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "PackageModel": {
+    "description": "The PackageModel describes how the Vega Runtime will resolve dependencies",
+    "properties": {
+      "type": {
+        "description": "Type of package",
+        "type": "string",
+      },
+      "url": {
+        "description": "URL of package",
+        "type": "string",
+      },
+      "version": {
+        "description": "Version of package",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "StylingModel": {
+    "description": "Holds information for targeted styling of the component.",
+    "properties": {
+      "targets": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "Validation": {
+    "description": "Holds the validation rules and the most current validation results for the component",
+    "properties": {
+      "isDirty": {
+        "description": "Whether or not field has had user interaction. It will be set to true on user interaction.",
+        "type": "boolean",
+      },
+      "result": {
+        "$ref": "#/definitions/ValidationResult",
+      },
+      "rules": {
+        "description": "The set of rules to restrict or define the accepted data for the current component. These are the rules to run for validation of the data input.",
+        "examples": [
+          "You can use it to define the max length of characters in an input field with a custom error message. rules: { required: { type: ValidationRuleTypes.MAX_LENGTH, validation: { maxLength: 5, }, errorMessage: 'Max length is 5', }, },",
+        ],
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "ValidationError": {
+    "properties": {
+      "message": {
+        "description": "The error message",
+        "type": "string",
+      },
+      "type": {
+        "description": "Type of the error",
+        "enum": [
+          "required",
+          "maxLength",
+          "minLength",
+          "arrayMinLength",
+          "arrayMaxLength",
+          "pattern",
+          "min",
+          "max",
+          "mask",
+          "number",
+          "dateinput",
+          "isBeforeDate",
+          "isAfterDate",
+          "customError",
+          "isEmail",
+        ],
+        "minLength": 1,
+        "type": "string",
+      },
+    },
+    "required": [
+      "type",
+    ],
+    "type": "object",
+  },
+  "ValidationResult": {
+    "properties": {
+      "errors": {
+        "items": {
+          "$ref": "#/definitions/ValidationError",
+        },
+        "type": "array",
+      },
+      "isValid": {
+        "type": [
+          "null",
+          "boolean",
+        ],
+      },
+    },
+    "type": "object",
+  },
+}
+`;

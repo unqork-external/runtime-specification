@@ -101,5 +101,6 @@ export * from './workflow/workflow.definition'
 export * from './agGridTable'
 export * from './advancedModeJsonDiffer/advancedModeJsonDiffer.definition'
 export * from './testableNestables'
+export * from './addressSearch'
 
 export * from './byoc/byoc.definition'
