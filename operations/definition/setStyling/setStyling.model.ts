@@ -1,12 +1,13 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { SetStylingOperationOptions } from './setStyling.options'
-import { Alpha } from '../../../../decorators'
+import { Alpha, DisplayName } from '../../../../decorators'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Set Styling')
 @DiscriminatorValue(OperationTypes.SET_STYLING)
 @TrimmedDescription(`
   This operation should be used to set an entire styling object on a component.

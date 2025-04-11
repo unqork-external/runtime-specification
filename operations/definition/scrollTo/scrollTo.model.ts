@@ -1,11 +1,12 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ScrollToOptions } from './scrollTo.options'
-import { TrimmedDescription, Beta } from '../../../../decorators'
+import { TrimmedDescription, Beta, DisplayName } from '../../../../decorators'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('ScrollTo')
 @DiscriminatorValue(OperationTypes.SCROLL_TO)
 @TrimmedDescription(`
   ScrollToOperation will scroll the page in relation to the targetKey.

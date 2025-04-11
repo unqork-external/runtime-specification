@@ -1,10 +1,12 @@
 import { Description, DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ToggleOptions } from './toggle.options'
+import { DisplayName } from '../../../../decorators'
 import { Stable } from '../../../../decorators/stability'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Toggle')
 @DiscriminatorValue(OperationTypes.TOGGLE)
 @Description('Toggle a boolean property. Only works on boolean properties.')
 @Stable()

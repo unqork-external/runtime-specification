@@ -1,11 +1,12 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { DownloadFileOperationOptions } from './downloadFile.options'
-import { TrimmedDescription, Alpha } from '../../../../decorators'
+import { TrimmedDescription, Alpha, DisplayName } from '../../../../decorators'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Download File')
 @DiscriminatorValue(OperationTypes.DOWNLOAD_FILE)
 @TrimmedDescription(`
   Downloads a file for a user, and allows users to define a custom file name.

@@ -1,10 +1,11 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { AddNestedComponentsOperationOptions } from './addNestedComponents.options'
-import { TrimmedDescription, Alpha } from '../../../../decorators'
+import { TrimmedDescription, Alpha, DisplayName } from '../../../../decorators'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Add Nested Components')
 @DiscriminatorValue(OperationTypes.ADD_NESTED_COMPONENTS)
 @TrimmedDescription(`
   Given a target, add a set of component templates to that location as children.

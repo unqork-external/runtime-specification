@@ -1,10 +1,11 @@
-import { Const, Description, DiscriminatorValue, Required } from '@tsed/schema'
+import { Const, DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ExecuteExternalCommandOperationOptions } from './executeExternalCommand.options'
-import { Stable, TrimmedDescription } from '../../../../decorators'
+import { DisplayName, Stable, TrimmedDescription } from '../../../../decorators'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Execute External Command')
 @DiscriminatorValue(OperationTypes.EXECUTE_EXTERNAL_COMMAND)
 @TrimmedDescription(`
   The Execute External Command operation allows Embedded Vega applications to interact with their parent Centauri

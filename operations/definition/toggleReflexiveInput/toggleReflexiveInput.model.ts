@@ -1,12 +1,13 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ToggleReflexiveInputOperationOptions } from './toggleReflexiveInput.options'
-import { Alpha } from '../../../../decorators'
+import { Alpha, DisplayName } from '../../../../decorators'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Toggle Reflexive Input')
 @DiscriminatorValue(OperationTypes.TOGGLE_REFLEXIVE_INPUT)
 @TrimmedDescription(`
     This operation will toggle the reflexive input in configuration editor or in ops builder.

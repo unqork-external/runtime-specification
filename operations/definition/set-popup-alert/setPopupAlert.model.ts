@@ -1,11 +1,12 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { SetPopupAlertOptions } from './setPopupAlert.options'
-import { Alpha } from '../../../../decorators'
+import { Alpha, DisplayName } from '../../../../decorators'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Set Popup Alert')
 @DiscriminatorValue(OperationTypes.SET_POPUP_ALERT)
 @Alpha()
 @AutogenDisabled()

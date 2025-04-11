@@ -1,12 +1,13 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { SetStylingTargetOperationOptions } from './setStylingTarget.options'
-import { Alpha } from '../../../../decorators'
+import { Alpha, DisplayName } from '../../../../decorators'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Set Styling Target')
 @DiscriminatorValue(OperationTypes.SET_STYLING_TARGET)
 @TrimmedDescription(`
   This operation is used to set CSS properties or classnames to a single, specific target on a component.

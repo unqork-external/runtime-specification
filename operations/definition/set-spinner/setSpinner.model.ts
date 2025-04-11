@@ -1,11 +1,13 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { SetSpinnerOptions } from './setSpinner.options'
+import { DisplayName } from '../../../../decorators'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 import { Stable } from '../../../../decorators/stability'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Set Spinner')
 @DiscriminatorValue(OperationTypes.SET_SPINNER)
 @TrimmedDescription(`
     R1 Compatibility Operation for the spinner output.

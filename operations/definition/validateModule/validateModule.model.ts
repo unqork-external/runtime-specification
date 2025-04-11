@@ -1,11 +1,12 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ValidateModuleOperationOptions } from './validateModule.options'
-import { Alpha } from '../../../../decorators'
+import { Alpha, DisplayName } from '../../../../decorators'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Validate Module')
 @DiscriminatorValue(OperationTypes.VALIDATE_MODULE)
 @Alpha()
 @AutogenDisabled()

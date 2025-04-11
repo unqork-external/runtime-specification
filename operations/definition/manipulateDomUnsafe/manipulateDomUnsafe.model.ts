@@ -1,11 +1,12 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ManipulateDomUnsafeOperationOptions } from './manipulateDomUnsafe.options'
-import { Alpha, TrimmedDescription } from '../../../../decorators'
+import { Alpha, DisplayName, TrimmedDescription } from '../../../../decorators'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Manipulate DOM Unsafe')
 @DiscriminatorValue(OperationTypes.MANIPULATE_DOM_UNSAFE)
 @TrimmedDescription(`
   The ManipulateDomUnsafe operation directly sets HTML attributes on DOM node(s) targeted using CSS selectors.

@@ -1,11 +1,12 @@
 import { Const, DiscriminatorValue, Required } from '@tsed/schema'
 
 import { SetQueryParametersOperationOptions } from './setQueryParameters.options'
-import { Alpha, TrimmedDescription } from '../../../../decorators'
+import { Alpha, DisplayName, TrimmedDescription } from '../../../../decorators'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Set Query Parameters')
 @DiscriminatorValue(OperationTypes.SET_QUERY_PARAMETERS)
 @TrimmedDescription(`
   This operation should be used to set query parameters on the url.

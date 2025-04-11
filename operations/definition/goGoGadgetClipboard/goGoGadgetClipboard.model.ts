@@ -1,11 +1,12 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { GoGoGadgetClipboardOperationOptions } from './goGoGadgetClipboard.options'
-import { Alpha } from '../../../../decorators'
+import { Alpha, DisplayName } from '../../../../decorators'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Go Go Gadget Clipboard')
 @DiscriminatorValue(OperationTypes.GO_GO_GADGET_CLIPBOARD)
 @Alpha()
 @AutogenDisabled()

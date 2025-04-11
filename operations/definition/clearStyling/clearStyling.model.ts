@@ -1,11 +1,12 @@
 import { Description, DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ClearStylingOperationOptions } from './clearStyling.options'
-import { Alpha } from '../../../../decorators'
+import { Alpha, DisplayName } from '../../../../decorators'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Clear Styling')
 @DiscriminatorValue(OperationTypes.CLEAR_STYLING)
 @Description('This operation will clear any styles added to a component via `styling` configuration.')
 @Alpha()

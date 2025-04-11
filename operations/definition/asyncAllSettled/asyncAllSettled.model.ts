@@ -1,11 +1,12 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { AsyncAllSettledOperationOptions } from './asyncAllSettled.options'
-import { Alpha } from '../../../../decorators'
+import { Alpha, DisplayName } from '../../../../decorators'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Async All Settled')
 @DiscriminatorValue(OperationTypes.ASYNC_ALL_SETTLED)
 @Alpha()
 @AutogenDisabled()

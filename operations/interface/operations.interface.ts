@@ -1,6 +1,5 @@
-import { Any, CollectionOf, Default, Description, DiscriminatorKey } from '@tsed/schema'
+import { Any, Default, Description, DiscriminatorKey } from '@tsed/schema'
 
-import { InputRef } from '../../inputs/inputRef'
 import { SyntaxObject } from '../../syntax'
 import { OperationTypes } from '../enums/operation-types.enum'
 

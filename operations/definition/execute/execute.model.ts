@@ -1,11 +1,13 @@
 import { DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ExecuteOptions } from './execute.options'
+import { DisplayName } from '../../../../decorators'
 import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 import { Stable } from '../../../../decorators/stability'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Execute')
 @DiscriminatorValue(OperationTypes.EXECUTE)
 @TrimmedDescription(`
   The Execute Operation allows users to invoke operations defined on the "EXECUTE" key.

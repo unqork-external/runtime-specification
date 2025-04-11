@@ -1,11 +1,12 @@
 import { Description, DiscriminatorValue, Required } from '@tsed/schema'
 
 import { SetPersistedDataOperationOptions } from './setPersistedData.options'
-import { Beta } from '../../../../decorators'
+import { Beta, DisplayName } from '../../../../decorators'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
+@DisplayName('Set Persisted Data')
 @DiscriminatorValue(OperationTypes.SET_PERSISTED_DATA)
 @Description('The Set Persisted Data operation sets or replaces record in Browser Storage.')
 @Beta()
