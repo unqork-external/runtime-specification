@@ -8,7 +8,7 @@ import { ViewTargets } from '../../../decorators'
 import { Examples } from '../../../decorators/schema/examples.decorator'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
-import { Display } from '../../component-composition/display/component.display'
+import { InputDisplay } from '../../component-composition/display/component.display'
 import { InputField } from '../../component-composition/input/component.input'
 import type { SignalTargets } from '../../signals'
 import { targetedStylingExample } from '../../styling/targeted.styling.example'
@@ -25,7 +25,7 @@ export class FileComponentDefinition extends BaseComponentDefinition {
   type: string = 'file' as const
 
   @Property()
-  display: Display = new Display()
+  display: InputDisplay = new InputDisplay()
 
   @Property()
   field: InputField = new InputField()
