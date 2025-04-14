@@ -1,5 +1,6 @@
 import { Const, Description, DiscriminatorValue, Optional } from '@tsed/schema'
 
+import { ImageAccessibility } from './imageAccessibility'
 import { ImageField } from './imageField'
 import { ImageTargets } from './imageTargets.enum'
 import { ImageStyling } from './styling/image.styling'
@@ -22,6 +23,9 @@ import { targetedStylingExample } from '../../styling/targeted.styling.example'
 export class ImageComponentDefinition extends BaseComponentDefinition {
   @Const('image')
   type: 'image' = 'image' as const
+
+  @Optional()
+  accessibility?: ImageAccessibility = new ImageAccessibility()
 
   @Optional()
   display: Display = new Display()

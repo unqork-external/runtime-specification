@@ -17,6 +17,7 @@ import { Examples } from '../../../decorators/schema/examples.decorator'
 import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
 import { trimAll } from '../../../utilities'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { AccessibilityCommon } from '../../component-composition'
 import { Display } from '../../component-composition/display/component.display'
 import { StandardArrayNestable } from '../../nestables'
 import { type SignalTargets } from '../../signals'
@@ -33,6 +34,9 @@ import { targetedStylingExample } from '../../styling/targeted.styling.example'
 export class PanelComponentDefinition extends BaseComponentDefinition {
   @Const('panel')
   type: 'panel' = 'panel' as const
+
+  @Property()
+  accessibility?: AccessibilityCommon = new AccessibilityCommon()
 
   @CollectionOf(BaseComponentDefinition)
   @Optional()

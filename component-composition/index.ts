@@ -1,3 +1,4 @@
+export * from './accessibility'
 export * from './adornments/component.adornments'
 export * from './display'
 export * from './field/component.field.label'

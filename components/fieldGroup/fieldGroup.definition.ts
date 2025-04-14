@@ -6,6 +6,7 @@ import { FieldGroupTargets } from './targets/fieldGroupTargets.enum'
 import { Examples, ViewTargets } from '../../../decorators'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { AccessibilityCommon } from '../../component-composition'
 import { Display } from '../../component-composition/display/component.display'
 import { StandardArrayNestable } from '../../nestables'
 import type { SignalTargets } from '../../signals'
@@ -17,13 +18,16 @@ import { targetedStylingExample } from '../../styling/targeted.styling.example'
   The Field Group component lets you organize fields and components together in one group.
   You can apply a CSS style to a Field Group component to call the group out to your end-user.
   Use the Field Group component if you want a stylized group of fields as part of a larger page.
-  The Field Group component is similar to the Panel component, but you would not use a 
+  The Field Group component is similar to the Panel component, but you would not use a
   Field Group component for navigation, like you would with a Panel.
 `)
 @ViewTargets(FieldGroupTargets)
 export class FieldGroupComponentDefinition extends BaseComponentDefinition {
   @Const('fieldGroup')
   type: string = 'fieldGroup' as const
+
+  @Property()
+  accessibility?: AccessibilityCommon = new AccessibilityCommon()
 
   @Required()
   @CollectionOf(BaseComponentDefinition)

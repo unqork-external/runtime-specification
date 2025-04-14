@@ -9,6 +9,9 @@ exports[`Panel Contract Tests should ensure the contract is clear - component de
 
 exports[`Panel Contract Tests should ensure the contract is clear - component definition 2`] = `
 {
+  "accessibility": {
+    "$ref": "#/definitions/AccessibilityCommon",
+  },
   "components": {
     "items": {
       "$ref": "#/definitions/BaseComponentDefinition",
@@ -142,6 +145,47 @@ exports[`Panel Contract Tests should ensure the contract is clear - component de
 
 exports[`Panel Contract Tests should ensure the contract is clear - component definition 3`] = `
 {
+  "AccessibilityCommon": {
+    "description": "Accessibility Attributes",
+    "properties": {
+      "ariaCustom": {
+        "description": "Use custom ARIA attributes to enhance accessibility beyond built-in settings. Add ARIA attributes and their values to define how assistive technologies interpret your components. Ensure attributes are valid and appropriate for the selected elements.",
+        "items": {
+          "$ref": "#/definitions/CustomAriaAttribute",
+        },
+        "type": "array",
+      },
+      "ariaDescribedBy": {
+        "description": "List of element IDs that describe the content of the element.",
+        "type": "array",
+      },
+      "ariaDescription": {
+        "description": "Custom description for the element.",
+        "type": "string",
+      },
+      "ariaHidden": {
+        "description": "Indicates the element should be skipped by screen readers.",
+        "type": "boolean",
+      },
+      "ariaLabel": {
+        "description": "Custom label for the element",
+        "type": "string",
+      },
+      "ariaLabelledBy": {
+        "description": "List of element IDs acting as the element's label.",
+        "type": "array",
+      },
+      "ariaLive": {
+        "description": "Indicates the type of interruption to use when announcing changes to the element for screen readers.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "The role this element represents for screen readers.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
   "BaseComponentDefinition": {
     "description": "Base Component Definition is the fundamental interface any component that wishes to leverage the runtime must follow. It is the agreed upon contract between the Runtime and anything that should be recognized as a component.",
     "properties": {
@@ -236,6 +280,19 @@ exports[`Panel Contract Tests should ensure the contract is clear - component de
       "key",
       "type",
     ],
+    "type": "object",
+  },
+  "CustomAriaAttribute": {
+    "properties": {
+      "attribute": {
+        "description": "ARIA attribute",
+        "type": "string",
+      },
+      "value": {
+        "description": "Value of the specific attribute.",
+        "type": "string",
+      },
+    },
     "type": "object",
   },
   "Display": {
@@ -726,6 +783,9 @@ exports[`Panel Contract Tests should ensure the contract is clear - component st
 
 exports[`Panel Contract Tests should ensure the contract is clear - component state 2`] = `
 {
+  "accessibility": {
+    "$ref": "#/definitions/AccessibilityCommon",
+  },
   "childIds": {
     "type": "array",
   },
@@ -895,6 +955,47 @@ exports[`Panel Contract Tests should ensure the contract is clear - component st
 
 exports[`Panel Contract Tests should ensure the contract is clear - component state 3`] = `
 {
+  "AccessibilityCommon": {
+    "description": "Accessibility Attributes",
+    "properties": {
+      "ariaCustom": {
+        "description": "Use custom ARIA attributes to enhance accessibility beyond built-in settings. Add ARIA attributes and their values to define how assistive technologies interpret your components. Ensure attributes are valid and appropriate for the selected elements.",
+        "items": {
+          "$ref": "#/definitions/CustomAriaAttribute",
+        },
+        "type": "array",
+      },
+      "ariaDescribedBy": {
+        "description": "List of element IDs that describe the content of the element.",
+        "type": "array",
+      },
+      "ariaDescription": {
+        "description": "Custom description for the element.",
+        "type": "string",
+      },
+      "ariaHidden": {
+        "description": "Indicates the element should be skipped by screen readers.",
+        "type": "boolean",
+      },
+      "ariaLabel": {
+        "description": "Custom label for the element",
+        "type": "string",
+      },
+      "ariaLabelledBy": {
+        "description": "List of element IDs acting as the element's label.",
+        "type": "array",
+      },
+      "ariaLive": {
+        "description": "Indicates the type of interruption to use when announcing changes to the element for screen readers.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "The role this element represents for screen readers.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
   "BaseComponentDefinition": {
     "description": "Base Component Definition is the fundamental interface any component that wishes to leverage the runtime must follow. It is the agreed upon contract between the Runtime and anything that should be recognized as a component.",
     "properties": {
@@ -989,6 +1090,19 @@ exports[`Panel Contract Tests should ensure the contract is clear - component st
       "key",
       "type",
     ],
+    "type": "object",
+  },
+  "CustomAriaAttribute": {
+    "properties": {
+      "attribute": {
+        "description": "ARIA attribute",
+        "type": "string",
+      },
+      "value": {
+        "description": "Value of the specific attribute.",
+        "type": "string",
+      },
+    },
     "type": "object",
   },
   "Display": {

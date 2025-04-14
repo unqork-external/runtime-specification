@@ -1,5 +1,6 @@
 import { Const, Default, Description, DiscriminatorValue, Example, Optional } from '@tsed/schema'
 
+import { ButtonAccessibility } from './button.accessibility'
 import { ButtonDomEvents } from './button.events'
 import { ButtonField } from './button.field'
 import { ButtonOptions } from './button.options'
@@ -24,11 +25,14 @@ export class ButtonComponentDefinition extends BaseComponentDefinition {
   type: 'button' = 'button' as const
 
   @TrimmedDescription(`
-    Boolean used to determine if the underlying view is simple and unstyled. 
+    Boolean used to determine if the underlying view is simple and unstyled.
     For use in Vega Tables. This setting does not exist in Centauri.
   `)
   @Default(false)
   useSimpleView: boolean = false
+
+  @Optional()
+  accessibility?: ButtonAccessibility = new ButtonAccessibility()
 
   @Optional()
   display: Display = new Display()

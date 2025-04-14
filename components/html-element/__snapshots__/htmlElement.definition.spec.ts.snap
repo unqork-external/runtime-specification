@@ -9,6 +9,9 @@ exports[`HTML Element Contract Tests should ensure the contract is clear 1`] = `
 
 exports[`HTML Element Contract Tests should ensure the contract is clear 2`] = `
 {
+  "accessibility": {
+    "$ref": "#/definitions/AccessibilityCommon",
+  },
   "attributes": {
     "description": "The HTML attributes that apply to the top level tag. Please review our allow lists for possible HTML attributes.",
     "examples": [
@@ -140,6 +143,47 @@ exports[`HTML Element Contract Tests should ensure the contract is clear 2`] = `
 
 exports[`HTML Element Contract Tests should ensure the contract is clear 3`] = `
 {
+  "AccessibilityCommon": {
+    "description": "Accessibility Attributes",
+    "properties": {
+      "ariaCustom": {
+        "description": "Use custom ARIA attributes to enhance accessibility beyond built-in settings. Add ARIA attributes and their values to define how assistive technologies interpret your components. Ensure attributes are valid and appropriate for the selected elements.",
+        "items": {
+          "$ref": "#/definitions/CustomAriaAttribute",
+        },
+        "type": "array",
+      },
+      "ariaDescribedBy": {
+        "description": "List of element IDs that describe the content of the element.",
+        "type": "array",
+      },
+      "ariaDescription": {
+        "description": "Custom description for the element.",
+        "type": "string",
+      },
+      "ariaHidden": {
+        "description": "Indicates the element should be skipped by screen readers.",
+        "type": "boolean",
+      },
+      "ariaLabel": {
+        "description": "Custom label for the element",
+        "type": "string",
+      },
+      "ariaLabelledBy": {
+        "description": "List of element IDs acting as the element's label.",
+        "type": "array",
+      },
+      "ariaLive": {
+        "description": "Indicates the type of interruption to use when announcing changes to the element for screen readers.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "The role this element represents for screen readers.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
   "AttrObject": {
     "properties": {
       "htmlAttribute": {
@@ -158,6 +202,19 @@ exports[`HTML Element Contract Tests should ensure the contract is clear 3`] = `
           "Any other text",
           "<Example> Prompt: "I want to build an Html Element component whose tag has an "alt" attribute and it's value "Alternative text"" Response: {"type":"htmlelement","attributes":[{"htmlAttribute":"alt","value":"Alternative text"}]} </Example>",
         ],
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "CustomAriaAttribute": {
+    "properties": {
+      "attribute": {
+        "description": "ARIA attribute",
+        "type": "string",
+      },
+      "value": {
+        "description": "Value of the specific attribute.",
         "type": "string",
       },
     },

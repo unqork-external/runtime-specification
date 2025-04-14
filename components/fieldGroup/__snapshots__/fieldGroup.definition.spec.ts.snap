@@ -10,6 +10,9 @@ exports[`Field Group Contract Tests should ensure the contract is clear - compon
 
 exports[`Field Group Contract Tests should ensure the contract is clear - component defintion 2`] = `
 {
+  "accessibility": {
+    "$ref": "#/definitions/AccessibilityCommon",
+  },
   "components": {
     "description": "Definitions of children components to be rendered within the Field Group.",
     "items": {
@@ -122,6 +125,47 @@ exports[`Field Group Contract Tests should ensure the contract is clear - compon
 
 exports[`Field Group Contract Tests should ensure the contract is clear - component defintion 3`] = `
 {
+  "AccessibilityCommon": {
+    "description": "Accessibility Attributes",
+    "properties": {
+      "ariaCustom": {
+        "description": "Use custom ARIA attributes to enhance accessibility beyond built-in settings. Add ARIA attributes and their values to define how assistive technologies interpret your components. Ensure attributes are valid and appropriate for the selected elements.",
+        "items": {
+          "$ref": "#/definitions/CustomAriaAttribute",
+        },
+        "type": "array",
+      },
+      "ariaDescribedBy": {
+        "description": "List of element IDs that describe the content of the element.",
+        "type": "array",
+      },
+      "ariaDescription": {
+        "description": "Custom description for the element.",
+        "type": "string",
+      },
+      "ariaHidden": {
+        "description": "Indicates the element should be skipped by screen readers.",
+        "type": "boolean",
+      },
+      "ariaLabel": {
+        "description": "Custom label for the element",
+        "type": "string",
+      },
+      "ariaLabelledBy": {
+        "description": "List of element IDs acting as the element's label.",
+        "type": "array",
+      },
+      "ariaLive": {
+        "description": "Indicates the type of interruption to use when announcing changes to the element for screen readers.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "The role this element represents for screen readers.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
   "BaseComponentDefinition": {
     "description": "Base Component Definition is the fundamental interface any component that wishes to leverage the runtime must follow. It is the agreed upon contract between the Runtime and anything that should be recognized as a component.",
     "properties": {
@@ -218,6 +262,19 @@ exports[`Field Group Contract Tests should ensure the contract is clear - compon
     ],
     "type": "object",
   },
+  "CustomAriaAttribute": {
+    "properties": {
+      "attribute": {
+        "description": "ARIA attribute",
+        "type": "string",
+      },
+      "value": {
+        "description": "Value of the specific attribute.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
   "Display": {
     "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Display as Text' corresponds to the component being rendered with an input element or as text.",
     "properties": {
@@ -241,14 +298,6 @@ exports[`Field Group Contract Tests should ensure the contract is clear - compon
   },
   "FieldGroupSettings": {
     "properties": {
-      "ariaLabel": {
-        "description": "Adds a custom aria-label to the component.",
-        "type": "string",
-      },
-      "ariaRole": {
-        "description": "Adds a custom role to the component.",
-        "type": "string",
-      },
       "customClass": {
         "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
         "type": "string",
@@ -461,6 +510,9 @@ exports[`Field Group Contract Tests should ensure the contract is clear - compon
 
 exports[`Field Group Contract Tests should ensure the contract is clear - component state 2`] = `
 {
+  "accessibility": {
+    "$ref": "#/definitions/AccessibilityCommon",
+  },
   "childIds": {
     "description": "Child ids for all nestable references within the component.",
     "type": "array",
@@ -610,6 +662,47 @@ exports[`Field Group Contract Tests should ensure the contract is clear - compon
 
 exports[`Field Group Contract Tests should ensure the contract is clear - component state 3`] = `
 {
+  "AccessibilityCommon": {
+    "description": "Accessibility Attributes",
+    "properties": {
+      "ariaCustom": {
+        "description": "Use custom ARIA attributes to enhance accessibility beyond built-in settings. Add ARIA attributes and their values to define how assistive technologies interpret your components. Ensure attributes are valid and appropriate for the selected elements.",
+        "items": {
+          "$ref": "#/definitions/CustomAriaAttribute",
+        },
+        "type": "array",
+      },
+      "ariaDescribedBy": {
+        "description": "List of element IDs that describe the content of the element.",
+        "type": "array",
+      },
+      "ariaDescription": {
+        "description": "Custom description for the element.",
+        "type": "string",
+      },
+      "ariaHidden": {
+        "description": "Indicates the element should be skipped by screen readers.",
+        "type": "boolean",
+      },
+      "ariaLabel": {
+        "description": "Custom label for the element",
+        "type": "string",
+      },
+      "ariaLabelledBy": {
+        "description": "List of element IDs acting as the element's label.",
+        "type": "array",
+      },
+      "ariaLive": {
+        "description": "Indicates the type of interruption to use when announcing changes to the element for screen readers.",
+        "type": "string",
+      },
+      "ariaRole": {
+        "description": "The role this element represents for screen readers.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
   "BaseComponentDefinition": {
     "description": "Base Component Definition is the fundamental interface any component that wishes to leverage the runtime must follow. It is the agreed upon contract between the Runtime and anything that should be recognized as a component.",
     "properties": {
@@ -706,6 +799,19 @@ exports[`Field Group Contract Tests should ensure the contract is clear - compon
     ],
     "type": "object",
   },
+  "CustomAriaAttribute": {
+    "properties": {
+      "attribute": {
+        "description": "ARIA attribute",
+        "type": "string",
+      },
+      "value": {
+        "description": "Value of the specific attribute.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
   "Display": {
     "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Display as Text' corresponds to the component being rendered with an input element or as text.",
     "properties": {
@@ -729,14 +835,6 @@ exports[`Field Group Contract Tests should ensure the contract is clear - compon
   },
   "FieldGroupSettings": {
     "properties": {
-      "ariaLabel": {
-        "description": "Adds a custom aria-label to the component.",
-        "type": "string",
-      },
-      "ariaRole": {
-        "description": "Adds a custom role to the component.",
-        "type": "string",
-      },
       "customClass": {
         "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
         "type": "string",

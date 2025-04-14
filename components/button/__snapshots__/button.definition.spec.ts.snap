@@ -9,6 +9,9 @@ exports[`Button Contract Tests should ensure the contract is clear 1`] = `
 
 exports[`Button Contract Tests should ensure the contract is clear 2`] = `
 {
+  "accessibility": {
+    "$ref": "#/definitions/ButtonAccessibility",
+  },
   "adornments": {
     "type": "object",
   },
@@ -163,6 +166,24 @@ exports[`Button Contract Tests should ensure the contract is clear 2`] = `
 
 exports[`Button Contract Tests should ensure the contract is clear 3`] = `
 {
+  "ButtonAccessibility": {
+    "description": "Accessibility Attributes",
+    "properties": {
+      "ariaHasPopup": {
+        "description": "Value for the aria-haspopup attribute.",
+        "type": "string",
+      },
+      "ariaLabel": {
+        "description": "Custom label for the element",
+        "type": "string",
+      },
+      "ariaLabelledBy": {
+        "description": "List of element IDs acting as the element's label.",
+        "type": "array",
+      },
+    },
+    "type": "object",
+  },
   "ButtonDomEvents": {
     "properties": {
       "lastClicked": {
@@ -177,10 +198,6 @@ exports[`Button Contract Tests should ensure the contract is clear 3`] = `
   },
   "ButtonField": {
     "properties": {
-      "ariaLabel": {
-        "description": "Adds a custom aria-label to the component.",
-        "type": "string",
-      },
       "customClass": {
         "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
         "type": "string",

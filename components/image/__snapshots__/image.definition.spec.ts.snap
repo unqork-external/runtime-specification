@@ -9,6 +9,9 @@ exports[`Image Contract Tests should ensure the contract is clear 1`] = `
 
 exports[`Image Contract Tests should ensure the contract is clear 2`] = `
 {
+  "accessibility": {
+    "$ref": "#/definitions/ImageAccessibility",
+  },
   "display": {
     "$ref": "#/definitions/Display",
   },
@@ -110,6 +113,19 @@ exports[`Image Contract Tests should ensure the contract is clear 2`] = `
 
 exports[`Image Contract Tests should ensure the contract is clear 3`] = `
 {
+  "CustomAriaAttribute": {
+    "properties": {
+      "attribute": {
+        "description": "ARIA attribute",
+        "type": "string",
+      },
+      "value": {
+        "description": "Value of the specific attribute.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
   "Display": {
     "description": "Basic UI settings related to how a component may be displayed and interacted with. 'Hidden' corresponds to visibility. 'Interactive' corresponds to the end-user's ability to interact with input components. 'Display as Text' corresponds to the component being rendered with an input element or as text.",
     "properties": {
@@ -126,6 +142,23 @@ exports[`Image Contract Tests should ensure the contract is clear 3`] = `
       "readOnlyView": {
         "default": false,
         "description": "Defines how the component will be displayed. When \`false\`, the component is displayed as an input field. When \`true\`, the component will not accept any input from the user, and its value will be rendered inline as text and not as an input component. If no value is present, the word 'None' is rendered. If a prefix or suffix is set for the component, they also appear as inline text.",
+        "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "ImageAccessibility": {
+    "description": "Accessibility Attributes",
+    "properties": {
+      "ariaCustom": {
+        "description": "Use custom ARIA attributes to enhance accessibility beyond built-in settings. Add ARIA attributes and their values to define how assistive technologies interpret your components. Ensure attributes are valid and appropriate for the selected elements.",
+        "items": {
+          "$ref": "#/definitions/CustomAriaAttribute",
+        },
+        "type": "array",
+      },
+      "ariaHidden": {
+        "description": "Indicates the element should be skipped by screen readers.",
         "type": "boolean",
       },
     },

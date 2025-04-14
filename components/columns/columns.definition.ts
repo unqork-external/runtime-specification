@@ -7,6 +7,7 @@ import { ColumnsTargets } from './targets/columnsTargets.enum'
 import { ViewTargets } from '../../../decorators'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
+import { AccessibilityCommon } from '../../component-composition/accessibility'
 import { Display } from '../../component-composition/display/component.display'
 import { StandardArrayNestable } from '../../nestables'
 import type { SignalTargets } from '../../signals'
@@ -20,6 +21,9 @@ import type { SignalTargets } from '../../signals'
 export class ColumnsComponentDefinition extends BaseComponentDefinition {
   @Const('columns')
   type: 'columns' = 'columns' as const
+
+  @Property()
+  accessibility?: AccessibilityCommon = new AccessibilityCommon()
 
   @CollectionOf(ColumnData)
   @TrimmedDescription(`
