@@ -8,7 +8,7 @@ import { Operation } from '../../interface/operations.interface'
 
 @DisplayName('Delete Persisted Data')
 @DiscriminatorValue(OperationTypes.DELETE_PERSISTED_DATA)
-@Description('The Delete Persisted Data operation deletes the record in Browser Storage.')
+@Description('Deletes a record from Browser Storage.')
 @Beta()
 @AutogenDisabled()
 export class DeletePersistedDataOperation extends Operation<OperationTypes.DELETE_PERSISTED_DATA> {

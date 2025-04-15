@@ -60,7 +60,7 @@ exports[`Operation Model: ManipulateDomUnsafe Tests ManipulateDomUnsafe Model 1`
       "type": "object",
     },
   },
-  "description": "The ManipulateDomUnsafe operation directly sets HTML attributes on DOM node(s) targeted using CSS selectors.",
+  "description": "Directly sets HTML attributes on DOM nodes using CSS selectors.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

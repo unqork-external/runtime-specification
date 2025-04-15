@@ -8,7 +8,7 @@ import { Operation } from '../../interface/operations.interface'
 
 @DisplayName('Set Persisted Data')
 @DiscriminatorValue(OperationTypes.SET_PERSISTED_DATA)
-@Description('The Set Persisted Data operation sets or replaces record in Browser Storage.')
+@Description('Sets or replaces a record in Browser Storage.')
 @Beta()
 @AutogenDisabled()
 export class SetPersistedDataOperation extends Operation<OperationTypes.SET_PERSISTED_DATA> {

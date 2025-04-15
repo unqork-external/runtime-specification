@@ -9,8 +9,7 @@ import { Operation } from '../../interface/operations.interface'
 @DisplayName('Set Query Parameters')
 @DiscriminatorValue(OperationTypes.SET_QUERY_PARAMETERS)
 @TrimmedDescription(`
-  This operation should be used to set query parameters on the url.
-  This operation will override the existing query parameters on the url.
+  Sets query parameters on the URL, overriding existing ones.
 `)
 @Alpha()
 @AutogenDisabled()

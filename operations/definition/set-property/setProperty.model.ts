@@ -8,7 +8,7 @@ import { Operation } from '../../interface/operations.interface'
 
 @DisplayName('Set Property')
 @DiscriminatorValue(OperationTypes.SET_PROPERTY)
-@Description('The Set Property operation sets a value at a property location for a given target.')
+@Description('Sets a value at a property location for a target component.')
 @Stable()
 export class SetPropertyOperation extends Operation<OperationTypes.SET_PROPERTY> {
   public type = OperationTypes.SET_PROPERTY as const

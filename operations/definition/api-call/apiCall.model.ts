@@ -8,9 +8,7 @@ import { Operation } from '../../interface/operations.interface'
 
 @DisplayName('API Call')
 @DiscriminatorValue(OperationTypes.API_CALL)
-@Description(
-  'An operation to represent legacy behavior from the plugin component. Performs REST API calls with a lot of options.',
-)
+@Description('Represents legacy behavior from the Plugin component performing REST API calls.')
 @Alpha()
 @AutogenDisabled()
 export class ApiCallOperation extends Operation<OperationTypes.API_CALL> {

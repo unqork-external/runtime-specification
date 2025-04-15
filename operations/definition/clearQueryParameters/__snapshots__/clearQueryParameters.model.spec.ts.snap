@@ -31,7 +31,7 @@ exports[`Operation Model: ClearQueryParameters Tests ClearQueryParameters Model 
       "type": "object",
     },
   },
-  "description": "This operation should be used to clear query parameters on the url.",
+  "description": "Clears all query parameters from the URL.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

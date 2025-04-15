@@ -5,11 +5,11 @@ import { OperationOptions } from '../../interface'
 export class SetSpinnerOptions extends OperationOptions {
   @Optional()
   @Default(false)
-  @Description(`'showCursorSpinner' converts the user's cursor to a spinner when enabled.`)
+  @Description(`If set to true, then the mouse will have a small spinner enabled.`)
   showCursorSpinner?: boolean = false
 
   @Optional()
   @Default(false)
-  @Description(`'showPageSpinner' uses the R1 Page Spinner animation when enabled.`)
+  @Description(`If set to true, then the page will have a small spinner enabled.`)
   showPageSpinner?: boolean = false
 }

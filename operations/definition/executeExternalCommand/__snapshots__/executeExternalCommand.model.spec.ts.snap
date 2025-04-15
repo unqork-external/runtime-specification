@@ -40,7 +40,7 @@ exports[`Operation Model: ExecuteExternalCommand Tests ExecuteExternalCommand Mo
       "type": "object",
     },
   },
-  "description": "The Execute External Command operation allows Embedded Vega applications to interact with their parent Centauri application by triggering logic components and setting parent component values, as specified by the operation options.",
+  "description": "Triggers Centauri logic components from within a Cross Runtime Support (CRS) Vega Panel.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

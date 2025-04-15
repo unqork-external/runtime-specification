@@ -8,9 +8,7 @@ import { Operation } from '../../interface/operations.interface'
 
 @DisplayName('Append Styling')
 @DiscriminatorValue(OperationTypes.APPEND_STYLING)
-@Description(
-  "This operation will append CSS objects and/or classes to a specific targets' existing styling configuration.",
-)
+@Description("Appends CSS objects or classes to a target's existing styles.")
 @Alpha()
 @AutogenDisabled()
 export class AppendStylingOperation extends Operation<OperationTypes.APPEND_STYLING> {

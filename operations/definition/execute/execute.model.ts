@@ -10,8 +10,8 @@ import { Operation } from '../../interface/operations.interface'
 @DisplayName('Execute')
 @DiscriminatorValue(OperationTypes.EXECUTE)
 @TrimmedDescription(`
-  The Execute Operation allows users to invoke operations defined on the "EXECUTE" key.
-  This is a way to call a concept of a function on a different component.
+  Invokes Operations defined on the 'On Execute' Event for other components. 
+  When a logic component is specified as a 'Target Key', triggers the logic component.
 `)
 @Stable()
 export class ExecuteOperation extends Operation<OperationTypes.EXECUTE> {

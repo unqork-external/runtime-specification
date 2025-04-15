@@ -8,7 +8,7 @@ import { Operation } from '../../interface/operations.interface'
 
 @DisplayName('Clear Styling')
 @DiscriminatorValue(OperationTypes.CLEAR_STYLING)
-@Description('This operation will clear any styles added to a component via `styling` configuration.')
+@Description("Clears styles added via 'styling' configuration.")
 @Alpha()
 @AutogenDisabled()
 export class ClearStylingOperation extends Operation<OperationTypes.CLEAR_STYLING> {

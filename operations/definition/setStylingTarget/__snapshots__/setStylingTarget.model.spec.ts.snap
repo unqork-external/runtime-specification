@@ -43,7 +43,7 @@ exports[`Set Styling Target Operation Model should match this JSON Schema 1`] = 
       "type": "object",
     },
   },
-  "description": "This operation is used to set CSS properties or classnames to a single, specific target on a component. This operation will overwrite any previously set styling config for that specific target.",
+  "description": "Sets CSS properties or classnames for a specific property on the styles object for the target component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

@@ -1,18 +1,14 @@
-import { DiscriminatorValue, Required } from '@tsed/schema'
+import { Description, DiscriminatorValue, Required } from '@tsed/schema'
 
 import { ToggleClassOnTargetOperationOptions } from './toggleClassOnTarget.options'
 import { Alpha, DisplayName } from '../../../../decorators'
-import { TrimmedDescription } from '../../../../decorators/schema/trimmedDescription.decorator'
 import { AutogenDisabled } from '../../decorators/autogenDisabled.decorator'
 import { OperationTypes } from '../../enums/operation-types.enum'
 import { Operation } from '../../interface/operations.interface'
 
 @DisplayName('Toggle Class On Target')
 @DiscriminatorValue(OperationTypes.TOGGLE_CLASS_ON_TARGET)
-@TrimmedDescription(`
-    This operation will add a classname to a target if it is not currently there,
-    or remove a classname from a target if it already exists on it
-  `)
+@Description('Adds or removes a classname from a target.')
 @Alpha()
 @AutogenDisabled()
 export class ToggleClassOnTargetOperation extends Operation<OperationTypes.TOGGLE_CLASS_ON_TARGET> {

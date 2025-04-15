@@ -63,7 +63,7 @@ exports[`Set Property Model should match this JSON Schema 1`] = `
       "type": "object",
     },
   },
-  "description": "The Set Property operation sets a value at a property location for a given target.",
+  "description": "Sets a value at a property location for a target component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

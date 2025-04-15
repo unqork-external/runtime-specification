@@ -42,7 +42,7 @@ exports[`Operation Model: ToggleOperation Tests should match this JSON Schema 1`
       "type": "object",
     },
   },
-  "description": "Toggle a boolean property. Only works on boolean properties.",
+  "description": "Toggles a boolean property.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

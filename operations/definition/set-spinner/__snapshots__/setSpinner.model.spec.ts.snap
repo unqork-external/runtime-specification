@@ -18,19 +18,19 @@ exports[`Set Spinner Model should match this JSON Schema 1`] = `
         },
         "showCursorSpinner": {
           "default": false,
-          "description": "'showCursorSpinner' converts the user's cursor to a spinner when enabled.",
+          "description": "If set to true, then the mouse will have a small spinner enabled.",
           "type": "boolean",
         },
         "showPageSpinner": {
           "default": false,
-          "description": "'showPageSpinner' uses the R1 Page Spinner animation when enabled.",
+          "description": "If set to true, then the page will have a small spinner enabled.",
           "type": "boolean",
         },
       },
       "type": "object",
     },
   },
-  "description": "R1 Compatibility Operation for the spinner output. The SET_SPINNER operation will set a spinner depending on the arguments passed in. If "showCursorSpinner" is set to true, then the mouse will have a small spinner enabled. If "showPageSpinner" is set to true, then the page will have a small spinner enabled.",
+  "description": "Legacy Support Operation. R1 Compatibility Operation for the spinner output.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

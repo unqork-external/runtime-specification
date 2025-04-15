@@ -47,7 +47,7 @@ exports[`Operation Model: ScrollTo Tests should match this JSON Schema 1`] = `
       "type": "object",
     },
   },
-  "description": "ScrollToOperation will scroll the page in relation to the targetKey. If targetKey is unset, it will scroll to the top of the page.",
+  "description": "Scrolls the page to a target element or the top of the page.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

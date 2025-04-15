@@ -9,8 +9,7 @@ import { Operation } from '../../interface/operations.interface'
 @DisplayName('ScrollTo')
 @DiscriminatorValue(OperationTypes.SCROLL_TO)
 @TrimmedDescription(`
-  ScrollToOperation will scroll the page in relation to the targetKey.
-  If targetKey is unset, it will scroll to the top of the page.
+  Scrolls the page to a target element or the top of the page.
 `)
 @Beta()
 @AutogenDisabled()

@@ -10,8 +10,8 @@ import { Operation } from '../../interface/operations.interface'
 @DisplayName('Toggle Reflexive Input')
 @DiscriminatorValue(OperationTypes.TOGGLE_REFLEXIVE_INPUT)
 @TrimmedDescription(`
-    This operation will toggle the reflexive input in configuration editor or in ops builder.
-    The reflexive input toggle is determined by whether the target component being watched matches the expected value.
+  Toggles the reflexive input in configuration editor or in ops builder. 
+  The reflexive input toggle is determined by whether the target component being watched matches the expected value.
 `)
 @Alpha()
 @AutogenDisabled()

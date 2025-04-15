@@ -8,7 +8,7 @@ import { Operation } from '../../interface/operations.interface'
 
 @DisplayName('Read Persisted Data')
 @DiscriminatorValue(OperationTypes.READ_PERSISTED_DATA)
-@Description('The Read Persisted Data operation retrieves the record from Browser Storage.')
+@Description('Retrieves a record from Browser Storage.')
 @Beta()
 @AutogenDisabled()
 export class ReadPersistedDataOperation extends Operation<OperationTypes.READ_PERSISTED_DATA> {

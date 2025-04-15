@@ -62,7 +62,7 @@ exports[`Operation Model: ToggleReflexiveInput Tests ToggleReflexiveInput Model 
       "type": "object",
     },
   },
-  "description": "This operation will toggle the reflexive input in configuration editor or in ops builder. The reflexive input toggle is determined by whether the target component being watched matches the expected value.",
+  "description": "Toggles the reflexive input in configuration editor or in ops builder. The reflexive input toggle is determined by whether the target component being watched matches the expected value.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

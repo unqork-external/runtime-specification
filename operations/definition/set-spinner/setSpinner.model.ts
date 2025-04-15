@@ -10,10 +10,7 @@ import { Operation } from '../../interface/operations.interface'
 @DisplayName('Set Spinner')
 @DiscriminatorValue(OperationTypes.SET_SPINNER)
 @TrimmedDescription(`
-    R1 Compatibility Operation for the spinner output.
-    The SET_SPINNER operation will set a spinner depending on the arguments passed in.
-    If "showCursorSpinner" is set to true, then the mouse will have a small spinner enabled.
-    If "showPageSpinner" is set to true, then the page will have a small spinner enabled.
+  Legacy Support Operation. R1 Compatibility Operation for the spinner output.
 `)
 @Stable()
 export class SetSpinnerOperation extends Operation<OperationTypes.SET_SPINNER> {

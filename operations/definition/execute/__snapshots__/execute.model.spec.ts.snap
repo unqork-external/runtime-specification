@@ -45,7 +45,7 @@ exports[`Execute Operation Model Test should match this JSON Schema 1`] = `
       "type": "object",
     },
   },
-  "description": "The Execute Operation allows users to invoke operations defined on the "EXECUTE" key. This is a way to call a concept of a function on a different component.",
+  "description": "Invokes Operations defined on the 'On Execute' Event for other components. When a logic component is specified as a 'Target Key', triggers the logic component.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

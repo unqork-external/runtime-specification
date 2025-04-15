@@ -39,7 +39,7 @@ exports[`Operation Model: ReadPersistedData Tests ReadPersistedData Model 1`] = 
       "type": "object",
     },
   },
-  "description": "The Read Persisted Data operation retrieves the record from Browser Storage.",
+  "description": "Retrieves a record from Browser Storage.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

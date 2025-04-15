@@ -32,7 +32,7 @@ exports[`Operation Model: FocusOperation Tests should match this JSON Schema 1`]
       "type": "object",
     },
   },
-  "description": "Applies the DOM "focus" attribute to a specific target.",
+  "description": "Applies the DOM 'focus' attribute to a target element.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

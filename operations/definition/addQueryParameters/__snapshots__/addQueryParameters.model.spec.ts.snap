@@ -43,7 +43,7 @@ exports[`Operation Model: AddQueryParameters Tests AddQueryParameters Model 1`] 
       "type": "object",
     },
   },
-  "description": "This operation should be used to add new query parameters to the existing query parameters on the url.",
+  "description": "Adds new query parameters to the URL.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

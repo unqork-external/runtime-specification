@@ -8,11 +8,9 @@ import { Operation } from '../../interface/operations.interface'
 @DisplayName('Add Nested Components')
 @DiscriminatorValue(OperationTypes.ADD_NESTED_COMPONENTS)
 @TrimmedDescription(`
-  Given a target, add a set of component templates to that location as children.
-
-  Primarily created for UDesigner to create child components.
-
-  Not encouraged for use due to direct exposure of the specification.
+  Add a set of component templates to a given Target location as children. 
+  Primarily created for UDesigner to create child components. 
+  Will not be for GA use due to direct exposure of the specification.
 `)
 @Alpha()
 export class AddNestedComponentsOperation extends Operation<OperationTypes.ADD_NESTED_COMPONENTS> {

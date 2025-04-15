@@ -38,7 +38,7 @@ exports[`Operation Model: RemoveQueryParameters Tests RemoveQueryParameters Mode
       "type": "object",
     },
   },
-  "description": "This operation should be used to remove query parameters on the url.",
+  "description": "Removes specified query parameters from the URL.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

@@ -10,8 +10,7 @@ import { Operation } from '../../interface/operations.interface'
 @DisplayName('Set Styling')
 @DiscriminatorValue(OperationTypes.SET_STYLING)
 @TrimmedDescription(`
-  This operation should be used to set an entire styling object on a component.
-  This operation will override any pre-existing styling configuration in the component definition.
+  Sets the entire styling object on a target component, overriding existing styles.
 `)
 @Alpha()
 @AutogenDisabled()

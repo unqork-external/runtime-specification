@@ -8,7 +8,7 @@ import { Operation } from '../../interface/operations.interface'
 
 @DisplayName('Toggle')
 @DiscriminatorValue(OperationTypes.TOGGLE)
-@Description('Toggle a boolean property. Only works on boolean properties.')
+@Description('Toggles a boolean property.')
 @Stable()
 export class ToggleOperation extends Operation<OperationTypes.TOGGLE> {
   public type = OperationTypes.TOGGLE as const

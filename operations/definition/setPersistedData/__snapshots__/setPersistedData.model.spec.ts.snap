@@ -43,7 +43,7 @@ exports[`Operation Model: SetPersistedData Tests SetPersistedData Model 1`] = `
       "type": "object",
     },
   },
-  "description": "The Set Persisted Data operation sets or replaces record in Browser Storage.",
+  "description": "Sets or replaces a record in Browser Storage.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",

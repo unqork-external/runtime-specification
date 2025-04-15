@@ -38,7 +38,7 @@ exports[`Operation Model: SetQueryParameters Tests SetQueryParameters Model 1`] 
       "type": "object",
     },
   },
-  "description": "This operation should be used to set query parameters on the url. This operation will override the existing query parameters on the url.",
+  "description": "Sets query parameters on the URL, overriding existing ones.",
   "properties": {
     "creatorSummary": {
       "description": "A detailed summary of the operation",
