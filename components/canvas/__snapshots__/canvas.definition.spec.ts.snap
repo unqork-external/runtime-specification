@@ -1093,6 +1093,78 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component d
           },
         ],
       },
+      "representationHeaderSignalsButton": {
+        "description": "Adds styles to the component's signals button.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "representationHeaderSignalsButtonLabel": {
+        "description": "Adds styles to the component's signals button label.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "representationHeaderSignalsWrapper": {
+        "description": "Adds styles to the component's signals wrapper.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
       "representationInformationDropdown": {
         "description": "Adds styles to the wrapper around the representation information.",
         "oneOf": [
@@ -2646,6 +2718,78 @@ exports[`Canvas Contract Tests should ensure the contract is clear - component s
       },
       "representationDraggedKey": {
         "description": "Adds styles to the wrapper around the canvas dragged representation component key.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "representationHeaderSignalsButton": {
+        "description": "Adds styles to the component's signals button.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "representationHeaderSignalsButtonLabel": {
+        "description": "Adds styles to the component's signals button label.",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "representationHeaderSignalsWrapper": {
+        "description": "Adds styles to the component's signals wrapper.",
         "oneOf": [
           {
             "type": "string",

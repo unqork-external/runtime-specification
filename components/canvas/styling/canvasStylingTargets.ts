@@ -199,6 +199,18 @@ export class CanvasStylingTargets implements TargetsModel<CanvasTargetsEnum> {
   [CanvasTargetsEnum.representationInformationItemText]: CssClassOrProps;
 
   @Css()
+  @Description("Adds styles to the component's signals wrapper.")
+  [CanvasTargetsEnum.representationHeaderSignalsWrapper]: CssClassOrProps;
+
+  @Css()
+  @Description("Adds styles to the component's signals button.")
+  [CanvasTargetsEnum.representationHeaderSignalsButton]: CssClassOrProps;
+
+  @Css()
+  @Description("Adds styles to the component's signals button label.")
+  [CanvasTargetsEnum.representationHeaderSignalsButtonLabel]: CssClassOrProps;
+
+  @Css()
   @Description('Adds styles to the wrapper around the canvas item status message.')
   [CanvasTargetsEnum.canvasItemStatusMessage]: CssClassOrProps;
 
