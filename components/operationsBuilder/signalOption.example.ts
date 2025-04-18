@@ -2,8 +2,8 @@ import { createExamples } from '../../../utilities'
 
 export const signalOptionsExamples = createExamples({
   standardExamples: [
-    { label: 'On Blur', value: 'onBlur', description: 'Occurs when an input component has lost focus.' },
-    { label: 'On Click', value: 'onClick', description: 'Occurs on click of any UI component that is not disabled.' },
+    { label: 'On Blur', value: 'onBlur', description: 'When input component loses focus' },
+    { label: 'On Click', value: 'onClick', description: 'When a non-disabled UI component is clicked by the user' },
   ],
   nlpExamples: [
     {
@@ -11,11 +11,11 @@ export const signalOptionsExamples = createExamples({
       response: {
         type: 'operationsBuilder',
         signalTypes: [
-          { label: 'On Blur', value: 'onBlur', description: 'Occurs when an input component has lost focus.' },
+          { label: 'On Blur', value: 'onBlur', description: 'When input component loses focus' },
           {
             label: 'On Click',
             value: 'onClick',
-            description: 'Occurs on click of any UI component that is not disabled.',
+            description: 'When a non-disabled UI component is clicked by the user',
           },
         ],
       },

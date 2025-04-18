@@ -48,16 +48,16 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear - 
     "description": "List of initial event types",
     "examples": [
       {
-        "description": "Occurs when an input component has lost focus.",
+        "description": "When input component loses focus",
         "label": "On Blur",
         "value": "onBlur",
       },
       {
-        "description": "Occurs on click of any UI component that is not disabled.",
+        "description": "When a non-disabled UI component is clicked by the user",
         "label": "On Click",
         "value": "onClick",
       },
-      "<Example> Prompt: "I want to build a component with signal types" Response: {"type":"operationsBuilder","signalTypes":[{"label":"On Blur","value":"onBlur","description":"Occurs when an input component has lost focus."},{"label":"On Click","value":"onClick","description":"Occurs on click of any UI component that is not disabled."}]} </Example>",
+      "<Example> Prompt: "I want to build a component with signal types" Response: {"type":"operationsBuilder","signalTypes":[{"label":"On Blur","value":"onBlur","description":"When input component loses focus"},{"label":"On Click","value":"onClick","description":"When a non-disabled UI component is clicked by the user"}]} </Example>",
     ],
     "items": {
       "$ref": "#/definitions/SignalOption",
@@ -111,16 +111,16 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear - 
     "description": "List of event types in dropdown list",
     "examples": [
       {
-        "description": "Occurs when an input component has lost focus.",
+        "description": "When input component loses focus",
         "label": "On Blur",
         "value": "onBlur",
       },
       {
-        "description": "Occurs on click of any UI component that is not disabled.",
+        "description": "When a non-disabled UI component is clicked by the user",
         "label": "On Click",
         "value": "onClick",
       },
-      "<Example> Prompt: "I want to build a component with signal types" Response: {"type":"operationsBuilder","signalTypes":[{"label":"On Blur","value":"onBlur","description":"Occurs when an input component has lost focus."},{"label":"On Click","value":"onClick","description":"Occurs on click of any UI component that is not disabled."}]} </Example>",
+      "<Example> Prompt: "I want to build a component with signal types" Response: {"type":"operationsBuilder","signalTypes":[{"label":"On Blur","value":"onBlur","description":"When input component loses focus"},{"label":"On Click","value":"onClick","description":"When a non-disabled UI component is clicked by the user"}]} </Example>",
     ],
     "items": {
       "$ref": "#/definitions/SignalOption",
