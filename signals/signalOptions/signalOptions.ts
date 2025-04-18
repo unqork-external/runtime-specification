@@ -6,6 +6,11 @@ export enum EventScope {
   Target = 'target',
   Self = 'self',
   Child = 'child',
+  /**
+   * @deprecated This will potentially be removed when module level events rolls
+   * out. Just used in places where it's needed for backwards compatibility for
+   * now.
+   */
   Global = 'global',
 }
 
