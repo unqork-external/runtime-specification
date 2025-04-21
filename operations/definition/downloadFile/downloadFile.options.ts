@@ -8,6 +8,6 @@ export class DownloadFileOperationOptions extends OperationOptions {
   url: string
 
   @Required()
-  @Description('String for the name of the file to be saved as (default: filename in the url)')
+  @Description('Name of the file that it will be downloaded as')
   filename: string
 }

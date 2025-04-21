@@ -2,12 +2,11 @@
 
 exports[`Operation Model: DownloadFile Tests should match this JSON Schema 1`] = `
 {
-  "autogenDisabled": true,
   "definitions": {
     "DownloadFileOperationOptions": {
       "properties": {
         "filename": {
-          "description": "String for the name of the file to be saved as (default: filename in the url)",
+          "description": "Name of the file that it will be downloaded as",
           "minLength": 1,
           "type": "string",
         },
