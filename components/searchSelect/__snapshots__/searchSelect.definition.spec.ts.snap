@@ -53,6 +53,10 @@ exports[`SearchSelect Contract Tests should ensure the contract is clear 2`] = `
   "package": {
     "$ref": "#/definitions/PackageModel",
   },
+  "searchInput": {
+    "description": "Reflects the value of what the user types into search before selection. Unset value after end user makes a selection. Retains value if user types into search and clicks out of it before making a selection.",
+    "type": "string",
+  },
   "selected": {
     "description": "Fully qualified child keys for selectedOptions nestables. Maintained by nestable api.",
     "type": "array",

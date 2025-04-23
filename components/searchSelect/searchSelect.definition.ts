@@ -1,4 +1,4 @@
-import { CollectionOf, Const, Default, Description, DiscriminatorValue, Property } from '@tsed/schema'
+import { CollectionOf, Const, Default, Description, DiscriminatorValue, Optional, Property } from '@tsed/schema'
 
 import { OptionNestable } from './optionNestable'
 import { SearchSelectField } from './searchSelectField'
@@ -47,6 +47,14 @@ export class SearchSelectComponentDefinition extends BaseComponentDefinition {
 
   @Description('Fully qualified child keys for options nestables. Maintained by nestable api.')
   optionKeys: string[] = []
+
+  @Optional()
+  @TrimmedDescription(`
+    Reflects the value of what the user types into search before selection.
+    Unset value after end user makes a selection.
+    Retains value if user types into search and clicks out of it before making a selection.
+  `)
+  searchInput?: string
 
   @CollectionOf(BaseComponentDefinition)
   @Description('Nested selected option component definitions')
