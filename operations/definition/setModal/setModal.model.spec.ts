@@ -1,4 +1,5 @@
 import { SetModalOperation } from './setModal.model'
+import { type SetModalOptions } from './setModal.options'
 import { generateSchemaAndValidate } from '../../../../utilities'
 import { createOperation } from '../../createOperation'
 import { OperationTypes } from '../../enums/operation-types.enum'
@@ -27,8 +28,7 @@ describe('setModal', () => {
   })
 
   it('should error if no modalAction is provided', () => {
-    //@ts-ignore
-    const op = createOperation(OperationTypes.SET_MODAL, {})
+    const op = createOperation(OperationTypes.SET_MODAL, {} as SetModalOptions)
 
     const isValid = validate(op)
     expect(isValid).toBeFalse()

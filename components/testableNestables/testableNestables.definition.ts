@@ -40,11 +40,11 @@ export class TestableNestablesComponentDefinition extends BaseComponentDefinitio
 
   @Optional()
   @Description('Two dimensional matrix data to add on component initialization')
-  initialMatrixData?: Array<BaseComponentDefinition[]>
+  initialMatrixData?: BaseComponentDefinition[][]
 
   @Optional()
   @Description('Data object to add to component as nestable children')
-  addChildrenData?: BaseComponentDefinition[] | Array<BaseComponentDefinition[]>
+  addChildrenData?: BaseComponentDefinition[] | BaseComponentDefinition[][]
 
   @Optional()
   declare styling?: TestableNestablesStyling

@@ -3,7 +3,7 @@ import { Description, Enum, Optional, Property, Required } from '@tsed/schema'
 import { Field } from '../../component-composition/field/component.field.label'
 import { InputSubLabel } from '../../component-composition/input/component.input'
 
-enum RadioDataSrc {
+export enum RadioDataSrc {
   None = 'None',
   DataReferenceKey = 'dataReferenceKey',
 }

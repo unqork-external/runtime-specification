@@ -1,4 +1,5 @@
 import { SetValidationRuleOperation } from './setValidationRule.model'
+import { type SetValidationRuleOptions } from './setValidationRule.options'
 import { generateSchemaAndValidate } from '../../../../utilities'
 import { ValidationRuleTypes } from '../../../validations'
 import { createOperation } from '../../createOperation'
@@ -29,8 +30,7 @@ describe('setValidation', () => {
   })
 
   it('should return false if validation rules are not being send', () => {
-    //@ts-ignore
-    const op = createOperation(OperationTypes.SET_VALIDATION_RULE, {})
+    const op = createOperation(OperationTypes.SET_VALIDATION_RULE, {} as SetValidationRuleOptions)
     const isValid = validate(op)
     expect(isValid).toBeFalse()
   })

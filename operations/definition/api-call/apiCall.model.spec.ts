@@ -1,5 +1,6 @@
 /* eslint-disable max-len */
 import { ApiCallOperation } from './apiCall.model'
+import type { ApiCallOptions } from './apiCall.options'
 import { ApiOutputArgs } from './apiCall.type'
 import { HTTPMethodType } from './method.type'
 import { ServiceType } from './serviceType.type'
@@ -37,10 +38,8 @@ describe('API Call Operation Model', () => {
       method: HTTPMethodType.GET,
       url: 'https://api-calls-r-us.com',
       outputs: [
-        // ts-ignore is used before invalid definitions throughout this test file
-        // otherwise, they're flagged as type errors because we have schemas now, yay!
-        // @ts-ignore
         {
+          targetKey: '',
           seekValuesFromHeader: true,
         },
       ],
@@ -79,8 +78,10 @@ describe('API Call Operation Model', () => {
   })
 
   it('should be invalid if method or url are blank', () => {
-    // @ts-ignore
-    const missingMethodOp = createOperation(OperationTypes.API_CALL, { ...basicApiCallOptions, method: '' })
+    const missingMethodOp = createOperation(OperationTypes.API_CALL, {
+      ...basicApiCallOptions,
+      method: '',
+    } as unknown as ApiCallOptions)
     const missingUrlOp = createOperation(OperationTypes.API_CALL, { ...basicApiCallOptions, url: '' })
 
     expect(validate(missingMethodOp)).toBeFalse()
@@ -90,7 +91,6 @@ describe('API Call Operation Model', () => {
   it('should be invalid if outputs.targetKey are missing', () => {
     const missingOutputTargetOp = createOperation(OperationTypes.API_CALL, {
       ...basicApiCallOptions,
-      // @ts-ignore
       outputs: [{ targetKey: '' }],
     })
 
@@ -100,7 +100,6 @@ describe('API Call Operation Model', () => {
   it('should ensure that arrayKeyPromote is required when topLevelArray is true', () => {
     const invalidOp = createOperation(OperationTypes.API_CALL, {
       ...basicApiCallOptions,
-      // @ts-ignore
       topLevelArray: true,
     })
 

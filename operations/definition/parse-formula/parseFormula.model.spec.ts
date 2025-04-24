@@ -1,4 +1,5 @@
 import { ParseFormulaOperation } from './parseFormula.model'
+import { type ParseFormulaOptions } from './parseFormula.options'
 import { generateSchemaAndValidate } from '../../../../utilities'
 import type { InputRef } from '../../../inputs/inputRef'
 import { createOperation } from '../../createOperation'
@@ -38,8 +39,7 @@ describe('parseFormula operation', () => {
   })
 
   it('validation should fail if not required properties are provided', () => {
-    //@ts-ignore
-    const op = createOperation(OperationTypes.PARSE_FORMULA, {})
+    const op = createOperation(OperationTypes.PARSE_FORMULA, {} as ParseFormulaOptions)
     const isValid = validate(op)
     expect(isValid).toBeFalse()
   })

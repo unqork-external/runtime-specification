@@ -1,4 +1,5 @@
 import { Entity, createEntity } from './entities.types'
+import { type EntityTarget } from './entitiesTarget.types'
 import { generateSchemaAndValidate } from '../../utilities'
 
 describe('Entities Spec', () => {
@@ -148,8 +149,7 @@ describe('Entities Spec', () => {
   })
 
   it('should fail validation with property missing from target', () => {
-    //@ts-ignore
-    const entity = createEntity({ key: 'moduleId', targets: [{ keyName: 'firstName' }] })
+    const entity = createEntity({ key: 'moduleId', targets: [{ keyName: 'firstName' }] as EntityTarget[] })
     const isValid = validate(entity)
     expect(isValid).toBe(false)
     const errors = validate.errors
@@ -177,8 +177,7 @@ describe('Entities Spec', () => {
   })
 
   it('should fail validation with key missing from target', () => {
-    //@ts-ignore
-    const entity = createEntity({ key: 'moduleId', targets: [{ value: 'firstName' }] })
+    const entity = createEntity({ key: 'moduleId', targets: [{ value: 'firstName' }] as EntityTarget[] })
     const isValid = validate(entity)
     expect(isValid).toBe(false)
     const errors = validate.errors

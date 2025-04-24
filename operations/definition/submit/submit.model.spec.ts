@@ -1,4 +1,5 @@
 import { SubmitOperation } from './submit.model'
+import { type SubmitOptions } from './submit.options'
 import { generateSchemaAndValidate } from '../../../../utilities'
 import { createOperation } from '../../createOperation'
 import { OperationTypes } from '../../enums/operation-types.enum'
@@ -25,8 +26,7 @@ describe('Submit Model', () => {
   })
 
   it('should error if no targetEntityKey is provided', () => {
-    //@ts-ignore
-    const op = createOperation(OperationTypes.SUBMIT, {})
+    const op = createOperation(OperationTypes.SUBMIT, {} as SubmitOptions)
 
     const isValid = validate(op)
     expect(isValid).toBeFalse()
