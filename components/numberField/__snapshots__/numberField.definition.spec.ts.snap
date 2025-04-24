@@ -123,7 +123,7 @@ exports[`NumberField Contract Tests should ensure the contract is clear 2`] = `
     "type": "boolean",
   },
   "validation": {
-    "$ref": "#/definitions/Validation",
+    "$ref": "#/definitions/NumberValidation",
   },
   "value": {
     "description": "Value of the numberField component. It will be undefined if not set.",
@@ -802,6 +802,26 @@ exports[`NumberField Contract Tests should ensure the contract is clear 3`] = `
       "inEditMode": {
         "description": "When set to "true", the number should allow users input data. When set to "false", the number will render as an unstyled readonly Typography.",
         "type": "boolean",
+      },
+    },
+    "type": "object",
+  },
+  "NumberValidation": {
+    "description": "Holds the validation rules and the most current validation results for the component",
+    "properties": {
+      "isDirty": {
+        "description": "Whether or not field has had user interaction. It will be set to true on user interaction.",
+        "type": "boolean",
+      },
+      "result": {
+        "$ref": "#/definitions/ValidationResult",
+      },
+      "rules": {
+        "description": "The set of rules to restrict or define the accepted data for the current component. These are the rules to run for validation of the data input.",
+        "examples": [
+          "You can use it to define the max length of characters in an input field with a custom error message. rules: { required: { type: ValidationRuleTypes.MAX_LENGTH, validation: { maxLength: 5, }, errorMessage: 'Max length is 5', }, },",
+        ],
+        "type": "object",
       },
     },
     "type": "object",

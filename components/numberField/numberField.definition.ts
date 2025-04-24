@@ -3,6 +3,7 @@ import { Const, Default, Description, DiscriminatorValue, Property } from '@tsed
 import { NumberFieldStyling } from './numberField.styling'
 import { NumberFieldTargets } from './numberFieldTargets.enum'
 import { NumberSimpleViewModel } from './numberSimpleViewModel'
+import { NumberValidation } from './NumberValidation'
 import { Examples } from '../../../decorators/schema/examples.decorator'
 import { TrimmedDescription } from '../../../decorators/schema/trimmedDescription.decorator'
 import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
@@ -17,6 +18,7 @@ import {
 } from '../../component-composition'
 import { type SignalTargets } from '../../signals'
 import { targetedStylingExample } from '../../styling/targeted.styling.example'
+import { TextareaValidation } from '../textarea/textareaValidation'
 
 @DiscriminatorValue('numberField')
 @TrimmedDescription(`
@@ -75,7 +77,7 @@ export class NumberFieldComponentDefinition extends BaseComponentDefinition {
 
   @TrimmedDescription(`
     Nestable definitions for adorned numberField component.
-    Simple Views 
+    Simple Views
   `)
   nestables?: StandardAdornmentsAsNestables = new StandardAdornmentsAsNestables()
 
@@ -84,4 +86,7 @@ export class NumberFieldComponentDefinition extends BaseComponentDefinition {
 
   @Property()
   declare signals: SignalTargets<NumberFieldTargets>
+
+  @Property()
+  validation: NumberValidation = new NumberValidation()
 }
