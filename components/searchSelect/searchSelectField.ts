@@ -38,7 +38,7 @@ export class SearchSelectField {
 
   @Default(false)
   @TrimmedDescription(`
-    When "true", children stay within parent DOM hierarchy. 
+    When "true", children stay within parent DOM hierarchy.
     When "false", popup element is attached to HTML body as a React Portal
   `)
   disablePortal?: boolean = false
@@ -54,4 +54,11 @@ export class SearchSelectField {
   @Optional()
   @Description('Key property for reference source')
   keyProperty?: string
+
+  @Default(false)
+  @TrimmedDescription(`
+    When enabled, allows for the end user to add options by typing.
+    If disabled, end user can only select defined enumerated options.
+  `)
+  creatable: boolean = false
 }

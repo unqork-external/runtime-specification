@@ -462,6 +462,11 @@ exports[`SearchSelect Contract Tests should ensure the contract is clear 3`] = `
         "description": "Adornments property for reference source",
         "type": "string",
       },
+      "creatable": {
+        "default": false,
+        "description": "When enabled, allows for the end user to add options by typing. If disabled, end user can only select defined enumerated options.",
+        "type": "boolean",
+      },
       "disablePortal": {
         "default": false,
         "description": "When "true", children stay within parent DOM hierarchy. When "false", popup element is attached to HTML body as a React Portal",
