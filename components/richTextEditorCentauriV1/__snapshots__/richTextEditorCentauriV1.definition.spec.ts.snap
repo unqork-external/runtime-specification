@@ -9,6 +9,10 @@ exports[`Rich Text Editor CentauriV1 Contract Tests should ensure the contract i
 
 exports[`Rich Text Editor CentauriV1 Contract Tests should ensure the contract is clear 2`] = `
 {
+  "customClass": {
+    "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
+    "type": "string",
+  },
   "display": {
     "$ref": "#/definitions/Display",
   },
@@ -90,7 +94,7 @@ exports[`Rich Text Editor CentauriV1 Contract Tests should ensure the contract i
     "type": "boolean",
   },
   "styling": {
-    "$ref": "#/definitions/StylingModel",
+    "$ref": "#/definitions/RichTextEditorCentauriV1Styling",
   },
   "type": {
     "const": "richtexteditorcentauriv1",
@@ -176,6 +180,15 @@ exports[`Rich Text Editor CentauriV1 Contract Tests should ensure the contract i
       "version": {
         "description": "Version of package",
         "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "RichTextEditorCentauriV1Styling": {
+    "description": "An object containing styling for the component.",
+    "properties": {
+      "targets": {
+        "type": "object",
       },
     },
     "type": "object",
