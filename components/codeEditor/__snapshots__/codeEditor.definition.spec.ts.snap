@@ -16,10 +16,6 @@ exports[`Code Editor Contract Tests should ensure the contract is clear 2`] = `
     "description": "The value read by CodeMirror component and displayed to the user",
     "type": "string",
   },
-  "errorMessage": {
-    "description": "Error message when parsing a JSON object",
-    "type": "string",
-  },
   "executable": {
     "default": true,
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",

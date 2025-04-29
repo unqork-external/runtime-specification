@@ -44,10 +44,6 @@ export class CodeEditorComponentDefinition extends BaseComponentDefinition {
   )
   valueIsObject: boolean = false
 
-  @Optional()
-  @Description('Error message when parsing a JSON object')
-  errorMessage?: string
-
   @Example(targetedStylingExample)
   declare styling?: CodeEditorStyling
 }
