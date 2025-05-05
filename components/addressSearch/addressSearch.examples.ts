@@ -11,3 +11,7 @@ export const locationExample = createExamples({
 export const countryISOExample = createExamples({
   standardExamples: ['CA'],
 })
+
+export const countryNameExample = createExamples({
+  standardExamples: ['Canada'],
+})

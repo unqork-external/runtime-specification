@@ -31,6 +31,10 @@ export class AddressSearchStyleTargets implements TargetsModel<AddressSearchTarg
   @Css()
   [AddressSearchTargets.searchInput]: CssClassOrProps;
 
+  @Description('Search input Container styles')
+  @Css()
+  [AddressSearchTargets.searchInputContainer]: CssClassOrProps;
+
   @Description('Loading icon styles')
   @Css()
   [AddressSearchTargets.loadingIcon]: CssClassOrProps;
@@ -66,6 +70,14 @@ export class AddressSearchStyleTargets implements TargetsModel<AddressSearchTarg
   @Description('Read only styles')
   @Css()
   [AddressSearchTargets.readOnly]: CssClassOrProps;
+
+  @Description('Read only label styles')
+  @Css()
+  [AddressSearchTargets.readOnlyLabel]: CssClassOrProps;
+
+  @Description('Read only content styles')
+  @Css()
+  [AddressSearchTargets.readOnlyContent]: CssClassOrProps;
 
   @Description('Styles applied to all address part inputs')
   @Css()
@@ -121,7 +133,35 @@ export class AddressSearchStyleTargets implements TargetsModel<AddressSearchTarg
 
   @Description('Country Label styles')
   @Css()
-  [AddressSearchTargets.countryLabel]: CssClassOrProps
+  [AddressSearchTargets.countryLabel]: CssClassOrProps;
+
+  @Description('Country select dropdown')
+  @Css()
+  [AddressSearchTargets.countrySelectControl]: CssClassOrProps;
+
+  @Description('Core Search Input Field wrapper styles')
+  @Css()
+  [AddressSearchTargets.searchInputFieldWrapper]: CssClassOrProps;
+
+  @Description('Search Wrapper styles')
+  @Css()
+  [AddressSearchTargets.searchWrapper]: CssClassOrProps;
+
+  @Description('Canada Post wrapper styles')
+  @Css()
+  [AddressSearchTargets.caPostWrapper]: CssClassOrProps;
+
+  @Description('Canada Post Input wrapper styles')
+  @Css()
+  [AddressSearchTargets.caPostInput]: CssClassOrProps;
+
+  @Description('Canada Post select dropdown label styles')
+  @Css()
+  [AddressSearchTargets.caPostSelectLabel]: CssClassOrProps;
+
+  @Description('Canada Post select dropdown option styles')
+  @Css()
+  [AddressSearchTargets.caPostSelectOption]: CssClassOrProps
 }
 
 export class AddressSearchStyling extends StylingModel<AddressSearchStyleTargets> {

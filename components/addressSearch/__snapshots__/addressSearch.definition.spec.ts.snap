@@ -222,6 +222,10 @@ exports[`AddressSearch Contract Tests should ensure the contract is clear 3`] = 
         ],
         "type": "string",
       },
+      "customClass": {
+        "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
+        "type": "string",
+      },
       "helperText": {
         "$ref": "#/definitions/InputHelperText",
       },
@@ -401,6 +405,102 @@ exports[`AddressSearch Contract Tests should ensure the contract is clear 3`] = 
           },
         ],
       },
+      "caPostInput": {
+        "description": "Canada Post Input wrapper styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "caPostSelectLabel": {
+        "description": "Canada Post select dropdown label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "caPostSelectOption": {
+        "description": "Canada Post select dropdown option styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "caPostWrapper": {
+        "description": "Canada Post wrapper styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
       "cityInput": {
         "description": "City Input styles",
         "oneOf": [
@@ -475,6 +575,30 @@ exports[`AddressSearch Contract Tests should ensure the contract is clear 3`] = 
       },
       "countryLabel": {
         "description": "Country Label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "countrySelectControl": {
+        "description": "Country select dropdown",
         "oneOf": [
           {
             "type": "string",
@@ -737,6 +861,54 @@ exports[`AddressSearch Contract Tests should ensure the contract is clear 3`] = 
           },
         ],
       },
+      "readOnlyContent": {
+        "description": "Read only content styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "readOnlyLabel": {
+        "description": "Read only label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
       "root": {
         "description": "Wrapper styles",
         "oneOf": [
@@ -763,6 +935,78 @@ exports[`AddressSearch Contract Tests should ensure the contract is clear 3`] = 
       },
       "searchInput": {
         "description": "Search input styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "searchInputContainer": {
+        "description": "Search input Container styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "searchInputFieldWrapper": {
+        "description": "Core Search Input Field wrapper styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "searchWrapper": {
+        "description": "Search Wrapper styles",
         "oneOf": [
           {
             "type": "string",

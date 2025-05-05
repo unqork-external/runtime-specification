@@ -47,3 +47,13 @@ export class AddressSearchComponentState extends AddressSearchComponentDefinitio
   @Description('The search query')
   searchQuery?: string
 }
+
+export class AddressSearchOptionModel {
+  @Required()
+  @Description('Option label')
+  label: string
+
+  @Required()
+  @Description('Option value')
+  value: string
+}

@@ -1,7 +1,7 @@
 import { Description, Optional } from '@tsed/schema'
 
 import { AddressServiceType } from './addressSearchOptions.definition'
-import { ReflexiveDecorator } from '../../../decorators'
+import { ReflexiveDecorator, TrimmedDescription } from '../../../decorators'
 import { Field } from '../../component-composition/field/component.field.label'
 import { InputHelperText, InputLabel } from '../../component-composition/input/component.input'
 
@@ -66,4 +66,10 @@ export class AddressSearchField extends Field {
   @Optional()
   @Description("Text for the component's tooltip.")
   tooltipDescription?: string
+
+  @Optional()
+  @TrimmedDescription(`
+      Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.
+    `)
+  customClass?: string
 }
