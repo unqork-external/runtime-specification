@@ -6,15 +6,13 @@ exports[`Byoc Contract Tests should ensure the contract is clear 1`] = `
   "type",
   "name",
   "url",
-  "dataBindings",
-  "outputs",
-  "showError",
+  "args",
 ]
 `;
 
 exports[`Byoc Contract Tests should ensure the contract is clear 2`] = `
 {
-  "dataBindings": {
+  "args": {
     "default": {},
     "description": "Assigns a property to either a specified Unqork component's value or a static value. 
   When the user updates the Unqork component, the corresponding module component's value is automatically updated.",
@@ -45,19 +43,8 @@ exports[`Byoc Contract Tests should ensure the contract is clear 2`] = `
     "minLength": 1,
     "type": "string",
   },
-  "outputs": {
-    "default": {},
-    "description": "Assigns a key from within the user's component to a specified module component key. 
-  When the user updates the key within the custom component, the module component's value will also be updated.",
-    "type": "object",
-  },
   "package": {
     "$ref": "#/definitions/PackageModel",
-  },
-  "showError": {
-    "default": true,
-    "description": "Toggles visibility of error message.",
-    "type": "boolean",
   },
   "signals": {
     "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",

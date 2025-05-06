@@ -27,18 +27,7 @@ export class ByocComponentDefinition extends BaseComponentDefinition {
   @Default({})
   @Description(`Assigns a property to either a specified Unqork component's value or a static value. 
   When the user updates the Unqork component, the corresponding module component's value is automatically updated.`)
-  dataBindings: Record<string, unknown> = {}
-
-  @Required()
-  @Default({})
-  @Description(`Assigns a key from within the user's component to a specified module component key. 
-  When the user updates the key within the custom component, the module component's value will also be updated.`)
-  outputs: Record<string, unknown> = {}
-
-  @Required()
-  @Default(true)
-  @Description(`Toggles visibility of error message.`)
-  showError: boolean = true
+  args: Record<string, unknown> = {}
 
   @Optional()
   declare signals?: SignalTargets<ByocTargets>
