@@ -30,5 +30,10 @@ export class ByocComponentDefinition extends BaseComponentDefinition {
   args: Record<string, unknown> = {}
 
   @Optional()
+  @Default('')
+  @Description(`Optional integrity signature of the external component code`)
+  signature?: string = ''
+
+  @Optional()
   declare signals?: SignalTargets<ByocTargets>
 }

@@ -86,6 +86,11 @@ exports[`Byoc Contract Tests should ensure the contract is clear 2`] = `
     ],
     "type": "object",
   },
+  "signature": {
+    "default": "",
+    "description": "Optional integrity signature of the external component code",
+    "type": "string",
+  },
   "styling": {
     "$ref": "#/definitions/ByocStyling",
   },
