@@ -57,6 +57,11 @@ exports[`AdvancedModeJsonDiffer Contract Tests should ensure the contract is cle
   "package": {
     "$ref": "#/definitions/PackageModel",
   },
+  "showDifferences": {
+    "default": true,
+    "description": "Indicates if differences should be highlighted",
+    "type": "boolean",
+  },
   "signals": {
     "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
     "examples": [

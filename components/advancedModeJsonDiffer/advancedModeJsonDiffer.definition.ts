@@ -1,4 +1,4 @@
-import { Const, Description, DiscriminatorValue, Optional } from '@tsed/schema'
+import { Const, Default, Description, DiscriminatorValue, Optional } from '@tsed/schema'
 
 import { AdvancedModeJsonDifferStyling } from './advancedModeJsonDiffer.styling'
 import { AdvancedModeJsonDifferTargets } from './advancedModeJsonDifferTargets.enum'
@@ -36,6 +36,10 @@ export class AdvancedModeJsonDifferComponentDefinition extends BaseComponentDefi
 
   @Description('Indicates if edit mode should be enabled')
   editMode: boolean = false
+
+  @Description('Indicates if differences should be highlighted')
+  @Default(true)
+  showDifferences: boolean = true
 
   @Description('The resolution of the source and target data')
   declare value: JSON | string
