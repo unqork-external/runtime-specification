@@ -15,12 +15,11 @@ import { targetedStylingExample } from '../../styling/targeted.styling.example'
   The ProtectedField component masks the sensitive information like a Social Security or account number entered in the input.
   Use ProtectedField component if end-users don't want the information to be visibly seen.
 `)
-@DiscriminatorValue('password')
+@DiscriminatorValue('protectedfield')
 @ViewTargets(ProtectedFieldTargets)
 export class ProtectedFieldComponentDefinition extends BaseComponentDefinition {
-  @Const('password')
-  @Required()
-  type: 'password' = 'password' as const
+  @Const('protectedfield')
+  type: 'protectedfield' = 'protectedfield' as const
 
   @Optional()
   display: Display = new Display()

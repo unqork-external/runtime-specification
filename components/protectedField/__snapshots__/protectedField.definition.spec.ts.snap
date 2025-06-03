@@ -82,10 +82,10 @@ exports[`Protected Field Contract Tests should ensure the contract is clear 2`] 
     "$ref": "#/definitions/ProtectedFieldStyling",
   },
   "type": {
-    "const": "password",
+    "const": "protectedfield",
     "description": "Name of the type of component.",
     "examples": [
-      "password",
+      "protectedfield",
     ],
     "minLength": 1,
     "type": "string",
