@@ -67,9 +67,9 @@ export class AddressSearchStyleTargets implements TargetsModel<AddressSearchTarg
   @Css()
   [AddressSearchTargets.noOptionsLabel]: CssClassOrProps;
 
-  @Description('Read only styles')
+  @Description('Read only wrapper styles')
   @Css()
-  [AddressSearchTargets.readOnly]: CssClassOrProps;
+  [AddressSearchTargets.readOnlyWrapper]: CssClassOrProps;
 
   @Description('Read only label styles')
   @Css()
@@ -78,6 +78,14 @@ export class AddressSearchStyleTargets implements TargetsModel<AddressSearchTarg
   @Description('Read only content styles')
   @Css()
   [AddressSearchTargets.readOnlyContent]: CssClassOrProps;
+
+  @Description('Styles applied to all address part root container elements')
+  @Css()
+  [AddressSearchTargets.addressPartFieldRoot]: CssClassOrProps;
+
+  @Description('Styles applied to all address part field wrapper elements')
+  @Css()
+  [AddressSearchTargets.addressPartFieldWrapper]: CssClassOrProps;
 
   @Description('Styles applied to all address part inputs')
   @Css()

@@ -1,4 +1,6 @@
 export enum AddressSearchTargets {
+  addressPartFieldRoot = 'addressPartFieldRoot',
+  addressPartFieldWrapper = 'addressPartFieldWrapper',
   addressPartInput = 'addressPartInput',
   addressPartLabel = 'addressPartLabel',
   caPostInput = 'caPostInput',
@@ -19,7 +21,7 @@ export enum AddressSearchTargets {
   noOptionsLabel = 'noOptionsLabel',
   option = 'option',
   popupIndicatorButton = 'popupIndicatorButton',
-  readOnly = 'readOnly',
+  readOnlyWrapper = 'readOnlyWrapper',
   readOnlyContent = 'readOnlyContent',
   readOnlyLabel = 'readOnlyLabel',
   root = 'root',

@@ -1,3 +1,5 @@
 export * from './addressSearch.definition'
 export * from './addressSearchTargets.enum'
+export * from './addressSearchDisplay.definition'
+export * from './addressSearchValue.definition'
 export { AddressServiceType } from './addressSearchOptions.definition'

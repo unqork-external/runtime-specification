@@ -357,6 +357,54 @@ exports[`AddressSearch Contract Tests should ensure the contract is clear 3`] = 
   },
   "AddressSearchStyleTargets": {
     "properties": {
+      "addressPartFieldRoot": {
+        "description": "Styles applied to all address part root container elements",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "addressPartFieldWrapper": {
+        "description": "Styles applied to all address part field wrapper elements",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
       "addressPartInput": {
         "description": "Styles applied to all address part inputs",
         "oneOf": [
@@ -837,30 +885,6 @@ exports[`AddressSearch Contract Tests should ensure the contract is clear 3`] = 
           },
         ],
       },
-      "readOnly": {
-        "description": "Read only styles",
-        "oneOf": [
-          {
-            "type": "string",
-          },
-          {
-            "type": "object",
-          },
-          {
-            "items": {
-              "oneOf": [
-                {
-                  "type": "string",
-                },
-                {
-                  "type": "object",
-                },
-              ],
-            },
-            "type": "array",
-          },
-        ],
-      },
       "readOnlyContent": {
         "description": "Read only content styles",
         "oneOf": [
@@ -887,6 +911,30 @@ exports[`AddressSearch Contract Tests should ensure the contract is clear 3`] = 
       },
       "readOnlyLabel": {
         "description": "Read only label styles",
+        "oneOf": [
+          {
+            "type": "string",
+          },
+          {
+            "type": "object",
+          },
+          {
+            "items": {
+              "oneOf": [
+                {
+                  "type": "string",
+                },
+                {
+                  "type": "object",
+                },
+              ],
+            },
+            "type": "array",
+          },
+        ],
+      },
+      "readOnlyWrapper": {
+        "description": "Read only wrapper styles",
         "oneOf": [
           {
             "type": "string",

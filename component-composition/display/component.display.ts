@@ -16,7 +16,7 @@ export class Display {
     Regardless of this setting, the component is always visible in the Module Editor.
     A hidden component can still receive information from other components.
   `)
-  hidden?: boolean = false
+  hidden: boolean = false
 
   @Optional()
   @Default(true)
@@ -27,7 +27,7 @@ export class Display {
     the cursor also changes to alert of the disabled status.
     However, the component can still receive information from other components when it's not interactive.
   `)
-  interactive?: boolean = true
+  interactive: boolean = true
 
   @Optional()
   @Default(false)
@@ -41,7 +41,7 @@ export class Display {
   `)
   // readOnlyView now corresponds to the visual label 'Display as Text'.
   // The label was changed for accessibility purposes but the underlying property name remains the same.
-  readOnlyView?: boolean = false
+  readOnlyView: boolean = false
 }
 
 @TrimmedDescription(
@@ -50,7 +50,7 @@ export class Display {
   It applies additional properties to components that use the HTML <input> tag under the hood.
   'HTML Read Only' corresponds to applying the readonly property to the component's <input>.
 
-  Display Description: 
+  Display Description:
 ` + displayDescription,
 )
 export class InputDisplay extends Display {
@@ -61,5 +61,5 @@ export class InputDisplay extends Display {
    This property is distinct from readOnlyView (aka 'Display as Text').
    htmlReadOnly is useful for accessibility (a11y) so that we can support setting the <input> field to readonly.
   `)
-  htmlReadOnly?: boolean = false
+  htmlReadOnly: boolean = false
 }
