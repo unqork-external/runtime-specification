@@ -104,3 +104,4 @@ export * from './testableNestables'
 export * from './addressSearch'
 
 export * from './byoc/byoc.definition'
+export * from './kpi/kpi.definition'
