@@ -25,6 +25,9 @@ exports[`Rich Text Editor CentauriV2 Contract Tests should ensure the contract i
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
   },
+  "field": {
+    "$ref": "#/definitions/InputField",
+  },
   "inputs": {
     "items": {
       "$ref": "#/definitions/InputRef",
@@ -40,16 +43,8 @@ exports[`Rich Text Editor CentauriV2 Contract Tests should ensure the contract i
     "minLength": 1,
     "type": "string",
   },
-  "label": {
-    "description": "Label for the RTE",
-    "type": "string",
-  },
   "package": {
     "$ref": "#/definitions/PackageModel",
-  },
-  "placeholder": {
-    "description": "Placeholder text",
-    "type": "string",
   },
   "signals": {
     "description": "An object which contains all of the signals for the component. The signals object can have any number of target keys as defined in the component definition which each contain an array of Signals.",
@@ -92,7 +87,7 @@ exports[`Rich Text Editor CentauriV2 Contract Tests should ensure the contract i
     "type": "object",
   },
   "styling": {
-    "$ref": "#/definitions/StylingModel",
+    "$ref": "#/definitions/RichTextEditorCentauriV2Styling",
   },
   "type": {
     "const": "richtexteditorcentauriv2",
@@ -136,6 +131,80 @@ exports[`Rich Text Editor CentauriV2 Contract Tests should ensure the contract i
     },
     "type": "object",
   },
+  "InputField": {
+    "description": "Details to be applied to the input element within a component.",
+    "properties": {
+      "customClass": {
+        "description": "Adds a custom CSS class to the component. This is useful for targeting this component to apply custom styles.",
+        "type": "string",
+      },
+      "helperText": {
+        "$ref": "#/definitions/InputHelperText",
+      },
+      "label": {
+        "$ref": "#/definitions/InputLabel",
+      },
+      "placeholder": {
+        "description": "An example or short explanation of the requested input. This appears inside of the input by default and disappears when the user enters a value.",
+        "examples": [
+          "First name - Expects the user to type their first name",
+          "Enter your Social Security Number - Expects user's SSN",
+          "dd/MM/YYYY - To show an expected date format (if you need a more robust component, try Date Input",
+        ],
+        "type": "string",
+      },
+      "prefix": {
+        "description": "A symbol or text to display before the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          "$",
+          "@",
+        ],
+        "type": "string",
+      },
+      "suffix": {
+        "description": "A symbol or text to display after the input field. Note this value will not be part of the submitted data",
+        "examples": [
+          ".com",
+        ],
+        "type": "string",
+      },
+      "tooltipDescription": {
+        "description": "Tooltips are floating texts that appear when the cursor is positioned over an icon. They can span across multiple lines and provide hints about the requested data. Setting this property will make a question mark icon to be displayed on the right side of the component's label, and once the user hovers over it, the tooltip text will appear. Moving the cursor outside the icon's area hides the tooltip. Hiding the component's label automatically hides the tooltip.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputHelperText": {
+    "description": "Details pertaining to the helper text element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the helper text of the component.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed underneath the input field. Unlike tooltips, a helper text stays visible under the input field and displays on a single line.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "InputLabel": {
+    "description": "Details pertaining to the label element on a component, including the text to be displayed and visibility.",
+    "properties": {
+      "hidden": {
+        "default": false,
+        "description": "When \`true\`, it hides the label of the component. Note the label will still be displayed on the Module Editor.",
+        "type": "boolean",
+      },
+      "text": {
+        "description": "Configurable text that is displayed above the input field. If the label of the component is visually hidden this text will still be read by screen readers.",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
   "InputRef": {
     "description": "Objects may define other targets that they refer to. This becomes a link for operation execution within the Runtime.",
     "properties": {
@@ -164,6 +233,15 @@ exports[`Rich Text Editor CentauriV2 Contract Tests should ensure the contract i
     ],
     "type": "object",
   },
+  "Label": {
+    "properties": {
+      "text": {
+        "description": "Text displayed as the label for the field",
+        "type": "string",
+      },
+    },
+    "type": "object",
+  },
   "PackageModel": {
     "description": "The PackageModel describes how the Vega Runtime will resolve dependencies",
     "properties": {
@@ -178,6 +256,15 @@ exports[`Rich Text Editor CentauriV2 Contract Tests should ensure the contract i
       "version": {
         "description": "Version of package",
         "type": "string",
+      },
+    },
+    "type": "object",
+  },
+  "RichTextEditorCentauriV2Styling": {
+    "description": "An object containing stylings for the component.",
+    "properties": {
+      "targets": {
+        "type": "object",
       },
     },
     "type": "object",
