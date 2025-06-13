@@ -1,4 +1,4 @@
-import { Const, Default, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
+import { Const, Description, DiscriminatorValue, Optional, Required } from '@tsed/schema'
 
 import { ByocStyling } from './byoc.styling'
 import { ByocTargets } from './byocTargets.enum'
@@ -6,34 +6,32 @@ import { ViewTargets } from '../../../decorators'
 import { BaseComponentDefinition } from '../../base-component-interface'
 import type { SignalTargets } from '../../signals'
 
+@Description('BYO Information for the custom component')
+class ByoInformation {
+  @Required()
+  @Description('The component type from a BYO asset that should be rendered')
+  componentType: string
+}
+
 @DiscriminatorValue('byoc')
 @ViewTargets(ByocTargets)
 export class ByocComponentDefinition extends BaseComponentDefinition {
   @Const('byoc')
   type: 'byoc' = 'byoc' as const
 
+  @Required()
+  byo: ByoInformation
+
+  @Required()
+  @Description('Settings defined for the BYO component in the manifest')
+  settings: Record<string, unknown> = {}
+
   @Optional()
   declare styling?: ByocStyling
 
-  @Required()
-  @Description('Name of the custom component')
-  declare name: string
-
-  @Required()
-  @Default('URL pointing to the custom component code.')
-  declare url: string
-
-  @Required()
-  @Default({})
-  @Description(`Assigns a property to either a specified Unqork component's value or a static value. 
-  When the user updates the Unqork component, the corresponding module component's value is automatically updated.`)
-  args: Record<string, unknown> = {}
-
   @Optional()
-  @Default('')
-  @Description(`Optional integrity signature of the external component code`)
-  signature?: string = ''
+  declare signals?: SignalTargets<ByocTargets>;
 
-  @Optional()
-  declare signals?: SignalTargets<ByocTargets>
+  // Unknown properties from the BYO component. This is needed to satisfy the TS checks
+  [key: string]: unknown
 }

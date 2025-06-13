@@ -51,7 +51,7 @@ export class ModuleDefinition {
 
   @Optional()
   @TrimmedDescription(`Module settings.`)
-  settings: ModuleSettings = new ModuleSettings()
+  settings?: ModuleSettings = new ModuleSettings()
 
   @Required()
   @Example('')

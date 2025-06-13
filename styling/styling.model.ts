@@ -1,11 +1,12 @@
-import { Description, Property } from '@tsed/schema'
+import { Description, Optional, Property } from '@tsed/schema'
 
 import type { CssClassOrProps } from './cssClassOrProps.type'
 
 @Description('Holds information for targeted styling of the component.')
 export class StylingModel<T extends Record<keyof T, CssClassOrProps>> {
+  @Optional()
   @Property()
-  targets: T
+  targets?: T
 }
 
 type CssClassName = string

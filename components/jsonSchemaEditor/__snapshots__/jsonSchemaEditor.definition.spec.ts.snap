@@ -1,23 +1,27 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Byoc Contract Tests should ensure the contract is clear 1`] = `
+exports[`JsonSchemaEditor Contract Tests should ensure the contract is clear 1`] = `
 [
   "key",
   "type",
-  "byo",
-  "settings",
+  "schema",
 ]
 `;
 
-exports[`Byoc Contract Tests should ensure the contract is clear 2`] = `
+exports[`JsonSchemaEditor Contract Tests should ensure the contract is clear 2`] = `
 {
-  "byo": {
-    "$ref": "#/definitions/ByoInformation",
+  "childIds": {
+    "type": "array",
   },
   "executable": {
     "default": true,
     "description": "Defines whether or not the object will respond to events or fire operations. When \`true\`, the object will perform and behave as defined in its spec. When \`false\`, the object will no longer be responsive to the system.",
     "type": "boolean",
+  },
+  "fallbackToRawForm": {
+    "default": false,
+    "description": "Fallback to raw form if an error occurs while rendering the Unqork components",
+    "type": "object",
   },
   "inputs": {
     "items": {
@@ -34,11 +38,14 @@ exports[`Byoc Contract Tests should ensure the contract is clear 2`] = `
     "minLength": 1,
     "type": "string",
   },
+  "nestables": {
+    "type": "object",
+  },
   "package": {
     "$ref": "#/definitions/PackageModel",
   },
-  "settings": {
-    "description": "Settings defined for the BYO component in the manifest",
+  "schema": {
+    "description": "The schema you wish to render. Must be valid JSON Schema 7",
     "type": "object",
   },
   "signals": {
@@ -82,16 +89,21 @@ exports[`Byoc Contract Tests should ensure the contract is clear 2`] = `
     "type": "object",
   },
   "styling": {
-    "$ref": "#/definitions/ByocStyling",
+    "$ref": "#/definitions/JsonSchemaEditorStyling",
   },
   "type": {
-    "const": "byoc",
+    "const": "jsonSchemaEditor",
     "description": "Name of the type of component.",
     "examples": [
-      "byoc",
+      "jsonSchemaEditor",
     ],
     "minLength": 1,
     "type": "string",
+  },
+  "useRawForm": {
+    "default": false,
+    "description": "Set to true to use the form library instead of Unqork components",
+    "type": "object",
   },
   "validation": {
     "$ref": "#/definitions/Validation",
@@ -108,22 +120,5 @@ exports[`Byoc Contract Tests should ensure the contract is clear 2`] = `
       "object",
     ],
   },
-}
-`;
-
-exports[`Byoc Contract Tests should ensure the contract is clear 3`] = `
-{
-  "description": "BYO Information for the custom component",
-  "properties": {
-    "componentType": {
-      "description": "The component type from a BYO asset that should be rendered",
-      "minLength": 1,
-      "type": "string",
-    },
-  },
-  "required": [
-    "componentType",
-  ],
-  "type": "object",
 }
 `;

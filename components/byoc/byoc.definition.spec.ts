@@ -7,5 +7,6 @@ describe('Byoc Contract Tests', function () {
 
     expect(schema.required).toMatchSnapshot()
     expect(schema.properties).toMatchSnapshot()
+    expect(schema.definitions.ByoInformation).toMatchSnapshot()
   })
 })
