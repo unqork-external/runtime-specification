@@ -8,8 +8,5 @@ export class ContainsCondition extends RootDecide {
   declare type: DecideConditionTypes.CONTAINS
 
   @Property()
-  targetKey: string
-
-  @Property()
   value: string
 }

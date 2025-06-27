@@ -104,6 +104,12 @@ exports[`Operation Model: DecideOperation Tests should match this JSON Schema 1`
     },
     "RootDecide": {
       "properties": {
+        "propertyPath": {
+          "type": "string",
+        },
+        "targetKey": {
+          "type": "string",
+        },
         "type": {
           "enum": [
             "exact",

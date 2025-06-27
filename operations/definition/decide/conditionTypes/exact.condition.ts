@@ -8,8 +8,5 @@ export class ExactCondition extends RootDecide {
   declare type: DecideConditionTypes.EXACT
 
   @Property()
-  targetKey: string
-
-  @Property()
   value: string
 }

@@ -8,9 +8,6 @@ export class RangeContains extends RootDecide {
   declare type: DecideConditionTypes.RANGE
 
   @Property()
-  declare targetKey: string
-
-  @Property()
   minimum: number
 
   @Property()
