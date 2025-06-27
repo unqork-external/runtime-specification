@@ -51,7 +51,7 @@ exports[`SpreadsheetInput Contract Tests should ensure the contract is clear 2`]
     "$ref": "#/definitions/PackageModel",
   },
   "rowHeights": {
-    "default": 50,
+    "default": 36,
     "description": "Height of the rows in the spreadsheet.",
     "type": "object",
   },

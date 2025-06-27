@@ -33,9 +33,9 @@ export class SpreadsheetInputComponentDefinition extends BaseComponentDefinition
   height: string | number = 300
 
   @Required()
-  @Default(50)
+  @Default(36)
   @Description('Height of the rows in the spreadsheet.')
-  rowHeights: string | number = 50
+  rowHeights: string | number = 36
 
   @Required()
   @Default('100%')
