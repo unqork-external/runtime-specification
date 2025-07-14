@@ -104,5 +104,6 @@ export * from './testableNestables'
 export * from './addressSearch'
 
 export * from './byoc/byoc.definition'
+export * from './mapv2/mapv2.definition'
 export * from './jsonSchemaEditor/jsonSchemaEditor.definition'
 export * from './kpi/kpi.definition'
