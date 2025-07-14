@@ -70,7 +70,7 @@ export * from './radio'
 export * from './repeater/repeater.definition'
 export * from './richTextEditor/richTextEditor.definition'
 export * from './richTextEditorCentauriV1/richTextEditorCentauriV1.definition'
-export * from './richTextEditorCentauriV2/richTextEditorCentauriV2.definition'
+export * from './richTextEditorCentauriV2'
 
 export * from './searchSelect'
 export * from './searchSelectOption'

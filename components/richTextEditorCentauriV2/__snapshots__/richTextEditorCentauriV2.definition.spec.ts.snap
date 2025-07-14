@@ -102,8 +102,17 @@ exports[`Rich Text Editor CentauriV2 Contract Tests should ensure the contract i
     "$ref": "#/definitions/Validation",
   },
   "value": {
-    "description": "Value of the RTE as an HTML string",
-    "type": "string",
+    "$ref": "#/definitions/RichTextEditorValue",
+    "description": "Current value of the component",
+    "type": [
+      "null",
+      "integer",
+      "number",
+      "string",
+      "boolean",
+      "array",
+      "object",
+    ],
   },
 }
 `;
@@ -264,6 +273,19 @@ exports[`Rich Text Editor CentauriV2 Contract Tests should ensure the contract i
     "description": "An object containing stylings for the component.",
     "properties": {
       "targets": {
+        "type": "object",
+      },
+    },
+    "type": "object",
+  },
+  "RichTextEditorValue": {
+    "properties": {
+      "collaboration": {
+        "description": "Object that contains the change tracking, comments, and user tracking when edits are made.",
+        "type": "object",
+      },
+      "html": {
+        "description": "The content of the Rich Text Editor.",
         "type": "object",
       },
     },
