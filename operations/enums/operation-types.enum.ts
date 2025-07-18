@@ -120,6 +120,14 @@ export enum OperationTypes {
   SET_PROPERTY = 'SET_PROPERTY',
 
   /**
+   * The Get Prop operation can be used to get a specific component prop to value and place in context
+   * for use in a later operations
+   *
+   * @type {OperationTypes.GET_PROPERTY}
+   */
+  GET_PROPERTY = 'GET_PROPERTY',
+
+  /**
    * The APPEND_STYLING_TO_TARGET operation will append CSS objects and/or classes
    *  to a specific targets' existing styling configuration
    *

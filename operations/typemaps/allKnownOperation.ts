@@ -4,6 +4,7 @@ import { ClearValidationErrorOperation } from '../definition/clear-validation-er
 import { DataWorkflowOperation } from '../definition/dataworkflow'
 import { DecideOperation } from '../definition/decide'
 import { ExecuteOperation } from '../definition/execute'
+import { GetPropertyOperation } from '../definition/get-property'
 import { OpenNewPageOperation } from '../definition/openNewPage'
 import { ParseFormulaOperation } from '../definition/parse-formula'
 import { ResetOperation } from '../definition/reset'
@@ -22,6 +23,7 @@ export const AllOperations = [
   DataWorkflowOperation,
   DecideOperation,
   ExecuteOperation,
+  GetPropertyOperation,
   OpenNewPageOperation,
   ParseFormulaOperation,
   ResetOperation,

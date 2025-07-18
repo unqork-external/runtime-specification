@@ -5,6 +5,7 @@ export enum SyntaxTokenType {
   R1_GRID_ROW = 'R1_GRID_ROW',
   R1_GRID_COL = 'R1_GRID_COL',
   DYNAMIC = 'DYNAMIC',
+  EMBEDDED = 'EMBEDDED',
   EVENT = 'EVENT',
   FILE = 'FILE',
   GET_ALL = 'GET_ALL',

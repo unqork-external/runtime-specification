@@ -19,6 +19,7 @@ import { ExecuteOperation } from '../definition/execute'
 import { ExecuteExternalCommandOperation } from '../definition/executeExternalCommand'
 import { FetchModuleOperation } from '../definition/fetchModule'
 import { FocusOperation } from '../definition/focus'
+import { GetPropertyOperation } from '../definition/get-property'
 import { GoGoGadgetClipboardOperation } from '../definition/goGoGadgetClipboard'
 import { IfOperation } from '../definition/if'
 import { LoadModuleOperation } from '../definition/loadModule'
@@ -101,6 +102,7 @@ export const OperationTypeMap = {
   [OperationTypes.DATA_WORKFLOW]: DataWorkflowOperation,
   [OperationTypes.DECIDE]: DecideOperation,
   [OperationTypes.EXECUTE]: ExecuteOperation,
+  [OperationTypes.GET_PROPERTY]: GetPropertyOperation,
   [OperationTypes.OPEN_NEW_PAGE]: OpenNewPageOperation,
   [OperationTypes.REMOVE_NESTED_COMPONENTS]: RemoveNestedComponentsOperation,
   [OperationTypes.RESET]: ResetOperation,
