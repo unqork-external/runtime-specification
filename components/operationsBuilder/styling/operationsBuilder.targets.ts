@@ -87,6 +87,10 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
   @Css()
   [OpsBuilderTargets.operations]: CssClassOrProps;
 
+  @Description('Adds styles to operations editor column in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.operationsEditor]: CssClassOrProps;
+
   @Description('Adds styles to operation selector in Operations Builder.')
   @Css()
   [OpsBuilderTargets.operationSelector]: CssClassOrProps;
@@ -301,5 +305,97 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
 
   @Description('Adds styles to operation name in Operations Builder.')
   @Css()
-  [OpsBuilderTargets.operationName]: CssClassOrProps
+  [OpsBuilderTargets.operationName]: CssClassOrProps;
+
+  @Description('Adds styles to the Context Reference wrapper in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRef]: CssClassOrProps;
+
+  @Description('Adds styles to the Context Reference events icon in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRefIcon]: CssClassOrProps;
+
+  @Description('Adds styles to the Add Context Reference button in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRefAddButton]: CssClassOrProps;
+
+  @Description('Adds styles to the Context Reference header in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRefHeader]: CssClassOrProps;
+
+  @Description("Adds styles to the Context Reference header's label in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefHeaderLabel]: CssClassOrProps;
+
+  @Description("Adds styles to the Context Reference header's close button in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefHeaderCloseButton]: CssClassOrProps;
+
+  @Description('Adds styles to the Context Reference content in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRefContent]: CssClassOrProps;
+
+  @Description('Adds styles to the empty Context Reference view in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRefEmpty]: CssClassOrProps;
+
+  @Description("Adds styles to the empty Context Reference view's image in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefEmptyImage]: CssClassOrProps;
+
+  @Description("Adds styles to the empty Context Reference view's text in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefEmptyText]: CssClassOrProps;
+
+  @Description("Adds styles to the empty Context Reference view's subtext in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefEmptySubtext]: CssClassOrProps;
+
+  @Description("Adds styles to the Context Reference's info wrapper in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefInfo]: CssClassOrProps;
+
+  @Description("Adds styles to the Context Reference's info header in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefInfoHeader]: CssClassOrProps;
+
+  @Description("Adds styles to the Context Reference's asset name in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefInfoAssetName]: CssClassOrProps;
+
+  @Description("Adds styles to the Context Reference's name in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefInfoName]: CssClassOrProps;
+
+  @Description("Adds styles to the Context Reference's description in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefInfoDescription]: CssClassOrProps;
+
+  @Description("Adds styles to the Context Reference's schema viewer in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefSchemaViewer]: CssClassOrProps;
+
+  @Description("Adds styles to the Context Reference's schema label in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefSchemaLabel]: CssClassOrProps;
+
+  @Description("Adds styles to the Context Reference selector's label in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefSelectorLabel]: CssClassOrProps;
+
+  @Description("Adds styles to the Context Reference selector's dropdown in Operations Builder.")
+  @Css()
+  [OpsBuilderTargets.contextRefSelectorDropdown]: CssClassOrProps;
+
+  @Description('Adds styles to a Context Reference option in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRefOption]: CssClassOrProps;
+
+  @Description('Adds styles to a Context Reference option label in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRefOptionLabel]: CssClassOrProps;
+
+  @Description('Adds styles to a Context Reference option description in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRefOptionDescription]: CssClassOrProps
 }

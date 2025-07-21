@@ -57,6 +57,14 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
   currentOperation?: Record<string, any>
 
   @Optional()
+  @Description(`The context reference to visualize its schema`)
+  currentContextReference?: Record<string, any>
+
+  @Optional()
+  @Description('The selected context reference in Events dropdown')
+  selectedContextReference?: MultiSelectOptionModel
+
+  @Optional()
   @Description('The selected operation type that is being actively configured')
   currentOperationKey?: string
 

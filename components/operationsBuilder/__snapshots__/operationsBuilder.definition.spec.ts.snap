@@ -14,6 +14,10 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear - 
 
 exports[`OperationsBuilder Contract Tests should ensure the contract is clear - component definition 2`] = `
 {
+  "currentContextReference": {
+    "description": "The context reference to visualize its schema",
+    "type": "object",
+  },
   "currentOperation": {
     "description": "The schema for selection operation's options",
     "type": "object",
@@ -95,6 +99,9 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear - 
     "default": false,
     "description": "Sets Operations Builder to be in Readonly mode",
     "type": "boolean",
+  },
+  "selectedContextReference": {
+    "$ref": "#/definitions/MultiSelectOptionModel",
   },
   "selectedOperation": {
     "$ref": "#/definitions/MultiSelectOptionModel",

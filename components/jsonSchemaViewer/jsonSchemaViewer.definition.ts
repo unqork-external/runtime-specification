@@ -1,11 +1,11 @@
 import { type JSONSchema } from '@stoplight/json-schema-viewer'
 import { Const, Default, Description, DiscriminatorValue, Optional } from '@tsed/schema'
-import { ViewTargets } from '../../../decorators'
-import { BaseComponentDefinition } from '../../base-component-interface'
-import type { SignalTargets } from '../../signals'
 
 import { JsonSchemaViewerStyling } from './jsonSchemaViewer.styling'
 import { JsonSchemaViewerTargets } from './jsonSchemaViewerTargets.enum'
+import { ViewTargets } from '../../../decorators'
+import { BaseComponentDefinition } from '../../base-component-interface'
+import type { SignalTargets } from '../../signals'
 
 @DiscriminatorValue('jsonSchemaViewer')
 @ViewTargets(JsonSchemaViewerTargets)
