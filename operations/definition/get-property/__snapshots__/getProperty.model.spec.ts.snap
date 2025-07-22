@@ -1,26 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Operation Model: EmitEvent Tests should match this JSON Schema 1`] = `
+exports[`Operation Model: GetProperty Tests should match this JSON Schema 1`] = `
 {
-  "autogenDisabled": true,
   "definitions": {
-    "EmitEventOperationOptions": {
-      "description": "EMIT_EVENT will emit an event in the system. This Operation is only supported for use in Extension modules (modules tagged with "extension").",
+    "GetPropertyOptions": {
+      "description": "GET_PROPERTY will get a specific property on a specific target and add it to the operationContext. This Operation is only supported for use in Extension modules (modules tagged with "extension").",
       "properties": {
-        "event": {
-          "description": "a creator defined name of an event to fire in the system",
+        "property": {
+          "description": "\`property\` refers to the intended property to get. This can be represented as a JSONPath expression.",
           "examples": [
-            "myCustomEvent",
+            "value",
+            "validation.latest",
           ],
           "minLength": 1,
           "type": "string",
-        },
-        "payload": {
-          "description": "data that can be sent with the event",
-          "examples": [
-            "{value: "this is a value"}",
-          ],
-          "type": "object",
         },
         "shouldExecute": {
           "default": true,
@@ -34,18 +27,24 @@ exports[`Operation Model: EmitEvent Tests should match this JSON Schema 1`] = `
           ],
         },
         "targetKey": {
-          "description": "This is not used for this event but is required by all operation options",
+          "description": "\`targetKey\` refers to the intended target to manipulate. Can work on an array of targetKeys as well.",
+          "examples": [
+            "firstNameTextField",
+            "grid.row(0).col(0)",
+          ],
+          "minLength": 1,
           "type": "string",
         },
       },
       "required": [
-        "event",
+        "targetKey",
+        "property",
       ],
       "type": "object",
     },
   },
   "description": "
-  Emits an event in the system.
+  Gets a value at a property location for a target component.
 
   This Operation is only supported for use in Extension modules (modules tagged with "extension").
 ",
@@ -59,12 +58,12 @@ exports[`Operation Model: EmitEvent Tests should match this JSON Schema 1`] = `
       "type": "string",
     },
     "options": {
-      "$ref": "#/definitions/EmitEventOperationOptions",
+      "$ref": "#/definitions/GetPropertyOptions",
     },
     "type": {
-      "const": "EMIT_EVENT",
+      "const": "GET_PROPERTY",
       "examples": [
-        "EMIT_EVENT",
+        "GET_PROPERTY",
       ],
       "type": "string",
     },

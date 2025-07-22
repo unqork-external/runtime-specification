@@ -1,12 +1,12 @@
-import { EmitEventOperation } from './emitEvent.model'
+import { GetPropertyOperation } from './getProperty.model'
 import { generateSchemaAndValidate } from '../../../../utilities'
 import { createOperation } from '../../createOperation'
 import { OperationTypes } from '../../enums/operation-types.enum'
 
-describe('Operation Model: EmitEvent Tests', () => {
+describe('Operation Model: GetProperty Tests', () => {
   let validate, schema
   beforeAll(() => {
-    const response = generateSchemaAndValidate(EmitEventOperation)
+    const response = generateSchemaAndValidate(GetPropertyOperation)
     validate = response.validate
     schema = schema = response.schema
   })
@@ -15,11 +15,10 @@ describe('Operation Model: EmitEvent Tests', () => {
     expect(schema).toMatchSnapshot()
   })
 
-  it('Emit Event operation should validate appropriately', () => {
-    const op = createOperation(OperationTypes.EMIT_EVENT, {
-      targetKey: '',
-      event: 'helloEvent',
-      payload: {},
+  it('Get Property operation should validate appropriately', () => {
+    const op = createOperation(OperationTypes.GET_PROPERTY, {
+      targetKey: 'helloTargetKey',
+      property: 'worldProperty',
     })
     const isValid = validate(op)
     expect(isValid).toBeTrue()

@@ -1,7 +1,13 @@
 import { Description, Example, Required, Optional } from '@tsed/schema'
 
+import { TrimmedDescription } from '../../../../decorators/schema'
 import { OperationOptions } from '../../interface'
 
+@TrimmedDescription(`
+  EMIT_EVENT will emit an event in the system.
+
+  This Operation is only supported for use in Extension modules (modules tagged with "extension").
+`)
 export class EmitEventOperationOptions extends OperationOptions {
   @Optional()
   //TODO: Should we change this at some point?

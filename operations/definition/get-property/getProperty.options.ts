@@ -5,6 +5,8 @@ import { OperationOptions } from '../../interface'
 
 @TrimmedDescription(`
   GET_PROPERTY will get a specific property on a specific target and add it to the operationContext.
+
+  This Operation is only supported for use in Extension modules (modules tagged with "extension").
 `)
 export class GetPropertyOptions extends OperationOptions {
   @Required()
