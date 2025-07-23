@@ -65,12 +65,8 @@ exports[`Panel Contract Tests should ensure the contract is clear - component de
   "package": {
     "$ref": "#/definitions/PackageModel",
   },
-  "resolveDynamicPanelApplicationId": {
-    "description": "When using the \`dynamic import\` feature, this is the id of the application that an imported module should get its context from.",
-    "type": "string",
-  },
-  "resolveDynamicPanelApplicationVersion": {
-    "description": "When using the \`dynamic import\` feature, this is the version of the application that an imported module should get its context from.",
+  "resolveDynamicPanelApplicationContext": {
+    "description": "When using the \`dynamic import\` feature, this is the context of the application that an imported module should get its context from.",
     "type": "string",
   },
   "signals": {
@@ -842,12 +838,8 @@ exports[`Panel Contract Tests should ensure the contract is clear - component st
   "package": {
     "$ref": "#/definitions/PackageModel",
   },
-  "resolveDynamicPanelApplicationId": {
-    "description": "When using the \`dynamic import\` feature, this is the id of the application that an imported module should get its context from.",
-    "type": "string",
-  },
-  "resolveDynamicPanelApplicationVersion": {
-    "description": "When using the \`dynamic import\` feature, this is the version of the application that an imported module should get its context from.",
+  "resolveDynamicPanelApplicationContext": {
+    "description": "When using the \`dynamic import\` feature, this is the context of the application that an imported module should get its context from.",
     "type": "string",
   },
   "signals": {

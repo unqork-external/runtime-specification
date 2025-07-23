@@ -5,11 +5,7 @@ import { Description, Example } from '@tsed/schema'
  *  id and version information to the backend so that the calls can be resolved correctly.
  */
 export class NestedApplicationContext {
-  @Example('61bbaa60a09767a9404079dc')
-  @Description('Appropriate application Id for an imported/nested module')
-  applicationId: string
-
-  @Example('4.4.4')
-  @Description('Appropriate application version for an imported/nested module')
-  applicationVersion: string
+  @Example('v61bbaa60a09767a9404079dc')
+  @Description('Appropriate context for an imported/nested module')
+  nestedContext: string
 }

@@ -71,15 +71,9 @@ export class PanelComponentDefinition extends BaseComponentDefinition {
 
   @Optional()
   @TrimmedDescription(
-    'When using the `dynamic import` feature, this is the id of the application that an imported module should get its context from.',
+    'When using the `dynamic import` feature, this is the context of the application that an imported module should get its context from.',
   )
-  resolveDynamicPanelApplicationId?: string
-
-  @Optional()
-  @TrimmedDescription(
-    'When using the `dynamic import` feature, this is the version of the application that an imported module should get its context from.',
-  )
-  resolveDynamicPanelApplicationVersion?: string
+  resolveDynamicPanelApplicationContext?: string
 
   @Description('Controls if the Modal enforces holding focus.')
   @Optional()
