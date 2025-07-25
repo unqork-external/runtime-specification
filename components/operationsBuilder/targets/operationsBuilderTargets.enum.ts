@@ -97,4 +97,7 @@ export enum OpsBuilderTargets {
   contextRefOption = 'contextRefOption',
   contextRefOptionLabel = 'contextRefOptionLabel',
   contextRefOptionDescription = 'contextRefOptionDescription',
+  contextRefInfoOperationNameBorder = 'contextRefInfoOperationNameBorder',
+  contextRefInfoOperationNameTitle = 'contextRefInfoOperationNameTitle',
+  contextRefInfoOperationName = 'contextRefInfoOperationName',
 }

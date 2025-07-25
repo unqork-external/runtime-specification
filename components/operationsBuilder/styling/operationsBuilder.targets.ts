@@ -397,5 +397,17 @@ export class OpsBuilderStylingTargets implements TargetsModel<OpsBuilderTargets>
 
   @Description('Adds styles to a Context Reference option description in Operations Builder.')
   @Css()
-  [OpsBuilderTargets.contextRefOptionDescription]: CssClassOrProps
+  [OpsBuilderTargets.contextRefOptionDescription]: CssClassOrProps;
+
+  @Description('Adds styles to a Context Reference option description in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRefInfoOperationNameBorder]: CssClassOrProps;
+
+  @Description('Adds styles to a Context Reference option description in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRefInfoOperationNameTitle]: CssClassOrProps;
+
+  @Description('Adds styles to a Context Reference option description in Operations Builder.')
+  @Css()
+  [OpsBuilderTargets.contextRefInfoOperationName]: CssClassOrProps
 }

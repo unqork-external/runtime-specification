@@ -101,7 +101,8 @@ exports[`OperationsBuilder Contract Tests should ensure the contract is clear - 
     "type": "boolean",
   },
   "selectedContextReference": {
-    "$ref": "#/definitions/MultiSelectOptionModel",
+    "description": "The selected context reference in Events dropdown",
+    "type": "object",
   },
   "selectedOperation": {
     "$ref": "#/definitions/MultiSelectOptionModel",

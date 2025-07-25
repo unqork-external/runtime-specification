@@ -62,7 +62,7 @@ export class OperationsBuilderComponentDefinition extends BaseComponentDefinitio
 
   @Optional()
   @Description('The selected context reference in Events dropdown')
-  selectedContextReference?: MultiSelectOptionModel
+  selectedContextReference?: MultiSelectOptionModel & { contextType: 'event' | 'operation'; configuredName?: string }
 
   @Optional()
   @Description('The selected operation type that is being actively configured')
