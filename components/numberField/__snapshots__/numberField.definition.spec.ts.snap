@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`NumberField Contract Tests should ensure the contract is clear 1`] = `
 [
@@ -339,7 +339,7 @@ exports[`NumberField Contract Tests should ensure the contract is clear 3`] = `
         "const": "array",
         "description": "States whether the property referencing nested objects should resolve to an array or a matrix.",
         "minLength": 1,
-        "type": "string",
+        "type": "object",
       },
     },
     "required": [
@@ -865,7 +865,7 @@ exports[`NumberField Contract Tests should ensure the contract is clear 3`] = `
         "const": "array",
         "description": "States whether the property referencing nested objects should resolve to an array or a matrix.",
         "minLength": 1,
-        "type": "string",
+        "type": "object",
       },
     },
     "required": [

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`TestableNestables Contract Tests should ensure the contract is clear 1`] = `
 [
@@ -57,7 +57,7 @@ exports[`TestableNestables Contract Tests should ensure the contract is clear 2`
   "nestableType": {
     "default": "array",
     "description": "Current nestable type that the component should implement",
-    "type": "string",
+    "type": "object",
   },
   "nestables": {
     "description": "Array-style nestable data",

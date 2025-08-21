@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Kpi Contract Tests should ensure the contract is clear 1`] = `
 [
@@ -534,7 +534,7 @@ exports[`Kpi Contract Tests should ensure the contract is clear 3`] = `
         "type": "string",
       },
       "kpiColorText": {
-        "default": "white",
+        "default": "black",
         "description": "The text color of the KPI Title and Value.",
         "type": "string",
       },

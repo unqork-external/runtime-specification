@@ -33,12 +33,12 @@ export class kpiData {
   kpiColor: string = KpiColor.DEFAULT
 
   @Optional()
-  @Default('white')
+  @Default('black')
   @TrimmedDescription(`
     The text color of the KPI Title and Value.
   `)
   // Unlike kpiColor, this actually appears to be able to be any color string
-  kpiColorText: string = 'white'
+  kpiColorText: string = 'black'
 
   @Optional()
   @Examples(kpiFormatExamples)

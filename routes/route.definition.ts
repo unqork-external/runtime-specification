@@ -48,6 +48,6 @@ export class RouteDefinition {
   @TrimmedDescription(`
     Event handlers that will apply when this route is matched.
   `)
-  @MapOf(OperationsArray)
+  @MapOf(() => OperationsArray)
   eventHandlers: Record<string, OperationsArray>
 }

@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Operation Model: DataWorkflowOperation Tests should match this JSON Schema 1`] = `
 {
@@ -7,7 +7,7 @@ exports[`Operation Model: DataWorkflowOperation Tests should match this JSON Sch
     "DataWorkflowOptions": {
       "properties": {
         "dwfInputs": {
-          "type": "array",
+          "type": "object",
         },
         "isDebugMode": {
           "type": "boolean",
@@ -16,7 +16,7 @@ exports[`Operation Model: DataWorkflowOperation Tests should match this JSON Sch
           "type": "array",
         },
         "outputs": {
-          "type": "array",
+          "type": "object",
         },
         "shouldExecute": {
           "default": true,

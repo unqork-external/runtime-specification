@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Phone Number Contract Tests should ensure the contract is clear 1`] = `
 [
@@ -229,7 +229,7 @@ exports[`Phone Number Contract Tests should ensure the contract is clear 3`] = `
       "phoneType": {
         "default": 0,
         "description": "value of phone line type (mobile, fixed line, or both",
-        "type": "number",
+        "type": "object",
       },
       "selectedCountry": {
         "description": "country code of the selected country",

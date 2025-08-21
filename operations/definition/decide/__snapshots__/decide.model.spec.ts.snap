@@ -1,4 +1,4 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Operation Model: DecideOperation Tests should match this JSON Schema 1`] = `
 {
@@ -97,7 +97,7 @@ exports[`Operation Model: DecideOperation Tests should match this JSON Schema 1`
           "type": "string",
         },
         "type": {
-          "type": "string",
+          "type": "object",
         },
       },
       "type": "object",
