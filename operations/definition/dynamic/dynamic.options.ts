@@ -17,5 +17,5 @@ export class DynamicOperationOptions extends OperationOptions {
     Inputs to be used within formulas in other operation options.
   `)
   @CollectionOf(InputRef)
-  inputs?: InputRef[]
+  declare inputs?: InputRef[]
 }

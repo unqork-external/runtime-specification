@@ -1,6 +1,7 @@
 import type { OperationTypes } from './enums/operation-types.enum'
 import { OperationTypeMap } from './typemaps/operation.typemap'
 import type { CustomOperationTypeMap } from '../../operations'
+import type { InputRef } from '../inputs/inputRef'
 
 /**
  * Given an OperationType, Typescript will complete the options list.

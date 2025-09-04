@@ -1,5 +1,6 @@
 import { Any, Default, Description, DiscriminatorKey } from '@tsed/schema'
 
+import { InputRef } from '../../inputs/inputRef'
 import { SyntaxObject } from '../../syntax'
 import { OperationTypes } from '../enums/operation-types.enum'
 
@@ -31,4 +32,8 @@ export class OperationOptions {
   @Any('string', 'boolean')
   @Default(true)
   shouldExecute?: boolean | string | SyntaxObject = true
+
+  // Deliberately not decorated because we don't want these to
+  // appear in Ops Builder
+  inputs?: Array<InputRef>
 }
