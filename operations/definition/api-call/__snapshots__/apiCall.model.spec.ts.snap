@@ -117,6 +117,11 @@ exports[`API Call Operation Model should match this JSON Schema 1`] = `
           },
           "type": "array",
         },
+        "isBinaryRequest": {
+          "default": false,
+          "description": "isBinaryRequest, when set to true, adds an approproate content type into headers, string parsing/transformation will be performed in case of base64",
+          "type": "boolean",
+        },
         "isMultiPartRequest": {
           "default": false,
           "description": "isMultiPartRequest, when set to true, combines one or more sets of data into a single body.",

@@ -72,11 +72,11 @@ export class ApiCallOptions extends OperationOptions {
 
   @Default(true)
   @TrimmedDescription(`
-    If an output comes back empty, you can either have the data store as an empty value or choose not to store the data. 
+    If an output comes back empty, you can either have the data store as an empty value or choose not to store the data.
     By setting this toggle to true, null or empty strings store as empty values. If set to OFF, the values don't record.
-    
+
     https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05006A-Plug-In_Component.htm?Highlight=Assign%20Empty%20Values#:~:text=Assign%20Values%20if%20They%20Are%20Null%20or%20Empty%20String
-    
+
     By default, this toggle is set to true.
   `)
   assignEmptyValues?: boolean = true
@@ -144,7 +144,7 @@ export class ApiCallOptions extends OperationOptions {
 
   @Default(false)
   @TrimmedDescription(`
-    expectBinaryResponse should be enabled when you expect the API call to return a large file, 
+    expectBinaryResponse should be enabled when you expect the API call to return a large file,
     and/or want to store the response in its original file format.
     When set to true, the response doesn't convert to or store as base64.
   `)
@@ -158,7 +158,7 @@ export class ApiCallOptions extends OperationOptions {
   @Default(false)
   @TrimmedDescription(`
     flattenToSingleRecord refers to how the API call results will be stored.
-    When set to true, the module flattens results into a single record value. 
+    When set to true, the module flattens results into a single record value.
     When set to OFF, the module leaves the unflattened results in multiple values.
   `)
   flattenToSingleRecord?: boolean = false
@@ -166,7 +166,7 @@ export class ApiCallOptions extends OperationOptions {
   @Default(false)
   @TrimmedDescription(`
     outputValuesOnly refers to how the output from the API call should be handled.
-    When set to true, the API response is not logged and the outputs are appropriately mapped and handled. 
+    When set to true, the API response is not logged and the outputs are appropriately mapped and handled.
     When set to false, the entire API call response is logged in the DevTools Console before the output handling occurs.
   `)
   outputValuesOnly?: boolean = false
@@ -211,7 +211,7 @@ export class ApiCallOptions extends OperationOptions {
 
   @Default(false)
   @TrimmedDescription(`
-    topLevelArray should be set to true when you want to add a top level array/object to the request body. 
+    topLevelArray should be set to true when you want to add a top level array/object to the request body.
     When topLevelArray is true, the string value of 'arrayKeyPromote' will be promoted to the top level.
     https://docs.unqork.io/Content/A05-ModEditor-Data_Event/A05006A-Plug-In_Component.htm#:~:text=multipart%20API%C2%A0call.-,Promote%20Object/Array%20to%20Top%20Level,-%3A%20Use%20this%20setting
   `)
@@ -224,7 +224,7 @@ export class ApiCallOptions extends OperationOptions {
   // TODO: Put under Unqork Settings / Validation key?
   @Optional()
   @TrimmedDescription(`
-    ensureJSONPathExistsInResponse lets you set a required property path return value. 
+    ensureJSONPathExistsInResponse lets you set a required property path return value.
     If the path isn't present in the response body, the call results in an error.
   `)
   ensureJSONPathExistsInResponse?: string
@@ -240,6 +240,13 @@ export class ApiCallOptions extends OperationOptions {
   @Default(false)
   @Description('isMultiPartRequest, when set to true, combines one or more sets of data into a single body.')
   isMultiPartRequest?: boolean = false
+
+  @Default(false)
+  @Description(
+    'isBinaryRequest, when set to true, adds an approproate content type into headers, string parsing/transformation will be performed in case of base64',
+  )
+  @Optional()
+  isBinaryRequest?: boolean = false
 
   @Optional()
   @Description(
