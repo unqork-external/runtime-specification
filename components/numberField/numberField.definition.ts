@@ -9,7 +9,7 @@ import { TrimmedDescription } from '../../../decorators/schema/trimmedDescriptio
 import { ViewTargets } from '../../../decorators/viewTargets/viewTargets.decorator'
 import { BaseComponentDefinition } from '../../base-component-interface/base.component.definition'
 import {
-  Display,
+  InputDisplay,
   NumberFieldSettings,
   NumberFormat,
   NumberOptions,
@@ -40,7 +40,7 @@ export class NumberFieldComponentDefinition extends BaseComponentDefinition {
   simpleView?: NumberSimpleViewModel
 
   @Property()
-  display: Display = new Display()
+  display: InputDisplay = new InputDisplay()
 
   @Property()
   field: NumberFieldSettings = new NumberFieldSettings()
